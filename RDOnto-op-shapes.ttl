@@ -1,0 +1,816 @@
+@prefix RDOnto-op:    <https://w3id.org/rdonto/op#> .
+@prefix RDOnto-op-sh: <https://w3id.org/rdonto/op-shapes#> .
+@prefix sh:     <http://www.w3.org/ns/shacl#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct:    <http://purl.org/dc/terms/> .
+@prefix prov:   <http://www.w3.org/ns/prov#> .
+@prefix sosa:   <http://www.w3.org/ns/sosa/> .
+@prefix qudt:   <http://qudt.org/schema/qudt/> .
+@prefix unit:   <http://qudt.org/vocab/unit/> .
+
+# Remote Driving Ontology: SHACL shapes for RDOnto-op data (v1.0).
+# They check that incoming data is well formed, so that the competency-question
+# queries do not silently give wrong answers. They do not judge the driving
+# situation: missing perception (SA-13, SA-23) and exceeded limits stay
+# closed-world CQ queries over valid data.
+#
+# Conventions:
+# - Validate the ontology (RDOnto-op, RDOnto-core) together with the data, so that
+#   sh:class and sh:targetClass follow rdfs:subClassOf (e.g. an operator typed only
+#   vla:RemoteDriver is a RDOnto-op:RemoteOperator). No reasoner is needed.
+# - Functional properties get sh:maxCount 1. Under OWL, two values of a functional
+#   property make the reasoner merge them with owl:sameAs instead of reporting an
+#   error; these shapes report it.
+# - Times are xsd:dateTime with a timezone: comparing a zoned with an unzoned time
+#   is undefined in SPARQL, so queries would silently drop rows.
+# - Durations are xsd:dayTimeDuration and not negative (lexical form starts "P").
+# - Numbers may be xsd:integer or xsd:decimal (e.g. 250 and 1.667 in Turtle).
+# - Each limit type has one fixed unit, the one its queries read.
+# - Severity is sh:Violation unless stated. Warnings mark what the ontology says
+#   "should" hold: dct:source on limits, a specific operation mode on engagements.
+# - Node-level sh:xone is not used: some SHACL engines skip it. Rules that
+#   need it, or that relate several individuals, are sh:sparql constraints.
+
+<https://w3id.org/rdonto/op-shapes>
+    a owl:Ontology ;
+    dct:creator "Sanat Mharolkar" ;
+    dct:license <http://www.apache.org/licenses/LICENSE-2.0> ;
+    rdfs:label "Remote Driving Ontology: SHACL shapes for the operator awareness module"@en ;
+    dct:created "2026-11-05"^^xsd:date ;
+    dct:modified "2026-11-14"^^xsd:date ;
+    owl:versionInfo "1.0" ;
+    rdfs:comment "Shapes for RDOnto-op v1.0 data."@en .
+
+#################################################################
+# A. Engagement, mode, tasks, requests, environment (SA-01 to SA-06)
+#################################################################
+
+RDOnto-op-sh:EngagementShape a sh:NodeShape ;
+    sh:targetClass RDOnto-op:Engagement ;
+    sh:property [
+        sh:path RDOnto-op:engagedOperator ; sh:minCount 1 ; sh:maxCount 1 ; sh:class RDOnto-op:RemoteOperator ;
+        sh:message "An engagement has exactly one operator, a RemoteOperator." ] ;
+    sh:property [
+        sh:path RDOnto-op:engagedVehicle ; sh:minCount 1 ; sh:maxCount 1 ; sh:class RDOnto-op:RemotelyOperatedVehicle ;
+        sh:message "An engagement has exactly one vehicle, a RemotelyOperatedVehicle." ] ;
+    sh:property [
+        sh:path RDOnto-op:inOperationMode ; sh:minCount 1 ; sh:maxCount 1 ; sh:class RDOnto-op:OperationMode ;
+        sh:message "An engagement is in exactly one operation mode." ] ;
+    sh:property [
+        sh:path RDOnto-op:inOperationMode ; sh:not [ sh:hasValue RDOnto-op:RemoteDriving ] ;
+        sh:severity sh:Warning ;
+        sh:message "An engagement should use a specific mode: event-based or continuous remote driving, not the broad remote driving mode." ] ;
+    sh:property [
+        sh:path RDOnto-op:takenOverFrom ; sh:maxCount 1 ; sh:class RDOnto-op:OnBoardDriver ;
+        sh:message "An engagement took over from at most one on-board driver, an OnBoardDriver (SA-01, LK-10)." ] ;
+    sh:property [
+        sh:path RDOnto-op:followsEngagement ; sh:maxCount 1 ; sh:class RDOnto-op:Engagement ;
+        sh:message "An engagement follows at most one earlier Engagement (SA-01)." ] ;
+    sh:property [
+        sh:path RDOnto-op:adaptationCarriedFrom ; sh:maxCount 1 ; sh:class RDOnto-op:Engagement ;
+        sh:message "An engagement carries its adapted information age over from at most one earlier Engagement (SA-14)." ] ;
+    sh:property [
+        sh:path RDOnto-op:engagementEnvironment ; sh:maxCount 1 ; sh:class RDOnto-op:OperatingEnvironment ;
+        sh:message "An engagement is in at most one OperatingEnvironment (SA-06)." ] ;
+    sh:property [
+        sh:path RDOnto-op:engagementTask ; sh:maxCount 1 ; sh:class RDOnto-op:DrivingTask ;
+        sh:message "An engagement has at most one DrivingTask (SA-06)." ] ;
+    sh:sparql [
+        sh:message "An engagement follows only an ended engagement of the same operator with the same vehicle, which ended no later than this one started (SA-01)." ;
+        sh:select """
+            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX prov: <http://www.w3.org/ns/prov#>
+            SELECT $this ?value WHERE {
+              $this RDOnto-op:followsEngagement ?value ;
+                    RDOnto-op:engagedOperator ?op ; RDOnto-op:engagedVehicle ?vehicle ;
+                    prov:startedAtTime ?start .
+              OPTIONAL { ?value RDOnto-op:engagedOperator ?prevOp }
+              OPTIONAL { ?value RDOnto-op:engagedVehicle ?prevVehicle }
+              OPTIONAL { ?value prov:endedAtTime ?prevEnd }
+              FILTER (!BOUND(?prevEnd) || ?prevEnd > ?start
+                      || !BOUND(?prevOp) || ?prevOp != ?op
+                      || !BOUND(?prevVehicle) || ?prevVehicle != ?vehicle)
+            }""" ] ;
+    sh:sparql [
+        sh:message "An adapted information age is carried over only from an earlier engagement of the same operator (SA-14)." ;
+        sh:select """
+            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX prov: <http://www.w3.org/ns/prov#>
+            SELECT $this ?value WHERE {
+              $this RDOnto-op:adaptationCarriedFrom ?value ;
+                    RDOnto-op:engagedOperator ?op ; prov:startedAtTime ?start .
+              OPTIONAL { ?value RDOnto-op:engagedOperator ?prevOp }
+              OPTIONAL { ?value prov:startedAtTime ?prevStart }
+              FILTER (!BOUND(?prevOp) || ?prevOp != ?op || !BOUND(?prevStart) || ?prevStart >= ?start)
+            }""" ] ;
+    sh:sparql [
+        sh:message "An engagement's operating environment is one of the environments its vehicle is deployed in, where the vehicle states any (SA-06)." ;
+        sh:select """
+            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            SELECT $this ?value WHERE {
+              $this RDOnto-op:engagementEnvironment ?value ; RDOnto-op:engagedVehicle ?vehicle .
+              FILTER EXISTS { ?vehicle RDOnto-op:deployedIn ?any }
+              FILTER NOT EXISTS { ?vehicle RDOnto-op:deployedIn ?value }
+            }""" ] ;
+    sh:sparql [
+        sh:message "An engagement's driving task is one of the driving tasks its vehicle is deployed for, where the vehicle states any (SA-06)." ;
+        sh:select """
+            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            SELECT $this ?value WHERE {
+              $this RDOnto-op:engagementTask ?value ; RDOnto-op:engagedVehicle ?vehicle .
+              FILTER EXISTS { ?vehicle RDOnto-op:hasDrivingTask ?any }
+              FILTER NOT EXISTS { ?vehicle RDOnto-op:hasDrivingTask ?value }
+            }""" ] ;
+    sh:property [
+        sh:path prov:startedAtTime ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:datatype xsd:dateTime ; sh:pattern "(Z|[+-][0-9]{2}:[0-9]{2})$" ;
+        sh:lessThanOrEquals prov:endedAtTime ;
+        sh:message "An engagement has exactly one start time, an xsd:dateTime with a timezone, not after its end time." ] ;
+    sh:property [
+        sh:path prov:endedAtTime ; sh:maxCount 1 ;
+        sh:datatype xsd:dateTime ; sh:pattern "(Z|[+-][0-9]{2}:[0-9]{2})$" ;
+        sh:message "An engagement has at most one end time, an xsd:dateTime with a timezone." ] ;
+    sh:property [
+        sh:path RDOnto-op:buildUpEndedAt ; sh:maxCount 1 ;
+        sh:datatype xsd:dateTime ; sh:pattern "(Z|[+-][0-9]{2}:[0-9]{2})$" ;
+        sh:message "An engagement has at most one end of build-up, an xsd:dateTime with a timezone (SA-04)." ] ;
+    sh:property [
+        sh:path RDOnto-op:respondsTo ; sh:maxCount 1 ; sh:class RDOnto-op:Request ;
+        sh:message "An engagement responds to at most one Request (SA-03)." ] ;
+    sh:property [
+        sh:path RDOnto-op:holdsTask ; sh:class RDOnto-op:OperatorTask ;
+        sh:message "A held task is an OperatorTask: an EDMC DDT subtask or DDT fallback, or a decision-making, cue interpretation or observation task (SA-02)." ] ;
+    sh:property [
+        sh:path RDOnto-op:availableChannel ; sh:class RDOnto-op:InformationChannel ;
+        sh:message "An available channel is an InformationChannel." ] ;
+    sh:property [
+        sh:path RDOnto-op:adaptedInformationAge ; sh:maxCount 1 ;
+        sh:datatype xsd:dayTimeDuration ; sh:pattern "^P" ;
+        sh:message "An engagement has at most one adapted information age, a non-negative xsd:dayTimeDuration." ] ;
+    sh:sparql [
+        sh:message "Build-up ends within the engagement: not before its start or after its end (SA-04)." ;
+        sh:select """
+            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX prov: <http://www.w3.org/ns/prov#>
+            SELECT $this ?value WHERE {
+              $this RDOnto-op:buildUpEndedAt ?value ; prov:startedAtTime ?start .
+              OPTIONAL { $this prov:endedAtTime ?end }
+              FILTER (?value < ?start || (BOUND(?end) && ?value > ?end))
+            }""" ] ;
+    sh:sparql [
+        sh:message "Only event-based remote driving and remote assistance respond to a request: continuous remote driving and remote monitoring engagements do not (SA-03)." ;
+        sh:select """
+            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            SELECT $this ?value WHERE {
+              $this RDOnto-op:inOperationMode ?value ; RDOnto-op:respondsTo ?req .
+              FILTER (?value IN (RDOnto-op:ContinuousRemoteDriving, RDOnto-op:RemoteMonitoring))
+            }""" ] ;
+    sh:sparql [
+        sh:message "The request type fits the mode: event-based remote driving responds to a takeover request, remote assistance to an assistance request (SA-03)." ;
+        sh:select """
+            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            SELECT $this ?value WHERE {
+              $this RDOnto-op:inOperationMode ?mode ; RDOnto-op:respondsTo ?req .
+              ?req RDOnto-op:hasRequestType ?value .
+              FILTER ((?mode = RDOnto-op:EventBasedRemoteDriving && ?value != RDOnto-op:TakeoverRequest)
+                   || (?mode = RDOnto-op:RemoteAssistance && ?value = RDOnto-op:TakeoverRequest))
+            }""" ] ;
+    sh:sparql [
+        sh:message "Only an event-based remote driving engagement takes over from an on-board driver (SA-01, LK-10)." ;
+        sh:select """
+            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            SELECT $this ?value WHERE {
+              $this RDOnto-op:takenOverFrom ?driver ; RDOnto-op:inOperationMode ?value .
+              FILTER (?value != RDOnto-op:EventBasedRemoteDriving)
+            }""" ] ;
+    sh:sparql [
+        sh:message "An engagement taken over from an on-board driver responds to no request: the takeover was not asked for by the vehicle (SA-03)." ;
+        sh:select """
+            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            SELECT $this ?value WHERE {
+              $this RDOnto-op:takenOverFrom ?driver ; RDOnto-op:respondsTo ?value .
+            }""" ] ;
+    sh:property [
+        sh:path RDOnto-op:takeoverReason ; sh:class RDOnto-op:TakeoverReason ;
+        sh:message "A takeover reason is a TakeoverReason (SA-03)." ] ;
+    sh:sparql [
+        sh:message "Only an engagement that took over from an on-board driver states a takeover reason (takenOverFrom, SA-03)." ;
+        sh:select """
+            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            SELECT $this ?value WHERE {
+              $this RDOnto-op:takeoverReason ?value .
+              FILTER NOT EXISTS { $this RDOnto-op:takenOverFrom ?driver }
+            }""" ] ;
+    sh:sparql [
+        sh:message "An event-based remote driving engagement with a vehicle that has no ADS (hasADS false) takes over from an on-board driver (takenOverFrom): nothing else can have been driving the vehicle (SA-01)." ;
+        sh:select """
+            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            SELECT $this ?value WHERE {
+              $this RDOnto-op:inOperationMode RDOnto-op:EventBasedRemoteDriving ; RDOnto-op:engagedVehicle ?value .
+              ?value RDOnto-op:hasADS false .
+              FILTER NOT EXISTS { $this RDOnto-op:takenOverFrom ?driver }
+            }""" ] ;
+    sh:sparql [
+        sh:message "An engagement that carries its adapted information age over from an earlier engagement states no value of its own: the value is read from the engagement it is carried from (SA-14)." ;
+        sh:select """
+            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            SELECT $this ?value WHERE {
+              $this RDOnto-op:adaptationCarriedFrom ?from ; RDOnto-op:adaptedInformationAge ?value .
+            }""" ] ;
+    sh:sparql [
+        sh:message "A vehicle has at most one open engagement at a time: one operator is responsible for it in one mode (SA-01)." ;
+        sh:select """
+            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX prov: <http://www.w3.org/ns/prov#>
+            SELECT $this ?value WHERE {
+              $this RDOnto-op:engagedVehicle ?vehicle .
+              ?value RDOnto-op:engagedVehicle ?vehicle .
+              FILTER ($this != ?value)
+              FILTER NOT EXISTS { $this prov:endedAtTime ?end1 }
+              FILTER NOT EXISTS { ?value prov:endedAtTime ?end2 }
+            }""" ] ;
+    sh:sparql [
+        sh:message "An engagement's mode is one its vehicle supports, where the vehicle states any: the mode itself or a broader mode (supportsMode, SA-24)." ;
+        sh:select """
+            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+            SELECT $this ?value WHERE {
+              $this RDOnto-op:inOperationMode ?value ; RDOnto-op:engagedVehicle ?vehicle .
+              FILTER EXISTS { ?vehicle RDOnto-op:supportsMode ?any }
+              FILTER NOT EXISTS { ?value RDOnto-op:broaderMode* ?supported . ?vehicle RDOnto-op:supportsMode ?supported }
+            }""" ] ;
+    sh:sparql [
+        sh:message "An engagement responds to a request from its own vehicle (SA-03)." ;
+        sh:select """
+            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            SELECT $this ?value WHERE {
+              $this RDOnto-op:respondsTo ?value ; RDOnto-op:engagedVehicle ?vehicle .
+              ?value RDOnto-op:requestedBy ?requester .
+              FILTER (?requester != ?vehicle)
+            }""" ] ;
+    sh:sparql [
+        sh:message "An engagement does not start before the request it responds to was issued (SA-03)." ;
+        sh:select """
+            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX prov: <http://www.w3.org/ns/prov#>
+            SELECT $this ?value WHERE {
+              $this RDOnto-op:respondsTo ?value ; prov:startedAtTime ?start .
+              ?value prov:generatedAtTime ?issued .
+              FILTER (?issued > ?start)
+            }""" ] ;
+    sh:sparql [
+        sh:message "A held task is of a kind the engagement's mode gives the operator, where the mode or a broader mode states any (modeIncludesTask, SA-02)." ;
+        sh:select """
+            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+            SELECT $this ?value WHERE {
+              $this RDOnto-op:holdsTask ?value ; RDOnto-op:inOperationMode ?mode .
+              FILTER EXISTS { ?mode RDOnto-op:broaderMode* ?stated . ?stated RDOnto-op:modeIncludesTask ?anyKind }
+              FILTER NOT EXISTS {
+                ?mode RDOnto-op:broaderMode* ?m . ?m RDOnto-op:modeIncludesTask ?kind .
+                ?value a/rdfs:subClassOf* ?kind .
+              }
+            }""" ] ;
+    sh:sparql [
+        sh:message "An operator is not fallback-ready during one of their engagements: fallback-ready means not engaged (SA-20)." ;
+        sh:select """
+            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX prov: <http://www.w3.org/ns/prov#>
+            SELECT $this ?value WHERE {
+              $this RDOnto-op:engagedOperator ?op ; prov:startedAtTime ?s1 .
+              OPTIONAL { $this prov:endedAtTime ?e1 }
+              ?value a RDOnto-op:FallbackReadyPeriod ; RDOnto-op:readyOperator ?op ; prov:startedAtTime ?s2 .
+              OPTIONAL { ?value prov:endedAtTime ?e2 }
+              FILTER ((!BOUND(?e2) || ?e2 > ?s1) && (!BOUND(?e1) || ?e1 > ?s2))
+            }""" ] .
+
+RDOnto-op-sh:OperationModeShape a sh:NodeShape ;
+    sh:targetClass RDOnto-op:OperationMode ;
+    sh:property [
+        sh:path RDOnto-op:isRemoteDrivingMode ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:boolean ;
+        sh:message "Every operation mode states once whether it is a remote driving mode (xsd:boolean)." ] ;
+    sh:property [
+        sh:path RDOnto-op:requiresSAType ; sh:minCount 1 ; sh:maxCount 1 ; sh:class RDOnto-op:SAType ;
+        sh:message "Every operation mode requires exactly one SA type (SA-21)." ] ;
+    sh:property [
+        sh:path RDOnto-op:broaderMode ; sh:maxCount 1 ; sh:class RDOnto-op:OperationMode ;
+        sh:message "An operation mode has at most one broader mode, an OperationMode." ] ;
+    sh:property [
+        sh:path RDOnto-op:modeIncludesTask ; sh:class owl:Class ;
+        sh:message "A mode includes task types, given as declared classes (SA-02)." ] ;
+    sh:sparql [
+        sh:message "isRemoteDrivingMode is true exactly for RDOnto-op:RemoteDriving and the modes below it (broaderMode), so the two ways of asking for a remote driving mode agree." ;
+        sh:select """
+            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+            SELECT $this ?value WHERE {
+              $this RDOnto-op:isRemoteDrivingMode ?value .
+              BIND (EXISTS { $this RDOnto-op:broaderMode* RDOnto-op:RemoteDriving } AS ?belowRemoteDriving)
+              FILTER (?value != ?belowRemoteDriving)
+            }""" ] .
+
+RDOnto-op-sh:VehicleShape a sh:NodeShape ;
+    sh:targetClass RDOnto-op:RemotelyOperatedVehicle ;
+    sh:property [
+        sh:path RDOnto-op:supportsMode ; sh:class RDOnto-op:OperationMode ;
+        sh:message "A vehicle supports only OperationModes." ] ;
+    sh:property [
+        sh:path RDOnto-op:supportsMode ; sh:minCount 1 ; sh:severity sh:Warning ;
+        sh:message "A vehicle should state the modes it supports (supportsMode): without any, the check that an engagement's mode is supported is skipped (SA-24)." ] ;
+    sh:property [
+        sh:path RDOnto-op:hasADS ; sh:maxCount 1 ; sh:datatype xsd:boolean ;
+        sh:message "A vehicle states at most once whether it has an ADS (xsd:boolean)." ] ;
+    sh:sparql [
+        sh:message "A vehicle without an ADS (hasADS false) does not support remote assistance, which is advice to an ADS-equipped vehicle (SA-24)." ;
+        sh:select """
+            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            SELECT $this ?value WHERE {
+              $this RDOnto-op:hasADS false ; RDOnto-op:supportsMode ?value .
+              FILTER (?value = RDOnto-op:RemoteAssistance)
+            }""" ] ;
+    sh:property [
+        sh:path RDOnto-op:deployedIn ; sh:class RDOnto-op:OperatingEnvironment ;
+        sh:message "A vehicle's operating environment is an OperatingEnvironment (SA-06)." ] ;
+    sh:property [
+        sh:path RDOnto-op:hasDrivingTask ; sh:class RDOnto-op:DrivingTask ;
+        sh:message "A vehicle's driving task is a DrivingTask (SA-06)." ] ;
+    sh:property [
+        sh:path RDOnto-op:inVehicleFieldOfView ; sh:maxCount 1 ;
+        sh:or ( [ sh:datatype xsd:decimal ] [ sh:datatype xsd:integer ] ) ;
+        sh:minExclusive 0 ; sh:maxInclusive 360 ;
+        sh:message "A vehicle has at most one in-vehicle field of view, in degrees, above 0 and at most 360 (SA-17)." ] .
+
+# The state of an on-board driver that LK-10 reads for handing control back.
+RDOnto-op-sh:OnBoardDriverShape a sh:NodeShape ;
+    sh:targetClass RDOnto-op:OnBoardDriver ;
+    sh:property [
+        sh:path RDOnto-op:ableToTakeOver ; sh:maxCount 1 ; sh:datatype xsd:boolean ;
+        sh:message "An on-board driver states at most once whether they are able to take over (xsd:boolean, LK-10)." ] .
+
+RDOnto-op-sh:RequestShape a sh:NodeShape ;
+    sh:targetClass RDOnto-op:Request ;
+    sh:property [
+        sh:path RDOnto-op:requestedBy ; sh:minCount 1 ; sh:maxCount 1 ; sh:class RDOnto-op:RemotelyOperatedVehicle ;
+        sh:message "A request comes from exactly one vehicle." ] ;
+    sh:property [
+        sh:path RDOnto-op:hasRequestType ; sh:minCount 1 ; sh:maxCount 1 ; sh:class RDOnto-op:RequestType ;
+        sh:message "A request has exactly one RequestType (SA-03)." ] ;
+    sh:property [
+        sh:path RDOnto-op:hasRequestReason ; sh:minCount 1 ; sh:class RDOnto-op:RequestReason ;
+        sh:message "A request has at least one reason (use UnspecifiedReason if none is given)." ] ;
+    sh:property [
+        sh:path RDOnto-op:concernsElement ; sh:class RDOnto-op:SituationElement ;
+        sh:message "A request concerns only SituationElements (SA-22)." ] ;
+    sh:property [
+        sh:path prov:generatedAtTime ; sh:maxCount 1 ;
+        sh:datatype xsd:dateTime ; sh:pattern "(Z|[+-][0-9]{2}:[0-9]{2})$" ;
+        sh:message "A request has at most one issue time, an xsd:dateTime with a timezone." ] .
+
+#################################################################
+# B. Perception and evidence (SA-07, SA-11, SA-25)
+#################################################################
+
+RDOnto-op-sh:PerceptionAssertionShape a sh:NodeShape ;
+    sh:targetClass RDOnto-op:PerceptionAssertion ;
+    sh:property [
+        sh:path RDOnto-op:assertedOperator ; sh:minCount 1 ; sh:maxCount 1 ; sh:class RDOnto-op:RemoteOperator ;
+        sh:message "A perception assertion is about exactly one RemoteOperator." ] ;
+    sh:property [
+        sh:path RDOnto-op:aboutElement ; sh:minCount 1 ; sh:maxCount 1 ; sh:class RDOnto-op:SituationElement ;
+        sh:message "A perception assertion is about exactly one SituationElement." ] ;
+    sh:property [
+        sh:path RDOnto-op:perceivedAt ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:datatype xsd:dateTime ; sh:pattern "(Z|[+-][0-9]{2}:[0-9]{2})$" ;
+        sh:message "A perception assertion has exactly one perceivedAt time, an xsd:dateTime with a timezone." ] ;
+    sh:property [
+        sh:path RDOnto-op:confidence ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:or ( [ sh:datatype xsd:decimal ] [ sh:datatype xsd:integer ] ) ;
+        sh:minInclusive 0 ; sh:maxInclusive 1 ;
+        sh:message "A perception assertion has exactly one confidence, a number between 0 and 1." ] ;
+    sh:property [
+        sh:path RDOnto-op:supportedBy ; sh:minCount 1 ; sh:class RDOnto-op:SAEvidence ;
+        sh:message "A perception assertion is an estimate: it is supported by at least one SAEvidence (SA-25)." ] ;
+    sh:property [
+        sh:path RDOnto-op:basedOnScene ; sh:maxCount 1 ; sh:class RDOnto-op:DisplayedScene ;
+        sh:message "A perception assertion is based on at most one DisplayedScene." ] ;
+    sh:property [
+        sh:path RDOnto-op:sensedAt ; sh:maxCount 1 ;
+        sh:datatype xsd:dateTime ; sh:pattern "(Z|[+-][0-9]{2}:[0-9]{2})$" ;
+        sh:lessThanOrEquals RDOnto-op:perceivedAt ;
+        sh:message "A perception assertion has at most one sensed time, an xsd:dateTime with a timezone, not after its perceivedAt time (SA-11)." ] ;
+    sh:sparql [
+        sh:message "A perception assertion gives its sensed time in one way: through the displayed scene it is based on, or with sensedAt, not both (SA-11)." ;
+        sh:select """
+            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            SELECT $this ?value WHERE {
+              $this RDOnto-op:basedOnScene ?scene ; RDOnto-op:sensedAt ?value .
+            }""" ] ;
+    sh:property [
+        sh:path RDOnto-op:viaChannel ; sh:class RDOnto-op:InformationChannel ;
+        sh:message "A perception assertion's channel is an InformationChannel." ] ;
+    sh:sparql [
+        sh:message "An element cannot be perceived in a scene before that scene was displayed." ;
+        sh:select """
+            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            SELECT $this ?value WHERE {
+              $this RDOnto-op:perceivedAt ?perceived ; RDOnto-op:basedOnScene ?value .
+              ?value RDOnto-op:displayedAt ?shown .
+              FILTER (?perceived < ?shown)
+            }""" ] ;
+    sh:sparql [
+        sh:message "A perception assertion's operator is the operator of an engagement its scene was shown in (SA-07)." ;
+        sh:select """
+            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            SELECT $this ?value WHERE {
+              $this RDOnto-op:basedOnScene ?scene ; RDOnto-op:assertedOperator ?value .
+              FILTER EXISTS { ?scene RDOnto-op:shownIn ?any }
+              FILTER NOT EXISTS { ?scene RDOnto-op:shownIn ?engagement . ?engagement RDOnto-op:engagedOperator ?value }
+            }""" ] ;
+    sh:sparql [
+        sh:message "A perception assertion's element is in the scene of the vehicle of the engagement its scene was shown in, where the element is in any vehicle's scene (inSceneOf, SA-07)." ;
+        sh:select """
+            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            SELECT $this ?value WHERE {
+              $this RDOnto-op:basedOnScene ?scene ; RDOnto-op:aboutElement ?value .
+              FILTER EXISTS { ?scene RDOnto-op:shownIn ?any . ?any RDOnto-op:engagedVehicle ?anyVehicle }
+              FILTER EXISTS { ?value RDOnto-op:inSceneOf ?someVehicle }
+              FILTER NOT EXISTS {
+                ?scene RDOnto-op:shownIn ?engagement . ?engagement RDOnto-op:engagedVehicle ?vehicle .
+                ?value RDOnto-op:inSceneOf ?vehicle .
+              }
+            }""" ] .
+
+RDOnto-op-sh:SAEvidenceShape a sh:NodeShape ;
+    sh:targetClass RDOnto-op:SAEvidence ;
+    sh:property [
+        sh:path RDOnto-op:reliability ; sh:maxCount 1 ;
+        sh:or ( [ sh:datatype xsd:decimal ] [ sh:datatype xsd:integer ] ) ;
+        sh:minInclusive 0 ; sh:maxInclusive 1 ;
+        sh:message "SA evidence has at most one reliability, a number between 0 and 1." ] .
+
+RDOnto-op-sh:SituationElementShape a sh:NodeShape ;
+    sh:targetClass RDOnto-op:SituationElement ;
+    sh:property [
+        sh:path RDOnto-op:inSceneOf ; sh:class RDOnto-op:RemotelyOperatedVehicle ;
+        sh:message "A situation element is in the scene of RemotelyOperatedVehicles only." ] .
+
+#################################################################
+# C. Frames, scenes, information age, staleness (SA-08 to SA-11)
+#################################################################
+
+RDOnto-op-sh:SensorShape a sh:NodeShape ;
+    sh:targetClass sosa:Sensor ;
+    sh:property [
+        sh:path RDOnto-op:captureDelay ; sh:maxCount 1 ;
+        sh:datatype xsd:dayTimeDuration ; sh:pattern "^P" ;
+        sh:message "A sensor has at most one capture delay, a non-negative xsd:dayTimeDuration." ] ;
+    sh:property [
+        sh:path RDOnto-op:sensorOfVehicle ; sh:maxCount 1 ; sh:class RDOnto-op:RemotelyOperatedVehicle ;
+        sh:message "A sensor is mounted on at most one RemotelyOperatedVehicle (SA-08)." ] .
+
+RDOnto-op-sh:SensorFrameShape a sh:NodeShape ;
+    sh:targetClass RDOnto-op:SensorFrame ;
+    sh:property [
+        sh:path sosa:resultTime ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:datatype xsd:dateTime ; sh:pattern "(Z|[+-][0-9]{2}:[0-9]{2})$" ;
+        sh:message "A sensor frame has exactly one capture time (sosa:resultTime), an xsd:dateTime with a timezone." ] ;
+    sh:property [
+        sh:path sosa:madeBySensor ; sh:minCount 1 ; sh:maxCount 1 ; sh:class sosa:Sensor ;
+        sh:message "A sensor frame is made by exactly one sosa:Sensor." ] .
+
+RDOnto-op-sh:DisplayedSceneShape a sh:NodeShape ;
+    sh:targetClass RDOnto-op:DisplayedScene ;
+    sh:property [
+        sh:path RDOnto-op:derivedFromFrame ; sh:minCount 1 ; sh:class RDOnto-op:SensorFrame ;
+        sh:message "A displayed scene is derived from at least one SensorFrame." ] ;
+    sh:property [
+        sh:path RDOnto-op:displayedAt ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:datatype xsd:dateTime ; sh:pattern "(Z|[+-][0-9]{2}:[0-9]{2})$" ;
+        sh:message "A displayed scene has exactly one display time, an xsd:dateTime with a timezone." ] ;
+    sh:property [
+        sh:path RDOnto-op:shownIn ; sh:minCount 1 ; sh:class RDOnto-op:Engagement ;
+        sh:message "A displayed scene is shown in at least one Engagement." ] ;
+    sh:property [
+        sh:path RDOnto-op:onChannel ; sh:class RDOnto-op:InformationChannel ;
+        sh:message "A displayed scene's channel is an InformationChannel." ] ;
+    sh:sparql [
+        sh:message "A scene cannot be displayed before a frame it was derived from was captured." ;
+        sh:select """
+            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX sosa: <http://www.w3.org/ns/sosa/>
+            SELECT $this ?value WHERE {
+              $this RDOnto-op:displayedAt ?shown ; RDOnto-op:derivedFromFrame ?value .
+              ?value sosa:resultTime ?captured .
+              FILTER (?shown < ?captured)
+            }""" ] ;
+    sh:sparql [
+        sh:message "The frames of a displayed scene come from the vehicle of an engagement the scene was shown in, where their sensors state a vehicle (sensorOfVehicle, SA-08)." ;
+        sh:select """
+            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX sosa: <http://www.w3.org/ns/sosa/>
+            SELECT $this ?value WHERE {
+              $this RDOnto-op:derivedFromFrame ?value .
+              ?value sosa:madeBySensor ?sensor . ?sensor RDOnto-op:sensorOfVehicle ?vehicle .
+              FILTER EXISTS { $this RDOnto-op:shownIn ?any . ?any RDOnto-op:engagedVehicle ?anyVehicle }
+              FILTER NOT EXISTS { $this RDOnto-op:shownIn ?engagement . ?engagement RDOnto-op:engagedVehicle ?vehicle }
+            }""" ] .
+
+RDOnto-op-sh:ElementStateChangeShape a sh:NodeShape ;
+    sh:targetClass RDOnto-op:ElementStateChange ;
+    sh:property [
+        sh:path sosa:hasFeatureOfInterest ; sh:minCount 1 ; sh:maxCount 1 ; sh:class RDOnto-op:SituationElement ;
+        sh:message "An element state change is about exactly one SituationElement." ] ;
+    sh:property [
+        sh:path sosa:resultTime ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:datatype xsd:dateTime ; sh:pattern "(Z|[+-][0-9]{2}:[0-9]{2})$" ;
+        sh:message "An element state change has exactly one time, an xsd:dateTime with a timezone." ] .
+
+#################################################################
+# E. Channels, cues, field of view (SA-15 to SA-17)
+#################################################################
+
+RDOnto-op-sh:InformationChannelShape a sh:NodeShape ;
+    sh:targetClass RDOnto-op:InformationChannel ;
+    sh:property [
+        sh:path RDOnto-op:providesCue ; sh:class RDOnto-op:Cue ;
+        sh:message "A channel provides only Cues." ] .
+
+RDOnto-op-sh:CameraViewShape a sh:NodeShape ;
+    sh:targetClass RDOnto-op:CameraView ;
+    sh:property [
+        sh:path RDOnto-op:horizontalFieldOfView ; sh:maxCount 1 ;
+        sh:or ( [ sh:datatype xsd:decimal ] [ sh:datatype xsd:integer ] ) ;
+        sh:minExclusive 0 ; sh:maxInclusive 360 ;
+        sh:message "A camera view has at most one horizontal field of view, in degrees, above 0 and at most 360 (SA-17)." ] ;
+    sh:property [
+        sh:path RDOnto-op:viewDirection ; sh:maxCount 1 ;
+        sh:or ( [ sh:datatype xsd:decimal ] [ sh:datatype xsd:integer ] ) ;
+        sh:minInclusive -180 ; sh:maxInclusive 180 ;
+        sh:message "A camera view has at most one view direction, in degrees clockwise from the vehicle's forward axis, from -180 to 180 (SA-17)." ] ;
+    sh:property [
+        sh:path RDOnto-op:viewDirection ; sh:minCount 1 ; sh:severity sh:Warning ;
+        sh:message "A camera view should state its view direction (viewDirection). Without it the view is taken as facing forward, so a rear camera counts towards the forward coverage of SA-17." ] .
+
+#################################################################
+# F. Operator state (SA-18 to SA-20)
+#################################################################
+
+RDOnto-op-sh:WorkloadEstimateShape a sh:NodeShape ;
+    sh:targetClass RDOnto-op:WorkloadEstimate ;
+    sh:property [
+        sh:path sosa:hasFeatureOfInterest ; sh:minCount 1 ; sh:maxCount 1 ; sh:class RDOnto-op:RemoteOperator ;
+        sh:message "A workload estimate is about exactly one RemoteOperator." ] ;
+    sh:property [
+        sh:path sosa:observedProperty ; sh:maxCount 1 ; sh:in ( RDOnto-op:Workload ) ;
+        sh:message "A workload estimate observes RDOnto-op:Workload and nothing else (SA-18)." ] ;
+    sh:property [
+        sh:path sosa:observedProperty ; sh:minCount 1 ; sh:severity sh:Warning ;
+        sh:message "A workload estimate should name what it observes: sosa:observedProperty RDOnto-op:Workload (SA-18)." ] ;
+    sh:property [
+        sh:path sosa:hasSimpleResult ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:or ( [ sh:datatype xsd:decimal ] [ sh:datatype xsd:integer ] ) ;
+        sh:message "A workload estimate has exactly one numeric value." ] ;
+    sh:property [
+        sh:path RDOnto-op:onScale ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ;
+        sh:message "A workload estimate names exactly one scale (a band applies only to estimates on the same scale)." ] ;
+    sh:property [
+        sh:path sosa:resultTime ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:datatype xsd:dateTime ; sh:pattern "(Z|[+-][0-9]{2}:[0-9]{2})$" ;
+        sh:message "A workload estimate has exactly one time, an xsd:dateTime with a timezone." ] .
+
+RDOnto-op-sh:ImpairmentObservationShape a sh:NodeShape ;
+    sh:targetClass RDOnto-op:ImpairmentObservation ;
+    sh:property [
+        sh:path sosa:hasFeatureOfInterest ; sh:minCount 1 ; sh:maxCount 1 ; sh:class RDOnto-op:RemoteOperator ;
+        sh:message "An impairment observation is about exactly one RemoteOperator (SA-19)." ] ;
+    sh:property [
+        sh:path sosa:observedProperty ; sh:minCount 1 ; sh:maxCount 1 ; sh:class RDOnto-op:Impairment ;
+        sh:message "An impairment observation observes exactly one Impairment: fatigue, distraction or motion sickness." ] ;
+    sh:property [
+        sh:path sosa:hasSimpleResult ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:boolean ;
+        sh:message "An impairment observation has exactly one result: whether signs were shown (xsd:boolean)." ] ;
+    sh:property [
+        sh:path sosa:resultTime ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:datatype xsd:dateTime ; sh:pattern "(Z|[+-][0-9]{2}:[0-9]{2})$" ;
+        sh:message "An impairment observation has exactly one time, an xsd:dateTime with a timezone." ] .
+
+RDOnto-op-sh:FallbackReadyPeriodShape a sh:NodeShape ;
+    sh:targetClass RDOnto-op:FallbackReadyPeriod ;
+    sh:property [
+        sh:path RDOnto-op:readyOperator ; sh:minCount 1 ; sh:maxCount 1 ; sh:class RDOnto-op:RemoteOperator ;
+        sh:message "A fallback-ready period belongs to exactly one RemoteOperator (SA-20)." ] ;
+    sh:property [
+        sh:path prov:startedAtTime ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:datatype xsd:dateTime ; sh:pattern "(Z|[+-][0-9]{2}:[0-9]{2})$" ;
+        sh:lessThanOrEquals prov:endedAtTime ;
+        sh:message "A fallback-ready period has exactly one start time, an xsd:dateTime with a timezone, not after its end time." ] ;
+    sh:property [
+        sh:path prov:endedAtTime ; sh:maxCount 1 ;
+        sh:datatype xsd:dateTime ; sh:pattern "(Z|[+-][0-9]{2}:[0-9]{2})$" ;
+        sh:message "A fallback-ready period has at most one end time, an xsd:dateTime with a timezone." ] .
+
+#################################################################
+# Configured limits (SA-09, SA-12, SA-14, SA-18, SA-22)
+#################################################################
+
+RDOnto-op-sh:ConfiguredLimitShape a sh:NodeShape ;
+    sh:targetClass RDOnto-op:ConfiguredLimit ;
+    sh:property [
+        sh:path dct:source ; sh:minCount 1 ; sh:severity sh:Warning ;
+        sh:message "A configured limit should name its source (dct:source); test values should say so in rdfs:comment." ] ;
+    sh:property [
+        sh:path qudt:numericValue ; sh:maxCount 1 ;
+        sh:or ( [ sh:datatype xsd:decimal ] [ sh:datatype xsd:integer ] ) ; sh:minInclusive 0 ;
+        sh:message "A configured limit has at most one value, a non-negative number." ] ;
+    sh:property [
+        sh:path qudt:unit ; sh:maxCount 1 ;
+        sh:message "A configured limit has at most one unit." ] ;
+    sh:property [
+        sh:path RDOnto-op:appliesToMode ; sh:class RDOnto-op:OperationMode ;
+        sh:message "A configured limit applies only to OperationModes." ] ;
+    sh:property [
+        sh:path RDOnto-op:appliesToFallbackReady ; sh:maxCount 1 ; sh:datatype xsd:boolean ;
+        sh:message "A configured limit states at most once whether it applies while fallback-ready (xsd:boolean)." ] ;
+    # Two limits clash when they have the same type, apply in the same place (a
+    # shared mode, both while fallback-ready, or both unscoped) and agree on
+    # everything else that scopes a limit. A limit for a narrower mode next to
+    # one for its broader mode is no clash: the narrower one applies. The
+    # RDOnto-link scoping terms are named here so that the rule is stated once
+    # for both modules; without RDOnto-link data they are simply absent.
+    sh:sparql [
+        sh:message "No two limits of the same type have the same scope (mode or fallback-ready state, setup, speed band, latency part, stream content, scale, and for an SA requirement its SA type, element type, request type, environment and driving task): otherwise the applicable limit is ambiguous." ;
+        sh:select """
+            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            SELECT DISTINCT $this ?value WHERE {
+              $this a ?type . ?type rdfs:subClassOf+ RDOnto-op:ConfiguredLimit .
+              ?value a ?type .
+              FILTER ($this != ?value)
+              FILTER (EXISTS { $this RDOnto-op:appliesToMode ?mode . ?value RDOnto-op:appliesToMode ?mode }
+                   || (EXISTS { $this RDOnto-op:appliesToFallbackReady true }
+                       && EXISTS { ?value RDOnto-op:appliesToFallbackReady true })
+                   || (NOT EXISTS { $this RDOnto-op:appliesToMode ?m1 }
+                       && NOT EXISTS { ?value RDOnto-op:appliesToMode ?m2 }
+                       && NOT EXISTS { $this RDOnto-op:appliesToFallbackReady true }
+                       && NOT EXISTS { ?value RDOnto-op:appliesToFallbackReady true }))
+              OPTIONAL { $this RDOnto-link:appliesToSetup ?setup1 }      OPTIONAL { ?value RDOnto-link:appliesToSetup ?setup2 }
+              OPTIONAL { $this RDOnto-link:upToSpeed ?speed1 }           OPTIONAL { ?value RDOnto-link:upToSpeed ?speed2 }
+              OPTIONAL { $this RDOnto-link:budgetPart ?part1 }           OPTIONAL { ?value RDOnto-link:budgetPart ?part2 }
+              OPTIONAL { $this RDOnto-link:forContent ?content1 }        OPTIONAL { ?value RDOnto-link:forContent ?content2 }
+              OPTIONAL { $this RDOnto-op:onScale ?scale1 }               OPTIONAL { ?value RDOnto-op:onScale ?scale2 }
+              OPTIONAL { $this RDOnto-op:forSAType ?sa1 }                OPTIONAL { ?value RDOnto-op:forSAType ?sa2 }
+              OPTIONAL { $this RDOnto-op:requiresElementType ?el1 }      OPTIONAL { ?value RDOnto-op:requiresElementType ?el2 }
+              OPTIONAL { $this RDOnto-op:forRequestType ?req1 }          OPTIONAL { ?value RDOnto-op:forRequestType ?req2 }
+              OPTIONAL { $this RDOnto-op:forEnvironment ?env1 }          OPTIONAL { ?value RDOnto-op:forEnvironment ?env2 }
+              OPTIONAL { $this RDOnto-op:forDrivingTask ?task1 }         OPTIONAL { ?value RDOnto-op:forDrivingTask ?task2 }
+              FILTER (COALESCE(?setup1, "") = COALESCE(?setup2, ""))
+              FILTER (COALESCE(?speed1, -1) = COALESCE(?speed2, -1))
+              FILTER (COALESCE(?part1, "") = COALESCE(?part2, ""))
+              FILTER (COALESCE(?content1, "") = COALESCE(?content2, ""))
+              FILTER (COALESCE(?scale1, "") = COALESCE(?scale2, ""))
+              FILTER (COALESCE(?sa1, "") = COALESCE(?sa2, ""))
+              FILTER (COALESCE(?el1, "") = COALESCE(?el2, ""))
+              FILTER (COALESCE(?req1, "") = COALESCE(?req2, ""))
+              FILTER (COALESCE(?env1, "") = COALESCE(?env2, ""))
+              FILTER (COALESCE(?task1, "") = COALESCE(?task2, ""))
+            }""" ] .
+
+RDOnto-op-sh:InformationAgeLimitShape a sh:NodeShape ;
+    sh:targetClass RDOnto-op:InformationAgeLimit ;
+    sh:property [ sh:path qudt:numericValue ; sh:minCount 1 ; sh:message "An information age limit has a value." ] ;
+    sh:property [ sh:path qudt:unit ; sh:minCount 1 ; sh:in ( unit:MilliSEC ) ;
+        sh:message "An information age limit is given in unit:MilliSEC (SA-09 and LK-04 read only that unit)." ] ;
+    sh:property [ sh:path RDOnto-op:appliesToMode ; sh:minCount 1 ;
+        sh:message "An information age limit applies to at least one mode." ] .
+
+RDOnto-op-sh:TimeOnTaskLimitShape a sh:NodeShape ;
+    sh:targetClass RDOnto-op:TimeOnTaskLimit ;
+    sh:property [ sh:path qudt:numericValue ; sh:minCount 1 ; sh:message "A time-on-task limit has a value." ] ;
+    sh:property [ sh:path qudt:unit ; sh:minCount 1 ; sh:in ( unit:MIN ) ;
+        sh:message "A time-on-task limit is given in unit:MIN (SA-12 reads only that unit)." ] ;
+    sh:property [ sh:path RDOnto-op:appliesToMode ; sh:minCount 1 ;
+        sh:message "A time-on-task limit applies to at least one mode." ] .
+
+RDOnto-op-sh:MinimumBreakLengthShape a sh:NodeShape ;
+    sh:targetClass RDOnto-op:MinimumBreakLength ;
+    sh:property [ sh:path qudt:numericValue ; sh:minCount 1 ; sh:message "A minimum break length has a value." ] ;
+    sh:property [ sh:path qudt:unit ; sh:minCount 1 ; sh:in ( unit:MIN ) ;
+        sh:message "A minimum break length is given in unit:MIN (SA-12 reads only that unit)." ] ;
+    sh:property [ sh:path RDOnto-op:appliesToMode ; sh:minCount 1 ;
+        sh:message "A minimum break length applies to at least one mode." ] .
+
+RDOnto-op-sh:LatencyChangeLimitShape a sh:NodeShape ;
+    sh:targetClass RDOnto-op:LatencyChangeLimit ;
+    sh:property [ sh:path qudt:numericValue ; sh:minCount 1 ; sh:message "A latency change limit has a value." ] ;
+    sh:property [ sh:path qudt:unit ; sh:minCount 1 ; sh:in ( unit:MilliSEC ) ;
+        sh:message "A latency change limit is given in unit:MilliSEC (SA-14 reads only that unit)." ] ;
+    sh:property [ sh:path RDOnto-op:appliesToMode ; sh:minCount 1 ;
+        sh:message "A latency change limit applies to at least one mode." ] .
+
+RDOnto-op-sh:WorkloadBandShape a sh:NodeShape ;
+    sh:targetClass RDOnto-op:WorkloadBand ;
+    sh:property [ sh:path RDOnto-op:onScale ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ;
+        sh:message "A workload band names exactly one scale." ] ;
+    sh:property [ sh:path RDOnto-op:lowerBound ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:or ( [ sh:datatype xsd:decimal ] [ sh:datatype xsd:integer ] ) ;
+        sh:lessThanOrEquals RDOnto-op:upperBound ;
+        sh:message "A workload band has exactly one numeric lower bound, not above its upper bound." ] ;
+    sh:property [ sh:path RDOnto-op:upperBound ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:or ( [ sh:datatype xsd:decimal ] [ sh:datatype xsd:integer ] ) ;
+        sh:message "A workload band has exactly one numeric upper bound." ] ;
+    sh:sparql [
+        sh:message "A workload band applies to at least one mode or to the fallback-ready state (SA-18)." ;
+        sh:select """
+            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            SELECT $this WHERE {
+              FILTER NOT EXISTS { $this RDOnto-op:appliesToMode ?m }
+              FILTER NOT EXISTS { $this RDOnto-op:appliesToFallbackReady true }
+            }""" ] .
+
+#################################################################
+# G. SA types and requirements (SA-21, SA-22)
+#################################################################
+
+RDOnto-op-sh:SARequirementShape a sh:NodeShape ;
+    sh:targetClass RDOnto-op:SARequirement ;
+    sh:property [ sh:path RDOnto-op:forSAType ; sh:minCount 1 ; sh:maxCount 1 ; sh:class RDOnto-op:SAType ;
+        sh:message "An SA requirement is for exactly one SA type." ] ;
+    sh:property [ sh:path RDOnto-op:requiresElementType ; sh:minCount 1 ; sh:maxCount 1 ; sh:class owl:Class ;
+        sh:message "An SA requirement names exactly one element type, a declared owl:Class (e.g. an A.U.T.O. class)." ] ;
+    sh:property [ sh:path RDOnto-op:forRequestType ; sh:maxCount 1 ; sh:class RDOnto-op:RequestType ;
+        sh:message "An SA requirement is limited to at most one RequestType." ] ;
+    sh:property [ sh:path RDOnto-op:forEnvironment ; sh:maxCount 1 ; sh:class RDOnto-op:OperatingEnvironment ;
+        sh:message "An SA requirement is limited to at most one OperatingEnvironment (SA-22)." ] ;
+    sh:property [ sh:path RDOnto-op:forDrivingTask ; sh:maxCount 1 ; sh:class RDOnto-op:DrivingTask ;
+        sh:message "An SA requirement is limited to at most one DrivingTask (SA-22)." ] ;
+    sh:property [ sh:path qudt:numericValue ; sh:minCount 1 ;
+        sh:message "An SA requirement has a recheck interval as its value." ] ;
+    sh:property [ sh:path qudt:unit ; sh:minCount 1 ; sh:in ( unit:SEC ) ;
+        sh:message "An SA requirement's recheck interval is given in unit:SEC (SA-13 and SA-23 read only that unit)." ] ;
+    sh:sparql [
+        sh:message "Only a requirement for decision-support SA can be limited to a request type." ;
+        sh:select """
+            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            SELECT $this ?value WHERE {
+              $this RDOnto-op:forRequestType ?value ; RDOnto-op:forSAType ?t .
+              FILTER (?t != RDOnto-op:DecisionSupportSA)
+            }""" ] .
+
+#################################################################
+# Further limits, impairments and the sensed time of a perception
+#################################################################
+
+RDOnto-op-sh:PerceptionConfidenceThresholdShape a sh:NodeShape ;
+    sh:targetClass RDOnto-op:PerceptionConfidenceThreshold ;
+    sh:property [ sh:path qudt:numericValue ; sh:minCount 1 ; sh:maxInclusive 1 ;
+        sh:message "A perception confidence threshold has a value between 0 and 1 (SA-23)." ] ;
+    sh:property [ sh:path qudt:unit ; sh:minCount 1 ; sh:in ( unit:UNITLESS ) ;
+        sh:message "A perception confidence threshold is given in unit:UNITLESS (SA-13 and SA-23 read only that unit)." ] ;
+    sh:property [ sh:path RDOnto-op:appliesToMode ; sh:minCount 1 ;
+        sh:message "A perception confidence threshold applies to at least one mode." ] .
+
+RDOnto-op-sh:ActuatorLatencyLimitShape a sh:NodeShape ;
+    sh:targetClass RDOnto-op:ActuatorLatencyLimit ;
+    sh:property [ sh:path qudt:numericValue ; sh:minCount 1 ; sh:message "An actuator latency limit has a value." ] ;
+    sh:property [ sh:path qudt:unit ; sh:minCount 1 ; sh:in ( unit:MilliSEC ) ;
+        sh:message "An actuator latency limit is given in unit:MilliSEC (SA-24 reads only that unit)." ] ;
+    sh:property [ sh:path RDOnto-op:appliesToMode ; sh:minCount 1 ;
+        sh:message "An actuator latency limit applies to at least one mode." ] .
+
+# Time on task counts remote driving only (SA-12), so its two limit types are
+# stated for remote driving modes.
+RDOnto-op-sh:TimeOnTaskScopeShape a sh:NodeShape ;
+    sh:targetClass RDOnto-op:TimeOnTaskLimit , RDOnto-op:MinimumBreakLength ;
+    sh:sparql [
+        sh:message "A time-on-task limit or minimum break length applies only to remote driving modes (isRemoteDrivingMode true): time on task counts remote driving only (SA-12)." ;
+        sh:select """
+            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            SELECT $this ?value WHERE {
+              $this RDOnto-op:appliesToMode ?value .
+              FILTER NOT EXISTS { ?value RDOnto-op:isRemoteDrivingMode true }
+            }""" ] .
+
+RDOnto-op-sh:ImpairmentShape a sh:NodeShape ;
+    sh:targetClass RDOnto-op:Impairment ;
+    sh:property [
+        sh:path RDOnto-op:rulesOutMode ; sh:class RDOnto-op:OperationMode ;
+        sh:message "An impairment rules out only OperationModes (SA-24)." ] .
+
+# A warning, so a shape of its own: severity belongs to a shape, not to one of
+# its constraints.
+RDOnto-op-sh:PerceptionSensedTimeShape a sh:NodeShape ;
+    sh:targetClass RDOnto-op:PerceptionAssertion ;
+    sh:severity sh:Warning ;
+    sh:sparql [
+        sh:message "A perception assertion should say when the information was sensed: a displayed scene (basedOnScene) or a sensed time (sensedAt). Without either, its perceivedAt time is used and no delay is assumed, so staleness may be missed (SA-11)." ;
+        sh:select """
+            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            SELECT $this WHERE {
+              $this a ?anyType .
+              FILTER NOT EXISTS { $this RDOnto-op:basedOnScene ?scene }
+              FILTER NOT EXISTS { $this RDOnto-op:sensedAt ?sensed }
+            }""" ] .

@@ -1,0 +1,968 @@
+@prefix RDOnto-link: <https://w3id.org/rdonto/link#> .
+@prefix RDOnto-op:   <https://w3id.org/rdonto/op#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct:    <http://purl.org/dc/terms/> .
+@prefix prov:   <http://www.w3.org/ns/prov#> .
+@prefix sosa:   <http://www.w3.org/ns/sosa/> .
+@prefix qudt:   <http://qudt.org/schema/qudt/> .
+@prefix unit:   <http://qudt.org/vocab/unit/> .
+
+# Remote Driving Ontology: communication link module (RDOnto-link).
+# Version 1.0 answers 12 competency questions, LK-01 to LK-12. Latency limits
+# are setup-independent: the primary criterion is the distance the vehicle
+# travels during the end-to-end latency (speed x latency), against a tolerance
+# per teleoperation setup [GA21b deviation; JI25 dimensionless delay]. Fixed
+# millisecond budgets are reference budgets of the setup they were measured in,
+# and take precedence for that setup. A setup is tied to RDOnto-op's operating
+# environment and driving task, and its information age limit may be no looser
+# than the mode's (checked in RDOnto-link-shapes.ttl). The module also covers
+# the data rate per camera view (LK-06), the link state shown to the operator
+# (LK-11), and adaptations that include handing control back to the ADS or to an
+# on-board driver (LK-10).
+#
+# Every class, property and individual of the module has a skos:definition. The
+# module imports RDOnto-op, whose terms it reuses, and declares the one PROV-O
+# term and the one unit it uses beyond those RDOnto-op declares (at the end of
+# the file).
+#
+# Design rules followed here (as in RDOnto-op):
+# - The link is modelled only as far as it matters for remote driving.
+#   Latency means end-to-end latency: sensor (glass-to-glass) plus actuator
+#   latency, without the operator's reaction time [GF20]. No network internals.
+# - W3C foundation terms (PROV-O, SOSA, QUDT) are used directly. RDOnto-op terms
+#   are reused, never redefined: RemoteOperator, RemotelyOperatedVehicle (with
+#   hasADS and supportsMode), OnBoardDriver (takenOverFrom, ableToTakeOver),
+#   Engagement, the operation modes (broaderMode, isRemoteDrivingMode),
+#   ConfiguredLimit, appliesToMode, captureDelay, InformationChannel, CameraView,
+#   availableChannel, OperatingEnvironment, DrivingTask and InformationAgeLimit
+#   (the vehicle-to-station budget).
+# - "Current" and "latest" values are the latest observation the store holds; how
+#   long an observation stays valid is decided by the stream layer (as in
+#   RDOnto-op).
+# - OWL 2 RL only. Times are xsd:dateTime literals; latencies are
+#   xsd:dayTimeDuration literals, so the stream layer can compare them.
+# - Budgets, timeouts and lead times are configuration individuals with a source.
+# - Terms marked "interface" belong to other modules (vehicle state,
+#   RDOnto-todd).
+
+<https://w3id.org/rdonto/link>
+    a owl:Ontology ;
+    dct:creator "Sanat Mharolkar" ;
+    dct:license <http://www.apache.org/licenses/LICENSE-2.0> ;
+    rdfs:label "Remote Driving Ontology: communication link module"@en ;
+    dct:description "Represents the connection between a remotely driven vehicle and the remote station as far as it matters for remote driving: end-to-end latency and its parts, budgets per mode and speed, stability, connection loss, predictions, admissible speed and adaptations."@en ;
+    dct:created "2026-11-05"^^xsd:date ;
+    dct:modified "2026-11-14"^^xsd:date ;
+    owl:versionInfo "1.0" ;
+    owl:imports <https://w3id.org/rdonto/op> .
+
+#################################################################
+# A. Session and streams (LK-01, LK-02)
+#################################################################
+
+RDOnto-link:RemoteStation a owl:Class ;
+    rdfs:label "remote station"@en ;
+    skos:definition "The workstation from which a remote operator monitors, assists or drives one vehicle at a time."@en ;
+    rdfs:comment "LK-01, LK-06. A session has one station; moving to another station starts a new session. A station shows one vehicle at a time, so it has at most one open session (RDOnto-link-shapes.ttl): a desk at which an operator handles two vehicles at once, e.g. monitors one and assists another, is two stations. The station's channels (hasChannel) are therefore the channels for the vehicle of its open session."@en .
+
+RDOnto-link:hasChannel a owl:ObjectProperty ;
+    rdfs:label "has channel"@en ;
+    rdfs:domain RDOnto-link:RemoteStation ;
+    rdfs:range RDOnto-op:InformationChannel ;
+    skos:definition "An information channel the station is equipped with, whether or not it is available right now."@en ;
+    rdfs:comment "LK-06. Static: the station's camera views and other channels. RDOnto-op:availableChannel says which of them an engagement currently has; a view that was switched off is still a channel of the station, so the views a mode needs (viewNeededInMode) can be found when they are not available. Because a station shows one vehicle at a time (RemoteStation), its channels belong to the one open session."@en .
+
+RDOnto-link:TeleoperationSession a owl:Class ;
+    rdfs:subClassOf prov:Activity ;
+    rdfs:label "teleoperation session"@en ;
+    skos:definition "The period in which a remote station and a vehicle hold a connection, or try to restore it, with one remote operator at the station, from prov:startedAtTime to prov:endedAtTime."@en ;
+    rdfs:comment "LK-01. A session carries one or more RDOnto-op engagements in sequence, all by its one operator: a mode change starts a new engagement, while the session persists. An operator handover at the same station ends the session, even if the network connection stays up; the next operator's session follows it (RDOnto-link:followsSession). A move to another station also starts a new session, since sessionStation is functional; it can follow the earlier one in the same way. Link observations belong to the session. Connection loss does not end a session by itself: the session stays open while the station and the vehicle try to reconnect, and data arriving again continues it. It ends when prov:endedAtTime is set, by the station or the vehicle giving up or by a handover; a connection set up after that is a new session, which follows the ended one (RDOnto-link:followsSession)."@en .
+
+RDOnto-link:sessionStation a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "session station"@en ;
+    skos:definition "The remote station that a teleoperation session connects to the vehicle."@en ;
+    rdfs:comment "LK-01. A session has exactly one; a move to another station starts a new session. A station has at most one open session at a time (RDOnto-link-shapes.ttl)."@en ;
+    rdfs:domain RDOnto-link:TeleoperationSession ;
+    rdfs:range RDOnto-link:RemoteStation .
+
+RDOnto-link:sessionVehicle a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "session vehicle"@en ;
+    skos:definition "The vehicle that a teleoperation session connects to the remote station."@en ;
+    rdfs:comment "LK-01. A session has exactly one, and a vehicle has at most one open session at a time (RDOnto-link-shapes.ttl)."@en ;
+    rdfs:domain RDOnto-link:TeleoperationSession ;
+    rdfs:range RDOnto-op:RemotelyOperatedVehicle .
+
+RDOnto-link:carriesEngagement a owl:ObjectProperty ;
+    rdfs:label "carries engagement"@en ;
+    skos:definition "An engagement that takes place over the connection of a teleoperation session."@en ;
+    rdfs:domain RDOnto-link:TeleoperationSession ;
+    rdfs:range RDOnto-op:Engagement ;
+    rdfs:comment "LK-01. The engagements, in sequence, that the session has carried. The current one has no prov:endedAtTime. Its operation mode selects the latency budget (LK-04). Every carried engagement's RDOnto-op:engagedOperator must be the session's sessionOperator; this is a closed-world rule checked by SHACL (RDOnto-link-shapes.ttl, SessionShape), not an OWL axiom."@en .
+
+RDOnto-link:sessionOperator a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:subPropertyOf prov:wasAssociatedWith ;
+    rdfs:label "session operator"@en ;
+    skos:definition "The one remote operator who is at the station for the whole of a teleoperation session."@en ;
+    rdfs:domain RDOnto-link:TeleoperationSession ;
+    rdfs:range RDOnto-op:RemoteOperator ;
+    rdfs:comment "LK-01. A different operator means a new session (operator handover). Not derived from the engagements by a property chain: with a functional property, two operators would be merged by owl:sameAs instead of being reported."@en .
+
+RDOnto-link:followsSession a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:subPropertyOf prov:wasInformedBy ;
+    rdfs:label "follows session"@en ;
+    skos:definition "The earlier, ended session with the same vehicle that a session replaced, at the same or another station, e.g. at an operator handover."@en ;
+    rdfs:domain RDOnto-link:TeleoperationSession ;
+    rdfs:range RDOnto-link:TeleoperationSession ;
+    rdfs:comment "LK-01. Lets the link history be followed across a handover, also to an operator at another station. Baseline statistics stay per session, so the new session has its own (RDOnto-link-shapes.ttl checks the vehicle and the times)."@en .
+
+RDOnto-link:Stream a owl:Class ;
+    rdfs:label "stream"@en ;
+    skos:definition "One flow of data within a session, in one direction, with one kind of content."@en ;
+    rdfs:comment "LK-02. Quality is a property of a stream in one direction, not of the link as a whole [GA23]."@en ;
+    dct:source "GA23" .
+
+RDOnto-link:inSession a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "in session"@en ;
+    skos:definition "The teleoperation session a stream belongs to."@en ;
+    rdfs:comment "LK-02. The streams of a session are the answer to which streams it carries."@en ;
+    rdfs:domain RDOnto-link:Stream ;
+    rdfs:range RDOnto-link:TeleoperationSession .
+
+RDOnto-link:streamDirection a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "stream direction"@en ;
+    skos:definition "The direction in which a stream flows: from the vehicle to the station, or from the station to the vehicle."@en ;
+    rdfs:comment "LK-02. Agrees with the direction of the stream's content, where the content states one (contentDirection; RDOnto-link-shapes.ttl)."@en ;
+    rdfs:domain RDOnto-link:Stream ;
+    rdfs:range RDOnto-link:Direction .
+
+RDOnto-link:hasStreamContent a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "has stream content"@en ;
+    skos:definition "The kind of data a stream carries."@en ;
+    rdfs:comment "LK-02, LK-07. Decides whether the current mode depends on the stream (neededInMode) and which connection timeout applies to it."@en ;
+    rdfs:domain RDOnto-link:Stream ;
+    rdfs:range RDOnto-link:StreamContent .
+
+RDOnto-link:Direction a owl:Class ;
+    rdfs:label "direction"@en ;
+    skos:definition "The direction in which a stream flows, named by its endpoints: vehicle to station or station to vehicle."@en ;
+    rdfs:comment "LK-02. Named by endpoint, because sources disagree on what uplink and downlink mean."@en .
+RDOnto-link:VehicleToStation a RDOnto-link:Direction ; rdfs:label "vehicle to station"@en ;
+    skos:definition "From the vehicle to the remote station: the direction of what the vehicle senses and reports."@en ;
+    rdfs:comment "LK-02. Network sources call this direction uplink [GA23, FE26], while MA25 calls it downlink, so neither word is used."@en ;
+    dct:source "GA23" , "FE26" , "MA25" .
+RDOnto-link:StationToVehicle a RDOnto-link:Direction ; rdfs:label "station to vehicle"@en ;
+    skos:definition "From the remote station to the vehicle: the direction of what the operator commands or provides."@en ;
+    rdfs:comment "LK-02. Network sources call this direction downlink [GA23, FE26], while MA25 calls it uplink, so neither word is used."@en ;
+    dct:source "GA23" , "FE26" , "MA25" .
+
+RDOnto-link:StreamContent a owl:Class ;
+    rdfs:label "stream content"@en ;
+    skos:definition "A kind of data that a stream carries between the vehicle and the remote station."@en ;
+    rdfs:comment "LK-02, LK-07. The kind of data a stream carries; each mode depends on certain kinds (neededInMode), and each kind has its own connection timeout."@en ;
+    dct:source "GA23" , "NE19b" .
+RDOnto-link:VideoFeed a RDOnto-link:StreamContent ; rdfs:label "video feed"@en ;
+    skos:definition "Camera images from the vehicle, sent to the station to be displayed to the operator."@en ;
+    rdfs:comment "LK-02, LK-06. NE19b: at least 3 Mbit/s from the vehicle for video."@en ;
+    dct:source "GA23" , "NE19b" .
+RDOnto-link:SensorFeed a RDOnto-link:StreamContent ; rdfs:label "sensor feed"@en ;
+    skos:definition "Data from the vehicle's other sensors or from its perception, such as lidar points or detected objects, sent to the station."@en ;
+    rdfs:comment "LK-02. GA23 lists sensor data next to video in the direction from the vehicle."@en ;
+    dct:source "GA23" .
+RDOnto-link:ControlCommands a RDOnto-link:StreamContent ; rdfs:label "control commands"@en ;
+    skos:definition "The operator's driving commands (steering, throttle, brake), sent to the vehicle to be executed directly."@en ;
+    rdfs:comment "LK-02. Direct Control ToD [GA21b]. NE19b: commands every 10 ms at about 0.25 Mbit/s."@en ;
+    dct:source "GA21b" , "GA23" , "NE19b" .
+RDOnto-link:Trajectory a RDOnto-link:StreamContent ; rdfs:label "trajectory"@en ;
+    skos:definition "A route, path or trajectory that the operator provides or authorizes, sent to the vehicle for its automation to follow."@en ;
+    rdfs:comment "LK-02. Indirect Control ToD: the vehicle performs the DDT 'following the route and/or pathway information provided by the ToD operator' [GA21b]."@en ;
+    dct:source "GA21b" .
+RDOnto-link:ProposedTrajectory a RDOnto-link:StreamContent ; rdfs:label "proposed trajectory"@en ;
+    skos:definition "A route, path or trajectory that the vehicle's automation proposes, sent to the station for the operator to approve, reject or change."@en ;
+    rdfs:comment "LK-02. The direction opposite to Trajectory. BR26: in remote assistance the ADS can give 'maneuver options to the technical supervisor', and 'the main reason for providing these trajectories to the operator is to enable supervision and stopping of the vehicle'. Kept apart from Trajectory so that a stream's content fixes its direction (contentDirection)."@en ;
+    dct:source "BR26" .
+
+RDOnto-link:contentDirection a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "content direction"@en ;
+    rdfs:domain RDOnto-link:StreamContent ;
+    rdfs:range RDOnto-link:Direction ;
+    skos:definition "The direction in which streams with this content flow."@en ;
+    rdfs:comment "LK-02. What the vehicle produces flows to the station, what the operator produces flows to the vehicle. A stream's streamDirection must agree with the direction of its content (RDOnto-link-shapes.ttl, StreamShape); a content without a value may flow either way."@en .
+
+RDOnto-link:isContinuous a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "is continuous"@en ;
+    rdfs:domain RDOnto-link:StreamContent ;
+    rdfs:range xsd:boolean ;
+    skos:definition "Whether streams with this content carry data all the time while the session is up, so that silence on them means the connection is lost."@en ;
+    rdfs:comment "LK-07. True for the video feed, the sensor feed and control commands, which are sent at a fixed rate; false for trajectory input and proposed trajectories, which are sent only when there is one. Only continuous content is tested for silence, so only it has a connection timeout (RDOnto-link-shapes.ttl)."@en .
+
+RDOnto-link:VideoFeed RDOnto-link:isContinuous true .
+RDOnto-link:SensorFeed RDOnto-link:isContinuous true .
+RDOnto-link:ControlCommands RDOnto-link:isContinuous true .
+RDOnto-link:Trajectory RDOnto-link:isContinuous false .
+RDOnto-link:ProposedTrajectory RDOnto-link:isContinuous false .
+
+RDOnto-link:VideoFeed RDOnto-link:contentDirection RDOnto-link:VehicleToStation .
+RDOnto-link:SensorFeed RDOnto-link:contentDirection RDOnto-link:VehicleToStation .
+RDOnto-link:ControlCommands RDOnto-link:contentDirection RDOnto-link:StationToVehicle .
+RDOnto-link:Trajectory RDOnto-link:contentDirection RDOnto-link:StationToVehicle .
+RDOnto-link:ProposedTrajectory RDOnto-link:contentDirection RDOnto-link:VehicleToStation .
+
+RDOnto-link:neededInMode a owl:ObjectProperty ;
+    rdfs:label "needed in mode"@en ;
+    skos:definition "An operation mode that cannot be performed without streams of this content."@en ;
+    rdfs:domain RDOnto-link:StreamContent ;
+    rdfs:range RDOnto-op:OperationMode ;
+    rdfs:comment "Static knowledge: which content an operation mode depends on (LK-02). A need stated for RDOnto-op:RemoteDriving holds for both of its narrower modes (RDOnto-op:broaderMode). Direct Control ToD sends manoeuvre commands to the vehicle; Indirect Control ToD sends route or pathway information [GA21b, GA23]."@en ;
+    dct:source "GA21b" , "GA23" .
+
+# LK-02, static: what each mode depends on. Remote driving (Direct Control
+# ToD) needs the video from the vehicle and the control commands to it; remote
+# assistance (Indirect Control ToD) needs the video and the path or trajectory
+# input [GA21b, GA23]. Stated for the broad remote driving mode, so it holds for
+# both narrower modes. The sensor feed is not asserted as needed: the sources
+# treat it as accompanying the video. Remote monitoring needs the video feed:
+# monitoring is watching the vehicle, which needs nothing sent to it (no source
+# states it). Remote assistance
+# also needs the proposed trajectory, the manoeuvre options the ADS gives the
+# operator for supervision [BR26].
+RDOnto-link:VideoFeed RDOnto-link:neededInMode RDOnto-op:RemoteDriving , RDOnto-op:RemoteAssistance , RDOnto-op:RemoteMonitoring .
+RDOnto-link:ControlCommands RDOnto-link:neededInMode RDOnto-op:RemoteDriving .
+RDOnto-link:Trajectory RDOnto-link:neededInMode RDOnto-op:RemoteAssistance .
+RDOnto-link:ProposedTrajectory RDOnto-link:neededInMode RDOnto-op:RemoteAssistance .
+
+#################################################################
+# B. Latency (LK-03, LK-05, LK-12)
+#################################################################
+
+RDOnto-link:LatencyPart a owl:Class ;
+    rdfs:subClassOf sosa:ObservableProperty ;
+    rdfs:label "latency part"@en ;
+    skos:definition "A part of the end-to-end latency of a session that can be observed."@en ;
+    rdfs:comment "LK-03. Every latency value says which part it covers, so that LK-03, LK-04 and LK-12 do not mix them."@en ;
+    dct:source "GF20" .
+
+RDOnto-link:SensorLatency a RDOnto-link:LatencyPart ;
+    rdfs:label "sensor latency"@en ;
+    skos:definition "From an event in front of the vehicle's sensors to its display at the station (glass-to-glass). The same quantity as RDOnto-op information age."@en ;
+    rdfs:comment "LK-03, LK-12."@en ;
+    dct:source "GF20" .
+RDOnto-link:ActuatorLatency a RDOnto-link:LatencyPart ;
+    rdfs:label "actuator latency"@en ;
+    skos:definition "From the operator's command at the station to the actuator response in the vehicle."@en ;
+    rdfs:comment "LK-03, SA-10, SA-24."@en ;
+    dct:source "GF20" .
+RDOnto-link:EndToEndLatency a RDOnto-link:LatencyPart ;
+    rdfs:label "end-to-end latency"@en ;
+    skos:definition "Sensor latency plus actuator latency, without the operator's reaction time."@en ;
+    rdfs:comment "LK-03, LK-04, LK-09."@en ;
+    dct:source "GF20" .
+
+RDOnto-link:LatencyObservation a owl:Class ;
+    rdfs:subClassOf sosa:Observation ;
+    rdfs:label "latency observation"@en ;
+    skos:definition "A measurement of one latency part for a session: RDOnto-link:observedSession the session, sosa:observedProperty the latency part, sosa:hasSimpleResult the value as xsd:dayTimeDuration, sosa:resultTime when measured."@en ;
+    rdfs:comment "LK-03. If no end-to-end value is measured directly, it is the sum of the latest sensor and actuator values."@en .
+
+RDOnto-link:observedSession a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "observed session"@en ;
+    rdfs:domain sosa:Observation ;
+    rdfs:range RDOnto-link:TeleoperationSession ;
+    skos:definition "The teleoperation session whose latency a latency observation, or a mean or standard deviation of a latency part, is about."@en ;
+    rdfs:comment "LK-03, LK-05. Used in place of sosa:hasFeatureOfInterest, and without a SOSA or PROV superproperty: the SOSA-PROV alignment makes every feature of interest a prov:Entity, while a session is a prov:Activity, and PROV-O declares the two disjoint."@en .
+
+RDOnto-link:LatencyStatistic a owl:Class ;
+    rdfs:subClassOf sosa:Observation ;
+    rdfs:label "latency statistic"@en ;
+    skos:definition "A statistic of a latency part or of deadline misses over a time window, computed in the stream layer."@en ;
+    rdfs:comment "LK-05. RDOnto-link:observedSession is the session of a mean or standard deviation, sosa:hasFeatureOfInterest the stream of a deadline miss share; sosa:observedProperty the latency part a mean or standard deviation covers, which is required; RDOnto-link:statistic the kind; RDOnto-link:againstDeadline the deadline a deadline miss share was counted against; sosa:hasSimpleResult the value; windowStart and windowEnd the window. Packet loss appears here only as added delay or missed deadlines [JI25, FE26]."@en ;
+    dct:source "JI25" , "FE26" , "NE19b" .
+
+RDOnto-link:statistic a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "statistic"@en ;
+    skos:definition "The kind of statistic that a latency statistic gives: a mean, a standard deviation or a deadline miss share."@en ;
+    rdfs:comment "LK-05. The kind decides what the value is: a duration for a mean or standard deviation, a share between 0 and 1 for deadline misses (RDOnto-link-shapes.ttl)."@en ;
+    rdfs:domain RDOnto-link:LatencyStatistic ;
+    rdfs:range RDOnto-link:StatisticKind .
+
+RDOnto-link:StatisticKind a owl:Class ; rdfs:label "statistic kind"@en ;
+    skos:definition "A kind of statistic computed over a time window of a session's latency or of a stream's deliveries."@en ;
+    rdfs:comment "LK-05. The kind of window statistic a LatencyStatistic gives."@en .
+RDOnto-link:Mean a RDOnto-link:StatisticKind ; rdfs:label "mean"@en ;
+    skos:definition "The arithmetic mean of the values of a latency part over the window."@en ;
+    rdfs:comment "LK-05. A duration; says which latency part it covers (sosa:observedProperty)."@en .
+RDOnto-link:StandardDeviation a RDOnto-link:StatisticKind ; rdfs:label "standard deviation"@en ;
+    skos:definition "The standard deviation of the values of a latency part over the window, as a measure of how much the latency varies."@en ;
+    dct:source "NE19b" ;
+    rdfs:comment "LK-05, LK-10. Latency variation; NE19b uses jitter as the variation of latency."@en .
+RDOnto-link:DeadlineMissShare a RDOnto-link:StatisticKind ; rdfs:label "deadline miss share"@en ;
+    skos:definition "The share of the frames or commands of a stream, sent within the window, that arrived after their delivery deadline."@en ;
+    dct:source "FE26" ;
+    rdfs:comment "LK-05. A decimal between 0 and 1 [FE26]."@en .
+
+RDOnto-link:windowStart a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "window start"@en ;
+    skos:definition "The start of the time window that a latency statistic was computed over."@en ;
+    rdfs:domain RDOnto-link:LatencyStatistic ;
+    rdfs:range xsd:dateTime ;
+    rdfs:comment "LK-05."@en .
+RDOnto-link:windowEnd a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "window end"@en ;
+    skos:definition "The end of the time window that a latency statistic was computed over."@en ;
+    rdfs:domain RDOnto-link:LatencyStatistic ;
+    rdfs:range xsd:dateTime ;
+    rdfs:comment "LK-05. The latest statistic is the one with the latest window end. Window start and end are xsd:dateTime literals, so the stream layer can compare them."@en .
+
+RDOnto-link:DeliveryDeadline a owl:Class ;
+    rdfs:subClassOf RDOnto-op:ConfiguredLimit ;
+    rdfs:label "delivery deadline"@en ;
+    skos:definition "How long after it was produced a frame or command of a given content may be delivered and still count as on time. Value as qudt:numericValue with qudt:unit unit:MilliSEC."@en ;
+    rdfs:comment "LK-05. The deadline behind a deadline miss share. Delivered means: for a video or sensor feed, displayed at the station, counted from capture; for control commands or trajectory input, arrived at the vehicle, counted from the operator's input. RDOnto-link:forContent names the content. FE26 measured per-frame delay against a 100 ms deadline. Configuration linked to its source, like every limit."@en ;
+    dct:source "FE26" .
+
+RDOnto-link:againstDeadline a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "against deadline"@en ;
+    skos:definition "The delivery deadline against which a deadline miss share was counted."@en ;
+    rdfs:domain RDOnto-link:LatencyStatistic ;
+    rdfs:range RDOnto-link:DeliveryDeadline ;
+    rdfs:comment "LK-05. The deadline a deadline miss share was counted against, so that the answer can name the deadline and its source."@en .
+
+RDOnto-link:baselineStatistic a owl:ObjectProperty ;
+    rdfs:label "baseline statistic"@en ;
+    rdfs:domain RDOnto-link:TeleoperationSession ;
+    rdfs:range RDOnto-link:LatencyStatistic ;
+    skos:definition "A statistic over the first window of the session, against which later statistics of the same kind and latency part are compared."@en ;
+    rdfs:comment "LK-05: 'has the latency changed since the session began' is the difference between the latest statistic and the session's baseline statistic of the same kind and part. At most one baseline per kind and part (RDOnto-link-shapes.ttl). Set by the stream layer."@en .
+
+RDOnto-link:LatencyVariationLimit a owl:Class ;
+    rdfs:subClassOf RDOnto-op:ConfiguredLimit ;
+    rdfs:label "latency variation limit"@en ;
+    skos:definition "The largest standard deviation of a latency part over a window that is acceptable in an operation mode. Value as qudt:numericValue with qudt:unit unit:MilliSEC."@en ;
+    rdfs:comment "LK-05, LK-10. The latency of a session is unstable (RDOnto-link:LatencyUnstable) when its latest standard deviation statistic of a latency part exceeds the limit for that part (budgetPart) in the mode of the session's open engagement, or in its broader mode. May be scoped to a setup (appliesToSetup); a limit of the session's setup is used before one without a setup. Deadline miss shares are recorded (LK-05) and do not decide this. A configuration parameter: NE19b states a jitter requirement for one setup, and no general limit is published."@en ;
+    dct:source "NE19b" .
+
+RDOnto-link:LatencyAgreementTolerance a owl:Class ;
+    rdfs:subClassOf RDOnto-op:ConfiguredLimit ;
+    rdfs:label "latency agreement tolerance"@en ;
+    skos:definition "The largest difference between the sensor latency measured for the link and the information age RDOnto-op computes for a displayed scene at which the two still count as agreeing. Value as qudt:numericValue with qudt:unit unit:MilliSEC."@en ;
+    rdfs:comment "LK-12. Each displayed scene is compared with the latest RDOnto-link:SensorLatency observation, at or before the scene's display time, of the session that carries the engagement the scene was shown in. A larger difference points to a wrong capture delay or unsynchronized clocks. May be scoped to a setup (appliesToSetup); a tolerance without a setup holds for every setup that has none of its own. A configuration parameter; no source gives a value."@en .
+
+#################################################################
+# C. Budgets and speed (LK-04, LK-09)
+#################################################################
+
+RDOnto-link:LatencyBudget a owl:Class ;
+    rdfs:subClassOf RDOnto-op:ConfiguredLimit ;
+    rdfs:label "latency budget"@en ;
+    skos:definition "The largest acceptable value of a latency part in an operation mode, valid up to a vehicle speed. Value as qudt:numericValue with qudt:unit unit:MilliSEC."@en ;
+    rdfs:comment "LK-04 and LK-09. A reference budget: valid only for the setup it was measured or specified in (RDOnto-link:appliesToSetup), because published budgets are performance characteristics of particular setups [GA21b] and there is no standardization for ToD [SC22]. Which limits apply: take the limits of the session's setup for the mode of the open engagement, or failing that for its broader mode. Per latency part, the applicable budget is the one with the lowest upToSpeed at or above the current speed; a budget without upToSpeed covers every speed. (1) Each part with an applicable budget must be within it, and the sensor part within the setup's information age limit. (2) The budgets replace the travel tolerance only if they bound the end-to-end latency: an end-to-end budget, or an actuator budget together with an information age limit scoped to the setup. Otherwise the travel tolerance is checked as well. (3) If the setup has budgets of a part for the mode but the current speed is above every upToSpeed of them, the setup was not validated at that speed: the latency does not count as acceptable, and the admissible speed (LK-09) is at most the highest upToSpeed whose budget the latency meets. (4) A setup without any budget for the mode is judged by the travel tolerance alone. The vehicle-to-station part is RDOnto-op:InformationAgeLimit, scoped the same way, and is stated only in that form: a LatencyBudget covers the actuator latency or the end-to-end latency, never the sensor latency, so the check that a setup's limit is no looser than the mode's sees every vehicle-to-station budget."@en ;
+    dct:source "GA21b" , "SC22" .
+
+RDOnto-link:budgetPart a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "budget part"@en ;
+    skos:definition "The latency part that a latency budget or a latency variation limit is for."@en ;
+    rdfs:domain RDOnto-op:ConfiguredLimit ;
+    rdfs:range RDOnto-link:LatencyPart ;
+    rdfs:comment "LK-04, LK-05, LK-10. For a latency budget: RDOnto-link:ActuatorLatency or RDOnto-link:EndToEndLatency, not RDOnto-link:SensorLatency, whose budget is a RDOnto-op:InformationAgeLimit scoped to the setup (RDOnto-link-shapes.ttl, LatencyBudgetShape). For a latency variation limit: any of the three parts. Its domain is the general limit class, because two limit types use it."@en .
+
+RDOnto-link:upToSpeed a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "up to speed"@en ;
+    skos:definition "The highest vehicle speed, in km/h, at which a latency budget or a required lead time applies."@en ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "LK-04, LK-08, LK-09. A missing value means the budget or lead time covers every speed. Used on LatencyBudget and RequiredLeadTime, so no domain is declared (a domain would need a union, which OWL 2 RL does not allow)."@en .
+
+RDOnto-link:VehicleSpeed a sosa:ObservableProperty , owl:NamedIndividual ;
+    rdfs:label "vehicle speed"@en ;
+    skos:definition "The speed at which a vehicle is currently moving, in km/h."@en ;
+    rdfs:comment "LK-04, LK-08, LK-09, LK-10. Interface (vehicle state, VSS Vehicle.Speed). Observed with sosa:hasFeatureOfInterest the vehicle and sosa:hasSimpleResult in km/h."@en .
+
+#################################################################
+# D. Connection loss (LK-07)
+#################################################################
+
+RDOnto-link:lastReceivedAt a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "last received at"@en ;
+    skos:definition "The time at which data last arrived on a stream."@en ;
+    rdfs:domain RDOnto-link:Stream ;
+    rdfs:range xsd:dateTime ;
+    rdfs:comment "LK-07. Kept current by the stream layer."@en .
+
+RDOnto-link:ConnectionTimeout a owl:Class ;
+    rdfs:subClassOf RDOnto-op:ConfiguredLimit ;
+    rdfs:label "connection timeout"@en ;
+    skos:definition "How long a stream with a given content may stay without data before the connection counts as lost. Value as qudt:numericValue with qudt:unit unit:MilliSEC."@en ;
+    rdfs:comment "LK-07. Connection loss is an absence of data, so it is a closed-world check against this timeout in the stream layer. Rule: only content that is sent continuously (isContinuous true) is tested and has a timeout. A stream is silent when the time since its lastReceivedAt, or since the session's prov:startedAtTime if it has never received data, exceeds the timeout for its content; a content without a timeout is never silent. The connection of a session counts as lost (RDOnto-link:ConnectionLost) when at least one stream is silent whose content the mode of the session's open engagement needs (neededInMode, for the mode or a broader mode); if the session has no open engagement but has carried one, when any of its streams is silent. A session that has not yet carried an engagement is not tested: before the first engagement a stream may be silent by design, e.g. no control commands are sent. It is lost since the earliest last data of those silent streams. The loss is detected later, when the timeout of the first of them runs out."@en .
+
+RDOnto-link:forContent a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "for content"@en ;
+    skos:definition "The stream content that a connection timeout or a delivery deadline is for."@en ;
+    rdfs:domain RDOnto-op:ConfiguredLimit ;
+    rdfs:range RDOnto-link:StreamContent ;
+    rdfs:comment "LK-05, LK-07. Its domain is the general limit class, because two limit types use it."@en .
+
+RDOnto-link:MinimalRiskManoeuvre a owl:Class ;
+    rdfs:subClassOf prov:Activity ;
+    rdfs:label "minimal risk manoeuvre"@en ;
+    skos:definition "A manoeuvre that brings the vehicle to a minimal risk condition, performed by the vehicle on its own, e.g. after connection loss, or started by the operator."@en ;
+    rdfs:comment "LK-07. Interface (RDOnto-todd). The stop of the adaptation RDOnto-link:SafeStop is such a manoeuvre: with the connection lost the vehicle performs it on its own; while the link still works the operator can start it (a remote intervention, see RDOnto-op:EventBasedRemoteDriving). BR26 argues that plain braking or a Level 2 function is not an acceptable fallback, and proposes a dedicated system designed solely to reach the minimal risk condition."@en ;
+    dct:source "BR26" , "KO21" .
+
+RDOnto-link:performedBy a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "performed by"@en ;
+    skos:definition "The vehicle that performs a minimal risk manoeuvre."@en ;
+    rdfs:comment "LK-07. Where the manoeuvre names a session (duringSession), this is that session's vehicle (RDOnto-link-shapes.ttl)."@en ;
+    rdfs:domain RDOnto-link:MinimalRiskManoeuvre ;
+    rdfs:range RDOnto-op:RemotelyOperatedVehicle .
+
+RDOnto-link:MinimalRiskManoeuvreKind a owl:Class ;
+    rdfs:label "minimal risk manoeuvre kind"@en ;
+    skos:definition "A kind of minimal risk manoeuvre a vehicle can perform, e.g. stopping in its lane or pulling over."@en ;
+    rdfs:comment "LK-07: the answer to 'which minimal risk manoeuvre has V started'. Interface (RDOnto-todd): the kinds a vehicle is capable of, and which one follows a connection loss, are decided there [BR26], so this module asserts no individuals."@en ;
+    dct:source "BR26" .
+
+RDOnto-link:manoeuvreKind a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "manoeuvre kind"@en ;
+    skos:definition "The kind of minimal risk manoeuvre that a vehicle performs."@en ;
+    rdfs:domain RDOnto-link:MinimalRiskManoeuvre ;
+    rdfs:range RDOnto-link:MinimalRiskManoeuvreKind ;
+    rdfs:comment "LK-07. The kind of a minimal risk manoeuvre."@en .
+
+RDOnto-link:duringSession a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "during session"@en ;
+    skos:definition "The teleoperation session that was open for the vehicle when a minimal risk manoeuvre started."@en ;
+    rdfs:domain RDOnto-link:MinimalRiskManoeuvre ;
+    rdfs:range RDOnto-link:TeleoperationSession ;
+    rdfs:comment "LK-07. A time relation, whatever the cause of the manoeuvre: the cause, where it is a link degradation, is given by triggeredBy. The manoeuvre starts within the session, and the session's vehicle is the one that performs it (RDOnto-link-shapes.ttl)."@en .
+
+RDOnto-link:triggeredBy a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "triggered by"@en ;
+    skos:definition "The kind of link degradation that triggered a minimal risk manoeuvre."@en ;
+    rdfs:domain RDOnto-link:MinimalRiskManoeuvre ;
+    rdfs:range RDOnto-link:Degradation ;
+    rdfs:comment "LK-07. The kind of link problem that triggered the manoeuvre, e.g. RDOnto-link:ConnectionLost. Absent for a manoeuvre with another cause."@en .
+
+#################################################################
+# E. Prediction (LK-08)
+#################################################################
+
+RDOnto-link:LinkPrediction a owl:Class ;
+    rdfs:subClassOf prov:Entity ;
+    rdfs:label "link prediction"@en ;
+    skos:definition "An expectation about the link of a session over a future window, with an issue time (prov:generatedAtTime), a source (prov:wasAttributedTo) and a confidence."@en ;
+    rdfs:comment "LK-08. The general class: what is predicted is given by its subclass, a latency part (LatencyPrediction), the data rate (DataRatePrediction) or a loss of the connection (ConnectionLossPrediction). Not a measurement. A prediction along the planned route also names the route segment (predictedOnSegment); its window is then the time the vehicle is expected to be on that segment, so the lead time check works the same way."@en ;
+    dct:source "KO21" , "BZ21" , "GA23" .
+
+RDOnto-link:LatencyPrediction a owl:Class ;
+    rdfs:subClassOf RDOnto-link:LinkPrediction ;
+    rdfs:label "latency prediction"@en ;
+    skos:definition "An expected value of a latency part for a session over a future window, with an issue time (prov:generatedAtTime), a source (prov:wasAttributedTo) and a confidence."@en ;
+    rdfs:comment "LK-08. Not a measurement. prov:wasAttributedTo gives the source, e.g. network QoS sustainability analytics or an onboard or edge model [KO21, BZ21]."@en ;
+    dct:source "KO21" , "BZ21" , "GA23" .
+
+RDOnto-link:predictedFor a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "predicted for"@en ;
+    skos:definition "The teleoperation session whose link a prediction is about."@en ;
+    rdfs:comment "LK-08. A prediction is for exactly one session."@en ;
+    rdfs:domain RDOnto-link:LinkPrediction ;
+    rdfs:range RDOnto-link:TeleoperationSession .
+
+RDOnto-link:predictedPart a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "predicted part"@en ;
+    skos:definition "The latency part whose value a latency prediction gives."@en ;
+    rdfs:comment "LK-08. Sensor, actuator or end-to-end latency, so that a predicted value is compared with the limit for the same part."@en ;
+    rdfs:domain RDOnto-link:LatencyPrediction ;
+    rdfs:range RDOnto-link:LatencyPart .
+
+RDOnto-link:predictedValue a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "predicted value"@en ;
+    skos:definition "The latency expected over the window of a latency prediction, as a duration."@en ;
+    rdfs:comment "LK-08, LK-09. Compared with the limits as a measured latency is; with it, LK-09 gives the admissible speed for the predicted latency."@en ;
+    rdfs:domain RDOnto-link:LatencyPrediction ;
+    rdfs:range xsd:dayTimeDuration .
+
+RDOnto-link:validFrom a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "valid from"@en ;
+    skos:definition "The start of the future window that a link prediction holds for."@en ;
+    rdfs:comment "LK-08. The lead time of a prediction is validFrom minus its issue time (prov:generatedAtTime), which is compared with the RequiredLeadTime; a prediction is issued no later than its window starts (RDOnto-link-shapes.ttl). GA23 and KO21 call the time ahead the prediction horizon."@en ;
+    dct:source "GA23" , "KO21" ;
+    rdfs:domain RDOnto-link:LinkPrediction ;
+    rdfs:range xsd:dateTime .
+
+RDOnto-link:validUntil a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "valid until"@en ;
+    skos:definition "The end of the future window that a link prediction holds for."@en ;
+    rdfs:comment "LK-08. After validFrom (RDOnto-link-shapes.ttl)."@en ;
+    rdfs:domain RDOnto-link:LinkPrediction ;
+    rdfs:range xsd:dateTime .
+
+RDOnto-link:predictionConfidence a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "prediction confidence"@en ;
+    skos:definition "How likely its source takes a link prediction to be right, between 0 and 1."@en ;
+    rdfs:domain RDOnto-link:LinkPrediction ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "LK-08. KO21 describes a prediction as expected values with their variances."@en .
+
+RDOnto-link:DataRatePrediction a owl:Class ;
+    rdfs:subClassOf RDOnto-link:LinkPrediction ;
+    rdfs:label "data rate prediction"@en ;
+    skos:definition "The data rate expected to be available to the vehicle-to-station video streams of a session, taken together, over a future window."@en ;
+    rdfs:comment "LK-08, LK-06. One value per session: it is compared with the same sum of required rates as the sum of the measured rates of the session's video streams (AvailableDataRate). BZ21 predicts throughput; SH21 adapts the video to the predicted available uplink bitrate. Compared with the required data rates of the needed camera views as a measured rate is (LK-06)."@en ;
+    dct:source "BZ21" , "SH21" .
+
+RDOnto-link:predictedDataRate a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "predicted data rate"@en ;
+    skos:definition "The data rate that is expected to be available to the vehicle-to-station video streams of the session, taken together, over the window of a data rate prediction, in Mbit/s."@en ;
+    rdfs:domain RDOnto-link:DataRatePrediction ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "LK-06, LK-08."@en .
+
+RDOnto-link:ConnectionLossPrediction a owl:Class ;
+    rdfs:subClassOf RDOnto-link:LinkPrediction ;
+    rdfs:label "connection loss prediction"@en ;
+    skos:definition "An expectation that the connection of a session will be lost during a future window."@en ;
+    rdfs:comment "LK-08. It has no value of its own: predictionConfidence is how likely the loss is. KO21: a safe stop on communication loss must be possible at all times; BR26: awareness of potential connection loss and precautions before control is lost."@en ;
+    dct:source "KO21" , "BR26" .
+
+RDOnto-link:RouteSegment a owl:Class ;
+    rdfs:label "route segment"@en ;
+    skos:definition "A part of the route planned for a vehicle."@en ;
+    rdfs:comment "Interface (scene and criticality; ODD): declared here only so that a prediction can say where it applies (LK-08). The owning module describes the segment itself."@en .
+
+RDOnto-link:predictedOnSegment a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "predicted on segment"@en ;
+    skos:definition "The segment of the planned route that a link prediction is for."@en ;
+    rdfs:domain RDOnto-link:LinkPrediction ;
+    rdfs:range RDOnto-link:RouteSegment ;
+    rdfs:comment "LK-08. Optional: the segment of the planned route a prediction is for. validFrom and validUntil are then the times the vehicle is expected to enter and leave the segment."@en .
+
+RDOnto-link:PredictionSource a owl:Class ;
+    rdfs:subClassOf prov:Agent ;
+    rdfs:label "prediction source"@en ;
+    skos:definition "An agent that issues link predictions, e.g. a network analytics function, or a prediction model on board the vehicle or at the network edge."@en ;
+    rdfs:comment "LK-08. Who or what issued a link prediction, e.g. network QoS analytics or an onboard or edge model [KO21, BZ21]."@en .
+
+RDOnto-link:RequiredLeadTime a owl:Class ;
+    rdfs:subClassOf RDOnto-op:ConfiguredLimit ;
+    rdfs:label "required lead time"@en ;
+    skos:definition "The shortest time between a prediction's issue and the start of the predicted window that lets the vehicle react, in a mode and up to a speed. Value as qudt:numericValue with qudt:unit unit:SEC."@en ;
+    rdfs:comment "LK-08. Which one applies: take the lead times for the mode of the session's open engagement, or failing that for its broader mode; among them, the one with the lowest upToSpeed at or above the current speed, where one without upToSpeed covers every speed. If the speed is above every upToSpeed, none applies and LK-08 lists the prediction without a judgement. GA23 defines the QoS prediction time horizon as the application reaction completion interval plus a guard interval; KO21 shows the needed horizon grows with speed."@en ;
+    dct:source "GA23" , "KO21" .
+
+#################################################################
+# F. Adaptation (LK-10)
+#################################################################
+
+RDOnto-link:Degradation a owl:Class ;
+    rdfs:label "degradation"@en ;
+    skos:definition "A kind of link problem an adaptation can address."@en ;
+    rdfs:comment "LK-10."@en .
+RDOnto-link:LatencyOverBudget a RDOnto-link:Degradation ; rdfs:label "latency over budget"@en ;
+    skos:definition "The end-to-end latency, or a part of it, is or is predicted to be above what is acceptable for the setup, mode and speed."@en ;
+    rdfs:comment "LK-04, LK-08, LK-10. The result of the check described on LatencyBudget and TravelTolerance, for the measured or a predicted latency."@en .
+RDOnto-link:ConnectionLost a RDOnto-link:Degradation ; rdfs:label "connection lost"@en ;
+    skos:definition "A stream that the current mode needs, or any stream of a session whose engagements have all ended, has delivered no data for longer than its connection timeout."@en ;
+    rdfs:comment "LK-07, LK-10. The exact rule is on ConnectionTimeout. The operator can then no longer act on the vehicle, so only adaptations that the vehicle or someone on board carries out address it."@en ;
+    dct:source "BR26" , "KO21" .
+RDOnto-link:DataRateInsufficient a RDOnto-link:Degradation ; rdfs:label "data rate insufficient"@en ;
+    skos:definition "The data rate available from the vehicle to the station is, or is predicted to be, below what the needed camera views require."@en ;
+    rdfs:comment "LK-06, LK-10."@en .
+RDOnto-link:LatencyUnstable a RDOnto-link:Degradation ; rdfs:label "latency unstable"@en ;
+    skos:definition "The standard deviation of a latency part is above the latency variation limit for the mode, even where the mean latency is within budget."@en ;
+    rdfs:comment "LK-05, LK-10. The rule is on LatencyVariationLimit."@en .
+
+RDOnto-link:Adaptation a owl:Class ;
+    rdfs:label "adaptation"@en ;
+    skos:definition "A reaction to a current or predicted link degradation."@en ;
+    rdfs:comment "LK-10. Individuals follow the reactions in GA23 and the mitigations in NE19b; HandBackToOnBoardDriver follows from the context rule of RDOnto-op. Which are available depends on the vehicle and the engagement."@en ;
+    dct:source "GA23" , "NE19b" , "SH21" , "GA21b" .
+# Every adaptation states what it addresses and a default preference
+# rank, as RDOnto-link-shapes.ttl (AdaptationShape) requires. With the connection
+# lost the operator can no longer act on the vehicle, so only the adaptations the
+# vehicle or someone on board can carry out address ConnectionLost. The ranks are
+# defaults proposed by this module (mildest first, stopping last); no source
+# gives an order. A deployment that wants another order states it with an
+# AdaptationRankOverride and leaves these defaults as they are: preferenceRank is
+# functional, so a second default from elsewhere is an error.
+RDOnto-link:ReduceVideoQuality a RDOnto-link:Adaptation ; rdfs:label "reduce video quality"@en ;
+    skos:definition "Lowering the resolution, frame rate or bitrate of the video, or switching off camera views, so that the video needs less data rate."@en ;
+    rdfs:comment "LK-10. NE19b names lower resolution, switched-off cameras and a lower frame rate as mitigations; SH21 adapts bitrate and resolution per camera to the predicted available rate."@en ;
+    dct:source "NE19b" , "SH21" ;
+    RDOnto-link:addresses RDOnto-link:LatencyOverBudget , RDOnto-link:LatencyUnstable , RDOnto-link:DataRateInsufficient ;
+    RDOnto-link:requiresCondition RDOnto-link:MinimumVideoRateAvailable ;
+    RDOnto-link:preferenceRank 1 .
+RDOnto-link:ReduceSpeed a RDOnto-link:Adaptation ; rdfs:label "reduce speed"@en ;
+    skos:definition "The operator driving more slowly, so that the vehicle travels less far during the latency."@en ;
+    rdfs:comment "LK-09, LK-10. Higher latency calls for lower speed [JI25]; GA21b: above budget the vehicle 'must reduce the maximum speed of 8 km/h or fully stop' (one scenario); NE19b, KO21 and SC22 name a lower speed as an adaptation."@en ;
+    dct:source "GA21b" , "JI25" , "NE19b" , "KO21" , "SC22" ;
+    RDOnto-link:addresses RDOnto-link:LatencyOverBudget , RDOnto-link:LatencyUnstable , RDOnto-link:DataRateInsufficient ;
+    RDOnto-link:requiresCondition RDOnto-link:InRemoteDrivingMode , RDOnto-link:SpeedAboveMinimum ;
+    RDOnto-link:preferenceRank 2 .
+RDOnto-link:Reroute a RDOnto-link:Adaptation ; rdfs:label "reroute"@en ;
+    skos:definition "Changing the planned route to one with better expected link quality."@en ;
+    rdfs:comment "LK-10. SC22: with insufficient data rate, 'alternative routes can be chosen, or the velocity adapted'; NE19b names route planning. Whether an alternative route exists is known to the route module."@en ;
+    dct:source "SC22" , "NE19b" ;
+    RDOnto-link:addresses RDOnto-link:LatencyOverBudget , RDOnto-link:LatencyUnstable , RDOnto-link:DataRateInsufficient ;
+    RDOnto-link:preferenceRank 3 .
+RDOnto-link:SwitchToRemoteAssistance a RDOnto-link:Adaptation ; rdfs:label "switch to remote assistance"@en ;
+    skos:definition "Ending remote driving and continuing in remote assistance, in which the ADS drives and the operator only advises."@en ;
+    dct:source "BR26" ;
+    rdfs:comment "LK-10. Available only if the vehicle supports RDOnto-op:RemoteAssistance and its ADS is within its ODD and able to drive (RDOnto-link:ADSCanTakeOver): remote assistance is advice to an ADS-equipped vehicle that is within its ODD (RDOnto-op:RemoteAssistance), and in event-based remote driving the ADS has often left its ODD [BR26]."@en ;
+    RDOnto-link:addresses RDOnto-link:LatencyOverBudget , RDOnto-link:LatencyUnstable , RDOnto-link:DataRateInsufficient ;
+    RDOnto-link:requiresCondition RDOnto-link:InRemoteDrivingMode , RDOnto-link:VehicleSupportsRemoteAssistance , RDOnto-link:ADSCanTakeOver ;
+    RDOnto-link:preferenceRank 4 .
+RDOnto-link:HandBackToADS a RDOnto-link:Adaptation ; rdfs:label "hand back to ADS"@en ;
+    skos:definition "Returning the DDT to the vehicle's ADS and ending remote driving."@en ;
+    dct:source "GA23" , "BR26" ;
+    rdfs:comment "LK-10. Available only if the vehicle has an ADS that is within its ODD [BR26] and able to drive (RDOnto-link:ADSCanTakeOver): not, e.g., while the failure that made it ask for the takeover lasts."@en ;
+    RDOnto-link:addresses RDOnto-link:LatencyOverBudget , RDOnto-link:LatencyUnstable , RDOnto-link:DataRateInsufficient , RDOnto-link:ConnectionLost ;
+    RDOnto-link:requiresCondition RDOnto-link:InRemoteDrivingMode , RDOnto-link:ADSCanTakeOver ;
+    RDOnto-link:preferenceRank 5 .
+RDOnto-link:HandBackToOnBoardDriver a RDOnto-link:Adaptation ; rdfs:label "hand back to on-board driver"@en ;
+    skos:definition "Returning the DDT to the on-board driver from whom the operator took over."@en ;
+    rdfs:comment "LK-10. Available only if the open engagement of the session took over from an on-board driver (RDOnto-op:takenOverFrom) who is able to take control back (RDOnto-op:ableToTakeOver true): event-based remote driving, with or without an ADS."@en ;
+    RDOnto-link:addresses RDOnto-link:LatencyOverBudget , RDOnto-link:LatencyUnstable , RDOnto-link:DataRateInsufficient , RDOnto-link:ConnectionLost ;
+    RDOnto-link:requiresCondition RDOnto-link:OnBoardDriverCanTakeOver ;
+    RDOnto-link:preferenceRank 6 .
+RDOnto-link:ContinueWithoutOperator a RDOnto-link:Adaptation ; rdfs:label "continue without operator"@en ;
+    skos:definition "The vehicle's ADS keeps driving within its ODD although the operator who monitors or assists it can no longer be reached."@en ;
+    rdfs:comment "LK-10. For connection loss in remote monitoring or remote assistance, where the ADS and not the operator drives. Available only if the ADS is within its ODD and able to drive (RDOnto-link:ADSCanTakeOver): in remote assistance it is not while it waits for the answer to a request. No source states it; whether a vehicle may go on without its operator is a choice of the deployment and its regulation, and a rank override can put the stop first."@en ;
+    RDOnto-link:addresses RDOnto-link:ConnectionLost ;
+    RDOnto-link:requiresCondition RDOnto-link:NotInRemoteDrivingMode , RDOnto-link:ADSCanTakeOver ;
+    RDOnto-link:preferenceRank 7 .
+RDOnto-link:SafeStop a RDOnto-link:Adaptation ; rdfs:label "safe stop"@en ;
+    skos:definition "Bringing the vehicle to a stop in a minimal risk condition, by a minimal risk manoeuvre."@en ;
+    rdfs:comment "LK-07, LK-10. The last resort, with no availability condition: KO21, 'performing a safe stop maneuver in case of communication loss needs to be possible at all time'. With the connection lost the vehicle performs it on its own (MinimalRiskManoeuvre); BR26 proposes a dedicated system for it."@en ;
+    dct:source "KO21" , "BR26" , "GA21b" ;
+    RDOnto-link:addresses RDOnto-link:LatencyOverBudget , RDOnto-link:LatencyUnstable , RDOnto-link:DataRateInsufficient , RDOnto-link:ConnectionLost ;
+    RDOnto-link:preferenceRank 8 .
+
+RDOnto-link:addresses a owl:ObjectProperty ;
+    rdfs:label "addresses"@en ;
+    skos:definition "A degradation that an adaptation is a suitable reaction to."@en ;
+    rdfs:comment "LK-10. An adaptation is offered for a degradation only if it addresses it; every adaptation addresses at least one (RDOnto-link-shapes.ttl)."@en ;
+    rdfs:domain RDOnto-link:Adaptation ;
+    rdfs:range RDOnto-link:Degradation .
+
+RDOnto-link:preferenceRank a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "preference rank"@en ;
+    skos:definition "The default position of an adaptation in the order of preference; a lower number is preferred."@en ;
+    rdfs:domain RDOnto-link:Adaptation ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "LK-10. Configuration: lower is preferred. The default rank of an adaptation; no two adaptations share one (RDOnto-link-shapes.ttl). The rank used for a degradation in a setup is that of the most specific AdaptationRankOverride (setup and degradation, then setup, then degradation), otherwise this default; where two adaptations then have the same rank, the one with the lower default is preferred. An adaptation is available when every condition it requires holds (requiresCondition). The recommended adaptation is the available one with the lowest rank that addresses the degradation."@en .
+
+RDOnto-link:AvailabilityCondition a owl:Class ;
+    rdfs:label "availability condition"@en ;
+    skos:definition "A condition on the vehicle, the engagement or the link that must hold for an adaptation to be available."@en ;
+    rdfs:comment "LK-10. Which conditions an adaptation needs is asserted (requiresCondition), and each condition's definition says exactly what the query tests."@en .
+RDOnto-link:InRemoteDrivingMode a RDOnto-link:AvailabilityCondition ; rdfs:label "in a remote driving mode"@en ;
+    skos:definition "The open engagement of the session is in a mode with RDOnto-op:isRemoteDrivingMode true."@en ;
+    rdfs:comment "LK-10. Required by the adaptations the operator carries out as the driver, or that end remote driving."@en .
+RDOnto-link:NotInRemoteDrivingMode a RDOnto-link:AvailabilityCondition ; rdfs:label "not in a remote driving mode"@en ;
+    skos:definition "The open engagement of the session is in a mode with RDOnto-op:isRemoteDrivingMode false: remote monitoring or remote assistance."@en ;
+    rdfs:comment "LK-10. Does not hold for a session without an open engagement."@en .
+RDOnto-link:VehicleSupportsRemoteAssistance a RDOnto-link:AvailabilityCondition ; rdfs:label "vehicle supports remote assistance"@en ;
+    skos:definition "The session's vehicle has RDOnto-op:supportsMode RDOnto-op:RemoteAssistance."@en ;
+    rdfs:comment "LK-10."@en .
+RDOnto-link:ADSCanTakeOver a RDOnto-link:AvailabilityCondition ; rdfs:label "ADS can take over"@en ;
+    skos:definition "The session's vehicle has an ADS (RDOnto-op:hasADS true) that is within its ODD (RDOnto-link:adsWithinODD true) and able to drive now (RDOnto-link:adsAbleToDrive true)."@en ;
+    rdfs:comment "LK-10. All three must be stated: a value that is absent is not known and does not meet the condition."@en .
+RDOnto-link:OnBoardDriverCanTakeOver a RDOnto-link:AvailabilityCondition ; rdfs:label "on-board driver can take over"@en ;
+    skos:definition "The open engagement of the session took over from an on-board driver (RDOnto-op:takenOverFrom) who is able to take control back now (RDOnto-op:ableToTakeOver true)."@en ;
+    rdfs:comment "LK-10. A driver who does not state ableToTakeOver does not meet the condition."@en .
+RDOnto-link:SpeedAboveMinimum a RDOnto-link:AvailabilityCondition ; rdfs:label "speed above the minimum driving speed"@en ;
+    skos:definition "The vehicle's current speed is above the minimumDrivingSpeed of the session's setup; a setup without that value always meets the condition."@en ;
+    rdfs:comment "LK-10."@en .
+RDOnto-link:MinimumVideoRateAvailable a RDOnto-link:AvailabilityCondition ; rdfs:label "minimum video rate available"@en ;
+    skos:definition "The available data rate from the vehicle to the station is at least the sum of the minimumDataRate of the camera views needed in the current mode, so lowering the video quality can help; views without that value count with their requiredDataRate."@en ;
+    rdfs:comment "LK-06, LK-10."@en .
+
+RDOnto-link:requiresCondition a owl:ObjectProperty ;
+    rdfs:label "requires condition"@en ;
+    skos:definition "A condition that must hold for an adaptation to be available."@en ;
+    rdfs:domain RDOnto-link:Adaptation ;
+    rdfs:range RDOnto-link:AvailabilityCondition ;
+    rdfs:comment "LK-10. A condition that must hold for the adaptation to be available; all of them must hold. Rerouting also needs an alternative route, which the route module knows (interface; no condition here). An adaptation without a condition is always available."@en .
+
+RDOnto-link:AdaptationRankOverride a owl:Class ;
+    rdfs:label "adaptation rank override"@en ;
+    skos:definition "A preference rank for one adaptation that replaces its default rank for one degradation, one setup, or both."@en ;
+    rdfs:comment "LK-10. Configuration: lets the preferred reaction differ per kind of problem and per setup, e.g. stopping first on connection loss, or rerouting first in a setup with alternative routes."@en .
+
+RDOnto-link:overriddenAdaptation a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "overridden adaptation"@en ;
+    skos:definition "The adaptation whose preference rank a rank override replaces."@en ;
+    rdfs:domain RDOnto-link:AdaptationRankOverride ;
+    rdfs:range RDOnto-link:Adaptation ;
+    rdfs:comment "LK-10."@en .
+
+RDOnto-link:overrideDegradation a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "override degradation"@en ;
+    skos:definition "The degradation for which a rank override holds."@en ;
+    rdfs:domain RDOnto-link:AdaptationRankOverride ;
+    rdfs:range RDOnto-link:Degradation ;
+    rdfs:comment "LK-10. Optional. Without it, the override holds for every degradation."@en .
+
+RDOnto-link:overrideSetup a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "override setup"@en ;
+    skos:definition "The teleoperation setup for which a rank override holds."@en ;
+    rdfs:domain RDOnto-link:AdaptationRankOverride ;
+    rdfs:range RDOnto-link:TeleoperationSetup ;
+    rdfs:comment "LK-10. Optional. Without it, the override holds for every setup."@en .
+
+RDOnto-link:overrideRank a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "override rank"@en ;
+    skos:definition "The preference rank that a rank override puts in place of the adaptation's default."@en ;
+    rdfs:domain RDOnto-link:AdaptationRankOverride ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "LK-10. Lower is preferred."@en .
+
+RDOnto-link:adsWithinODD a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "ADS within ODD"@en ;
+    skos:definition "Whether the vehicle's ADS is currently within its operational design domain."@en ;
+    rdfs:domain RDOnto-op:RemotelyOperatedVehicle ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "LK-10. Interface (RDOnto-todd). True if the ADS is within its ODD, false if it is outside. Being within the ODD is needed for the ADS to drive but is not enough: an ADS with a failed sensor is within its ODD and cannot drive (adsAbleToDrive). Stated only for a vehicle with an ADS (RDOnto-op:hasADS true); a vehicle without an ADS (hasADS false) has no value, and a value on a vehicle that does not state hasADS true gets a warning (RDOnto-link-shapes.ttl). Absent means not known, and then the adaptations that need the ADS do not count as available (ADSCanTakeOver)."@en .
+
+RDOnto-link:adsAbleToDrive a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "ADS able to drive"@en ;
+    skos:definition "Whether the vehicle's ADS is able to perform the DDT now: it has no failure that stops it, and it is not waiting for the operator's help with a situation it cannot manage."@en ;
+    rdfs:domain RDOnto-op:RemotelyOperatedVehicle ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "LK-10. Interface (RDOnto-todd, vehicle state). False while the cause of a request lasts, e.g. RDOnto-op:SensorFailure, RDOnto-op:PlanFailure or RDOnto-op:PerceptionError, or while the ADS waits for the answer to an assistance request; true again once the ADS reports that it can go on. Kept apart from adsWithinODD, which says only where the vehicle is. Stated only for a vehicle with an ADS, as adsWithinODD is (RDOnto-link-shapes.ttl). Absent means not known, and then the adaptations that need the ADS do not count as available (ADSCanTakeOver)."@en .
+
+#################################################################
+# G. Teleoperation setup and travel tolerance (LK-04, LK-09, LK-10)
+#################################################################
+
+RDOnto-link:TeleoperationSetup a owl:Class ;
+    rdfs:label "teleoperation setup"@en ;
+    skos:definition "A combination of vehicle, remote station and task context for which latency limits are configured, e.g. a passenger car in urban traffic, or a bus manoeuvring at a roadblock."@en ;
+    rdfs:comment "LK-04, LK-09. Latency limits depend on the setup: vehicle geometry and dynamics [JI25], the precision the task needs [GA21b], and the station and interface. A setup names its operating environment and driving task with RDOnto-op's terms (setupEnvironment, setupTask); A setup can name the vehicles and stations it is valid for (setupVehicle, setupStation); a session may then use it only with one of them."@en ;
+    dct:source "GA21b" , "JI25" , "SC22" .
+
+RDOnto-link:usesSetup a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "uses setup"@en ;
+    skos:definition "The teleoperation setup whose limits apply to a session."@en ;
+    rdfs:comment "LK-04, LK-09. A session uses exactly one setup; it scopes the travel tolerance, the reference budgets and the setup's information age limit. Where the setup names vehicles or stations, the session's are among them (RDOnto-link-shapes.ttl)."@en ;
+    rdfs:domain RDOnto-link:TeleoperationSession ;
+    rdfs:range RDOnto-link:TeleoperationSetup .
+
+RDOnto-link:appliesToSetup a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "applies to setup"@en ;
+    skos:definition "The teleoperation setup to which a configured limit is limited."@en ;
+    rdfs:domain RDOnto-op:ConfiguredLimit ;
+    rdfs:range RDOnto-link:TeleoperationSetup ;
+    rdfs:comment "LK-04, LK-05, LK-12. Scopes a limit (travel tolerance, reference budget, information age limit, latency variation limit, latency agreement tolerance) to one setup. An information age limit scoped to a setup must be no looser than the limit RDOnto-op configures for the same mode, which takes priority; RDOnto-link-shapes.ttl reports a looser one."@en .
+
+RDOnto-link:wheelbase a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "wheelbase"@en ;
+    skos:definition "The distance between the front and rear axles of the setup's vehicles, in metres."@en ;
+    rdfs:domain RDOnto-link:TeleoperationSetup ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "LK-04, LK-09. A setup with a wheelbase is for vehicles of that wheelbase only. JI25 scales delay by speed over wheelbase."@en ;
+    dct:source "JI25" .
+
+RDOnto-link:minimumDrivingSpeed a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "minimum driving speed"@en ;
+    skos:definition "The lowest speed, in km/h, at which driving on is still useful for the setup's task."@en ;
+    rdfs:domain RDOnto-link:TeleoperationSetup ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "Configuration, in km/h: below this speed, driving on is not useful for the setup's task, so reducing speed no longer counts as an available adaptation (LK-10)."@en .
+
+RDOnto-link:maximumDrivingSpeed a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "maximum driving speed"@en ;
+    skos:definition "The highest speed, in km/h, at which the setup is meant to be driven remotely, whatever the latency."@en ;
+    rdfs:domain RDOnto-link:TeleoperationSetup ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "Configuration, in km/h: the highest speed the setup is meant to be driven at remotely, whatever the latency. It caps the admissible speed of LK-09, which the travel tolerance alone would let grow without bound as the latency falls. GA21b's Direct Control budgets hold up to 50 km/h."@en ;
+    dct:source "GA21b" .
+
+RDOnto-link:setupVehicle a owl:ObjectProperty ;
+    rdfs:label "setup vehicle"@en ;
+    skos:definition "A vehicle that the limits of a teleoperation setup were configured for."@en ;
+    rdfs:domain RDOnto-link:TeleoperationSetup ;
+    rdfs:range RDOnto-op:RemotelyOperatedVehicle ;
+    rdfs:comment "LK-04. A setup can name several, e.g. a fleet of one model. A session that uses the setup must have one of them as its vehicle, where the setup names any (RDOnto-link-shapes.ttl)."@en .
+
+RDOnto-link:setupStation a owl:ObjectProperty ;
+    rdfs:label "setup station"@en ;
+    skos:definition "A remote station that the limits of a teleoperation setup were configured for."@en ;
+    rdfs:domain RDOnto-link:TeleoperationSetup ;
+    rdfs:range RDOnto-link:RemoteStation ;
+    rdfs:comment "LK-04. As setupVehicle: a session that uses the setup must be at one of them, where the setup names any."@en .
+
+RDOnto-link:TravelTolerance a owl:Class ;
+    rdfs:subClassOf RDOnto-op:ConfiguredLimit ;
+    rdfs:label "travel tolerance"@en ;
+    skos:definition "The longest distance the vehicle may travel during the end-to-end latency, i.e. before an operator command takes effect, in a setup and mode. Value as qudt:numericValue with qudt:unit unit:M, or derived as dimensionlessDelayLimit times the setup's wheelbase."@en ;
+    rdfs:comment "The primary latency criterion (LK-04, LK-09, LK-10). It follows the deviation of GA21b: the maximum distance the vehicle moves until the ToD operator command is executed, which is correlated with the precision of operation; GA21b plots maximum speed against maximum delay for a given deviation. JI25 shows that speed and latency have the same effect on stability through the dimensionless delay (speed x latency / wheelbase). Admissible speed = tolerance / end-to-end latency, and at most the setup's maximumDrivingSpeed; at zero latency it is that maximum."@en ;
+    dct:source "GA21b" , "JI25" .
+
+RDOnto-link:dimensionlessDelayLimit a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "dimensionless delay limit"@en ;
+    skos:definition "The largest acceptable dimensionless delay in a setup and mode, i.e. vehicle speed times end-to-end latency divided by wheelbase."@en ;
+    rdfs:domain RDOnto-link:TravelTolerance ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "LK-04, LK-09. Alternative to a value in metres: the largest acceptable speed x latency / wheelbase [JI25]. JI25 derives the stability boundary (about 2.52 on straight paths with their best gains); an acceptable limit for driving quality is lower and is configuration."@en ;
+    dct:source "JI25" .
+
+RDOnto-link:setupEnvironment a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "setup environment"@en ;
+    skos:definition "The operating environment that a teleoperation setup is for."@en ;
+    rdfs:domain RDOnto-link:TeleoperationSetup ;
+    rdfs:range RDOnto-op:OperatingEnvironment ;
+    rdfs:comment "The operating environment the setup is for (RDOnto-op SA-06)."@en .
+
+RDOnto-link:setupTask a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "setup task"@en ;
+    skos:definition "The driving task that a teleoperation setup is for."@en ;
+    rdfs:domain RDOnto-link:TeleoperationSetup ;
+    rdfs:range RDOnto-op:DrivingTask ;
+    rdfs:comment "The driving task the setup is for (RDOnto-op SA-06); with it, a travel tolerance encodes the precision the task needs [GA21b]."@en .
+
+#################################################################
+# H. Data rate (LK-06)
+#################################################################
+
+RDOnto-link:AvailableDataRate a sosa:ObservableProperty , owl:NamedIndividual ;
+    rdfs:label "available data rate"@en ;
+    skos:definition "The data rate currently available to a stream, i.e. its share of what the link carries in its direction, in Mbit/s."@en ;
+    rdfs:comment "LK-06. Streams of one direction share the link, so the rates of a session's video streams are summed and the sum is compared with the required rates; a prediction gives that sum directly (DataRatePrediction). Observed with a sosa:Observation: sosa:hasFeatureOfInterest the stream, sosa:observedProperty this individual, sosa:hasSimpleResult the value in Mbit/s as a number, sosa:resultTime the time. A rate measured on the network side is an input, not network internals."@en ;
+    dct:source "NE19b" , "SH21" , "FE26" .
+
+RDOnto-link:requiredDataRate a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "required data rate"@en ;
+    skos:definition "The data rate, in Mbit/s, that a camera view needs at its configured quality."@en ;
+    rdfs:domain RDOnto-op:CameraView ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "LK-06. Configuration: the data rate, in Mbit/s, a camera view needs at its configured quality. The views the operator currently needs are the station's camera views (hasChannel) that are needed in the mode of the current engagement (viewNeededInMode), whether or not they are available right now; LK-06 compares the sum of their required rates with the available rate of the vehicle-to-station video streams. Only if no view of the station states a need for any mode are the available views (RDOnto-op:availableChannel) taken as the needed ones. So switching a needed view off does not make the data rate sufficient. SH21 allocates bitrate across camera views by their importance."@en ;
+    dct:source "SH21" , "NE19b" , "FE26" .
+
+RDOnto-link:minimumDataRate a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "minimum data rate"@en ;
+    skos:definition "The data rate, in Mbit/s, that a camera view needs at the lowest quality still acceptable for driving."@en ;
+    rdfs:domain RDOnto-op:CameraView ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "LK-06, LK-10. Configuration: the data rate, in Mbit/s, a camera view needs at the lowest quality still acceptable for driving. Not above requiredDataRate. Between the two sums the data rate is enough only with reduced video quality (RDOnto-link:ReduceVideoQuality); below the sum of the minimum rates it is not enough at any quality. NE19b: at least 3 Mbit/s for video."@en ;
+    dct:source "SH21" , "NE19b" .
+
+RDOnto-link:viewNeededInMode a owl:ObjectProperty ;
+    rdfs:label "view needed in mode"@en ;
+    skos:definition "An operation mode that the operator cannot perform without this camera view."@en ;
+    rdfs:domain RDOnto-op:CameraView ;
+    rdfs:range RDOnto-op:OperationMode ;
+    rdfs:comment "LK-06. Configuration per station: the camera view is needed to operate in this mode. A need stated for a broader mode holds for its narrower modes (RDOnto-op:broaderMode). SH21 weights camera views by their importance for the driving situation."@en ;
+    dct:source "SH21" .
+
+#################################################################
+# I. Link state shown to the operator (LK-11)
+#################################################################
+
+RDOnto-link:LinkStateDisplay a owl:Class ;
+    rdfs:subClassOf RDOnto-op:InformationChannel ;
+    rdfs:label "link state display"@en ;
+    skos:definition "An information channel of the remote station that shows the operator the state of the link."@en ;
+    rdfs:comment "LK-11. O is shown the link state when a LinkStateDisplay is among the engagement's available channels (RDOnto-op:availableChannel); showsLinkInformation says what it shows. NE19 showed operators the latency level, grouped by colour and text; GA23 notifies the remote driver of predicted QoS changes."@en ;
+    dct:source "NE19" , "GA23" .
+
+RDOnto-link:showsLinkInformation a owl:ObjectProperty ;
+    rdfs:label "shows link information"@en ;
+    skos:definition "A kind of link information that a link state display shows the operator."@en ;
+    rdfs:comment "LK-11. A display shows at least one kind (RDOnto-link-shapes.ttl)."@en ;
+    rdfs:domain RDOnto-link:LinkStateDisplay ;
+    rdfs:range RDOnto-link:LinkInformation .
+
+RDOnto-link:LinkInformation a owl:Class ;
+    rdfs:label "link information"@en ;
+    skos:definition "A kind of information about the link that a station can show the operator."@en ;
+    rdfs:comment "LK-11."@en .
+RDOnto-link:LatencyLevelShown a RDOnto-link:LinkInformation ; rdfs:label "current latency level"@en ;
+    skos:definition "The current level of the latency, e.g. as a value or as a class such as low, medium or high."@en ;
+    rdfs:comment "LK-11. NE19 showed operators the level as none, low, medium or high."@en ;
+    dct:source "NE19" .
+RDOnto-link:PredictedDegradationShown a RDOnto-link:LinkInformation ; rdfs:label "predicted degradation"@en ;
+    skos:definition "A warning that the link is predicted to degrade, shown before it does."@en ;
+    rdfs:comment "LK-11. GA23: the remote driver is notified of predicted QoS changes."@en ;
+    dct:source "GA23" .
+RDOnto-link:ConnectionStateShown a RDOnto-link:LinkInformation ; rdfs:label "connection state"@en ;
+    skos:definition "Whether the connection to the vehicle is up or lost."@en ;
+    rdfs:comment "LK-11."@en .
+
+#################################################################
+# Distinct individuals and disjoint classes
+#################################################################
+
+# As in RDOnto-op: without these axioms a reasoner merges clashing values of a
+# functional property with owl:sameAs instead of reporting them. An individual
+# added to one of these enumerations later must be added to its list.
+
+[] a owl:AllDifferent ; owl:distinctMembers (
+    RDOnto-link:VehicleToStation RDOnto-link:StationToVehicle ) .
+[] a owl:AllDifferent ; owl:distinctMembers (
+    RDOnto-link:VideoFeed RDOnto-link:SensorFeed RDOnto-link:ControlCommands RDOnto-link:Trajectory
+    RDOnto-link:ProposedTrajectory ) .
+[] a owl:AllDifferent ; owl:distinctMembers (
+    RDOnto-link:SensorLatency RDOnto-link:ActuatorLatency RDOnto-link:EndToEndLatency
+    RDOnto-link:VehicleSpeed RDOnto-link:AvailableDataRate ) .
+[] a owl:AllDifferent ; owl:distinctMembers (
+    RDOnto-link:Mean RDOnto-link:StandardDeviation RDOnto-link:DeadlineMissShare ) .
+[] a owl:AllDifferent ; owl:distinctMembers (
+    RDOnto-link:LatencyOverBudget RDOnto-link:ConnectionLost
+    RDOnto-link:DataRateInsufficient RDOnto-link:LatencyUnstable ) .
+[] a owl:AllDifferent ; owl:distinctMembers (
+    RDOnto-link:ReduceSpeed RDOnto-link:ReduceVideoQuality RDOnto-link:Reroute
+    RDOnto-link:SwitchToRemoteAssistance RDOnto-link:HandBackToADS
+    RDOnto-link:HandBackToOnBoardDriver RDOnto-link:ContinueWithoutOperator RDOnto-link:SafeStop ) .
+[] a owl:AllDifferent ; owl:distinctMembers (
+    RDOnto-link:LatencyLevelShown RDOnto-link:PredictedDegradationShown RDOnto-link:ConnectionStateShown ) .
+
+# The main classes of both modules share no instances: this list repeats the
+# one in RDOnto-op and adds the classes of this module. Left out on purpose:
+# RDOnto-op:SituationElement (a vehicle or a person can be an element of the
+# scene), PredictionSource (an onboard model may be named by the vehicle
+# itself), LinkStateDisplay and RDOnto-op:SensorOverlay (kinds of information
+# channel) and RouteSegment (an interface class).
+[] a owl:AllDisjointClasses ; owl:members (
+    RDOnto-link:TeleoperationSession RDOnto-link:MinimalRiskManoeuvre
+    RDOnto-op:RemoteOperator RDOnto-op:OnBoardDriver RDOnto-op:RemotelyOperatedVehicle
+    RDOnto-op:Engagement RDOnto-op:FallbackReadyPeriod
+    RDOnto-op:Request RDOnto-op:PerceptionAssertion RDOnto-op:DisplayedScene RDOnto-op:SAEvidence
+    RDOnto-op:SensorFrame RDOnto-op:ElementStateChange RDOnto-op:WorkloadEstimate RDOnto-op:ImpairmentObservation
+    RDOnto-op:OperationMode RDOnto-op:SAType RDOnto-op:RequestType RDOnto-op:RequestReason RDOnto-op:TakeoverReason
+    RDOnto-op:OperatingEnvironment RDOnto-op:DrivingTask RDOnto-op:OperatorTask
+    RDOnto-op:InformationChannel RDOnto-op:Cue RDOnto-op:Impairment RDOnto-op:ConfiguredLimit
+    RDOnto-link:RemoteStation RDOnto-link:Stream RDOnto-link:Direction RDOnto-link:StreamContent
+    RDOnto-link:LatencyPart RDOnto-link:LatencyObservation RDOnto-link:LatencyStatistic
+    RDOnto-link:StatisticKind RDOnto-link:LinkPrediction
+    RDOnto-link:Degradation RDOnto-link:Adaptation
+    RDOnto-link:TeleoperationSetup RDOnto-link:LinkInformation
+    RDOnto-link:AvailabilityCondition RDOnto-link:AdaptationRankOverride RDOnto-link:MinimalRiskManoeuvreKind ) .
+
+# Limit types of both modules. A limit individual has one type.
+[] a owl:AllDisjointClasses ; owl:members (
+    RDOnto-link:LatencyBudget RDOnto-link:ConnectionTimeout RDOnto-link:RequiredLeadTime
+    RDOnto-link:TravelTolerance RDOnto-link:DeliveryDeadline RDOnto-link:LatencyAgreementTolerance
+    RDOnto-link:LatencyVariationLimit
+    RDOnto-op:InformationAgeLimit RDOnto-op:TimeOnTaskLimit RDOnto-op:MinimumBreakLength
+    RDOnto-op:LatencyChangeLimit RDOnto-op:WorkloadBand RDOnto-op:SARequirement
+    RDOnto-op:PerceptionConfidenceThreshold RDOnto-op:ActuatorLatencyLimit ) .
+
+# Availability conditions and prediction kinds.
+[] a owl:AllDifferent ; owl:distinctMembers (
+    RDOnto-link:InRemoteDrivingMode RDOnto-link:NotInRemoteDrivingMode
+    RDOnto-link:VehicleSupportsRemoteAssistance RDOnto-link:ADSCanTakeOver
+    RDOnto-link:OnBoardDriverCanTakeOver RDOnto-link:SpeedAboveMinimum RDOnto-link:MinimumVideoRateAvailable ) .
+[] a owl:AllDisjointClasses ; owl:members (
+    RDOnto-link:LatencyPrediction RDOnto-link:DataRatePrediction RDOnto-link:ConnectionLossPrediction ) .
+
+#################################################################
+# Declarations of reused terms
+#################################################################
+
+# RDOnto-op, which this module imports, declares the PROV-O, SOSA, QUDT, SKOS
+# and Dublin Core terms both modules use. Only the terms used here alone are
+# added.
+prov:wasAttributedTo a owl:ObjectProperty ; rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+unit:M a qudt:Unit , owl:NamedIndividual ; rdfs:isDefinedBy <http://qudt.org/vocab/unit> .

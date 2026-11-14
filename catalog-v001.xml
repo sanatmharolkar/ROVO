@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="RDOnto-op" name="https://w3id.org/rdonto/op" uri="RDOnto-op.ttl"/>
+    <uri id="RDOnto-link" name="https://w3id.org/rdonto/link" uri="RDOnto-link.ttl"/>
+    <uri id="RDOnto-core" name="https://w3id.org/rdonto/core" uri="RDOnto-core.ttl"/>
+</catalog>

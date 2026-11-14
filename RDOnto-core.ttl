@@ -1,0 +1,178 @@
+@prefix RDOnto-core: <https://w3id.org/rdonto/core#> .
+@prefix RDOnto-op:   <https://w3id.org/rdonto/op#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct:      <http://purl.org/dc/terms/> .
+@prefix vla:      <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/> .
+@prefix tec:      <http://purl.org/auto/traffic_entity_core#> .
+@prefix l4:       <http://purl.org/auto/l4_core#> .
+
+# Remote Driving Ontology: upper alignment module (RDOnto-core).
+# Holds every cross-source axiom, so each reused source stays replaceable.
+# Version 1.0, for RDOnto-op 1.0 and RDOnto-link 1.0. The module imports RDOnto-op, asserts the tasks of the remote
+# driving mode, which are EDMC classes, and declares the SKOS mapping properties
+# it uses.
+#
+# Strong links (rdfs:subClassOf) are used only where every instance of the
+# subclass is clearly an instance of the superclass. Otherwise a SKOS mapping
+# property is used, which adds no class-level entailments: skos:closeMatch,
+# skos:broadMatch or skos:narrowMatch where one concept is wider than the
+# other, or skos:relatedMatch where the two concepts only overlap.
+#
+# Reused classes are declared at the end (MIREOT style): original IRI,
+# rdfs:isDefinedBy the source ontology, and one superclass link that the source
+# hierarchy entails. This lets RDOnto modules be used without loading the full
+# sources.
+
+<https://w3id.org/rdonto/core>
+    a owl:Ontology ;
+    dct:creator "Sanat Mharolkar" ;
+    dct:license <http://www.apache.org/licenses/LICENSE-2.0> ;
+    rdfs:label "Remote Driving Ontology: upper alignment module"@en ;
+    dct:created "2026-11-04"^^xsd:date ;
+    dct:modified "2026-11-14"^^xsd:date ;
+    owl:versionInfo "1.0" ;
+    owl:imports <https://w3id.org/rdonto/op> .
+
+# EDMC AUTO (SAE J3016) roles are kinds of remote operator. An EDMC remote driver
+# does not occupy the driver's seat and may be inside the vehicle (J3016
+# 3.31.1.2), which RDOnto-op:RemoteOperator allows.
+vla:RemoteDriver rdfs:subClassOf RDOnto-op:RemoteOperator .
+vla:RemoteAssistant rdfs:subClassOf RDOnto-op:RemoteOperator .
+
+# Remotely operated road vehicles are motor vehicles in the EDMC sense (J3016:
+# on-road motor vehicles), but RDOnto-op also covers vehicles off public roads,
+# such as warehouse forklifts and mining equipment (SA-06), which are not clearly
+# EDMC motor vehicles. The two classes overlap, so the link is a SKOS mapping
+# rather than a subclass axiom.
+RDOnto-op:RemotelyOperatedVehicle skos:relatedMatch vla:MotorVehicle .
+
+# A.U.T.O. traffic entities are what the operator can be aware of.
+tec:Traffic_Entity rdfs:subClassOf RDOnto-op:SituationElement .
+
+# EDMC DDT subtasks and the DDT fallback are tasks an operator can hold (SA-02).
+# In EDMC the subtasks fall under DynamicDrivingSubtask and the fallback under
+# Operation; both are placed under RDOnto-op:OperatorTask here, which gives
+# RDOnto-op:holdsTask a range without a union (not allowed in OWL 2 RL).
+vla:DynamicDrivingSubtask rdfs:subClassOf RDOnto-op:OperatorTask .
+vla:DynamicDrivingTaskFallback rdfs:subClassOf RDOnto-op:OperatorTask .
+
+# SA-02, static: in remote driving the operator holds
+# the DDT subtasks and the DDT fallback (J3016, AM22). Stated for the broad
+# remote driving mode, so it holds for both of its narrower modes. The objects
+# are the EDMC classes, used as individuals (OWL 2 punning). The list gives the
+# kinds of task the mode may give the operator, not the tasks every engagement
+# holds: a remote driver who drives a vehicle without an ADS for a whole trip
+# performs the DDT and holds no DDT fallback, while the remote driver of an
+# ADS-equipped vehicle can be its fallback in both contexts.
+RDOnto-op:RemoteDriving RDOnto-op:modeIncludesTask
+    vla:LateralVehicleMotionControl , vla:LongitudinalVehicleMotionControl ,
+    vla:ObjectAndEventDetectionAndResponse , vla:DynamicDrivingTaskFallback .
+
+# J3016's request to intervene goes to a fallback-ready user and asks for a
+# takeover. An RDOnto-op request may also ask for remote assistance, so the general
+# request is broader, and only the takeover request type matches closely. SKOS
+# mappings add no class-level entailments.
+RDOnto-op:Request skos:narrowMatch vla:RequestToIntervene .
+RDOnto-op:TakeoverRequest skos:closeMatch vla:RequestToIntervene .
+
+# Operation modes are individuals here and EDMC operations are classes, so the
+# link is a SKOS mapping.
+# Only the broad remote driving mode matches EDMC RemoteDriving closely. The
+# two contexts are each narrower than it, so EDMC RemoteDriving is their broader
+# match. The mode hierarchy itself uses RDOnto-op:broaderMode, so these mappings
+# add nothing to it.
+RDOnto-op:RemoteDriving skos:closeMatch vla:RemoteDriving .
+RDOnto-op:EventBasedRemoteDriving skos:broadMatch vla:RemoteDriving .
+RDOnto-op:ContinuousRemoteDriving skos:broadMatch vla:RemoteDriving .
+
+# The on-board driver is in the driver's seat, as an EDMC in-vehicle driver is, but
+# does not drive while a remote operator has taken over, so the link is a SKOS
+# mapping rather than a subclass axiom.
+RDOnto-op:OnBoardDriver skos:closeMatch vla:InVehicleDriver .
+RDOnto-op:RemoteAssistance skos:closeMatch vla:RemoteAssistance .
+
+# J3016's remote DDT fallback-ready user is the user of one Level 3 vehicle in
+# driverless operation, receptive to its requests to intervene. An operator in an
+# RDOnto-op fallback-ready period waits without a vehicle; one who waits for the
+# requests of a vehicle while watching it is in remote monitoring. The two
+# concepts only overlap, and one is a period while the other is a role, so the
+# link is a related match.
+RDOnto-op:FallbackReadyPeriod skos:relatedMatch vla:RemoteDynamicDriverTaskFallbackReadyUser .
+
+#################################################################
+# Declarations of reused classes (MIREOT)
+#################################################################
+
+# EDMC AUTO Vehicle Automation Levels. Superclasses as in the source.
+vla:RemoteDriver a owl:Class ; rdfs:label "remote driver"@en ;
+    rdfs:subClassOf vla:HumanDriver ;
+    rdfs:isDefinedBy <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/> .
+vla:HumanDriver a owl:Class ; rdfs:label "human driver"@en ;
+    rdfs:subClassOf vla:HumanUser ;
+    rdfs:isDefinedBy <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/> .
+vla:InVehicleDriver a owl:Class ; rdfs:label "in-vehicle driver"@en ;
+    rdfs:subClassOf vla:HumanDriver ;
+    rdfs:isDefinedBy <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/> .
+vla:RemoteAssistant a owl:Class ; rdfs:label "remote assistant"@en ;
+    rdfs:subClassOf vla:HumanUser ;
+    rdfs:isDefinedBy <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/> .
+vla:HumanUser a owl:Class ; rdfs:label "human user"@en ;
+    rdfs:isDefinedBy <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/> .
+vla:DynamicDriverTaskFallbackReadyUser a owl:Class ; rdfs:label "DDT fallback-ready user"@en ;
+    rdfs:subClassOf vla:HumanUser ;
+    rdfs:isDefinedBy <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/> .
+vla:RemoteDynamicDriverTaskFallbackReadyUser a owl:Class ; rdfs:label "remote DDT fallback-ready user"@en ;
+    rdfs:subClassOf vla:DynamicDriverTaskFallbackReadyUser ;
+    rdfs:isDefinedBy <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/> .
+vla:MotorVehicle a owl:Class ; rdfs:label "motor vehicle"@en ;
+    rdfs:isDefinedBy <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/> .
+vla:DynamicDrivingSubtask a owl:Class ; rdfs:label "dynamic driving subtask"@en ;
+    rdfs:isDefinedBy <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/> .
+vla:LateralVehicleMotionControl a owl:Class ; rdfs:label "lateral vehicle motion control"@en ;
+    rdfs:subClassOf vla:DynamicDrivingSubtask ;
+    rdfs:isDefinedBy <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/> .
+vla:LongitudinalVehicleMotionControl a owl:Class ; rdfs:label "longitudinal vehicle motion control"@en ;
+    rdfs:subClassOf vla:DynamicDrivingSubtask ;
+    rdfs:isDefinedBy <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/> .
+vla:ObjectAndEventDetectionAndResponse a owl:Class ; rdfs:label "object and event detection and response"@en ;
+    rdfs:subClassOf vla:DynamicDrivingSubtask ;
+    rdfs:isDefinedBy <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/> .
+vla:Operation a owl:Class ; rdfs:label "operation"@en ;
+    rdfs:isDefinedBy <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/> .
+vla:DynamicDrivingTaskFallback a owl:Class ; rdfs:label "dynamic driving task fallback"@en ;
+    rdfs:subClassOf vla:Operation ;
+    rdfs:isDefinedBy <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/> .
+vla:RequestToIntervene a owl:Class ; rdfs:label "request to intervene"@en ;
+    rdfs:subClassOf vla:Operation ;
+    rdfs:isDefinedBy <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/> .
+vla:RemoteDriving a owl:Class ; rdfs:label "remote driving"@en ;
+    rdfs:subClassOf vla:Operation ;
+    rdfs:isDefinedBy <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/> .
+vla:RemoteAssistance a owl:Class ; rdfs:label "remote assistance"@en ;
+    rdfs:subClassOf vla:Operation ;
+    rdfs:isDefinedBy <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/> .
+
+# A.U.T.O. In the source, Pedestrian < Human < Traffic_Participant <
+# Traffic_Subject < L4_Entity < Descriptive_Traffic_Entity < Traffic_Entity, and
+# Passenger_Vehicle < Vehicle < Traffic_Object < L4_Entity. Only the entailed
+# link to Traffic_Entity is kept here.
+tec:Traffic_Entity a owl:Class ; rdfs:label "traffic entity"@en ;
+    rdfs:isDefinedBy <http://purl.org/auto/traffic_entity_core> .
+l4:Pedestrian a owl:Class ; rdfs:label "pedestrian"@en ;
+    rdfs:subClassOf tec:Traffic_Entity ;
+    rdfs:isDefinedBy <http://purl.org/auto/l4_core> .
+l4:Passenger_Vehicle a owl:Class ; rdfs:label "passenger vehicle"@en ;
+    rdfs:subClassOf tec:Traffic_Entity ;
+    rdfs:isDefinedBy <http://purl.org/auto/l4_core> .
+
+# SKOS mapping properties used above, typed as in SKOS. A mapping between two
+# classes uses their IRIs as individuals (OWL 2 punning), so it adds no
+# class-level entailments. The other reused W3C terms are declared in RDOnto-op,
+# which this module imports.
+skos:closeMatch a owl:ObjectProperty ; rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> .
+skos:broadMatch a owl:ObjectProperty ; rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> .
+skos:narrowMatch a owl:ObjectProperty ; rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> .
+skos:relatedMatch a owl:ObjectProperty ; rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> .

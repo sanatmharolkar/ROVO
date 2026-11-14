@@ -14,6 +14,16 @@ RDOnto is an ontology of the remote driving (road vehicle teleoperation) context
 
 `RDOnto-link` and `RDOnto-core` import `RDOnto-op`. All modules stay within the OWL 2 RL profile.
 
+## Documentation
+
+Each module has a page that lists its classes, properties and individuals with their definitions:
+
+- [Operator awareness module](docs/op/index-en.html), with its competency questions and references
+- [Communication link module](docs/link/index-en.html), with its competency questions and references
+- [Upper alignment module](docs/core/index-en.html)
+
+To rebuild the pages after a change to a Turtle file or a competency-question file, run [docs/make_docs.py](docs/make_docs.py).
+
 ## Competency questions
 
 Each module answers a list of competency questions, which also resolve the source keys used in the ontology files:

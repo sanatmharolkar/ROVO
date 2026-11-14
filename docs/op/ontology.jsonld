@@ -1,0 +1,3605 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/rdonto/op#ActuatorLatencyLimit"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#InformationAgeLimit"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#LatencyChangeLimit"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#MinimumBreakLength"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#PerceptionConfidenceThreshold"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#SARequirement"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#TimeOnTaskLimit"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#WorkloadBand"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid10",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/rdonto/op#AudioChannel"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#CameraView"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#HapticFeedback"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#MapView"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#MotionFeedback"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid16",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/rdonto/op#ConfiguredLimit"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#Cue"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#DisplayedScene"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#DrivingTask"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#ElementStateChange"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#Engagement"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#FallbackReadyPeriod"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#Impairment"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#ImpairmentObservation"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#InformationChannel"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#OnBoardDriver"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#OperatingEnvironment"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#OperationMode"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#OperatorTask"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#PerceptionAssertion"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#RemoteOperator"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#RemotelyOperatedVehicle"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#Request"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#RequestReason"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#RequestType"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#SAEvidence"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#SAType"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#SensorFrame"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#TakeoverReason"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#WorkloadEstimate"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid42",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/rdonto/op#ControlInputEvidence"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#EyeFixationEvidence"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#ProbeAnswerEvidence"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#SelfReportEvidence"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid47",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/rdonto/op#CueInterpretationTask"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#DecisionMakingTask"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#ObservationTask"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid51",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
+  "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/rdonto/op#AccelerationCue"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#AmbientSound"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#EngineSound"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#InclinationCue"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#PedalFeel"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#SpeedSense"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#VestibularCue"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#WarningSound"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid60",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
+  "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/rdonto/op#ConstructionSite"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#MiningSite"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#Port"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#PublicRoad"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#Warehouse"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid66",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
+  "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/rdonto/op#ContinuousRemoteDriving"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#EventBasedRemoteDriving"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#RemoteAssistance"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#RemoteDriving"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#RemoteMonitoring"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid72",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
+  "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/rdonto/op#DecisionSupportSA"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#OperationalSA"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#SupervisorySA"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid76",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
+  "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/rdonto/op#Distraction"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#Fatigue"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#MotionSickness"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#Workload"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid81",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
+  "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/rdonto/op#ObjectClassificationRequest"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#OtherAssistanceRequest"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#PathRequest"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#TakeoverRequest"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid86",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
+  "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/rdonto/op#OnBoardDriverAsked"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#OnBoardDriverUnableToDrive"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid89",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
+  "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/rdonto/op#PerceptionError"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#PlanFailure"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#SensorFailure"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#UnclassifiableObject"
+    }, {
+      "@id" : "https://w3id.org/rdonto/op#UnspecifiedReason"
+    } ]
+  } ]
+}, {
+  "@id" : "http://purl.org/dc/terms/created",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://purl.org/dc/terms/"
+  } ]
+}, {
+  "@id" : "http://purl.org/dc/terms/creator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://purl.org/dc/terms/"
+  } ]
+}, {
+  "@id" : "http://purl.org/dc/terms/description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://purl.org/dc/terms/"
+  } ]
+}, {
+  "@id" : "http://purl.org/dc/terms/license",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://purl.org/dc/terms/"
+  } ]
+}, {
+  "@id" : "http://purl.org/dc/terms/modified",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://purl.org/dc/terms/"
+  } ]
+}, {
+  "@id" : "http://purl.org/dc/terms/source",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://purl.org/dc/terms/"
+  } ]
+}, {
+  "@id" : "http://qudt.org/schema/qudt/Unit",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://qudt.org/schema/qudt"
+  } ]
+}, {
+  "@id" : "http://qudt.org/schema/qudt/numericValue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://qudt.org/schema/qudt"
+  } ]
+}, {
+  "@id" : "http://qudt.org/schema/qudt/unit",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://qudt.org/schema/qudt"
+  } ]
+}, {
+  "@id" : "http://qudt.org/vocab/unit/MIN",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://qudt.org/schema/qudt/Unit"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://qudt.org/vocab/unit"
+  } ]
+}, {
+  "@id" : "http://qudt.org/vocab/unit/MilliSEC",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://qudt.org/schema/qudt/Unit"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://qudt.org/vocab/unit"
+  } ]
+}, {
+  "@id" : "http://qudt.org/vocab/unit/SEC",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://qudt.org/schema/qudt/Unit"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://qudt.org/vocab/unit"
+  } ]
+}, {
+  "@id" : "http://qudt.org/vocab/unit/UNITLESS",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://qudt.org/schema/qudt/Unit"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://qudt.org/vocab/unit"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/2001/XMLSchema#date",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
+}, {
+  "@id" : "http://www.w3.org/2001/XMLSchema#dayTimeDuration",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#definition",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/prov#Activity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.w3.org/ns/prov-o#"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/prov#Agent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.w3.org/ns/prov-o#"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/prov#Entity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.w3.org/ns/prov-o#"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/prov#endedAtTime",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.w3.org/ns/prov-o#"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/prov#generatedAtTime",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.w3.org/ns/prov-o#"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/prov#startedAtTime",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.w3.org/ns/prov-o#"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/prov#used",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.w3.org/ns/prov-o#"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/prov#wasAssociatedWith",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.w3.org/ns/prov-o#"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/prov#wasDerivedFrom",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.w3.org/ns/prov-o#"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/prov#wasInformedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.w3.org/ns/prov-o#"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/sosa/ObservableProperty",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.w3.org/ns/sosa/"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/sosa/Observation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.w3.org/ns/sosa/"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/sosa/Sensor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.w3.org/ns/sosa/"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/sosa/hasFeatureOfInterest",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.w3.org/ns/sosa/"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/sosa/hasSimpleResult",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.w3.org/ns/sosa/"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/sosa/madeBySensor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.w3.org/ns/sosa/"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/sosa/observedProperty",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.w3.org/ns/sosa/"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/sosa/resultTime",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.w3.org/ns/sosa/"
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#date",
+    "@value" : "2026-11-04"
+  } ],
+  "http://purl.org/dc/terms/creator" : [ {
+    "@value" : "Sanat Mharolkar"
+  } ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Represents a remote operator's awareness state of a remotely operated vehicle and its surroundings: what information is available to the operator, what the operator has perceived from it, how delayed and degraded it is, whether it is still valid, and whether it is sufficient for the SA type of the operator's mode."
+  } ],
+  "http://purl.org/dc/terms/license" : [ {
+    "@id" : "http://www.apache.org/licenses/LICENSE-2.0"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#date",
+    "@value" : "2026-11-14"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-10 and the actuator latency part of SA-24 need RDOnto-link loaded as well (its actuator latency observations); the other questions need only this module."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Remote Driving Ontology: operator awareness module"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
+    "@id" : "https://w3id.org/rdonto/link"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
+    "@value" : "1.0"
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#AccelerationCue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "ZH24"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#InVehicleCue"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-16. ZH24: remote drivers 'may have difficulty perceiving the acceleration and motion states of the vehicle when relying solely on video information'."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "acceleration cue"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The forces a driver's body feels when the vehicle accelerates, brakes or corners."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#ActuatorLatencyLimit",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "GF20"
+  }, {
+    "@value" : "MA25"
+  }, {
+    "@value" : "TANG26"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-24: a mode whose limit the current actuator latency exceeds is one the operator can no longer perform. The operator-side counterpart of InformationAgeLimit for the other latency part. The value compared with it is the latest RDOnto-link:ActuatorLatency observation of the session that carries the engagement, so it needs RDOnto-link. A setup's reference budgets for the actuator latency (RDOnto-link:LatencyBudget) hold up to a vehicle speed and are checked separately, by LK-04; SA-24 uses this limit only. A configuration parameter; GF20 and MA25 give measured values, not limits."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "actuator latency limit"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/rdonto/op#ConfiguredLimit"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The largest actuator latency, from the operator's input to the actuator response at the vehicle, that the operator can be expected to anticipate in a mode. Value as qudt:numericValue with qudt:unit unit:MilliSEC."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#AmbientSound",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "TL22"
+  }, {
+    "@value" : "WO25"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#InVehicleCue"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-16. TL22 and WO25 report the missing audio channel as a problem for remote operators."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "ambient sound"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Sound from the vehicle's surroundings, such as traffic, people or machines."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#AudioChannel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "TL22"
+  }, {
+    "@value" : "WO25"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-15. WO25: all six operators named missing audio as a major issue for SA."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "audio channel"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/rdonto/op#InformationChannel"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Sound from the vehicle and its surroundings, relayed to the operator."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#CameraView",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-15, SA-17."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "camera view"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/rdonto/op#InformationChannel"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "An information channel that shows the operator the image of one vehicle camera, or one image stitched from several."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#ConfiguredLimit",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-09, SA-12, SA-14, SA-18, SA-22 and SA-24, and the limits of RDOnto-link. Limits are parameters, not facts about the world. Most limit types hold one value in one fixed unit, given in the definition, as qudt:numericValue with qudt:unit; the shapes enforce the unit, and queries read only that unit. Two differ: a WorkloadBand has a lower and an upper bound on a named scale, and a RDOnto-link:TravelTolerance can be given as a dimensionless delay limit. Most limits are scoped by mode (appliesToMode); an SARequirement is scoped by SA type and its value is the recheck interval. Every limit carries dct:source; values used for testing say so in rdfs:comment."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "configured limit"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A value set by configuration that a measured or computed quantity is compared with, together with the source it was taken from."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#ConstructionSite",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#OperatingEnvironment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-06."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "construction site"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A site where construction work is carried out, closed to public traffic."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#ContinuousRemoteDriving",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "AM22"
+  }, {
+    "@value" : "BR26"
+  }, {
+    "@value" : "SHI26"
+  }, {
+    "@value" : "STVF"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#OperationMode"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-01. Term from SHI26. What starts the remote drive, not its duration, decides the context: a vehicle without an ADS that is remotely driven for a whole trip, even a short move on a site, is in continuous remote driving. Often lasts hours (group D). Responds to no request (SA-03)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "continuous remote driving"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Remote driving in which the remote operator is the vehicle's driver for the whole trip, however short, performing the whole DDT, possibly in a vehicle without an automated driving system."
+  } ],
+  "https://w3id.org/rdonto/op#broaderMode" : [ {
+    "@id" : "https://w3id.org/rdonto/op#RemoteDriving"
+  } ],
+  "https://w3id.org/rdonto/op#isRemoteDrivingMode" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "true"
+  } ],
+  "https://w3id.org/rdonto/op#requiresSAType" : [ {
+    "@id" : "https://w3id.org/rdonto/op#OperationalSA"
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#ControlInputEvidence",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "MZ25"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-25."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "control input evidence"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/rdonto/op#SAEvidence"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "SA evidence from a control action of the operator that implies the element was perceived, e.g. braking for a pedestrian."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#Cue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-16."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "cue"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A kind of sensory information a driver uses, such as vestibular or auditory information."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#CueInterpretationTask",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "AM22"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-02, remote assistance. AM22's example of a remote assistant performing an OEDR-like action without performing the DDT."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "cue interpretation task"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/rdonto/op#OperatorTask"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Interpreting what the vehicle cannot, e.g. identifying an object in the lane as an empty bag that can be driven through."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#DecisionMakingTask",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "AM22"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-02, remote assistance. AM22: the remote assistant provides a new pathway around road construction, which the ADS executes."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "decision-making task"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/rdonto/op#OperatorTask"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Deciding on and authorizing an option for the vehicle, e.g. a path, a waypoint or a go-ahead, which the ADS then executes."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#DecisionSupportSA",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#SAType"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-21, SA-22. Required by remote assistance; the elements are those the request concerns, where it names any (concernsElement)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "decision-support SA"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Selective awareness of the specific elements needed to answer a request from the system; not full SA of the scenario."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#DisplayedScene",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-08. Separates the scene the operator sees from the current scene at the vehicle."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "displayed scene"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "What the remote station showed the operator at one moment, derived from one or more sensor frames."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#Distraction",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "HA24"
+  }, {
+    "@value" : "ME24"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#Impairment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-19. ME24; HA24 reports distraction in the remote operation office."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "distraction"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The operator's attention being drawn away from the operation task."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#DrivingTask",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "HN25b"
+  }, {
+    "@value" : "WO25"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-06. Not the DDT (which every driving task needs) but the purpose of the operation; where J3016's driving task is meant, RDOnto writes DDT. Not an OperatorTask either, which is what the operator does (holdsTask), while engagementTask and RDOnto-link:setupTask name a driving task. It shapes which elements matter (WO25: fork handling). Individuals are configuration."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "driving task"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "What the vehicle is operated for, e.g. passenger transport, pallet handling or vehicle relocation."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#ElementStateChange",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "MU21"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-11. Interface (stream layer): sosa:hasFeatureOfInterest is the element and sosa:resultTime the time. A perception assertion is stale when its element changed after the sensed time of the scene it rests on. What counts as significant is decided upstream."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "element state change"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/sosa/Observation"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "An observation, made at the vehicle, that a situation element's state changed significantly, e.g. a pedestrian started crossing."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#Engagement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-01, SA-04, SA-05. An engagement is not a session: a session (RDOnto-link:TeleoperationSession) is only the connection between a station and a vehicle, and carries engagements in sequence. An engagement is carried by one session and ends with it, so a reconnection in a new session also starts a new engagement, in the same mode; it can name the one it continues (followsEngagement). What sources such as HA24 call a driving session is an engagement here."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "engagement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Activity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The period in which one remote operator is responsible for one vehicle in one operation mode, from prov:startedAtTime to prov:endedAtTime (absent while it lasts). A mode change starts a new engagement."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#EngineSound",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "ZH24"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#InVehicleCue"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-16. ZH24 names the engine sound among the cues through which speed is perceived."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "engine sound"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The sound of the vehicle's engine or drive, which tells a driver about speed and load."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#EventBasedRemoteDriving",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "AM22"
+  }, {
+    "@value" : "MU21"
+  }, {
+    "@value" : "SHI26"
+  }, {
+    "@value" : "TL22"
+  }, {
+    "@value" : "WF25"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#OperationMode"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-01, SA-03. SHI26 introduce the term for automated vehicles that call an operator in; RDOnto-op also applies it to a takeover from remote monitoring and to a vehicle without an ADS taken over from its on-board driver (takenOverFrom). Not called an intervention, since WF25 use remote intervention for acting on the vehicle without driving it, such as starting a safe stop."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "event-based remote driving"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Remote driving that an event calls for while something else drives the vehicle, either its ADS or an on-board driver. The operator takes over on the vehicle's takeover request, from remote monitoring when the operator sees the need, or from the on-board driver, usually for a limited time, and then hands back or ends the engagement."
+  } ],
+  "https://w3id.org/rdonto/op#broaderMode" : [ {
+    "@id" : "https://w3id.org/rdonto/op#RemoteDriving"
+  } ],
+  "https://w3id.org/rdonto/op#isRemoteDrivingMode" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "true"
+  } ],
+  "https://w3id.org/rdonto/op#requiresSAType" : [ {
+    "@id" : "https://w3id.org/rdonto/op#OperationalSA"
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#EyeFixationEvidence",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "MZ25"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-25."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "eye fixation evidence"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/rdonto/op#SAEvidence"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "SA evidence that the operator's gaze rested on the element in the displayed scene."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#FallbackReadyPeriod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "EN95a"
+  }, {
+    "@value" : "ME24"
+  }, {
+    "@value" : "MU21"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-20. An operator state, not an operation mode: there is no vehicle and no mode. Waiting can bring underload and decreased vigilance (MU21, ME24, EN95a). Counts as a break for SA-12. Not J3016's DDT fallback-ready user, who is the user of one vehicle with an engaged Level 3 ADS and is receptive to its requests to intervene: an operator who waits for the requests of one vehicle while watching it is in remote monitoring here, and this state has no vehicle (related match in RDOnto-core)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "fallback-ready period"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Activity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A period in which an operator waits, ready to take over, without being engaged with a vehicle, from prov:startedAtTime to prov:endedAtTime (absent while it lasts)."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#Fatigue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "HA24"
+  }, {
+    "@value" : "ME24"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#Impairment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-19. HA24: fatigue clearly higher than in-vehicle driving; ME24."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "fatigue"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A state of tiredness that lowers the operator's alertness and performance."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#HapticFeedback",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "TL22"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-15, SA-16. TL22 reports the missing haptic channel as a problem for remote operators."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "haptic feedback"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/rdonto/op#InformationChannel"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Force or touch feedback to the operator, e.g. steering-wheel torque or pedal feel."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#Impairment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "HA24"
+  }, {
+    "@value" : "ME24"
+  }, {
+    "@value" : "TL22"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-19."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "impairment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/sosa/ObservableProperty"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A kind of operator impairment that operator monitoring can show signs of."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#ImpairmentObservation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "HA24"
+  }, {
+    "@value" : "ME24"
+  }, {
+    "@value" : "TL22"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-19, SA-20, SA-24. How the monitoring decides is outside the ontology (e.g. a distraction or drowsiness monitor)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "impairment observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/sosa/Observation"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "An observation by operator monitoring of whether the operator shows signs of an impairment: sosa:hasFeatureOfInterest the operator, sosa:observedProperty the impairment, sosa:hasSimpleResult true or false, sosa:resultTime the time."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#InVehicleCue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "LV21"
+  }, {
+    "@value" : "ME24"
+  }, {
+    "@value" : "MU21"
+  }, {
+    "@value" : "TL22"
+  }, {
+    "@value" : "WO25"
+  }, {
+    "@value" : "WO26"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-16: missing cues are the in-vehicle cues that no available channel provides. The individuals are the examples SA-16 lists; not an exhaustive list."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "in-vehicle cue"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/rdonto/op#Cue"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A cue an in-vehicle driver would normally have."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#InclinationCue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#InVehicleCue"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-16."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "inclination cue"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A driver's feel for the slope or tilt of the road or ground under the vehicle."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#InformationAgeLimit",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "AM22"
+  }, {
+    "@value" : "GF20"
+  }, {
+    "@value" : "MU21"
+  }, {
+    "@value" : "NE19"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-09. The limit per mode is the operator-side limit and takes priority. RDOnto-link may scope a further instance to a teleoperation setup (RDOnto-link:appliesToSetup) as the vehicle-to-station part of the setup's reference budgets (LK-04); it must be no looser than the mode's limit, which the link shapes check. With RDOnto-link loaded, SA-09 uses the setup's limit where it is stricter. SA-24: a mode whose limit the current information age exceeds is one the operator can no longer perform; each candidate mode is tested against its own limit. Without a displayed scene, or for a mode without a limit, the information age is not judged and rules out no mode."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "information age limit"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/rdonto/op#ConfiguredLimit"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The largest event-to-display age of displayed information acceptable in a mode. Value as qudt:numericValue with qudt:unit unit:MilliSEC."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#InformationChannel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "LV21"
+  }, {
+    "@value" : "TL22"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-15. Channel individuals belong to a station; what each conveys is asserted per individual (providesCue)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "information channel"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A means by which the remote station conveys information about the vehicle and its surroundings to the operator."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#LatencyChangeLimit",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-14. A configuration parameter; no published value."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "latency change limit"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/rdonto/op#ConfiguredLimit"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The largest difference between the current and the adapted information age acceptable in a mode before the operator's adaptation can no longer be assumed. Value as qudt:numericValue with qudt:unit unit:MilliSEC."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#MapView",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-15."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "map view"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/rdonto/op#InformationChannel"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "An information channel that shows the vehicle's position and route on a map or in a bird's-eye view."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#MinimumBreakLength",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "HA24"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-12. A break itself has no mode; the mode named here (appliesToMode) is the remote driving mode whose time on task the break resets, see TimeOnTaskLimit for the rules. HA24: most drivers reported breaks of 10-15 min once per hour."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "minimum break length"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/rdonto/op#ConfiguredLimit"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The shortest time without an engagement that counts as a break for the time-on-task limit of a remote driving mode. Value as qudt:numericValue with qudt:unit unit:MIN."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#MiningSite",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#OperatingEnvironment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-06."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "mining site"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A surface or underground mine."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#MotionFeedback",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "WO25"
+  }, {
+    "@value" : "WO26"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-15. Motion platforms were tested in WO26 and WO25."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "motion feedback"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/rdonto/op#InformationChannel"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Feedback that lets the operator feel the vehicle's motion, e.g. through a motion platform."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#MotionSickness",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "HA24"
+  }, {
+    "@value" : "ME24"
+  }, {
+    "@value" : "TL22"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#Impairment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-19. HA24, ME24; TL22: operators felt nauseous and dizzy after 15 minutes."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "motion sickness"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Nausea, dizziness or similar discomfort that the operator gets from watching the vehicle's motion at the station."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#ObjectClassificationRequest",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "AM22"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#RequestType"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-03, SA-22. AM22's example: an object in the lane is identified as an empty bag that can be driven through."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "object classification request"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A request that the remote operator say what an object is that the vehicle cannot classify."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#ObservationTask",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "AM22"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-02, remote monitoring."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "observation task"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/rdonto/op#OperatorTask"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Observing the vehicle and its situation without influencing the DDT."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#OnBoardDriver",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "J3016"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-01, LK-10. Close to EDMC InVehicleDriver (RDOnto-core); a SKOS mapping, since the on-board driver does not drive while a remote operator has taken over. Whether the driver can take control back is a separate state (ableToTakeOver)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "on-board driver"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Agent"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A human in the vehicle's driver's seat who drives the vehicle when no remote operator does."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#OnBoardDriverAsked",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#TakeoverReason"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-03."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "on-board driver asked"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The on-board driver asked the remote operator to take over."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#OnBoardDriverUnableToDrive",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#TakeoverReason"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-03, LK-10. The driver then has ableToTakeOver false, so control cannot be handed back."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "on-board driver unable to drive"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The on-board driver can no longer drive, e.g. through illness or fatigue, as the driver reports or a driver monitoring system detects."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#OperatingEnvironment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "BR26"
+  }, {
+    "@value" : "HN25b"
+  }, {
+    "@value" : "LV21"
+  }, {
+    "@value" : "WO25"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-06. Interface (RDOnto-todd): the teleoperation ODD describes environments by their attributes; these individuals only name the kind. The environment matters for remote driving: performance and training differ per ODD (HN25b), and a monotonous task reduces SA (LV21)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "operating environment"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The kind of place a vehicle is operated in, e.g. a public road, a warehouse, a port, or a construction or mining site."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#OperationMode",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "AM22"
+  }, {
+    "@value" : "BSI1886"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-01, SA-21. The modes of AM22 (remote monitoring, remote assistance, remote driving), with remote driving split into its two contexts by RDOnto-op:broaderMode. Fallback-ready is not a mode but an operator state (FallbackReadyPeriod). Interface (RDOnto-concept)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "operation mode"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The kind of remote operation an engagement performs."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#OperationalSA",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#SAType"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-21, SA-22. Required by remote driving."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "operational SA"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Continuous awareness of all relevant elements, to carry out the DDT."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#OperatorTask",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "AM22"
+  }, {
+    "@value" : "J3016"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-02. In remote driving, DDT subtasks and the DDT fallback: EDMC's DynamicDrivingSubtask and DynamicDrivingTaskFallback are subclasses (RDOnto-core). In remote assistance, decision-making and cue interpretation, e.g. classifying an object or authorizing a path; the remote assistant 'only provides input and authorization' without performing any part of the DDT (AM22). In remote monitoring, observation only."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "operator task"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A task a remote operator can hold for a vehicle in an engagement."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#OtherAssistanceRequest",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#RequestType"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-03. Keeps the list open: the request types are examples, not an exhaustive list."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "other assistance request"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A request for remote assistance of a kind that no other request type covers."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#PathRequest",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "AM22"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#RequestType"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-03, SA-22. AM22's example: the remote assistant provides a new pathway around road construction, which the ADS executes."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "path request"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A request that the remote operator provide a path for the vehicle, or authorize one it proposes."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#PedalFeel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "TL22"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#InVehicleCue"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-16. TL22 reports the missing haptic channel as a problem for remote operators."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "pedal feel"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The resistance and travel a driver feels in the brake and accelerator pedals."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#PerceptionAssertion",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "EN95a"
+  }, {
+    "@value" : "MZ25"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-07, SA-11, SA-25. Carries no SA level: comprehension and projection integrate several elements and are not held per element. A later assertion about the same operator and element is a recheck (SA-13)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "perception assertion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "An estimate, produced from evidence, that an operator perceived a given situation element at a given time, in a displayed scene or through a channel that shows none, such as audio."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#PerceptionConfidenceThreshold",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-13, SA-23. An assertion below the threshold of the mode of the engagement whose SA is judged does not count as perceived or as a recheck. Where no threshold is configured for the mode or a broader mode, every assertion counts. A configuration parameter; no source gives a value."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "perception confidence threshold"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/rdonto/op#ConfiguredLimit"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The lowest confidence at which a perception assertion counts as the operator having perceived the element, in a mode. Value as qudt:numericValue between 0 and 1 with qudt:unit unit:UNITLESS."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#PerceptionError",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "MU21"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#RequestReason"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-03. MU21, citing California DMV 2019."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "perception error"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The vehicle's perception has misread the scene or cannot interpret it reliably."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#PlanFailure",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "MU21"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#RequestReason"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-03. MU21, citing Scholtz et al. 2004."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "plan failure"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The vehicle's planning finds no way to proceed in the situation."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#Port",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#OperatingEnvironment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-06."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "port"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A port terminal, or a logistics yard like one, closed to public traffic."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#ProbeAnswerEvidence",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "EN95b"
+  }, {
+    "@value" : "MZ25"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-25."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "probe answer evidence"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/rdonto/op#SAEvidence"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "SA evidence from the operator's answer to a query about the situation that is put during the task, as in SAGAT or SPAM."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#PublicRoad",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "HN25b"
+  }, {
+    "@value" : "STVF"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#OperatingEnvironment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-06. The environment of StVFernLV and of HN25b's remote driving data."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "public road"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Roads open to public traffic, which the vehicle shares with other road users."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#RemoteAssistance",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "AM22"
+  }, {
+    "@value" : "BSI1886"
+  }, {
+    "@value" : "J3016"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#OperationMode"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-01, SA-03. The ADS keeps performing the DDT. While it waits for the answer to a request it cannot go on by itself (RDOnto-link:adsAbleToDrive)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "remote assistance"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Remote operation in which the operator advises an ADS-equipped vehicle that is within its ODD but encounters a situation it cannot manage: the operator interprets cues and answers the vehicle's requests, without performing any part of the DDT."
+  } ],
+  "https://w3id.org/rdonto/op#isRemoteDrivingMode" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "false"
+  } ],
+  "https://w3id.org/rdonto/op#modeIncludesTask" : [ {
+    "@id" : "https://w3id.org/rdonto/op#CueInterpretationTask"
+  }, {
+    "@id" : "https://w3id.org/rdonto/op#DecisionMakingTask"
+  } ],
+  "https://w3id.org/rdonto/op#requiresSAType" : [ {
+    "@id" : "https://w3id.org/rdonto/op#DecisionSupportSA"
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#RemoteDriving",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "AM22"
+  }, {
+    "@value" : "BSI1886"
+  }, {
+    "@value" : "J3016"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#OperationMode"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-01. AM22's remote driving mode: SAE Levels 0-2, where the operator is present and active at all times, and the DDT fallback of Level 3 and above. Engagements use one of its two narrower modes, event-based or continuous remote driving, which are told apart by what starts the remote drive, not by SAE level or duration."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "remote driving"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Remote operation in which the operator manually controls the vehicle by throttling, braking and steering, and is fully responsible for OEDR."
+  } ],
+  "https://w3id.org/rdonto/op#isRemoteDrivingMode" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "true"
+  } ],
+  "https://w3id.org/rdonto/op#requiresSAType" : [ {
+    "@id" : "https://w3id.org/rdonto/op#OperationalSA"
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#RemoteMonitoring",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "AM22"
+  }, {
+    "@value" : "BSI1886"
+  }, {
+    "@value" : "SHI26"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#OperationMode"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-01. SHI26 do not count monitoring as a separate form of remote operation, because it needs a defined objective. RDOnto-op keeps it as a mode and gives it that objective through its SA requirement: keeping supervisory SA, i.e. noticing when the operator must step in (SA-21, SA-22)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "remote monitoring"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Remote operation in which the operator only observes the vehicle and its situation, e.g. its task status or system diagnostics, without influencing the DDT. The operator can switch to remote assistance or remote driving."
+  } ],
+  "https://w3id.org/rdonto/op#isRemoteDrivingMode" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "false"
+  } ],
+  "https://w3id.org/rdonto/op#modeIncludesTask" : [ {
+    "@id" : "https://w3id.org/rdonto/op#ObservationTask"
+  } ],
+  "https://w3id.org/rdonto/op#requiresSAType" : [ {
+    "@id" : "https://w3id.org/rdonto/op#SupervisorySA"
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#RemoteOperator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "J3016"
+  }, {
+    "@value" : "SHI26"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-01. EDMC RemoteDriver and RemoteAssistant are subclasses (RDOnto-core). The station is usually outside the vehicle, but J3016 (definition 3.31.1.2) also counts a remote driver inside the vehicle who is not in the driver's seat; cues such a driver perceives directly, not through the station, are not modelled (SHI26 note this case)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "remote operator"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Agent"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A human who monitors, assists or drives a vehicle through a remote station, without occupying the vehicle's driver's seat."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#RemotelyOperatedVehicle",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-01, SA-24. Interface. Related to EDMC MotorVehicle by a SKOS mapping (RDOnto-core), not a subclass: vehicles off public roads, such as forklifts, are included. Whether it has an ADS is stated with hasADS."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "remotely operated vehicle"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A vehicle that can be monitored, assisted or driven from a remote station. It may or may not have an automated driving system."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#Request",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "AM22"
+  }, {
+    "@value" : "MU21"
+  }, {
+    "@value" : "TL22"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-03. Issued by the vehicle's ADS. A takeover from an on-board driver responds to no request; why it happened is recorded on the engagement (takeoverReason). A takeover request closely matches J3016's request to intervene (RDOnto-core). For decision-support SA, the request type and the elements the request concerns select the required elements (SA-22, concernsElement)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "request"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A request from a vehicle to a remote operator: to take over (event-based remote driving) or to assist (remote assistance), with an issue time (prov:generatedAtTime)."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#RequestReason",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "AM22"
+  }, {
+    "@value" : "MU21"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-03. Sensor failure and perception error (MU21, citing California DMV 2019), plan failure (MU21, citing Scholtz et al. 2004), an object the vehicle cannot classify (AM22), and no stated cause. Not an exhaustive list."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "request reason"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Why a request was issued."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#RequestType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "AM22"
+  }, {
+    "@value" : "MU21"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-03, SA-22. The individuals follow AM22's examples of remote assistance (a new path around road construction; classifying an object in the lane) and the takeover request of event-based remote driving. Not an exhaustive list."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "request type"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "What a vehicle asks the remote operator for."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#SAEvidence",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "EN95b"
+  }, {
+    "@value" : "LV21"
+  }, {
+    "@value" : "MZ25"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-25. The measures often do not agree with each other, probes can change where operators look, and gaze is affected by 'look but not see' (MZ25), so each piece of evidence has a reliability."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "SA evidence"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A recorded observation from which an operator's perception of an element is inferred."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#SARequirement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "EN95a"
+  }, {
+    "@value" : "LV21"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-22 (static), used by SA-13 (lapses) and SA-23 (sufficiency). For decision-support SA, a requirement may be limited to one request type (forRequestType), and it applies only to the elements the request concerns, where the request names any (concernsElement): what O must know depends on what V asks. Design-time knowledge, e.g. from a task analysis. The interval should reflect how fast elements of the type change; no source gives values."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "SA requirement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/rdonto/op#ConfiguredLimit"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A requirement that an operator who needs a given SA type has perceived every situation element of a given type in the vehicle's scene, and rechecked it within a recheck interval. The recheck interval is the value, as qudt:numericValue with qudt:unit unit:SEC."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#SAType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "AM22"
+  }, {
+    "@value" : "EN95a"
+  }, {
+    "@value" : "TANG26"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-21. TANG26: remote driving relies on real-time, low-level information, remote assistance on high-level, synthesized information to support decisions. Supervisory SA follows AM22's remote monitoring."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "SA type"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The kind of situation awareness a mode of operation requires."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#SelfReportEvidence",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "MZ25"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-25. A rating of SA as a whole, such as SART, is not evidence for one element."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "self-report evidence"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/rdonto/op#SAEvidence"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "SA evidence from the operator's own statement that they noticed the element, e.g. a verbal report during the drive."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#SensorFailure",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "MU21"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#RequestReason"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-03. MU21, citing California DMV 2019."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "sensor failure"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A sensor of the vehicle has failed or delivers no usable data."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#SensorFrame",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-08. sosa:resultTime is the capture time at the vehicle and sosa:madeBySensor the sensor. The sensed time, when the depicted state of the world held, is the capture time minus the sensor's capture delay."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "sensor frame"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/sosa/Observation"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "One captured output of a vehicle sensor (camera image, lidar sweep) sent to the remote station."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#SensorOverlay",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-15."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "sensor overlay"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/rdonto/op#InformationChannel"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "An information channel that draws sensor or perception data, such as detected objects or a predicted path, over the camera views."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#SituationElement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-07. Interface. A.U.T.O. Traffic_Entity is a subclass (RDOnto-core). This module never describes the element itself, only the operator's perception of it."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "situation element"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Something in the vehicle's situation that the operator may perceive: a road user, an object, an event or a state of the vehicle."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#SpeedSense",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "ZH24"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#InVehicleCue"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-16. ZH24: speed 'is perceived through auditory and tactile cues such as the vehicle's engine sound and vibrations', and through the changing view of the surroundings."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "speed sense"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A driver's impression of how fast the vehicle is moving, from the flow of the surroundings, sound and vibration."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#SupervisorySA",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#SAType"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-21, SA-22. Required by remote monitoring."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "supervisory SA"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Awareness of relevant changes in the driving environment relative to the driving system's capabilities, to judge whether the operator must step in by switching to remote assistance or remote driving."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#TakeoverReason",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-03. Records the event that called for an event-based remote drive when there is no Request. The individuals are the two cases of a takeover from an on-board driver; no source states them, they follow from the context rule of event-based remote driving. Not an exhaustive list."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "takeover reason"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Why a remote operator took over from an on-board driver, where no request from the vehicle started the engagement."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#TakeoverRequest",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "MU21"
+  }, {
+    "@value" : "TL22"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#RequestType"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-03. Answered by an event-based remote driving engagement. Closely matches J3016's request to intervene (RDOnto-core)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "takeover request"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A request that the remote operator take over driving the vehicle."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#TimeOnTaskLimit",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "HA24"
+  }, {
+    "@value" : "ME24"
+  }, {
+    "@value" : "TANG26"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-12. A break is any time without an engagement, including time fallback-ready, so breaks follow from the engagements and need no class of their own. Exact rules: (1) a break is a period of at least the minimum break length in which the operator has no open engagement with any vehicle, in any mode; (2) time on task is the sum of the durations of the operator's engagements in a remote driving mode (isRemoteDrivingMode true) since the end of the last break; (3) time in remote monitoring or remote assistance is neither: it adds nothing to time on task and is not a break, so it does not reset the count; (4) the limit and the minimum break length that apply are those of the mode of the operator's current remote driving engagement or, if the operator is not driving now, of the most recent one; a limit stated for the broader mode holds where the mode has none of its own. Both limit types are therefore stated for remote driving modes only (RDOnto-op-shapes.ttl). HA24: most professional remote drivers never drove more than 2 h at a time, 1 h preferred."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "time-on-task limit"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/rdonto/op#ConfiguredLimit"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The longest time an operator may drive remotely in a mode without a break of at least the minimum break length. Value as qudt:numericValue with qudt:unit unit:MIN."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#UnclassifiableObject",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "AM22"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#RequestReason"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-03."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "unclassifiable object"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The vehicle has detected an object that it cannot classify."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#UnspecifiedReason",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#RequestReason"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-03. Used so that every request has a reason value (RDOnto-op-shapes.ttl)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "unspecified reason"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "No reason was given for the request."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#VestibularCue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "WO26"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#InVehicleCue"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-16. WO26 relates vestibular feedback to presence and spatial awareness in remote driving."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "vestibular cue"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The sense of the vehicle's motion and of one's own orientation that the balance organs give a driver in the vehicle."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#Warehouse",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "WO25"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#OperatingEnvironment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-06. WO25 studied remotely controlled forklifts in a cold storage warehouse."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "warehouse"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The inside of a warehouse or a similar storage site, e.g. where forklifts handle pallets."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#WarningSound",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "WO25"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/rdonto/op#InVehicleCue"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-16. WO25: operators missed audio 'particularly to detect hazards, for example through honking or shouting'."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "warning sound"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A sound meant to warn, such as a horn, a siren or a shout."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#Workload",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "HS88"
+  }, {
+    "@value" : "ME24"
+  }, {
+    "@value" : "MU21"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/ns/sosa/ObservableProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-18, SA-20. The property a WorkloadEstimate observes (sosa:observedProperty), as an Impairment is the property an ImpairmentObservation observes, so that every operator observation says what it is about. The measure and its range are given by the scale of the estimate (onScale), e.g. NASA-TLX (HS88). An estimate without sosa:observedProperty is still read as workload; the shapes report it as a warning."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "workload"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The mental and physical demand that the operation places on the operator."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#WorkloadBand",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "HS88"
+  }, {
+    "@value" : "ME24"
+  }, {
+    "@value" : "MU21"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-18, SA-24. Scoped by appliesToMode, or by appliesToFallbackReady for the fallback-ready state, which has no mode. SA-24: workload is measured in the mode the operator is in and says nothing certain about another mode, so it is tested against the band of the current mode only; an operator outside that band, overloaded or underloaded, is not given a remote driving mode, and the other modes stay."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "workload band"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/rdonto/op#ConfiguredLimit"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The acceptable workload range in a mode, or while fallback-ready. Below the lower bound is underload, above the upper bound overload."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#WorkloadEstimate",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "HS88"
+  }, {
+    "@value" : "ME24"
+  }, {
+    "@value" : "MU21"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-18, SA-20. E.g. a NASA-TLX score (HS88) or a physiological index."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "workload estimate"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/sosa/Observation"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "An observation of the operator's workload: sosa:hasFeatureOfInterest the operator, sosa:observedProperty RDOnto-op:Workload, sosa:hasSimpleResult the value, sosa:resultTime the time, onScale the scale."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#ableToTakeOver",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "LK-10. Interface (driver monitoring, vehicle state). True while the driver is on board and fit to drive; false when the driver cannot drive, e.g. after a takeover with the reason RDOnto-op:OnBoardDriverUnableToDrive. Absent means not known, and then handing control back to the driver does not count as available (RDOnto-link:OnBoardDriverCanTakeOver)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#OnBoardDriver"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "able to take over"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Whether an on-board driver is able to take control of the vehicle back now."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#aboutElement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-07, SA-11, SA-13, SA-23. One element per assertion; a later assertion about the same operator and element is a recheck."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#PerceptionAssertion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "about element"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#SituationElement"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The situation element that a perception assertion says the operator perceived."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#adaptationCarriedFrom",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "HA24"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-14. Used when a mode change starts a new engagement over the same link, or when the operator drives the same setup again, so that the adaptation built up over earlier drives (HA24) is not lost. The earlier engagement has the same operator and started before this one (RDOnto-op-shapes.ttl); with RDOnto-link loaded, both must use the same teleoperation setup (RDOnto-link-shapes.ttl). Whether an adaptation is still valid after a long pause is decided by the stream layer, which then gives no value."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#Engagement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "adaptation carried from"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#Engagement"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The earlier engagement of the same operator whose adapted information age this engagement continues with."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#adaptedInformationAge",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty", "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "HA24"
+  }, {
+    "@value" : "NE19"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-14. Interface (stream layer, fed by RDOnto-link LK-05). HA24: latency adaptation took from 1-2 drives to months; NE19 varied latency within a drive. Adaptation belongs to the operator and the setup, not to one engagement, so a new engagement need not start it again: an engagement with adaptationCarriedFrom states no value of its own, and the value that applies to it is that of the engagement it is carried from, followed back to the one that measured it (RDOnto-op-shapes.ttl)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#Engagement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "adapted information age"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#dayTimeDuration"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The information age the operator is adapted to, as measured in this engagement, e.g. as the median over its first minutes."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#appliesToFallbackReady",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-18. True for a limit that applies while the operator is fallback-ready rather than in a mode."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#ConfiguredLimit"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "applies to fallback-ready"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Whether a configured limit applies while the operator is fallback-ready, a state that has no operation mode."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#appliesToMode",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-09, SA-12, SA-14, SA-18, SA-24. A limit stated for a broader mode (RDOnto-op:broaderMode) holds for its narrower modes unless they have their own. Not used on an SARequirement, which is scoped by SA type (forSAType)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#ConfiguredLimit"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "applies to mode"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#OperationMode"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "An operation mode in which a configured limit applies."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#assertedOperator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-07. Where the assertion rests on a displayed scene, this is the operator of an engagement the scene was shown in (RDOnto-op-shapes.ttl)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#PerceptionAssertion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "asserted operator"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#RemoteOperator"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The remote operator whose perception a perception assertion estimates."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#availableChannel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-15, SA-16, SA-17: the channels the station currently provides to the operator for the engaged vehicle."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#Engagement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "available channel"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#InformationChannel"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "An information channel the remote station currently provides to the operator in an engagement."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#basedOnScene",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The displayed scene the operator perceived the element in; through it, when the information was sensed at the vehicle (SA-11)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#PerceptionAssertion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "based on scene"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#DisplayedScene"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/ns/prov#wasDerivedFrom"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The displayed scene in which the operator perceived the element."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#broaderMode",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-01 and every question that reads a limit per mode. Continuous and event-based remote driving have RDOnto-op:RemoteDriving as their broader mode. Limits, supported modes, task kinds and needs stated for a broader mode hold for its narrower modes. A property of this module, not skos:broader, so that the SKOS mappings of RDOnto-core add nothing to the mode hierarchy."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#OperationMode"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "broader mode"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#OperationMode"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The more general operation mode that an operation mode is a special case of."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#buildUpEndedAt",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "LU17"
+  }, {
+    "@value" : "MU21"
+  }, {
+    "@value" : "MZ25"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-04. Set by the stream layer from SA-23; absent while build-up lasts. Build-up time = buildUpEndedAt minus prov:startedAtTime. Basic scene content is perceived within a single fixation (MZ25); from video, a traffic scene's layout can be reproduced after about 7-12 s, while relative speeds take 20 s or more (LU17)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#Engagement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "build-up ended at"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#dateTime"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "When the operator's SA was first sufficient for the SA type of the engagement's mode (SA-23), which ends the build-up phase and starts the maintenance phase."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#captureDelay",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty", "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "GF20"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-08, SA-09. Configuration or offline measurement, not a per-frame value; GF20 measured roughly 15-35 ms. With it, information age runs from the event to its display, GF20's sensor (glass-to-glass) latency. A sensor without a value counts as zero delay. Shared with RDOnto-link."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/ns/sosa/Sensor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "capture delay"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#dayTimeDuration"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The time from an event in front of the sensor to the frame that shows it being captured: exposure, readout and transfer to the vehicle computer."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#concernsElement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-03, SA-13, SA-22, SA-23. Optional, and a request can name several. For decision-support SA, the requirements then apply only to these elements, not to every element of the required type in the vehicle's scene; a request that names none is judged on every element of the type."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#Request"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "concerns element"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#SituationElement"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A situation element that a request is about, e.g. the object the vehicle cannot classify."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#confidence",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-13, SA-23, SA-25. How the estimator combines evidence is outside the ontology. Whether an assertion counts as perceived is decided against the PerceptionConfidenceThreshold of the mode."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#PerceptionAssertion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "confidence"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "How sure the estimate is that the operator perceived the element, between 0 (not at all) and 1 (certain)."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#deployedIn",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-06, static: the environments the vehicle is deployed in."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#RemotelyOperatedVehicle"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "deployed in"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#OperatingEnvironment"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A kind of place the vehicle is deployed in."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#derivedFromFrame",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-08: a sensor frame the displayed scene was produced from. Not a subproperty of prov:wasDerivedFrom: that would type a SensorFrame as a prov:Entity, while a sosa:Observation is a prov:Activity in the SSN-PROV alignment, and the two are disjoint."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#DisplayedScene"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "derived from frame"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#SensorFrame"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A sensor frame that a displayed scene was produced from."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#displayedAt",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-09. Information age = displayedAt minus the earliest sensed time (capture time minus capture delay) of the frames the scene was derived from."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#DisplayedScene"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "displayed at"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#dateTime"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The time at which the remote station showed a displayed scene to the operator."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#engagedOperator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-01, SA-05. An engagement has exactly one; the vehicles an operator is responsible for at the same time are those of the operator's open engagements."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#Engagement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "engaged operator"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#RemoteOperator"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/ns/prov#wasAssociatedWith"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The remote operator who is responsible for the vehicle in an engagement."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#engagedVehicle",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-01. An engagement has exactly one, and a vehicle has at most one open engagement at a time (RDOnto-op-shapes.ttl)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#Engagement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "engaged vehicle"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#RemotelyOperatedVehicle"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The vehicle that the operator monitors, assists or drives in an engagement."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#engagementEnvironment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-06, runtime. A vehicle can be deployed in several environments (deployedIn), so the answer for one engagement is stated here. It must be one of the vehicle's environments where the vehicle states any (RDOnto-op-shapes.ttl). Without a value, SA-06 has an answer only if the vehicle states exactly one environment."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#Engagement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "engagement environment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#OperatingEnvironment"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The operating environment the vehicle is in during this engagement."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#engagementTask",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-06, runtime. As engagementEnvironment: one of the vehicle's driving tasks where the vehicle states any. Without a value, SA-06 has an answer only if the vehicle states exactly one driving task."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#Engagement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "engagement task"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#DrivingTask"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The driving task the vehicle is operated for during this engagement."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#followsEngagement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-04. The operator moves on from an engagement already held: usually into another mode, e.g. from remote monitoring into event-based remote driving, on the operator's own initiative or on a request from the vehicle (the engagement then also has respondsTo); or in the same mode, when a reconnection in a new session starts a new engagement. The build-up then starts from the SA already held, not from zero: a perception assertion belongs to the operator, not to one engagement, so what the operator perceived in the earlier engagement still counts while it is within its recheck interval (SA-23). SA-04 names the engagement followed. The earlier engagement has ended and has the same operator and vehicle (RDOnto-op-shapes.ttl)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#Engagement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "follows engagement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#Engagement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/ns/prov#wasInformedBy"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The engagement of the same operator with the same vehicle that this engagement directly continues from."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#forDrivingTask",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "WO25"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-22. Optional: the requirement applies only to engagements with this driving task (engagementTask, or the vehicle's only driving task), e.g. the fork and the load in pallet handling (WO25). Without it, the requirement applies to every driving task."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#SARequirement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "for driving task"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#DrivingTask"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The driving task to which an SA requirement is limited."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#forEnvironment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "HN25b"
+  }, {
+    "@value" : "WO25"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-22. Optional: the requirement applies only to engagements in this operating environment (engagementEnvironment, or the vehicle's only environment). Without it, the requirement applies in every environment. Which elements matter depends on where and for what the vehicle is operated (WO25, HN25b)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#SARequirement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "for environment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#OperatingEnvironment"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The operating environment to which an SA requirement is limited."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#forRequestType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-22. Optional, for decision-support SA: the requirement applies only while the operator answers a request of this type. Without it, the requirement applies to every request."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#SARequirement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "for request type"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#RequestType"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The request type to which an SA requirement for decision-support SA is limited."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#forSAType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-22. The requirement applies to engagements in a mode that requires this SA type (requiresSAType)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#SARequirement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "for SA type"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#SAType"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The SA type that an SA requirement belongs to."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#hasADS",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Interface (RDOnto-concept). SA-24, LK-10. True for an ADS-equipped vehicle, false for a vehicle without an ADS; absent means not known, never 'no ADS'. A vehicle with hasADS false does not support remote assistance, is driven in event-based remote driving only when taken over from an on-board driver (RDOnto-op-shapes.ttl), and has no RDOnto-link:adsWithinODD value. Separates 'no ADS' from 'ADS outside its ODD', which RDOnto-link:adsWithinODD alone cannot."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#RemotelyOperatedVehicle"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has ADS"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Whether the vehicle is equipped with an automated driving system."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#hasDrivingTask",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-06, static: the driving tasks the vehicle is deployed for."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#RemotelyOperatedVehicle"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has driving task"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#DrivingTask"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A purpose the vehicle is deployed for."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#hasRequestReason",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-03. A request can have several reasons; one without a stated cause has RDOnto-op:UnspecifiedReason."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#Request"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has request reason"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#RequestReason"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A reason given for a request."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#hasRequestType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-03, SA-22. A takeover request starts event-based remote driving, any other type remote assistance; for decision-support SA the type selects the required elements (forRequestType)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#Request"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has request type"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#RequestType"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "What a request asks the remote operator for: a takeover or a kind of assistance."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#holdsTask",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-02, runtime: the tasks the operator holds in this engagement. Objects are task individuals typed with a task class (an EDMC DDT subtask class or one of the classes above)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#Engagement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "holds task"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#OperatorTask"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A task the operator holds for the vehicle in an engagement."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#horizontalFieldOfView",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-17. The horizontal angle a camera view shows, in degrees. Camera views of one engagement are assumed not to overlap; overlapping cameras are declared as one stitched view with its combined angle."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#CameraView"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "horizontal field of view"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The horizontal angle that a camera view shows, in degrees."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#inOperationMode",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-01. An engagement uses one specific mode: not the broad remote driving mode."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#Engagement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "in operation mode"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#OperationMode"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The operation mode an engagement is in."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#inSceneOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Interface (scene and criticality module): the element is currently relevant to the vehicle's situation. SA-13 and SA-23 apply the requirements to these elements."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#SituationElement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "in scene of"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#RemotelyOperatedVehicle"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The vehicle whose current situation a situation element is relevant to."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#inVehicleFieldOfView",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@value" : "AM22"
+  }, {
+    "@value" : "HA24"
+  }, {
+    "@value" : "ME24"
+  }, {
+    "@value" : "TL22"
+  }, {
+    "@value" : "WO25"
+  }, {
+    "@value" : "WO26"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-17. Configuration: the required field, e.g. a licence minimum, not the wider field a driver may actually have. AM22 gives driving-licence minimums of 120 degrees for cars and 160 degrees for trucks and buses, so camera arrays should cover at least that. The in-vehicle field is centred on the vehicle's forward axis: from minus half this value to plus half of it. Coverage = the part of that field, in degrees, that the available camera views show (each view's interval from viewDirection and horizontalFieldOfView, clipped to the in-vehicle field, summed), divided by this value. It is a share between 0 and 1: views outside the in-vehicle field, such as a rear camera, add nothing to it."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#RemotelyOperatedVehicle"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "in-vehicle field of view"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The horizontal visual field, in degrees, that a driver seated in the vehicle must have, taken as the reference for the operator's camera views."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#isRemoteDrivingMode",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-12, SA-24, LK-10. Lets SA-24 order modes without RDOnto-concept. It repeats what RDOnto-op:broaderMode RDOnto-op:RemoteDriving already says, so the shapes check that the two agree (RDOnto-op-shapes.ttl, OperationModeShape)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#OperationMode"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "is remote driving mode"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Whether an operation mode is remote driving or one of its narrower modes, in which the operator holds vehicle motion control."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#lowerBound",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-18. A workload estimate below it is underload. MU21 and ME24 describe underload and decreased vigilance in operators who wait or have little to do."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#WorkloadBand"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "lower bound"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The lowest workload value, on the band's scale, that still counts as acceptable."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#modeIncludesTask",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-02, static: which kinds of task a mode gives the operator. The object is a task class IRI (OWL 2 punning), e.g. vla:LateralVehicleMotionControl or RDOnto-op:DecisionMakingTask. It lists the kinds a mode may give the operator, not the tasks every engagement in the mode holds. A task stated for a broader mode holds for its narrower modes (broaderMode). The tasks of remote monitoring and remote assistance are asserted below; those of remote driving are EDMC classes and are asserted in RDOnto-core.ttl."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#OperationMode"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "mode includes task"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A kind of task that an operation mode gives the operator, stated as a task class."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#onChannel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-08. E.g. the camera view a scene appeared in. Recorded with the scene."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#DisplayedScene"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "on channel"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#InformationChannel"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "An information channel on which a displayed scene was shown."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#onScale",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-18. A band applies only to estimates on the same scale. Used on WorkloadEstimate and WorkloadBand, so no domain is declared (a domain would need a union, which OWL 2 RL does not allow)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "on scale"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The name of the scale on which a workload estimate or a workload band is expressed."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#perceivedAt",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-07, SA-13, SA-23. Not the capture or display time."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#PerceptionAssertion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "perceived at"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#dateTime"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The time at which the operator perceived the element, e.g. the time of the fixation."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#providesCue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-16. Asserted per channel individual, because what a channel conveys depends on the station."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#InformationChannel"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "provides cue"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#Cue"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A cue that an information channel conveys to the operator."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#readyOperator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-20. The same operator has no engagement during the period (RDOnto-op-shapes.ttl)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#FallbackReadyPeriod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "ready operator"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#RemoteOperator"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/ns/prov#wasAssociatedWith"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The remote operator who is fallback-ready during a fallback-ready period."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#reliability",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Between 0 and 1 (SA-25)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#SAEvidence"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "reliability"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "How far a piece of SA evidence can be trusted as a sign that the operator perceived the element, between 0 and 1."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#requestedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-03. The engagement that responds to the request is with this vehicle (RDOnto-op-shapes.ttl)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#Request"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "requested by"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#RemotelyOperatedVehicle"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The vehicle that issued a request."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#requiresElementType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-22. The object is a class IRI, e.g. an A.U.T.O. class such as l4:Pedestrian (OWL 2 punning)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#SARequirement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "requires element type"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The type of situation element, stated as a class, that an SA requirement says the operator must have perceived."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#requiresSAType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-21: each mode requires one SA type."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#OperationMode"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "requires SA type"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#SAType"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The SA type an operator needs in order to work in an operation mode."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#respondsTo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-03. The request that started an engagement: a takeover request for event-based remote driving, an assistance request for remote assistance. Continuous remote driving and remote monitoring engagements respond to none; an event-based engagement that the operator started without a request, from remote monitoring or from an on-board driver, responds to none either. For a takeover from an on-board driver, SA-03 is then answered by the takeover reason (takeoverReason)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#Engagement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "responds to"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#Request"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/ns/prov#used"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The request from the vehicle that an engagement was started to answer."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#rulesOutMode",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-24. Configuration: while the operator's latest ImpairmentObservation for the impairment is true, the modes named here drop out of the answer to SA-24. A mode stated here also rules out its narrower modes (RDOnto-op:broaderMode). No values are asserted by this module: no source says which impairment rules out which mode, so an impairment without a value rules out none."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#Impairment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "rules out mode"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#OperationMode"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A mode that an operator who currently shows signs of this impairment cannot perform."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#sensedAt",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-07, SA-11, SA-23. For perception through a channel that shows no scene built from sensor frames, such as audio or haptic feedback. The sensed time of a perception assertion is: the earliest sensed time of the frames of its scene (basedOnScene); otherwise this value; otherwise perceivedAt, i.e. no delay is assumed, which the shapes report as a warning. The assertion is stale when its element changed after that time (ElementStateChange). Not used together with basedOnScene."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#PerceptionAssertion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "sensed at"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#dateTime"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "When the information the operator perceived was sensed at the vehicle, for a perception that rests on no displayed scene."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#sensorOfVehicle",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-08. Interface (vehicle state). Ties a sensor frame, through its sensor, to a vehicle: the frames of a displayed scene come from the vehicle of an engagement the scene was shown in, where their sensors state a vehicle (RDOnto-op-shapes.ttl)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/ns/sosa/Sensor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "sensor of vehicle"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#RemotelyOperatedVehicle"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The vehicle that a sensor is mounted on."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#shownIn",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-08, SA-09. Ties a scene to the operator, the vehicle and the mode whose information age limit applies to it."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#DisplayedScene"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "shown in"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#Engagement"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "An engagement during which a displayed scene was shown to the operator."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#supportedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-25. Every perception assertion has at least one, since perception is never asserted as fact."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#PerceptionAssertion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "supported by"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#SAEvidence"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/ns/prov#wasDerivedFrom"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A piece of SA evidence from which a perception assertion was inferred."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#supportsMode",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Interface (RDOnto-concept). The modes the vehicle's equipment allows (SA-24). A vehicle without an ADS does not support remote assistance; it can support remote monitoring, continuous remote driving, and event-based remote driving where it can be taken over from an on-board driver. Support stated for a broader mode holds for its narrower modes (RDOnto-op:broaderMode): a vehicle that supports RDOnto-op:RemoteDriving supports both remote driving contexts. Support stated for a narrower mode holds for that mode only."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#RemotelyOperatedVehicle"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "supports mode"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#OperationMode"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "An operation mode that the vehicle's equipment allows it to be operated in."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#takenOverFrom",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-01, LK-10. A record of the takeover, which stays when the driver can no longer drive; whether control can go back to the driver (RDOnto-link:HandBackToOnBoardDriver) is stated with ableToTakeOver. Only on event-based remote driving engagements (RDOnto-op-shapes.ttl)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#Engagement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "taken over from"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#OnBoardDriver"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The on-board driver from whom an event-based remote driving engagement took over."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#takeoverReason",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-03. Only on an engagement that took over from an on-board driver (takenOverFrom), which responds to no request (RDOnto-op-shapes.ttl). Optional, and an engagement can state several."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#Engagement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "takeover reason"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#TakeoverReason"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A reason why the operator took over from the on-board driver in an engagement."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#upperBound",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-18. A workload estimate above it is overload."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#WorkloadBand"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "upper bound"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The highest workload value, on the band's scale, that still counts as acceptable."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#viaChannel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-07: the channel the element was perceived through."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#PerceptionAssertion"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "via channel"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/rdonto/op#InformationChannel"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "An information channel through which the operator perceived the element."
+  } ]
+}, {
+  "@id" : "https://w3id.org/rdonto/op#viewDirection",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "SA-17. With horizontalFieldOfView it gives the angular interval the view shows: from viewDirection minus half the field of view to viewDirection plus half of it. An interval that passes 180 or -180 continues on the other side: a view centred at 170 with a field of view of 60 shows 140 to 180 and -180 to -160. A camera view without a value is taken as centred straight ahead (0)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/rdonto/op#CameraView"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "view direction"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "The direction of the centre of a camera view, in degrees clockwise from the vehicle's forward axis, from -180 to 180 (0 = straight ahead, 90 = right, 180 = rear)."
+  } ]
+} ]

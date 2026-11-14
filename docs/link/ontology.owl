@@ -1,0 +1,2442 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/rdonto/link#"
+     xml:base="https://w3id.org/rdonto/link"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:link="https://w3id.org/rdonto/link#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://w3id.org/rdonto/link">
+        <owl:imports rdf:resource="https://w3id.org/rdonto/op"/>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-05</terms:created>
+        <terms:creator>Sanat Mharolkar</terms:creator>
+        <terms:description xml:lang="en">Represents the connection between a remotely driven vehicle and the remote station as far as it matters for remote driving: end-to-end latency and its parts, budgets per mode and speed, stability, connection loss, predictions, admissible speed and adaptations.</terms:description>
+        <terms:license rdf:resource="http://www.apache.org/licenses/LICENSE-2.0"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-14</terms:modified>
+        <rdfs:label xml:lang="en">Remote Driving Ontology: communication link module</rdfs:label>
+        <owl:versionInfo>1.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/source -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/source"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasAssociatedWith -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasAssociatedWith"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasAttributedTo -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasAttributedTo">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasInformedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasInformedBy"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#addresses -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#addresses">
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#Adaptation"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/link#Degradation"/>
+        <rdfs:comment xml:lang="en">LK-10. An adaptation is offered for a degradation only if it addresses it; every adaptation addresses at least one (RDOnto-link-shapes.ttl).</rdfs:comment>
+        <rdfs:label xml:lang="en">addresses</rdfs:label>
+        <skos:definition xml:lang="en">A degradation that an adaptation is a suitable reaction to.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#againstDeadline -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#againstDeadline">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#LatencyStatistic"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/link#DeliveryDeadline"/>
+        <rdfs:comment xml:lang="en">LK-05. The deadline a deadline miss share was counted against, so that the answer can name the deadline and its source.</rdfs:comment>
+        <rdfs:label xml:lang="en">against deadline</rdfs:label>
+        <skos:definition xml:lang="en">The delivery deadline against which a deadline miss share was counted.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#appliesToSetup -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#appliesToSetup">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#ConfiguredLimit"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/link#TeleoperationSetup"/>
+        <rdfs:comment xml:lang="en">LK-04, LK-05, LK-12. Scopes a limit (travel tolerance, reference budget, information age limit, latency variation limit, latency agreement tolerance) to one setup. An information age limit scoped to a setup must be no looser than the limit RDOnto-op configures for the same mode, which takes priority; RDOnto-link-shapes.ttl reports a looser one.</rdfs:comment>
+        <rdfs:label xml:lang="en">applies to setup</rdfs:label>
+        <skos:definition xml:lang="en">The teleoperation setup to which a configured limit is limited.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#baselineStatistic -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#baselineStatistic">
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#TeleoperationSession"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/link#LatencyStatistic"/>
+        <rdfs:comment xml:lang="en">LK-05: &apos;has the latency changed since the session began&apos; is the difference between the latest statistic and the session&apos;s baseline statistic of the same kind and part. At most one baseline per kind and part (RDOnto-link-shapes.ttl). Set by the stream layer.</rdfs:comment>
+        <rdfs:label xml:lang="en">baseline statistic</rdfs:label>
+        <skos:definition xml:lang="en">A statistic over the first window of the session, against which later statistics of the same kind and latency part are compared.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#budgetPart -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#budgetPart">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#ConfiguredLimit"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/link#LatencyPart"/>
+        <rdfs:comment xml:lang="en">LK-04, LK-05, LK-10. For a latency budget: RDOnto-link:ActuatorLatency or RDOnto-link:EndToEndLatency, not RDOnto-link:SensorLatency, whose budget is a RDOnto-op:InformationAgeLimit scoped to the setup (RDOnto-link-shapes.ttl, LatencyBudgetShape). For a latency variation limit: any of the three parts. Its domain is the general limit class, because two limit types use it.</rdfs:comment>
+        <rdfs:label xml:lang="en">budget part</rdfs:label>
+        <skos:definition xml:lang="en">The latency part that a latency budget or a latency variation limit is for.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#carriesEngagement -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#carriesEngagement">
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#TeleoperationSession"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#Engagement"/>
+        <rdfs:comment xml:lang="en">LK-01. The engagements, in sequence, that the session has carried. The current one has no prov:endedAtTime. Its operation mode selects the latency budget (LK-04). Every carried engagement&apos;s RDOnto-op:engagedOperator must be the session&apos;s sessionOperator; this is a closed-world rule checked by SHACL (RDOnto-link-shapes.ttl, SessionShape), not an OWL axiom.</rdfs:comment>
+        <rdfs:label xml:lang="en">carries engagement</rdfs:label>
+        <skos:definition xml:lang="en">An engagement that takes place over the connection of a teleoperation session.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#contentDirection -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#contentDirection">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#StreamContent"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/link#Direction"/>
+        <rdfs:comment xml:lang="en">LK-02. What the vehicle produces flows to the station, what the operator produces flows to the vehicle. A stream&apos;s streamDirection must agree with the direction of its content (RDOnto-link-shapes.ttl, StreamShape); a content without a value may flow either way.</rdfs:comment>
+        <rdfs:label xml:lang="en">content direction</rdfs:label>
+        <skos:definition xml:lang="en">The direction in which streams with this content flow.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#duringSession -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#duringSession">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#MinimalRiskManoeuvre"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/link#TeleoperationSession"/>
+        <rdfs:comment xml:lang="en">LK-07. A time relation, whatever the cause of the manoeuvre: the cause, where it is a link degradation, is given by triggeredBy. The manoeuvre starts within the session, and the session&apos;s vehicle is the one that performs it (RDOnto-link-shapes.ttl).</rdfs:comment>
+        <rdfs:label xml:lang="en">during session</rdfs:label>
+        <skos:definition xml:lang="en">The teleoperation session that was open for the vehicle when a minimal risk manoeuvre started.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#followsSession -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#followsSession">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasInformedBy"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#TeleoperationSession"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/link#TeleoperationSession"/>
+        <rdfs:comment xml:lang="en">LK-01. Lets the link history be followed across a handover, also to an operator at another station. Baseline statistics stay per session, so the new session has its own (RDOnto-link-shapes.ttl checks the vehicle and the times).</rdfs:comment>
+        <rdfs:label xml:lang="en">follows session</rdfs:label>
+        <skos:definition xml:lang="en">The earlier, ended session with the same vehicle that a session replaced, at the same or another station, e.g. at an operator handover.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#forContent -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#forContent">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#ConfiguredLimit"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/link#StreamContent"/>
+        <rdfs:comment xml:lang="en">LK-05, LK-07. Its domain is the general limit class, because two limit types use it.</rdfs:comment>
+        <rdfs:label xml:lang="en">for content</rdfs:label>
+        <skos:definition xml:lang="en">The stream content that a connection timeout or a delivery deadline is for.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#hasChannel -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#hasChannel">
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#RemoteStation"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#InformationChannel"/>
+        <rdfs:comment xml:lang="en">LK-06. Static: the station&apos;s camera views and other channels. RDOnto-op:availableChannel says which of them an engagement currently has; a view that was switched off is still a channel of the station, so the views a mode needs (viewNeededInMode) can be found when they are not available. Because a station shows one vehicle at a time (RemoteStation), its channels belong to the one open session.</rdfs:comment>
+        <rdfs:label xml:lang="en">has channel</rdfs:label>
+        <skos:definition xml:lang="en">An information channel the station is equipped with, whether or not it is available right now.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#hasStreamContent -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#hasStreamContent">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#Stream"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/link#StreamContent"/>
+        <rdfs:comment xml:lang="en">LK-02, LK-07. Decides whether the current mode depends on the stream (neededInMode) and which connection timeout applies to it.</rdfs:comment>
+        <rdfs:label xml:lang="en">has stream content</rdfs:label>
+        <skos:definition xml:lang="en">The kind of data a stream carries.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#inSession -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#inSession">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#Stream"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/link#TeleoperationSession"/>
+        <rdfs:comment xml:lang="en">LK-02. The streams of a session are the answer to which streams it carries.</rdfs:comment>
+        <rdfs:label xml:lang="en">in session</rdfs:label>
+        <skos:definition xml:lang="en">The teleoperation session a stream belongs to.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#manoeuvreKind -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#manoeuvreKind">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#MinimalRiskManoeuvre"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/link#MinimalRiskManoeuvreKind"/>
+        <rdfs:comment xml:lang="en">LK-07. The kind of a minimal risk manoeuvre.</rdfs:comment>
+        <rdfs:label xml:lang="en">manoeuvre kind</rdfs:label>
+        <skos:definition xml:lang="en">The kind of minimal risk manoeuvre that a vehicle performs.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#neededInMode -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#neededInMode">
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#StreamContent"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#OperationMode"/>
+        <terms:source>GA21b</terms:source>
+        <terms:source>GA23</terms:source>
+        <rdfs:comment xml:lang="en">Static knowledge: which content an operation mode depends on (LK-02). A need stated for RDOnto-op:RemoteDriving holds for both of its narrower modes (RDOnto-op:broaderMode). Direct Control ToD sends manoeuvre commands to the vehicle; Indirect Control ToD sends route or pathway information [GA21b, GA23].</rdfs:comment>
+        <rdfs:label xml:lang="en">needed in mode</rdfs:label>
+        <skos:definition xml:lang="en">An operation mode that cannot be performed without streams of this content.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#observedSession -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#observedSession">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/link#TeleoperationSession"/>
+        <rdfs:comment xml:lang="en">LK-03, LK-05. Used in place of sosa:hasFeatureOfInterest, and without a SOSA or PROV superproperty: the SOSA-PROV alignment makes every feature of interest a prov:Entity, while a session is a prov:Activity, and PROV-O declares the two disjoint.</rdfs:comment>
+        <rdfs:label xml:lang="en">observed session</rdfs:label>
+        <skos:definition xml:lang="en">The teleoperation session whose latency a latency observation, or a mean or standard deviation of a latency part, is about.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#overriddenAdaptation -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#overriddenAdaptation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#AdaptationRankOverride"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/link#Adaptation"/>
+        <rdfs:comment xml:lang="en">LK-10.</rdfs:comment>
+        <rdfs:label xml:lang="en">overridden adaptation</rdfs:label>
+        <skos:definition xml:lang="en">The adaptation whose preference rank a rank override replaces.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#overrideDegradation -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#overrideDegradation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#AdaptationRankOverride"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/link#Degradation"/>
+        <rdfs:comment xml:lang="en">LK-10. Optional. Without it, the override holds for every degradation.</rdfs:comment>
+        <rdfs:label xml:lang="en">override degradation</rdfs:label>
+        <skos:definition xml:lang="en">The degradation for which a rank override holds.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#overrideSetup -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#overrideSetup">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#AdaptationRankOverride"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/link#TeleoperationSetup"/>
+        <rdfs:comment xml:lang="en">LK-10. Optional. Without it, the override holds for every setup.</rdfs:comment>
+        <rdfs:label xml:lang="en">override setup</rdfs:label>
+        <skos:definition xml:lang="en">The teleoperation setup for which a rank override holds.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#performedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#performedBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#MinimalRiskManoeuvre"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#RemotelyOperatedVehicle"/>
+        <rdfs:comment xml:lang="en">LK-07. Where the manoeuvre names a session (duringSession), this is that session&apos;s vehicle (RDOnto-link-shapes.ttl).</rdfs:comment>
+        <rdfs:label xml:lang="en">performed by</rdfs:label>
+        <skos:definition xml:lang="en">The vehicle that performs a minimal risk manoeuvre.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#predictedFor -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#predictedFor">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#LinkPrediction"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/link#TeleoperationSession"/>
+        <rdfs:comment xml:lang="en">LK-08. A prediction is for exactly one session.</rdfs:comment>
+        <rdfs:label xml:lang="en">predicted for</rdfs:label>
+        <skos:definition xml:lang="en">The teleoperation session whose link a prediction is about.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#predictedOnSegment -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#predictedOnSegment">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#LinkPrediction"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/link#RouteSegment"/>
+        <rdfs:comment xml:lang="en">LK-08. Optional: the segment of the planned route a prediction is for. validFrom and validUntil are then the times the vehicle is expected to enter and leave the segment.</rdfs:comment>
+        <rdfs:label xml:lang="en">predicted on segment</rdfs:label>
+        <skos:definition xml:lang="en">The segment of the planned route that a link prediction is for.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#predictedPart -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#predictedPart">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#LatencyPrediction"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/link#LatencyPart"/>
+        <rdfs:comment xml:lang="en">LK-08. Sensor, actuator or end-to-end latency, so that a predicted value is compared with the limit for the same part.</rdfs:comment>
+        <rdfs:label xml:lang="en">predicted part</rdfs:label>
+        <skos:definition xml:lang="en">The latency part whose value a latency prediction gives.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#predictedValue -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#predictedValue">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#LatencyPrediction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dayTimeDuration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#requiresCondition -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#requiresCondition">
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#Adaptation"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/link#AvailabilityCondition"/>
+        <rdfs:comment xml:lang="en">LK-10. A condition that must hold for the adaptation to be available; all of them must hold. Rerouting also needs an alternative route, which the route module knows (interface; no condition here). An adaptation without a condition is always available.</rdfs:comment>
+        <rdfs:label xml:lang="en">requires condition</rdfs:label>
+        <skos:definition xml:lang="en">A condition that must hold for an adaptation to be available.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#sessionOperator -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#sessionOperator">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasAssociatedWith"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#TeleoperationSession"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#RemoteOperator"/>
+        <rdfs:comment xml:lang="en">LK-01. A different operator means a new session (operator handover). Not derived from the engagements by a property chain: with a functional property, two operators would be merged by owl:sameAs instead of being reported.</rdfs:comment>
+        <rdfs:label xml:lang="en">session operator</rdfs:label>
+        <skos:definition xml:lang="en">The one remote operator who is at the station for the whole of a teleoperation session.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#sessionStation -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#sessionStation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#TeleoperationSession"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/link#RemoteStation"/>
+        <rdfs:comment xml:lang="en">LK-01. A session has exactly one; a move to another station starts a new session. A station has at most one open session at a time (RDOnto-link-shapes.ttl).</rdfs:comment>
+        <rdfs:label xml:lang="en">session station</rdfs:label>
+        <skos:definition xml:lang="en">The remote station that a teleoperation session connects to the vehicle.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#sessionVehicle -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#sessionVehicle">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#TeleoperationSession"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#setupEnvironment -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#setupEnvironment">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#TeleoperationSetup"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#OperatingEnvironment"/>
+        <rdfs:comment xml:lang="en">The operating environment the setup is for (RDOnto-op SA-06).</rdfs:comment>
+        <rdfs:label xml:lang="en">setup environment</rdfs:label>
+        <skos:definition xml:lang="en">The operating environment that a teleoperation setup is for.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#setupStation -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#setupStation">
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#TeleoperationSetup"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/link#RemoteStation"/>
+        <rdfs:comment xml:lang="en">LK-04. As setupVehicle: a session that uses the setup must be at one of them, where the setup names any.</rdfs:comment>
+        <rdfs:label xml:lang="en">setup station</rdfs:label>
+        <skos:definition xml:lang="en">A remote station that the limits of a teleoperation setup were configured for.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#setupTask -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#setupTask">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#TeleoperationSetup"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#DrivingTask"/>
+        <rdfs:comment xml:lang="en">The driving task the setup is for (RDOnto-op SA-06); with it, a travel tolerance encodes the precision the task needs [GA21b].</rdfs:comment>
+        <rdfs:label xml:lang="en">setup task</rdfs:label>
+        <skos:definition xml:lang="en">The driving task that a teleoperation setup is for.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#setupVehicle -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#setupVehicle">
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#TeleoperationSetup"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#showsLinkInformation -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#showsLinkInformation">
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#LinkStateDisplay"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/link#LinkInformation"/>
+        <rdfs:comment xml:lang="en">LK-11. A display shows at least one kind (RDOnto-link-shapes.ttl).</rdfs:comment>
+        <rdfs:label xml:lang="en">shows link information</rdfs:label>
+        <skos:definition xml:lang="en">A kind of link information that a link state display shows the operator.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#statistic -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#statistic">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#LatencyStatistic"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/link#StatisticKind"/>
+        <rdfs:comment xml:lang="en">LK-05. The kind decides what the value is: a duration for a mean or standard deviation, a share between 0 and 1 for deadline misses (RDOnto-link-shapes.ttl).</rdfs:comment>
+        <rdfs:label xml:lang="en">statistic</rdfs:label>
+        <skos:definition xml:lang="en">The kind of statistic that a latency statistic gives: a mean, a standard deviation or a deadline miss share.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#streamDirection -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#streamDirection">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#Stream"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/link#Direction"/>
+        <rdfs:comment xml:lang="en">LK-02. Agrees with the direction of the stream&apos;s content, where the content states one (contentDirection; RDOnto-link-shapes.ttl).</rdfs:comment>
+        <rdfs:label xml:lang="en">stream direction</rdfs:label>
+        <skos:definition xml:lang="en">The direction in which a stream flows: from the vehicle to the station, or from the station to the vehicle.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#triggeredBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#triggeredBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#MinimalRiskManoeuvre"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/link#Degradation"/>
+        <rdfs:comment xml:lang="en">LK-07. The kind of link problem that triggered the manoeuvre, e.g. RDOnto-link:ConnectionLost. Absent for a manoeuvre with another cause.</rdfs:comment>
+        <rdfs:label xml:lang="en">triggered by</rdfs:label>
+        <skos:definition xml:lang="en">The kind of link degradation that triggered a minimal risk manoeuvre.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#usesSetup -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#usesSetup">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#TeleoperationSession"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/link#TeleoperationSetup"/>
+        <rdfs:comment xml:lang="en">LK-04, LK-09. A session uses exactly one setup; it scopes the travel tolerance, the reference budgets and the setup&apos;s information age limit. Where the setup names vehicles or stations, the session&apos;s are among them (RDOnto-link-shapes.ttl).</rdfs:comment>
+        <rdfs:label xml:lang="en">uses setup</rdfs:label>
+        <skos:definition xml:lang="en">The teleoperation setup whose limits apply to a session.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#viewNeededInMode -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/link#viewNeededInMode">
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#CameraView"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#OperationMode"/>
+        <terms:source>SH21</terms:source>
+        <rdfs:comment xml:lang="en">LK-06. Configuration per station: the camera view is needed to operate in this mode. A need stated for a broader mode holds for its narrower modes (RDOnto-op:broaderMode). SH21 weights camera views by their importance for the driving situation.</rdfs:comment>
+        <rdfs:label xml:lang="en">view needed in mode</rdfs:label>
+        <skos:definition xml:lang="en">An operation mode that the operator cannot perform without this camera view.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/rdonto/link#adsAbleToDrive -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/link#adsAbleToDrive">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#RemotelyOperatedVehicle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">LK-10. Interface (RDOnto-todd, vehicle state). False while the cause of a request lasts, e.g. RDOnto-op:SensorFailure, RDOnto-op:PlanFailure or RDOnto-op:PerceptionError, or while the ADS waits for the answer to an assistance request; true again once the ADS reports that it can go on. Kept apart from adsWithinODD, which says only where the vehicle is. Stated only for a vehicle with an ADS, as adsWithinODD is (RDOnto-link-shapes.ttl). Absent means not known, and then the adaptations that need the ADS do not count as available (ADSCanTakeOver).</rdfs:comment>
+        <rdfs:label xml:lang="en">ADS able to drive</rdfs:label>
+        <skos:definition xml:lang="en">Whether the vehicle&apos;s ADS is able to perform the DDT now: it has no failure that stops it, and it is not waiting for the operator&apos;s help with a situation it cannot manage.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#adsWithinODD -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/link#adsWithinODD">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#RemotelyOperatedVehicle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">LK-10. Interface (RDOnto-todd). True if the ADS is within its ODD, false if it is outside. Being within the ODD is needed for the ADS to drive but is not enough: an ADS with a failed sensor is within its ODD and cannot drive (adsAbleToDrive). Stated only for a vehicle with an ADS (RDOnto-op:hasADS true); a vehicle without an ADS (hasADS false) has no value, and a value on a vehicle that does not state hasADS true gets a warning (RDOnto-link-shapes.ttl). Absent means not known, and then the adaptations that need the ADS do not count as available (ADSCanTakeOver).</rdfs:comment>
+        <rdfs:label xml:lang="en">ADS within ODD</rdfs:label>
+        <skos:definition xml:lang="en">Whether the vehicle&apos;s ADS is currently within its operational design domain.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#dimensionlessDelayLimit -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/link#dimensionlessDelayLimit">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#TravelTolerance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <terms:source>JI25</terms:source>
+        <rdfs:comment xml:lang="en">LK-04, LK-09. Alternative to a value in metres: the largest acceptable speed x latency / wheelbase [JI25]. JI25 derives the stability boundary (about 2.52 on straight paths with their best gains); an acceptable limit for driving quality is lower and is configuration.</rdfs:comment>
+        <rdfs:label xml:lang="en">dimensionless delay limit</rdfs:label>
+        <skos:definition xml:lang="en">The largest acceptable dimensionless delay in a setup and mode, i.e. vehicle speed times end-to-end latency divided by wheelbase.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#isContinuous -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/link#isContinuous">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#StreamContent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">LK-07. True for the video feed, the sensor feed and control commands, which are sent at a fixed rate; false for trajectory input and proposed trajectories, which are sent only when there is one. Only continuous content is tested for silence, so only it has a connection timeout (RDOnto-link-shapes.ttl).</rdfs:comment>
+        <rdfs:label xml:lang="en">is continuous</rdfs:label>
+        <skos:definition xml:lang="en">Whether streams with this content carry data all the time while the session is up, so that silence on them means the connection is lost.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#lastReceivedAt -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/link#lastReceivedAt">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#Stream"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">LK-07. Kept current by the stream layer.</rdfs:comment>
+        <rdfs:label xml:lang="en">last received at</rdfs:label>
+        <skos:definition xml:lang="en">The time at which data last arrived on a stream.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#maximumDrivingSpeed -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/link#maximumDrivingSpeed">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#TeleoperationSetup"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <terms:source>GA21b</terms:source>
+        <rdfs:comment xml:lang="en">Configuration, in km/h: the highest speed the setup is meant to be driven at remotely, whatever the latency. It caps the admissible speed of LK-09, which the travel tolerance alone would let grow without bound as the latency falls. GA21b&apos;s Direct Control budgets hold up to 50 km/h.</rdfs:comment>
+        <rdfs:label xml:lang="en">maximum driving speed</rdfs:label>
+        <skos:definition xml:lang="en">The highest speed, in km/h, at which the setup is meant to be driven remotely, whatever the latency.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#minimumDataRate -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/link#minimumDataRate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#CameraView"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <terms:source>NE19b</terms:source>
+        <terms:source>SH21</terms:source>
+        <rdfs:comment xml:lang="en">LK-06, LK-10. Configuration: the data rate, in Mbit/s, a camera view needs at the lowest quality still acceptable for driving. Not above requiredDataRate. Between the two sums the data rate is enough only with reduced video quality (RDOnto-link:ReduceVideoQuality); below the sum of the minimum rates it is not enough at any quality. NE19b: at least 3 Mbit/s for video.</rdfs:comment>
+        <rdfs:label xml:lang="en">minimum data rate</rdfs:label>
+        <skos:definition xml:lang="en">The data rate, in Mbit/s, that a camera view needs at the lowest quality still acceptable for driving.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#minimumDrivingSpeed -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/link#minimumDrivingSpeed">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#TeleoperationSetup"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment xml:lang="en">Configuration, in km/h: below this speed, driving on is not useful for the setup&apos;s task, so reducing speed no longer counts as an available adaptation (LK-10).</rdfs:comment>
+        <rdfs:label xml:lang="en">minimum driving speed</rdfs:label>
+        <skos:definition xml:lang="en">The lowest speed, in km/h, at which driving on is still useful for the setup&apos;s task.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#overrideRank -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/link#overrideRank">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#AdaptationRankOverride"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">LK-10. Lower is preferred.</rdfs:comment>
+        <rdfs:label xml:lang="en">override rank</rdfs:label>
+        <skos:definition xml:lang="en">The preference rank that a rank override puts in place of the adaptation&apos;s default.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#predictedDataRate -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/link#predictedDataRate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#DataRatePrediction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment xml:lang="en">LK-06, LK-08.</rdfs:comment>
+        <rdfs:label xml:lang="en">predicted data rate</rdfs:label>
+        <skos:definition xml:lang="en">The data rate that is expected to be available to the vehicle-to-station video streams of the session, taken together, over the window of a data rate prediction, in Mbit/s.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#predictedValue -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/link#predictedValue">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#predictionConfidence -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/link#predictionConfidence">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#LinkPrediction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment xml:lang="en">LK-08. KO21 describes a prediction as expected values with their variances.</rdfs:comment>
+        <rdfs:label xml:lang="en">prediction confidence</rdfs:label>
+        <skos:definition xml:lang="en">How likely its source takes a link prediction to be right, between 0 and 1.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#preferenceRank -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/link#preferenceRank">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#Adaptation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">LK-10. Configuration: lower is preferred. The default rank of an adaptation; no two adaptations share one (RDOnto-link-shapes.ttl). The rank used for a degradation in a setup is that of the most specific AdaptationRankOverride (setup and degradation, then setup, then degradation), otherwise this default; where two adaptations then have the same rank, the one with the lower default is preferred. An adaptation is available when every condition it requires holds (requiresCondition). The recommended adaptation is the available one with the lowest rank that addresses the degradation.</rdfs:comment>
+        <rdfs:label xml:lang="en">preference rank</rdfs:label>
+        <skos:definition xml:lang="en">The default position of an adaptation in the order of preference; a lower number is preferred.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#requiredDataRate -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/link#requiredDataRate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#CameraView"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <terms:source>FE26</terms:source>
+        <terms:source>NE19b</terms:source>
+        <terms:source>SH21</terms:source>
+        <rdfs:comment xml:lang="en">LK-06. Configuration: the data rate, in Mbit/s, a camera view needs at its configured quality. The views the operator currently needs are the station&apos;s camera views (hasChannel) that are needed in the mode of the current engagement (viewNeededInMode), whether or not they are available right now; LK-06 compares the sum of their required rates with the available rate of the vehicle-to-station video streams. Only if no view of the station states a need for any mode are the available views (RDOnto-op:availableChannel) taken as the needed ones. So switching a needed view off does not make the data rate sufficient. SH21 allocates bitrate across camera views by their importance.</rdfs:comment>
+        <rdfs:label xml:lang="en">required data rate</rdfs:label>
+        <skos:definition xml:lang="en">The data rate, in Mbit/s, that a camera view needs at its configured quality.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#sessionVehicle -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/link#sessionVehicle">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#RemotelyOperatedVehicle"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#setupVehicle -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/link#setupVehicle">
+        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#RemotelyOperatedVehicle"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#upToSpeed -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/link#upToSpeed">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment xml:lang="en">LK-04, LK-08, LK-09. A missing value means the budget or lead time covers every speed. Used on LatencyBudget and RequiredLeadTime, so no domain is declared (a domain would need a union, which OWL 2 RL does not allow).</rdfs:comment>
+        <rdfs:label xml:lang="en">up to speed</rdfs:label>
+        <skos:definition xml:lang="en">The highest vehicle speed, in km/h, at which a latency budget or a required lead time applies.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#validFrom -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/link#validFrom">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#LinkPrediction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <terms:source>GA23</terms:source>
+        <terms:source>KO21</terms:source>
+        <rdfs:comment xml:lang="en">LK-08. The lead time of a prediction is validFrom minus its issue time (prov:generatedAtTime), which is compared with the RequiredLeadTime; a prediction is issued no later than its window starts (RDOnto-link-shapes.ttl). GA23 and KO21 call the time ahead the prediction horizon.</rdfs:comment>
+        <rdfs:label xml:lang="en">valid from</rdfs:label>
+        <skos:definition xml:lang="en">The start of the future window that a link prediction holds for.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#validUntil -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/link#validUntil">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#LinkPrediction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">LK-08. After validFrom (RDOnto-link-shapes.ttl).</rdfs:comment>
+        <rdfs:label xml:lang="en">valid until</rdfs:label>
+        <skos:definition xml:lang="en">The end of the future window that a link prediction holds for.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#wheelbase -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/link#wheelbase">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#TeleoperationSetup"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <terms:source>JI25</terms:source>
+        <rdfs:comment xml:lang="en">LK-04, LK-09. A setup with a wheelbase is for vehicles of that wheelbase only. JI25 scales delay by speed over wheelbase.</rdfs:comment>
+        <rdfs:label xml:lang="en">wheelbase</rdfs:label>
+        <skos:definition xml:lang="en">The distance between the front and rear axles of the setup&apos;s vehicles, in metres.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#windowEnd -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/link#windowEnd">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#LatencyStatistic"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">LK-05. The latest statistic is the one with the latest window end. Window start and end are xsd:dateTime literals, so the stream layer can compare them.</rdfs:comment>
+        <rdfs:label xml:lang="en">window end</rdfs:label>
+        <skos:definition xml:lang="en">The end of the time window that a latency statistic was computed over.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#windowStart -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/link#windowStart">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rdonto/link#LatencyStatistic"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">LK-05.</rdfs:comment>
+        <rdfs:label xml:lang="en">window start</rdfs:label>
+        <skos:definition xml:lang="en">The start of the time window that a latency statistic was computed over.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://qudt.org/schema/qudt/Unit -->
+
+
+    <owl:Class rdf:about="http://qudt.org/schema/qudt/Unit"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#dayTimeDuration -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2001/XMLSchema#dayTimeDuration"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Activity -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Activity"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Agent -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Agent"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Entity -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Entity"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/ObservableProperty -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Observation -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Observation"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#Adaptation -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/link#Adaptation">
+        <terms:source>GA21b</terms:source>
+        <terms:source>GA23</terms:source>
+        <terms:source>NE19b</terms:source>
+        <terms:source>SH21</terms:source>
+        <rdfs:comment xml:lang="en">LK-10. Individuals follow the reactions in GA23 and the mitigations in NE19b; HandBackToOnBoardDriver follows from the context rule of RDOnto-op. Which are available depends on the vehicle and the engagement.</rdfs:comment>
+        <rdfs:label xml:lang="en">adaptation</rdfs:label>
+        <skos:definition xml:lang="en">A reaction to a current or predicted link degradation.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#AdaptationRankOverride -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/link#AdaptationRankOverride">
+        <rdfs:comment xml:lang="en">LK-10. Configuration: lets the preferred reaction differ per kind of problem and per setup, e.g. stopping first on connection loss, or rerouting first in a setup with alternative routes.</rdfs:comment>
+        <rdfs:label xml:lang="en">adaptation rank override</rdfs:label>
+        <skos:definition xml:lang="en">A preference rank for one adaptation that replaces its default rank for one degradation, one setup, or both.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#AvailabilityCondition -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/link#AvailabilityCondition">
+        <rdfs:comment xml:lang="en">LK-10. Which conditions an adaptation needs is asserted (requiresCondition), and each condition&apos;s definition says exactly what the query tests.</rdfs:comment>
+        <rdfs:label xml:lang="en">availability condition</rdfs:label>
+        <skos:definition xml:lang="en">A condition on the vehicle, the engagement or the link that must hold for an adaptation to be available.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#ConnectionLossPrediction -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/link#ConnectionLossPrediction">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/link#LinkPrediction"/>
+        <terms:source>BR26</terms:source>
+        <terms:source>KO21</terms:source>
+        <rdfs:comment xml:lang="en">LK-08. It has no value of its own: predictionConfidence is how likely the loss is. KO21: a safe stop on communication loss must be possible at all times; BR26: awareness of potential connection loss and precautions before control is lost.</rdfs:comment>
+        <rdfs:label xml:lang="en">connection loss prediction</rdfs:label>
+        <skos:definition xml:lang="en">An expectation that the connection of a session will be lost during a future window.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#ConnectionTimeout -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/link#ConnectionTimeout">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/op#ConfiguredLimit"/>
+        <rdfs:comment xml:lang="en">LK-07. Connection loss is an absence of data, so it is a closed-world check against this timeout in the stream layer. Rule: only content that is sent continuously (isContinuous true) is tested and has a timeout. A stream is silent when the time since its lastReceivedAt, or since the session&apos;s prov:startedAtTime if it has never received data, exceeds the timeout for its content; a content without a timeout is never silent. The connection of a session counts as lost (RDOnto-link:ConnectionLost) when at least one stream is silent whose content the mode of the session&apos;s open engagement needs (neededInMode, for the mode or a broader mode); if the session has no open engagement but has carried one, when any of its streams is silent. A session that has not yet carried an engagement is not tested: before the first engagement a stream may be silent by design, e.g. no control commands are sent. It is lost since the earliest last data of those silent streams. The loss is detected later, when the timeout of the first of them runs out.</rdfs:comment>
+        <rdfs:label xml:lang="en">connection timeout</rdfs:label>
+        <skos:definition xml:lang="en">How long a stream with a given content may stay without data before the connection counts as lost. Value as qudt:numericValue with qudt:unit unit:MilliSEC.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#DataRatePrediction -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/link#DataRatePrediction">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/link#LinkPrediction"/>
+        <terms:source>BZ21</terms:source>
+        <terms:source>SH21</terms:source>
+        <rdfs:comment xml:lang="en">LK-08, LK-06. One value per session: it is compared with the same sum of required rates as the sum of the measured rates of the session&apos;s video streams (AvailableDataRate). BZ21 predicts throughput; SH21 adapts the video to the predicted available uplink bitrate. Compared with the required data rates of the needed camera views as a measured rate is (LK-06).</rdfs:comment>
+        <rdfs:label xml:lang="en">data rate prediction</rdfs:label>
+        <skos:definition xml:lang="en">The data rate expected to be available to the vehicle-to-station video streams of a session, taken together, over a future window.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#Degradation -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/link#Degradation">
+        <rdfs:comment xml:lang="en">LK-10.</rdfs:comment>
+        <rdfs:label xml:lang="en">degradation</rdfs:label>
+        <skos:definition xml:lang="en">A kind of link problem an adaptation can address.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#DeliveryDeadline -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/link#DeliveryDeadline">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/op#ConfiguredLimit"/>
+        <terms:source>FE26</terms:source>
+        <rdfs:comment xml:lang="en">LK-05. The deadline behind a deadline miss share. Delivered means: for a video or sensor feed, displayed at the station, counted from capture; for control commands or trajectory input, arrived at the vehicle, counted from the operator&apos;s input. RDOnto-link:forContent names the content. FE26 measured per-frame delay against a 100 ms deadline. Configuration linked to its source, like every limit.</rdfs:comment>
+        <rdfs:label xml:lang="en">delivery deadline</rdfs:label>
+        <skos:definition xml:lang="en">How long after it was produced a frame or command of a given content may be delivered and still count as on time. Value as qudt:numericValue with qudt:unit unit:MilliSEC.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#Direction -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/link#Direction">
+        <rdfs:comment xml:lang="en">LK-02. Named by endpoint, because sources disagree on what uplink and downlink mean.</rdfs:comment>
+        <rdfs:label xml:lang="en">direction</rdfs:label>
+        <skos:definition xml:lang="en">The direction in which a stream flows, named by its endpoints: vehicle to station or station to vehicle.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#LatencyAgreementTolerance -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/link#LatencyAgreementTolerance">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/op#ConfiguredLimit"/>
+        <rdfs:comment xml:lang="en">LK-12. Each displayed scene is compared with the latest RDOnto-link:SensorLatency observation, at or before the scene&apos;s display time, of the session that carries the engagement the scene was shown in. A larger difference points to a wrong capture delay or unsynchronized clocks. May be scoped to a setup (appliesToSetup); a tolerance without a setup holds for every setup that has none of its own. A configuration parameter; no source gives a value.</rdfs:comment>
+        <rdfs:label xml:lang="en">latency agreement tolerance</rdfs:label>
+        <skos:definition xml:lang="en">The largest difference between the sensor latency measured for the link and the information age RDOnto-op computes for a displayed scene at which the two still count as agreeing. Value as qudt:numericValue with qudt:unit unit:MilliSEC.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#LatencyBudget -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/link#LatencyBudget">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/op#ConfiguredLimit"/>
+        <terms:source>GA21b</terms:source>
+        <terms:source>SC22</terms:source>
+        <rdfs:comment xml:lang="en">LK-04 and LK-09. A reference budget: valid only for the setup it was measured or specified in (RDOnto-link:appliesToSetup), because published budgets are performance characteristics of particular setups [GA21b] and there is no standardization for ToD [SC22]. Which limits apply: take the limits of the session&apos;s setup for the mode of the open engagement, or failing that for its broader mode. Per latency part, the applicable budget is the one with the lowest upToSpeed at or above the current speed; a budget without upToSpeed covers every speed. (1) Each part with an applicable budget must be within it, and the sensor part within the setup&apos;s information age limit. (2) The budgets replace the travel tolerance only if they bound the end-to-end latency: an end-to-end budget, or an actuator budget together with an information age limit scoped to the setup. Otherwise the travel tolerance is checked as well. (3) If the setup has budgets of a part for the mode but the current speed is above every upToSpeed of them, the setup was not validated at that speed: the latency does not count as acceptable, and the admissible speed (LK-09) is at most the highest upToSpeed whose budget the latency meets. (4) A setup without any budget for the mode is judged by the travel tolerance alone. The vehicle-to-station part is RDOnto-op:InformationAgeLimit, scoped the same way, and is stated only in that form: a LatencyBudget covers the actuator latency or the end-to-end latency, never the sensor latency, so the check that a setup&apos;s limit is no looser than the mode&apos;s sees every vehicle-to-station budget.</rdfs:comment>
+        <rdfs:label xml:lang="en">latency budget</rdfs:label>
+        <skos:definition xml:lang="en">The largest acceptable value of a latency part in an operation mode, valid up to a vehicle speed. Value as qudt:numericValue with qudt:unit unit:MilliSEC.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#LatencyObservation -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/link#LatencyObservation">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <rdfs:comment xml:lang="en">LK-03. If no end-to-end value is measured directly, it is the sum of the latest sensor and actuator values.</rdfs:comment>
+        <rdfs:label xml:lang="en">latency observation</rdfs:label>
+        <skos:definition xml:lang="en">A measurement of one latency part for a session: RDOnto-link:observedSession the session, sosa:observedProperty the latency part, sosa:hasSimpleResult the value as xsd:dayTimeDuration, sosa:resultTime when measured.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#LatencyPart -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/link#LatencyPart">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+        <terms:source>GF20</terms:source>
+        <rdfs:comment xml:lang="en">LK-03. Every latency value says which part it covers, so that LK-03, LK-04 and LK-12 do not mix them.</rdfs:comment>
+        <rdfs:label xml:lang="en">latency part</rdfs:label>
+        <skos:definition xml:lang="en">A part of the end-to-end latency of a session that can be observed.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#LatencyPrediction -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/link#LatencyPrediction">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/link#LinkPrediction"/>
+        <terms:source>BZ21</terms:source>
+        <terms:source>GA23</terms:source>
+        <terms:source>KO21</terms:source>
+        <rdfs:comment xml:lang="en">LK-08. Not a measurement. prov:wasAttributedTo gives the source, e.g. network QoS sustainability analytics or an onboard or edge model [KO21, BZ21].</rdfs:comment>
+        <rdfs:label xml:lang="en">latency prediction</rdfs:label>
+        <skos:definition xml:lang="en">An expected value of a latency part for a session over a future window, with an issue time (prov:generatedAtTime), a source (prov:wasAttributedTo) and a confidence.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#LatencyStatistic -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/link#LatencyStatistic">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <terms:source>FE26</terms:source>
+        <terms:source>JI25</terms:source>
+        <terms:source>NE19b</terms:source>
+        <rdfs:comment xml:lang="en">LK-05. RDOnto-link:observedSession is the session of a mean or standard deviation, sosa:hasFeatureOfInterest the stream of a deadline miss share; sosa:observedProperty the latency part a mean or standard deviation covers, which is required; RDOnto-link:statistic the kind; RDOnto-link:againstDeadline the deadline a deadline miss share was counted against; sosa:hasSimpleResult the value; windowStart and windowEnd the window. Packet loss appears here only as added delay or missed deadlines [JI25, FE26].</rdfs:comment>
+        <rdfs:label xml:lang="en">latency statistic</rdfs:label>
+        <skos:definition xml:lang="en">A statistic of a latency part or of deadline misses over a time window, computed in the stream layer.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#LatencyVariationLimit -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/link#LatencyVariationLimit">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/op#ConfiguredLimit"/>
+        <terms:source>NE19b</terms:source>
+        <rdfs:comment xml:lang="en">LK-05, LK-10. The latency of a session is unstable (RDOnto-link:LatencyUnstable) when its latest standard deviation statistic of a latency part exceeds the limit for that part (budgetPart) in the mode of the session&apos;s open engagement, or in its broader mode. May be scoped to a setup (appliesToSetup); a limit of the session&apos;s setup is used before one without a setup. Deadline miss shares are recorded (LK-05) and do not decide this. A configuration parameter: NE19b states a jitter requirement for one setup, and no general limit is published.</rdfs:comment>
+        <rdfs:label xml:lang="en">latency variation limit</rdfs:label>
+        <skos:definition xml:lang="en">The largest standard deviation of a latency part over a window that is acceptable in an operation mode. Value as qudt:numericValue with qudt:unit unit:MilliSEC.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#LinkInformation -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/link#LinkInformation">
+        <rdfs:comment xml:lang="en">LK-11.</rdfs:comment>
+        <rdfs:label xml:lang="en">link information</rdfs:label>
+        <skos:definition xml:lang="en">A kind of information about the link that a station can show the operator.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#LinkPrediction -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/link#LinkPrediction">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <terms:source>BZ21</terms:source>
+        <terms:source>GA23</terms:source>
+        <terms:source>KO21</terms:source>
+        <rdfs:comment xml:lang="en">LK-08. The general class: what is predicted is given by its subclass, a latency part (LatencyPrediction), the data rate (DataRatePrediction) or a loss of the connection (ConnectionLossPrediction). Not a measurement. A prediction along the planned route also names the route segment (predictedOnSegment); its window is then the time the vehicle is expected to be on that segment, so the lead time check works the same way.</rdfs:comment>
+        <rdfs:label xml:lang="en">link prediction</rdfs:label>
+        <skos:definition xml:lang="en">An expectation about the link of a session over a future window, with an issue time (prov:generatedAtTime), a source (prov:wasAttributedTo) and a confidence.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#LinkStateDisplay -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/link#LinkStateDisplay">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/op#InformationChannel"/>
+        <terms:source>GA23</terms:source>
+        <terms:source>NE19</terms:source>
+        <rdfs:comment xml:lang="en">LK-11. O is shown the link state when a LinkStateDisplay is among the engagement&apos;s available channels (RDOnto-op:availableChannel); showsLinkInformation says what it shows. NE19 showed operators the latency level, grouped by colour and text; GA23 notifies the remote driver of predicted QoS changes.</rdfs:comment>
+        <rdfs:label xml:lang="en">link state display</rdfs:label>
+        <skos:definition xml:lang="en">An information channel of the remote station that shows the operator the state of the link.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#MinimalRiskManoeuvre -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/link#MinimalRiskManoeuvre">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+        <terms:source>BR26</terms:source>
+        <terms:source>KO21</terms:source>
+        <rdfs:comment xml:lang="en">LK-07. Interface (RDOnto-todd). The stop of the adaptation RDOnto-link:SafeStop is such a manoeuvre: with the connection lost the vehicle performs it on its own; while the link still works the operator can start it (a remote intervention, see RDOnto-op:EventBasedRemoteDriving). BR26 argues that plain braking or a Level 2 function is not an acceptable fallback, and proposes a dedicated system designed solely to reach the minimal risk condition.</rdfs:comment>
+        <rdfs:label xml:lang="en">minimal risk manoeuvre</rdfs:label>
+        <skos:definition xml:lang="en">A manoeuvre that brings the vehicle to a minimal risk condition, performed by the vehicle on its own, e.g. after connection loss, or started by the operator.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#MinimalRiskManoeuvreKind -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/link#MinimalRiskManoeuvreKind">
+        <terms:source>BR26</terms:source>
+        <rdfs:comment xml:lang="en">LK-07: the answer to &apos;which minimal risk manoeuvre has V started&apos;. Interface (RDOnto-todd): the kinds a vehicle is capable of, and which one follows a connection loss, are decided there [BR26], so this module asserts no individuals.</rdfs:comment>
+        <rdfs:label xml:lang="en">minimal risk manoeuvre kind</rdfs:label>
+        <skos:definition xml:lang="en">A kind of minimal risk manoeuvre a vehicle can perform, e.g. stopping in its lane or pulling over.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#PredictionSource -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/link#PredictionSource">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <rdfs:comment xml:lang="en">LK-08. Who or what issued a link prediction, e.g. network QoS analytics or an onboard or edge model [KO21, BZ21].</rdfs:comment>
+        <rdfs:label xml:lang="en">prediction source</rdfs:label>
+        <skos:definition xml:lang="en">An agent that issues link predictions, e.g. a network analytics function, or a prediction model on board the vehicle or at the network edge.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#RemoteStation -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/link#RemoteStation">
+        <rdfs:comment xml:lang="en">LK-01, LK-06. A session has one station; moving to another station starts a new session. A station shows one vehicle at a time, so it has at most one open session (RDOnto-link-shapes.ttl): a desk at which an operator handles two vehicles at once, e.g. monitors one and assists another, is two stations. The station&apos;s channels (hasChannel) are therefore the channels for the vehicle of its open session.</rdfs:comment>
+        <rdfs:label xml:lang="en">remote station</rdfs:label>
+        <skos:definition xml:lang="en">The workstation from which a remote operator monitors, assists or drives one vehicle at a time.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#RequiredLeadTime -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/link#RequiredLeadTime">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/op#ConfiguredLimit"/>
+        <terms:source>GA23</terms:source>
+        <terms:source>KO21</terms:source>
+        <rdfs:comment xml:lang="en">LK-08. Which one applies: take the lead times for the mode of the session&apos;s open engagement, or failing that for its broader mode; among them, the one with the lowest upToSpeed at or above the current speed, where one without upToSpeed covers every speed. If the speed is above every upToSpeed, none applies and LK-08 lists the prediction without a judgement. GA23 defines the QoS prediction time horizon as the application reaction completion interval plus a guard interval; KO21 shows the needed horizon grows with speed.</rdfs:comment>
+        <rdfs:label xml:lang="en">required lead time</rdfs:label>
+        <skos:definition xml:lang="en">The shortest time between a prediction&apos;s issue and the start of the predicted window that lets the vehicle react, in a mode and up to a speed. Value as qudt:numericValue with qudt:unit unit:SEC.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#RouteSegment -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/link#RouteSegment">
+        <rdfs:comment xml:lang="en">Interface (scene and criticality; ODD): declared here only so that a prediction can say where it applies (LK-08). The owning module describes the segment itself.</rdfs:comment>
+        <rdfs:label xml:lang="en">route segment</rdfs:label>
+        <skos:definition xml:lang="en">A part of the route planned for a vehicle.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#StatisticKind -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/link#StatisticKind">
+        <rdfs:comment xml:lang="en">LK-05. The kind of window statistic a LatencyStatistic gives.</rdfs:comment>
+        <rdfs:label xml:lang="en">statistic kind</rdfs:label>
+        <skos:definition xml:lang="en">A kind of statistic computed over a time window of a session&apos;s latency or of a stream&apos;s deliveries.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#Stream -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/link#Stream">
+        <terms:source>GA23</terms:source>
+        <rdfs:comment xml:lang="en">LK-02. Quality is a property of a stream in one direction, not of the link as a whole [GA23].</rdfs:comment>
+        <rdfs:label xml:lang="en">stream</rdfs:label>
+        <skos:definition xml:lang="en">One flow of data within a session, in one direction, with one kind of content.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#StreamContent -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/link#StreamContent">
+        <terms:source>GA23</terms:source>
+        <terms:source>NE19b</terms:source>
+        <rdfs:comment xml:lang="en">LK-02, LK-07. The kind of data a stream carries; each mode depends on certain kinds (neededInMode), and each kind has its own connection timeout.</rdfs:comment>
+        <rdfs:label xml:lang="en">stream content</rdfs:label>
+        <skos:definition xml:lang="en">A kind of data that a stream carries between the vehicle and the remote station.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#TeleoperationSession -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/link#TeleoperationSession">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+        <rdfs:comment xml:lang="en">LK-01. A session carries one or more RDOnto-op engagements in sequence, all by its one operator: a mode change starts a new engagement, while the session persists. An operator handover at the same station ends the session, even if the network connection stays up; the next operator&apos;s session follows it (RDOnto-link:followsSession). A move to another station also starts a new session, since sessionStation is functional; it can follow the earlier one in the same way. Link observations belong to the session. Connection loss does not end a session by itself: the session stays open while the station and the vehicle try to reconnect, and data arriving again continues it. It ends when prov:endedAtTime is set, by the station or the vehicle giving up or by a handover; a connection set up after that is a new session, which follows the ended one (RDOnto-link:followsSession).</rdfs:comment>
+        <rdfs:label xml:lang="en">teleoperation session</rdfs:label>
+        <skos:definition xml:lang="en">The period in which a remote station and a vehicle hold a connection, or try to restore it, with one remote operator at the station, from prov:startedAtTime to prov:endedAtTime.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#TeleoperationSetup -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/link#TeleoperationSetup">
+        <terms:source>GA21b</terms:source>
+        <terms:source>JI25</terms:source>
+        <terms:source>SC22</terms:source>
+        <rdfs:comment xml:lang="en">LK-04, LK-09. Latency limits depend on the setup: vehicle geometry and dynamics [JI25], the precision the task needs [GA21b], and the station and interface. A setup names its operating environment and driving task with RDOnto-op&apos;s terms (setupEnvironment, setupTask); A setup can name the vehicles and stations it is valid for (setupVehicle, setupStation); a session may then use it only with one of them.</rdfs:comment>
+        <rdfs:label xml:lang="en">teleoperation setup</rdfs:label>
+        <skos:definition xml:lang="en">A combination of vehicle, remote station and task context for which latency limits are configured, e.g. a passenger car in urban traffic, or a bus manoeuvring at a roadblock.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#TravelTolerance -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/link#TravelTolerance">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/op#ConfiguredLimit"/>
+        <terms:source>GA21b</terms:source>
+        <terms:source>JI25</terms:source>
+        <rdfs:comment xml:lang="en">The primary latency criterion (LK-04, LK-09, LK-10). It follows the deviation of GA21b: the maximum distance the vehicle moves until the ToD operator command is executed, which is correlated with the precision of operation; GA21b plots maximum speed against maximum delay for a given deviation. JI25 shows that speed and latency have the same effect on stability through the dimensionless delay (speed x latency / wheelbase). Admissible speed = tolerance / end-to-end latency, and at most the setup&apos;s maximumDrivingSpeed; at zero latency it is that maximum.</rdfs:comment>
+        <rdfs:label xml:lang="en">travel tolerance</rdfs:label>
+        <skos:definition xml:lang="en">The longest distance the vehicle may travel during the end-to-end latency, i.e. before an operator command takes effect, in a setup and mode. Value as qudt:numericValue with qudt:unit unit:M, or derived as dimensionlessDelayLimit times the setup&apos;s wheelbase.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#ActuatorLatencyLimit -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#ActuatorLatencyLimit"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#CameraView -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#CameraView"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#ConfiguredLimit -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#ConfiguredLimit"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#Cue -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#Cue"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#DisplayedScene -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#DisplayedScene"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#DrivingTask -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#DrivingTask"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#ElementStateChange -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#ElementStateChange"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#Engagement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#Engagement"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#FallbackReadyPeriod -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#FallbackReadyPeriod"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#Impairment -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#Impairment"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#ImpairmentObservation -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#ImpairmentObservation"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#InformationAgeLimit -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#InformationAgeLimit"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#InformationChannel -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#InformationChannel"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#LatencyChangeLimit -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#LatencyChangeLimit"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#MinimumBreakLength -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#MinimumBreakLength"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#OnBoardDriver -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#OnBoardDriver"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#OperatingEnvironment -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#OperatingEnvironment"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#OperationMode -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#OperationMode"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#OperatorTask -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#OperatorTask"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#PerceptionAssertion -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#PerceptionAssertion"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#PerceptionConfidenceThreshold -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#PerceptionConfidenceThreshold"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#RemoteOperator -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#RemoteOperator"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#Request -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#Request"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#RequestReason -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#RequestReason"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#RequestType -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#RequestType"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#SAEvidence -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#SAEvidence"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#SARequirement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#SARequirement"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#SAType -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#SAType"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#SensorFrame -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#SensorFrame"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#TakeoverReason -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#TakeoverReason"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#TimeOnTaskLimit -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#TimeOnTaskLimit"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#WorkloadBand -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#WorkloadBand"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#WorkloadEstimate -->
+
+
+    <owl:Class rdf:about="https://w3id.org/rdonto/op#WorkloadEstimate"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://qudt.org/vocab/unit/M -->
+
+
+    <owl:NamedIndividual rdf:about="http://qudt.org/vocab/unit/M">
+        <rdf:type rdf:resource="http://qudt.org/schema/qudt/Unit"/>
+        <rdfs:isDefinedBy rdf:resource="http://qudt.org/vocab/unit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#ADSCanTakeOver -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#ADSCanTakeOver">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#AvailabilityCondition"/>
+        <rdfs:comment xml:lang="en">LK-10. All three must be stated: a value that is absent is not known and does not meet the condition.</rdfs:comment>
+        <rdfs:label xml:lang="en">ADS can take over</rdfs:label>
+        <skos:definition xml:lang="en">The session&apos;s vehicle has an ADS (RDOnto-op:hasADS true) that is within its ODD (RDOnto-link:adsWithinODD true) and able to drive now (RDOnto-link:adsAbleToDrive true).</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#ActuatorLatency -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#ActuatorLatency">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#LatencyPart"/>
+        <terms:source>GF20</terms:source>
+        <rdfs:comment xml:lang="en">LK-03, SA-10, SA-24.</rdfs:comment>
+        <rdfs:label xml:lang="en">actuator latency</rdfs:label>
+        <skos:definition xml:lang="en">From the operator&apos;s command at the station to the actuator response in the vehicle.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#AvailableDataRate -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#AvailableDataRate">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+        <terms:source>FE26</terms:source>
+        <terms:source>NE19b</terms:source>
+        <terms:source>SH21</terms:source>
+        <rdfs:comment xml:lang="en">LK-06. Streams of one direction share the link, so the rates of a session&apos;s video streams are summed and the sum is compared with the required rates; a prediction gives that sum directly (DataRatePrediction). Observed with a sosa:Observation: sosa:hasFeatureOfInterest the stream, sosa:observedProperty this individual, sosa:hasSimpleResult the value in Mbit/s as a number, sosa:resultTime the time. A rate measured on the network side is an input, not network internals.</rdfs:comment>
+        <rdfs:label xml:lang="en">available data rate</rdfs:label>
+        <skos:definition xml:lang="en">The data rate currently available to a stream, i.e. its share of what the link carries in its direction, in Mbit/s.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#ConnectionLost -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#ConnectionLost">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#Degradation"/>
+        <terms:source>BR26</terms:source>
+        <terms:source>KO21</terms:source>
+        <rdfs:comment xml:lang="en">LK-07, LK-10. The exact rule is on ConnectionTimeout. The operator can then no longer act on the vehicle, so only adaptations that the vehicle or someone on board carries out address it.</rdfs:comment>
+        <rdfs:label xml:lang="en">connection lost</rdfs:label>
+        <skos:definition xml:lang="en">A stream that the current mode needs, or any stream of a session whose engagements have all ended, has delivered no data for longer than its connection timeout.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#ConnectionStateShown -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#ConnectionStateShown">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#LinkInformation"/>
+        <rdfs:comment xml:lang="en">LK-11.</rdfs:comment>
+        <rdfs:label xml:lang="en">connection state</rdfs:label>
+        <skos:definition xml:lang="en">Whether the connection to the vehicle is up or lost.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#ContinueWithoutOperator -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#ContinueWithoutOperator">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#Adaptation"/>
+        <addresses rdf:resource="https://w3id.org/rdonto/link#ConnectionLost"/>
+        <requiresCondition rdf:resource="https://w3id.org/rdonto/link#ADSCanTakeOver"/>
+        <requiresCondition rdf:resource="https://w3id.org/rdonto/link#NotInRemoteDrivingMode"/>
+        <preferenceRank rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</preferenceRank>
+        <rdfs:comment xml:lang="en">LK-10. For connection loss in remote monitoring or remote assistance, where the ADS and not the operator drives. Available only if the ADS is within its ODD and able to drive (RDOnto-link:ADSCanTakeOver): in remote assistance it is not while it waits for the answer to a request. No source states it; whether a vehicle may go on without its operator is a choice of the deployment and its regulation, and a rank override can put the stop first.</rdfs:comment>
+        <rdfs:label xml:lang="en">continue without operator</rdfs:label>
+        <skos:definition xml:lang="en">The vehicle&apos;s ADS keeps driving within its ODD although the operator who monitors or assists it can no longer be reached.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#ControlCommands -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#ControlCommands">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#StreamContent"/>
+        <contentDirection rdf:resource="https://w3id.org/rdonto/link#StationToVehicle"/>
+        <neededInMode rdf:resource="https://w3id.org/rdonto/op#RemoteDriving"/>
+        <isContinuous rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isContinuous>
+        <terms:source>GA21b</terms:source>
+        <terms:source>GA23</terms:source>
+        <terms:source>NE19b</terms:source>
+        <rdfs:comment xml:lang="en">LK-02. Direct Control ToD [GA21b]. NE19b: commands every 10 ms at about 0.25 Mbit/s.</rdfs:comment>
+        <rdfs:label xml:lang="en">control commands</rdfs:label>
+        <skos:definition xml:lang="en">The operator&apos;s driving commands (steering, throttle, brake), sent to the vehicle to be executed directly.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#DataRateInsufficient -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#DataRateInsufficient">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#Degradation"/>
+        <rdfs:comment xml:lang="en">LK-06, LK-10.</rdfs:comment>
+        <rdfs:label xml:lang="en">data rate insufficient</rdfs:label>
+        <skos:definition xml:lang="en">The data rate available from the vehicle to the station is, or is predicted to be, below what the needed camera views require.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#DeadlineMissShare -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#DeadlineMissShare">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#StatisticKind"/>
+        <terms:source>FE26</terms:source>
+        <rdfs:comment xml:lang="en">LK-05. A decimal between 0 and 1 [FE26].</rdfs:comment>
+        <rdfs:label xml:lang="en">deadline miss share</rdfs:label>
+        <skos:definition xml:lang="en">The share of the frames or commands of a stream, sent within the window, that arrived after their delivery deadline.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#EndToEndLatency -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#EndToEndLatency">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#LatencyPart"/>
+        <terms:source>GF20</terms:source>
+        <rdfs:comment xml:lang="en">LK-03, LK-04, LK-09.</rdfs:comment>
+        <rdfs:label xml:lang="en">end-to-end latency</rdfs:label>
+        <skos:definition xml:lang="en">Sensor latency plus actuator latency, without the operator&apos;s reaction time.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#HandBackToADS -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#HandBackToADS">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#Adaptation"/>
+        <addresses rdf:resource="https://w3id.org/rdonto/link#ConnectionLost"/>
+        <addresses rdf:resource="https://w3id.org/rdonto/link#DataRateInsufficient"/>
+        <addresses rdf:resource="https://w3id.org/rdonto/link#LatencyOverBudget"/>
+        <addresses rdf:resource="https://w3id.org/rdonto/link#LatencyUnstable"/>
+        <requiresCondition rdf:resource="https://w3id.org/rdonto/link#ADSCanTakeOver"/>
+        <requiresCondition rdf:resource="https://w3id.org/rdonto/link#InRemoteDrivingMode"/>
+        <preferenceRank rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</preferenceRank>
+        <terms:source>BR26</terms:source>
+        <terms:source>GA23</terms:source>
+        <rdfs:comment xml:lang="en">LK-10. Available only if the vehicle has an ADS that is within its ODD [BR26] and able to drive (RDOnto-link:ADSCanTakeOver): not, e.g., while the failure that made it ask for the takeover lasts.</rdfs:comment>
+        <rdfs:label xml:lang="en">hand back to ADS</rdfs:label>
+        <skos:definition xml:lang="en">Returning the DDT to the vehicle&apos;s ADS and ending remote driving.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#HandBackToOnBoardDriver -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#HandBackToOnBoardDriver">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#Adaptation"/>
+        <addresses rdf:resource="https://w3id.org/rdonto/link#ConnectionLost"/>
+        <addresses rdf:resource="https://w3id.org/rdonto/link#DataRateInsufficient"/>
+        <addresses rdf:resource="https://w3id.org/rdonto/link#LatencyOverBudget"/>
+        <addresses rdf:resource="https://w3id.org/rdonto/link#LatencyUnstable"/>
+        <requiresCondition rdf:resource="https://w3id.org/rdonto/link#OnBoardDriverCanTakeOver"/>
+        <preferenceRank rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</preferenceRank>
+        <rdfs:comment xml:lang="en">LK-10. Available only if the open engagement of the session took over from an on-board driver (RDOnto-op:takenOverFrom) who is able to take control back (RDOnto-op:ableToTakeOver true): event-based remote driving, with or without an ADS.</rdfs:comment>
+        <rdfs:label xml:lang="en">hand back to on-board driver</rdfs:label>
+        <skos:definition xml:lang="en">Returning the DDT to the on-board driver from whom the operator took over.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#InRemoteDrivingMode -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#InRemoteDrivingMode">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#AvailabilityCondition"/>
+        <rdfs:comment xml:lang="en">LK-10. Required by the adaptations the operator carries out as the driver, or that end remote driving.</rdfs:comment>
+        <rdfs:label xml:lang="en">in a remote driving mode</rdfs:label>
+        <skos:definition xml:lang="en">The open engagement of the session is in a mode with RDOnto-op:isRemoteDrivingMode true.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#LatencyLevelShown -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#LatencyLevelShown">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#LinkInformation"/>
+        <terms:source>NE19</terms:source>
+        <rdfs:comment xml:lang="en">LK-11. NE19 showed operators the level as none, low, medium or high.</rdfs:comment>
+        <rdfs:label xml:lang="en">current latency level</rdfs:label>
+        <skos:definition xml:lang="en">The current level of the latency, e.g. as a value or as a class such as low, medium or high.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#LatencyOverBudget -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#LatencyOverBudget">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#Degradation"/>
+        <rdfs:comment xml:lang="en">LK-04, LK-08, LK-10. The result of the check described on LatencyBudget and TravelTolerance, for the measured or a predicted latency.</rdfs:comment>
+        <rdfs:label xml:lang="en">latency over budget</rdfs:label>
+        <skos:definition xml:lang="en">The end-to-end latency, or a part of it, is or is predicted to be above what is acceptable for the setup, mode and speed.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#LatencyUnstable -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#LatencyUnstable">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#Degradation"/>
+        <rdfs:comment xml:lang="en">LK-05, LK-10. The rule is on LatencyVariationLimit.</rdfs:comment>
+        <rdfs:label xml:lang="en">latency unstable</rdfs:label>
+        <skos:definition xml:lang="en">The standard deviation of a latency part is above the latency variation limit for the mode, even where the mean latency is within budget.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#Mean -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#Mean">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#StatisticKind"/>
+        <rdfs:comment xml:lang="en">LK-05. A duration; says which latency part it covers (sosa:observedProperty).</rdfs:comment>
+        <rdfs:label xml:lang="en">mean</rdfs:label>
+        <skos:definition xml:lang="en">The arithmetic mean of the values of a latency part over the window.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#MinimumVideoRateAvailable -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#MinimumVideoRateAvailable">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#AvailabilityCondition"/>
+        <rdfs:comment xml:lang="en">LK-06, LK-10.</rdfs:comment>
+        <rdfs:label xml:lang="en">minimum video rate available</rdfs:label>
+        <skos:definition xml:lang="en">The available data rate from the vehicle to the station is at least the sum of the minimumDataRate of the camera views needed in the current mode, so lowering the video quality can help; views without that value count with their requiredDataRate.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#NotInRemoteDrivingMode -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#NotInRemoteDrivingMode">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#AvailabilityCondition"/>
+        <rdfs:comment xml:lang="en">LK-10. Does not hold for a session without an open engagement.</rdfs:comment>
+        <rdfs:label xml:lang="en">not in a remote driving mode</rdfs:label>
+        <skos:definition xml:lang="en">The open engagement of the session is in a mode with RDOnto-op:isRemoteDrivingMode false: remote monitoring or remote assistance.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#OnBoardDriverCanTakeOver -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#OnBoardDriverCanTakeOver">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#AvailabilityCondition"/>
+        <rdfs:comment xml:lang="en">LK-10. A driver who does not state ableToTakeOver does not meet the condition.</rdfs:comment>
+        <rdfs:label xml:lang="en">on-board driver can take over</rdfs:label>
+        <skos:definition xml:lang="en">The open engagement of the session took over from an on-board driver (RDOnto-op:takenOverFrom) who is able to take control back now (RDOnto-op:ableToTakeOver true).</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#PredictedDegradationShown -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#PredictedDegradationShown">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#LinkInformation"/>
+        <terms:source>GA23</terms:source>
+        <rdfs:comment xml:lang="en">LK-11. GA23: the remote driver is notified of predicted QoS changes.</rdfs:comment>
+        <rdfs:label xml:lang="en">predicted degradation</rdfs:label>
+        <skos:definition xml:lang="en">A warning that the link is predicted to degrade, shown before it does.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#ProposedTrajectory -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#ProposedTrajectory">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#StreamContent"/>
+        <contentDirection rdf:resource="https://w3id.org/rdonto/link#VehicleToStation"/>
+        <neededInMode rdf:resource="https://w3id.org/rdonto/op#RemoteAssistance"/>
+        <isContinuous rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isContinuous>
+        <terms:source>BR26</terms:source>
+        <rdfs:comment xml:lang="en">LK-02. The direction opposite to Trajectory. BR26: in remote assistance the ADS can give &apos;maneuver options to the technical supervisor&apos;, and &apos;the main reason for providing these trajectories to the operator is to enable supervision and stopping of the vehicle&apos;. Kept apart from Trajectory so that a stream&apos;s content fixes its direction (contentDirection).</rdfs:comment>
+        <rdfs:label xml:lang="en">proposed trajectory</rdfs:label>
+        <skos:definition xml:lang="en">A route, path or trajectory that the vehicle&apos;s automation proposes, sent to the station for the operator to approve, reject or change.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#ReduceSpeed -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#ReduceSpeed">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#Adaptation"/>
+        <addresses rdf:resource="https://w3id.org/rdonto/link#DataRateInsufficient"/>
+        <addresses rdf:resource="https://w3id.org/rdonto/link#LatencyOverBudget"/>
+        <addresses rdf:resource="https://w3id.org/rdonto/link#LatencyUnstable"/>
+        <requiresCondition rdf:resource="https://w3id.org/rdonto/link#InRemoteDrivingMode"/>
+        <requiresCondition rdf:resource="https://w3id.org/rdonto/link#SpeedAboveMinimum"/>
+        <preferenceRank rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</preferenceRank>
+        <terms:source>GA21b</terms:source>
+        <terms:source>JI25</terms:source>
+        <terms:source>KO21</terms:source>
+        <terms:source>NE19b</terms:source>
+        <terms:source>SC22</terms:source>
+        <rdfs:comment xml:lang="en">LK-09, LK-10. Higher latency calls for lower speed [JI25]; GA21b: above budget the vehicle &apos;must reduce the maximum speed of 8 km/h or fully stop&apos; (one scenario); NE19b, KO21 and SC22 name a lower speed as an adaptation.</rdfs:comment>
+        <rdfs:label xml:lang="en">reduce speed</rdfs:label>
+        <skos:definition xml:lang="en">The operator driving more slowly, so that the vehicle travels less far during the latency.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#ReduceVideoQuality -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#ReduceVideoQuality">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#Adaptation"/>
+        <addresses rdf:resource="https://w3id.org/rdonto/link#DataRateInsufficient"/>
+        <addresses rdf:resource="https://w3id.org/rdonto/link#LatencyOverBudget"/>
+        <addresses rdf:resource="https://w3id.org/rdonto/link#LatencyUnstable"/>
+        <requiresCondition rdf:resource="https://w3id.org/rdonto/link#MinimumVideoRateAvailable"/>
+        <preferenceRank rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</preferenceRank>
+        <terms:source>NE19b</terms:source>
+        <terms:source>SH21</terms:source>
+        <rdfs:comment xml:lang="en">LK-10. NE19b names lower resolution, switched-off cameras and a lower frame rate as mitigations; SH21 adapts bitrate and resolution per camera to the predicted available rate.</rdfs:comment>
+        <rdfs:label xml:lang="en">reduce video quality</rdfs:label>
+        <skos:definition xml:lang="en">Lowering the resolution, frame rate or bitrate of the video, or switching off camera views, so that the video needs less data rate.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#Reroute -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#Reroute">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#Adaptation"/>
+        <addresses rdf:resource="https://w3id.org/rdonto/link#DataRateInsufficient"/>
+        <addresses rdf:resource="https://w3id.org/rdonto/link#LatencyOverBudget"/>
+        <addresses rdf:resource="https://w3id.org/rdonto/link#LatencyUnstable"/>
+        <preferenceRank rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</preferenceRank>
+        <terms:source>NE19b</terms:source>
+        <terms:source>SC22</terms:source>
+        <rdfs:comment xml:lang="en">LK-10. SC22: with insufficient data rate, &apos;alternative routes can be chosen, or the velocity adapted&apos;; NE19b names route planning. Whether an alternative route exists is known to the route module.</rdfs:comment>
+        <rdfs:label xml:lang="en">reroute</rdfs:label>
+        <skos:definition xml:lang="en">Changing the planned route to one with better expected link quality.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#SafeStop -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#SafeStop">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#Adaptation"/>
+        <addresses rdf:resource="https://w3id.org/rdonto/link#ConnectionLost"/>
+        <addresses rdf:resource="https://w3id.org/rdonto/link#DataRateInsufficient"/>
+        <addresses rdf:resource="https://w3id.org/rdonto/link#LatencyOverBudget"/>
+        <addresses rdf:resource="https://w3id.org/rdonto/link#LatencyUnstable"/>
+        <preferenceRank rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</preferenceRank>
+        <terms:source>BR26</terms:source>
+        <terms:source>GA21b</terms:source>
+        <terms:source>KO21</terms:source>
+        <rdfs:comment xml:lang="en">LK-07, LK-10. The last resort, with no availability condition: KO21, &apos;performing a safe stop maneuver in case of communication loss needs to be possible at all time&apos;. With the connection lost the vehicle performs it on its own (MinimalRiskManoeuvre); BR26 proposes a dedicated system for it.</rdfs:comment>
+        <rdfs:label xml:lang="en">safe stop</rdfs:label>
+        <skos:definition xml:lang="en">Bringing the vehicle to a stop in a minimal risk condition, by a minimal risk manoeuvre.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#SensorFeed -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#SensorFeed">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#StreamContent"/>
+        <contentDirection rdf:resource="https://w3id.org/rdonto/link#VehicleToStation"/>
+        <isContinuous rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isContinuous>
+        <terms:source>GA23</terms:source>
+        <rdfs:comment xml:lang="en">LK-02. GA23 lists sensor data next to video in the direction from the vehicle.</rdfs:comment>
+        <rdfs:label xml:lang="en">sensor feed</rdfs:label>
+        <skos:definition xml:lang="en">Data from the vehicle&apos;s other sensors or from its perception, such as lidar points or detected objects, sent to the station.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#SensorLatency -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#SensorLatency">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#LatencyPart"/>
+        <terms:source>GF20</terms:source>
+        <rdfs:comment xml:lang="en">LK-03, LK-12.</rdfs:comment>
+        <rdfs:label xml:lang="en">sensor latency</rdfs:label>
+        <skos:definition xml:lang="en">From an event in front of the vehicle&apos;s sensors to its display at the station (glass-to-glass). The same quantity as RDOnto-op information age.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#SpeedAboveMinimum -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#SpeedAboveMinimum">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#AvailabilityCondition"/>
+        <rdfs:comment xml:lang="en">LK-10.</rdfs:comment>
+        <rdfs:label xml:lang="en">speed above the minimum driving speed</rdfs:label>
+        <skos:definition xml:lang="en">The vehicle&apos;s current speed is above the minimumDrivingSpeed of the session&apos;s setup; a setup without that value always meets the condition.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#StandardDeviation -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#StandardDeviation">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#StatisticKind"/>
+        <terms:source>NE19b</terms:source>
+        <rdfs:comment xml:lang="en">LK-05, LK-10. Latency variation; NE19b uses jitter as the variation of latency.</rdfs:comment>
+        <rdfs:label xml:lang="en">standard deviation</rdfs:label>
+        <skos:definition xml:lang="en">The standard deviation of the values of a latency part over the window, as a measure of how much the latency varies.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#StationToVehicle -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#StationToVehicle">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#Direction"/>
+        <terms:source>FE26</terms:source>
+        <terms:source>GA23</terms:source>
+        <terms:source>MA25</terms:source>
+        <rdfs:comment xml:lang="en">LK-02. Network sources call this direction downlink [GA23, FE26], while MA25 calls it uplink, so neither word is used.</rdfs:comment>
+        <rdfs:label xml:lang="en">station to vehicle</rdfs:label>
+        <skos:definition xml:lang="en">From the remote station to the vehicle: the direction of what the operator commands or provides.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#SwitchToRemoteAssistance -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#SwitchToRemoteAssistance">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#Adaptation"/>
+        <addresses rdf:resource="https://w3id.org/rdonto/link#DataRateInsufficient"/>
+        <addresses rdf:resource="https://w3id.org/rdonto/link#LatencyOverBudget"/>
+        <addresses rdf:resource="https://w3id.org/rdonto/link#LatencyUnstable"/>
+        <requiresCondition rdf:resource="https://w3id.org/rdonto/link#ADSCanTakeOver"/>
+        <requiresCondition rdf:resource="https://w3id.org/rdonto/link#InRemoteDrivingMode"/>
+        <requiresCondition rdf:resource="https://w3id.org/rdonto/link#VehicleSupportsRemoteAssistance"/>
+        <preferenceRank rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</preferenceRank>
+        <terms:source>BR26</terms:source>
+        <rdfs:comment xml:lang="en">LK-10. Available only if the vehicle supports RDOnto-op:RemoteAssistance and its ADS is within its ODD and able to drive (RDOnto-link:ADSCanTakeOver): remote assistance is advice to an ADS-equipped vehicle that is within its ODD (RDOnto-op:RemoteAssistance), and in event-based remote driving the ADS has often left its ODD [BR26].</rdfs:comment>
+        <rdfs:label xml:lang="en">switch to remote assistance</rdfs:label>
+        <skos:definition xml:lang="en">Ending remote driving and continuing in remote assistance, in which the ADS drives and the operator only advises.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#Trajectory -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#Trajectory">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#StreamContent"/>
+        <contentDirection rdf:resource="https://w3id.org/rdonto/link#StationToVehicle"/>
+        <neededInMode rdf:resource="https://w3id.org/rdonto/op#RemoteAssistance"/>
+        <isContinuous rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isContinuous>
+        <terms:source>GA21b</terms:source>
+        <rdfs:comment xml:lang="en">LK-02. Indirect Control ToD: the vehicle performs the DDT &apos;following the route and/or pathway information provided by the ToD operator&apos; [GA21b].</rdfs:comment>
+        <rdfs:label xml:lang="en">trajectory</rdfs:label>
+        <skos:definition xml:lang="en">A route, path or trajectory that the operator provides or authorizes, sent to the vehicle for its automation to follow.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#VehicleSpeed -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#VehicleSpeed">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+        <rdfs:comment xml:lang="en">LK-04, LK-08, LK-09, LK-10. Interface (vehicle state, VSS Vehicle.Speed). Observed with sosa:hasFeatureOfInterest the vehicle and sosa:hasSimpleResult in km/h.</rdfs:comment>
+        <rdfs:label xml:lang="en">vehicle speed</rdfs:label>
+        <skos:definition xml:lang="en">The speed at which a vehicle is currently moving, in km/h.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#VehicleSupportsRemoteAssistance -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#VehicleSupportsRemoteAssistance">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#AvailabilityCondition"/>
+        <rdfs:comment xml:lang="en">LK-10.</rdfs:comment>
+        <rdfs:label xml:lang="en">vehicle supports remote assistance</rdfs:label>
+        <skos:definition xml:lang="en">The session&apos;s vehicle has RDOnto-op:supportsMode RDOnto-op:RemoteAssistance.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#VehicleToStation -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#VehicleToStation">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#Direction"/>
+        <terms:source>FE26</terms:source>
+        <terms:source>GA23</terms:source>
+        <terms:source>MA25</terms:source>
+        <rdfs:comment xml:lang="en">LK-02. Network sources call this direction uplink [GA23, FE26], while MA25 calls it downlink, so neither word is used.</rdfs:comment>
+        <rdfs:label xml:lang="en">vehicle to station</rdfs:label>
+        <skos:definition xml:lang="en">From the vehicle to the remote station: the direction of what the vehicle senses and reports.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/link#VideoFeed -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/link#VideoFeed">
+        <rdf:type rdf:resource="https://w3id.org/rdonto/link#StreamContent"/>
+        <contentDirection rdf:resource="https://w3id.org/rdonto/link#VehicleToStation"/>
+        <neededInMode rdf:resource="https://w3id.org/rdonto/op#RemoteAssistance"/>
+        <neededInMode rdf:resource="https://w3id.org/rdonto/op#RemoteDriving"/>
+        <neededInMode rdf:resource="https://w3id.org/rdonto/op#RemoteMonitoring"/>
+        <isContinuous rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isContinuous>
+        <terms:source>GA23</terms:source>
+        <terms:source>NE19b</terms:source>
+        <rdfs:comment xml:lang="en">LK-02, LK-06. NE19b: at least 3 Mbit/s from the vehicle for video.</rdfs:comment>
+        <rdfs:label xml:lang="en">video feed</rdfs:label>
+        <skos:definition xml:lang="en">Camera images from the vehicle, sent to the station to be displayed to the operator.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#RemoteAssistance -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#RemoteAssistance"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#RemoteDriving -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#RemoteDriving"/>
+    
+
+
+    <!-- https://w3id.org/rdonto/op#RemoteMonitoring -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#RemoteMonitoring"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="https://w3id.org/rdonto/link#predictedValue">
+        <rdfs:comment xml:lang="en">LK-08, LK-09. Compared with the limits as a measured latency is; with it, LK-09 gives the admissible speed for the predicted latency.</rdfs:comment>
+        <rdfs:label xml:lang="en">predicted value</rdfs:label>
+        <skos:definition xml:lang="en">The latency expected over the window of a latency prediction, as a duration.</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/rdonto/link#sessionVehicle">
+        <rdfs:comment xml:lang="en">LK-01. A session has exactly one, and a vehicle has at most one open session at a time (RDOnto-link-shapes.ttl).</rdfs:comment>
+        <rdfs:label xml:lang="en">session vehicle</rdfs:label>
+        <skos:definition xml:lang="en">The vehicle that a teleoperation session connects to the remote station.</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/rdonto/link#setupVehicle">
+        <rdfs:comment xml:lang="en">LK-04. A setup can name several, e.g. a fleet of one model. A session that uses the setup must have one of them as its vehicle, where the setup names any (RDOnto-link-shapes.ttl).</rdfs:comment>
+        <rdfs:label xml:lang="en">setup vehicle</rdfs:label>
+        <skos:definition xml:lang="en">A vehicle that the limits of a teleoperation setup were configured for.</skos:definition>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#Adaptation"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#AdaptationRankOverride"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#AvailabilityCondition"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#Degradation"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#Direction"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#LatencyObservation"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#LatencyPart"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#LatencyStatistic"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#LinkInformation"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#LinkPrediction"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#MinimalRiskManoeuvre"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#MinimalRiskManoeuvreKind"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#RemoteStation"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#StatisticKind"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#Stream"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#StreamContent"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#TeleoperationSession"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#TeleoperationSetup"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#ConfiguredLimit"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#Cue"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#DisplayedScene"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#DrivingTask"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#ElementStateChange"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#Engagement"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#FallbackReadyPeriod"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#Impairment"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#ImpairmentObservation"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#InformationChannel"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#OnBoardDriver"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#OperatingEnvironment"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#OperationMode"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#OperatorTask"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#PerceptionAssertion"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#RemoteOperator"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#RemotelyOperatedVehicle"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#Request"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#RequestReason"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#RequestType"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#SAEvidence"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#SAType"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#SensorFrame"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#TakeoverReason"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#WorkloadEstimate"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#ConnectionLossPrediction"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#DataRatePrediction"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#LatencyPrediction"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#ConnectionTimeout"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#DeliveryDeadline"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#LatencyAgreementTolerance"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#LatencyBudget"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#LatencyVariationLimit"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#RequiredLeadTime"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#TravelTolerance"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#ActuatorLatencyLimit"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#InformationAgeLimit"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#LatencyChangeLimit"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#MinimumBreakLength"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#PerceptionConfidenceThreshold"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#SARequirement"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#TimeOnTaskLimit"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/op#WorkloadBand"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#ADSCanTakeOver"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#InRemoteDrivingMode"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#MinimumVideoRateAvailable"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#NotInRemoteDrivingMode"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#OnBoardDriverCanTakeOver"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#SpeedAboveMinimum"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#VehicleSupportsRemoteAssistance"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#ActuatorLatency"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#AvailableDataRate"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#EndToEndLatency"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#SensorLatency"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#VehicleSpeed"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#ConnectionLost"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#DataRateInsufficient"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#LatencyOverBudget"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#LatencyUnstable"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#ConnectionStateShown"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#LatencyLevelShown"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#PredictedDegradationShown"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#ContinueWithoutOperator"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#HandBackToADS"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#HandBackToOnBoardDriver"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#ReduceSpeed"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#ReduceVideoQuality"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#Reroute"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#SafeStop"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#SwitchToRemoteAssistance"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#ControlCommands"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#ProposedTrajectory"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#SensorFeed"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#Trajectory"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#VideoFeed"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#DeadlineMissShare"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#Mean"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#StandardDeviation"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#StationToVehicle"/>
+            <rdf:Description rdf:about="https://w3id.org/rdonto/link#VehicleToStation"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

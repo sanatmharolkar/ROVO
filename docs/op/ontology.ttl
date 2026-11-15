@@ -1,21 +1,21 @@
-@prefix : <https://w3id.org/rdonto/op#> .
+@prefix : <https://w3id.org/rovo/op#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://w3id.org/rdonto/op#> .
+@base <https://w3id.org/rovo/op#> .
 
-<https://w3id.org/rdonto/op> rdf:type owl:Ontology ;
-                              <http://purl.org/dc/terms/created> "2026-11-04"^^xsd:date ;
-                              <http://purl.org/dc/terms/creator> "Sanat Mharolkar" ;
-                              <http://purl.org/dc/terms/description> "Represents a remote operator's awareness state of a remotely operated vehicle and its surroundings: what information is available to the operator, what the operator has perceived from it, how delayed and degraded it is, whether it is still valid, and whether it is sufficient for the SA type of the operator's mode."@en ;
-                              <http://purl.org/dc/terms/license> <http://www.apache.org/licenses/LICENSE-2.0> ;
-                              <http://purl.org/dc/terms/modified> "2026-11-14"^^xsd:date ;
-                              rdfs:comment "SA-10 and the actuator latency part of SA-24 need RDOnto-link loaded as well (its actuator latency observations); the other questions need only this module."@en ;
-                              rdfs:label "Remote Driving Ontology: operator awareness module"@en ;
-                              rdfs:seeAlso <https://w3id.org/rdonto/link> ;
-                              owl:versionInfo "1.0" .
+<https://w3id.org/rovo/op> rdf:type owl:Ontology ;
+                            <http://purl.org/dc/terms/created> "2026-11-04"^^xsd:date ;
+                            <http://purl.org/dc/terms/creator> "Sanat Mharolkar" ;
+                            <http://purl.org/dc/terms/description> "Represents a remote operator's awareness state of a remotely operated vehicle and its surroundings: what information is available to the operator, what the operator has perceived from it, how delayed and degraded it is, whether it is still valid, and whether it is sufficient for the SA type of the operator's mode."@en ;
+                            <http://purl.org/dc/terms/license> <http://www.apache.org/licenses/LICENSE-2.0> ;
+                            <http://purl.org/dc/terms/modified> "2026-11-14"^^xsd:date ;
+                            rdfs:comment "SA-10 and the actuator latency part of SA-24 need ROVO-link loaded as well (its actuator latency observations); the other questions need only this module."@en ;
+                            rdfs:label "Remote Operation of Vehicles Ontology: operator awareness module"@en ;
+                            rdfs:seeAlso <https://w3id.org/rovo/link> ;
+                            owl:versionInfo "1.0" .
 
 #################################################################
 #    Annotation properties
@@ -103,7 +103,7 @@ xsd:date rdf:type rdfs:Datatype .
                                              rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> .
 
 
-###  https://w3id.org/rdonto/op#aboutElement
+###  https://w3id.org/rovo/op#aboutElement
 :aboutElement rdf:type owl:ObjectProperty ,
                        owl:FunctionalProperty ;
               rdfs:domain :PerceptionAssertion ;
@@ -113,44 +113,44 @@ xsd:date rdf:type rdfs:Datatype .
               <http://www.w3.org/2004/02/skos/core#definition> "The situation element that a perception assertion says the operator perceived."@en .
 
 
-###  https://w3id.org/rdonto/op#adaptationCarriedFrom
+###  https://w3id.org/rovo/op#adaptationCarriedFrom
 :adaptationCarriedFrom rdf:type owl:ObjectProperty ,
                                 owl:FunctionalProperty ;
                        rdfs:domain :Engagement ;
                        rdfs:range :Engagement ;
                        <http://purl.org/dc/terms/source> "HA24" ;
-                       rdfs:comment "SA-14. Used when a mode change starts a new engagement over the same link, or when the operator drives the same setup again, so that the adaptation built up over earlier drives (HA24) is not lost. The earlier engagement has the same operator and started before this one (RDOnto-op-shapes.ttl); with RDOnto-link loaded, both must use the same teleoperation setup (RDOnto-link-shapes.ttl). Whether an adaptation is still valid after a long pause is decided by the stream layer, which then gives no value."@en ;
+                       rdfs:comment "SA-14. Used when a mode change starts a new engagement over the same link, or when the operator drives the same setup again, so that the adaptation built up over earlier drives (HA24) is not lost. The earlier engagement has the same operator and started before this one (ROVO-op-shapes.ttl); with ROVO-link loaded, both must use the same teleoperation setup (ROVO-link-shapes.ttl). Whether an adaptation is still valid after a long pause is decided by the stream layer, which then gives no value."@en ;
                        rdfs:label "adaptation carried from"@en ;
                        <http://www.w3.org/2004/02/skos/core#definition> "The earlier engagement of the same operator whose adapted information age this engagement continues with."@en .
 
 
-###  https://w3id.org/rdonto/op#adaptedInformationAge
+###  https://w3id.org/rovo/op#adaptedInformationAge
 :adaptedInformationAge rdf:type owl:ObjectProperty ,
                                 owl:FunctionalProperty ;
                        rdfs:domain :Engagement ;
                        rdfs:range xsd:dayTimeDuration .
 
 
-###  https://w3id.org/rdonto/op#appliesToMode
+###  https://w3id.org/rovo/op#appliesToMode
 :appliesToMode rdf:type owl:ObjectProperty ;
                rdfs:domain :ConfiguredLimit ;
                rdfs:range :OperationMode ;
-               rdfs:comment "SA-09, SA-12, SA-14, SA-18, SA-24. A limit stated for a broader mode (RDOnto-op:broaderMode) holds for its narrower modes unless they have their own. Not used on an SARequirement, which is scoped by SA type (forSAType)."@en ;
+               rdfs:comment "SA-09, SA-12, SA-14, SA-18, SA-24. A limit stated for a broader mode (ROVO-op:broaderMode) holds for its narrower modes unless they have their own. Not used on an SARequirement, which is scoped by SA type (forSAType)."@en ;
                rdfs:label "applies to mode"@en ;
                <http://www.w3.org/2004/02/skos/core#definition> "An operation mode in which a configured limit applies."@en .
 
 
-###  https://w3id.org/rdonto/op#assertedOperator
+###  https://w3id.org/rovo/op#assertedOperator
 :assertedOperator rdf:type owl:ObjectProperty ,
                            owl:FunctionalProperty ;
                   rdfs:domain :PerceptionAssertion ;
                   rdfs:range :RemoteOperator ;
-                  rdfs:comment "SA-07. Where the assertion rests on a displayed scene, this is the operator of an engagement the scene was shown in (RDOnto-op-shapes.ttl)."@en ;
+                  rdfs:comment "SA-07. Where the assertion rests on a displayed scene, this is the operator of an engagement the scene was shown in (ROVO-op-shapes.ttl)."@en ;
                   rdfs:label "asserted operator"@en ;
                   <http://www.w3.org/2004/02/skos/core#definition> "The remote operator whose perception a perception assertion estimates."@en .
 
 
-###  https://w3id.org/rdonto/op#availableChannel
+###  https://w3id.org/rovo/op#availableChannel
 :availableChannel rdf:type owl:ObjectProperty ;
                   rdfs:domain :Engagement ;
                   rdfs:range :InformationChannel ;
@@ -159,7 +159,7 @@ xsd:date rdf:type rdfs:Datatype .
                   <http://www.w3.org/2004/02/skos/core#definition> "An information channel the remote station currently provides to the operator in an engagement."@en .
 
 
-###  https://w3id.org/rdonto/op#basedOnScene
+###  https://w3id.org/rovo/op#basedOnScene
 :basedOnScene rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasDerivedFrom> ;
               rdf:type owl:FunctionalProperty ;
@@ -170,24 +170,24 @@ xsd:date rdf:type rdfs:Datatype .
               <http://www.w3.org/2004/02/skos/core#definition> "The displayed scene in which the operator perceived the element."@en .
 
 
-###  https://w3id.org/rdonto/op#broaderMode
+###  https://w3id.org/rovo/op#broaderMode
 :broaderMode rdf:type owl:ObjectProperty ,
                       owl:FunctionalProperty ;
              rdfs:domain :OperationMode ;
              rdfs:range :OperationMode ;
-             rdfs:comment "SA-01 and every question that reads a limit per mode. Continuous and event-based remote driving have RDOnto-op:RemoteDriving as their broader mode. Limits, supported modes, task kinds and needs stated for a broader mode hold for its narrower modes. A property of this module, not skos:broader, so that the SKOS mappings of RDOnto-core add nothing to the mode hierarchy."@en ;
+             rdfs:comment "SA-01 and every question that reads a limit per mode. Continuous and event-based remote driving have ROVO-op:RemoteDriving as their broader mode. Limits, supported modes, task kinds and needs stated for a broader mode hold for its narrower modes. A property of this module, not skos:broader, so that the SKOS mappings of ROVO-core add nothing to the mode hierarchy."@en ;
              rdfs:label "broader mode"@en ;
              <http://www.w3.org/2004/02/skos/core#definition> "The more general operation mode that an operation mode is a special case of."@en .
 
 
-###  https://w3id.org/rdonto/op#captureDelay
+###  https://w3id.org/rovo/op#captureDelay
 :captureDelay rdf:type owl:ObjectProperty ,
                        owl:FunctionalProperty ;
               rdfs:domain <http://www.w3.org/ns/sosa/Sensor> ;
               rdfs:range xsd:dayTimeDuration .
 
 
-###  https://w3id.org/rdonto/op#concernsElement
+###  https://w3id.org/rovo/op#concernsElement
 :concernsElement rdf:type owl:ObjectProperty ;
                  rdfs:domain :Request ;
                  rdfs:range :SituationElement ;
@@ -196,7 +196,7 @@ xsd:date rdf:type rdfs:Datatype .
                  <http://www.w3.org/2004/02/skos/core#definition> "A situation element that a request is about, e.g. the object the vehicle cannot classify."@en .
 
 
-###  https://w3id.org/rdonto/op#deployedIn
+###  https://w3id.org/rovo/op#deployedIn
 :deployedIn rdf:type owl:ObjectProperty ;
             rdfs:domain :RemotelyOperatedVehicle ;
             rdfs:range :OperatingEnvironment ;
@@ -205,7 +205,7 @@ xsd:date rdf:type rdfs:Datatype .
             <http://www.w3.org/2004/02/skos/core#definition> "A kind of place the vehicle is deployed in."@en .
 
 
-###  https://w3id.org/rdonto/op#derivedFromFrame
+###  https://w3id.org/rovo/op#derivedFromFrame
 :derivedFromFrame rdf:type owl:ObjectProperty ;
                   rdfs:domain :DisplayedScene ;
                   rdfs:range :SensorFrame ;
@@ -214,7 +214,7 @@ xsd:date rdf:type rdfs:Datatype .
                   <http://www.w3.org/2004/02/skos/core#definition> "A sensor frame that a displayed scene was produced from."@en .
 
 
-###  https://w3id.org/rdonto/op#engagedOperator
+###  https://w3id.org/rovo/op#engagedOperator
 :engagedOperator rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasAssociatedWith> ;
                  rdf:type owl:FunctionalProperty ;
@@ -225,27 +225,27 @@ xsd:date rdf:type rdfs:Datatype .
                  <http://www.w3.org/2004/02/skos/core#definition> "The remote operator who is responsible for the vehicle in an engagement."@en .
 
 
-###  https://w3id.org/rdonto/op#engagedVehicle
+###  https://w3id.org/rovo/op#engagedVehicle
 :engagedVehicle rdf:type owl:ObjectProperty ,
                          owl:FunctionalProperty ;
                 rdfs:domain :Engagement ;
                 rdfs:range :RemotelyOperatedVehicle ;
-                rdfs:comment "SA-01. An engagement has exactly one, and a vehicle has at most one open engagement at a time (RDOnto-op-shapes.ttl)."@en ;
+                rdfs:comment "SA-01. An engagement has exactly one, and a vehicle has at most one open engagement at a time (ROVO-op-shapes.ttl)."@en ;
                 rdfs:label "engaged vehicle"@en ;
                 <http://www.w3.org/2004/02/skos/core#definition> "The vehicle that the operator monitors, assists or drives in an engagement."@en .
 
 
-###  https://w3id.org/rdonto/op#engagementEnvironment
+###  https://w3id.org/rovo/op#engagementEnvironment
 :engagementEnvironment rdf:type owl:ObjectProperty ,
                                 owl:FunctionalProperty ;
                        rdfs:domain :Engagement ;
                        rdfs:range :OperatingEnvironment ;
-                       rdfs:comment "SA-06, runtime. A vehicle can be deployed in several environments (deployedIn), so the answer for one engagement is stated here. It must be one of the vehicle's environments where the vehicle states any (RDOnto-op-shapes.ttl). Without a value, SA-06 has an answer only if the vehicle states exactly one environment."@en ;
+                       rdfs:comment "SA-06, runtime. A vehicle can be deployed in several environments (deployedIn), so the answer for one engagement is stated here. It must be one of the vehicle's environments where the vehicle states any (ROVO-op-shapes.ttl). Without a value, SA-06 has an answer only if the vehicle states exactly one environment."@en ;
                        rdfs:label "engagement environment"@en ;
                        <http://www.w3.org/2004/02/skos/core#definition> "The operating environment the vehicle is in during this engagement."@en .
 
 
-###  https://w3id.org/rdonto/op#engagementTask
+###  https://w3id.org/rovo/op#engagementTask
 :engagementTask rdf:type owl:ObjectProperty ,
                          owl:FunctionalProperty ;
                 rdfs:domain :Engagement ;
@@ -255,18 +255,18 @@ xsd:date rdf:type rdfs:Datatype .
                 <http://www.w3.org/2004/02/skos/core#definition> "The driving task the vehicle is operated for during this engagement."@en .
 
 
-###  https://w3id.org/rdonto/op#followsEngagement
+###  https://w3id.org/rovo/op#followsEngagement
 :followsEngagement rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasInformedBy> ;
                    rdf:type owl:FunctionalProperty ;
                    rdfs:domain :Engagement ;
                    rdfs:range :Engagement ;
-                   rdfs:comment "SA-04. The operator moves on from an engagement already held: usually into another mode, e.g. from remote monitoring into event-based remote driving, on the operator's own initiative or on a request from the vehicle (the engagement then also has respondsTo); or in the same mode, when a reconnection in a new session starts a new engagement. The build-up then starts from the SA already held, not from zero: a perception assertion belongs to the operator, not to one engagement, so what the operator perceived in the earlier engagement still counts while it is within its recheck interval (SA-23). SA-04 names the engagement followed. The earlier engagement has ended and has the same operator and vehicle (RDOnto-op-shapes.ttl)."@en ;
+                   rdfs:comment "SA-04. The operator moves on from an engagement already held: usually into another mode, e.g. from remote monitoring into event-based remote driving, on the operator's own initiative or on a request from the vehicle (the engagement then also has respondsTo); or in the same mode, when a reconnection in a new session starts a new engagement. The build-up then starts from the SA already held, not from zero: a perception assertion belongs to the operator, not to one engagement, so what the operator perceived in the earlier engagement still counts while it is within its recheck interval (SA-23). SA-04 names the engagement followed. The earlier engagement has ended and has the same operator and vehicle (ROVO-op-shapes.ttl)."@en ;
                    rdfs:label "follows engagement"@en ;
                    <http://www.w3.org/2004/02/skos/core#definition> "The engagement of the same operator with the same vehicle that this engagement directly continues from."@en .
 
 
-###  https://w3id.org/rdonto/op#forDrivingTask
+###  https://w3id.org/rovo/op#forDrivingTask
 :forDrivingTask rdf:type owl:ObjectProperty ,
                          owl:FunctionalProperty ;
                 rdfs:domain :SARequirement ;
@@ -277,7 +277,7 @@ xsd:date rdf:type rdfs:Datatype .
                 <http://www.w3.org/2004/02/skos/core#definition> "The driving task to which an SA requirement is limited."@en .
 
 
-###  https://w3id.org/rdonto/op#forEnvironment
+###  https://w3id.org/rovo/op#forEnvironment
 :forEnvironment rdf:type owl:ObjectProperty ,
                          owl:FunctionalProperty ;
                 rdfs:domain :SARequirement ;
@@ -289,7 +289,7 @@ xsd:date rdf:type rdfs:Datatype .
                 <http://www.w3.org/2004/02/skos/core#definition> "The operating environment to which an SA requirement is limited."@en .
 
 
-###  https://w3id.org/rdonto/op#forRequestType
+###  https://w3id.org/rovo/op#forRequestType
 :forRequestType rdf:type owl:ObjectProperty ,
                          owl:FunctionalProperty ;
                 rdfs:domain :SARequirement ;
@@ -299,7 +299,7 @@ xsd:date rdf:type rdfs:Datatype .
                 <http://www.w3.org/2004/02/skos/core#definition> "The request type to which an SA requirement for decision-support SA is limited."@en .
 
 
-###  https://w3id.org/rdonto/op#forSAType
+###  https://w3id.org/rovo/op#forSAType
 :forSAType rdf:type owl:ObjectProperty ,
                     owl:FunctionalProperty ;
            rdfs:domain :SARequirement ;
@@ -309,7 +309,7 @@ xsd:date rdf:type rdfs:Datatype .
            <http://www.w3.org/2004/02/skos/core#definition> "The SA type that an SA requirement belongs to."@en .
 
 
-###  https://w3id.org/rdonto/op#hasDrivingTask
+###  https://w3id.org/rovo/op#hasDrivingTask
 :hasDrivingTask rdf:type owl:ObjectProperty ;
                 rdfs:domain :RemotelyOperatedVehicle ;
                 rdfs:range :DrivingTask ;
@@ -318,16 +318,16 @@ xsd:date rdf:type rdfs:Datatype .
                 <http://www.w3.org/2004/02/skos/core#definition> "A purpose the vehicle is deployed for."@en .
 
 
-###  https://w3id.org/rdonto/op#hasRequestReason
+###  https://w3id.org/rovo/op#hasRequestReason
 :hasRequestReason rdf:type owl:ObjectProperty ;
                   rdfs:domain :Request ;
                   rdfs:range :RequestReason ;
-                  rdfs:comment "SA-03. A request can have several reasons; one without a stated cause has RDOnto-op:UnspecifiedReason."@en ;
+                  rdfs:comment "SA-03. A request can have several reasons; one without a stated cause has ROVO-op:UnspecifiedReason."@en ;
                   rdfs:label "has request reason"@en ;
                   <http://www.w3.org/2004/02/skos/core#definition> "A reason given for a request."@en .
 
 
-###  https://w3id.org/rdonto/op#hasRequestType
+###  https://w3id.org/rovo/op#hasRequestType
 :hasRequestType rdf:type owl:ObjectProperty ,
                          owl:FunctionalProperty ;
                 rdfs:domain :Request ;
@@ -337,7 +337,7 @@ xsd:date rdf:type rdfs:Datatype .
                 <http://www.w3.org/2004/02/skos/core#definition> "What a request asks the remote operator for: a takeover or a kind of assistance."@en .
 
 
-###  https://w3id.org/rdonto/op#holdsTask
+###  https://w3id.org/rovo/op#holdsTask
 :holdsTask rdf:type owl:ObjectProperty ;
            rdfs:domain :Engagement ;
            rdfs:range :OperatorTask ;
@@ -346,7 +346,7 @@ xsd:date rdf:type rdfs:Datatype .
            <http://www.w3.org/2004/02/skos/core#definition> "A task the operator holds for the vehicle in an engagement."@en .
 
 
-###  https://w3id.org/rdonto/op#inOperationMode
+###  https://w3id.org/rovo/op#inOperationMode
 :inOperationMode rdf:type owl:ObjectProperty ,
                           owl:FunctionalProperty ;
                  rdfs:domain :Engagement ;
@@ -356,7 +356,7 @@ xsd:date rdf:type rdfs:Datatype .
                  <http://www.w3.org/2004/02/skos/core#definition> "The operation mode an engagement is in."@en .
 
 
-###  https://w3id.org/rdonto/op#inSceneOf
+###  https://w3id.org/rovo/op#inSceneOf
 :inSceneOf rdf:type owl:ObjectProperty ;
            rdfs:domain :SituationElement ;
            rdfs:range :RemotelyOperatedVehicle ;
@@ -365,15 +365,15 @@ xsd:date rdf:type rdfs:Datatype .
            <http://www.w3.org/2004/02/skos/core#definition> "The vehicle whose current situation a situation element is relevant to."@en .
 
 
-###  https://w3id.org/rdonto/op#modeIncludesTask
+###  https://w3id.org/rovo/op#modeIncludesTask
 :modeIncludesTask rdf:type owl:ObjectProperty ;
                   rdfs:domain :OperationMode ;
-                  rdfs:comment "SA-02, static: which kinds of task a mode gives the operator. The object is a task class IRI (OWL 2 punning), e.g. vla:LateralVehicleMotionControl or RDOnto-op:DecisionMakingTask. It lists the kinds a mode may give the operator, not the tasks every engagement in the mode holds. A task stated for a broader mode holds for its narrower modes (broaderMode). The tasks of remote monitoring and remote assistance are asserted below; those of remote driving are EDMC classes and are asserted in RDOnto-core.ttl."@en ;
+                  rdfs:comment "SA-02, static: which kinds of task a mode gives the operator. The object is a task class IRI (OWL 2 punning), e.g. vla:LateralVehicleMotionControl or ROVO-op:DecisionMakingTask. It lists the kinds a mode may give the operator, not the tasks every engagement in the mode holds. A task stated for a broader mode holds for its narrower modes (broaderMode). The tasks of remote monitoring and remote assistance are asserted below; those of remote driving are EDMC classes and are asserted in ROVO-core.ttl."@en ;
                   rdfs:label "mode includes task"@en ;
                   <http://www.w3.org/2004/02/skos/core#definition> "A kind of task that an operation mode gives the operator, stated as a task class."@en .
 
 
-###  https://w3id.org/rdonto/op#onChannel
+###  https://w3id.org/rovo/op#onChannel
 :onChannel rdf:type owl:ObjectProperty ;
            rdfs:domain :DisplayedScene ;
            rdfs:range :InformationChannel ;
@@ -382,7 +382,7 @@ xsd:date rdf:type rdfs:Datatype .
            <http://www.w3.org/2004/02/skos/core#definition> "An information channel on which a displayed scene was shown."@en .
 
 
-###  https://w3id.org/rdonto/op#providesCue
+###  https://w3id.org/rovo/op#providesCue
 :providesCue rdf:type owl:ObjectProperty ;
              rdfs:domain :InformationChannel ;
              rdfs:range :Cue ;
@@ -391,28 +391,28 @@ xsd:date rdf:type rdfs:Datatype .
              <http://www.w3.org/2004/02/skos/core#definition> "A cue that an information channel conveys to the operator."@en .
 
 
-###  https://w3id.org/rdonto/op#readyOperator
+###  https://w3id.org/rovo/op#readyOperator
 :readyOperator rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasAssociatedWith> ;
                rdf:type owl:FunctionalProperty ;
                rdfs:domain :FallbackReadyPeriod ;
                rdfs:range :RemoteOperator ;
-               rdfs:comment "SA-20. The same operator has no engagement during the period (RDOnto-op-shapes.ttl)."@en ;
+               rdfs:comment "SA-20. The same operator has no engagement during the period (ROVO-op-shapes.ttl)."@en ;
                rdfs:label "ready operator"@en ;
                <http://www.w3.org/2004/02/skos/core#definition> "The remote operator who is fallback-ready during a fallback-ready period."@en .
 
 
-###  https://w3id.org/rdonto/op#requestedBy
+###  https://w3id.org/rovo/op#requestedBy
 :requestedBy rdf:type owl:ObjectProperty ,
                       owl:FunctionalProperty ;
              rdfs:domain :Request ;
              rdfs:range :RemotelyOperatedVehicle ;
-             rdfs:comment "SA-03. The engagement that responds to the request is with this vehicle (RDOnto-op-shapes.ttl)."@en ;
+             rdfs:comment "SA-03. The engagement that responds to the request is with this vehicle (ROVO-op-shapes.ttl)."@en ;
              rdfs:label "requested by"@en ;
              <http://www.w3.org/2004/02/skos/core#definition> "The vehicle that issued a request."@en .
 
 
-###  https://w3id.org/rdonto/op#requiresElementType
+###  https://w3id.org/rovo/op#requiresElementType
 :requiresElementType rdf:type owl:ObjectProperty ,
                               owl:FunctionalProperty ;
                      rdfs:domain :SARequirement ;
@@ -421,7 +421,7 @@ xsd:date rdf:type rdfs:Datatype .
                      <http://www.w3.org/2004/02/skos/core#definition> "The type of situation element, stated as a class, that an SA requirement says the operator must have perceived."@en .
 
 
-###  https://w3id.org/rdonto/op#requiresSAType
+###  https://w3id.org/rovo/op#requiresSAType
 :requiresSAType rdf:type owl:ObjectProperty ,
                          owl:FunctionalProperty ;
                 rdfs:domain :OperationMode ;
@@ -431,7 +431,7 @@ xsd:date rdf:type rdfs:Datatype .
                 <http://www.w3.org/2004/02/skos/core#definition> "The SA type an operator needs in order to work in an operation mode."@en .
 
 
-###  https://w3id.org/rdonto/op#respondsTo
+###  https://w3id.org/rovo/op#respondsTo
 :respondsTo rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf <http://www.w3.org/ns/prov#used> ;
             rdf:type owl:FunctionalProperty ;
@@ -442,26 +442,26 @@ xsd:date rdf:type rdfs:Datatype .
             <http://www.w3.org/2004/02/skos/core#definition> "The request from the vehicle that an engagement was started to answer."@en .
 
 
-###  https://w3id.org/rdonto/op#rulesOutMode
+###  https://w3id.org/rovo/op#rulesOutMode
 :rulesOutMode rdf:type owl:ObjectProperty ;
               rdfs:domain :Impairment ;
               rdfs:range :OperationMode ;
-              rdfs:comment "SA-24. Configuration: while the operator's latest ImpairmentObservation for the impairment is true, the modes named here drop out of the answer to SA-24. A mode stated here also rules out its narrower modes (RDOnto-op:broaderMode). No values are asserted by this module: no source says which impairment rules out which mode, so an impairment without a value rules out none."@en ;
+              rdfs:comment "SA-24. Configuration: while the operator's latest ImpairmentObservation for the impairment is true, the modes named here drop out of the answer to SA-24. A mode stated here also rules out its narrower modes (ROVO-op:broaderMode). No values are asserted by this module: no source says which impairment rules out which mode, so an impairment without a value rules out none."@en ;
               rdfs:label "rules out mode"@en ;
               <http://www.w3.org/2004/02/skos/core#definition> "A mode that an operator who currently shows signs of this impairment cannot perform."@en .
 
 
-###  https://w3id.org/rdonto/op#sensorOfVehicle
+###  https://w3id.org/rovo/op#sensorOfVehicle
 :sensorOfVehicle rdf:type owl:ObjectProperty ,
                           owl:FunctionalProperty ;
                  rdfs:domain <http://www.w3.org/ns/sosa/Sensor> ;
                  rdfs:range :RemotelyOperatedVehicle ;
-                 rdfs:comment "SA-08. Interface (vehicle state). Ties a sensor frame, through its sensor, to a vehicle: the frames of a displayed scene come from the vehicle of an engagement the scene was shown in, where their sensors state a vehicle (RDOnto-op-shapes.ttl)."@en ;
+                 rdfs:comment "SA-08. Interface (vehicle state). Ties a sensor frame, through its sensor, to a vehicle: the frames of a displayed scene come from the vehicle of an engagement the scene was shown in, where their sensors state a vehicle (ROVO-op-shapes.ttl)."@en ;
                  rdfs:label "sensor of vehicle"@en ;
                  <http://www.w3.org/2004/02/skos/core#definition> "The vehicle that a sensor is mounted on."@en .
 
 
-###  https://w3id.org/rdonto/op#shownIn
+###  https://w3id.org/rovo/op#shownIn
 :shownIn rdf:type owl:ObjectProperty ;
          rdfs:domain :DisplayedScene ;
          rdfs:range :Engagement ;
@@ -470,7 +470,7 @@ xsd:date rdf:type rdfs:Datatype .
          <http://www.w3.org/2004/02/skos/core#definition> "An engagement during which a displayed scene was shown to the operator."@en .
 
 
-###  https://w3id.org/rdonto/op#supportedBy
+###  https://w3id.org/rovo/op#supportedBy
 :supportedBy rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasDerivedFrom> ;
              rdfs:domain :PerceptionAssertion ;
@@ -480,35 +480,35 @@ xsd:date rdf:type rdfs:Datatype .
              <http://www.w3.org/2004/02/skos/core#definition> "A piece of SA evidence from which a perception assertion was inferred."@en .
 
 
-###  https://w3id.org/rdonto/op#supportsMode
+###  https://w3id.org/rovo/op#supportsMode
 :supportsMode rdf:type owl:ObjectProperty ;
               rdfs:domain :RemotelyOperatedVehicle ;
               rdfs:range :OperationMode ;
-              rdfs:comment "Interface (RDOnto-concept). The modes the vehicle's equipment allows (SA-24). A vehicle without an ADS does not support remote assistance; it can support remote monitoring, continuous remote driving, and event-based remote driving where it can be taken over from an on-board driver. Support stated for a broader mode holds for its narrower modes (RDOnto-op:broaderMode): a vehicle that supports RDOnto-op:RemoteDriving supports both remote driving contexts. Support stated for a narrower mode holds for that mode only."@en ;
+              rdfs:comment "Interface (ROVO-concept). The modes the vehicle's equipment allows (SA-24). A vehicle without an ADS does not support remote assistance; it can support remote monitoring, continuous remote driving, and event-based remote driving where it can be taken over from an on-board driver. Support stated for a broader mode holds for its narrower modes (ROVO-op:broaderMode): a vehicle that supports ROVO-op:RemoteDriving supports both remote driving contexts. Support stated for a narrower mode holds for that mode only."@en ;
               rdfs:label "supports mode"@en ;
               <http://www.w3.org/2004/02/skos/core#definition> "An operation mode that the vehicle's equipment allows it to be operated in."@en .
 
 
-###  https://w3id.org/rdonto/op#takenOverFrom
+###  https://w3id.org/rovo/op#takenOverFrom
 :takenOverFrom rdf:type owl:ObjectProperty ,
                         owl:FunctionalProperty ;
                rdfs:domain :Engagement ;
                rdfs:range :OnBoardDriver ;
-               rdfs:comment "SA-01, LK-10. A record of the takeover, which stays when the driver can no longer drive; whether control can go back to the driver (RDOnto-link:HandBackToOnBoardDriver) is stated with ableToTakeOver. Only on event-based remote driving engagements (RDOnto-op-shapes.ttl)."@en ;
+               rdfs:comment "SA-01, LK-10. A record of the takeover, which stays when the driver can no longer drive; whether control can go back to the driver (ROVO-link:HandBackToOnBoardDriver) is stated with ableToTakeOver. Only on event-based remote driving engagements (ROVO-op-shapes.ttl)."@en ;
                rdfs:label "taken over from"@en ;
                <http://www.w3.org/2004/02/skos/core#definition> "The on-board driver from whom an event-based remote driving engagement took over."@en .
 
 
-###  https://w3id.org/rdonto/op#takeoverReason
+###  https://w3id.org/rovo/op#takeoverReason
 :takeoverReason rdf:type owl:ObjectProperty ;
                 rdfs:domain :Engagement ;
                 rdfs:range :TakeoverReason ;
-                rdfs:comment "SA-03. Only on an engagement that took over from an on-board driver (takenOverFrom), which responds to no request (RDOnto-op-shapes.ttl). Optional, and an engagement can state several."@en ;
+                rdfs:comment "SA-03. Only on an engagement that took over from an on-board driver (takenOverFrom), which responds to no request (ROVO-op-shapes.ttl). Optional, and an engagement can state several."@en ;
                 rdfs:label "takeover reason"@en ;
                 <http://www.w3.org/2004/02/skos/core#definition> "A reason why the operator took over from the on-board driver in an engagement."@en .
 
 
-###  https://w3id.org/rdonto/op#viaChannel
+###  https://w3id.org/rovo/op#viaChannel
 :viaChannel rdf:type owl:ObjectProperty ;
             rdfs:domain :PerceptionAssertion ;
             rdfs:range :InformationChannel ;
@@ -551,22 +551,22 @@ xsd:date rdf:type rdfs:Datatype .
                                        rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> .
 
 
-###  https://w3id.org/rdonto/op#ableToTakeOver
+###  https://w3id.org/rovo/op#ableToTakeOver
 :ableToTakeOver rdf:type owl:DatatypeProperty ,
                          owl:FunctionalProperty ;
                 rdfs:domain :OnBoardDriver ;
                 rdfs:range xsd:boolean ;
-                rdfs:comment "LK-10. Interface (driver monitoring, vehicle state). True while the driver is on board and fit to drive; false when the driver cannot drive, e.g. after a takeover with the reason RDOnto-op:OnBoardDriverUnableToDrive. Absent means not known, and then handing control back to the driver does not count as available (RDOnto-link:OnBoardDriverCanTakeOver)."@en ;
+                rdfs:comment "LK-10. Interface (driver monitoring, vehicle state). True while the driver is on board and fit to drive; false when the driver cannot drive, e.g. after a takeover with the reason ROVO-op:OnBoardDriverUnableToDrive. Absent means not known, and then handing control back to the driver does not count as available (ROVO-link:OnBoardDriverCanTakeOver)."@en ;
                 rdfs:label "able to take over"@en ;
                 <http://www.w3.org/2004/02/skos/core#definition> "Whether an on-board driver is able to take control of the vehicle back now."@en .
 
 
-###  https://w3id.org/rdonto/op#adaptedInformationAge
+###  https://w3id.org/rovo/op#adaptedInformationAge
 :adaptedInformationAge rdf:type owl:DatatypeProperty ,
                                 owl:FunctionalProperty .
 
 
-###  https://w3id.org/rdonto/op#appliesToFallbackReady
+###  https://w3id.org/rovo/op#appliesToFallbackReady
 :appliesToFallbackReady rdf:type owl:DatatypeProperty ,
                                  owl:FunctionalProperty ;
                         rdfs:domain :ConfiguredLimit ;
@@ -576,7 +576,7 @@ xsd:date rdf:type rdfs:Datatype .
                         <http://www.w3.org/2004/02/skos/core#definition> "Whether a configured limit applies while the operator is fallback-ready, a state that has no operation mode."@en .
 
 
-###  https://w3id.org/rdonto/op#buildUpEndedAt
+###  https://w3id.org/rovo/op#buildUpEndedAt
 :buildUpEndedAt rdf:type owl:DatatypeProperty ,
                          owl:FunctionalProperty ;
                 rdfs:domain :Engagement ;
@@ -589,12 +589,12 @@ xsd:date rdf:type rdfs:Datatype .
                 <http://www.w3.org/2004/02/skos/core#definition> "When the operator's SA was first sufficient for the SA type of the engagement's mode (SA-23), which ends the build-up phase and starts the maintenance phase."@en .
 
 
-###  https://w3id.org/rdonto/op#captureDelay
+###  https://w3id.org/rovo/op#captureDelay
 :captureDelay rdf:type owl:DatatypeProperty ,
                        owl:FunctionalProperty .
 
 
-###  https://w3id.org/rdonto/op#confidence
+###  https://w3id.org/rovo/op#confidence
 :confidence rdf:type owl:DatatypeProperty ,
                      owl:FunctionalProperty ;
             rdfs:domain :PerceptionAssertion ;
@@ -604,7 +604,7 @@ xsd:date rdf:type rdfs:Datatype .
             <http://www.w3.org/2004/02/skos/core#definition> "How sure the estimate is that the operator perceived the element, between 0 (not at all) and 1 (certain)."@en .
 
 
-###  https://w3id.org/rdonto/op#displayedAt
+###  https://w3id.org/rovo/op#displayedAt
 :displayedAt rdf:type owl:DatatypeProperty ,
                       owl:FunctionalProperty ;
              rdfs:domain :DisplayedScene ;
@@ -614,17 +614,17 @@ xsd:date rdf:type rdfs:Datatype .
              <http://www.w3.org/2004/02/skos/core#definition> "The time at which the remote station showed a displayed scene to the operator."@en .
 
 
-###  https://w3id.org/rdonto/op#hasADS
+###  https://w3id.org/rovo/op#hasADS
 :hasADS rdf:type owl:DatatypeProperty ,
                  owl:FunctionalProperty ;
         rdfs:domain :RemotelyOperatedVehicle ;
         rdfs:range xsd:boolean ;
-        rdfs:comment "Interface (RDOnto-concept). SA-24, LK-10. True for an ADS-equipped vehicle, false for a vehicle without an ADS; absent means not known, never 'no ADS'. A vehicle with hasADS false does not support remote assistance, is driven in event-based remote driving only when taken over from an on-board driver (RDOnto-op-shapes.ttl), and has no RDOnto-link:adsWithinODD value. Separates 'no ADS' from 'ADS outside its ODD', which RDOnto-link:adsWithinODD alone cannot."@en ;
+        rdfs:comment "Interface (ROVO-concept). SA-24, LK-10. True for an ADS-equipped vehicle, false for a vehicle without an ADS; absent means not known, never 'no ADS'. A vehicle with hasADS false does not support remote assistance, is driven in event-based remote driving only when taken over from an on-board driver (ROVO-op-shapes.ttl), and has no ROVO-link:adsWithinODD value. Separates 'no ADS' from 'ADS outside its ODD', which ROVO-link:adsWithinODD alone cannot."@en ;
         rdfs:label "has ADS"@en ;
         <http://www.w3.org/2004/02/skos/core#definition> "Whether the vehicle is equipped with an automated driving system."@en .
 
 
-###  https://w3id.org/rdonto/op#horizontalFieldOfView
+###  https://w3id.org/rovo/op#horizontalFieldOfView
 :horizontalFieldOfView rdf:type owl:DatatypeProperty ,
                                 owl:FunctionalProperty ;
                        rdfs:domain :CameraView ;
@@ -634,7 +634,7 @@ xsd:date rdf:type rdfs:Datatype .
                        <http://www.w3.org/2004/02/skos/core#definition> "The horizontal angle that a camera view shows, in degrees."@en .
 
 
-###  https://w3id.org/rdonto/op#inVehicleFieldOfView
+###  https://w3id.org/rovo/op#inVehicleFieldOfView
 :inVehicleFieldOfView rdf:type owl:DatatypeProperty ,
                                owl:FunctionalProperty ;
                       rdfs:domain :RemotelyOperatedVehicle ;
@@ -650,17 +650,17 @@ xsd:date rdf:type rdfs:Datatype .
                       <http://www.w3.org/2004/02/skos/core#definition> "The horizontal visual field, in degrees, that a driver seated in the vehicle must have, taken as the reference for the operator's camera views."@en .
 
 
-###  https://w3id.org/rdonto/op#isRemoteDrivingMode
+###  https://w3id.org/rovo/op#isRemoteDrivingMode
 :isRemoteDrivingMode rdf:type owl:DatatypeProperty ,
                               owl:FunctionalProperty ;
                      rdfs:domain :OperationMode ;
                      rdfs:range xsd:boolean ;
-                     rdfs:comment "SA-12, SA-24, LK-10. Lets SA-24 order modes without RDOnto-concept. It repeats what RDOnto-op:broaderMode RDOnto-op:RemoteDriving already says, so the shapes check that the two agree (RDOnto-op-shapes.ttl, OperationModeShape)."@en ;
+                     rdfs:comment "SA-12, SA-24, LK-10. Lets SA-24 order modes without ROVO-concept. It repeats what ROVO-op:broaderMode ROVO-op:RemoteDriving already says, so the shapes check that the two agree (ROVO-op-shapes.ttl, OperationModeShape)."@en ;
                      rdfs:label "is remote driving mode"@en ;
                      <http://www.w3.org/2004/02/skos/core#definition> "Whether an operation mode is remote driving or one of its narrower modes, in which the operator holds vehicle motion control."@en .
 
 
-###  https://w3id.org/rdonto/op#lowerBound
+###  https://w3id.org/rovo/op#lowerBound
 :lowerBound rdf:type owl:DatatypeProperty ,
                      owl:FunctionalProperty ;
             rdfs:domain :WorkloadBand ;
@@ -670,7 +670,7 @@ xsd:date rdf:type rdfs:Datatype .
             <http://www.w3.org/2004/02/skos/core#definition> "The lowest workload value, on the band's scale, that still counts as acceptable."@en .
 
 
-###  https://w3id.org/rdonto/op#onScale
+###  https://w3id.org/rovo/op#onScale
 :onScale rdf:type owl:DatatypeProperty ,
                   owl:FunctionalProperty ;
          rdfs:range xsd:string ;
@@ -679,7 +679,7 @@ xsd:date rdf:type rdfs:Datatype .
          <http://www.w3.org/2004/02/skos/core#definition> "The name of the scale on which a workload estimate or a workload band is expressed."@en .
 
 
-###  https://w3id.org/rdonto/op#perceivedAt
+###  https://w3id.org/rovo/op#perceivedAt
 :perceivedAt rdf:type owl:DatatypeProperty ,
                       owl:FunctionalProperty ;
              rdfs:domain :PerceptionAssertion ;
@@ -689,7 +689,7 @@ xsd:date rdf:type rdfs:Datatype .
              <http://www.w3.org/2004/02/skos/core#definition> "The time at which the operator perceived the element, e.g. the time of the fixation."@en .
 
 
-###  https://w3id.org/rdonto/op#reliability
+###  https://w3id.org/rovo/op#reliability
 :reliability rdf:type owl:DatatypeProperty ,
                       owl:FunctionalProperty ;
              rdfs:domain :SAEvidence ;
@@ -699,7 +699,7 @@ xsd:date rdf:type rdfs:Datatype .
              <http://www.w3.org/2004/02/skos/core#definition> "How far a piece of SA evidence can be trusted as a sign that the operator perceived the element, between 0 and 1."@en .
 
 
-###  https://w3id.org/rdonto/op#sensedAt
+###  https://w3id.org/rovo/op#sensedAt
 :sensedAt rdf:type owl:DatatypeProperty ,
                    owl:FunctionalProperty ;
           rdfs:domain :PerceptionAssertion ;
@@ -709,7 +709,7 @@ xsd:date rdf:type rdfs:Datatype .
           <http://www.w3.org/2004/02/skos/core#definition> "When the information the operator perceived was sensed at the vehicle, for a perception that rests on no displayed scene."@en .
 
 
-###  https://w3id.org/rdonto/op#upperBound
+###  https://w3id.org/rovo/op#upperBound
 :upperBound rdf:type owl:DatatypeProperty ,
                      owl:FunctionalProperty ;
             rdfs:domain :WorkloadBand ;
@@ -719,7 +719,7 @@ xsd:date rdf:type rdfs:Datatype .
             <http://www.w3.org/2004/02/skos/core#definition> "The highest workload value, on the band's scale, that still counts as acceptable."@en .
 
 
-###  https://w3id.org/rdonto/op#viewDirection
+###  https://w3id.org/rovo/op#viewDirection
 :viewDirection rdf:type owl:DatatypeProperty ,
                         owl:FunctionalProperty ;
                rdfs:domain :CameraView ;
@@ -772,18 +772,18 @@ xsd:dayTimeDuration rdf:type owl:Class .
                                    rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> .
 
 
-###  https://w3id.org/rdonto/op#ActuatorLatencyLimit
+###  https://w3id.org/rovo/op#ActuatorLatencyLimit
 :ActuatorLatencyLimit rdf:type owl:Class ;
                       rdfs:subClassOf :ConfiguredLimit ;
                       <http://purl.org/dc/terms/source> "GF20" ,
                                                         "MA25" ,
                                                         "TANG26" ;
-                      rdfs:comment "SA-24: a mode whose limit the current actuator latency exceeds is one the operator can no longer perform. The operator-side counterpart of InformationAgeLimit for the other latency part. The value compared with it is the latest RDOnto-link:ActuatorLatency observation of the session that carries the engagement, so it needs RDOnto-link. A setup's reference budgets for the actuator latency (RDOnto-link:LatencyBudget) hold up to a vehicle speed and are checked separately, by LK-04; SA-24 uses this limit only. A configuration parameter; GF20 and MA25 give measured values, not limits."@en ;
+                      rdfs:comment "SA-24: a mode whose limit the current actuator latency exceeds is one the operator can no longer perform. The operator-side counterpart of InformationAgeLimit for the other latency part. The value compared with it is the latest ROVO-link:ActuatorLatency observation of the session that carries the engagement, so it needs ROVO-link. A setup's reference budgets for the actuator latency (ROVO-link:LatencyBudget) hold up to a vehicle speed and are checked separately, by LK-04; SA-24 uses this limit only. A configuration parameter; GF20 and MA25 give measured values, not limits."@en ;
                       rdfs:label "actuator latency limit"@en ;
                       <http://www.w3.org/2004/02/skos/core#definition> "The largest actuator latency, from the operator's input to the actuator response at the vehicle, that the operator can be expected to anticipate in a mode. Value as qudt:numericValue with qudt:unit unit:MilliSEC."@en .
 
 
-###  https://w3id.org/rdonto/op#AudioChannel
+###  https://w3id.org/rovo/op#AudioChannel
 :AudioChannel rdf:type owl:Class ;
               rdfs:subClassOf :InformationChannel ;
               <http://purl.org/dc/terms/source> "TL22" ,
@@ -793,7 +793,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
               <http://www.w3.org/2004/02/skos/core#definition> "Sound from the vehicle and its surroundings, relayed to the operator."@en .
 
 
-###  https://w3id.org/rdonto/op#CameraView
+###  https://w3id.org/rovo/op#CameraView
 :CameraView rdf:type owl:Class ;
             rdfs:subClassOf :InformationChannel ;
             rdfs:comment "SA-15, SA-17."@en ;
@@ -801,14 +801,14 @@ xsd:dayTimeDuration rdf:type owl:Class .
             <http://www.w3.org/2004/02/skos/core#definition> "An information channel that shows the operator the image of one vehicle camera, or one image stitched from several."@en .
 
 
-###  https://w3id.org/rdonto/op#ConfiguredLimit
+###  https://w3id.org/rovo/op#ConfiguredLimit
 :ConfiguredLimit rdf:type owl:Class ;
-                 rdfs:comment "SA-09, SA-12, SA-14, SA-18, SA-22 and SA-24, and the limits of RDOnto-link. Limits are parameters, not facts about the world. Most limit types hold one value in one fixed unit, given in the definition, as qudt:numericValue with qudt:unit; the shapes enforce the unit, and queries read only that unit. Two differ: a WorkloadBand has a lower and an upper bound on a named scale, and a RDOnto-link:TravelTolerance can be given as a dimensionless delay limit. Most limits are scoped by mode (appliesToMode); an SARequirement is scoped by SA type and its value is the recheck interval. Every limit carries dct:source; values used for testing say so in rdfs:comment."@en ;
+                 rdfs:comment "SA-09, SA-12, SA-14, SA-18, SA-22 and SA-24, and the limits of ROVO-link. Limits are parameters, not facts about the world. Most limit types hold one value in one fixed unit, given in the definition, as qudt:numericValue with qudt:unit; the shapes enforce the unit, and queries read only that unit. Two differ: a WorkloadBand has a lower and an upper bound on a named scale, and a ROVO-link:TravelTolerance can be given as a dimensionless delay limit. Most limits are scoped by mode (appliesToMode); an SARequirement is scoped by SA type and its value is the recheck interval. Every limit carries dct:source; values used for testing say so in rdfs:comment."@en ;
                  rdfs:label "configured limit"@en ;
                  <http://www.w3.org/2004/02/skos/core#definition> "A value set by configuration that a measured or computed quantity is compared with, together with the source it was taken from."@en .
 
 
-###  https://w3id.org/rdonto/op#ControlInputEvidence
+###  https://w3id.org/rovo/op#ControlInputEvidence
 :ControlInputEvidence rdf:type owl:Class ;
                       rdfs:subClassOf :SAEvidence ;
                       <http://purl.org/dc/terms/source> "MZ25" ;
@@ -817,24 +817,24 @@ xsd:dayTimeDuration rdf:type owl:Class .
                       <http://www.w3.org/2004/02/skos/core#definition> "SA evidence from a control action of the operator that implies the element was perceived, e.g. braking for a pedestrian."@en .
 
 
-###  https://w3id.org/rdonto/op#Cue
+###  https://w3id.org/rovo/op#Cue
 :Cue rdf:type owl:Class ;
      rdfs:comment "SA-16."@en ;
      rdfs:label "cue"@en ;
      <http://www.w3.org/2004/02/skos/core#definition> "A kind of sensory information a driver uses, such as vestibular or auditory information."@en .
 
 
-###  https://w3id.org/rdonto/op#CueInterpretationTask
+###  https://w3id.org/rovo/op#CueInterpretationTask
 :CueInterpretationTask rdf:type owl:Class ;
                        rdfs:subClassOf :OperatorTask .
 
 
-###  https://w3id.org/rdonto/op#DecisionMakingTask
+###  https://w3id.org/rovo/op#DecisionMakingTask
 :DecisionMakingTask rdf:type owl:Class ;
                     rdfs:subClassOf :OperatorTask .
 
 
-###  https://w3id.org/rdonto/op#DisplayedScene
+###  https://w3id.org/rovo/op#DisplayedScene
 :DisplayedScene rdf:type owl:Class ;
                 rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
                 rdfs:comment "SA-08. Separates the scene the operator sees from the current scene at the vehicle."@en ;
@@ -842,16 +842,16 @@ xsd:dayTimeDuration rdf:type owl:Class .
                 <http://www.w3.org/2004/02/skos/core#definition> "What the remote station showed the operator at one moment, derived from one or more sensor frames."@en .
 
 
-###  https://w3id.org/rdonto/op#DrivingTask
+###  https://w3id.org/rovo/op#DrivingTask
 :DrivingTask rdf:type owl:Class ;
              <http://purl.org/dc/terms/source> "HN25b" ,
                                                "WO25" ;
-             rdfs:comment "SA-06. Not the DDT (which every driving task needs) but the purpose of the operation; where J3016's driving task is meant, RDOnto writes DDT. Not an OperatorTask either, which is what the operator does (holdsTask), while engagementTask and RDOnto-link:setupTask name a driving task. It shapes which elements matter (WO25: fork handling). Individuals are configuration."@en ;
+             rdfs:comment "SA-06. Not the DDT (which every driving task needs) but the purpose of the operation; where J3016's driving task is meant, R.O.V.O writes DDT. Not an OperatorTask either, which is what the operator does (holdsTask), while engagementTask and ROVO-link:setupTask name a driving task. It shapes which elements matter (WO25: fork handling). Individuals are configuration."@en ;
              rdfs:label "driving task"@en ;
              <http://www.w3.org/2004/02/skos/core#definition> "What the vehicle is operated for, e.g. passenger transport, pallet handling or vehicle relocation."@en .
 
 
-###  https://w3id.org/rdonto/op#ElementStateChange
+###  https://w3id.org/rovo/op#ElementStateChange
 :ElementStateChange rdf:type owl:Class ;
                     rdfs:subClassOf <http://www.w3.org/ns/sosa/Observation> ;
                     <http://purl.org/dc/terms/source> "MU21" ;
@@ -860,15 +860,15 @@ xsd:dayTimeDuration rdf:type owl:Class .
                     <http://www.w3.org/2004/02/skos/core#definition> "An observation, made at the vehicle, that a situation element's state changed significantly, e.g. a pedestrian started crossing."@en .
 
 
-###  https://w3id.org/rdonto/op#Engagement
+###  https://w3id.org/rovo/op#Engagement
 :Engagement rdf:type owl:Class ;
             rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
-            rdfs:comment "SA-01, SA-04, SA-05. An engagement is not a session: a session (RDOnto-link:TeleoperationSession) is only the connection between a station and a vehicle, and carries engagements in sequence. An engagement is carried by one session and ends with it, so a reconnection in a new session also starts a new engagement, in the same mode; it can name the one it continues (followsEngagement). What sources such as HA24 call a driving session is an engagement here."@en ;
+            rdfs:comment "SA-01, SA-04, SA-05. An engagement is not a session: a session (ROVO-link:TeleoperationSession) is only the connection between a station and a vehicle, and carries engagements in sequence. An engagement is carried by one session and ends with it, so a reconnection in a new session also starts a new engagement, in the same mode; it can name the one it continues (followsEngagement). What sources such as HA24 call a driving session is an engagement here."@en ;
             rdfs:label "engagement"@en ;
             <http://www.w3.org/2004/02/skos/core#definition> "The period in which one remote operator is responsible for one vehicle in one operation mode, from prov:startedAtTime to prov:endedAtTime (absent while it lasts). A mode change starts a new engagement."@en .
 
 
-###  https://w3id.org/rdonto/op#EyeFixationEvidence
+###  https://w3id.org/rovo/op#EyeFixationEvidence
 :EyeFixationEvidence rdf:type owl:Class ;
                      rdfs:subClassOf :SAEvidence ;
                      <http://purl.org/dc/terms/source> "MZ25" ;
@@ -877,18 +877,18 @@ xsd:dayTimeDuration rdf:type owl:Class .
                      <http://www.w3.org/2004/02/skos/core#definition> "SA evidence that the operator's gaze rested on the element in the displayed scene."@en .
 
 
-###  https://w3id.org/rdonto/op#FallbackReadyPeriod
+###  https://w3id.org/rovo/op#FallbackReadyPeriod
 :FallbackReadyPeriod rdf:type owl:Class ;
                      rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
                      <http://purl.org/dc/terms/source> "EN95a" ,
                                                        "ME24" ,
                                                        "MU21" ;
-                     rdfs:comment "SA-20. An operator state, not an operation mode: there is no vehicle and no mode. Waiting can bring underload and decreased vigilance (MU21, ME24, EN95a). Counts as a break for SA-12. Not J3016's DDT fallback-ready user, who is the user of one vehicle with an engaged Level 3 ADS and is receptive to its requests to intervene: an operator who waits for the requests of one vehicle while watching it is in remote monitoring here, and this state has no vehicle (related match in RDOnto-core)."@en ;
+                     rdfs:comment "SA-20. An operator state, not an operation mode: there is no vehicle and no mode. Waiting can bring underload and decreased vigilance (MU21, ME24, EN95a). Counts as a break for SA-12. Not J3016's DDT fallback-ready user, who is the user of one vehicle with an engaged Level 3 ADS and is receptive to its requests to intervene: an operator who waits for the requests of one vehicle while watching it is in remote monitoring here, and this state has no vehicle (related match in ROVO-core)."@en ;
                      rdfs:label "fallback-ready period"@en ;
                      <http://www.w3.org/2004/02/skos/core#definition> "A period in which an operator waits, ready to take over, without being engaged with a vehicle, from prov:startedAtTime to prov:endedAtTime (absent while it lasts)."@en .
 
 
-###  https://w3id.org/rdonto/op#HapticFeedback
+###  https://w3id.org/rovo/op#HapticFeedback
 :HapticFeedback rdf:type owl:Class ;
                 rdfs:subClassOf :InformationChannel ;
                 <http://purl.org/dc/terms/source> "TL22" ;
@@ -897,7 +897,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                 <http://www.w3.org/2004/02/skos/core#definition> "Force or touch feedback to the operator, e.g. steering-wheel torque or pedal feel."@en .
 
 
-###  https://w3id.org/rdonto/op#Impairment
+###  https://w3id.org/rovo/op#Impairment
 :Impairment rdf:type owl:Class ;
             rdfs:subClassOf <http://www.w3.org/ns/sosa/ObservableProperty> ;
             <http://purl.org/dc/terms/source> "HA24" ,
@@ -908,7 +908,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
             <http://www.w3.org/2004/02/skos/core#definition> "A kind of operator impairment that operator monitoring can show signs of."@en .
 
 
-###  https://w3id.org/rdonto/op#ImpairmentObservation
+###  https://w3id.org/rovo/op#ImpairmentObservation
 :ImpairmentObservation rdf:type owl:Class ;
                        rdfs:subClassOf <http://www.w3.org/ns/sosa/Observation> ;
                        <http://purl.org/dc/terms/source> "HA24" ,
@@ -919,7 +919,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                        <http://www.w3.org/2004/02/skos/core#definition> "An observation by operator monitoring of whether the operator shows signs of an impairment: sosa:hasFeatureOfInterest the operator, sosa:observedProperty the impairment, sosa:hasSimpleResult true or false, sosa:resultTime the time."@en .
 
 
-###  https://w3id.org/rdonto/op#InVehicleCue
+###  https://w3id.org/rovo/op#InVehicleCue
 :InVehicleCue rdf:type owl:Class ;
               rdfs:subClassOf :Cue ;
               <http://purl.org/dc/terms/source> "LV21" ,
@@ -933,19 +933,19 @@ xsd:dayTimeDuration rdf:type owl:Class .
               <http://www.w3.org/2004/02/skos/core#definition> "A cue an in-vehicle driver would normally have."@en .
 
 
-###  https://w3id.org/rdonto/op#InformationAgeLimit
+###  https://w3id.org/rovo/op#InformationAgeLimit
 :InformationAgeLimit rdf:type owl:Class ;
                      rdfs:subClassOf :ConfiguredLimit ;
                      <http://purl.org/dc/terms/source> "AM22" ,
                                                        "GF20" ,
                                                        "MU21" ,
                                                        "NE19" ;
-                     rdfs:comment "SA-09. The limit per mode is the operator-side limit and takes priority. RDOnto-link may scope a further instance to a teleoperation setup (RDOnto-link:appliesToSetup) as the vehicle-to-station part of the setup's reference budgets (LK-04); it must be no looser than the mode's limit, which the link shapes check. With RDOnto-link loaded, SA-09 uses the setup's limit where it is stricter. SA-24: a mode whose limit the current information age exceeds is one the operator can no longer perform; each candidate mode is tested against its own limit. Without a displayed scene, or for a mode without a limit, the information age is not judged and rules out no mode."@en ;
+                     rdfs:comment "SA-09. The limit per mode is the operator-side limit and takes priority. ROVO-link may scope a further instance to a teleoperation setup (ROVO-link:appliesToSetup) as the vehicle-to-station part of the setup's reference budgets (LK-04); it must be no looser than the mode's limit, which the link shapes check. With ROVO-link loaded, SA-09 uses the setup's limit where it is stricter. SA-24: a mode whose limit the current information age exceeds is one the operator can no longer perform; each candidate mode is tested against its own limit. Without a displayed scene, or for a mode without a limit, the information age is not judged and rules out no mode."@en ;
                      rdfs:label "information age limit"@en ;
                      <http://www.w3.org/2004/02/skos/core#definition> "The largest event-to-display age of displayed information acceptable in a mode. Value as qudt:numericValue with qudt:unit unit:MilliSEC."@en .
 
 
-###  https://w3id.org/rdonto/op#InformationChannel
+###  https://w3id.org/rovo/op#InformationChannel
 :InformationChannel rdf:type owl:Class ;
                     <http://purl.org/dc/terms/source> "LV21" ,
                                                       "TL22" ;
@@ -954,7 +954,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                     <http://www.w3.org/2004/02/skos/core#definition> "A means by which the remote station conveys information about the vehicle and its surroundings to the operator."@en .
 
 
-###  https://w3id.org/rdonto/op#LatencyChangeLimit
+###  https://w3id.org/rovo/op#LatencyChangeLimit
 :LatencyChangeLimit rdf:type owl:Class ;
                     rdfs:subClassOf :ConfiguredLimit ;
                     rdfs:comment "SA-14. A configuration parameter; no published value."@en ;
@@ -962,7 +962,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                     <http://www.w3.org/2004/02/skos/core#definition> "The largest difference between the current and the adapted information age acceptable in a mode before the operator's adaptation can no longer be assumed. Value as qudt:numericValue with qudt:unit unit:MilliSEC."@en .
 
 
-###  https://w3id.org/rdonto/op#MapView
+###  https://w3id.org/rovo/op#MapView
 :MapView rdf:type owl:Class ;
          rdfs:subClassOf :InformationChannel ;
          rdfs:comment "SA-15."@en ;
@@ -970,7 +970,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
          <http://www.w3.org/2004/02/skos/core#definition> "An information channel that shows the vehicle's position and route on a map or in a bird's-eye view."@en .
 
 
-###  https://w3id.org/rdonto/op#MinimumBreakLength
+###  https://w3id.org/rovo/op#MinimumBreakLength
 :MinimumBreakLength rdf:type owl:Class ;
                     rdfs:subClassOf :ConfiguredLimit ;
                     <http://purl.org/dc/terms/source> "HA24" ;
@@ -979,7 +979,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                     <http://www.w3.org/2004/02/skos/core#definition> "The shortest time without an engagement that counts as a break for the time-on-task limit of a remote driving mode. Value as qudt:numericValue with qudt:unit unit:MIN."@en .
 
 
-###  https://w3id.org/rdonto/op#MotionFeedback
+###  https://w3id.org/rovo/op#MotionFeedback
 :MotionFeedback rdf:type owl:Class ;
                 rdfs:subClassOf :InformationChannel ;
                 <http://purl.org/dc/terms/source> "WO25" ,
@@ -989,50 +989,50 @@ xsd:dayTimeDuration rdf:type owl:Class .
                 <http://www.w3.org/2004/02/skos/core#definition> "Feedback that lets the operator feel the vehicle's motion, e.g. through a motion platform."@en .
 
 
-###  https://w3id.org/rdonto/op#ObservationTask
+###  https://w3id.org/rovo/op#ObservationTask
 :ObservationTask rdf:type owl:Class ;
                  rdfs:subClassOf :OperatorTask .
 
 
-###  https://w3id.org/rdonto/op#OnBoardDriver
+###  https://w3id.org/rovo/op#OnBoardDriver
 :OnBoardDriver rdf:type owl:Class ;
                rdfs:subClassOf <http://www.w3.org/ns/prov#Agent> ;
                <http://purl.org/dc/terms/source> "J3016" ;
-               rdfs:comment "SA-01, LK-10. Close to EDMC InVehicleDriver (RDOnto-core); a SKOS mapping, since the on-board driver does not drive while a remote operator has taken over. Whether the driver can take control back is a separate state (ableToTakeOver)."@en ;
+               rdfs:comment "SA-01, LK-10. Close to EDMC InVehicleDriver (ROVO-core); a SKOS mapping, since the on-board driver does not drive while a remote operator has taken over. Whether the driver can take control back is a separate state (ableToTakeOver)."@en ;
                rdfs:label "on-board driver"@en ;
                <http://www.w3.org/2004/02/skos/core#definition> "A human in the vehicle's driver's seat who drives the vehicle when no remote operator does."@en .
 
 
-###  https://w3id.org/rdonto/op#OperatingEnvironment
+###  https://w3id.org/rovo/op#OperatingEnvironment
 :OperatingEnvironment rdf:type owl:Class ;
                       <http://purl.org/dc/terms/source> "BR26" ,
                                                         "HN25b" ,
                                                         "LV21" ,
                                                         "WO25" ;
-                      rdfs:comment "SA-06. Interface (RDOnto-todd): the teleoperation ODD describes environments by their attributes; these individuals only name the kind. The environment matters for remote driving: performance and training differ per ODD (HN25b), and a monotonous task reduces SA (LV21)."@en ;
+                      rdfs:comment "SA-06. Interface (ROVO-todd): the teleoperation ODD describes environments by their attributes; these individuals only name the kind. The environment matters for remote driving: performance and training differ per ODD (HN25b), and a monotonous task reduces SA (LV21)."@en ;
                       rdfs:label "operating environment"@en ;
                       <http://www.w3.org/2004/02/skos/core#definition> "The kind of place a vehicle is operated in, e.g. a public road, a warehouse, a port, or a construction or mining site."@en .
 
 
-###  https://w3id.org/rdonto/op#OperationMode
+###  https://w3id.org/rovo/op#OperationMode
 :OperationMode rdf:type owl:Class ;
                <http://purl.org/dc/terms/source> "AM22" ,
                                                  "BSI1886" ;
-               rdfs:comment "SA-01, SA-21. The modes of AM22 (remote monitoring, remote assistance, remote driving), with remote driving split into its two contexts by RDOnto-op:broaderMode. Fallback-ready is not a mode but an operator state (FallbackReadyPeriod). Interface (RDOnto-concept)."@en ;
+               rdfs:comment "SA-01, SA-21. The modes of AM22 (remote monitoring, remote assistance, remote driving), with remote driving split into its two contexts by ROVO-op:broaderMode. Fallback-ready is not a mode but an operator state (FallbackReadyPeriod). Interface (ROVO-concept)."@en ;
                rdfs:label "operation mode"@en ;
                <http://www.w3.org/2004/02/skos/core#definition> "The kind of remote operation an engagement performs."@en .
 
 
-###  https://w3id.org/rdonto/op#OperatorTask
+###  https://w3id.org/rovo/op#OperatorTask
 :OperatorTask rdf:type owl:Class ;
               <http://purl.org/dc/terms/source> "AM22" ,
                                                 "J3016" ;
-              rdfs:comment "SA-02. In remote driving, DDT subtasks and the DDT fallback: EDMC's DynamicDrivingSubtask and DynamicDrivingTaskFallback are subclasses (RDOnto-core). In remote assistance, decision-making and cue interpretation, e.g. classifying an object or authorizing a path; the remote assistant 'only provides input and authorization' without performing any part of the DDT (AM22). In remote monitoring, observation only."@en ;
+              rdfs:comment "SA-02. In remote driving, DDT subtasks and the DDT fallback: EDMC's DynamicDrivingSubtask and DynamicDrivingTaskFallback are subclasses (ROVO-core). In remote assistance, decision-making and cue interpretation, e.g. classifying an object or authorizing a path; the remote assistant 'only provides input and authorization' without performing any part of the DDT (AM22). In remote monitoring, observation only."@en ;
               rdfs:label "operator task"@en ;
               <http://www.w3.org/2004/02/skos/core#definition> "A task a remote operator can hold for a vehicle in an engagement."@en .
 
 
-###  https://w3id.org/rdonto/op#PerceptionAssertion
+###  https://w3id.org/rovo/op#PerceptionAssertion
 :PerceptionAssertion rdf:type owl:Class ;
                      rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
                      <http://purl.org/dc/terms/source> "EN95a" ,
@@ -1042,7 +1042,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                      <http://www.w3.org/2004/02/skos/core#definition> "An estimate, produced from evidence, that an operator perceived a given situation element at a given time, in a displayed scene or through a channel that shows none, such as audio."@en .
 
 
-###  https://w3id.org/rdonto/op#PerceptionConfidenceThreshold
+###  https://w3id.org/rovo/op#PerceptionConfidenceThreshold
 :PerceptionConfidenceThreshold rdf:type owl:Class ;
                                rdfs:subClassOf :ConfiguredLimit ;
                                rdfs:comment "SA-13, SA-23. An assertion below the threshold of the mode of the engagement whose SA is judged does not count as perceived or as a recheck. Where no threshold is configured for the mode or a broader mode, every assertion counts. A configuration parameter; no source gives a value."@en ;
@@ -1050,7 +1050,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                                <http://www.w3.org/2004/02/skos/core#definition> "The lowest confidence at which a perception assertion counts as the operator having perceived the element, in a mode. Value as qudt:numericValue between 0 and 1 with qudt:unit unit:UNITLESS."@en .
 
 
-###  https://w3id.org/rdonto/op#ProbeAnswerEvidence
+###  https://w3id.org/rovo/op#ProbeAnswerEvidence
 :ProbeAnswerEvidence rdf:type owl:Class ;
                      rdfs:subClassOf :SAEvidence ;
                      <http://purl.org/dc/terms/source> "EN95b" ,
@@ -1060,35 +1060,35 @@ xsd:dayTimeDuration rdf:type owl:Class .
                      <http://www.w3.org/2004/02/skos/core#definition> "SA evidence from the operator's answer to a query about the situation that is put during the task, as in SAGAT or SPAM."@en .
 
 
-###  https://w3id.org/rdonto/op#RemoteOperator
+###  https://w3id.org/rovo/op#RemoteOperator
 :RemoteOperator rdf:type owl:Class ;
                 rdfs:subClassOf <http://www.w3.org/ns/prov#Agent> ;
                 <http://purl.org/dc/terms/source> "J3016" ,
                                                   "SHI26" ;
-                rdfs:comment "SA-01. EDMC RemoteDriver and RemoteAssistant are subclasses (RDOnto-core). The station is usually outside the vehicle, but J3016 (definition 3.31.1.2) also counts a remote driver inside the vehicle who is not in the driver's seat; cues such a driver perceives directly, not through the station, are not modelled (SHI26 note this case)."@en ;
+                rdfs:comment "SA-01. EDMC RemoteDriver and RemoteAssistant are subclasses (ROVO-core). The station is usually outside the vehicle, but J3016 (definition 3.31.1.2) also counts a remote driver inside the vehicle who is not in the driver's seat; cues such a driver perceives directly, not through the station, are not modelled (SHI26 note this case)."@en ;
                 rdfs:label "remote operator"@en ;
                 <http://www.w3.org/2004/02/skos/core#definition> "A human who monitors, assists or drives a vehicle through a remote station, without occupying the vehicle's driver's seat."@en .
 
 
-###  https://w3id.org/rdonto/op#RemotelyOperatedVehicle
+###  https://w3id.org/rovo/op#RemotelyOperatedVehicle
 :RemotelyOperatedVehicle rdf:type owl:Class ;
-                         rdfs:comment "SA-01, SA-24. Interface. Related to EDMC MotorVehicle by a SKOS mapping (RDOnto-core), not a subclass: vehicles off public roads, such as forklifts, are included. Whether it has an ADS is stated with hasADS."@en ;
+                         rdfs:comment "SA-01, SA-24. Interface. Related to EDMC MotorVehicle by a SKOS mapping (ROVO-core), not a subclass: vehicles off public roads, such as forklifts, are included. Whether it has an ADS is stated with hasADS."@en ;
                          rdfs:label "remotely operated vehicle"@en ;
                          <http://www.w3.org/2004/02/skos/core#definition> "A vehicle that can be monitored, assisted or driven from a remote station. It may or may not have an automated driving system."@en .
 
 
-###  https://w3id.org/rdonto/op#Request
+###  https://w3id.org/rovo/op#Request
 :Request rdf:type owl:Class ;
          rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
          <http://purl.org/dc/terms/source> "AM22" ,
                                            "MU21" ,
                                            "TL22" ;
-         rdfs:comment "SA-03. Issued by the vehicle's ADS. A takeover from an on-board driver responds to no request; why it happened is recorded on the engagement (takeoverReason). A takeover request closely matches J3016's request to intervene (RDOnto-core). For decision-support SA, the request type and the elements the request concerns select the required elements (SA-22, concernsElement)."@en ;
+         rdfs:comment "SA-03. Issued by the vehicle's ADS. A takeover from an on-board driver responds to no request; why it happened is recorded on the engagement (takeoverReason). A takeover request closely matches J3016's request to intervene (ROVO-core). For decision-support SA, the request type and the elements the request concerns select the required elements (SA-22, concernsElement)."@en ;
          rdfs:label "request"@en ;
          <http://www.w3.org/2004/02/skos/core#definition> "A request from a vehicle to a remote operator: to take over (event-based remote driving) or to assist (remote assistance), with an issue time (prov:generatedAtTime)."@en .
 
 
-###  https://w3id.org/rdonto/op#RequestReason
+###  https://w3id.org/rovo/op#RequestReason
 :RequestReason rdf:type owl:Class ;
                <http://purl.org/dc/terms/source> "AM22" ,
                                                  "MU21" ;
@@ -1097,7 +1097,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                <http://www.w3.org/2004/02/skos/core#definition> "Why a request was issued."@en .
 
 
-###  https://w3id.org/rdonto/op#RequestType
+###  https://w3id.org/rovo/op#RequestType
 :RequestType rdf:type owl:Class ;
              <http://purl.org/dc/terms/source> "AM22" ,
                                                "MU21" ;
@@ -1106,7 +1106,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
              <http://www.w3.org/2004/02/skos/core#definition> "What a vehicle asks the remote operator for."@en .
 
 
-###  https://w3id.org/rdonto/op#SAEvidence
+###  https://w3id.org/rovo/op#SAEvidence
 :SAEvidence rdf:type owl:Class ;
             rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
             <http://purl.org/dc/terms/source> "EN95b" ,
@@ -1117,7 +1117,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
             <http://www.w3.org/2004/02/skos/core#definition> "A recorded observation from which an operator's perception of an element is inferred."@en .
 
 
-###  https://w3id.org/rdonto/op#SARequirement
+###  https://w3id.org/rovo/op#SARequirement
 :SARequirement rdf:type owl:Class ;
                rdfs:subClassOf :ConfiguredLimit ;
                <http://purl.org/dc/terms/source> "EN95a" ,
@@ -1127,7 +1127,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                <http://www.w3.org/2004/02/skos/core#definition> "A requirement that an operator who needs a given SA type has perceived every situation element of a given type in the vehicle's scene, and rechecked it within a recheck interval. The recheck interval is the value, as qudt:numericValue with qudt:unit unit:SEC."@en .
 
 
-###  https://w3id.org/rdonto/op#SAType
+###  https://w3id.org/rovo/op#SAType
 :SAType rdf:type owl:Class ;
         <http://purl.org/dc/terms/source> "AM22" ,
                                           "EN95a" ,
@@ -1137,7 +1137,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
         <http://www.w3.org/2004/02/skos/core#definition> "The kind of situation awareness a mode of operation requires."@en .
 
 
-###  https://w3id.org/rdonto/op#SelfReportEvidence
+###  https://w3id.org/rovo/op#SelfReportEvidence
 :SelfReportEvidence rdf:type owl:Class ;
                     rdfs:subClassOf :SAEvidence ;
                     <http://purl.org/dc/terms/source> "MZ25" ;
@@ -1146,7 +1146,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                     <http://www.w3.org/2004/02/skos/core#definition> "SA evidence from the operator's own statement that they noticed the element, e.g. a verbal report during the drive."@en .
 
 
-###  https://w3id.org/rdonto/op#SensorFrame
+###  https://w3id.org/rovo/op#SensorFrame
 :SensorFrame rdf:type owl:Class ;
              rdfs:subClassOf <http://www.w3.org/ns/sosa/Observation> ;
              rdfs:comment "SA-08. sosa:resultTime is the capture time at the vehicle and sosa:madeBySensor the sensor. The sensed time, when the depicted state of the world held, is the capture time minus the sensor's capture delay."@en ;
@@ -1154,7 +1154,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
              <http://www.w3.org/2004/02/skos/core#definition> "One captured output of a vehicle sensor (camera image, lidar sweep) sent to the remote station."@en .
 
 
-###  https://w3id.org/rdonto/op#SensorOverlay
+###  https://w3id.org/rovo/op#SensorOverlay
 :SensorOverlay rdf:type owl:Class ;
                rdfs:subClassOf :InformationChannel ;
                rdfs:comment "SA-15."@en ;
@@ -1162,32 +1162,32 @@ xsd:dayTimeDuration rdf:type owl:Class .
                <http://www.w3.org/2004/02/skos/core#definition> "An information channel that draws sensor or perception data, such as detected objects or a predicted path, over the camera views."@en .
 
 
-###  https://w3id.org/rdonto/op#SituationElement
+###  https://w3id.org/rovo/op#SituationElement
 :SituationElement rdf:type owl:Class ;
-                  rdfs:comment "SA-07. Interface. A.U.T.O. Traffic_Entity is a subclass (RDOnto-core). This module never describes the element itself, only the operator's perception of it."@en ;
+                  rdfs:comment "SA-07. Interface. A.U.T.O. Traffic_Entity is a subclass (ROVO-core). This module never describes the element itself, only the operator's perception of it."@en ;
                   rdfs:label "situation element"@en ;
                   <http://www.w3.org/2004/02/skos/core#definition> "Something in the vehicle's situation that the operator may perceive: a road user, an object, an event or a state of the vehicle."@en .
 
 
-###  https://w3id.org/rdonto/op#TakeoverReason
+###  https://w3id.org/rovo/op#TakeoverReason
 :TakeoverReason rdf:type owl:Class ;
                 rdfs:comment "SA-03. Records the event that called for an event-based remote drive when there is no Request. The individuals are the two cases of a takeover from an on-board driver; no source states them, they follow from the context rule of event-based remote driving. Not an exhaustive list."@en ;
                 rdfs:label "takeover reason"@en ;
                 <http://www.w3.org/2004/02/skos/core#definition> "Why a remote operator took over from an on-board driver, where no request from the vehicle started the engagement."@en .
 
 
-###  https://w3id.org/rdonto/op#TimeOnTaskLimit
+###  https://w3id.org/rovo/op#TimeOnTaskLimit
 :TimeOnTaskLimit rdf:type owl:Class ;
                  rdfs:subClassOf :ConfiguredLimit ;
                  <http://purl.org/dc/terms/source> "HA24" ,
                                                    "ME24" ,
                                                    "TANG26" ;
-                 rdfs:comment "SA-12. A break is any time without an engagement, including time fallback-ready, so breaks follow from the engagements and need no class of their own. Exact rules: (1) a break is a period of at least the minimum break length in which the operator has no open engagement with any vehicle, in any mode; (2) time on task is the sum of the durations of the operator's engagements in a remote driving mode (isRemoteDrivingMode true) since the end of the last break; (3) time in remote monitoring or remote assistance is neither: it adds nothing to time on task and is not a break, so it does not reset the count; (4) the limit and the minimum break length that apply are those of the mode of the operator's current remote driving engagement or, if the operator is not driving now, of the most recent one; a limit stated for the broader mode holds where the mode has none of its own. Both limit types are therefore stated for remote driving modes only (RDOnto-op-shapes.ttl). HA24: most professional remote drivers never drove more than 2 h at a time, 1 h preferred."@en ;
+                 rdfs:comment "SA-12. A break is any time without an engagement, including time fallback-ready, so breaks follow from the engagements and need no class of their own. Exact rules: (1) a break is a period of at least the minimum break length in which the operator has no open engagement with any vehicle, in any mode; (2) time on task is the sum of the durations of the operator's engagements in a remote driving mode (isRemoteDrivingMode true) since the end of the last break; (3) time in remote monitoring or remote assistance is neither: it adds nothing to time on task and is not a break, so it does not reset the count; (4) the limit and the minimum break length that apply are those of the mode of the operator's current remote driving engagement or, if the operator is not driving now, of the most recent one; a limit stated for the broader mode holds where the mode has none of its own. Both limit types are therefore stated for remote driving modes only (ROVO-op-shapes.ttl). HA24: most professional remote drivers never drove more than 2 h at a time, 1 h preferred."@en ;
                  rdfs:label "time-on-task limit"@en ;
                  <http://www.w3.org/2004/02/skos/core#definition> "The longest time an operator may drive remotely in a mode without a break of at least the minimum break length. Value as qudt:numericValue with qudt:unit unit:MIN."@en .
 
 
-###  https://w3id.org/rdonto/op#WorkloadBand
+###  https://w3id.org/rovo/op#WorkloadBand
 :WorkloadBand rdf:type owl:Class ;
               rdfs:subClassOf :ConfiguredLimit ;
               <http://purl.org/dc/terms/source> "HS88" ,
@@ -1198,7 +1198,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
               <http://www.w3.org/2004/02/skos/core#definition> "The acceptable workload range in a mode, or while fallback-ready. Below the lower bound is underload, above the upper bound overload."@en .
 
 
-###  https://w3id.org/rdonto/op#WorkloadEstimate
+###  https://w3id.org/rovo/op#WorkloadEstimate
 :WorkloadEstimate rdf:type owl:Class ;
                   rdfs:subClassOf <http://www.w3.org/ns/sosa/Observation> ;
                   <http://purl.org/dc/terms/source> "HS88" ,
@@ -1206,7 +1206,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                                                     "MU21" ;
                   rdfs:comment "SA-18, SA-20. E.g. a NASA-TLX score (HS88) or a physiological index."@en ;
                   rdfs:label "workload estimate"@en ;
-                  <http://www.w3.org/2004/02/skos/core#definition> "An observation of the operator's workload: sosa:hasFeatureOfInterest the operator, sosa:observedProperty RDOnto-op:Workload, sosa:hasSimpleResult the value, sosa:resultTime the time, onScale the scale."@en .
+                  <http://www.w3.org/2004/02/skos/core#definition> "An observation of the operator's workload: sosa:hasFeatureOfInterest the operator, sosa:observedProperty ROVO-op:Workload, sosa:hasSimpleResult the value, sosa:resultTime the time, onScale the scale."@en .
 
 
 #################################################################
@@ -1237,7 +1237,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                                       rdfs:isDefinedBy <http://qudt.org/vocab/unit> .
 
 
-###  https://w3id.org/rdonto/op#AccelerationCue
+###  https://w3id.org/rovo/op#AccelerationCue
 :AccelerationCue rdf:type owl:NamedIndividual ,
                           :InVehicleCue ;
                  <http://purl.org/dc/terms/source> "ZH24" ;
@@ -1246,7 +1246,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                  <http://www.w3.org/2004/02/skos/core#definition> "The forces a driver's body feels when the vehicle accelerates, brakes or corners."@en .
 
 
-###  https://w3id.org/rdonto/op#AmbientSound
+###  https://w3id.org/rovo/op#AmbientSound
 :AmbientSound rdf:type owl:NamedIndividual ,
                        :InVehicleCue ;
               <http://purl.org/dc/terms/source> "TL22" ,
@@ -1256,7 +1256,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
               <http://www.w3.org/2004/02/skos/core#definition> "Sound from the vehicle's surroundings, such as traffic, people or machines."@en .
 
 
-###  https://w3id.org/rdonto/op#ConstructionSite
+###  https://w3id.org/rovo/op#ConstructionSite
 :ConstructionSite rdf:type owl:NamedIndividual ,
                            :OperatingEnvironment ;
                   rdfs:comment "SA-06."@en ;
@@ -1264,7 +1264,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                   <http://www.w3.org/2004/02/skos/core#definition> "A site where construction work is carried out, closed to public traffic."@en .
 
 
-###  https://w3id.org/rdonto/op#ContinuousRemoteDriving
+###  https://w3id.org/rovo/op#ContinuousRemoteDriving
 :ContinuousRemoteDriving rdf:type owl:NamedIndividual ,
                                   :OperationMode ;
                          :broaderMode :RemoteDriving ;
@@ -1279,15 +1279,15 @@ xsd:dayTimeDuration rdf:type owl:Class .
                          <http://www.w3.org/2004/02/skos/core#definition> "Remote driving in which the remote operator is the vehicle's driver for the whole trip, however short, performing the whole DDT, possibly in a vehicle without an automated driving system."@en .
 
 
-###  https://w3id.org/rdonto/op#CueInterpretationTask
+###  https://w3id.org/rovo/op#CueInterpretationTask
 :CueInterpretationTask rdf:type owl:NamedIndividual .
 
 
-###  https://w3id.org/rdonto/op#DecisionMakingTask
+###  https://w3id.org/rovo/op#DecisionMakingTask
 :DecisionMakingTask rdf:type owl:NamedIndividual .
 
 
-###  https://w3id.org/rdonto/op#DecisionSupportSA
+###  https://w3id.org/rovo/op#DecisionSupportSA
 :DecisionSupportSA rdf:type owl:NamedIndividual ,
                             :SAType ;
                    rdfs:comment "SA-21, SA-22. Required by remote assistance; the elements are those the request concerns, where it names any (concernsElement)."@en ;
@@ -1295,7 +1295,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                    <http://www.w3.org/2004/02/skos/core#definition> "Selective awareness of the specific elements needed to answer a request from the system; not full SA of the scenario."@en .
 
 
-###  https://w3id.org/rdonto/op#Distraction
+###  https://w3id.org/rovo/op#Distraction
 :Distraction rdf:type owl:NamedIndividual ,
                       :Impairment ;
              <http://purl.org/dc/terms/source> "HA24" ,
@@ -1305,7 +1305,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
              <http://www.w3.org/2004/02/skos/core#definition> "The operator's attention being drawn away from the operation task."@en .
 
 
-###  https://w3id.org/rdonto/op#EngineSound
+###  https://w3id.org/rovo/op#EngineSound
 :EngineSound rdf:type owl:NamedIndividual ,
                       :InVehicleCue ;
              <http://purl.org/dc/terms/source> "ZH24" ;
@@ -1314,7 +1314,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
              <http://www.w3.org/2004/02/skos/core#definition> "The sound of the vehicle's engine or drive, which tells a driver about speed and load."@en .
 
 
-###  https://w3id.org/rdonto/op#EventBasedRemoteDriving
+###  https://w3id.org/rovo/op#EventBasedRemoteDriving
 :EventBasedRemoteDriving rdf:type owl:NamedIndividual ,
                                   :OperationMode ;
                          :broaderMode :RemoteDriving ;
@@ -1325,12 +1325,12 @@ xsd:dayTimeDuration rdf:type owl:Class .
                                                            "SHI26" ,
                                                            "TL22" ,
                                                            "WF25" ;
-                         rdfs:comment "SA-01, SA-03. SHI26 introduce the term for automated vehicles that call an operator in; RDOnto-op also applies it to a takeover from remote monitoring and to a vehicle without an ADS taken over from its on-board driver (takenOverFrom). Not called an intervention, since WF25 use remote intervention for acting on the vehicle without driving it, such as starting a safe stop."@en ;
+                         rdfs:comment "SA-01, SA-03. SHI26 introduce the term for automated vehicles that call an operator in; ROVO-op also applies it to a takeover from remote monitoring and to a vehicle without an ADS taken over from its on-board driver (takenOverFrom). Not called an intervention, since WF25 use remote intervention for acting on the vehicle without driving it, such as starting a safe stop."@en ;
                          rdfs:label "event-based remote driving"@en ;
                          <http://www.w3.org/2004/02/skos/core#definition> "Remote driving that an event calls for while something else drives the vehicle, either its ADS or an on-board driver. The operator takes over on the vehicle's takeover request, from remote monitoring when the operator sees the need, or from the on-board driver, usually for a limited time, and then hands back or ends the engagement."@en .
 
 
-###  https://w3id.org/rdonto/op#Fatigue
+###  https://w3id.org/rovo/op#Fatigue
 :Fatigue rdf:type owl:NamedIndividual ,
                   :Impairment ;
          <http://purl.org/dc/terms/source> "HA24" ,
@@ -1340,7 +1340,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
          <http://www.w3.org/2004/02/skos/core#definition> "A state of tiredness that lowers the operator's alertness and performance."@en .
 
 
-###  https://w3id.org/rdonto/op#InclinationCue
+###  https://w3id.org/rovo/op#InclinationCue
 :InclinationCue rdf:type owl:NamedIndividual ,
                          :InVehicleCue ;
                 rdfs:comment "SA-16."@en ;
@@ -1348,7 +1348,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                 <http://www.w3.org/2004/02/skos/core#definition> "A driver's feel for the slope or tilt of the road or ground under the vehicle."@en .
 
 
-###  https://w3id.org/rdonto/op#MiningSite
+###  https://w3id.org/rovo/op#MiningSite
 :MiningSite rdf:type owl:NamedIndividual ,
                      :OperatingEnvironment ;
             rdfs:comment "SA-06."@en ;
@@ -1356,7 +1356,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
             <http://www.w3.org/2004/02/skos/core#definition> "A surface or underground mine."@en .
 
 
-###  https://w3id.org/rdonto/op#MotionSickness
+###  https://w3id.org/rovo/op#MotionSickness
 :MotionSickness rdf:type owl:NamedIndividual ,
                          :Impairment ;
                 <http://purl.org/dc/terms/source> "HA24" ,
@@ -1367,7 +1367,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                 <http://www.w3.org/2004/02/skos/core#definition> "Nausea, dizziness or similar discomfort that the operator gets from watching the vehicle's motion at the station."@en .
 
 
-###  https://w3id.org/rdonto/op#ObjectClassificationRequest
+###  https://w3id.org/rovo/op#ObjectClassificationRequest
 :ObjectClassificationRequest rdf:type owl:NamedIndividual ,
                                       :RequestType ;
                              <http://purl.org/dc/terms/source> "AM22" ;
@@ -1376,11 +1376,11 @@ xsd:dayTimeDuration rdf:type owl:Class .
                              <http://www.w3.org/2004/02/skos/core#definition> "A request that the remote operator say what an object is that the vehicle cannot classify."@en .
 
 
-###  https://w3id.org/rdonto/op#ObservationTask
+###  https://w3id.org/rovo/op#ObservationTask
 :ObservationTask rdf:type owl:NamedIndividual .
 
 
-###  https://w3id.org/rdonto/op#OnBoardDriverAsked
+###  https://w3id.org/rovo/op#OnBoardDriverAsked
 :OnBoardDriverAsked rdf:type owl:NamedIndividual ,
                              :TakeoverReason ;
                     rdfs:comment "SA-03."@en ;
@@ -1388,7 +1388,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                     <http://www.w3.org/2004/02/skos/core#definition> "The on-board driver asked the remote operator to take over."@en .
 
 
-###  https://w3id.org/rdonto/op#OnBoardDriverUnableToDrive
+###  https://w3id.org/rovo/op#OnBoardDriverUnableToDrive
 :OnBoardDriverUnableToDrive rdf:type owl:NamedIndividual ,
                                      :TakeoverReason ;
                             rdfs:comment "SA-03, LK-10. The driver then has ableToTakeOver false, so control cannot be handed back."@en ;
@@ -1396,7 +1396,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                             <http://www.w3.org/2004/02/skos/core#definition> "The on-board driver can no longer drive, e.g. through illness or fatigue, as the driver reports or a driver monitoring system detects."@en .
 
 
-###  https://w3id.org/rdonto/op#OperationalSA
+###  https://w3id.org/rovo/op#OperationalSA
 :OperationalSA rdf:type owl:NamedIndividual ,
                         :SAType ;
                rdfs:comment "SA-21, SA-22. Required by remote driving."@en ;
@@ -1404,7 +1404,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                <http://www.w3.org/2004/02/skos/core#definition> "Continuous awareness of all relevant elements, to carry out the DDT."@en .
 
 
-###  https://w3id.org/rdonto/op#OtherAssistanceRequest
+###  https://w3id.org/rovo/op#OtherAssistanceRequest
 :OtherAssistanceRequest rdf:type owl:NamedIndividual ,
                                  :RequestType ;
                         rdfs:comment "SA-03. Keeps the list open: the request types are examples, not an exhaustive list."@en ;
@@ -1412,7 +1412,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                         <http://www.w3.org/2004/02/skos/core#definition> "A request for remote assistance of a kind that no other request type covers."@en .
 
 
-###  https://w3id.org/rdonto/op#PathRequest
+###  https://w3id.org/rovo/op#PathRequest
 :PathRequest rdf:type owl:NamedIndividual ,
                       :RequestType ;
              <http://purl.org/dc/terms/source> "AM22" ;
@@ -1421,7 +1421,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
              <http://www.w3.org/2004/02/skos/core#definition> "A request that the remote operator provide a path for the vehicle, or authorize one it proposes."@en .
 
 
-###  https://w3id.org/rdonto/op#PedalFeel
+###  https://w3id.org/rovo/op#PedalFeel
 :PedalFeel rdf:type owl:NamedIndividual ,
                     :InVehicleCue ;
            <http://purl.org/dc/terms/source> "TL22" ;
@@ -1430,7 +1430,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
            <http://www.w3.org/2004/02/skos/core#definition> "The resistance and travel a driver feels in the brake and accelerator pedals."@en .
 
 
-###  https://w3id.org/rdonto/op#PerceptionError
+###  https://w3id.org/rovo/op#PerceptionError
 :PerceptionError rdf:type owl:NamedIndividual ,
                           :RequestReason ;
                  <http://purl.org/dc/terms/source> "MU21" ;
@@ -1439,7 +1439,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                  <http://www.w3.org/2004/02/skos/core#definition> "The vehicle's perception has misread the scene or cannot interpret it reliably."@en .
 
 
-###  https://w3id.org/rdonto/op#PlanFailure
+###  https://w3id.org/rovo/op#PlanFailure
 :PlanFailure rdf:type owl:NamedIndividual ,
                       :RequestReason ;
              <http://purl.org/dc/terms/source> "MU21" ;
@@ -1448,7 +1448,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
              <http://www.w3.org/2004/02/skos/core#definition> "The vehicle's planning finds no way to proceed in the situation."@en .
 
 
-###  https://w3id.org/rdonto/op#Port
+###  https://w3id.org/rovo/op#Port
 :Port rdf:type owl:NamedIndividual ,
                :OperatingEnvironment ;
       rdfs:comment "SA-06."@en ;
@@ -1456,7 +1456,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
       <http://www.w3.org/2004/02/skos/core#definition> "A port terminal, or a logistics yard like one, closed to public traffic."@en .
 
 
-###  https://w3id.org/rdonto/op#PublicRoad
+###  https://w3id.org/rovo/op#PublicRoad
 :PublicRoad rdf:type owl:NamedIndividual ,
                      :OperatingEnvironment ;
             <http://purl.org/dc/terms/source> "HN25b" ,
@@ -1466,7 +1466,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
             <http://www.w3.org/2004/02/skos/core#definition> "Roads open to public traffic, which the vehicle shares with other road users."@en .
 
 
-###  https://w3id.org/rdonto/op#RemoteAssistance
+###  https://w3id.org/rovo/op#RemoteAssistance
 :RemoteAssistance rdf:type owl:NamedIndividual ,
                            :OperationMode ;
                   :modeIncludesTask :CueInterpretationTask ,
@@ -1476,12 +1476,12 @@ xsd:dayTimeDuration rdf:type owl:Class .
                   <http://purl.org/dc/terms/source> "AM22" ,
                                                     "BSI1886" ,
                                                     "J3016" ;
-                  rdfs:comment "SA-01, SA-03. The ADS keeps performing the DDT. While it waits for the answer to a request it cannot go on by itself (RDOnto-link:adsAbleToDrive)."@en ;
+                  rdfs:comment "SA-01, SA-03. The ADS keeps performing the DDT. While it waits for the answer to a request it cannot go on by itself (ROVO-link:adsAbleToDrive)."@en ;
                   rdfs:label "remote assistance"@en ;
                   <http://www.w3.org/2004/02/skos/core#definition> "Remote operation in which the operator advises an ADS-equipped vehicle that is within its ODD but encounters a situation it cannot manage: the operator interprets cues and answers the vehicle's requests, without performing any part of the DDT."@en .
 
 
-###  https://w3id.org/rdonto/op#RemoteDriving
+###  https://w3id.org/rovo/op#RemoteDriving
 :RemoteDriving rdf:type owl:NamedIndividual ,
                         :OperationMode ;
                :requiresSAType :OperationalSA ;
@@ -1494,7 +1494,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                <http://www.w3.org/2004/02/skos/core#definition> "Remote operation in which the operator manually controls the vehicle by throttling, braking and steering, and is fully responsible for OEDR."@en .
 
 
-###  https://w3id.org/rdonto/op#RemoteMonitoring
+###  https://w3id.org/rovo/op#RemoteMonitoring
 :RemoteMonitoring rdf:type owl:NamedIndividual ,
                            :OperationMode ;
                   :modeIncludesTask :ObservationTask ;
@@ -1503,12 +1503,12 @@ xsd:dayTimeDuration rdf:type owl:Class .
                   <http://purl.org/dc/terms/source> "AM22" ,
                                                     "BSI1886" ,
                                                     "SHI26" ;
-                  rdfs:comment "SA-01. SHI26 do not count monitoring as a separate form of remote operation, because it needs a defined objective. RDOnto-op keeps it as a mode and gives it that objective through its SA requirement: keeping supervisory SA, i.e. noticing when the operator must step in (SA-21, SA-22)."@en ;
+                  rdfs:comment "SA-01. SHI26 do not count monitoring as a separate form of remote operation, because it needs a defined objective. ROVO-op keeps it as a mode and gives it that objective through its SA requirement: keeping supervisory SA, i.e. noticing when the operator must step in (SA-21, SA-22)."@en ;
                   rdfs:label "remote monitoring"@en ;
                   <http://www.w3.org/2004/02/skos/core#definition> "Remote operation in which the operator only observes the vehicle and its situation, e.g. its task status or system diagnostics, without influencing the DDT. The operator can switch to remote assistance or remote driving."@en .
 
 
-###  https://w3id.org/rdonto/op#SensorFailure
+###  https://w3id.org/rovo/op#SensorFailure
 :SensorFailure rdf:type owl:NamedIndividual ,
                         :RequestReason ;
                <http://purl.org/dc/terms/source> "MU21" ;
@@ -1517,7 +1517,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                <http://www.w3.org/2004/02/skos/core#definition> "A sensor of the vehicle has failed or delivers no usable data."@en .
 
 
-###  https://w3id.org/rdonto/op#SpeedSense
+###  https://w3id.org/rovo/op#SpeedSense
 :SpeedSense rdf:type owl:NamedIndividual ,
                      :InVehicleCue ;
             <http://purl.org/dc/terms/source> "ZH24" ;
@@ -1526,7 +1526,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
             <http://www.w3.org/2004/02/skos/core#definition> "A driver's impression of how fast the vehicle is moving, from the flow of the surroundings, sound and vibration."@en .
 
 
-###  https://w3id.org/rdonto/op#SupervisorySA
+###  https://w3id.org/rovo/op#SupervisorySA
 :SupervisorySA rdf:type owl:NamedIndividual ,
                         :SAType ;
                rdfs:comment "SA-21, SA-22. Required by remote monitoring."@en ;
@@ -1534,17 +1534,17 @@ xsd:dayTimeDuration rdf:type owl:Class .
                <http://www.w3.org/2004/02/skos/core#definition> "Awareness of relevant changes in the driving environment relative to the driving system's capabilities, to judge whether the operator must step in by switching to remote assistance or remote driving."@en .
 
 
-###  https://w3id.org/rdonto/op#TakeoverRequest
+###  https://w3id.org/rovo/op#TakeoverRequest
 :TakeoverRequest rdf:type owl:NamedIndividual ,
                           :RequestType ;
                  <http://purl.org/dc/terms/source> "MU21" ,
                                                    "TL22" ;
-                 rdfs:comment "SA-03. Answered by an event-based remote driving engagement. Closely matches J3016's request to intervene (RDOnto-core)."@en ;
+                 rdfs:comment "SA-03. Answered by an event-based remote driving engagement. Closely matches J3016's request to intervene (ROVO-core)."@en ;
                  rdfs:label "takeover request"@en ;
                  <http://www.w3.org/2004/02/skos/core#definition> "A request that the remote operator take over driving the vehicle."@en .
 
 
-###  https://w3id.org/rdonto/op#UnclassifiableObject
+###  https://w3id.org/rovo/op#UnclassifiableObject
 :UnclassifiableObject rdf:type owl:NamedIndividual ,
                                :RequestReason ;
                       <http://purl.org/dc/terms/source> "AM22" ;
@@ -1553,15 +1553,15 @@ xsd:dayTimeDuration rdf:type owl:Class .
                       <http://www.w3.org/2004/02/skos/core#definition> "The vehicle has detected an object that it cannot classify."@en .
 
 
-###  https://w3id.org/rdonto/op#UnspecifiedReason
+###  https://w3id.org/rovo/op#UnspecifiedReason
 :UnspecifiedReason rdf:type owl:NamedIndividual ,
                             :RequestReason ;
-                   rdfs:comment "SA-03. Used so that every request has a reason value (RDOnto-op-shapes.ttl)."@en ;
+                   rdfs:comment "SA-03. Used so that every request has a reason value (ROVO-op-shapes.ttl)."@en ;
                    rdfs:label "unspecified reason"@en ;
                    <http://www.w3.org/2004/02/skos/core#definition> "No reason was given for the request."@en .
 
 
-###  https://w3id.org/rdonto/op#VestibularCue
+###  https://w3id.org/rovo/op#VestibularCue
 :VestibularCue rdf:type owl:NamedIndividual ,
                         :InVehicleCue ;
                <http://purl.org/dc/terms/source> "WO26" ;
@@ -1570,7 +1570,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                <http://www.w3.org/2004/02/skos/core#definition> "The sense of the vehicle's motion and of one's own orientation that the balance organs give a driver in the vehicle."@en .
 
 
-###  https://w3id.org/rdonto/op#Warehouse
+###  https://w3id.org/rovo/op#Warehouse
 :Warehouse rdf:type owl:NamedIndividual ,
                     :OperatingEnvironment ;
            <http://purl.org/dc/terms/source> "WO25" ;
@@ -1579,7 +1579,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
            <http://www.w3.org/2004/02/skos/core#definition> "The inside of a warehouse or a similar storage site, e.g. where forklifts handle pallets."@en .
 
 
-###  https://w3id.org/rdonto/op#WarningSound
+###  https://w3id.org/rovo/op#WarningSound
 :WarningSound rdf:type owl:NamedIndividual ,
                        :InVehicleCue ;
               <http://purl.org/dc/terms/source> "WO25" ;
@@ -1588,7 +1588,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
               <http://www.w3.org/2004/02/skos/core#definition> "A sound meant to warn, such as a horn, a siren or a shout."@en .
 
 
-###  https://w3id.org/rdonto/op#Workload
+###  https://w3id.org/rovo/op#Workload
 :Workload rdf:type owl:NamedIndividual ,
                    <http://www.w3.org/ns/sosa/ObservableProperty> ;
           <http://purl.org/dc/terms/source> "HS88" ,
@@ -1638,13 +1638,13 @@ xsd:dayTimeDuration rdf:type owl:Class .
 
 :adaptedInformationAge <http://purl.org/dc/terms/source> "HA24" ,
                                                          "NE19" ;
-                       rdfs:comment "SA-14. Interface (stream layer, fed by RDOnto-link LK-05). HA24: latency adaptation took from 1-2 drives to months; NE19 varied latency within a drive. Adaptation belongs to the operator and the setup, not to one engagement, so a new engagement need not start it again: an engagement with adaptationCarriedFrom states no value of its own, and the value that applies to it is that of the engagement it is carried from, followed back to the one that measured it (RDOnto-op-shapes.ttl)."@en ;
+                       rdfs:comment "SA-14. Interface (stream layer, fed by ROVO-link LK-05). HA24: latency adaptation took from 1-2 drives to months; NE19 varied latency within a drive. Adaptation belongs to the operator and the setup, not to one engagement, so a new engagement need not start it again: an engagement with adaptationCarriedFrom states no value of its own, and the value that applies to it is that of the engagement it is carried from, followed back to the one that measured it (ROVO-op-shapes.ttl)."@en ;
                        rdfs:label "adapted information age"@en ;
                        <http://www.w3.org/2004/02/skos/core#definition> "The information age the operator is adapted to, as measured in this engagement, e.g. as the median over its first minutes."@en .
 
 
 :captureDelay <http://purl.org/dc/terms/source> "GF20" ;
-              rdfs:comment "SA-08, SA-09. Configuration or offline measurement, not a per-frame value; GF20 measured roughly 15-35 ms. With it, information age runs from the event to its display, GF20's sensor (glass-to-glass) latency. A sensor without a value counts as zero delay. Shared with RDOnto-link."@en ;
+              rdfs:comment "SA-08, SA-09. Configuration or offline measurement, not a per-frame value; GF20 measured roughly 15-35 ms. With it, information age runs from the event to its display, GF20's sensor (glass-to-glass) latency. A sensor without a value counts as zero delay. Shared with ROVO-link."@en ;
               rdfs:label "capture delay"@en ;
               <http://www.w3.org/2004/02/skos/core#definition> "The time from an event in front of the sensor to the frame that shows it being captured: exposure, readout and transfer to the vehicle computer."@en .
 

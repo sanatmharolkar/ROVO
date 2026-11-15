@@ -3,91 +3,91 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
   "http://www.w3.org/2002/07/owl#members" : [ {
     "@list" : [ {
-      "@id" : "https://w3id.org/rdonto/link#Adaptation"
+      "@id" : "https://w3id.org/rovo/link#Adaptation"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#AdaptationRankOverride"
+      "@id" : "https://w3id.org/rovo/link#AdaptationRankOverride"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#AvailabilityCondition"
+      "@id" : "https://w3id.org/rovo/link#AvailabilityCondition"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#Degradation"
+      "@id" : "https://w3id.org/rovo/link#Degradation"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#Direction"
+      "@id" : "https://w3id.org/rovo/link#Direction"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#LatencyObservation"
+      "@id" : "https://w3id.org/rovo/link#LatencyObservation"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#LatencyPart"
+      "@id" : "https://w3id.org/rovo/link#LatencyPart"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#LatencyStatistic"
+      "@id" : "https://w3id.org/rovo/link#LatencyStatistic"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#LinkInformation"
+      "@id" : "https://w3id.org/rovo/link#LinkInformation"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#LinkPrediction"
+      "@id" : "https://w3id.org/rovo/link#LinkPrediction"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#MinimalRiskManoeuvre"
+      "@id" : "https://w3id.org/rovo/link#MinimalRiskManoeuvre"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#MinimalRiskManoeuvreKind"
+      "@id" : "https://w3id.org/rovo/link#MinimalRiskManoeuvreKind"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#RemoteStation"
+      "@id" : "https://w3id.org/rovo/link#RemoteStation"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#StatisticKind"
+      "@id" : "https://w3id.org/rovo/link#StatisticKind"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#Stream"
+      "@id" : "https://w3id.org/rovo/link#Stream"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#StreamContent"
+      "@id" : "https://w3id.org/rovo/link#StreamContent"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#TeleoperationSession"
+      "@id" : "https://w3id.org/rovo/link#TeleoperationSession"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#TeleoperationSetup"
+      "@id" : "https://w3id.org/rovo/link#TeleoperationSetup"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#ConfiguredLimit"
+      "@id" : "https://w3id.org/rovo/op#ConfiguredLimit"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#Cue"
+      "@id" : "https://w3id.org/rovo/op#Cue"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#DisplayedScene"
+      "@id" : "https://w3id.org/rovo/op#DisplayedScene"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#DrivingTask"
+      "@id" : "https://w3id.org/rovo/op#DrivingTask"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#ElementStateChange"
+      "@id" : "https://w3id.org/rovo/op#ElementStateChange"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#Engagement"
+      "@id" : "https://w3id.org/rovo/op#Engagement"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#FallbackReadyPeriod"
+      "@id" : "https://w3id.org/rovo/op#FallbackReadyPeriod"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#Impairment"
+      "@id" : "https://w3id.org/rovo/op#Impairment"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#ImpairmentObservation"
+      "@id" : "https://w3id.org/rovo/op#ImpairmentObservation"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#InformationChannel"
+      "@id" : "https://w3id.org/rovo/op#InformationChannel"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#OnBoardDriver"
+      "@id" : "https://w3id.org/rovo/op#OnBoardDriver"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#OperatingEnvironment"
+      "@id" : "https://w3id.org/rovo/op#OperatingEnvironment"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#OperationMode"
+      "@id" : "https://w3id.org/rovo/op#OperationMode"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#OperatorTask"
+      "@id" : "https://w3id.org/rovo/op#OperatorTask"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#PerceptionAssertion"
+      "@id" : "https://w3id.org/rovo/op#PerceptionAssertion"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#RemoteOperator"
+      "@id" : "https://w3id.org/rovo/op#RemoteOperator"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#RemotelyOperatedVehicle"
+      "@id" : "https://w3id.org/rovo/op#RemotelyOperatedVehicle"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#Request"
+      "@id" : "https://w3id.org/rovo/op#Request"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#RequestReason"
+      "@id" : "https://w3id.org/rovo/op#RequestReason"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#RequestType"
+      "@id" : "https://w3id.org/rovo/op#RequestType"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#SAEvidence"
+      "@id" : "https://w3id.org/rovo/op#SAEvidence"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#SAType"
+      "@id" : "https://w3id.org/rovo/op#SAType"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#SensorFrame"
+      "@id" : "https://w3id.org/rovo/op#SensorFrame"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#TakeoverReason"
+      "@id" : "https://w3id.org/rovo/op#TakeoverReason"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#WorkloadEstimate"
+      "@id" : "https://w3id.org/rovo/op#WorkloadEstimate"
     } ]
   } ]
 }, {
@@ -95,11 +95,11 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
   "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
     "@list" : [ {
-      "@id" : "https://w3id.org/rdonto/link#DeadlineMissShare"
+      "@id" : "https://w3id.org/rovo/link#DeadlineMissShare"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#Mean"
+      "@id" : "https://w3id.org/rovo/link#Mean"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#StandardDeviation"
+      "@id" : "https://w3id.org/rovo/link#StandardDeviation"
     } ]
   } ]
 }, {
@@ -107,9 +107,9 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
   "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
     "@list" : [ {
-      "@id" : "https://w3id.org/rdonto/link#StationToVehicle"
+      "@id" : "https://w3id.org/rovo/link#StationToVehicle"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#VehicleToStation"
+      "@id" : "https://w3id.org/rovo/link#VehicleToStation"
     } ]
   } ]
 }, {
@@ -117,11 +117,11 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
   "http://www.w3.org/2002/07/owl#members" : [ {
     "@list" : [ {
-      "@id" : "https://w3id.org/rdonto/link#ConnectionLossPrediction"
+      "@id" : "https://w3id.org/rovo/link#ConnectionLossPrediction"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#DataRatePrediction"
+      "@id" : "https://w3id.org/rovo/link#DataRatePrediction"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#LatencyPrediction"
+      "@id" : "https://w3id.org/rovo/link#LatencyPrediction"
     } ]
   } ]
 }, {
@@ -129,35 +129,35 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
   "http://www.w3.org/2002/07/owl#members" : [ {
     "@list" : [ {
-      "@id" : "https://w3id.org/rdonto/link#ConnectionTimeout"
+      "@id" : "https://w3id.org/rovo/link#ConnectionTimeout"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#DeliveryDeadline"
+      "@id" : "https://w3id.org/rovo/link#DeliveryDeadline"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#LatencyAgreementTolerance"
+      "@id" : "https://w3id.org/rovo/link#LatencyAgreementTolerance"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#LatencyBudget"
+      "@id" : "https://w3id.org/rovo/link#LatencyBudget"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#LatencyVariationLimit"
+      "@id" : "https://w3id.org/rovo/link#LatencyVariationLimit"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#RequiredLeadTime"
+      "@id" : "https://w3id.org/rovo/link#RequiredLeadTime"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#TravelTolerance"
+      "@id" : "https://w3id.org/rovo/link#TravelTolerance"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#ActuatorLatencyLimit"
+      "@id" : "https://w3id.org/rovo/op#ActuatorLatencyLimit"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#InformationAgeLimit"
+      "@id" : "https://w3id.org/rovo/op#InformationAgeLimit"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#LatencyChangeLimit"
+      "@id" : "https://w3id.org/rovo/op#LatencyChangeLimit"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#MinimumBreakLength"
+      "@id" : "https://w3id.org/rovo/op#MinimumBreakLength"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#PerceptionConfidenceThreshold"
+      "@id" : "https://w3id.org/rovo/op#PerceptionConfidenceThreshold"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#SARequirement"
+      "@id" : "https://w3id.org/rovo/op#SARequirement"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#TimeOnTaskLimit"
+      "@id" : "https://w3id.org/rovo/op#TimeOnTaskLimit"
     }, {
-      "@id" : "https://w3id.org/rdonto/op#WorkloadBand"
+      "@id" : "https://w3id.org/rovo/op#WorkloadBand"
     } ]
   } ]
 }, {
@@ -165,19 +165,19 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
   "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
     "@list" : [ {
-      "@id" : "https://w3id.org/rdonto/link#ADSCanTakeOver"
+      "@id" : "https://w3id.org/rovo/link#ADSCanTakeOver"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#InRemoteDrivingMode"
+      "@id" : "https://w3id.org/rovo/link#InRemoteDrivingMode"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#MinimumVideoRateAvailable"
+      "@id" : "https://w3id.org/rovo/link#MinimumVideoRateAvailable"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#NotInRemoteDrivingMode"
+      "@id" : "https://w3id.org/rovo/link#NotInRemoteDrivingMode"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#OnBoardDriverCanTakeOver"
+      "@id" : "https://w3id.org/rovo/link#OnBoardDriverCanTakeOver"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#SpeedAboveMinimum"
+      "@id" : "https://w3id.org/rovo/link#SpeedAboveMinimum"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#VehicleSupportsRemoteAssistance"
+      "@id" : "https://w3id.org/rovo/link#VehicleSupportsRemoteAssistance"
     } ]
   } ]
 }, {
@@ -185,15 +185,15 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
   "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
     "@list" : [ {
-      "@id" : "https://w3id.org/rdonto/link#ActuatorLatency"
+      "@id" : "https://w3id.org/rovo/link#ActuatorLatency"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#AvailableDataRate"
+      "@id" : "https://w3id.org/rovo/link#AvailableDataRate"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#EndToEndLatency"
+      "@id" : "https://w3id.org/rovo/link#EndToEndLatency"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#SensorLatency"
+      "@id" : "https://w3id.org/rovo/link#SensorLatency"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#VehicleSpeed"
+      "@id" : "https://w3id.org/rovo/link#VehicleSpeed"
     } ]
   } ]
 }, {
@@ -201,13 +201,13 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
   "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
     "@list" : [ {
-      "@id" : "https://w3id.org/rdonto/link#ConnectionLost"
+      "@id" : "https://w3id.org/rovo/link#ConnectionLost"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#DataRateInsufficient"
+      "@id" : "https://w3id.org/rovo/link#DataRateInsufficient"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#LatencyOverBudget"
+      "@id" : "https://w3id.org/rovo/link#LatencyOverBudget"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#LatencyUnstable"
+      "@id" : "https://w3id.org/rovo/link#LatencyUnstable"
     } ]
   } ]
 }, {
@@ -215,11 +215,11 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
   "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
     "@list" : [ {
-      "@id" : "https://w3id.org/rdonto/link#ConnectionStateShown"
+      "@id" : "https://w3id.org/rovo/link#ConnectionStateShown"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#LatencyLevelShown"
+      "@id" : "https://w3id.org/rovo/link#LatencyLevelShown"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#PredictedDegradationShown"
+      "@id" : "https://w3id.org/rovo/link#PredictedDegradationShown"
     } ]
   } ]
 }, {
@@ -227,21 +227,21 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
   "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
     "@list" : [ {
-      "@id" : "https://w3id.org/rdonto/link#ContinueWithoutOperator"
+      "@id" : "https://w3id.org/rovo/link#ContinueWithoutOperator"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#HandBackToADS"
+      "@id" : "https://w3id.org/rovo/link#HandBackToADS"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#HandBackToOnBoardDriver"
+      "@id" : "https://w3id.org/rovo/link#HandBackToOnBoardDriver"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#ReduceSpeed"
+      "@id" : "https://w3id.org/rovo/link#ReduceSpeed"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#ReduceVideoQuality"
+      "@id" : "https://w3id.org/rovo/link#ReduceVideoQuality"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#Reroute"
+      "@id" : "https://w3id.org/rovo/link#Reroute"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#SafeStop"
+      "@id" : "https://w3id.org/rovo/link#SafeStop"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#SwitchToRemoteAssistance"
+      "@id" : "https://w3id.org/rovo/link#SwitchToRemoteAssistance"
     } ]
   } ]
 }, {
@@ -249,15 +249,15 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
   "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
     "@list" : [ {
-      "@id" : "https://w3id.org/rdonto/link#ControlCommands"
+      "@id" : "https://w3id.org/rovo/link#ControlCommands"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#ProposedTrajectory"
+      "@id" : "https://w3id.org/rovo/link#ProposedTrajectory"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#SensorFeed"
+      "@id" : "https://w3id.org/rovo/link#SensorFeed"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#Trajectory"
+      "@id" : "https://w3id.org/rovo/link#Trajectory"
     }, {
-      "@id" : "https://w3id.org/rdonto/link#VideoFeed"
+      "@id" : "https://w3id.org/rovo/link#VideoFeed"
     } ]
   } ]
 }, {
@@ -327,7 +327,7 @@
   "@id" : "http://www.w3.org/ns/sosa/Observation",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link",
+  "@id" : "https://w3id.org/rovo/link",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
   "http://purl.org/dc/terms/created" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#date",
@@ -349,19 +349,19 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "Remote Driving Ontology: communication link module"
+    "@value" : "Remote Operation of Vehicles Ontology: communication link module"
   } ],
   "http://www.w3.org/2002/07/owl#imports" : [ {
-    "@id" : "https://w3id.org/rdonto/op"
+    "@id" : "https://w3id.org/rovo/op"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
     "@value" : "1.0"
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#ADSCanTakeOver",
+  "@id" : "https://w3id.org/rovo/link#ADSCanTakeOver",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#AvailabilityCondition"
+    "@id" : "https://w3id.org/rovo/link#AvailabilityCondition"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -373,16 +373,16 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "The session's vehicle has an ADS (RDOnto-op:hasADS true) that is within its ODD (RDOnto-link:adsWithinODD true) and able to drive now (RDOnto-link:adsAbleToDrive true)."
+    "@value" : "The session's vehicle has an ADS (ROVO-op:hasADS true) that is within its ODD (ROVO-link:adsWithinODD true) and able to drive now (ROVO-link:adsAbleToDrive true)."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#ActuatorLatency",
+  "@id" : "https://w3id.org/rovo/link#ActuatorLatency",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "GF20"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#LatencyPart"
+    "@id" : "https://w3id.org/rovo/link#LatencyPart"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -397,7 +397,7 @@
     "@value" : "From the operator's command at the station to the actuator response in the vehicle."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#Adaptation",
+  "@id" : "https://w3id.org/rovo/link#Adaptation",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "GA21b"
@@ -410,7 +410,7 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-10. Individuals follow the reactions in GA23 and the mitigations in NE19b; HandBackToOnBoardDriver follows from the context rule of RDOnto-op. Which are available depends on the vehicle and the engagement."
+    "@value" : "LK-10. Individuals follow the reactions in GA23 and the mitigations in NE19b; HandBackToOnBoardDriver follows from the context rule of ROVO-op. Which are available depends on the vehicle and the engagement."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -421,7 +421,7 @@
     "@value" : "A reaction to a current or predicted link degradation."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#AdaptationRankOverride",
+  "@id" : "https://w3id.org/rovo/link#AdaptationRankOverride",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -436,7 +436,7 @@
     "@value" : "A preference rank for one adaptation that replaces its default rank for one degradation, one setup, or both."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#AvailabilityCondition",
+  "@id" : "https://w3id.org/rovo/link#AvailabilityCondition",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -451,7 +451,7 @@
     "@value" : "A condition on the vehicle, the engagement or the link that must hold for an adaptation to be available."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#AvailableDataRate",
+  "@id" : "https://w3id.org/rovo/link#AvailableDataRate",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "FE26"
@@ -476,7 +476,7 @@
     "@value" : "The data rate currently available to a stream, i.e. its share of what the link carries in its direction, in Mbit/s."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#ConnectionLossPrediction",
+  "@id" : "https://w3id.org/rovo/link#ConnectionLossPrediction",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "BR26"
@@ -492,14 +492,14 @@
     "@value" : "connection loss prediction"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/rdonto/link#LinkPrediction"
+    "@id" : "https://w3id.org/rovo/link#LinkPrediction"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "An expectation that the connection of a session will be lost during a future window."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#ConnectionLost",
+  "@id" : "https://w3id.org/rovo/link#ConnectionLost",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "BR26"
@@ -507,7 +507,7 @@
     "@value" : "KO21"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#Degradation"
+    "@id" : "https://w3id.org/rovo/link#Degradation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -522,10 +522,10 @@
     "@value" : "A stream that the current mode needs, or any stream of a session whose engagements have all ended, has delivered no data for longer than its connection timeout."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#ConnectionStateShown",
+  "@id" : "https://w3id.org/rovo/link#ConnectionStateShown",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#LinkInformation"
+    "@id" : "https://w3id.org/rovo/link#LinkInformation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -540,32 +540,32 @@
     "@value" : "Whether the connection to the vehicle is up or lost."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#ConnectionTimeout",
+  "@id" : "https://w3id.org/rovo/link#ConnectionTimeout",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-07. Connection loss is an absence of data, so it is a closed-world check against this timeout in the stream layer. Rule: only content that is sent continuously (isContinuous true) is tested and has a timeout. A stream is silent when the time since its lastReceivedAt, or since the session's prov:startedAtTime if it has never received data, exceeds the timeout for its content; a content without a timeout is never silent. The connection of a session counts as lost (RDOnto-link:ConnectionLost) when at least one stream is silent whose content the mode of the session's open engagement needs (neededInMode, for the mode or a broader mode); if the session has no open engagement but has carried one, when any of its streams is silent. A session that has not yet carried an engagement is not tested: before the first engagement a stream may be silent by design, e.g. no control commands are sent. It is lost since the earliest last data of those silent streams. The loss is detected later, when the timeout of the first of them runs out."
+    "@value" : "LK-07. Connection loss is an absence of data, so it is a closed-world check against this timeout in the stream layer. Rule: only content that is sent continuously (isContinuous true) is tested and has a timeout. A stream is silent when the time since its lastReceivedAt, or since the session's prov:startedAtTime if it has never received data, exceeds the timeout for its content; a content without a timeout is never silent. The connection of a session counts as lost (ROVO-link:ConnectionLost) when at least one stream is silent whose content the mode of the session's open engagement needs (neededInMode, for the mode or a broader mode); if the session has no open engagement but has carried one, when any of its streams is silent. A session that has not yet carried an engagement is not tested: before the first engagement a stream may be silent by design, e.g. no control commands are sent. It is lost since the earliest last data of those silent streams. The loss is detected later, when the timeout of the first of them runs out."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "connection timeout"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/rdonto/op#ConfiguredLimit"
+    "@id" : "https://w3id.org/rovo/op#ConfiguredLimit"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "How long a stream with a given content may stay without data before the connection counts as lost. Value as qudt:numericValue with qudt:unit unit:MilliSEC."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#ContinueWithoutOperator",
+  "@id" : "https://w3id.org/rovo/link#ContinueWithoutOperator",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#Adaptation"
+    "@id" : "https://w3id.org/rovo/link#Adaptation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-10. For connection loss in remote monitoring or remote assistance, where the ADS and not the operator drives. Available only if the ADS is within its ODD and able to drive (RDOnto-link:ADSCanTakeOver): in remote assistance it is not while it waits for the answer to a request. No source states it; whether a vehicle may go on without its operator is a choice of the deployment and its regulation, and a rank override can put the stop first."
+    "@value" : "LK-10. For connection loss in remote monitoring or remote assistance, where the ADS and not the operator drives. Available only if the ADS is within its ODD and able to drive (ROVO-link:ADSCanTakeOver): in remote assistance it is not while it waits for the answer to a request. No source states it; whether a vehicle may go on without its operator is a choice of the deployment and its regulation, and a rank override can put the stop first."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -575,20 +575,20 @@
     "@language" : "en",
     "@value" : "The vehicle's ADS keeps driving within its ODD although the operator who monitors or assists it can no longer be reached."
   } ],
-  "https://w3id.org/rdonto/link#addresses" : [ {
-    "@id" : "https://w3id.org/rdonto/link#ConnectionLost"
+  "https://w3id.org/rovo/link#addresses" : [ {
+    "@id" : "https://w3id.org/rovo/link#ConnectionLost"
   } ],
-  "https://w3id.org/rdonto/link#preferenceRank" : [ {
+  "https://w3id.org/rovo/link#preferenceRank" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#integer",
     "@value" : "7"
   } ],
-  "https://w3id.org/rdonto/link#requiresCondition" : [ {
-    "@id" : "https://w3id.org/rdonto/link#ADSCanTakeOver"
+  "https://w3id.org/rovo/link#requiresCondition" : [ {
+    "@id" : "https://w3id.org/rovo/link#ADSCanTakeOver"
   }, {
-    "@id" : "https://w3id.org/rdonto/link#NotInRemoteDrivingMode"
+    "@id" : "https://w3id.org/rovo/link#NotInRemoteDrivingMode"
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#ControlCommands",
+  "@id" : "https://w3id.org/rovo/link#ControlCommands",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "GA21b"
@@ -598,7 +598,7 @@
     "@value" : "NE19b"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#StreamContent"
+    "@id" : "https://w3id.org/rovo/link#StreamContent"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -612,21 +612,21 @@
     "@language" : "en",
     "@value" : "The operator's driving commands (steering, throttle, brake), sent to the vehicle to be executed directly."
   } ],
-  "https://w3id.org/rdonto/link#contentDirection" : [ {
-    "@id" : "https://w3id.org/rdonto/link#StationToVehicle"
+  "https://w3id.org/rovo/link#contentDirection" : [ {
+    "@id" : "https://w3id.org/rovo/link#StationToVehicle"
   } ],
-  "https://w3id.org/rdonto/link#isContinuous" : [ {
+  "https://w3id.org/rovo/link#isContinuous" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
     "@value" : "true"
   } ],
-  "https://w3id.org/rdonto/link#neededInMode" : [ {
-    "@id" : "https://w3id.org/rdonto/op#RemoteDriving"
+  "https://w3id.org/rovo/link#neededInMode" : [ {
+    "@id" : "https://w3id.org/rovo/op#RemoteDriving"
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#DataRateInsufficient",
+  "@id" : "https://w3id.org/rovo/link#DataRateInsufficient",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#Degradation"
+    "@id" : "https://w3id.org/rovo/link#Degradation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -641,7 +641,7 @@
     "@value" : "The data rate available from the vehicle to the station is, or is predicted to be, below what the needed camera views require."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#DataRatePrediction",
+  "@id" : "https://w3id.org/rovo/link#DataRatePrediction",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "BZ21"
@@ -657,20 +657,20 @@
     "@value" : "data rate prediction"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/rdonto/link#LinkPrediction"
+    "@id" : "https://w3id.org/rovo/link#LinkPrediction"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The data rate expected to be available to the vehicle-to-station video streams of a session, taken together, over a future window."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#DeadlineMissShare",
+  "@id" : "https://w3id.org/rovo/link#DeadlineMissShare",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "FE26"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#StatisticKind"
+    "@id" : "https://w3id.org/rovo/link#StatisticKind"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -685,7 +685,7 @@
     "@value" : "The share of the frames or commands of a stream, sent within the window, that arrived after their delivery deadline."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#Degradation",
+  "@id" : "https://w3id.org/rovo/link#Degradation",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -700,28 +700,28 @@
     "@value" : "A kind of link problem an adaptation can address."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#DeliveryDeadline",
+  "@id" : "https://w3id.org/rovo/link#DeliveryDeadline",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "FE26"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-05. The deadline behind a deadline miss share. Delivered means: for a video or sensor feed, displayed at the station, counted from capture; for control commands or trajectory input, arrived at the vehicle, counted from the operator's input. RDOnto-link:forContent names the content. FE26 measured per-frame delay against a 100 ms deadline. Configuration linked to its source, like every limit."
+    "@value" : "LK-05. The deadline behind a deadline miss share. Delivered means: for a video or sensor feed, displayed at the station, counted from capture; for control commands or trajectory input, arrived at the vehicle, counted from the operator's input. ROVO-link:forContent names the content. FE26 measured per-frame delay against a 100 ms deadline. Configuration linked to its source, like every limit."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "delivery deadline"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/rdonto/op#ConfiguredLimit"
+    "@id" : "https://w3id.org/rovo/op#ConfiguredLimit"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "How long after it was produced a frame or command of a given content may be delivered and still count as on time. Value as qudt:numericValue with qudt:unit unit:MilliSEC."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#Direction",
+  "@id" : "https://w3id.org/rovo/link#Direction",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -736,13 +736,13 @@
     "@value" : "The direction in which a stream flows, named by its endpoints: vehicle to station or station to vehicle."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#EndToEndLatency",
+  "@id" : "https://w3id.org/rovo/link#EndToEndLatency",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "GF20"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#LatencyPart"
+    "@id" : "https://w3id.org/rovo/link#LatencyPart"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -757,7 +757,7 @@
     "@value" : "Sensor latency plus actuator latency, without the operator's reaction time."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#HandBackToADS",
+  "@id" : "https://w3id.org/rovo/link#HandBackToADS",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "BR26"
@@ -765,11 +765,11 @@
     "@value" : "GA23"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#Adaptation"
+    "@id" : "https://w3id.org/rovo/link#Adaptation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-10. Available only if the vehicle has an ADS that is within its ODD [BR26] and able to drive (RDOnto-link:ADSCanTakeOver): not, e.g., while the failure that made it ask for the takeover lasts."
+    "@value" : "LK-10. Available only if the vehicle has an ADS that is within its ODD [BR26] and able to drive (ROVO-link:ADSCanTakeOver): not, e.g., while the failure that made it ask for the takeover lasts."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -779,33 +779,33 @@
     "@language" : "en",
     "@value" : "Returning the DDT to the vehicle's ADS and ending remote driving."
   } ],
-  "https://w3id.org/rdonto/link#addresses" : [ {
-    "@id" : "https://w3id.org/rdonto/link#ConnectionLost"
+  "https://w3id.org/rovo/link#addresses" : [ {
+    "@id" : "https://w3id.org/rovo/link#ConnectionLost"
   }, {
-    "@id" : "https://w3id.org/rdonto/link#DataRateInsufficient"
+    "@id" : "https://w3id.org/rovo/link#DataRateInsufficient"
   }, {
-    "@id" : "https://w3id.org/rdonto/link#LatencyOverBudget"
+    "@id" : "https://w3id.org/rovo/link#LatencyOverBudget"
   }, {
-    "@id" : "https://w3id.org/rdonto/link#LatencyUnstable"
+    "@id" : "https://w3id.org/rovo/link#LatencyUnstable"
   } ],
-  "https://w3id.org/rdonto/link#preferenceRank" : [ {
+  "https://w3id.org/rovo/link#preferenceRank" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#integer",
     "@value" : "5"
   } ],
-  "https://w3id.org/rdonto/link#requiresCondition" : [ {
-    "@id" : "https://w3id.org/rdonto/link#ADSCanTakeOver"
+  "https://w3id.org/rovo/link#requiresCondition" : [ {
+    "@id" : "https://w3id.org/rovo/link#ADSCanTakeOver"
   }, {
-    "@id" : "https://w3id.org/rdonto/link#InRemoteDrivingMode"
+    "@id" : "https://w3id.org/rovo/link#InRemoteDrivingMode"
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#HandBackToOnBoardDriver",
+  "@id" : "https://w3id.org/rovo/link#HandBackToOnBoardDriver",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#Adaptation"
+    "@id" : "https://w3id.org/rovo/link#Adaptation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-10. Available only if the open engagement of the session took over from an on-board driver (RDOnto-op:takenOverFrom) who is able to take control back (RDOnto-op:ableToTakeOver true): event-based remote driving, with or without an ADS."
+    "@value" : "LK-10. Available only if the open engagement of the session took over from an on-board driver (ROVO-op:takenOverFrom) who is able to take control back (ROVO-op:ableToTakeOver true): event-based remote driving, with or without an ADS."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -815,27 +815,27 @@
     "@language" : "en",
     "@value" : "Returning the DDT to the on-board driver from whom the operator took over."
   } ],
-  "https://w3id.org/rdonto/link#addresses" : [ {
-    "@id" : "https://w3id.org/rdonto/link#ConnectionLost"
+  "https://w3id.org/rovo/link#addresses" : [ {
+    "@id" : "https://w3id.org/rovo/link#ConnectionLost"
   }, {
-    "@id" : "https://w3id.org/rdonto/link#DataRateInsufficient"
+    "@id" : "https://w3id.org/rovo/link#DataRateInsufficient"
   }, {
-    "@id" : "https://w3id.org/rdonto/link#LatencyOverBudget"
+    "@id" : "https://w3id.org/rovo/link#LatencyOverBudget"
   }, {
-    "@id" : "https://w3id.org/rdonto/link#LatencyUnstable"
+    "@id" : "https://w3id.org/rovo/link#LatencyUnstable"
   } ],
-  "https://w3id.org/rdonto/link#preferenceRank" : [ {
+  "https://w3id.org/rovo/link#preferenceRank" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#integer",
     "@value" : "6"
   } ],
-  "https://w3id.org/rdonto/link#requiresCondition" : [ {
-    "@id" : "https://w3id.org/rdonto/link#OnBoardDriverCanTakeOver"
+  "https://w3id.org/rovo/link#requiresCondition" : [ {
+    "@id" : "https://w3id.org/rovo/link#OnBoardDriverCanTakeOver"
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#InRemoteDrivingMode",
+  "@id" : "https://w3id.org/rovo/link#InRemoteDrivingMode",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#AvailabilityCondition"
+    "@id" : "https://w3id.org/rovo/link#AvailabilityCondition"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -847,28 +847,28 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "The open engagement of the session is in a mode with RDOnto-op:isRemoteDrivingMode true."
+    "@value" : "The open engagement of the session is in a mode with ROVO-op:isRemoteDrivingMode true."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#LatencyAgreementTolerance",
+  "@id" : "https://w3id.org/rovo/link#LatencyAgreementTolerance",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-12. Each displayed scene is compared with the latest RDOnto-link:SensorLatency observation, at or before the scene's display time, of the session that carries the engagement the scene was shown in. A larger difference points to a wrong capture delay or unsynchronized clocks. May be scoped to a setup (appliesToSetup); a tolerance without a setup holds for every setup that has none of its own. A configuration parameter; no source gives a value."
+    "@value" : "LK-12. Each displayed scene is compared with the latest ROVO-link:SensorLatency observation, at or before the scene's display time, of the session that carries the engagement the scene was shown in. A larger difference points to a wrong capture delay or unsynchronized clocks. May be scoped to a setup (appliesToSetup); a tolerance without a setup holds for every setup that has none of its own. A configuration parameter; no source gives a value."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "latency agreement tolerance"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/rdonto/op#ConfiguredLimit"
+    "@id" : "https://w3id.org/rovo/op#ConfiguredLimit"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "The largest difference between the sensor latency measured for the link and the information age RDOnto-op computes for a displayed scene at which the two still count as agreeing. Value as qudt:numericValue with qudt:unit unit:MilliSEC."
+    "@value" : "The largest difference between the sensor latency measured for the link and the information age ROVO-op computes for a displayed scene at which the two still count as agreeing. Value as qudt:numericValue with qudt:unit unit:MilliSEC."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#LatencyBudget",
+  "@id" : "https://w3id.org/rovo/link#LatencyBudget",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "GA21b"
@@ -877,27 +877,27 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-04 and LK-09. A reference budget: valid only for the setup it was measured or specified in (RDOnto-link:appliesToSetup), because published budgets are performance characteristics of particular setups [GA21b] and there is no standardization for ToD [SC22]. Which limits apply: take the limits of the session's setup for the mode of the open engagement, or failing that for its broader mode. Per latency part, the applicable budget is the one with the lowest upToSpeed at or above the current speed; a budget without upToSpeed covers every speed. (1) Each part with an applicable budget must be within it, and the sensor part within the setup's information age limit. (2) The budgets replace the travel tolerance only if they bound the end-to-end latency: an end-to-end budget, or an actuator budget together with an information age limit scoped to the setup. Otherwise the travel tolerance is checked as well. (3) If the setup has budgets of a part for the mode but the current speed is above every upToSpeed of them, the setup was not validated at that speed: the latency does not count as acceptable, and the admissible speed (LK-09) is at most the highest upToSpeed whose budget the latency meets. (4) A setup without any budget for the mode is judged by the travel tolerance alone. The vehicle-to-station part is RDOnto-op:InformationAgeLimit, scoped the same way, and is stated only in that form: a LatencyBudget covers the actuator latency or the end-to-end latency, never the sensor latency, so the check that a setup's limit is no looser than the mode's sees every vehicle-to-station budget."
+    "@value" : "LK-04 and LK-09. A reference budget: valid only for the setup it was measured or specified in (ROVO-link:appliesToSetup), because published budgets are performance characteristics of particular setups [GA21b] and there is no standardization for ToD [SC22]. Which limits apply: take the limits of the session's setup for the mode of the open engagement, or failing that for its broader mode. Per latency part, the applicable budget is the one with the lowest upToSpeed at or above the current speed; a budget without upToSpeed covers every speed. (1) Each part with an applicable budget must be within it, and the sensor part within the setup's information age limit. (2) The budgets replace the travel tolerance only if they bound the end-to-end latency: an end-to-end budget, or an actuator budget together with an information age limit scoped to the setup. Otherwise the travel tolerance is checked as well. (3) If the setup has budgets of a part for the mode but the current speed is above every upToSpeed of them, the setup was not validated at that speed: the latency does not count as acceptable, and the admissible speed (LK-09) is at most the highest upToSpeed whose budget the latency meets. (4) A setup without any budget for the mode is judged by the travel tolerance alone. The vehicle-to-station part is ROVO-op:InformationAgeLimit, scoped the same way, and is stated only in that form: a LatencyBudget covers the actuator latency or the end-to-end latency, never the sensor latency, so the check that a setup's limit is no looser than the mode's sees every vehicle-to-station budget."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "latency budget"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/rdonto/op#ConfiguredLimit"
+    "@id" : "https://w3id.org/rovo/op#ConfiguredLimit"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The largest acceptable value of a latency part in an operation mode, valid up to a vehicle speed. Value as qudt:numericValue with qudt:unit unit:MilliSEC."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#LatencyLevelShown",
+  "@id" : "https://w3id.org/rovo/link#LatencyLevelShown",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "NE19"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#LinkInformation"
+    "@id" : "https://w3id.org/rovo/link#LinkInformation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -912,7 +912,7 @@
     "@value" : "The current level of the latency, e.g. as a value or as a class such as low, medium or high."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#LatencyObservation",
+  "@id" : "https://w3id.org/rovo/link#LatencyObservation",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -927,13 +927,13 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "A measurement of one latency part for a session: RDOnto-link:observedSession the session, sosa:observedProperty the latency part, sosa:hasSimpleResult the value as xsd:dayTimeDuration, sosa:resultTime when measured."
+    "@value" : "A measurement of one latency part for a session: ROVO-link:observedSession the session, sosa:observedProperty the latency part, sosa:hasSimpleResult the value as xsd:dayTimeDuration, sosa:resultTime when measured."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#LatencyOverBudget",
+  "@id" : "https://w3id.org/rovo/link#LatencyOverBudget",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#Degradation"
+    "@id" : "https://w3id.org/rovo/link#Degradation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -948,7 +948,7 @@
     "@value" : "The end-to-end latency, or a part of it, is or is predicted to be above what is acceptable for the setup, mode and speed."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#LatencyPart",
+  "@id" : "https://w3id.org/rovo/link#LatencyPart",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "GF20"
@@ -969,7 +969,7 @@
     "@value" : "A part of the end-to-end latency of a session that can be observed."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#LatencyPrediction",
+  "@id" : "https://w3id.org/rovo/link#LatencyPrediction",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "BZ21"
@@ -987,14 +987,14 @@
     "@value" : "latency prediction"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/rdonto/link#LinkPrediction"
+    "@id" : "https://w3id.org/rovo/link#LinkPrediction"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "An expected value of a latency part for a session over a future window, with an issue time (prov:generatedAtTime), a source (prov:wasAttributedTo) and a confidence."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#LatencyStatistic",
+  "@id" : "https://w3id.org/rovo/link#LatencyStatistic",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "FE26"
@@ -1005,7 +1005,7 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-05. RDOnto-link:observedSession is the session of a mean or standard deviation, sosa:hasFeatureOfInterest the stream of a deadline miss share; sosa:observedProperty the latency part a mean or standard deviation covers, which is required; RDOnto-link:statistic the kind; RDOnto-link:againstDeadline the deadline a deadline miss share was counted against; sosa:hasSimpleResult the value; windowStart and windowEnd the window. Packet loss appears here only as added delay or missed deadlines [JI25, FE26]."
+    "@value" : "LK-05. ROVO-link:observedSession is the session of a mean or standard deviation, sosa:hasFeatureOfInterest the stream of a deadline miss share; sosa:observedProperty the latency part a mean or standard deviation covers, which is required; ROVO-link:statistic the kind; ROVO-link:againstDeadline the deadline a deadline miss share was counted against; sosa:hasSimpleResult the value; windowStart and windowEnd the window. Packet loss appears here only as added delay or missed deadlines [JI25, FE26]."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1019,10 +1019,10 @@
     "@value" : "A statistic of a latency part or of deadline misses over a time window, computed in the stream layer."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#LatencyUnstable",
+  "@id" : "https://w3id.org/rovo/link#LatencyUnstable",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#Degradation"
+    "@id" : "https://w3id.org/rovo/link#Degradation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -1037,28 +1037,28 @@
     "@value" : "The standard deviation of a latency part is above the latency variation limit for the mode, even where the mean latency is within budget."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#LatencyVariationLimit",
+  "@id" : "https://w3id.org/rovo/link#LatencyVariationLimit",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "NE19b"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-05, LK-10. The latency of a session is unstable (RDOnto-link:LatencyUnstable) when its latest standard deviation statistic of a latency part exceeds the limit for that part (budgetPart) in the mode of the session's open engagement, or in its broader mode. May be scoped to a setup (appliesToSetup); a limit of the session's setup is used before one without a setup. Deadline miss shares are recorded (LK-05) and do not decide this. A configuration parameter: NE19b states a jitter requirement for one setup, and no general limit is published."
+    "@value" : "LK-05, LK-10. The latency of a session is unstable (ROVO-link:LatencyUnstable) when its latest standard deviation statistic of a latency part exceeds the limit for that part (budgetPart) in the mode of the session's open engagement, or in its broader mode. May be scoped to a setup (appliesToSetup); a limit of the session's setup is used before one without a setup. Deadline miss shares are recorded (LK-05) and do not decide this. A configuration parameter: NE19b states a jitter requirement for one setup, and no general limit is published."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "latency variation limit"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/rdonto/op#ConfiguredLimit"
+    "@id" : "https://w3id.org/rovo/op#ConfiguredLimit"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The largest standard deviation of a latency part over a window that is acceptable in an operation mode. Value as qudt:numericValue with qudt:unit unit:MilliSEC."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#LinkInformation",
+  "@id" : "https://w3id.org/rovo/link#LinkInformation",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -1073,7 +1073,7 @@
     "@value" : "A kind of information about the link that a station can show the operator."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#LinkPrediction",
+  "@id" : "https://w3id.org/rovo/link#LinkPrediction",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "BZ21"
@@ -1098,7 +1098,7 @@
     "@value" : "An expectation about the link of a session over a future window, with an issue time (prov:generatedAtTime), a source (prov:wasAttributedTo) and a confidence."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#LinkStateDisplay",
+  "@id" : "https://w3id.org/rovo/link#LinkStateDisplay",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "GA23"
@@ -1107,24 +1107,24 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-11. O is shown the link state when a LinkStateDisplay is among the engagement's available channels (RDOnto-op:availableChannel); showsLinkInformation says what it shows. NE19 showed operators the latency level, grouped by colour and text; GA23 notifies the remote driver of predicted QoS changes."
+    "@value" : "LK-11. O is shown the link state when a LinkStateDisplay is among the engagement's available channels (ROVO-op:availableChannel); showsLinkInformation says what it shows. NE19 showed operators the latency level, grouped by colour and text; GA23 notifies the remote driver of predicted QoS changes."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "link state display"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/rdonto/op#InformationChannel"
+    "@id" : "https://w3id.org/rovo/op#InformationChannel"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "An information channel of the remote station that shows the operator the state of the link."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#Mean",
+  "@id" : "https://w3id.org/rovo/link#Mean",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#StatisticKind"
+    "@id" : "https://w3id.org/rovo/link#StatisticKind"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -1139,7 +1139,7 @@
     "@value" : "The arithmetic mean of the values of a latency part over the window."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#MinimalRiskManoeuvre",
+  "@id" : "https://w3id.org/rovo/link#MinimalRiskManoeuvre",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "BR26"
@@ -1148,7 +1148,7 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-07. Interface (RDOnto-todd). The stop of the adaptation RDOnto-link:SafeStop is such a manoeuvre: with the connection lost the vehicle performs it on its own; while the link still works the operator can start it (a remote intervention, see RDOnto-op:EventBasedRemoteDriving). BR26 argues that plain braking or a Level 2 function is not an acceptable fallback, and proposes a dedicated system designed solely to reach the minimal risk condition."
+    "@value" : "LK-07. Interface (ROVO-todd). The stop of the adaptation ROVO-link:SafeStop is such a manoeuvre: with the connection lost the vehicle performs it on its own; while the link still works the operator can start it (a remote intervention, see ROVO-op:EventBasedRemoteDriving). BR26 argues that plain braking or a Level 2 function is not an acceptable fallback, and proposes a dedicated system designed solely to reach the minimal risk condition."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1162,14 +1162,14 @@
     "@value" : "A manoeuvre that brings the vehicle to a minimal risk condition, performed by the vehicle on its own, e.g. after connection loss, or started by the operator."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#MinimalRiskManoeuvreKind",
+  "@id" : "https://w3id.org/rovo/link#MinimalRiskManoeuvreKind",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "BR26"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-07: the answer to 'which minimal risk manoeuvre has V started'. Interface (RDOnto-todd): the kinds a vehicle is capable of, and which one follows a connection loss, are decided there [BR26], so this module asserts no individuals."
+    "@value" : "LK-07: the answer to 'which minimal risk manoeuvre has V started'. Interface (ROVO-todd): the kinds a vehicle is capable of, and which one follows a connection loss, are decided there [BR26], so this module asserts no individuals."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1180,10 +1180,10 @@
     "@value" : "A kind of minimal risk manoeuvre a vehicle can perform, e.g. stopping in its lane or pulling over."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#MinimumVideoRateAvailable",
+  "@id" : "https://w3id.org/rovo/link#MinimumVideoRateAvailable",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#AvailabilityCondition"
+    "@id" : "https://w3id.org/rovo/link#AvailabilityCondition"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -1198,10 +1198,10 @@
     "@value" : "The available data rate from the vehicle to the station is at least the sum of the minimumDataRate of the camera views needed in the current mode, so lowering the video quality can help; views without that value count with their requiredDataRate."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#NotInRemoteDrivingMode",
+  "@id" : "https://w3id.org/rovo/link#NotInRemoteDrivingMode",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#AvailabilityCondition"
+    "@id" : "https://w3id.org/rovo/link#AvailabilityCondition"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -1213,13 +1213,13 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "The open engagement of the session is in a mode with RDOnto-op:isRemoteDrivingMode false: remote monitoring or remote assistance."
+    "@value" : "The open engagement of the session is in a mode with ROVO-op:isRemoteDrivingMode false: remote monitoring or remote assistance."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#OnBoardDriverCanTakeOver",
+  "@id" : "https://w3id.org/rovo/link#OnBoardDriverCanTakeOver",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#AvailabilityCondition"
+    "@id" : "https://w3id.org/rovo/link#AvailabilityCondition"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -1231,16 +1231,16 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "The open engagement of the session took over from an on-board driver (RDOnto-op:takenOverFrom) who is able to take control back now (RDOnto-op:ableToTakeOver true)."
+    "@value" : "The open engagement of the session took over from an on-board driver (ROVO-op:takenOverFrom) who is able to take control back now (ROVO-op:ableToTakeOver true)."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#PredictedDegradationShown",
+  "@id" : "https://w3id.org/rovo/link#PredictedDegradationShown",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "GA23"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#LinkInformation"
+    "@id" : "https://w3id.org/rovo/link#LinkInformation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -1255,7 +1255,7 @@
     "@value" : "A warning that the link is predicted to degrade, shown before it does."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#PredictionSource",
+  "@id" : "https://w3id.org/rovo/link#PredictionSource",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -1273,13 +1273,13 @@
     "@value" : "An agent that issues link predictions, e.g. a network analytics function, or a prediction model on board the vehicle or at the network edge."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#ProposedTrajectory",
+  "@id" : "https://w3id.org/rovo/link#ProposedTrajectory",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "BR26"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#StreamContent"
+    "@id" : "https://w3id.org/rovo/link#StreamContent"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -1293,18 +1293,18 @@
     "@language" : "en",
     "@value" : "A route, path or trajectory that the vehicle's automation proposes, sent to the station for the operator to approve, reject or change."
   } ],
-  "https://w3id.org/rdonto/link#contentDirection" : [ {
-    "@id" : "https://w3id.org/rdonto/link#VehicleToStation"
+  "https://w3id.org/rovo/link#contentDirection" : [ {
+    "@id" : "https://w3id.org/rovo/link#VehicleToStation"
   } ],
-  "https://w3id.org/rdonto/link#isContinuous" : [ {
+  "https://w3id.org/rovo/link#isContinuous" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
     "@value" : "false"
   } ],
-  "https://w3id.org/rdonto/link#neededInMode" : [ {
-    "@id" : "https://w3id.org/rdonto/op#RemoteAssistance"
+  "https://w3id.org/rovo/link#neededInMode" : [ {
+    "@id" : "https://w3id.org/rovo/op#RemoteAssistance"
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#ReduceSpeed",
+  "@id" : "https://w3id.org/rovo/link#ReduceSpeed",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "GA21b"
@@ -1318,7 +1318,7 @@
     "@value" : "SC22"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#Adaptation"
+    "@id" : "https://w3id.org/rovo/link#Adaptation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -1332,24 +1332,24 @@
     "@language" : "en",
     "@value" : "The operator driving more slowly, so that the vehicle travels less far during the latency."
   } ],
-  "https://w3id.org/rdonto/link#addresses" : [ {
-    "@id" : "https://w3id.org/rdonto/link#DataRateInsufficient"
+  "https://w3id.org/rovo/link#addresses" : [ {
+    "@id" : "https://w3id.org/rovo/link#DataRateInsufficient"
   }, {
-    "@id" : "https://w3id.org/rdonto/link#LatencyOverBudget"
+    "@id" : "https://w3id.org/rovo/link#LatencyOverBudget"
   }, {
-    "@id" : "https://w3id.org/rdonto/link#LatencyUnstable"
+    "@id" : "https://w3id.org/rovo/link#LatencyUnstable"
   } ],
-  "https://w3id.org/rdonto/link#preferenceRank" : [ {
+  "https://w3id.org/rovo/link#preferenceRank" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#integer",
     "@value" : "2"
   } ],
-  "https://w3id.org/rdonto/link#requiresCondition" : [ {
-    "@id" : "https://w3id.org/rdonto/link#InRemoteDrivingMode"
+  "https://w3id.org/rovo/link#requiresCondition" : [ {
+    "@id" : "https://w3id.org/rovo/link#InRemoteDrivingMode"
   }, {
-    "@id" : "https://w3id.org/rdonto/link#SpeedAboveMinimum"
+    "@id" : "https://w3id.org/rovo/link#SpeedAboveMinimum"
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#ReduceVideoQuality",
+  "@id" : "https://w3id.org/rovo/link#ReduceVideoQuality",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "NE19b"
@@ -1357,7 +1357,7 @@
     "@value" : "SH21"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#Adaptation"
+    "@id" : "https://w3id.org/rovo/link#Adaptation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -1371,26 +1371,26 @@
     "@language" : "en",
     "@value" : "Lowering the resolution, frame rate or bitrate of the video, or switching off camera views, so that the video needs less data rate."
   } ],
-  "https://w3id.org/rdonto/link#addresses" : [ {
-    "@id" : "https://w3id.org/rdonto/link#DataRateInsufficient"
+  "https://w3id.org/rovo/link#addresses" : [ {
+    "@id" : "https://w3id.org/rovo/link#DataRateInsufficient"
   }, {
-    "@id" : "https://w3id.org/rdonto/link#LatencyOverBudget"
+    "@id" : "https://w3id.org/rovo/link#LatencyOverBudget"
   }, {
-    "@id" : "https://w3id.org/rdonto/link#LatencyUnstable"
+    "@id" : "https://w3id.org/rovo/link#LatencyUnstable"
   } ],
-  "https://w3id.org/rdonto/link#preferenceRank" : [ {
+  "https://w3id.org/rovo/link#preferenceRank" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#integer",
     "@value" : "1"
   } ],
-  "https://w3id.org/rdonto/link#requiresCondition" : [ {
-    "@id" : "https://w3id.org/rdonto/link#MinimumVideoRateAvailable"
+  "https://w3id.org/rovo/link#requiresCondition" : [ {
+    "@id" : "https://w3id.org/rovo/link#MinimumVideoRateAvailable"
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#RemoteStation",
+  "@id" : "https://w3id.org/rovo/link#RemoteStation",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-01, LK-06. A session has one station; moving to another station starts a new session. A station shows one vehicle at a time, so it has at most one open session (RDOnto-link-shapes.ttl): a desk at which an operator handles two vehicles at once, e.g. monitors one and assists another, is two stations. The station's channels (hasChannel) are therefore the channels for the vehicle of its open session."
+    "@value" : "LK-01, LK-06. A session has one station; moving to another station starts a new session. A station shows one vehicle at a time, so it has at most one open session (ROVO-link-shapes.ttl): a desk at which an operator handles two vehicles at once, e.g. monitors one and assists another, is two stations. The station's channels (hasChannel) are therefore the channels for the vehicle of its open session."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1401,7 +1401,7 @@
     "@value" : "The workstation from which a remote operator monitors, assists or drives one vehicle at a time."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#RequiredLeadTime",
+  "@id" : "https://w3id.org/rovo/link#RequiredLeadTime",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "GA23"
@@ -1417,14 +1417,14 @@
     "@value" : "required lead time"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/rdonto/op#ConfiguredLimit"
+    "@id" : "https://w3id.org/rovo/op#ConfiguredLimit"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The shortest time between a prediction's issue and the start of the predicted window that lets the vehicle react, in a mode and up to a speed. Value as qudt:numericValue with qudt:unit unit:SEC."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#Reroute",
+  "@id" : "https://w3id.org/rovo/link#Reroute",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "NE19b"
@@ -1432,7 +1432,7 @@
     "@value" : "SC22"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#Adaptation"
+    "@id" : "https://w3id.org/rovo/link#Adaptation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -1446,19 +1446,19 @@
     "@language" : "en",
     "@value" : "Changing the planned route to one with better expected link quality."
   } ],
-  "https://w3id.org/rdonto/link#addresses" : [ {
-    "@id" : "https://w3id.org/rdonto/link#DataRateInsufficient"
+  "https://w3id.org/rovo/link#addresses" : [ {
+    "@id" : "https://w3id.org/rovo/link#DataRateInsufficient"
   }, {
-    "@id" : "https://w3id.org/rdonto/link#LatencyOverBudget"
+    "@id" : "https://w3id.org/rovo/link#LatencyOverBudget"
   }, {
-    "@id" : "https://w3id.org/rdonto/link#LatencyUnstable"
+    "@id" : "https://w3id.org/rovo/link#LatencyUnstable"
   } ],
-  "https://w3id.org/rdonto/link#preferenceRank" : [ {
+  "https://w3id.org/rovo/link#preferenceRank" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#integer",
     "@value" : "3"
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#RouteSegment",
+  "@id" : "https://w3id.org/rovo/link#RouteSegment",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -1473,7 +1473,7 @@
     "@value" : "A part of the route planned for a vehicle."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#SafeStop",
+  "@id" : "https://w3id.org/rovo/link#SafeStop",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "BR26"
@@ -1483,7 +1483,7 @@
     "@value" : "KO21"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#Adaptation"
+    "@id" : "https://w3id.org/rovo/link#Adaptation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -1497,27 +1497,27 @@
     "@language" : "en",
     "@value" : "Bringing the vehicle to a stop in a minimal risk condition, by a minimal risk manoeuvre."
   } ],
-  "https://w3id.org/rdonto/link#addresses" : [ {
-    "@id" : "https://w3id.org/rdonto/link#ConnectionLost"
+  "https://w3id.org/rovo/link#addresses" : [ {
+    "@id" : "https://w3id.org/rovo/link#ConnectionLost"
   }, {
-    "@id" : "https://w3id.org/rdonto/link#DataRateInsufficient"
+    "@id" : "https://w3id.org/rovo/link#DataRateInsufficient"
   }, {
-    "@id" : "https://w3id.org/rdonto/link#LatencyOverBudget"
+    "@id" : "https://w3id.org/rovo/link#LatencyOverBudget"
   }, {
-    "@id" : "https://w3id.org/rdonto/link#LatencyUnstable"
+    "@id" : "https://w3id.org/rovo/link#LatencyUnstable"
   } ],
-  "https://w3id.org/rdonto/link#preferenceRank" : [ {
+  "https://w3id.org/rovo/link#preferenceRank" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#integer",
     "@value" : "8"
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#SensorFeed",
+  "@id" : "https://w3id.org/rovo/link#SensorFeed",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "GA23"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#StreamContent"
+    "@id" : "https://w3id.org/rovo/link#StreamContent"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -1531,21 +1531,21 @@
     "@language" : "en",
     "@value" : "Data from the vehicle's other sensors or from its perception, such as lidar points or detected objects, sent to the station."
   } ],
-  "https://w3id.org/rdonto/link#contentDirection" : [ {
-    "@id" : "https://w3id.org/rdonto/link#VehicleToStation"
+  "https://w3id.org/rovo/link#contentDirection" : [ {
+    "@id" : "https://w3id.org/rovo/link#VehicleToStation"
   } ],
-  "https://w3id.org/rdonto/link#isContinuous" : [ {
+  "https://w3id.org/rovo/link#isContinuous" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
     "@value" : "true"
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#SensorLatency",
+  "@id" : "https://w3id.org/rovo/link#SensorLatency",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "GF20"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#LatencyPart"
+    "@id" : "https://w3id.org/rovo/link#LatencyPart"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -1557,13 +1557,13 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "From an event in front of the vehicle's sensors to its display at the station (glass-to-glass). The same quantity as RDOnto-op information age."
+    "@value" : "From an event in front of the vehicle's sensors to its display at the station (glass-to-glass). The same quantity as ROVO-op information age."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#SpeedAboveMinimum",
+  "@id" : "https://w3id.org/rovo/link#SpeedAboveMinimum",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#AvailabilityCondition"
+    "@id" : "https://w3id.org/rovo/link#AvailabilityCondition"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -1578,13 +1578,13 @@
     "@value" : "The vehicle's current speed is above the minimumDrivingSpeed of the session's setup; a setup without that value always meets the condition."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#StandardDeviation",
+  "@id" : "https://w3id.org/rovo/link#StandardDeviation",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "NE19b"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#StatisticKind"
+    "@id" : "https://w3id.org/rovo/link#StatisticKind"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -1599,7 +1599,7 @@
     "@value" : "The standard deviation of the values of a latency part over the window, as a measure of how much the latency varies."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#StationToVehicle",
+  "@id" : "https://w3id.org/rovo/link#StationToVehicle",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "FE26"
@@ -1609,7 +1609,7 @@
     "@value" : "MA25"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#Direction"
+    "@id" : "https://w3id.org/rovo/link#Direction"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -1624,7 +1624,7 @@
     "@value" : "From the remote station to the vehicle: the direction of what the operator commands or provides."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#StatisticKind",
+  "@id" : "https://w3id.org/rovo/link#StatisticKind",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -1639,7 +1639,7 @@
     "@value" : "A kind of statistic computed over a time window of a session's latency or of a stream's deliveries."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#Stream",
+  "@id" : "https://w3id.org/rovo/link#Stream",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "GA23"
@@ -1657,7 +1657,7 @@
     "@value" : "One flow of data within a session, in one direction, with one kind of content."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#StreamContent",
+  "@id" : "https://w3id.org/rovo/link#StreamContent",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "GA23"
@@ -1677,17 +1677,17 @@
     "@value" : "A kind of data that a stream carries between the vehicle and the remote station."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#SwitchToRemoteAssistance",
+  "@id" : "https://w3id.org/rovo/link#SwitchToRemoteAssistance",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "BR26"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#Adaptation"
+    "@id" : "https://w3id.org/rovo/link#Adaptation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-10. Available only if the vehicle supports RDOnto-op:RemoteAssistance and its ADS is within its ODD and able to drive (RDOnto-link:ADSCanTakeOver): remote assistance is advice to an ADS-equipped vehicle that is within its ODD (RDOnto-op:RemoteAssistance), and in event-based remote driving the ADS has often left its ODD [BR26]."
+    "@value" : "LK-10. Available only if the vehicle supports ROVO-op:RemoteAssistance and its ADS is within its ODD and able to drive (ROVO-link:ADSCanTakeOver): remote assistance is advice to an ADS-equipped vehicle that is within its ODD (ROVO-op:RemoteAssistance), and in event-based remote driving the ADS has often left its ODD [BR26]."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1697,30 +1697,30 @@
     "@language" : "en",
     "@value" : "Ending remote driving and continuing in remote assistance, in which the ADS drives and the operator only advises."
   } ],
-  "https://w3id.org/rdonto/link#addresses" : [ {
-    "@id" : "https://w3id.org/rdonto/link#DataRateInsufficient"
+  "https://w3id.org/rovo/link#addresses" : [ {
+    "@id" : "https://w3id.org/rovo/link#DataRateInsufficient"
   }, {
-    "@id" : "https://w3id.org/rdonto/link#LatencyOverBudget"
+    "@id" : "https://w3id.org/rovo/link#LatencyOverBudget"
   }, {
-    "@id" : "https://w3id.org/rdonto/link#LatencyUnstable"
+    "@id" : "https://w3id.org/rovo/link#LatencyUnstable"
   } ],
-  "https://w3id.org/rdonto/link#preferenceRank" : [ {
+  "https://w3id.org/rovo/link#preferenceRank" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#integer",
     "@value" : "4"
   } ],
-  "https://w3id.org/rdonto/link#requiresCondition" : [ {
-    "@id" : "https://w3id.org/rdonto/link#ADSCanTakeOver"
+  "https://w3id.org/rovo/link#requiresCondition" : [ {
+    "@id" : "https://w3id.org/rovo/link#ADSCanTakeOver"
   }, {
-    "@id" : "https://w3id.org/rdonto/link#InRemoteDrivingMode"
+    "@id" : "https://w3id.org/rovo/link#InRemoteDrivingMode"
   }, {
-    "@id" : "https://w3id.org/rdonto/link#VehicleSupportsRemoteAssistance"
+    "@id" : "https://w3id.org/rovo/link#VehicleSupportsRemoteAssistance"
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#TeleoperationSession",
+  "@id" : "https://w3id.org/rovo/link#TeleoperationSession",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-01. A session carries one or more RDOnto-op engagements in sequence, all by its one operator: a mode change starts a new engagement, while the session persists. An operator handover at the same station ends the session, even if the network connection stays up; the next operator's session follows it (RDOnto-link:followsSession). A move to another station also starts a new session, since sessionStation is functional; it can follow the earlier one in the same way. Link observations belong to the session. Connection loss does not end a session by itself: the session stays open while the station and the vehicle try to reconnect, and data arriving again continues it. It ends when prov:endedAtTime is set, by the station or the vehicle giving up or by a handover; a connection set up after that is a new session, which follows the ended one (RDOnto-link:followsSession)."
+    "@value" : "LK-01. A session carries one or more ROVO-op engagements in sequence, all by its one operator: a mode change starts a new engagement, while the session persists. An operator handover at the same station ends the session, even if the network connection stays up; the next operator's session follows it (ROVO-link:followsSession). A move to another station also starts a new session, since sessionStation is functional; it can follow the earlier one in the same way. Link observations belong to the session. Connection loss does not end a session by itself: the session stays open while the station and the vehicle try to reconnect, and data arriving again continues it. It ends when prov:endedAtTime is set, by the station or the vehicle giving up or by a handover; a connection set up after that is a new session, which follows the ended one (ROVO-link:followsSession)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1734,7 +1734,7 @@
     "@value" : "The period in which a remote station and a vehicle hold a connection, or try to restore it, with one remote operator at the station, from prov:startedAtTime to prov:endedAtTime."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#TeleoperationSetup",
+  "@id" : "https://w3id.org/rovo/link#TeleoperationSetup",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "GA21b"
@@ -1745,7 +1745,7 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-04, LK-09. Latency limits depend on the setup: vehicle geometry and dynamics [JI25], the precision the task needs [GA21b], and the station and interface. A setup names its operating environment and driving task with RDOnto-op's terms (setupEnvironment, setupTask); A setup can name the vehicles and stations it is valid for (setupVehicle, setupStation); a session may then use it only with one of them."
+    "@value" : "LK-04, LK-09. Latency limits depend on the setup: vehicle geometry and dynamics [JI25], the precision the task needs [GA21b], and the station and interface. A setup names its operating environment and driving task with ROVO-op's terms (setupEnvironment, setupTask); A setup can name the vehicles and stations it is valid for (setupVehicle, setupStation); a session may then use it only with one of them."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1756,13 +1756,13 @@
     "@value" : "A combination of vehicle, remote station and task context for which latency limits are configured, e.g. a passenger car in urban traffic, or a bus manoeuvring at a roadblock."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#Trajectory",
+  "@id" : "https://w3id.org/rovo/link#Trajectory",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "GA21b"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#StreamContent"
+    "@id" : "https://w3id.org/rovo/link#StreamContent"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -1776,18 +1776,18 @@
     "@language" : "en",
     "@value" : "A route, path or trajectory that the operator provides or authorizes, sent to the vehicle for its automation to follow."
   } ],
-  "https://w3id.org/rdonto/link#contentDirection" : [ {
-    "@id" : "https://w3id.org/rdonto/link#StationToVehicle"
+  "https://w3id.org/rovo/link#contentDirection" : [ {
+    "@id" : "https://w3id.org/rovo/link#StationToVehicle"
   } ],
-  "https://w3id.org/rdonto/link#isContinuous" : [ {
+  "https://w3id.org/rovo/link#isContinuous" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
     "@value" : "false"
   } ],
-  "https://w3id.org/rdonto/link#neededInMode" : [ {
-    "@id" : "https://w3id.org/rdonto/op#RemoteAssistance"
+  "https://w3id.org/rovo/link#neededInMode" : [ {
+    "@id" : "https://w3id.org/rovo/op#RemoteAssistance"
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#TravelTolerance",
+  "@id" : "https://w3id.org/rovo/link#TravelTolerance",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "GA21b"
@@ -1803,14 +1803,14 @@
     "@value" : "travel tolerance"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/rdonto/op#ConfiguredLimit"
+    "@id" : "https://w3id.org/rovo/op#ConfiguredLimit"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The longest distance the vehicle may travel during the end-to-end latency, i.e. before an operator command takes effect, in a setup and mode. Value as qudt:numericValue with qudt:unit unit:M, or derived as dimensionlessDelayLimit times the setup's wheelbase."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#VehicleSpeed",
+  "@id" : "https://w3id.org/rovo/link#VehicleSpeed",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.w3.org/ns/sosa/ObservableProperty"
@@ -1828,10 +1828,10 @@
     "@value" : "The speed at which a vehicle is currently moving, in km/h."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#VehicleSupportsRemoteAssistance",
+  "@id" : "https://w3id.org/rovo/link#VehicleSupportsRemoteAssistance",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#AvailabilityCondition"
+    "@id" : "https://w3id.org/rovo/link#AvailabilityCondition"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -1843,10 +1843,10 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
-    "@value" : "The session's vehicle has RDOnto-op:supportsMode RDOnto-op:RemoteAssistance."
+    "@value" : "The session's vehicle has ROVO-op:supportsMode ROVO-op:RemoteAssistance."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#VehicleToStation",
+  "@id" : "https://w3id.org/rovo/link#VehicleToStation",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "FE26"
@@ -1856,7 +1856,7 @@
     "@value" : "MA25"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#Direction"
+    "@id" : "https://w3id.org/rovo/link#Direction"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -1871,7 +1871,7 @@
     "@value" : "From the vehicle to the remote station: the direction of what the vehicle senses and reports."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#VideoFeed",
+  "@id" : "https://w3id.org/rovo/link#VideoFeed",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "GA23"
@@ -1879,7 +1879,7 @@
     "@value" : "NE19b"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/rdonto/link#StreamContent"
+    "@id" : "https://w3id.org/rovo/link#StreamContent"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -1893,50 +1893,50 @@
     "@language" : "en",
     "@value" : "Camera images from the vehicle, sent to the station to be displayed to the operator."
   } ],
-  "https://w3id.org/rdonto/link#contentDirection" : [ {
-    "@id" : "https://w3id.org/rdonto/link#VehicleToStation"
+  "https://w3id.org/rovo/link#contentDirection" : [ {
+    "@id" : "https://w3id.org/rovo/link#VehicleToStation"
   } ],
-  "https://w3id.org/rdonto/link#isContinuous" : [ {
+  "https://w3id.org/rovo/link#isContinuous" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
     "@value" : "true"
   } ],
-  "https://w3id.org/rdonto/link#neededInMode" : [ {
-    "@id" : "https://w3id.org/rdonto/op#RemoteAssistance"
+  "https://w3id.org/rovo/link#neededInMode" : [ {
+    "@id" : "https://w3id.org/rovo/op#RemoteAssistance"
   }, {
-    "@id" : "https://w3id.org/rdonto/op#RemoteDriving"
+    "@id" : "https://w3id.org/rovo/op#RemoteDriving"
   }, {
-    "@id" : "https://w3id.org/rdonto/op#RemoteMonitoring"
+    "@id" : "https://w3id.org/rovo/op#RemoteMonitoring"
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#addresses",
+  "@id" : "https://w3id.org/rovo/link#addresses",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-10. An adaptation is offered for a degradation only if it addresses it; every adaptation addresses at least one (RDOnto-link-shapes.ttl)."
+    "@value" : "LK-10. An adaptation is offered for a degradation only if it addresses it; every adaptation addresses at least one (ROVO-link-shapes.ttl)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#Adaptation"
+    "@id" : "https://w3id.org/rovo/link#Adaptation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "addresses"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/link#Degradation"
+    "@id" : "https://w3id.org/rovo/link#Degradation"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "A degradation that an adaptation is a suitable reaction to."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#adsAbleToDrive",
+  "@id" : "https://w3id.org/rovo/link#adsAbleToDrive",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-10. Interface (RDOnto-todd, vehicle state). False while the cause of a request lasts, e.g. RDOnto-op:SensorFailure, RDOnto-op:PlanFailure or RDOnto-op:PerceptionError, or while the ADS waits for the answer to an assistance request; true again once the ADS reports that it can go on. Kept apart from adsWithinODD, which says only where the vehicle is. Stated only for a vehicle with an ADS, as adsWithinODD is (RDOnto-link-shapes.ttl). Absent means not known, and then the adaptations that need the ADS do not count as available (ADSCanTakeOver)."
+    "@value" : "LK-10. Interface (ROVO-todd, vehicle state). False while the cause of a request lasts, e.g. ROVO-op:SensorFailure, ROVO-op:PlanFailure or ROVO-op:PerceptionError, or while the ADS waits for the answer to an assistance request; true again once the ADS reports that it can go on. Kept apart from adsWithinODD, which says only where the vehicle is. Stated only for a vehicle with an ADS, as adsWithinODD is (ROVO-link-shapes.ttl). Absent means not known, and then the adaptations that need the ADS do not count as available (ADSCanTakeOver)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/op#RemotelyOperatedVehicle"
+    "@id" : "https://w3id.org/rovo/op#RemotelyOperatedVehicle"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1950,14 +1950,14 @@
     "@value" : "Whether the vehicle's ADS is able to perform the DDT now: it has no failure that stops it, and it is not waiting for the operator's help with a situation it cannot manage."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#adsWithinODD",
+  "@id" : "https://w3id.org/rovo/link#adsWithinODD",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-10. Interface (RDOnto-todd). True if the ADS is within its ODD, false if it is outside. Being within the ODD is needed for the ADS to drive but is not enough: an ADS with a failed sensor is within its ODD and cannot drive (adsAbleToDrive). Stated only for a vehicle with an ADS (RDOnto-op:hasADS true); a vehicle without an ADS (hasADS false) has no value, and a value on a vehicle that does not state hasADS true gets a warning (RDOnto-link-shapes.ttl). Absent means not known, and then the adaptations that need the ADS do not count as available (ADSCanTakeOver)."
+    "@value" : "LK-10. Interface (ROVO-todd). True if the ADS is within its ODD, false if it is outside. Being within the ODD is needed for the ADS to drive but is not enough: an ADS with a failed sensor is within its ODD and cannot drive (adsAbleToDrive). Stated only for a vehicle with an ADS (ROVO-op:hasADS true); a vehicle without an ADS (hasADS false) has no value, and a value on a vehicle that does not state hasADS true gets a warning (ROVO-link-shapes.ttl). Absent means not known, and then the adaptations that need the ADS do not count as available (ADSCanTakeOver)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/op#RemotelyOperatedVehicle"
+    "@id" : "https://w3id.org/rovo/op#RemotelyOperatedVehicle"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1971,133 +1971,133 @@
     "@value" : "Whether the vehicle's ADS is currently within its operational design domain."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#againstDeadline",
+  "@id" : "https://w3id.org/rovo/link#againstDeadline",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "LK-05. The deadline a deadline miss share was counted against, so that the answer can name the deadline and its source."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#LatencyStatistic"
+    "@id" : "https://w3id.org/rovo/link#LatencyStatistic"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "against deadline"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/link#DeliveryDeadline"
+    "@id" : "https://w3id.org/rovo/link#DeliveryDeadline"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The delivery deadline against which a deadline miss share was counted."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#appliesToSetup",
+  "@id" : "https://w3id.org/rovo/link#appliesToSetup",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-04, LK-05, LK-12. Scopes a limit (travel tolerance, reference budget, information age limit, latency variation limit, latency agreement tolerance) to one setup. An information age limit scoped to a setup must be no looser than the limit RDOnto-op configures for the same mode, which takes priority; RDOnto-link-shapes.ttl reports a looser one."
+    "@value" : "LK-04, LK-05, LK-12. Scopes a limit (travel tolerance, reference budget, information age limit, latency variation limit, latency agreement tolerance) to one setup. An information age limit scoped to a setup must be no looser than the limit ROVO-op configures for the same mode, which takes priority; ROVO-link-shapes.ttl reports a looser one."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/op#ConfiguredLimit"
+    "@id" : "https://w3id.org/rovo/op#ConfiguredLimit"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "applies to setup"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/link#TeleoperationSetup"
+    "@id" : "https://w3id.org/rovo/link#TeleoperationSetup"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The teleoperation setup to which a configured limit is limited."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#baselineStatistic",
+  "@id" : "https://w3id.org/rovo/link#baselineStatistic",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-05: 'has the latency changed since the session began' is the difference between the latest statistic and the session's baseline statistic of the same kind and part. At most one baseline per kind and part (RDOnto-link-shapes.ttl). Set by the stream layer."
+    "@value" : "LK-05: 'has the latency changed since the session began' is the difference between the latest statistic and the session's baseline statistic of the same kind and part. At most one baseline per kind and part (ROVO-link-shapes.ttl). Set by the stream layer."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#TeleoperationSession"
+    "@id" : "https://w3id.org/rovo/link#TeleoperationSession"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "baseline statistic"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/link#LatencyStatistic"
+    "@id" : "https://w3id.org/rovo/link#LatencyStatistic"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "A statistic over the first window of the session, against which later statistics of the same kind and latency part are compared."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#budgetPart",
+  "@id" : "https://w3id.org/rovo/link#budgetPart",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-04, LK-05, LK-10. For a latency budget: RDOnto-link:ActuatorLatency or RDOnto-link:EndToEndLatency, not RDOnto-link:SensorLatency, whose budget is a RDOnto-op:InformationAgeLimit scoped to the setup (RDOnto-link-shapes.ttl, LatencyBudgetShape). For a latency variation limit: any of the three parts. Its domain is the general limit class, because two limit types use it."
+    "@value" : "LK-04, LK-05, LK-10. For a latency budget: ROVO-link:ActuatorLatency or ROVO-link:EndToEndLatency, not ROVO-link:SensorLatency, whose budget is a ROVO-op:InformationAgeLimit scoped to the setup (ROVO-link-shapes.ttl, LatencyBudgetShape). For a latency variation limit: any of the three parts. Its domain is the general limit class, because two limit types use it."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/op#ConfiguredLimit"
+    "@id" : "https://w3id.org/rovo/op#ConfiguredLimit"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "budget part"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/link#LatencyPart"
+    "@id" : "https://w3id.org/rovo/link#LatencyPart"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The latency part that a latency budget or a latency variation limit is for."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#carriesEngagement",
+  "@id" : "https://w3id.org/rovo/link#carriesEngagement",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-01. The engagements, in sequence, that the session has carried. The current one has no prov:endedAtTime. Its operation mode selects the latency budget (LK-04). Every carried engagement's RDOnto-op:engagedOperator must be the session's sessionOperator; this is a closed-world rule checked by SHACL (RDOnto-link-shapes.ttl, SessionShape), not an OWL axiom."
+    "@value" : "LK-01. The engagements, in sequence, that the session has carried. The current one has no prov:endedAtTime. Its operation mode selects the latency budget (LK-04). Every carried engagement's ROVO-op:engagedOperator must be the session's sessionOperator; this is a closed-world rule checked by SHACL (ROVO-link-shapes.ttl, SessionShape), not an OWL axiom."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#TeleoperationSession"
+    "@id" : "https://w3id.org/rovo/link#TeleoperationSession"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "carries engagement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/op#Engagement"
+    "@id" : "https://w3id.org/rovo/op#Engagement"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "An engagement that takes place over the connection of a teleoperation session."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#contentDirection",
+  "@id" : "https://w3id.org/rovo/link#contentDirection",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-02. What the vehicle produces flows to the station, what the operator produces flows to the vehicle. A stream's streamDirection must agree with the direction of its content (RDOnto-link-shapes.ttl, StreamShape); a content without a value may flow either way."
+    "@value" : "LK-02. What the vehicle produces flows to the station, what the operator produces flows to the vehicle. A stream's streamDirection must agree with the direction of its content (ROVO-link-shapes.ttl, StreamShape); a content without a value may flow either way."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#StreamContent"
+    "@id" : "https://w3id.org/rovo/link#StreamContent"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "content direction"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/link#Direction"
+    "@id" : "https://w3id.org/rovo/link#Direction"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The direction in which streams with this content flow."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#dimensionlessDelayLimit",
+  "@id" : "https://w3id.org/rovo/link#dimensionlessDelayLimit",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "JI25"
@@ -2107,7 +2107,7 @@
     "@value" : "LK-04, LK-09. Alternative to a value in metres: the largest acceptable speed x latency / wheelbase [JI25]. JI25 derives the stability boundary (about 2.52 on straight paths with their best gains); an acceptable limit for driving quality is lower and is configuration."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#TravelTolerance"
+    "@id" : "https://w3id.org/rovo/link#TravelTolerance"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2121,42 +2121,42 @@
     "@value" : "The largest acceptable dimensionless delay in a setup and mode, i.e. vehicle speed times end-to-end latency divided by wheelbase."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#duringSession",
+  "@id" : "https://w3id.org/rovo/link#duringSession",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-07. A time relation, whatever the cause of the manoeuvre: the cause, where it is a link degradation, is given by triggeredBy. The manoeuvre starts within the session, and the session's vehicle is the one that performs it (RDOnto-link-shapes.ttl)."
+    "@value" : "LK-07. A time relation, whatever the cause of the manoeuvre: the cause, where it is a link degradation, is given by triggeredBy. The manoeuvre starts within the session, and the session's vehicle is the one that performs it (ROVO-link-shapes.ttl)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#MinimalRiskManoeuvre"
+    "@id" : "https://w3id.org/rovo/link#MinimalRiskManoeuvre"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "during session"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/link#TeleoperationSession"
+    "@id" : "https://w3id.org/rovo/link#TeleoperationSession"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The teleoperation session that was open for the vehicle when a minimal risk manoeuvre started."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#followsSession",
+  "@id" : "https://w3id.org/rovo/link#followsSession",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-01. Lets the link history be followed across a handover, also to an operator at another station. Baseline statistics stay per session, so the new session has its own (RDOnto-link-shapes.ttl checks the vehicle and the times)."
+    "@value" : "LK-01. Lets the link history be followed across a handover, also to an operator at another station. Baseline statistics stay per session, so the new session has its own (ROVO-link-shapes.ttl checks the vehicle and the times)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#TeleoperationSession"
+    "@id" : "https://w3id.org/rovo/link#TeleoperationSession"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "follows session"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/link#TeleoperationSession"
+    "@id" : "https://w3id.org/rovo/link#TeleoperationSession"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://www.w3.org/ns/prov#wasInformedBy"
@@ -2166,98 +2166,98 @@
     "@value" : "The earlier, ended session with the same vehicle that a session replaced, at the same or another station, e.g. at an operator handover."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#forContent",
+  "@id" : "https://w3id.org/rovo/link#forContent",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "LK-05, LK-07. Its domain is the general limit class, because two limit types use it."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/op#ConfiguredLimit"
+    "@id" : "https://w3id.org/rovo/op#ConfiguredLimit"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "for content"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/link#StreamContent"
+    "@id" : "https://w3id.org/rovo/link#StreamContent"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The stream content that a connection timeout or a delivery deadline is for."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#hasChannel",
+  "@id" : "https://w3id.org/rovo/link#hasChannel",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-06. Static: the station's camera views and other channels. RDOnto-op:availableChannel says which of them an engagement currently has; a view that was switched off is still a channel of the station, so the views a mode needs (viewNeededInMode) can be found when they are not available. Because a station shows one vehicle at a time (RemoteStation), its channels belong to the one open session."
+    "@value" : "LK-06. Static: the station's camera views and other channels. ROVO-op:availableChannel says which of them an engagement currently has; a view that was switched off is still a channel of the station, so the views a mode needs (viewNeededInMode) can be found when they are not available. Because a station shows one vehicle at a time (RemoteStation), its channels belong to the one open session."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#RemoteStation"
+    "@id" : "https://w3id.org/rovo/link#RemoteStation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "has channel"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/op#InformationChannel"
+    "@id" : "https://w3id.org/rovo/op#InformationChannel"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "An information channel the station is equipped with, whether or not it is available right now."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#hasStreamContent",
+  "@id" : "https://w3id.org/rovo/link#hasStreamContent",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "LK-02, LK-07. Decides whether the current mode depends on the stream (neededInMode) and which connection timeout applies to it."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#Stream"
+    "@id" : "https://w3id.org/rovo/link#Stream"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "has stream content"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/link#StreamContent"
+    "@id" : "https://w3id.org/rovo/link#StreamContent"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The kind of data a stream carries."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#inSession",
+  "@id" : "https://w3id.org/rovo/link#inSession",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "LK-02. The streams of a session are the answer to which streams it carries."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#Stream"
+    "@id" : "https://w3id.org/rovo/link#Stream"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "in session"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/link#TeleoperationSession"
+    "@id" : "https://w3id.org/rovo/link#TeleoperationSession"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The teleoperation session a stream belongs to."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#isContinuous",
+  "@id" : "https://w3id.org/rovo/link#isContinuous",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-07. True for the video feed, the sensor feed and control commands, which are sent at a fixed rate; false for trajectory input and proposed trajectories, which are sent only when there is one. Only continuous content is tested for silence, so only it has a connection timeout (RDOnto-link-shapes.ttl)."
+    "@value" : "LK-07. True for the video feed, the sensor feed and control commands, which are sent at a fixed rate; false for trajectory input and proposed trajectories, which are sent only when there is one. Only continuous content is tested for silence, so only it has a connection timeout (ROVO-link-shapes.ttl)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#StreamContent"
+    "@id" : "https://w3id.org/rovo/link#StreamContent"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2271,14 +2271,14 @@
     "@value" : "Whether streams with this content carry data all the time while the session is up, so that silence on them means the connection is lost."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#lastReceivedAt",
+  "@id" : "https://w3id.org/rovo/link#lastReceivedAt",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "LK-07. Kept current by the stream layer."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#Stream"
+    "@id" : "https://w3id.org/rovo/link#Stream"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2292,28 +2292,28 @@
     "@value" : "The time at which data last arrived on a stream."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#manoeuvreKind",
+  "@id" : "https://w3id.org/rovo/link#manoeuvreKind",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "LK-07. The kind of a minimal risk manoeuvre."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#MinimalRiskManoeuvre"
+    "@id" : "https://w3id.org/rovo/link#MinimalRiskManoeuvre"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "manoeuvre kind"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/link#MinimalRiskManoeuvreKind"
+    "@id" : "https://w3id.org/rovo/link#MinimalRiskManoeuvreKind"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The kind of minimal risk manoeuvre that a vehicle performs."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#maximumDrivingSpeed",
+  "@id" : "https://w3id.org/rovo/link#maximumDrivingSpeed",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "GA21b"
@@ -2323,7 +2323,7 @@
     "@value" : "Configuration, in km/h: the highest speed the setup is meant to be driven at remotely, whatever the latency. It caps the admissible speed of LK-09, which the travel tolerance alone would let grow without bound as the latency falls. GA21b's Direct Control budgets hold up to 50 km/h."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#TeleoperationSetup"
+    "@id" : "https://w3id.org/rovo/link#TeleoperationSetup"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2337,7 +2337,7 @@
     "@value" : "The highest speed, in km/h, at which the setup is meant to be driven remotely, whatever the latency."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#minimumDataRate",
+  "@id" : "https://w3id.org/rovo/link#minimumDataRate",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "NE19b"
@@ -2346,10 +2346,10 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-06, LK-10. Configuration: the data rate, in Mbit/s, a camera view needs at the lowest quality still acceptable for driving. Not above requiredDataRate. Between the two sums the data rate is enough only with reduced video quality (RDOnto-link:ReduceVideoQuality); below the sum of the minimum rates it is not enough at any quality. NE19b: at least 3 Mbit/s for video."
+    "@value" : "LK-06, LK-10. Configuration: the data rate, in Mbit/s, a camera view needs at the lowest quality still acceptable for driving. Not above requiredDataRate. Between the two sums the data rate is enough only with reduced video quality (ROVO-link:ReduceVideoQuality); below the sum of the minimum rates it is not enough at any quality. NE19b: at least 3 Mbit/s for video."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/op#CameraView"
+    "@id" : "https://w3id.org/rovo/op#CameraView"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2363,14 +2363,14 @@
     "@value" : "The data rate, in Mbit/s, that a camera view needs at the lowest quality still acceptable for driving."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#minimumDrivingSpeed",
+  "@id" : "https://w3id.org/rovo/link#minimumDrivingSpeed",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Configuration, in km/h: below this speed, driving on is not useful for the setup's task, so reducing speed no longer counts as an available adaptation (LK-10)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#TeleoperationSetup"
+    "@id" : "https://w3id.org/rovo/link#TeleoperationSetup"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2384,7 +2384,7 @@
     "@value" : "The lowest speed, in km/h, at which driving on is still useful for the setup's task."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#neededInMode",
+  "@id" : "https://w3id.org/rovo/link#neededInMode",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "GA21b"
@@ -2393,24 +2393,24 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Static knowledge: which content an operation mode depends on (LK-02). A need stated for RDOnto-op:RemoteDriving holds for both of its narrower modes (RDOnto-op:broaderMode). Direct Control ToD sends manoeuvre commands to the vehicle; Indirect Control ToD sends route or pathway information [GA21b, GA23]."
+    "@value" : "Static knowledge: which content an operation mode depends on (LK-02). A need stated for ROVO-op:RemoteDriving holds for both of its narrower modes (ROVO-op:broaderMode). Direct Control ToD sends manoeuvre commands to the vehicle; Indirect Control ToD sends route or pathway information [GA21b, GA23]."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#StreamContent"
+    "@id" : "https://w3id.org/rovo/link#StreamContent"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "needed in mode"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/op#OperationMode"
+    "@id" : "https://w3id.org/rovo/op#OperationMode"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "An operation mode that cannot be performed without streams of this content."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#observedSession",
+  "@id" : "https://w3id.org/rovo/link#observedSession",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -2424,63 +2424,63 @@
     "@value" : "observed session"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/link#TeleoperationSession"
+    "@id" : "https://w3id.org/rovo/link#TeleoperationSession"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The teleoperation session whose latency a latency observation, or a mean or standard deviation of a latency part, is about."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#overriddenAdaptation",
+  "@id" : "https://w3id.org/rovo/link#overriddenAdaptation",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "LK-10."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#AdaptationRankOverride"
+    "@id" : "https://w3id.org/rovo/link#AdaptationRankOverride"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "overridden adaptation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/link#Adaptation"
+    "@id" : "https://w3id.org/rovo/link#Adaptation"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The adaptation whose preference rank a rank override replaces."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#overrideDegradation",
+  "@id" : "https://w3id.org/rovo/link#overrideDegradation",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "LK-10. Optional. Without it, the override holds for every degradation."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#AdaptationRankOverride"
+    "@id" : "https://w3id.org/rovo/link#AdaptationRankOverride"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "override degradation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/link#Degradation"
+    "@id" : "https://w3id.org/rovo/link#Degradation"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The degradation for which a rank override holds."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#overrideRank",
+  "@id" : "https://w3id.org/rovo/link#overrideRank",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "LK-10. Lower is preferred."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#AdaptationRankOverride"
+    "@id" : "https://w3id.org/rovo/link#AdaptationRankOverride"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2494,56 +2494,56 @@
     "@value" : "The preference rank that a rank override puts in place of the adaptation's default."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#overrideSetup",
+  "@id" : "https://w3id.org/rovo/link#overrideSetup",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "LK-10. Optional. Without it, the override holds for every setup."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#AdaptationRankOverride"
+    "@id" : "https://w3id.org/rovo/link#AdaptationRankOverride"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "override setup"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/link#TeleoperationSetup"
+    "@id" : "https://w3id.org/rovo/link#TeleoperationSetup"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The teleoperation setup for which a rank override holds."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#performedBy",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "@id" : "https://w3id.org/rovo/link#performedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty", "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-07. Where the manoeuvre names a session (duringSession), this is that session's vehicle (RDOnto-link-shapes.ttl)."
+    "@value" : "LK-07. Where the manoeuvre names a session (duringSession), this is that session's vehicle (ROVO-link-shapes.ttl)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#MinimalRiskManoeuvre"
+    "@id" : "https://w3id.org/rovo/link#MinimalRiskManoeuvre"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "performed by"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/op#RemotelyOperatedVehicle"
+    "@id" : "https://w3id.org/rovo/op#RemotelyOperatedVehicle"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The vehicle that performs a minimal risk manoeuvre."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#predictedDataRate",
+  "@id" : "https://w3id.org/rovo/link#predictedDataRate",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "LK-06, LK-08."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#DataRatePrediction"
+    "@id" : "https://w3id.org/rovo/link#DataRatePrediction"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2557,77 +2557,77 @@
     "@value" : "The data rate that is expected to be available to the vehicle-to-station video streams of the session, taken together, over the window of a data rate prediction, in Mbit/s."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#predictedFor",
+  "@id" : "https://w3id.org/rovo/link#predictedFor",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "LK-08. A prediction is for exactly one session."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#LinkPrediction"
+    "@id" : "https://w3id.org/rovo/link#LinkPrediction"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "predicted for"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/link#TeleoperationSession"
+    "@id" : "https://w3id.org/rovo/link#TeleoperationSession"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The teleoperation session whose link a prediction is about."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#predictedOnSegment",
+  "@id" : "https://w3id.org/rovo/link#predictedOnSegment",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "LK-08. Optional: the segment of the planned route a prediction is for. validFrom and validUntil are then the times the vehicle is expected to enter and leave the segment."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#LinkPrediction"
+    "@id" : "https://w3id.org/rovo/link#LinkPrediction"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "predicted on segment"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/link#RouteSegment"
+    "@id" : "https://w3id.org/rovo/link#RouteSegment"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The segment of the planned route that a link prediction is for."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#predictedPart",
+  "@id" : "https://w3id.org/rovo/link#predictedPart",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "LK-08. Sensor, actuator or end-to-end latency, so that a predicted value is compared with the limit for the same part."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#LatencyPrediction"
+    "@id" : "https://w3id.org/rovo/link#LatencyPrediction"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "predicted part"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/link#LatencyPart"
+    "@id" : "https://w3id.org/rovo/link#LatencyPart"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The latency part whose value a latency prediction gives."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#predictedValue",
+  "@id" : "https://w3id.org/rovo/link#predictedValue",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty", "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "LK-08, LK-09. Compared with the limits as a measured latency is; with it, LK-09 gives the admissible speed for the predicted latency."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#LatencyPrediction"
+    "@id" : "https://w3id.org/rovo/link#LatencyPrediction"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2641,14 +2641,14 @@
     "@value" : "The latency expected over the window of a latency prediction, as a duration."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#predictionConfidence",
+  "@id" : "https://w3id.org/rovo/link#predictionConfidence",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "LK-08. KO21 describes a prediction as expected values with their variances."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#LinkPrediction"
+    "@id" : "https://w3id.org/rovo/link#LinkPrediction"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2662,14 +2662,14 @@
     "@value" : "How likely its source takes a link prediction to be right, between 0 and 1."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#preferenceRank",
+  "@id" : "https://w3id.org/rovo/link#preferenceRank",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-10. Configuration: lower is preferred. The default rank of an adaptation; no two adaptations share one (RDOnto-link-shapes.ttl). The rank used for a degradation in a setup is that of the most specific AdaptationRankOverride (setup and degradation, then setup, then degradation), otherwise this default; where two adaptations then have the same rank, the one with the lower default is preferred. An adaptation is available when every condition it requires holds (requiresCondition). The recommended adaptation is the available one with the lowest rank that addresses the degradation."
+    "@value" : "LK-10. Configuration: lower is preferred. The default rank of an adaptation; no two adaptations share one (ROVO-link-shapes.ttl). The rank used for a degradation in a setup is that of the most specific AdaptationRankOverride (setup and degradation, then setup, then degradation), otherwise this default; where two adaptations then have the same rank, the one with the lower default is preferred. An adaptation is available when every condition it requires holds (requiresCondition). The recommended adaptation is the available one with the lowest rank that addresses the degradation."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#Adaptation"
+    "@id" : "https://w3id.org/rovo/link#Adaptation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2683,7 +2683,7 @@
     "@value" : "The default position of an adaptation in the order of preference; a lower number is preferred."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#requiredDataRate",
+  "@id" : "https://w3id.org/rovo/link#requiredDataRate",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "FE26"
@@ -2694,10 +2694,10 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-06. Configuration: the data rate, in Mbit/s, a camera view needs at its configured quality. The views the operator currently needs are the station's camera views (hasChannel) that are needed in the mode of the current engagement (viewNeededInMode), whether or not they are available right now; LK-06 compares the sum of their required rates with the available rate of the vehicle-to-station video streams. Only if no view of the station states a need for any mode are the available views (RDOnto-op:availableChannel) taken as the needed ones. So switching a needed view off does not make the data rate sufficient. SH21 allocates bitrate across camera views by their importance."
+    "@value" : "LK-06. Configuration: the data rate, in Mbit/s, a camera view needs at its configured quality. The views the operator currently needs are the station's camera views (hasChannel) that are needed in the mode of the current engagement (viewNeededInMode), whether or not they are available right now; LK-06 compares the sum of their required rates with the available rate of the vehicle-to-station video streams. Only if no view of the station states a need for any mode are the available views (ROVO-op:availableChannel) taken as the needed ones. So switching a needed view off does not make the data rate sufficient. SH21 allocates bitrate across camera views by their importance."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/op#CameraView"
+    "@id" : "https://w3id.org/rovo/op#CameraView"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2711,42 +2711,42 @@
     "@value" : "The data rate, in Mbit/s, that a camera view needs at its configured quality."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#requiresCondition",
+  "@id" : "https://w3id.org/rovo/link#requiresCondition",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "LK-10. A condition that must hold for the adaptation to be available; all of them must hold. Rerouting also needs an alternative route, which the route module knows (interface; no condition here). An adaptation without a condition is always available."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#Adaptation"
+    "@id" : "https://w3id.org/rovo/link#Adaptation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "requires condition"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/link#AvailabilityCondition"
+    "@id" : "https://w3id.org/rovo/link#AvailabilityCondition"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "A condition that must hold for an adaptation to be available."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#sessionOperator",
+  "@id" : "https://w3id.org/rovo/link#sessionOperator",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "LK-01. A different operator means a new session (operator handover). Not derived from the engagements by a property chain: with a functional property, two operators would be merged by owl:sameAs instead of being reported."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#TeleoperationSession"
+    "@id" : "https://w3id.org/rovo/link#TeleoperationSession"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "session operator"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/op#RemoteOperator"
+    "@id" : "https://w3id.org/rovo/op#RemoteOperator"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://www.w3.org/ns/prov#wasAssociatedWith"
@@ -2756,217 +2756,217 @@
     "@value" : "The one remote operator who is at the station for the whole of a teleoperation session."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#sessionStation",
+  "@id" : "https://w3id.org/rovo/link#sessionStation",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-01. A session has exactly one; a move to another station starts a new session. A station has at most one open session at a time (RDOnto-link-shapes.ttl)."
+    "@value" : "LK-01. A session has exactly one; a move to another station starts a new session. A station has at most one open session at a time (ROVO-link-shapes.ttl)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#TeleoperationSession"
+    "@id" : "https://w3id.org/rovo/link#TeleoperationSession"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "session station"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/link#RemoteStation"
+    "@id" : "https://w3id.org/rovo/link#RemoteStation"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The remote station that a teleoperation session connects to the vehicle."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#sessionVehicle",
+  "@id" : "https://w3id.org/rovo/link#sessionVehicle",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty", "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-01. A session has exactly one, and a vehicle has at most one open session at a time (RDOnto-link-shapes.ttl)."
+    "@value" : "LK-01. A session has exactly one, and a vehicle has at most one open session at a time (ROVO-link-shapes.ttl)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#TeleoperationSession"
+    "@id" : "https://w3id.org/rovo/link#TeleoperationSession"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "session vehicle"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/op#RemotelyOperatedVehicle"
+    "@id" : "https://w3id.org/rovo/op#RemotelyOperatedVehicle"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The vehicle that a teleoperation session connects to the remote station."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#setupEnvironment",
+  "@id" : "https://w3id.org/rovo/link#setupEnvironment",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "The operating environment the setup is for (RDOnto-op SA-06)."
+    "@value" : "The operating environment the setup is for (ROVO-op SA-06)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#TeleoperationSetup"
+    "@id" : "https://w3id.org/rovo/link#TeleoperationSetup"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "setup environment"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/op#OperatingEnvironment"
+    "@id" : "https://w3id.org/rovo/op#OperatingEnvironment"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The operating environment that a teleoperation setup is for."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#setupStation",
+  "@id" : "https://w3id.org/rovo/link#setupStation",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "LK-04. As setupVehicle: a session that uses the setup must be at one of them, where the setup names any."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#TeleoperationSetup"
+    "@id" : "https://w3id.org/rovo/link#TeleoperationSetup"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "setup station"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/link#RemoteStation"
+    "@id" : "https://w3id.org/rovo/link#RemoteStation"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "A remote station that the limits of a teleoperation setup were configured for."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#setupTask",
+  "@id" : "https://w3id.org/rovo/link#setupTask",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "The driving task the setup is for (RDOnto-op SA-06); with it, a travel tolerance encodes the precision the task needs [GA21b]."
+    "@value" : "The driving task the setup is for (ROVO-op SA-06); with it, a travel tolerance encodes the precision the task needs [GA21b]."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#TeleoperationSetup"
+    "@id" : "https://w3id.org/rovo/link#TeleoperationSetup"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "setup task"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/op#DrivingTask"
+    "@id" : "https://w3id.org/rovo/op#DrivingTask"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The driving task that a teleoperation setup is for."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#setupVehicle",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@id" : "https://w3id.org/rovo/link#setupVehicle",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-04. A setup can name several, e.g. a fleet of one model. A session that uses the setup must have one of them as its vehicle, where the setup names any (RDOnto-link-shapes.ttl)."
+    "@value" : "LK-04. A setup can name several, e.g. a fleet of one model. A session that uses the setup must have one of them as its vehicle, where the setup names any (ROVO-link-shapes.ttl)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#TeleoperationSetup"
+    "@id" : "https://w3id.org/rovo/link#TeleoperationSetup"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "setup vehicle"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/op#RemotelyOperatedVehicle"
+    "@id" : "https://w3id.org/rovo/op#RemotelyOperatedVehicle"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "A vehicle that the limits of a teleoperation setup were configured for."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#showsLinkInformation",
+  "@id" : "https://w3id.org/rovo/link#showsLinkInformation",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-11. A display shows at least one kind (RDOnto-link-shapes.ttl)."
+    "@value" : "LK-11. A display shows at least one kind (ROVO-link-shapes.ttl)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#LinkStateDisplay"
+    "@id" : "https://w3id.org/rovo/link#LinkStateDisplay"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "shows link information"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/link#LinkInformation"
+    "@id" : "https://w3id.org/rovo/link#LinkInformation"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "A kind of link information that a link state display shows the operator."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#statistic",
+  "@id" : "https://w3id.org/rovo/link#statistic",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-05. The kind decides what the value is: a duration for a mean or standard deviation, a share between 0 and 1 for deadline misses (RDOnto-link-shapes.ttl)."
+    "@value" : "LK-05. The kind decides what the value is: a duration for a mean or standard deviation, a share between 0 and 1 for deadline misses (ROVO-link-shapes.ttl)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#LatencyStatistic"
+    "@id" : "https://w3id.org/rovo/link#LatencyStatistic"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "statistic"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/link#StatisticKind"
+    "@id" : "https://w3id.org/rovo/link#StatisticKind"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The kind of statistic that a latency statistic gives: a mean, a standard deviation or a deadline miss share."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#streamDirection",
+  "@id" : "https://w3id.org/rovo/link#streamDirection",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-02. Agrees with the direction of the stream's content, where the content states one (contentDirection; RDOnto-link-shapes.ttl)."
+    "@value" : "LK-02. Agrees with the direction of the stream's content, where the content states one (contentDirection; ROVO-link-shapes.ttl)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#Stream"
+    "@id" : "https://w3id.org/rovo/link#Stream"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "stream direction"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/link#Direction"
+    "@id" : "https://w3id.org/rovo/link#Direction"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The direction in which a stream flows: from the vehicle to the station, or from the station to the vehicle."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#triggeredBy",
+  "@id" : "https://w3id.org/rovo/link#triggeredBy",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-07. The kind of link problem that triggered the manoeuvre, e.g. RDOnto-link:ConnectionLost. Absent for a manoeuvre with another cause."
+    "@value" : "LK-07. The kind of link problem that triggered the manoeuvre, e.g. ROVO-link:ConnectionLost. Absent for a manoeuvre with another cause."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#MinimalRiskManoeuvre"
+    "@id" : "https://w3id.org/rovo/link#MinimalRiskManoeuvre"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "triggered by"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/link#Degradation"
+    "@id" : "https://w3id.org/rovo/link#Degradation"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The kind of link degradation that triggered a minimal risk manoeuvre."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#upToSpeed",
+  "@id" : "https://w3id.org/rovo/link#upToSpeed",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -2984,28 +2984,28 @@
     "@value" : "The highest vehicle speed, in km/h, at which a latency budget or a required lead time applies."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#usesSetup",
+  "@id" : "https://w3id.org/rovo/link#usesSetup",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-04, LK-09. A session uses exactly one setup; it scopes the travel tolerance, the reference budgets and the setup's information age limit. Where the setup names vehicles or stations, the session's are among them (RDOnto-link-shapes.ttl)."
+    "@value" : "LK-04, LK-09. A session uses exactly one setup; it scopes the travel tolerance, the reference budgets and the setup's information age limit. Where the setup names vehicles or stations, the session's are among them (ROVO-link-shapes.ttl)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#TeleoperationSession"
+    "@id" : "https://w3id.org/rovo/link#TeleoperationSession"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "uses setup"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/link#TeleoperationSetup"
+    "@id" : "https://w3id.org/rovo/link#TeleoperationSetup"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "The teleoperation setup whose limits apply to a session."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#validFrom",
+  "@id" : "https://w3id.org/rovo/link#validFrom",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "GA23"
@@ -3014,10 +3014,10 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-08. The lead time of a prediction is validFrom minus its issue time (prov:generatedAtTime), which is compared with the RequiredLeadTime; a prediction is issued no later than its window starts (RDOnto-link-shapes.ttl). GA23 and KO21 call the time ahead the prediction horizon."
+    "@value" : "LK-08. The lead time of a prediction is validFrom minus its issue time (prov:generatedAtTime), which is compared with the RequiredLeadTime; a prediction is issued no later than its window starts (ROVO-link-shapes.ttl). GA23 and KO21 call the time ahead the prediction horizon."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#LinkPrediction"
+    "@id" : "https://w3id.org/rovo/link#LinkPrediction"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -3031,14 +3031,14 @@
     "@value" : "The start of the future window that a link prediction holds for."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#validUntil",
+  "@id" : "https://w3id.org/rovo/link#validUntil",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-08. After validFrom (RDOnto-link-shapes.ttl)."
+    "@value" : "LK-08. After validFrom (ROVO-link-shapes.ttl)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#LinkPrediction"
+    "@id" : "https://w3id.org/rovo/link#LinkPrediction"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -3052,31 +3052,31 @@
     "@value" : "The end of the future window that a link prediction holds for."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#viewNeededInMode",
+  "@id" : "https://w3id.org/rovo/link#viewNeededInMode",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "SH21"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "LK-06. Configuration per station: the camera view is needed to operate in this mode. A need stated for a broader mode holds for its narrower modes (RDOnto-op:broaderMode). SH21 weights camera views by their importance for the driving situation."
+    "@value" : "LK-06. Configuration per station: the camera view is needed to operate in this mode. A need stated for a broader mode holds for its narrower modes (ROVO-op:broaderMode). SH21 weights camera views by their importance for the driving situation."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/op#CameraView"
+    "@id" : "https://w3id.org/rovo/op#CameraView"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "view needed in mode"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/rdonto/op#OperationMode"
+    "@id" : "https://w3id.org/rovo/op#OperationMode"
   } ],
   "http://www.w3.org/2004/02/skos/core#definition" : [ {
     "@language" : "en",
     "@value" : "An operation mode that the operator cannot perform without this camera view."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#wheelbase",
+  "@id" : "https://w3id.org/rovo/link#wheelbase",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://purl.org/dc/terms/source" : [ {
     "@value" : "JI25"
@@ -3086,7 +3086,7 @@
     "@value" : "LK-04, LK-09. A setup with a wheelbase is for vehicles of that wheelbase only. JI25 scales delay by speed over wheelbase."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#TeleoperationSetup"
+    "@id" : "https://w3id.org/rovo/link#TeleoperationSetup"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -3100,14 +3100,14 @@
     "@value" : "The distance between the front and rear axles of the setup's vehicles, in metres."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#windowEnd",
+  "@id" : "https://w3id.org/rovo/link#windowEnd",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "LK-05. The latest statistic is the one with the latest window end. Window start and end are xsd:dateTime literals, so the stream layer can compare them."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#LatencyStatistic"
+    "@id" : "https://w3id.org/rovo/link#LatencyStatistic"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -3121,14 +3121,14 @@
     "@value" : "The end of the time window that a latency statistic was computed over."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/link#windowStart",
+  "@id" : "https://w3id.org/rovo/link#windowStart",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "LK-05."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/rdonto/link#LatencyStatistic"
+    "@id" : "https://w3id.org/rovo/link#LatencyStatistic"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -3142,114 +3142,114 @@
     "@value" : "The start of the time window that a latency statistic was computed over."
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#ActuatorLatencyLimit",
+  "@id" : "https://w3id.org/rovo/op#ActuatorLatencyLimit",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#CameraView",
+  "@id" : "https://w3id.org/rovo/op#CameraView",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#ConfiguredLimit",
+  "@id" : "https://w3id.org/rovo/op#ConfiguredLimit",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#Cue",
+  "@id" : "https://w3id.org/rovo/op#Cue",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#DisplayedScene",
+  "@id" : "https://w3id.org/rovo/op#DisplayedScene",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#DrivingTask",
+  "@id" : "https://w3id.org/rovo/op#DrivingTask",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#ElementStateChange",
+  "@id" : "https://w3id.org/rovo/op#ElementStateChange",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#Engagement",
+  "@id" : "https://w3id.org/rovo/op#Engagement",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#FallbackReadyPeriod",
+  "@id" : "https://w3id.org/rovo/op#FallbackReadyPeriod",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#Impairment",
+  "@id" : "https://w3id.org/rovo/op#Impairment",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#ImpairmentObservation",
+  "@id" : "https://w3id.org/rovo/op#ImpairmentObservation",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#InformationAgeLimit",
+  "@id" : "https://w3id.org/rovo/op#InformationAgeLimit",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#InformationChannel",
+  "@id" : "https://w3id.org/rovo/op#InformationChannel",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#LatencyChangeLimit",
+  "@id" : "https://w3id.org/rovo/op#LatencyChangeLimit",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#MinimumBreakLength",
+  "@id" : "https://w3id.org/rovo/op#MinimumBreakLength",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#OnBoardDriver",
+  "@id" : "https://w3id.org/rovo/op#OnBoardDriver",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#OperatingEnvironment",
+  "@id" : "https://w3id.org/rovo/op#OperatingEnvironment",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#OperationMode",
+  "@id" : "https://w3id.org/rovo/op#OperationMode",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#OperatorTask",
+  "@id" : "https://w3id.org/rovo/op#OperatorTask",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#PerceptionAssertion",
+  "@id" : "https://w3id.org/rovo/op#PerceptionAssertion",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#PerceptionConfidenceThreshold",
+  "@id" : "https://w3id.org/rovo/op#PerceptionConfidenceThreshold",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#RemoteAssistance",
+  "@id" : "https://w3id.org/rovo/op#RemoteAssistance",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#RemoteDriving",
+  "@id" : "https://w3id.org/rovo/op#RemoteDriving",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#RemoteMonitoring",
+  "@id" : "https://w3id.org/rovo/op#RemoteMonitoring",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#RemoteOperator",
+  "@id" : "https://w3id.org/rovo/op#RemoteOperator",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#RemotelyOperatedVehicle",
+  "@id" : "https://w3id.org/rovo/op#RemotelyOperatedVehicle",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#Request",
+  "@id" : "https://w3id.org/rovo/op#Request",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#RequestReason",
+  "@id" : "https://w3id.org/rovo/op#RequestReason",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#RequestType",
+  "@id" : "https://w3id.org/rovo/op#RequestType",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#SAEvidence",
+  "@id" : "https://w3id.org/rovo/op#SAEvidence",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#SARequirement",
+  "@id" : "https://w3id.org/rovo/op#SARequirement",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#SAType",
+  "@id" : "https://w3id.org/rovo/op#SAType",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#SensorFrame",
+  "@id" : "https://w3id.org/rovo/op#SensorFrame",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#TakeoverReason",
+  "@id" : "https://w3id.org/rovo/op#TakeoverReason",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#TimeOnTaskLimit",
+  "@id" : "https://w3id.org/rovo/op#TimeOnTaskLimit",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#WorkloadBand",
+  "@id" : "https://w3id.org/rovo/op#WorkloadBand",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#WorkloadEstimate",
+  "@id" : "https://w3id.org/rovo/op#WorkloadEstimate",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 } ]

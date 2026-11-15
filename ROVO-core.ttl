@@ -1,5 +1,5 @@
-@prefix RDOnto-core: <https://w3id.org/rdonto/core#> .
-@prefix RDOnto-op:   <https://w3id.org/rdonto/op#> .
+@prefix ROVO-core: <https://w3id.org/rovo/core#> .
+@prefix ROVO-op:   <https://w3id.org/rovo/op#> .
 @prefix owl:      <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
@@ -9,9 +9,9 @@
 @prefix tec:      <http://purl.org/auto/traffic_entity_core#> .
 @prefix l4:       <http://purl.org/auto/l4_core#> .
 
-# Remote Driving Ontology: upper alignment module (RDOnto-core).
+# Remote Operation of Vehicles Ontology: upper alignment module (ROVO-core).
 # Holds every cross-source axiom, so each reused source stays replaceable.
-# Version 1.0, for RDOnto-op 1.0 and RDOnto-link 1.0. The module imports RDOnto-op, asserts the tasks of the remote
+# Version 1.0, for ROVO-op 1.0 and ROVO-link 1.0. The module imports ROVO-op, asserts the tasks of the remote
 # driving mode, which are EDMC classes, and declares the SKOS mapping properties
 # it uses.
 #
@@ -23,41 +23,41 @@
 #
 # Reused classes are declared at the end (MIREOT style): original IRI,
 # rdfs:isDefinedBy the source ontology, and one superclass link that the source
-# hierarchy entails. This lets RDOnto modules be used without loading the full
+# hierarchy entails. This lets R.O.V.O modules be used without loading the full
 # sources.
 
-<https://w3id.org/rdonto/core>
+<https://w3id.org/rovo/core>
     a owl:Ontology ;
     dct:creator "Sanat Mharolkar" ;
     dct:license <http://www.apache.org/licenses/LICENSE-2.0> ;
-    rdfs:label "Remote Driving Ontology: upper alignment module"@en ;
+    rdfs:label "Remote Operation of Vehicles Ontology: upper alignment module"@en ;
     dct:created "2026-11-04"^^xsd:date ;
     dct:modified "2026-11-14"^^xsd:date ;
     owl:versionInfo "1.0" ;
-    owl:imports <https://w3id.org/rdonto/op> .
+    owl:imports <https://w3id.org/rovo/op> .
 
 # EDMC AUTO (SAE J3016) roles are kinds of remote operator. An EDMC remote driver
 # does not occupy the driver's seat and may be inside the vehicle (J3016
-# 3.31.1.2), which RDOnto-op:RemoteOperator allows.
-vla:RemoteDriver rdfs:subClassOf RDOnto-op:RemoteOperator .
-vla:RemoteAssistant rdfs:subClassOf RDOnto-op:RemoteOperator .
+# 3.31.1.2), which ROVO-op:RemoteOperator allows.
+vla:RemoteDriver rdfs:subClassOf ROVO-op:RemoteOperator .
+vla:RemoteAssistant rdfs:subClassOf ROVO-op:RemoteOperator .
 
 # Remotely operated road vehicles are motor vehicles in the EDMC sense (J3016:
-# on-road motor vehicles), but RDOnto-op also covers vehicles off public roads,
+# on-road motor vehicles), but ROVO-op also covers vehicles off public roads,
 # such as warehouse forklifts and mining equipment (SA-06), which are not clearly
 # EDMC motor vehicles. The two classes overlap, so the link is a SKOS mapping
 # rather than a subclass axiom.
-RDOnto-op:RemotelyOperatedVehicle skos:relatedMatch vla:MotorVehicle .
+ROVO-op:RemotelyOperatedVehicle skos:relatedMatch vla:MotorVehicle .
 
 # A.U.T.O. traffic entities are what the operator can be aware of.
-tec:Traffic_Entity rdfs:subClassOf RDOnto-op:SituationElement .
+tec:Traffic_Entity rdfs:subClassOf ROVO-op:SituationElement .
 
 # EDMC DDT subtasks and the DDT fallback are tasks an operator can hold (SA-02).
 # In EDMC the subtasks fall under DynamicDrivingSubtask and the fallback under
-# Operation; both are placed under RDOnto-op:OperatorTask here, which gives
-# RDOnto-op:holdsTask a range without a union (not allowed in OWL 2 RL).
-vla:DynamicDrivingSubtask rdfs:subClassOf RDOnto-op:OperatorTask .
-vla:DynamicDrivingTaskFallback rdfs:subClassOf RDOnto-op:OperatorTask .
+# Operation; both are placed under ROVO-op:OperatorTask here, which gives
+# ROVO-op:holdsTask a range without a union (not allowed in OWL 2 RL).
+vla:DynamicDrivingSubtask rdfs:subClassOf ROVO-op:OperatorTask .
+vla:DynamicDrivingTaskFallback rdfs:subClassOf ROVO-op:OperatorTask .
 
 # SA-02, static: in remote driving the operator holds
 # the DDT subtasks and the DDT fallback (J3016, AM22). Stated for the broad
@@ -67,40 +67,40 @@ vla:DynamicDrivingTaskFallback rdfs:subClassOf RDOnto-op:OperatorTask .
 # holds: a remote driver who drives a vehicle without an ADS for a whole trip
 # performs the DDT and holds no DDT fallback, while the remote driver of an
 # ADS-equipped vehicle can be its fallback in both contexts.
-RDOnto-op:RemoteDriving RDOnto-op:modeIncludesTask
+ROVO-op:RemoteDriving ROVO-op:modeIncludesTask
     vla:LateralVehicleMotionControl , vla:LongitudinalVehicleMotionControl ,
     vla:ObjectAndEventDetectionAndResponse , vla:DynamicDrivingTaskFallback .
 
 # J3016's request to intervene goes to a fallback-ready user and asks for a
-# takeover. An RDOnto-op request may also ask for remote assistance, so the general
+# takeover. An ROVO-op request may also ask for remote assistance, so the general
 # request is broader, and only the takeover request type matches closely. SKOS
 # mappings add no class-level entailments.
-RDOnto-op:Request skos:narrowMatch vla:RequestToIntervene .
-RDOnto-op:TakeoverRequest skos:closeMatch vla:RequestToIntervene .
+ROVO-op:Request skos:narrowMatch vla:RequestToIntervene .
+ROVO-op:TakeoverRequest skos:closeMatch vla:RequestToIntervene .
 
 # Operation modes are individuals here and EDMC operations are classes, so the
 # link is a SKOS mapping.
 # Only the broad remote driving mode matches EDMC RemoteDriving closely. The
 # two contexts are each narrower than it, so EDMC RemoteDriving is their broader
-# match. The mode hierarchy itself uses RDOnto-op:broaderMode, so these mappings
+# match. The mode hierarchy itself uses ROVO-op:broaderMode, so these mappings
 # add nothing to it.
-RDOnto-op:RemoteDriving skos:closeMatch vla:RemoteDriving .
-RDOnto-op:EventBasedRemoteDriving skos:broadMatch vla:RemoteDriving .
-RDOnto-op:ContinuousRemoteDriving skos:broadMatch vla:RemoteDriving .
+ROVO-op:RemoteDriving skos:closeMatch vla:RemoteDriving .
+ROVO-op:EventBasedRemoteDriving skos:broadMatch vla:RemoteDriving .
+ROVO-op:ContinuousRemoteDriving skos:broadMatch vla:RemoteDriving .
 
 # The on-board driver is in the driver's seat, as an EDMC in-vehicle driver is, but
 # does not drive while a remote operator has taken over, so the link is a SKOS
 # mapping rather than a subclass axiom.
-RDOnto-op:OnBoardDriver skos:closeMatch vla:InVehicleDriver .
-RDOnto-op:RemoteAssistance skos:closeMatch vla:RemoteAssistance .
+ROVO-op:OnBoardDriver skos:closeMatch vla:InVehicleDriver .
+ROVO-op:RemoteAssistance skos:closeMatch vla:RemoteAssistance .
 
 # J3016's remote DDT fallback-ready user is the user of one Level 3 vehicle in
 # driverless operation, receptive to its requests to intervene. An operator in an
-# RDOnto-op fallback-ready period waits without a vehicle; one who waits for the
+# ROVO-op fallback-ready period waits without a vehicle; one who waits for the
 # requests of a vehicle while watching it is in remote monitoring. The two
 # concepts only overlap, and one is a period while the other is a role, so the
 # link is a related match.
-RDOnto-op:FallbackReadyPeriod skos:relatedMatch vla:RemoteDynamicDriverTaskFallbackReadyUser .
+ROVO-op:FallbackReadyPeriod skos:relatedMatch vla:RemoteDynamicDriverTaskFallbackReadyUser .
 
 #################################################################
 # Declarations of reused classes (MIREOT)
@@ -170,7 +170,7 @@ l4:Passenger_Vehicle a owl:Class ; rdfs:label "passenger vehicle"@en ;
 
 # SKOS mapping properties used above, typed as in SKOS. A mapping between two
 # classes uses their IRIs as individuals (OWL 2 punning), so it adds no
-# class-level entailments. The other reused W3C terms are declared in RDOnto-op,
+# class-level entailments. The other reused W3C terms are declared in ROVO-op,
 # which this module imports.
 skos:closeMatch a owl:ObjectProperty ; rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> .
 skos:broadMatch a owl:ObjectProperty ; rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> .

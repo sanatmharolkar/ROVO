@@ -1,6 +1,6 @@
-@prefix RDOnto-link:    <https://w3id.org/rdonto/link#> .
-@prefix RDOnto-link-sh: <https://w3id.org/rdonto/link-shapes#> .
-@prefix RDOnto-op:      <https://w3id.org/rdonto/op#> .
+@prefix ROVO-link:    <https://w3id.org/rovo/link#> .
+@prefix ROVO-link-sh: <https://w3id.org/rovo/link-shapes#> .
+@prefix ROVO-op:      <https://w3id.org/rovo/op#> .
 @prefix sh:     <http://www.w3.org/ns/shacl#> .
 @prefix owl:    <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
@@ -11,8 +11,8 @@
 @prefix qudt:   <http://qudt.org/schema/qudt/> .
 @prefix unit:   <http://qudt.org/vocab/unit/> .
 
-# Remote Driving Ontology: SHACL shapes for RDOnto-link data.
-# Used together with RDOnto-op-shapes.ttl, whose conventions apply here too
+# Remote Operation of Vehicles Ontology: SHACL shapes for ROVO-link data.
+# Used together with ROVO-op-shapes.ttl, whose conventions apply here too
 # (times with a timezone, non-negative durations, integer or decimal numbers, one
 # fixed unit per limit type, maxCount 1 on functional properties). As there,
 # connection loss (LK-07) and limits being exceeded (LK-04, LK-09) are CQ queries
@@ -22,39 +22,39 @@
 # and timing of carried engagements, one open session per vehicle and per
 # station, handover) are sh:sparql constraints.
 
-<https://w3id.org/rdonto/link-shapes>
+<https://w3id.org/rovo/link-shapes>
     a owl:Ontology ;
     dct:creator "Sanat Mharolkar" ;
     dct:license <http://www.apache.org/licenses/LICENSE-2.0> ;
-    rdfs:label "Remote Driving Ontology: SHACL shapes for the communication link module"@en ;
+    rdfs:label "Remote Operation of Vehicles Ontology: SHACL shapes for the communication link module"@en ;
     dct:created "2026-11-05"^^xsd:date ;
     dct:modified "2026-11-14"^^xsd:date ;
     owl:versionInfo "1.0" ;
-    rdfs:comment "Shapes for RDOnto-link v1.0 data; validate with RDOnto-op-shapes.ttl, which also checks the on-board driver."@en .
+    rdfs:comment "Shapes for ROVO-link v1.0 data; validate with ROVO-op-shapes.ttl, which also checks the on-board driver."@en .
 
 #################################################################
 # Session (LK-01) and the rules across sessions and engagements
 #################################################################
 
-RDOnto-link-sh:SessionShape a sh:NodeShape ;
-    sh:targetClass RDOnto-link:TeleoperationSession ;
+ROVO-link-sh:SessionShape a sh:NodeShape ;
+    sh:targetClass ROVO-link:TeleoperationSession ;
     sh:property [
-        sh:path RDOnto-link:sessionStation ; sh:minCount 1 ; sh:maxCount 1 ; sh:class RDOnto-link:RemoteStation ;
+        sh:path ROVO-link:sessionStation ; sh:minCount 1 ; sh:maxCount 1 ; sh:class ROVO-link:RemoteStation ;
         sh:message "A session has exactly one RemoteStation." ] ;
     sh:property [
-        sh:path RDOnto-link:sessionVehicle ; sh:minCount 1 ; sh:maxCount 1 ; sh:class RDOnto-op:RemotelyOperatedVehicle ;
+        sh:path ROVO-link:sessionVehicle ; sh:minCount 1 ; sh:maxCount 1 ; sh:class ROVO-op:RemotelyOperatedVehicle ;
         sh:message "A session has exactly one RemotelyOperatedVehicle." ] ;
     sh:property [
-        sh:path RDOnto-link:sessionOperator ; sh:minCount 1 ; sh:maxCount 1 ; sh:class RDOnto-op:RemoteOperator ;
+        sh:path ROVO-link:sessionOperator ; sh:minCount 1 ; sh:maxCount 1 ; sh:class ROVO-op:RemoteOperator ;
         sh:message "A session has exactly one operator; an operator handover ends it." ] ;
     sh:property [
-        sh:path RDOnto-link:usesSetup ; sh:minCount 1 ; sh:maxCount 1 ; sh:class RDOnto-link:TeleoperationSetup ;
+        sh:path ROVO-link:usesSetup ; sh:minCount 1 ; sh:maxCount 1 ; sh:class ROVO-link:TeleoperationSetup ;
         sh:message "A session uses exactly one TeleoperationSetup (it scopes the latency limits, LK-04)." ] ;
     sh:property [
-        sh:path RDOnto-link:carriesEngagement ; sh:class RDOnto-op:Engagement ;
+        sh:path ROVO-link:carriesEngagement ; sh:class ROVO-op:Engagement ;
         sh:message "A session carries only Engagements." ] ;
     sh:property [
-        sh:path RDOnto-link:followsSession ; sh:maxCount 1 ; sh:class RDOnto-link:TeleoperationSession ;
+        sh:path ROVO-link:followsSession ; sh:maxCount 1 ; sh:class ROVO-link:TeleoperationSession ;
         sh:message "A session follows at most one earlier TeleoperationSession." ] ;
     sh:property [
         sh:path prov:startedAtTime ; sh:minCount 1 ; sh:maxCount 1 ;
@@ -66,62 +66,62 @@ RDOnto-link-sh:SessionShape a sh:NodeShape ;
         sh:datatype xsd:dateTime ; sh:pattern "(Z|[+-][0-9]{2}:[0-9]{2})$" ;
         sh:message "A session has at most one end time, an xsd:dateTime with a timezone." ] ;
     sh:property [
-        sh:path RDOnto-link:baselineStatistic ; sh:class RDOnto-link:LatencyStatistic ;
+        sh:path ROVO-link:baselineStatistic ; sh:class ROVO-link:LatencyStatistic ;
         sh:message "A session's baseline statistics are LatencyStatistics (LK-05)." ] ;
     sh:sparql [
         sh:message "A session uses a setup only with a vehicle the setup names, where it names any (setupVehicle)." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
-            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
+            PREFIX ROVO-op: <https://w3id.org/rovo/op#>
             PREFIX prov: <http://www.w3.org/ns/prov#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             SELECT $this ?value WHERE {
-              $this RDOnto-link:usesSetup ?value ; RDOnto-link:sessionVehicle ?vehicle .
-              FILTER EXISTS { ?value RDOnto-link:setupVehicle ?any }
-              FILTER NOT EXISTS { ?value RDOnto-link:setupVehicle ?vehicle }
+              $this ROVO-link:usesSetup ?value ; ROVO-link:sessionVehicle ?vehicle .
+              FILTER EXISTS { ?value ROVO-link:setupVehicle ?any }
+              FILTER NOT EXISTS { ?value ROVO-link:setupVehicle ?vehicle }
             }""" ] ;
     sh:sparql [
         sh:message "A session uses a setup only at a station the setup names, where it names any (setupStation)." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
-            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
+            PREFIX ROVO-op: <https://w3id.org/rovo/op#>
             PREFIX prov: <http://www.w3.org/ns/prov#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             SELECT $this ?value WHERE {
-              $this RDOnto-link:usesSetup ?value ; RDOnto-link:sessionStation ?station .
-              FILTER EXISTS { ?value RDOnto-link:setupStation ?any }
-              FILTER NOT EXISTS { ?value RDOnto-link:setupStation ?station }
+              $this ROVO-link:usesSetup ?value ; ROVO-link:sessionStation ?station .
+              FILTER EXISTS { ?value ROVO-link:setupStation ?any }
+              FILTER NOT EXISTS { ?value ROVO-link:setupStation ?station }
             }""" ] ;
     sh:sparql [
         sh:message "An engagement a session carries is in the operating environment and has the driving task of the session's setup, where both state one (SA-06)." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
-            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
+            PREFIX ROVO-op: <https://w3id.org/rovo/op#>
             PREFIX prov: <http://www.w3.org/ns/prov#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             SELECT $this ?value WHERE {
-              $this RDOnto-link:usesSetup ?setup ; RDOnto-link:carriesEngagement ?value .
-              { ?setup RDOnto-link:setupEnvironment ?a . ?value RDOnto-op:engagementEnvironment ?b . }
+              $this ROVO-link:usesSetup ?setup ; ROVO-link:carriesEngagement ?value .
+              { ?setup ROVO-link:setupEnvironment ?a . ?value ROVO-op:engagementEnvironment ?b . }
               UNION
-              { ?setup RDOnto-link:setupTask ?a . ?value RDOnto-op:engagementTask ?b . }
+              { ?setup ROVO-link:setupTask ?a . ?value ROVO-op:engagementTask ?b . }
               FILTER (?a != ?b)
             }""" ] ;
     sh:sparql [
         sh:message "A baseline statistic is about its session (or one of its streams), and a session has at most one baseline per statistic kind and latency part (LK-05)." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
-            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
+            PREFIX ROVO-op: <https://w3id.org/rovo/op#>
             PREFIX prov: <http://www.w3.org/ns/prov#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             SELECT $this ?value WHERE {
-              $this RDOnto-link:baselineStatistic ?value .
-              OPTIONAL { ?value RDOnto-link:observedSession ?direct }
-              OPTIONAL { ?value sosa:hasFeatureOfInterest ?foi . ?foi RDOnto-link:inSession ?viaStream }
-              OPTIONAL { ?value RDOnto-link:statistic ?kind }
+              $this ROVO-link:baselineStatistic ?value .
+              OPTIONAL { ?value ROVO-link:observedSession ?direct }
+              OPTIONAL { ?value sosa:hasFeatureOfInterest ?foi . ?foi ROVO-link:inSession ?viaStream }
+              OPTIONAL { ?value ROVO-link:statistic ?kind }
               OPTIONAL { ?value sosa:observedProperty ?part }
               BIND (EXISTS {
-                $this RDOnto-link:baselineStatistic ?other . FILTER (?other != ?value)
-                ?other RDOnto-link:statistic ?kind .
+                $this ROVO-link:baselineStatistic ?other . FILTER (?other != ?value)
+                ?other ROVO-link:statistic ?kind .
                 OPTIONAL { ?other sosa:hasFeatureOfInterest ?otherFoi }
                 OPTIONAL { ?other sosa:observedProperty ?otherPart }
                 FILTER (COALESCE(?otherFoi, "") = COALESCE(?foi, ""))
@@ -134,31 +134,31 @@ RDOnto-link-sh:SessionShape a sh:NodeShape ;
     sh:sparql [
         sh:message "Every engagement a session carries is by the session's operator: an operator change at the same station ends the session." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
-            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
+            PREFIX ROVO-op: <https://w3id.org/rovo/op#>
             SELECT $this ?value WHERE {
-              $this RDOnto-link:carriesEngagement ?value .
-              ?value RDOnto-op:engagedOperator ?engagementOperator .
-              $this RDOnto-link:sessionOperator ?sessionOperator .
+              $this ROVO-link:carriesEngagement ?value .
+              ?value ROVO-op:engagedOperator ?engagementOperator .
+              $this ROVO-link:sessionOperator ?sessionOperator .
               FILTER (?engagementOperator != ?sessionOperator)
             }""" ] ;
     sh:sparql [
         sh:message "Every engagement a session carries is with the session's vehicle." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
-            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
+            PREFIX ROVO-op: <https://w3id.org/rovo/op#>
             SELECT $this ?value WHERE {
-              $this RDOnto-link:carriesEngagement ?value ; RDOnto-link:sessionVehicle ?sessionVehicle .
-              ?value RDOnto-op:engagedVehicle ?engagementVehicle .
+              $this ROVO-link:carriesEngagement ?value ; ROVO-link:sessionVehicle ?sessionVehicle .
+              ?value ROVO-op:engagedVehicle ?engagementVehicle .
               FILTER (?engagementVehicle != ?sessionVehicle)
             }""" ] ;
     sh:sparql [
         sh:message "The engagements a session carries follow each other: they do not overlap in time, and at most one is still open." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
             PREFIX prov: <http://www.w3.org/ns/prov#>
             SELECT $this ?value WHERE {
-              $this RDOnto-link:carriesEngagement ?earlier , ?value .
+              $this ROVO-link:carriesEngagement ?earlier , ?value .
               ?earlier prov:startedAtTime ?s1 .
               ?value prov:startedAtTime ?s2 .
               FILTER (?earlier != ?value)
@@ -169,10 +169,10 @@ RDOnto-link-sh:SessionShape a sh:NodeShape ;
     sh:sparql [
         sh:message "Every engagement a session carries lies within the session: it starts no earlier than the session, and once the session has ended it has ended too, no later than the session." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
             PREFIX prov: <http://www.w3.org/ns/prov#>
             SELECT $this ?value WHERE {
-              $this RDOnto-link:carriesEngagement ?value ; prov:startedAtTime ?sessionStart .
+              $this ROVO-link:carriesEngagement ?value ; prov:startedAtTime ?sessionStart .
               ?value prov:startedAtTime ?start .
               OPTIONAL { $this prov:endedAtTime ?sessionEnd }
               OPTIONAL { ?value prov:endedAtTime ?end }
@@ -182,11 +182,11 @@ RDOnto-link-sh:SessionShape a sh:NodeShape ;
     sh:sparql [
         sh:message "A vehicle has at most one open session at a time." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
             PREFIX prov: <http://www.w3.org/ns/prov#>
             SELECT $this ?value WHERE {
-              $this RDOnto-link:sessionVehicle ?vehicle .
-              ?value a RDOnto-link:TeleoperationSession ; RDOnto-link:sessionVehicle ?vehicle .
+              $this ROVO-link:sessionVehicle ?vehicle .
+              ?value a ROVO-link:TeleoperationSession ; ROVO-link:sessionVehicle ?vehicle .
               FILTER ($this != ?value)
               FILTER NOT EXISTS { $this prov:endedAtTime ?end1 }
               FILTER NOT EXISTS { ?value prov:endedAtTime ?end2 }
@@ -194,11 +194,11 @@ RDOnto-link-sh:SessionShape a sh:NodeShape ;
     sh:sparql [
         sh:message "A station has at most one open session at a time: it shows one vehicle (LK-06)." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
             PREFIX prov: <http://www.w3.org/ns/prov#>
             SELECT $this ?value WHERE {
-              $this RDOnto-link:sessionStation ?station .
-              ?value a RDOnto-link:TeleoperationSession ; RDOnto-link:sessionStation ?station .
+              $this ROVO-link:sessionStation ?station .
+              ?value a ROVO-link:TeleoperationSession ; ROVO-link:sessionStation ?station .
               FILTER ($this != ?value)
               FILTER NOT EXISTS { $this prov:endedAtTime ?end1 }
               FILTER NOT EXISTS { ?value prov:endedAtTime ?end2 }
@@ -206,13 +206,13 @@ RDOnto-link-sh:SessionShape a sh:NodeShape ;
     sh:sparql [
         sh:message "A session follows only an ended session with the same vehicle, which ended no later than this one started." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
             PREFIX prov: <http://www.w3.org/ns/prov#>
             SELECT $this ?value WHERE {
-              $this RDOnto-link:followsSession ?value ;
-                    RDOnto-link:sessionVehicle ?vehicle ;
+              $this ROVO-link:followsSession ?value ;
+                    ROVO-link:sessionVehicle ?vehicle ;
                     prov:startedAtTime ?start .
-              OPTIONAL { ?value RDOnto-link:sessionVehicle ?prevVehicle }
+              OPTIONAL { ?value ROVO-link:sessionVehicle ?prevVehicle }
               OPTIONAL { ?value prov:endedAtTime ?prevEnd }
               FILTER (!BOUND(?prevEnd) || ?prevEnd > ?start
                       || !BOUND(?prevVehicle) || ?prevVehicle != ?vehicle)
@@ -220,205 +220,205 @@ RDOnto-link-sh:SessionShape a sh:NodeShape ;
 
 # Warnings, so shapes of their own: severity belongs to a shape, not to one of
 # its constraints.
-RDOnto-link-sh:SessionNeededStreamShape a sh:NodeShape ;
-    sh:targetClass RDOnto-link:TeleoperationSession ;
+ROVO-link-sh:SessionNeededStreamShape a sh:NodeShape ;
+    sh:targetClass ROVO-link:TeleoperationSession ;
     sh:severity sh:Warning ;
     sh:sparql [
         sh:message "A session that states its streams should have a stream for every continuous content the mode of its open engagement needs: without one, the loss of that content cannot be detected (LK-07)." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
-            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
+            PREFIX ROVO-op: <https://w3id.org/rovo/op#>
             PREFIX prov: <http://www.w3.org/ns/prov#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             SELECT $this ?value WHERE {
-              $this RDOnto-link:carriesEngagement ?engagement .
+              $this ROVO-link:carriesEngagement ?engagement .
               FILTER NOT EXISTS { ?engagement prov:endedAtTime ?end }
               FILTER NOT EXISTS { $this prov:endedAtTime ?sessionEnd }
-              FILTER EXISTS { ?anyStream RDOnto-link:inSession $this }
-              ?engagement RDOnto-op:inOperationMode ?mode .
-              ?mode RDOnto-op:broaderMode* ?needing .
-              ?value RDOnto-link:neededInMode ?needing ; RDOnto-link:isContinuous true .
-              FILTER NOT EXISTS { ?stream RDOnto-link:inSession $this ; RDOnto-link:hasStreamContent ?value }
+              FILTER EXISTS { ?anyStream ROVO-link:inSession $this }
+              ?engagement ROVO-op:inOperationMode ?mode .
+              ?mode ROVO-op:broaderMode* ?needing .
+              ?value ROVO-link:neededInMode ?needing ; ROVO-link:isContinuous true .
+              FILTER NOT EXISTS { ?stream ROVO-link:inSession $this ; ROVO-link:hasStreamContent ?value }
             }""" ] .
 
-RDOnto-link-sh:SetupJudgedShape a sh:NodeShape ;
-    sh:targetClass RDOnto-link:TeleoperationSetup ;
+ROVO-link-sh:SetupJudgedShape a sh:NodeShape ;
+    sh:targetClass ROVO-link:TeleoperationSetup ;
     sh:severity sh:Warning ;
     sh:sparql [
         sh:message "A setup should have a travel tolerance, or budgets that bound the end-to-end latency (an end-to-end budget, or an actuator budget with an information age limit of the setup): without them LK-04 has no answer for it." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
-            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
+            PREFIX ROVO-op: <https://w3id.org/rovo/op#>
             PREFIX prov: <http://www.w3.org/ns/prov#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             SELECT $this WHERE {
               $this a ?anyType .
-              FILTER NOT EXISTS { ?tolerance a RDOnto-link:TravelTolerance ; RDOnto-link:appliesToSetup $this }
-              FILTER NOT EXISTS { ?e2e a RDOnto-link:LatencyBudget ; RDOnto-link:appliesToSetup $this ;
-                                       RDOnto-link:budgetPart RDOnto-link:EndToEndLatency }
-              FILTER NOT EXISTS { ?act a RDOnto-link:LatencyBudget ; RDOnto-link:appliesToSetup $this ;
-                                       RDOnto-link:budgetPart RDOnto-link:ActuatorLatency .
-                                  ?age a RDOnto-op:InformationAgeLimit ; RDOnto-link:appliesToSetup $this }
+              FILTER NOT EXISTS { ?tolerance a ROVO-link:TravelTolerance ; ROVO-link:appliesToSetup $this }
+              FILTER NOT EXISTS { ?e2e a ROVO-link:LatencyBudget ; ROVO-link:appliesToSetup $this ;
+                                       ROVO-link:budgetPart ROVO-link:EndToEndLatency }
+              FILTER NOT EXISTS { ?act a ROVO-link:LatencyBudget ; ROVO-link:appliesToSetup $this ;
+                                       ROVO-link:budgetPart ROVO-link:ActuatorLatency .
+                                  ?age a ROVO-op:InformationAgeLimit ; ROVO-link:appliesToSetup $this }
             }""" ] .
 
-RDOnto-link-sh:PredictionKindShape a sh:NodeShape ;
-    sh:targetClass RDOnto-link:LinkPrediction ;
+ROVO-link-sh:PredictionKindShape a sh:NodeShape ;
+    sh:targetClass ROVO-link:LinkPrediction ;
     sh:severity sh:Warning ;
     sh:sparql [
         sh:message "A link prediction should say what it predicts: a LatencyPrediction, a DataRatePrediction or a ConnectionLossPrediction (LK-08)." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
-            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
+            PREFIX ROVO-op: <https://w3id.org/rovo/op#>
             PREFIX prov: <http://www.w3.org/ns/prov#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             SELECT $this WHERE {
-              $this a RDOnto-link:LinkPrediction .
+              $this a ROVO-link:LinkPrediction .
               FILTER NOT EXISTS { $this a ?kind .
-                FILTER (?kind IN (RDOnto-link:LatencyPrediction, RDOnto-link:DataRatePrediction, RDOnto-link:ConnectionLossPrediction)) }
+                FILTER (?kind IN (ROVO-link:LatencyPrediction, ROVO-link:DataRatePrediction, ROVO-link:ConnectionLossPrediction)) }
             }""" ] .
 
-# With RDOnto-link loaded: an engagement is carried by one session, and its
+# With ROVO-link loaded: an engagement is carried by one session, and its
 # available channels are channels of that session's station.
-RDOnto-link-sh:EngagementSessionShape a sh:NodeShape ;
-    sh:targetClass RDOnto-op:Engagement ;
+ROVO-link-sh:EngagementSessionShape a sh:NodeShape ;
+    sh:targetClass ROVO-op:Engagement ;
     sh:sparql [
         sh:message "An engagement is carried by at most one session." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
-            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
+            PREFIX ROVO-op: <https://w3id.org/rovo/op#>
             PREFIX prov: <http://www.w3.org/ns/prov#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             SELECT $this ?value WHERE {
-              ?value RDOnto-link:carriesEngagement $this .
-              ?other RDOnto-link:carriesEngagement $this .
+              ?value ROVO-link:carriesEngagement $this .
+              ?other ROVO-link:carriesEngagement $this .
               FILTER (?other != ?value)
             }""" ] ;
     sh:sparql [
         sh:message "An engagement's available channels are channels of its session's station, where the station states any (hasChannel, LK-06)." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
-            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
+            PREFIX ROVO-op: <https://w3id.org/rovo/op#>
             PREFIX prov: <http://www.w3.org/ns/prov#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             SELECT $this ?value WHERE {
-              $this RDOnto-op:availableChannel ?value .
-              ?session RDOnto-link:carriesEngagement $this ; RDOnto-link:sessionStation ?station .
-              FILTER EXISTS { ?station RDOnto-link:hasChannel ?any }
-              FILTER NOT EXISTS { ?station RDOnto-link:hasChannel ?value }
+              $this ROVO-op:availableChannel ?value .
+              ?session ROVO-link:carriesEngagement $this ; ROVO-link:sessionStation ?station .
+              FILTER EXISTS { ?station ROVO-link:hasChannel ?any }
+              FILTER NOT EXISTS { ?station ROVO-link:hasChannel ?value }
             }""" ] .
 
-RDOnto-link-sh:RemoteStationShape a sh:NodeShape ;
-    sh:targetClass RDOnto-link:RemoteStation ;
+ROVO-link-sh:RemoteStationShape a sh:NodeShape ;
+    sh:targetClass ROVO-link:RemoteStation ;
     sh:property [
-        sh:path RDOnto-link:hasChannel ; sh:class RDOnto-op:InformationChannel ;
+        sh:path ROVO-link:hasChannel ; sh:class ROVO-op:InformationChannel ;
         sh:message "A station's channels are InformationChannels (LK-06)." ] .
 
-# With RDOnto-link loaded, an adapted information age is carried over only within
-# one teleoperation setup (RDOnto-op:adaptationCarriedFrom, SA-14).
-RDOnto-link-sh:AdaptationCarryShape a sh:NodeShape ;
-    sh:targetClass RDOnto-op:Engagement ;
+# With ROVO-link loaded, an adapted information age is carried over only within
+# one teleoperation setup (ROVO-op:adaptationCarriedFrom, SA-14).
+ROVO-link-sh:AdaptationCarryShape a sh:NodeShape ;
+    sh:targetClass ROVO-op:Engagement ;
     sh:sparql [
         sh:message "An adapted information age is carried over only between engagements whose sessions use the same teleoperation setup (SA-14)." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
-            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
+            PREFIX ROVO-op: <https://w3id.org/rovo/op#>
             PREFIX prov: <http://www.w3.org/ns/prov#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             SELECT $this ?value WHERE {
-              $this RDOnto-op:adaptationCarriedFrom ?value .
-              ?s1 RDOnto-link:carriesEngagement $this ; RDOnto-link:usesSetup ?setup1 .
-              ?s2 RDOnto-link:carriesEngagement ?value ; RDOnto-link:usesSetup ?setup2 .
+              $this ROVO-op:adaptationCarriedFrom ?value .
+              ?s1 ROVO-link:carriesEngagement $this ; ROVO-link:usesSetup ?setup1 .
+              ?s2 ROVO-link:carriesEngagement ?value ; ROVO-link:usesSetup ?setup2 .
               FILTER (?setup1 != ?setup2)
             }""" ] .
 
 # A vehicle that states adsWithinODD or adsAbleToDrive should state hasADS true.
-RDOnto-link-sh:ADSStatedShape a sh:NodeShape ;
-    sh:targetSubjectsOf RDOnto-link:adsWithinODD , RDOnto-link:adsAbleToDrive ;
+ROVO-link-sh:ADSStatedShape a sh:NodeShape ;
+    sh:targetSubjectsOf ROVO-link:adsWithinODD , ROVO-link:adsAbleToDrive ;
     sh:property [
-        sh:path RDOnto-op:hasADS ; sh:minCount 1 ; sh:severity sh:Warning ;
-        sh:message "A vehicle that states adsWithinODD or adsAbleToDrive should also state that it has an ADS (RDOnto-op:hasADS true) (LK-10)." ] .
+        sh:path ROVO-op:hasADS ; sh:minCount 1 ; sh:severity sh:Warning ;
+        sh:message "A vehicle that states adsWithinODD or adsAbleToDrive should also state that it has an ADS (ROVO-op:hasADS true) (LK-10)." ] .
 
-RDOnto-link-sh:VehicleShape a sh:NodeShape ;
-    sh:targetClass RDOnto-op:RemotelyOperatedVehicle ;
+ROVO-link-sh:VehicleShape a sh:NodeShape ;
+    sh:targetClass ROVO-op:RemotelyOperatedVehicle ;
     sh:property [
-        sh:path RDOnto-link:adsWithinODD ; sh:maxCount 1 ; sh:datatype xsd:boolean ;
+        sh:path ROVO-link:adsWithinODD ; sh:maxCount 1 ; sh:datatype xsd:boolean ;
         sh:message "A vehicle states at most once whether its ADS is within its ODD (xsd:boolean)." ] ;
     sh:property [
-        sh:path RDOnto-link:adsAbleToDrive ; sh:maxCount 1 ; sh:datatype xsd:boolean ;
+        sh:path ROVO-link:adsAbleToDrive ; sh:maxCount 1 ; sh:datatype xsd:boolean ;
         sh:message "A vehicle states at most once whether its ADS is able to drive (xsd:boolean, LK-10)." ] ;
     sh:sparql [
-        sh:message "A vehicle without an ADS (RDOnto-op:hasADS false) has no adsAbleToDrive value: there is no ADS that could drive (LK-10)." ;
+        sh:message "A vehicle without an ADS (ROVO-op:hasADS false) has no adsAbleToDrive value: there is no ADS that could drive (LK-10)." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
-            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
+            PREFIX ROVO-op: <https://w3id.org/rovo/op#>
             SELECT $this ?value WHERE {
-              $this RDOnto-op:hasADS false ; RDOnto-link:adsAbleToDrive ?value .
+              $this ROVO-op:hasADS false ; ROVO-link:adsAbleToDrive ?value .
             }""" ] ;
     sh:sparql [
-        sh:message "A vehicle without an ADS (RDOnto-op:hasADS false) has no adsWithinODD value: there is no ADS to be within or outside its ODD (LK-10)." ;
+        sh:message "A vehicle without an ADS (ROVO-op:hasADS false) has no adsWithinODD value: there is no ADS to be within or outside its ODD (LK-10)." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
-            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
+            PREFIX ROVO-op: <https://w3id.org/rovo/op#>
             SELECT $this ?value WHERE {
-              $this RDOnto-op:hasADS false ; RDOnto-link:adsWithinODD ?value .
+              $this ROVO-op:hasADS false ; ROVO-link:adsWithinODD ?value .
             }""" ] .
 
 #################################################################
 # Streams (LK-02, LK-07)
 #################################################################
 
-RDOnto-link-sh:StreamShape a sh:NodeShape ;
-    sh:targetClass RDOnto-link:Stream ;
+ROVO-link-sh:StreamShape a sh:NodeShape ;
+    sh:targetClass ROVO-link:Stream ;
     sh:property [
-        sh:path RDOnto-link:inSession ; sh:minCount 1 ; sh:maxCount 1 ; sh:class RDOnto-link:TeleoperationSession ;
+        sh:path ROVO-link:inSession ; sh:minCount 1 ; sh:maxCount 1 ; sh:class ROVO-link:TeleoperationSession ;
         sh:message "A stream belongs to exactly one TeleoperationSession." ] ;
     sh:property [
-        sh:path RDOnto-link:streamDirection ; sh:minCount 1 ; sh:maxCount 1 ; sh:class RDOnto-link:Direction ;
+        sh:path ROVO-link:streamDirection ; sh:minCount 1 ; sh:maxCount 1 ; sh:class ROVO-link:Direction ;
         sh:message "A stream has exactly one Direction, named by endpoint." ] ;
     sh:property [
-        sh:path RDOnto-link:hasStreamContent ; sh:minCount 1 ; sh:maxCount 1 ; sh:class RDOnto-link:StreamContent ;
+        sh:path ROVO-link:hasStreamContent ; sh:minCount 1 ; sh:maxCount 1 ; sh:class ROVO-link:StreamContent ;
         sh:message "A stream has exactly one StreamContent." ] ;
     sh:property [
-        sh:path RDOnto-link:lastReceivedAt ; sh:maxCount 1 ;
+        sh:path ROVO-link:lastReceivedAt ; sh:maxCount 1 ;
         sh:datatype xsd:dateTime ; sh:pattern "(Z|[+-][0-9]{2}:[0-9]{2})$" ;
         sh:message "A stream has at most one last-received time, an xsd:dateTime with a timezone." ] ;
     sh:sparql [
         sh:message "A stream flows in the direction of its content, where the content states one (contentDirection): video and sensor feeds and proposed trajectories from vehicle to station, control commands and trajectory input from station to vehicle (LK-02)." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
             SELECT $this ?value WHERE {
-              $this RDOnto-link:streamDirection ?value ; RDOnto-link:hasStreamContent ?content .
-              ?content RDOnto-link:contentDirection ?expected .
+              $this ROVO-link:streamDirection ?value ; ROVO-link:hasStreamContent ?content .
+              ?content ROVO-link:contentDirection ?expected .
               FILTER (?value != ?expected)
             }""" ] .
 
-RDOnto-link-sh:StreamContentShape a sh:NodeShape ;
-    sh:targetClass RDOnto-link:StreamContent ;
+ROVO-link-sh:StreamContentShape a sh:NodeShape ;
+    sh:targetClass ROVO-link:StreamContent ;
     sh:property [
-        sh:path RDOnto-link:neededInMode ; sh:class RDOnto-op:OperationMode ;
+        sh:path ROVO-link:neededInMode ; sh:class ROVO-op:OperationMode ;
         sh:message "Stream content is needed only in OperationModes." ] ;
     sh:property [
-        sh:path RDOnto-link:contentDirection ; sh:maxCount 1 ; sh:class RDOnto-link:Direction ;
+        sh:path ROVO-link:contentDirection ; sh:maxCount 1 ; sh:class ROVO-link:Direction ;
         sh:message "Stream content flows in at most one Direction (LK-02)." ] ;
     sh:property [
-        sh:path RDOnto-link:isContinuous ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:boolean ;
+        sh:path ROVO-link:isContinuous ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:boolean ;
         sh:message "Stream content states once whether it is sent continuously (isContinuous, xsd:boolean): only continuous content is tested for connection loss (LK-07)." ] .
 
 #################################################################
 # Latency observations and statistics (LK-03, LK-05, LK-12)
 #################################################################
 
-RDOnto-link-sh:LatencyObservationShape a sh:NodeShape ;
-    sh:targetClass RDOnto-link:LatencyObservation ;
+ROVO-link-sh:LatencyObservationShape a sh:NodeShape ;
+    sh:targetClass ROVO-link:LatencyObservation ;
     sh:property [
-        sh:path RDOnto-link:observedSession ; sh:minCount 1 ; sh:maxCount 1 ; sh:class RDOnto-link:TeleoperationSession ;
+        sh:path ROVO-link:observedSession ; sh:minCount 1 ; sh:maxCount 1 ; sh:class ROVO-link:TeleoperationSession ;
         sh:message "A latency observation is about exactly one TeleoperationSession (observedSession)." ] ;
     sh:property [
         sh:path sosa:hasFeatureOfInterest ; sh:maxCount 0 ;
         sh:message "A latency observation names its session with observedSession, not with sosa:hasFeatureOfInterest: a session is a prov:Activity and cannot be a feature of interest." ] ;
     sh:property [
         sh:path sosa:observedProperty ; sh:minCount 1 ; sh:maxCount 1 ;
-        sh:in ( RDOnto-link:SensorLatency RDOnto-link:ActuatorLatency RDOnto-link:EndToEndLatency ) ;
+        sh:in ( ROVO-link:SensorLatency ROVO-link:ActuatorLatency ROVO-link:EndToEndLatency ) ;
         sh:message "A latency observation observes exactly one latency part: sensor, actuator or end-to-end." ] ;
     sh:property [
         sh:path sosa:hasSimpleResult ; sh:minCount 1 ; sh:maxCount 1 ;
@@ -429,50 +429,50 @@ RDOnto-link-sh:LatencyObservationShape a sh:NodeShape ;
         sh:datatype xsd:dateTime ; sh:pattern "(Z|[+-][0-9]{2}:[0-9]{2})$" ;
         sh:message "A latency observation has exactly one time, an xsd:dateTime with a timezone." ] .
 
-RDOnto-link-sh:LatencyStatisticShape a sh:NodeShape ;
-    sh:targetClass RDOnto-link:LatencyStatistic ;
+ROVO-link-sh:LatencyStatisticShape a sh:NodeShape ;
+    sh:targetClass ROVO-link:LatencyStatistic ;
     sh:property [
-        sh:path RDOnto-link:observedSession ; sh:maxCount 1 ; sh:class RDOnto-link:TeleoperationSession ;
+        sh:path ROVO-link:observedSession ; sh:maxCount 1 ; sh:class ROVO-link:TeleoperationSession ;
         sh:message "A latency statistic names at most one TeleoperationSession (observedSession)." ] ;
     sh:property [
-        sh:path sosa:hasFeatureOfInterest ; sh:maxCount 1 ; sh:class RDOnto-link:Stream ;
+        sh:path sosa:hasFeatureOfInterest ; sh:maxCount 1 ; sh:class ROVO-link:Stream ;
         sh:message "A latency statistic has at most one feature of interest, a Stream (for a deadline miss share); a session is named with observedSession." ] ;
     sh:property [
-        sh:path RDOnto-link:statistic ; sh:minCount 1 ; sh:maxCount 1 ; sh:class RDOnto-link:StatisticKind ;
+        sh:path ROVO-link:statistic ; sh:minCount 1 ; sh:maxCount 1 ; sh:class ROVO-link:StatisticKind ;
         sh:message "A latency statistic has exactly one StatisticKind." ] ;
     sh:property [
         sh:path sosa:observedProperty ; sh:maxCount 1 ;
-        sh:in ( RDOnto-link:SensorLatency RDOnto-link:ActuatorLatency RDOnto-link:EndToEndLatency ) ;
+        sh:in ( ROVO-link:SensorLatency ROVO-link:ActuatorLatency ROVO-link:EndToEndLatency ) ;
         sh:message "A latency statistic covers at most one latency part: sensor, actuator or end-to-end." ] ;
     sh:property [
-        sh:path RDOnto-link:againstDeadline ; sh:maxCount 1 ; sh:class RDOnto-link:DeliveryDeadline ;
+        sh:path ROVO-link:againstDeadline ; sh:maxCount 1 ; sh:class ROVO-link:DeliveryDeadline ;
         sh:message "A latency statistic names at most one DeliveryDeadline (LK-05)." ] ;
     sh:sparql [
         sh:message "A latency mean or standard deviation is about a session (observedSession); a deadline miss share is about a stream (sosa:hasFeatureOfInterest) (LK-05)." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
-            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
+            PREFIX ROVO-op: <https://w3id.org/rovo/op#>
             PREFIX prov: <http://www.w3.org/ns/prov#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             SELECT $this ?value WHERE {
-              $this RDOnto-link:statistic ?value .
-              BIND (EXISTS { $this RDOnto-link:observedSession ?session } AS ?hasSession)
+              $this ROVO-link:statistic ?value .
+              BIND (EXISTS { $this ROVO-link:observedSession ?session } AS ?hasSession)
               BIND (EXISTS { $this sosa:hasFeatureOfInterest ?stream } AS ?hasStream)
-              FILTER ((?value IN (RDOnto-link:Mean, RDOnto-link:StandardDeviation) && (!?hasSession || ?hasStream))
-                   || (?value = RDOnto-link:DeadlineMissShare && (!?hasStream || ?hasSession)))
+              FILTER ((?value IN (ROVO-link:Mean, ROVO-link:StandardDeviation) && (!?hasSession || ?hasStream))
+                   || (?value = ROVO-link:DeadlineMissShare && (!?hasStream || ?hasSession)))
             }""" ] ;
     sh:sparql [
         sh:message "A deadline miss share names the delivery deadline it was counted against (againstDeadline), and that deadline is for the content of its stream (LK-05)." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
-            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
+            PREFIX ROVO-op: <https://w3id.org/rovo/op#>
             PREFIX prov: <http://www.w3.org/ns/prov#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             SELECT $this ?value WHERE {
-              $this RDOnto-link:statistic RDOnto-link:DeadlineMissShare .
-              OPTIONAL { $this RDOnto-link:againstDeadline ?value }
-              OPTIONAL { $this RDOnto-link:againstDeadline ?d . ?d RDOnto-link:forContent ?deadlineContent }
-              OPTIONAL { $this sosa:hasFeatureOfInterest ?stream . ?stream RDOnto-link:hasStreamContent ?streamContent }
+              $this ROVO-link:statistic ROVO-link:DeadlineMissShare .
+              OPTIONAL { $this ROVO-link:againstDeadline ?value }
+              OPTIONAL { $this ROVO-link:againstDeadline ?d . ?d ROVO-link:forContent ?deadlineContent }
+              OPTIONAL { $this sosa:hasFeatureOfInterest ?stream . ?stream ROVO-link:hasStreamContent ?streamContent }
               FILTER (!BOUND(?value)
                       || (BOUND(?deadlineContent) && BOUND(?streamContent) && ?deadlineContent != ?streamContent))
             }""" ] ;
@@ -480,68 +480,68 @@ RDOnto-link-sh:LatencyStatisticShape a sh:NodeShape ;
         sh:path sosa:hasSimpleResult ; sh:minCount 1 ; sh:maxCount 1 ;
         sh:message "A latency statistic has exactly one value." ] ;
     sh:property [
-        sh:path RDOnto-link:windowStart ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:path ROVO-link:windowStart ; sh:minCount 1 ; sh:maxCount 1 ;
         sh:datatype xsd:dateTime ; sh:pattern "(Z|[+-][0-9]{2}:[0-9]{2})$" ;
-        sh:lessThan RDOnto-link:windowEnd ;
+        sh:lessThan ROVO-link:windowEnd ;
         sh:message "A latency statistic has exactly one window start, an xsd:dateTime with a timezone, before the window end." ] ;
     sh:property [
-        sh:path RDOnto-link:windowEnd ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:path ROVO-link:windowEnd ; sh:minCount 1 ; sh:maxCount 1 ;
         sh:datatype xsd:dateTime ; sh:pattern "(Z|[+-][0-9]{2}:[0-9]{2})$" ;
         sh:message "A latency statistic has exactly one window end, an xsd:dateTime with a timezone." ] ;
     sh:sparql [
         sh:message "A deadline miss share is a number between 0 and 1." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             SELECT $this ?value WHERE {
-              $this RDOnto-link:statistic RDOnto-link:DeadlineMissShare ; sosa:hasSimpleResult ?value .
+              $this ROVO-link:statistic ROVO-link:DeadlineMissShare ; sosa:hasSimpleResult ?value .
               FILTER (!(DATATYPE(?value) IN (xsd:decimal, xsd:integer)) || ?value < 0 || ?value > 1)
             }""" ] ;
     sh:sparql [
         sh:message "A latency mean or standard deviation is a non-negative xsd:dayTimeDuration." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             SELECT $this ?value WHERE {
-              $this RDOnto-link:statistic ?kind ; sosa:hasSimpleResult ?value .
-              FILTER (?kind IN (RDOnto-link:Mean, RDOnto-link:StandardDeviation))
+              $this ROVO-link:statistic ?kind ; sosa:hasSimpleResult ?value .
+              FILTER (?kind IN (ROVO-link:Mean, ROVO-link:StandardDeviation))
               FILTER (DATATYPE(?value) != xsd:dayTimeDuration || STRSTARTS(STR(?value), "-"))
             }""" ] .
 
-RDOnto-link-sh:SpeedObservationShape a sh:NodeShape ;
+ROVO-link-sh:SpeedObservationShape a sh:NodeShape ;
     sh:targetClass sosa:Observation ;
     sh:sparql [
         sh:message "A vehicle speed observation is about a RemotelyOperatedVehicle and has a non-negative numeric value in km/h." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
-            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
+            PREFIX ROVO-op: <https://w3id.org/rovo/op#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
             PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             SELECT $this ?value WHERE {
-              $this sosa:observedProperty RDOnto-link:VehicleSpeed .
+              $this sosa:observedProperty ROVO-link:VehicleSpeed .
               OPTIONAL { $this sosa:hasFeatureOfInterest ?vehicle .
-                         ?vehicle a/rdfs:subClassOf* RDOnto-op:RemotelyOperatedVehicle . BIND (true AS ?isVehicle) }
+                         ?vehicle a/rdfs:subClassOf* ROVO-op:RemotelyOperatedVehicle . BIND (true AS ?isVehicle) }
               OPTIONAL { $this sosa:hasSimpleResult ?value }
               FILTER (!BOUND(?isVehicle) || !BOUND(?value)
                       || !(DATATYPE(?value) IN (xsd:decimal, xsd:integer)) || ?value < 0)
             }""" ] .
 
-RDOnto-link-sh:DataRateObservationShape a sh:NodeShape ;
+ROVO-link-sh:DataRateObservationShape a sh:NodeShape ;
     sh:targetClass sosa:Observation ;
     sh:sparql [
         sh:message "An available data rate observation is about a Stream and has a non-negative numeric value in Mbit/s (LK-06)." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
             PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             SELECT $this ?value WHERE {
-              $this sosa:observedProperty RDOnto-link:AvailableDataRate .
+              $this sosa:observedProperty ROVO-link:AvailableDataRate .
               OPTIONAL { $this sosa:hasFeatureOfInterest ?stream .
-                         ?stream a/rdfs:subClassOf* RDOnto-link:Stream . BIND (true AS ?isStream) }
+                         ?stream a/rdfs:subClassOf* ROVO-link:Stream . BIND (true AS ?isStream) }
               OPTIONAL { $this sosa:hasSimpleResult ?value }
               FILTER (!BOUND(?isStream) || !BOUND(?value)
                       || !(DATATYPE(?value) IN (xsd:decimal, xsd:integer)) || ?value < 0)
@@ -551,25 +551,25 @@ RDOnto-link-sh:DataRateObservationShape a sh:NodeShape ;
 # Camera views and link state display (LK-06, LK-11)
 #################################################################
 
-RDOnto-link-sh:CameraViewRateShape a sh:NodeShape ;
-    sh:targetClass RDOnto-op:CameraView ;
+ROVO-link-sh:CameraViewRateShape a sh:NodeShape ;
+    sh:targetClass ROVO-op:CameraView ;
     sh:property [
-        sh:path RDOnto-link:requiredDataRate ; sh:maxCount 1 ;
+        sh:path ROVO-link:requiredDataRate ; sh:maxCount 1 ;
         sh:or ( [ sh:datatype xsd:decimal ] [ sh:datatype xsd:integer ] ) ; sh:minInclusive 0 ;
         sh:message "A camera view has at most one required data rate, a non-negative number in Mbit/s (LK-06)." ] ;
     sh:property [
-        sh:path RDOnto-link:minimumDataRate ; sh:maxCount 1 ;
+        sh:path ROVO-link:minimumDataRate ; sh:maxCount 1 ;
         sh:or ( [ sh:datatype xsd:decimal ] [ sh:datatype xsd:integer ] ) ; sh:minInclusive 0 ;
-        sh:lessThanOrEquals RDOnto-link:requiredDataRate ;
+        sh:lessThanOrEquals ROVO-link:requiredDataRate ;
         sh:message "A camera view has at most one minimum data rate, a non-negative number in Mbit/s, not above its required data rate (LK-06)." ] ;
     sh:property [
-        sh:path RDOnto-link:viewNeededInMode ; sh:class RDOnto-op:OperationMode ;
+        sh:path ROVO-link:viewNeededInMode ; sh:class ROVO-op:OperationMode ;
         sh:message "A camera view is needed only in OperationModes (LK-06)." ] .
 
-RDOnto-link-sh:LinkStateDisplayShape a sh:NodeShape ;
-    sh:targetClass RDOnto-link:LinkStateDisplay ;
+ROVO-link-sh:LinkStateDisplayShape a sh:NodeShape ;
+    sh:targetClass ROVO-link:LinkStateDisplay ;
     sh:property [
-        sh:path RDOnto-link:showsLinkInformation ; sh:minCount 1 ; sh:class RDOnto-link:LinkInformation ;
+        sh:path ROVO-link:showsLinkInformation ; sh:minCount 1 ; sh:class ROVO-link:LinkInformation ;
         sh:message "A link state display shows at least one kind of LinkInformation (LK-11)." ] .
 
 #################################################################
@@ -578,113 +578,113 @@ RDOnto-link-sh:LinkStateDisplayShape a sh:NodeShape ;
 
 # A warning, so a shape of its own: severity belongs to a shape, not to one of
 # its constraints.
-RDOnto-link-sh:LatencyStatisticPartShape a sh:NodeShape ;
-    sh:targetClass RDOnto-link:LatencyStatistic ;
+ROVO-link-sh:LatencyStatisticPartShape a sh:NodeShape ;
+    sh:targetClass ROVO-link:LatencyStatistic ;
     sh:severity sh:Warning ;
     sh:sparql [
         sh:message "A latency mean or standard deviation should say which latency part it covers (sosa:observedProperty): without it, it cannot be compared with the limit for that part (LK-05)." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             SELECT $this ?value WHERE {
-              $this RDOnto-link:statistic ?value .
-              FILTER (?value IN (RDOnto-link:Mean, RDOnto-link:StandardDeviation))
+              $this ROVO-link:statistic ?value .
+              FILTER (?value IN (ROVO-link:Mean, ROVO-link:StandardDeviation))
               FILTER NOT EXISTS { $this sosa:observedProperty ?part }
             }""" ] .
 
 # Common to every link prediction; the three kinds follow.
-RDOnto-link-sh:LinkPredictionShape a sh:NodeShape ;
-    sh:targetClass RDOnto-link:LinkPrediction ;
+ROVO-link-sh:LinkPredictionShape a sh:NodeShape ;
+    sh:targetClass ROVO-link:LinkPrediction ;
     sh:property [
-        sh:path RDOnto-link:predictedFor ; sh:minCount 1 ; sh:maxCount 1 ; sh:class RDOnto-link:TeleoperationSession ;
+        sh:path ROVO-link:predictedFor ; sh:minCount 1 ; sh:maxCount 1 ; sh:class ROVO-link:TeleoperationSession ;
         sh:message "A link prediction is for exactly one TeleoperationSession." ] ;
     sh:property [
         sh:path prov:generatedAtTime ; sh:minCount 1 ; sh:maxCount 1 ;
         sh:datatype xsd:dateTime ; sh:pattern "(Z|[+-][0-9]{2}:[0-9]{2})$" ;
         sh:message "A link prediction has exactly one issue time (prov:generatedAtTime), an xsd:dateTime with a timezone." ] ;
     sh:property [
-        sh:path prov:generatedAtTime ; sh:lessThanOrEquals RDOnto-link:validFrom ; sh:severity sh:Warning ;
+        sh:path prov:generatedAtTime ; sh:lessThanOrEquals ROVO-link:validFrom ; sh:severity sh:Warning ;
         sh:message "A link prediction should be issued no later than its window starts (validFrom): otherwise it has no lead time (LK-08). A warning, so that a small clock skew between vehicle and station is not rejected." ] ;
     sh:property [
-        sh:path RDOnto-link:validFrom ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:path ROVO-link:validFrom ; sh:minCount 1 ; sh:maxCount 1 ;
         sh:datatype xsd:dateTime ; sh:pattern "(Z|[+-][0-9]{2}:[0-9]{2})$" ;
-        sh:lessThan RDOnto-link:validUntil ;
+        sh:lessThan ROVO-link:validUntil ;
         sh:message "A link prediction has exactly one validFrom, an xsd:dateTime with a timezone, before its validUntil." ] ;
     sh:property [
-        sh:path RDOnto-link:validUntil ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:path ROVO-link:validUntil ; sh:minCount 1 ; sh:maxCount 1 ;
         sh:datatype xsd:dateTime ; sh:pattern "(Z|[+-][0-9]{2}:[0-9]{2})$" ;
         sh:message "A link prediction has exactly one validUntil, an xsd:dateTime with a timezone." ] ;
     sh:property [
-        sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:class RDOnto-link:PredictionSource ;
+        sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:class ROVO-link:PredictionSource ;
         sh:message "A link prediction names its source, a PredictionSource (prov:wasAttributedTo)." ] ;
     sh:property [
-        sh:path RDOnto-link:predictionConfidence ; sh:maxCount 1 ;
+        sh:path ROVO-link:predictionConfidence ; sh:maxCount 1 ;
         sh:or ( [ sh:datatype xsd:decimal ] [ sh:datatype xsd:integer ] ) ;
         sh:minInclusive 0 ; sh:maxInclusive 1 ;
         sh:message "A link prediction has at most one confidence, a number between 0 and 1." ] ;
     sh:property [
-        sh:path RDOnto-link:predictedOnSegment ; sh:maxCount 1 ; sh:class RDOnto-link:RouteSegment ;
+        sh:path ROVO-link:predictedOnSegment ; sh:maxCount 1 ; sh:class ROVO-link:RouteSegment ;
         sh:message "A link prediction is for at most one RouteSegment (LK-08)." ] .
 
-RDOnto-link-sh:LatencyPredictionShape a sh:NodeShape ;
-    sh:targetClass RDOnto-link:LatencyPrediction ;
+ROVO-link-sh:LatencyPredictionShape a sh:NodeShape ;
+    sh:targetClass ROVO-link:LatencyPrediction ;
     sh:property [
-        sh:path RDOnto-link:predictedPart ; sh:minCount 1 ; sh:maxCount 1 ;
-        sh:in ( RDOnto-link:SensorLatency RDOnto-link:ActuatorLatency RDOnto-link:EndToEndLatency ) ;
+        sh:path ROVO-link:predictedPart ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:in ( ROVO-link:SensorLatency ROVO-link:ActuatorLatency ROVO-link:EndToEndLatency ) ;
         sh:message "A latency prediction is for exactly one latency part." ] ;
     sh:property [
-        sh:path RDOnto-link:predictedValue ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:path ROVO-link:predictedValue ; sh:minCount 1 ; sh:maxCount 1 ;
         sh:datatype xsd:dayTimeDuration ; sh:pattern "^P" ;
         sh:message "A latency prediction has exactly one value, a non-negative xsd:dayTimeDuration." ] .
 
-RDOnto-link-sh:DataRatePredictionShape a sh:NodeShape ;
-    sh:targetClass RDOnto-link:DataRatePrediction ;
+ROVO-link-sh:DataRatePredictionShape a sh:NodeShape ;
+    sh:targetClass ROVO-link:DataRatePrediction ;
     sh:property [
-        sh:path RDOnto-link:predictedDataRate ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:path ROVO-link:predictedDataRate ; sh:minCount 1 ; sh:maxCount 1 ;
         sh:or ( [ sh:datatype xsd:decimal ] [ sh:datatype xsd:integer ] ) ; sh:minInclusive 0 ;
         sh:message "A data rate prediction has exactly one value, a non-negative number in Mbit/s (LK-08)." ] .
 
-RDOnto-link-sh:ConnectionLossPredictionShape a sh:NodeShape ;
-    sh:targetClass RDOnto-link:ConnectionLossPrediction ;
+ROVO-link-sh:ConnectionLossPredictionShape a sh:NodeShape ;
+    sh:targetClass ROVO-link:ConnectionLossPrediction ;
     sh:property [
-        sh:path RDOnto-link:predictionConfidence ; sh:minCount 1 ;
+        sh:path ROVO-link:predictionConfidence ; sh:minCount 1 ;
         sh:message "A connection loss prediction states how likely the loss is (predictionConfidence), since it has no other value (LK-08)." ] .
 
-RDOnto-link-sh:MinimalRiskManoeuvreShape a sh:NodeShape ;
-    sh:targetClass RDOnto-link:MinimalRiskManoeuvre ;
+ROVO-link-sh:MinimalRiskManoeuvreShape a sh:NodeShape ;
+    sh:targetClass ROVO-link:MinimalRiskManoeuvre ;
     sh:property [
-        sh:path RDOnto-link:performedBy ; sh:minCount 1 ; sh:maxCount 1 ; sh:class RDOnto-op:RemotelyOperatedVehicle ;
+        sh:path ROVO-link:performedBy ; sh:minCount 1 ; sh:maxCount 1 ; sh:class ROVO-op:RemotelyOperatedVehicle ;
         sh:message "A minimal risk manoeuvre is performed by exactly one RemotelyOperatedVehicle." ] ;
     sh:property [
-        sh:path RDOnto-link:manoeuvreKind ; sh:maxCount 1 ; sh:class RDOnto-link:MinimalRiskManoeuvreKind ;
+        sh:path ROVO-link:manoeuvreKind ; sh:maxCount 1 ; sh:class ROVO-link:MinimalRiskManoeuvreKind ;
         sh:message "A minimal risk manoeuvre has at most one MinimalRiskManoeuvreKind (LK-07)." ] ;
     sh:property [
-        sh:path RDOnto-link:duringSession ; sh:maxCount 1 ; sh:class RDOnto-link:TeleoperationSession ;
+        sh:path ROVO-link:duringSession ; sh:maxCount 1 ; sh:class ROVO-link:TeleoperationSession ;
         sh:message "A minimal risk manoeuvre starts during at most one TeleoperationSession (LK-07)." ] ;
     sh:property [
-        sh:path RDOnto-link:triggeredBy ; sh:maxCount 1 ; sh:class RDOnto-link:Degradation ;
+        sh:path ROVO-link:triggeredBy ; sh:maxCount 1 ; sh:class ROVO-link:Degradation ;
         sh:message "A minimal risk manoeuvre is triggered by at most one Degradation (LK-07)." ] ;
     sh:sparql [
         sh:message "A minimal risk manoeuvre is performed by the vehicle of the session it belongs to (LK-07)." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
-            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
+            PREFIX ROVO-op: <https://w3id.org/rovo/op#>
             PREFIX prov: <http://www.w3.org/ns/prov#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             SELECT $this ?value WHERE {
-              $this RDOnto-link:duringSession ?value ; RDOnto-link:performedBy ?vehicle .
-              ?value RDOnto-link:sessionVehicle ?sessionVehicle .
+              $this ROVO-link:duringSession ?value ; ROVO-link:performedBy ?vehicle .
+              ?value ROVO-link:sessionVehicle ?sessionVehicle .
               FILTER (?vehicle != ?sessionVehicle)
             }""" ] ;
     sh:sparql [
         sh:message "A minimal risk manoeuvre starts within the session it names: not before the session started or after it ended (duringSession, LK-07)." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
-            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
+            PREFIX ROVO-op: <https://w3id.org/rovo/op#>
             PREFIX prov: <http://www.w3.org/ns/prov#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             SELECT $this ?value WHERE {
-              $this RDOnto-link:duringSession ?value ; prov:startedAtTime ?start .
+              $this ROVO-link:duringSession ?value ; prov:startedAtTime ?start .
               ?value prov:startedAtTime ?sessionStart .
               OPTIONAL { ?value prov:endedAtTime ?sessionEnd }
               FILTER (?start < ?sessionStart || (BOUND(?sessionEnd) && ?start > ?sessionEnd))
@@ -698,59 +698,59 @@ RDOnto-link-sh:MinimalRiskManoeuvreShape a sh:NodeShape ;
 # Adaptation (LK-10)
 #################################################################
 
-RDOnto-link-sh:AdaptationShape a sh:NodeShape ;
-    sh:targetClass RDOnto-link:Adaptation ;
+ROVO-link-sh:AdaptationShape a sh:NodeShape ;
+    sh:targetClass ROVO-link:Adaptation ;
     sh:property [
-        sh:path RDOnto-link:addresses ; sh:minCount 1 ; sh:class RDOnto-link:Degradation ;
+        sh:path ROVO-link:addresses ; sh:minCount 1 ; sh:class ROVO-link:Degradation ;
         sh:message "An adaptation addresses at least one Degradation." ] ;
     sh:property [
-        sh:path RDOnto-link:preferenceRank ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ;
+        sh:path ROVO-link:preferenceRank ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ;
         sh:message "An adaptation has exactly one preference rank, an xsd:integer." ] ;
     sh:property [
-        sh:path RDOnto-link:requiresCondition ; sh:class RDOnto-link:AvailabilityCondition ;
+        sh:path ROVO-link:requiresCondition ; sh:class ROVO-link:AvailabilityCondition ;
         sh:message "An adaptation requires only AvailabilityConditions (LK-10)." ] ;
     sh:sparql [
         sh:message "No two adaptations share a default preference rank, so the recommended adaptation is unambiguous (LK-10)." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
-            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
+            PREFIX ROVO-op: <https://w3id.org/rovo/op#>
             PREFIX prov: <http://www.w3.org/ns/prov#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             SELECT $this ?value WHERE {
-              $this RDOnto-link:preferenceRank ?rank .
-              ?value a RDOnto-link:Adaptation ; RDOnto-link:preferenceRank ?rank .
+              $this ROVO-link:preferenceRank ?rank .
+              ?value a ROVO-link:Adaptation ; ROVO-link:preferenceRank ?rank .
               FILTER ($this != ?value)
             }""" ] .
 
-RDOnto-link-sh:AdaptationRankOverrideShape a sh:NodeShape ;
-    sh:targetClass RDOnto-link:AdaptationRankOverride ;
+ROVO-link-sh:AdaptationRankOverrideShape a sh:NodeShape ;
+    sh:targetClass ROVO-link:AdaptationRankOverride ;
     sh:property [
-        sh:path RDOnto-link:overriddenAdaptation ; sh:minCount 1 ; sh:maxCount 1 ; sh:class RDOnto-link:Adaptation ;
+        sh:path ROVO-link:overriddenAdaptation ; sh:minCount 1 ; sh:maxCount 1 ; sh:class ROVO-link:Adaptation ;
         sh:message "A rank override is for exactly one Adaptation (LK-10)." ] ;
     sh:property [
-        sh:path RDOnto-link:overrideDegradation ; sh:maxCount 1 ; sh:class RDOnto-link:Degradation ;
+        sh:path ROVO-link:overrideDegradation ; sh:maxCount 1 ; sh:class ROVO-link:Degradation ;
         sh:message "A rank override is for at most one Degradation." ] ;
     sh:property [
-        sh:path RDOnto-link:overrideSetup ; sh:maxCount 1 ; sh:class RDOnto-link:TeleoperationSetup ;
+        sh:path ROVO-link:overrideSetup ; sh:maxCount 1 ; sh:class ROVO-link:TeleoperationSetup ;
         sh:message "A rank override is for at most one TeleoperationSetup." ] ;
     sh:property [
-        sh:path RDOnto-link:overrideRank ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ;
+        sh:path ROVO-link:overrideRank ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ;
         sh:message "A rank override has exactly one rank, an xsd:integer." ] ;
     sh:sparql [
         sh:message "A rank override names a degradation, a setup or both; and an adaptation has at most one override per degradation and setup (LK-10)." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
-            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
+            PREFIX ROVO-op: <https://w3id.org/rovo/op#>
             PREFIX prov: <http://www.w3.org/ns/prov#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             SELECT $this ?value WHERE {
-              $this RDOnto-link:overriddenAdaptation ?value .
-              OPTIONAL { $this RDOnto-link:overrideDegradation ?deg }
-              OPTIONAL { $this RDOnto-link:overrideSetup ?setup }
+              $this ROVO-link:overriddenAdaptation ?value .
+              OPTIONAL { $this ROVO-link:overrideDegradation ?deg }
+              OPTIONAL { $this ROVO-link:overrideSetup ?setup }
               BIND (EXISTS {
-                ?other RDOnto-link:overriddenAdaptation ?value . FILTER (?other != $this)
-                OPTIONAL { ?other RDOnto-link:overrideDegradation ?otherDeg }
-                OPTIONAL { ?other RDOnto-link:overrideSetup ?otherSetup }
+                ?other ROVO-link:overriddenAdaptation ?value . FILTER (?other != $this)
+                OPTIONAL { ?other ROVO-link:overrideDegradation ?otherDeg }
+                OPTIONAL { ?other ROVO-link:overrideSetup ?otherSetup }
                 FILTER (COALESCE(?otherDeg, "") = COALESCE(?deg, ""))
                 FILTER (COALESCE(?otherSetup, "") = COALESCE(?setup, ""))
               } AS ?duplicate)
@@ -761,176 +761,176 @@ RDOnto-link-sh:AdaptationRankOverrideShape a sh:NodeShape ;
 # Setups and limits (LK-04, LK-07, LK-08, LK-09)
 #################################################################
 
-RDOnto-link-sh:SetupShape a sh:NodeShape ;
-    sh:targetClass RDOnto-link:TeleoperationSetup ;
+ROVO-link-sh:SetupShape a sh:NodeShape ;
+    sh:targetClass ROVO-link:TeleoperationSetup ;
     sh:property [
-        sh:path RDOnto-link:wheelbase ; sh:maxCount 1 ;
+        sh:path ROVO-link:wheelbase ; sh:maxCount 1 ;
         sh:or ( [ sh:datatype xsd:decimal ] [ sh:datatype xsd:integer ] ) ; sh:minExclusive 0 ;
         sh:message "A setup has at most one wheelbase, a positive number in metres." ] ;
     sh:property [
-        sh:path RDOnto-link:minimumDrivingSpeed ; sh:maxCount 1 ;
+        sh:path ROVO-link:minimumDrivingSpeed ; sh:maxCount 1 ;
         sh:or ( [ sh:datatype xsd:decimal ] [ sh:datatype xsd:integer ] ) ; sh:minInclusive 0 ;
         sh:message "A setup has at most one minimum driving speed, a non-negative number in km/h." ] ;
     sh:property [
-        sh:path RDOnto-link:maximumDrivingSpeed ; sh:maxCount 1 ;
+        sh:path ROVO-link:maximumDrivingSpeed ; sh:maxCount 1 ;
         sh:or ( [ sh:datatype xsd:decimal ] [ sh:datatype xsd:integer ] ) ; sh:minExclusive 0 ;
         sh:message "A setup has at most one maximum driving speed, a positive number in km/h (LK-09)." ] ;
     sh:property [
-        sh:path RDOnto-link:minimumDrivingSpeed ; sh:lessThanOrEquals RDOnto-link:maximumDrivingSpeed ;
+        sh:path ROVO-link:minimumDrivingSpeed ; sh:lessThanOrEquals ROVO-link:maximumDrivingSpeed ;
         sh:message "A setup's minimum driving speed is not above its maximum driving speed." ] ;
     sh:property [
-        sh:path RDOnto-link:setupVehicle ; sh:class RDOnto-op:RemotelyOperatedVehicle ;
+        sh:path ROVO-link:setupVehicle ; sh:class ROVO-op:RemotelyOperatedVehicle ;
         sh:message "A setup's vehicles are RemotelyOperatedVehicles." ] ;
     sh:property [
-        sh:path RDOnto-link:setupStation ; sh:class RDOnto-link:RemoteStation ;
+        sh:path ROVO-link:setupStation ; sh:class ROVO-link:RemoteStation ;
         sh:message "A setup's stations are RemoteStations." ] ;
     sh:property [
-        sh:path RDOnto-link:setupEnvironment ; sh:maxCount 1 ; sh:class RDOnto-op:OperatingEnvironment ;
+        sh:path ROVO-link:setupEnvironment ; sh:maxCount 1 ; sh:class ROVO-op:OperatingEnvironment ;
         sh:message "A setup names at most one OperatingEnvironment." ] ;
     sh:property [
-        sh:path RDOnto-link:setupTask ; sh:maxCount 1 ; sh:class RDOnto-op:DrivingTask ;
+        sh:path ROVO-link:setupTask ; sh:maxCount 1 ; sh:class ROVO-op:DrivingTask ;
         sh:message "A setup names at most one DrivingTask." ] .
 
-RDOnto-link-sh:LimitScopeShape a sh:NodeShape ;
-    sh:targetClass RDOnto-op:ConfiguredLimit ;
+ROVO-link-sh:LimitScopeShape a sh:NodeShape ;
+    sh:targetClass ROVO-op:ConfiguredLimit ;
     sh:property [
-        sh:path RDOnto-link:appliesToSetup ; sh:maxCount 1 ; sh:class RDOnto-link:TeleoperationSetup ;
+        sh:path ROVO-link:appliesToSetup ; sh:maxCount 1 ; sh:class ROVO-link:TeleoperationSetup ;
         sh:message "A limit applies to at most one TeleoperationSetup." ] ;
     sh:property [
-        sh:path RDOnto-link:upToSpeed ; sh:maxCount 1 ;
+        sh:path ROVO-link:upToSpeed ; sh:maxCount 1 ;
         sh:or ( [ sh:datatype xsd:decimal ] [ sh:datatype xsd:integer ] ) ; sh:minInclusive 0 ;
         sh:message "A limit has at most one upToSpeed, a non-negative number in km/h." ] ;
     sh:property [
-        sh:path RDOnto-link:budgetPart ; sh:maxCount 1 ; sh:class RDOnto-link:LatencyPart ;
+        sh:path ROVO-link:budgetPart ; sh:maxCount 1 ; sh:class ROVO-link:LatencyPart ;
         sh:message "A limit is for at most one LatencyPart." ] ;
     sh:property [
-        sh:path RDOnto-link:forContent ; sh:maxCount 1 ; sh:class RDOnto-link:StreamContent ;
+        sh:path ROVO-link:forContent ; sh:maxCount 1 ; sh:class ROVO-link:StreamContent ;
         sh:message "A limit is for at most one StreamContent." ] .
 
-RDOnto-link-sh:InformationAgeAlignmentShape a sh:NodeShape ;
-    sh:targetClass RDOnto-op:InformationAgeLimit ;
+ROVO-link-sh:InformationAgeAlignmentShape a sh:NodeShape ;
+    sh:targetClass ROVO-op:InformationAgeLimit ;
     sh:sparql [
-        sh:message "An information age limit scoped to a setup must be no looser than the operator's limit for every mode it applies to, which takes priority: its own mode and each narrower mode it holds for by inheritance, unless the setup has a more specific limit for that mode. The operator's limit for a mode is that of the most specific mode in its RDOnto-op:broaderMode chain that has one. The operator's limit is ?value ms." ;
+        sh:message "An information age limit scoped to a setup must be no looser than the operator's limit for every mode it applies to, which takes priority: its own mode and each narrower mode it holds for by inheritance, unless the setup has a more specific limit for that mode. The operator's limit for a mode is that of the most specific mode in its ROVO-op:broaderMode chain that has one. The operator's limit is ?value ms." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
-            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
+            PREFIX ROVO-op: <https://w3id.org/rovo/op#>
             PREFIX qudt: <http://qudt.org/schema/qudt/>
             PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
             SELECT DISTINCT $this ?value WHERE {
-              $this RDOnto-link:appliesToSetup ?setup ; RDOnto-op:appliesToMode ?mode ; qudt:numericValue ?v .
+              $this ROVO-link:appliesToSetup ?setup ; ROVO-op:appliesToMode ?mode ; qudt:numericValue ?v .
               # ?em: each mode this setup limit is the effective one for.
-              ?em a RDOnto-op:OperationMode .
-              ?em RDOnto-op:broaderMode* ?mode .
+              ?em a ROVO-op:OperationMode .
+              ?em ROVO-op:broaderMode* ?mode .
               FILTER NOT EXISTS {
-                ?em RDOnto-op:broaderMode* ?sm . ?sm RDOnto-op:broaderMode+ ?mode .
-                ?override a RDOnto-op:InformationAgeLimit ; RDOnto-link:appliesToSetup ?setup ; RDOnto-op:appliesToMode ?sm .
+                ?em ROVO-op:broaderMode* ?sm . ?sm ROVO-op:broaderMode+ ?mode .
+                ?override a ROVO-op:InformationAgeLimit ; ROVO-link:appliesToSetup ?setup ; ROVO-op:appliesToMode ?sm .
               }
               # The operator's limit for ?em: the most specific one without a setup.
-              ?modeLimit a RDOnto-op:InformationAgeLimit ; RDOnto-op:appliesToMode ?m2 ; qudt:numericValue ?value .
-              ?em RDOnto-op:broaderMode* ?m2 .
-              FILTER NOT EXISTS { ?modeLimit RDOnto-link:appliesToSetup ?any }
+              ?modeLimit a ROVO-op:InformationAgeLimit ; ROVO-op:appliesToMode ?m2 ; qudt:numericValue ?value .
+              ?em ROVO-op:broaderMode* ?m2 .
+              FILTER NOT EXISTS { ?modeLimit ROVO-link:appliesToSetup ?any }
               FILTER NOT EXISTS {
-                ?em RDOnto-op:broaderMode* ?closer . ?closer RDOnto-op:broaderMode+ ?m2 .
-                ?other a RDOnto-op:InformationAgeLimit ; RDOnto-op:appliesToMode ?closer .
-                FILTER NOT EXISTS { ?other RDOnto-link:appliesToSetup ?any2 }
+                ?em ROVO-op:broaderMode* ?closer . ?closer ROVO-op:broaderMode+ ?m2 .
+                ?other a ROVO-op:InformationAgeLimit ; ROVO-op:appliesToMode ?closer .
+                FILTER NOT EXISTS { ?other ROVO-link:appliesToSetup ?any2 }
               }
               FILTER (?v > ?value)
             }""" ] .
 
-RDOnto-link-sh:LatencyBudgetShape a sh:NodeShape ;
-    sh:targetClass RDOnto-link:LatencyBudget ;
+ROVO-link-sh:LatencyBudgetShape a sh:NodeShape ;
+    sh:targetClass ROVO-link:LatencyBudget ;
     sh:property [ sh:path qudt:numericValue ; sh:minCount 1 ; sh:message "A latency budget has a value." ] ;
     sh:property [ sh:path qudt:unit ; sh:minCount 1 ; sh:in ( unit:MilliSEC ) ;
         sh:message "A latency budget is given in unit:MilliSEC (LK-04 and LK-09 read only that unit)." ] ;
-    sh:property [ sh:path RDOnto-op:appliesToMode ; sh:minCount 1 ;
+    sh:property [ sh:path ROVO-op:appliesToMode ; sh:minCount 1 ;
         sh:message "A latency budget applies to at least one mode." ] ;
-    sh:property [ sh:path RDOnto-link:appliesToSetup ; sh:minCount 1 ;
+    sh:property [ sh:path ROVO-link:appliesToSetup ; sh:minCount 1 ;
         sh:message "A latency budget is a reference budget of one setup, so it names that setup." ] ;
-    sh:property [ sh:path RDOnto-link:budgetPart ; sh:minCount 1 ; sh:maxCount 1 ;
-        sh:in ( RDOnto-link:ActuatorLatency RDOnto-link:EndToEndLatency ) ;
-        sh:message "A latency budget covers exactly one latency part, actuator or end-to-end. The sensor (vehicle-to-station) budget is a RDOnto-op:InformationAgeLimit scoped to the setup, so that it is checked against the mode's limit." ] .
+    sh:property [ sh:path ROVO-link:budgetPart ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:in ( ROVO-link:ActuatorLatency ROVO-link:EndToEndLatency ) ;
+        sh:message "A latency budget covers exactly one latency part, actuator or end-to-end. The sensor (vehicle-to-station) budget is a ROVO-op:InformationAgeLimit scoped to the setup, so that it is checked against the mode's limit." ] .
 
-RDOnto-link-sh:ConnectionTimeoutShape a sh:NodeShape ;
-    sh:targetClass RDOnto-link:ConnectionTimeout ;
+ROVO-link-sh:ConnectionTimeoutShape a sh:NodeShape ;
+    sh:targetClass ROVO-link:ConnectionTimeout ;
     sh:property [ sh:path qudt:numericValue ; sh:minCount 1 ; sh:message "A connection timeout has a value." ] ;
     sh:property [ sh:path qudt:unit ; sh:minCount 1 ; sh:in ( unit:MilliSEC ) ;
         sh:message "A connection timeout is given in unit:MilliSEC (LK-07 reads only that unit)." ] ;
-    sh:property [ sh:path RDOnto-link:forContent ; sh:minCount 1 ; sh:maxCount 1 ; sh:class RDOnto-link:StreamContent ;
+    sh:property [ sh:path ROVO-link:forContent ; sh:minCount 1 ; sh:maxCount 1 ; sh:class ROVO-link:StreamContent ;
         sh:message "A connection timeout is for exactly one StreamContent." ] ;
     sh:sparql [
         sh:message "A connection timeout is only for content that is sent continuously (isContinuous true): silence on other content is normal (LK-07)." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
-            PREFIX RDOnto-op: <https://w3id.org/rdonto/op#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
+            PREFIX ROVO-op: <https://w3id.org/rovo/op#>
             PREFIX prov: <http://www.w3.org/ns/prov#>
             PREFIX sosa: <http://www.w3.org/ns/sosa/>
             SELECT $this ?value WHERE {
-              $this RDOnto-link:forContent ?value .
-              FILTER NOT EXISTS { ?value RDOnto-link:isContinuous true }
+              $this ROVO-link:forContent ?value .
+              FILTER NOT EXISTS { ?value ROVO-link:isContinuous true }
             }""" ] .
 
-RDOnto-link-sh:LatencyVariationLimitShape a sh:NodeShape ;
-    sh:targetClass RDOnto-link:LatencyVariationLimit ;
+ROVO-link-sh:LatencyVariationLimitShape a sh:NodeShape ;
+    sh:targetClass ROVO-link:LatencyVariationLimit ;
     sh:property [ sh:path qudt:numericValue ; sh:minCount 1 ; sh:message "A latency variation limit has a value." ] ;
     sh:property [ sh:path qudt:unit ; sh:minCount 1 ; sh:in ( unit:MilliSEC ) ;
         sh:message "A latency variation limit is given in unit:MilliSEC (LK-10 reads only that unit)." ] ;
-    sh:property [ sh:path RDOnto-op:appliesToMode ; sh:minCount 1 ;
+    sh:property [ sh:path ROVO-op:appliesToMode ; sh:minCount 1 ;
         sh:message "A latency variation limit applies to at least one mode." ] ;
-    sh:property [ sh:path RDOnto-link:budgetPart ; sh:minCount 1 ;
-        sh:in ( RDOnto-link:SensorLatency RDOnto-link:ActuatorLatency RDOnto-link:EndToEndLatency ) ;
+    sh:property [ sh:path ROVO-link:budgetPart ; sh:minCount 1 ;
+        sh:in ( ROVO-link:SensorLatency ROVO-link:ActuatorLatency ROVO-link:EndToEndLatency ) ;
         sh:message "A latency variation limit is for exactly one latency part: sensor, actuator or end-to-end." ] .
 
-RDOnto-link-sh:DeliveryDeadlineShape a sh:NodeShape ;
-    sh:targetClass RDOnto-link:DeliveryDeadline ;
+ROVO-link-sh:DeliveryDeadlineShape a sh:NodeShape ;
+    sh:targetClass ROVO-link:DeliveryDeadline ;
     sh:property [ sh:path qudt:numericValue ; sh:minCount 1 ; sh:message "A delivery deadline has a value." ] ;
     sh:property [ sh:path qudt:unit ; sh:minCount 1 ; sh:in ( unit:MilliSEC ) ;
         sh:message "A delivery deadline is given in unit:MilliSEC (LK-05 reads only that unit)." ] ;
-    sh:property [ sh:path RDOnto-link:forContent ; sh:minCount 1 ; sh:maxCount 1 ; sh:class RDOnto-link:StreamContent ;
+    sh:property [ sh:path ROVO-link:forContent ; sh:minCount 1 ; sh:maxCount 1 ; sh:class ROVO-link:StreamContent ;
         sh:message "A delivery deadline is for exactly one StreamContent." ] .
 
-RDOnto-link-sh:LatencyAgreementToleranceShape a sh:NodeShape ;
-    sh:targetClass RDOnto-link:LatencyAgreementTolerance ;
+ROVO-link-sh:LatencyAgreementToleranceShape a sh:NodeShape ;
+    sh:targetClass ROVO-link:LatencyAgreementTolerance ;
     sh:property [ sh:path qudt:numericValue ; sh:minCount 1 ; sh:message "A latency agreement tolerance has a value." ] ;
     sh:property [ sh:path qudt:unit ; sh:minCount 1 ; sh:in ( unit:MilliSEC ) ;
         sh:message "A latency agreement tolerance is given in unit:MilliSEC (LK-12 reads only that unit)." ] .
 
-RDOnto-link-sh:RequiredLeadTimeShape a sh:NodeShape ;
-    sh:targetClass RDOnto-link:RequiredLeadTime ;
+ROVO-link-sh:RequiredLeadTimeShape a sh:NodeShape ;
+    sh:targetClass ROVO-link:RequiredLeadTime ;
     sh:property [ sh:path qudt:numericValue ; sh:minCount 1 ; sh:message "A required lead time has a value." ] ;
     sh:property [ sh:path qudt:unit ; sh:minCount 1 ; sh:in ( unit:SEC ) ;
         sh:message "A required lead time is given in unit:SEC (LK-08 reads only that unit)." ] ;
-    sh:property [ sh:path RDOnto-op:appliesToMode ; sh:minCount 1 ;
+    sh:property [ sh:path ROVO-op:appliesToMode ; sh:minCount 1 ;
         sh:message "A required lead time applies to at least one mode." ] .
 
-RDOnto-link-sh:TravelToleranceShape a sh:NodeShape ;
-    sh:targetClass RDOnto-link:TravelTolerance ;
-    sh:property [ sh:path RDOnto-op:appliesToMode ; sh:minCount 1 ;
+ROVO-link-sh:TravelToleranceShape a sh:NodeShape ;
+    sh:targetClass ROVO-link:TravelTolerance ;
+    sh:property [ sh:path ROVO-op:appliesToMode ; sh:minCount 1 ;
         sh:message "A travel tolerance applies to at least one mode." ] ;
-    sh:property [ sh:path RDOnto-link:appliesToSetup ; sh:minCount 1 ;
+    sh:property [ sh:path ROVO-link:appliesToSetup ; sh:minCount 1 ;
         sh:message "A travel tolerance belongs to one setup, so it names that setup." ] ;
     sh:property [ sh:path qudt:unit ; sh:in ( unit:M ) ;
         sh:message "A travel tolerance value is given in unit:M." ] ;
-    sh:property [ sh:path RDOnto-link:dimensionlessDelayLimit ; sh:maxCount 1 ;
+    sh:property [ sh:path ROVO-link:dimensionlessDelayLimit ; sh:maxCount 1 ;
         sh:or ( [ sh:datatype xsd:decimal ] [ sh:datatype xsd:integer ] ) ; sh:minExclusive 0 ;
         sh:message "A travel tolerance has at most one dimensionless delay limit, a positive number." ] ;
     sh:sparql [
         sh:message "A travel tolerance has exactly one form: a value in metres (qudt:numericValue with unit:M) or a dimensionless delay limit." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
             PREFIX qudt: <http://qudt.org/schema/qudt/>
             SELECT $this WHERE {
-              $this a RDOnto-link:TravelTolerance .
+              $this a ROVO-link:TravelTolerance .
               OPTIONAL { $this qudt:numericValue ?metres }
               OPTIONAL { $this qudt:unit ?unit }
-              OPTIONAL { $this RDOnto-link:dimensionlessDelayLimit ?limit }
+              OPTIONAL { $this ROVO-link:dimensionlessDelayLimit ?limit }
               FILTER ((BOUND(?metres) && BOUND(?limit)) || (!BOUND(?metres) && !BOUND(?limit))
                       || (BOUND(?metres) && !BOUND(?unit)))
             }""" ] ;
     sh:sparql [
         sh:message "A travel tolerance given as a dimensionless delay limit needs its setup's wheelbase." ;
         sh:select """
-            PREFIX RDOnto-link: <https://w3id.org/rdonto/link#>
+            PREFIX ROVO-link: <https://w3id.org/rovo/link#>
             SELECT $this ?value WHERE {
-              $this RDOnto-link:dimensionlessDelayLimit ?limit ; RDOnto-link:appliesToSetup ?value .
-              FILTER NOT EXISTS { ?value RDOnto-link:wheelbase ?wheelbase }
+              $this ROVO-link:dimensionlessDelayLimit ?limit ; ROVO-link:appliesToSetup ?value .
+              FILTER NOT EXISTS { ?value ROVO-link:wheelbase ?wheelbase }
             }""" ] .

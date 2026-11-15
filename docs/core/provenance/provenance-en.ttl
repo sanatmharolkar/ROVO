@@ -3,10 +3,10 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix : <> .
 <..\index-en.html> a prov:Entity;
-	 dc:title "RDOnto: Upper Alignment Module";
+	 dc:title "R.O.V.O: Upper Alignment Module";
 	 prov:wasAttributedTo :agent0;
 	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
-	 prov:specializationOf <https://w3id.org/rdonto/core>;
+	 prov:specializationOf <https://w3id.org/rovo/core>;
 	 prov:wasGeneratedAt "2026-11-14";
 .
 :agent0 a prov:Agent; foaf:name "Sanat Mharolkar".

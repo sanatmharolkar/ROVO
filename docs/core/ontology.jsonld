@@ -35,7 +35,7 @@
     "@value" : "traffic entity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/rdonto/op#SituationElement"
+    "@id" : "https://w3id.org/rovo/op#SituationElement"
   } ]
 }, {
   "@id" : "http://purl.org/dc/terms/created",
@@ -100,7 +100,7 @@
     "@value" : "dynamic driving subtask"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/rdonto/op#OperatorTask"
+    "@id" : "https://w3id.org/rovo/op#OperatorTask"
   } ]
 }, {
   "@id" : "https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/DynamicDrivingTaskFallback",
@@ -115,7 +115,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/Operation"
   }, {
-    "@id" : "https://w3id.org/rdonto/op#OperatorTask"
+    "@id" : "https://w3id.org/rovo/op#OperatorTask"
   } ]
 }, {
   "@id" : "https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/HumanDriver",
@@ -238,7 +238,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/HumanUser"
   }, {
-    "@id" : "https://w3id.org/rdonto/op#RemoteOperator"
+    "@id" : "https://w3id.org/rovo/op#RemoteOperator"
   } ]
 }, {
   "@id" : "https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/RemoteDriver",
@@ -253,7 +253,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/HumanDriver"
   }, {
-    "@id" : "https://w3id.org/rdonto/op#RemoteOperator"
+    "@id" : "https://w3id.org/rovo/op#RemoteOperator"
   } ]
 }, {
   "@id" : "https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/RemoteDriving",
@@ -295,7 +295,7 @@
     "@id" : "https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/Operation"
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/core",
+  "@id" : "https://w3id.org/rovo/core",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
   "http://purl.org/dc/terms/created" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#date",
@@ -313,54 +313,54 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "Remote Driving Ontology: upper alignment module"
+    "@value" : "Remote Operation of Vehicles Ontology: upper alignment module"
   } ],
   "http://www.w3.org/2002/07/owl#imports" : [ {
-    "@id" : "https://w3id.org/rdonto/op"
+    "@id" : "https://w3id.org/rovo/op"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
     "@value" : "1.0"
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#ContinuousRemoteDriving",
+  "@id" : "https://w3id.org/rovo/op#ContinuousRemoteDriving",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/2004/02/skos/core#broadMatch" : [ {
     "@id" : "https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/RemoteDriving"
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#EventBasedRemoteDriving",
+  "@id" : "https://w3id.org/rovo/op#EventBasedRemoteDriving",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/2004/02/skos/core#broadMatch" : [ {
     "@id" : "https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/RemoteDriving"
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#FallbackReadyPeriod",
+  "@id" : "https://w3id.org/rovo/op#FallbackReadyPeriod",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/2004/02/skos/core#relatedMatch" : [ {
     "@id" : "https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/RemoteDynamicDriverTaskFallbackReadyUser"
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#OnBoardDriver",
+  "@id" : "https://w3id.org/rovo/op#OnBoardDriver",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/2004/02/skos/core#closeMatch" : [ {
     "@id" : "https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/InVehicleDriver"
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#OperatorTask",
+  "@id" : "https://w3id.org/rovo/op#OperatorTask",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#RemoteAssistance",
+  "@id" : "https://w3id.org/rovo/op#RemoteAssistance",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/2004/02/skos/core#closeMatch" : [ {
     "@id" : "https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/RemoteAssistance"
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#RemoteDriving",
+  "@id" : "https://w3id.org/rovo/op#RemoteDriving",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/2004/02/skos/core#closeMatch" : [ {
     "@id" : "https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/RemoteDriving"
   } ],
-  "https://w3id.org/rdonto/op#modeIncludesTask" : [ {
+  "https://w3id.org/rovo/op#modeIncludesTask" : [ {
     "@id" : "https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/DynamicDrivingTaskFallback"
   }, {
     "@id" : "https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/LateralVehicleMotionControl"
@@ -370,30 +370,30 @@
     "@id" : "https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/ObjectAndEventDetectionAndResponse"
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#RemoteOperator",
+  "@id" : "https://w3id.org/rovo/op#RemoteOperator",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#RemotelyOperatedVehicle",
+  "@id" : "https://w3id.org/rovo/op#RemotelyOperatedVehicle",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/2004/02/skos/core#relatedMatch" : [ {
     "@id" : "https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/MotorVehicle"
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#Request",
+  "@id" : "https://w3id.org/rovo/op#Request",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/2004/02/skos/core#narrowMatch" : [ {
     "@id" : "https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/RequestToIntervene"
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#SituationElement",
+  "@id" : "https://w3id.org/rovo/op#SituationElement",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#TakeoverRequest",
+  "@id" : "https://w3id.org/rovo/op#TakeoverRequest",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/2004/02/skos/core#closeMatch" : [ {
     "@id" : "https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/RequestToIntervene"
   } ]
 }, {
-  "@id" : "https://w3id.org/rdonto/op#modeIncludesTask",
+  "@id" : "https://w3id.org/rovo/op#modeIncludesTask",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 } ]

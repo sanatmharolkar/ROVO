@@ -1,4 +1,4 @@
-# Competency Questions: Communication Link Module (RDOnto-link)
+# Competency Questions: Communication Link Module (ROVO-link)
 
 Layer: S = static knowledge, R = runtime data, S+R = static definitions evaluated against runtime data.
 
@@ -6,7 +6,7 @@ Layer: S = static knowledge, R = runtime data, S+R = static definitions evaluate
 
 | ID | Competency question | Layer | Sources |
 | --- | --- | --- | --- |
-| LK-01 | Which teleoperation session connects operator O's station to vehicle V, since when, which engagement of `RDOnto-op` (mode) does it currently carry, and, after an operator handover at the same or another station, which session does it follow? | R | GA21b, MA25, BR26 |
+| LK-01 | Which teleoperation session connects operator O's station to vehicle V, since when, which engagement of `ROVO-op` (mode) does it currently carry, and, after an operator handover at the same or another station, which session does it follow? | R | GA21b, MA25, BR26 |
 | LK-02 | Which streams does the session carry (sensor and video feeds and proposed trajectories from V to O, control commands and trajectory input from O to V), and which of them does the current mode depend on? | S+R | GA23, NE19b, FE26 |
 
 ## B. Latency and its effect on driving
@@ -37,11 +37,11 @@ Layer: S = static knowledge, R = runtime data, S+R = static definitions evaluate
 | ID | Competency question | Layer | Sources |
 | --- | --- | --- | --- |
 | LK-11 | Is O being shown the current link state (latency level, predicted degradation)? | R | NE19, GA23 |
-| LK-12 | Does the sensor latency measured for the link agree with the information age `RDOnto-op` computes for the scene currently shown to O (SA-09), and if not, by how much do they differ? | R | GF20, GA21b, FE26 |
+| LK-12 | Does the sensor latency measured for the link agree with the information age `ROVO-op` computes for the scene currently shown to O (SA-09), and if not, by how much do they differ? | R | GF20, GA21b, FE26 |
 
 ## References
 
-Full citations for the source keys used above and in the `dct:source` annotations of `RDOnto-link.ttl`, in IEEE format.
+Full citations for the source keys used above and in the `dct:source` annotations of `ROVO-link.ttl`, in IEEE format.
 
 | Key | Reference |
 |---|---|

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="https://w3id.org/rdonto/op#"
-     xml:base="https://w3id.org/rdonto/op"
-     xmlns:op="https://w3id.org/rdonto/op#"
+<rdf:RDF xmlns="https://w3id.org/rovo/op#"
+     xml:base="https://w3id.org/rovo/op"
+     xmlns:op="https://w3id.org/rovo/op#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
@@ -9,15 +9,15 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:terms="http://purl.org/dc/terms/">
-    <owl:Ontology rdf:about="https://w3id.org/rdonto/op">
+    <owl:Ontology rdf:about="https://w3id.org/rovo/op">
         <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-04</terms:created>
         <terms:creator>Sanat Mharolkar</terms:creator>
         <terms:description xml:lang="en">Represents a remote operator&apos;s awareness state of a remotely operated vehicle and its surroundings: what information is available to the operator, what the operator has perceived from it, how delayed and degraded it is, whether it is still valid, and whether it is sufficient for the SA type of the operator&apos;s mode.</terms:description>
         <terms:license rdf:resource="http://www.apache.org/licenses/LICENSE-2.0"/>
         <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-14</terms:modified>
-        <rdfs:comment xml:lang="en">SA-10 and the actuator latency part of SA-24 need RDOnto-link loaded as well (its actuator latency observations); the other questions need only this module.</rdfs:comment>
-        <rdfs:label xml:lang="en">Remote Driving Ontology: operator awareness module</rdfs:label>
-        <rdfs:seeAlso rdf:resource="https://w3id.org/rdonto/link"/>
+        <rdfs:comment xml:lang="en">SA-10 and the actuator latency part of SA-24 need ROVO-link loaded as well (its actuator latency observations); the other questions need only this module.</rdfs:comment>
+        <rdfs:label xml:lang="en">Remote Operation of Vehicles Ontology: operator awareness module</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://w3id.org/rovo/link"/>
         <owl:versionInfo>1.0</owl:versionInfo>
     </owl:Ontology>
     
@@ -191,13 +191,13 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#aboutElement -->
+    <!-- https://w3id.org/rovo/op#aboutElement -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#aboutElement">
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#aboutElement">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#PerceptionAssertion"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#SituationElement"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#PerceptionAssertion"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#SituationElement"/>
         <rdfs:comment xml:lang="en">SA-07, SA-11, SA-13, SA-23. One element per assertion; a later assertion about the same operator and element is a recheck.</rdfs:comment>
         <rdfs:label xml:lang="en">about element</rdfs:label>
         <skos:definition xml:lang="en">The situation element that a perception assertion says the operator perceived.</skos:definition>
@@ -205,65 +205,65 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#adaptationCarriedFrom -->
+    <!-- https://w3id.org/rovo/op#adaptationCarriedFrom -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#adaptationCarriedFrom">
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#adaptationCarriedFrom">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#Engagement"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#Engagement"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#Engagement"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#Engagement"/>
         <terms:source>HA24</terms:source>
-        <rdfs:comment xml:lang="en">SA-14. Used when a mode change starts a new engagement over the same link, or when the operator drives the same setup again, so that the adaptation built up over earlier drives (HA24) is not lost. The earlier engagement has the same operator and started before this one (RDOnto-op-shapes.ttl); with RDOnto-link loaded, both must use the same teleoperation setup (RDOnto-link-shapes.ttl). Whether an adaptation is still valid after a long pause is decided by the stream layer, which then gives no value.</rdfs:comment>
+        <rdfs:comment xml:lang="en">SA-14. Used when a mode change starts a new engagement over the same link, or when the operator drives the same setup again, so that the adaptation built up over earlier drives (HA24) is not lost. The earlier engagement has the same operator and started before this one (ROVO-op-shapes.ttl); with ROVO-link loaded, both must use the same teleoperation setup (ROVO-link-shapes.ttl). Whether an adaptation is still valid after a long pause is decided by the stream layer, which then gives no value.</rdfs:comment>
         <rdfs:label xml:lang="en">adaptation carried from</rdfs:label>
         <skos:definition xml:lang="en">The earlier engagement of the same operator whose adapted information age this engagement continues with.</skos:definition>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/rdonto/op#adaptedInformationAge -->
+    <!-- https://w3id.org/rovo/op#adaptedInformationAge -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#adaptedInformationAge">
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#adaptedInformationAge">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#Engagement"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#Engagement"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dayTimeDuration"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/rdonto/op#appliesToMode -->
+    <!-- https://w3id.org/rovo/op#appliesToMode -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#appliesToMode">
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#ConfiguredLimit"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#OperationMode"/>
-        <rdfs:comment xml:lang="en">SA-09, SA-12, SA-14, SA-18, SA-24. A limit stated for a broader mode (RDOnto-op:broaderMode) holds for its narrower modes unless they have their own. Not used on an SARequirement, which is scoped by SA type (forSAType).</rdfs:comment>
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#appliesToMode">
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#ConfiguredLimit"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#OperationMode"/>
+        <rdfs:comment xml:lang="en">SA-09, SA-12, SA-14, SA-18, SA-24. A limit stated for a broader mode (ROVO-op:broaderMode) holds for its narrower modes unless they have their own. Not used on an SARequirement, which is scoped by SA type (forSAType).</rdfs:comment>
         <rdfs:label xml:lang="en">applies to mode</rdfs:label>
         <skos:definition xml:lang="en">An operation mode in which a configured limit applies.</skos:definition>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/rdonto/op#assertedOperator -->
+    <!-- https://w3id.org/rovo/op#assertedOperator -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#assertedOperator">
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#assertedOperator">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#PerceptionAssertion"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#RemoteOperator"/>
-        <rdfs:comment xml:lang="en">SA-07. Where the assertion rests on a displayed scene, this is the operator of an engagement the scene was shown in (RDOnto-op-shapes.ttl).</rdfs:comment>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#PerceptionAssertion"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#RemoteOperator"/>
+        <rdfs:comment xml:lang="en">SA-07. Where the assertion rests on a displayed scene, this is the operator of an engagement the scene was shown in (ROVO-op-shapes.ttl).</rdfs:comment>
         <rdfs:label xml:lang="en">asserted operator</rdfs:label>
         <skos:definition xml:lang="en">The remote operator whose perception a perception assertion estimates.</skos:definition>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/rdonto/op#availableChannel -->
+    <!-- https://w3id.org/rovo/op#availableChannel -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#availableChannel">
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#Engagement"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#InformationChannel"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#availableChannel">
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#Engagement"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#InformationChannel"/>
         <rdfs:comment xml:lang="en">SA-15, SA-16, SA-17: the channels the station currently provides to the operator for the engaged vehicle.</rdfs:comment>
         <rdfs:label xml:lang="en">available channel</rdfs:label>
         <skos:definition xml:lang="en">An information channel the remote station currently provides to the operator in an engagement.</skos:definition>
@@ -271,14 +271,14 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#basedOnScene -->
+    <!-- https://w3id.org/rovo/op#basedOnScene -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#basedOnScene">
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#basedOnScene">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasDerivedFrom"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#PerceptionAssertion"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#DisplayedScene"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#PerceptionAssertion"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#DisplayedScene"/>
         <rdfs:comment xml:lang="en">The displayed scene the operator perceived the element in; through it, when the information was sensed at the vehicle (SA-11).</rdfs:comment>
         <rdfs:label xml:lang="en">based on scene</rdfs:label>
         <skos:definition xml:lang="en">The displayed scene in which the operator perceived the element.</skos:definition>
@@ -286,24 +286,24 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#broaderMode -->
+    <!-- https://w3id.org/rovo/op#broaderMode -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#broaderMode">
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#broaderMode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#OperationMode"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#OperationMode"/>
-        <rdfs:comment xml:lang="en">SA-01 and every question that reads a limit per mode. Continuous and event-based remote driving have RDOnto-op:RemoteDriving as their broader mode. Limits, supported modes, task kinds and needs stated for a broader mode hold for its narrower modes. A property of this module, not skos:broader, so that the SKOS mappings of RDOnto-core add nothing to the mode hierarchy.</rdfs:comment>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#OperationMode"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#OperationMode"/>
+        <rdfs:comment xml:lang="en">SA-01 and every question that reads a limit per mode. Continuous and event-based remote driving have ROVO-op:RemoteDriving as their broader mode. Limits, supported modes, task kinds and needs stated for a broader mode hold for its narrower modes. A property of this module, not skos:broader, so that the SKOS mappings of ROVO-core add nothing to the mode hierarchy.</rdfs:comment>
         <rdfs:label xml:lang="en">broader mode</rdfs:label>
         <skos:definition xml:lang="en">The more general operation mode that an operation mode is a special case of.</skos:definition>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/rdonto/op#captureDelay -->
+    <!-- https://w3id.org/rovo/op#captureDelay -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#captureDelay">
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#captureDelay">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dayTimeDuration"/>
@@ -311,12 +311,12 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#concernsElement -->
+    <!-- https://w3id.org/rovo/op#concernsElement -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#concernsElement">
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#Request"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#SituationElement"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#concernsElement">
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#Request"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#SituationElement"/>
         <rdfs:comment xml:lang="en">SA-03, SA-13, SA-22, SA-23. Optional, and a request can name several. For decision-support SA, the requirements then apply only to these elements, not to every element of the required type in the vehicle&apos;s scene; a request that names none is judged on every element of the type.</rdfs:comment>
         <rdfs:label xml:lang="en">concerns element</rdfs:label>
         <skos:definition xml:lang="en">A situation element that a request is about, e.g. the object the vehicle cannot classify.</skos:definition>
@@ -324,12 +324,12 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#deployedIn -->
+    <!-- https://w3id.org/rovo/op#deployedIn -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#deployedIn">
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#RemotelyOperatedVehicle"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#OperatingEnvironment"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#deployedIn">
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#RemotelyOperatedVehicle"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#OperatingEnvironment"/>
         <rdfs:comment xml:lang="en">SA-06, static: the environments the vehicle is deployed in.</rdfs:comment>
         <rdfs:label xml:lang="en">deployed in</rdfs:label>
         <skos:definition xml:lang="en">A kind of place the vehicle is deployed in.</skos:definition>
@@ -337,12 +337,12 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#derivedFromFrame -->
+    <!-- https://w3id.org/rovo/op#derivedFromFrame -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#derivedFromFrame">
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#DisplayedScene"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#SensorFrame"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#derivedFromFrame">
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#DisplayedScene"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#SensorFrame"/>
         <rdfs:comment xml:lang="en">SA-08: a sensor frame the displayed scene was produced from. Not a subproperty of prov:wasDerivedFrom: that would type a SensorFrame as a prov:Entity, while a sosa:Observation is a prov:Activity in the SSN-PROV alignment, and the two are disjoint.</rdfs:comment>
         <rdfs:label xml:lang="en">derived from frame</rdfs:label>
         <skos:definition xml:lang="en">A sensor frame that a displayed scene was produced from.</skos:definition>
@@ -350,14 +350,14 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#engagedOperator -->
+    <!-- https://w3id.org/rovo/op#engagedOperator -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#engagedOperator">
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#engagedOperator">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasAssociatedWith"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#Engagement"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#RemoteOperator"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#Engagement"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#RemoteOperator"/>
         <rdfs:comment xml:lang="en">SA-01, SA-05. An engagement has exactly one; the vehicles an operator is responsible for at the same time are those of the operator&apos;s open engagements.</rdfs:comment>
         <rdfs:label xml:lang="en">engaged operator</rdfs:label>
         <skos:definition xml:lang="en">The remote operator who is responsible for the vehicle in an engagement.</skos:definition>
@@ -365,41 +365,41 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#engagedVehicle -->
+    <!-- https://w3id.org/rovo/op#engagedVehicle -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#engagedVehicle">
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#engagedVehicle">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#Engagement"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#RemotelyOperatedVehicle"/>
-        <rdfs:comment xml:lang="en">SA-01. An engagement has exactly one, and a vehicle has at most one open engagement at a time (RDOnto-op-shapes.ttl).</rdfs:comment>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#Engagement"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#RemotelyOperatedVehicle"/>
+        <rdfs:comment xml:lang="en">SA-01. An engagement has exactly one, and a vehicle has at most one open engagement at a time (ROVO-op-shapes.ttl).</rdfs:comment>
         <rdfs:label xml:lang="en">engaged vehicle</rdfs:label>
         <skos:definition xml:lang="en">The vehicle that the operator monitors, assists or drives in an engagement.</skos:definition>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/rdonto/op#engagementEnvironment -->
+    <!-- https://w3id.org/rovo/op#engagementEnvironment -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#engagementEnvironment">
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#engagementEnvironment">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#Engagement"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#OperatingEnvironment"/>
-        <rdfs:comment xml:lang="en">SA-06, runtime. A vehicle can be deployed in several environments (deployedIn), so the answer for one engagement is stated here. It must be one of the vehicle&apos;s environments where the vehicle states any (RDOnto-op-shapes.ttl). Without a value, SA-06 has an answer only if the vehicle states exactly one environment.</rdfs:comment>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#Engagement"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#OperatingEnvironment"/>
+        <rdfs:comment xml:lang="en">SA-06, runtime. A vehicle can be deployed in several environments (deployedIn), so the answer for one engagement is stated here. It must be one of the vehicle&apos;s environments where the vehicle states any (ROVO-op-shapes.ttl). Without a value, SA-06 has an answer only if the vehicle states exactly one environment.</rdfs:comment>
         <rdfs:label xml:lang="en">engagement environment</rdfs:label>
         <skos:definition xml:lang="en">The operating environment the vehicle is in during this engagement.</skos:definition>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/rdonto/op#engagementTask -->
+    <!-- https://w3id.org/rovo/op#engagementTask -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#engagementTask">
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#engagementTask">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#Engagement"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#DrivingTask"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#Engagement"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#DrivingTask"/>
         <rdfs:comment xml:lang="en">SA-06, runtime. As engagementEnvironment: one of the vehicle&apos;s driving tasks where the vehicle states any. Without a value, SA-06 has an answer only if the vehicle states exactly one driving task.</rdfs:comment>
         <rdfs:label xml:lang="en">engagement task</rdfs:label>
         <skos:definition xml:lang="en">The driving task the vehicle is operated for during this engagement.</skos:definition>
@@ -407,28 +407,28 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#followsEngagement -->
+    <!-- https://w3id.org/rovo/op#followsEngagement -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#followsEngagement">
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#followsEngagement">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasInformedBy"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#Engagement"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#Engagement"/>
-        <rdfs:comment xml:lang="en">SA-04. The operator moves on from an engagement already held: usually into another mode, e.g. from remote monitoring into event-based remote driving, on the operator&apos;s own initiative or on a request from the vehicle (the engagement then also has respondsTo); or in the same mode, when a reconnection in a new session starts a new engagement. The build-up then starts from the SA already held, not from zero: a perception assertion belongs to the operator, not to one engagement, so what the operator perceived in the earlier engagement still counts while it is within its recheck interval (SA-23). SA-04 names the engagement followed. The earlier engagement has ended and has the same operator and vehicle (RDOnto-op-shapes.ttl).</rdfs:comment>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#Engagement"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#Engagement"/>
+        <rdfs:comment xml:lang="en">SA-04. The operator moves on from an engagement already held: usually into another mode, e.g. from remote monitoring into event-based remote driving, on the operator&apos;s own initiative or on a request from the vehicle (the engagement then also has respondsTo); or in the same mode, when a reconnection in a new session starts a new engagement. The build-up then starts from the SA already held, not from zero: a perception assertion belongs to the operator, not to one engagement, so what the operator perceived in the earlier engagement still counts while it is within its recheck interval (SA-23). SA-04 names the engagement followed. The earlier engagement has ended and has the same operator and vehicle (ROVO-op-shapes.ttl).</rdfs:comment>
         <rdfs:label xml:lang="en">follows engagement</rdfs:label>
         <skos:definition xml:lang="en">The engagement of the same operator with the same vehicle that this engagement directly continues from.</skos:definition>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/rdonto/op#forDrivingTask -->
+    <!-- https://w3id.org/rovo/op#forDrivingTask -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#forDrivingTask">
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#forDrivingTask">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#SARequirement"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#DrivingTask"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#SARequirement"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#DrivingTask"/>
         <terms:source>WO25</terms:source>
         <rdfs:comment xml:lang="en">SA-22. Optional: the requirement applies only to engagements with this driving task (engagementTask, or the vehicle&apos;s only driving task), e.g. the fork and the load in pallet handling (WO25). Without it, the requirement applies to every driving task.</rdfs:comment>
         <rdfs:label xml:lang="en">for driving task</rdfs:label>
@@ -437,13 +437,13 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#forEnvironment -->
+    <!-- https://w3id.org/rovo/op#forEnvironment -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#forEnvironment">
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#forEnvironment">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#SARequirement"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#OperatingEnvironment"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#SARequirement"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#OperatingEnvironment"/>
         <terms:source>HN25b</terms:source>
         <terms:source>WO25</terms:source>
         <rdfs:comment xml:lang="en">SA-22. Optional: the requirement applies only to engagements in this operating environment (engagementEnvironment, or the vehicle&apos;s only environment). Without it, the requirement applies in every environment. Which elements matter depends on where and for what the vehicle is operated (WO25, HN25b).</rdfs:comment>
@@ -453,13 +453,13 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#forRequestType -->
+    <!-- https://w3id.org/rovo/op#forRequestType -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#forRequestType">
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#forRequestType">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#SARequirement"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#RequestType"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#SARequirement"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#RequestType"/>
         <rdfs:comment xml:lang="en">SA-22. Optional, for decision-support SA: the requirement applies only while the operator answers a request of this type. Without it, the requirement applies to every request.</rdfs:comment>
         <rdfs:label xml:lang="en">for request type</rdfs:label>
         <skos:definition xml:lang="en">The request type to which an SA requirement for decision-support SA is limited.</skos:definition>
@@ -467,13 +467,13 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#forSAType -->
+    <!-- https://w3id.org/rovo/op#forSAType -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#forSAType">
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#forSAType">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#SARequirement"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#SAType"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#SARequirement"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#SAType"/>
         <rdfs:comment xml:lang="en">SA-22. The requirement applies to engagements in a mode that requires this SA type (requiresSAType).</rdfs:comment>
         <rdfs:label xml:lang="en">for SA type</rdfs:label>
         <skos:definition xml:lang="en">The SA type that an SA requirement belongs to.</skos:definition>
@@ -481,12 +481,12 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#hasDrivingTask -->
+    <!-- https://w3id.org/rovo/op#hasDrivingTask -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#hasDrivingTask">
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#RemotelyOperatedVehicle"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#DrivingTask"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#hasDrivingTask">
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#RemotelyOperatedVehicle"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#DrivingTask"/>
         <rdfs:comment xml:lang="en">SA-06, static: the driving tasks the vehicle is deployed for.</rdfs:comment>
         <rdfs:label xml:lang="en">has driving task</rdfs:label>
         <skos:definition xml:lang="en">A purpose the vehicle is deployed for.</skos:definition>
@@ -494,26 +494,26 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#hasRequestReason -->
+    <!-- https://w3id.org/rovo/op#hasRequestReason -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#hasRequestReason">
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#Request"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#RequestReason"/>
-        <rdfs:comment xml:lang="en">SA-03. A request can have several reasons; one without a stated cause has RDOnto-op:UnspecifiedReason.</rdfs:comment>
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#hasRequestReason">
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#Request"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#RequestReason"/>
+        <rdfs:comment xml:lang="en">SA-03. A request can have several reasons; one without a stated cause has ROVO-op:UnspecifiedReason.</rdfs:comment>
         <rdfs:label xml:lang="en">has request reason</rdfs:label>
         <skos:definition xml:lang="en">A reason given for a request.</skos:definition>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/rdonto/op#hasRequestType -->
+    <!-- https://w3id.org/rovo/op#hasRequestType -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#hasRequestType">
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#hasRequestType">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#Request"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#RequestType"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#Request"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#RequestType"/>
         <rdfs:comment xml:lang="en">SA-03, SA-22. A takeover request starts event-based remote driving, any other type remote assistance; for decision-support SA the type selects the required elements (forRequestType).</rdfs:comment>
         <rdfs:label xml:lang="en">has request type</rdfs:label>
         <skos:definition xml:lang="en">What a request asks the remote operator for: a takeover or a kind of assistance.</skos:definition>
@@ -521,12 +521,12 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#holdsTask -->
+    <!-- https://w3id.org/rovo/op#holdsTask -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#holdsTask">
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#Engagement"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#OperatorTask"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#holdsTask">
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#Engagement"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#OperatorTask"/>
         <rdfs:comment xml:lang="en">SA-02, runtime: the tasks the operator holds in this engagement. Objects are task individuals typed with a task class (an EDMC DDT subtask class or one of the classes above).</rdfs:comment>
         <rdfs:label xml:lang="en">holds task</rdfs:label>
         <skos:definition xml:lang="en">A task the operator holds for the vehicle in an engagement.</skos:definition>
@@ -534,13 +534,13 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#inOperationMode -->
+    <!-- https://w3id.org/rovo/op#inOperationMode -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#inOperationMode">
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#inOperationMode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#Engagement"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#OperationMode"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#Engagement"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#OperationMode"/>
         <rdfs:comment xml:lang="en">SA-01. An engagement uses one specific mode: not the broad remote driving mode.</rdfs:comment>
         <rdfs:label xml:lang="en">in operation mode</rdfs:label>
         <skos:definition xml:lang="en">The operation mode an engagement is in.</skos:definition>
@@ -548,12 +548,12 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#inSceneOf -->
+    <!-- https://w3id.org/rovo/op#inSceneOf -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#inSceneOf">
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#SituationElement"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#RemotelyOperatedVehicle"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#inSceneOf">
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#SituationElement"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#RemotelyOperatedVehicle"/>
         <rdfs:comment xml:lang="en">Interface (scene and criticality module): the element is currently relevant to the vehicle&apos;s situation. SA-13 and SA-23 apply the requirements to these elements.</rdfs:comment>
         <rdfs:label xml:lang="en">in scene of</rdfs:label>
         <skos:definition xml:lang="en">The vehicle whose current situation a situation element is relevant to.</skos:definition>
@@ -561,24 +561,24 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#modeIncludesTask -->
+    <!-- https://w3id.org/rovo/op#modeIncludesTask -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#modeIncludesTask">
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#OperationMode"/>
-        <rdfs:comment xml:lang="en">SA-02, static: which kinds of task a mode gives the operator. The object is a task class IRI (OWL 2 punning), e.g. vla:LateralVehicleMotionControl or RDOnto-op:DecisionMakingTask. It lists the kinds a mode may give the operator, not the tasks every engagement in the mode holds. A task stated for a broader mode holds for its narrower modes (broaderMode). The tasks of remote monitoring and remote assistance are asserted below; those of remote driving are EDMC classes and are asserted in RDOnto-core.ttl.</rdfs:comment>
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#modeIncludesTask">
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#OperationMode"/>
+        <rdfs:comment xml:lang="en">SA-02, static: which kinds of task a mode gives the operator. The object is a task class IRI (OWL 2 punning), e.g. vla:LateralVehicleMotionControl or ROVO-op:DecisionMakingTask. It lists the kinds a mode may give the operator, not the tasks every engagement in the mode holds. A task stated for a broader mode holds for its narrower modes (broaderMode). The tasks of remote monitoring and remote assistance are asserted below; those of remote driving are EDMC classes and are asserted in ROVO-core.ttl.</rdfs:comment>
         <rdfs:label xml:lang="en">mode includes task</rdfs:label>
         <skos:definition xml:lang="en">A kind of task that an operation mode gives the operator, stated as a task class.</skos:definition>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/rdonto/op#onChannel -->
+    <!-- https://w3id.org/rovo/op#onChannel -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#onChannel">
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#DisplayedScene"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#InformationChannel"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#onChannel">
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#DisplayedScene"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#InformationChannel"/>
         <rdfs:comment xml:lang="en">SA-08. E.g. the camera view a scene appeared in. Recorded with the scene.</rdfs:comment>
         <rdfs:label xml:lang="en">on channel</rdfs:label>
         <skos:definition xml:lang="en">An information channel on which a displayed scene was shown.</skos:definition>
@@ -586,12 +586,12 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#providesCue -->
+    <!-- https://w3id.org/rovo/op#providesCue -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#providesCue">
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#InformationChannel"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#Cue"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#providesCue">
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#InformationChannel"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#Cue"/>
         <rdfs:comment xml:lang="en">SA-16. Asserted per channel individual, because what a channel conveys depends on the station.</rdfs:comment>
         <rdfs:label xml:lang="en">provides cue</rdfs:label>
         <skos:definition xml:lang="en">A cue that an information channel conveys to the operator.</skos:definition>
@@ -599,41 +599,41 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#readyOperator -->
+    <!-- https://w3id.org/rovo/op#readyOperator -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#readyOperator">
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#readyOperator">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasAssociatedWith"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#FallbackReadyPeriod"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#RemoteOperator"/>
-        <rdfs:comment xml:lang="en">SA-20. The same operator has no engagement during the period (RDOnto-op-shapes.ttl).</rdfs:comment>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#FallbackReadyPeriod"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#RemoteOperator"/>
+        <rdfs:comment xml:lang="en">SA-20. The same operator has no engagement during the period (ROVO-op-shapes.ttl).</rdfs:comment>
         <rdfs:label xml:lang="en">ready operator</rdfs:label>
         <skos:definition xml:lang="en">The remote operator who is fallback-ready during a fallback-ready period.</skos:definition>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/rdonto/op#requestedBy -->
+    <!-- https://w3id.org/rovo/op#requestedBy -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#requestedBy">
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#requestedBy">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#Request"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#RemotelyOperatedVehicle"/>
-        <rdfs:comment xml:lang="en">SA-03. The engagement that responds to the request is with this vehicle (RDOnto-op-shapes.ttl).</rdfs:comment>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#Request"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#RemotelyOperatedVehicle"/>
+        <rdfs:comment xml:lang="en">SA-03. The engagement that responds to the request is with this vehicle (ROVO-op-shapes.ttl).</rdfs:comment>
         <rdfs:label xml:lang="en">requested by</rdfs:label>
         <skos:definition xml:lang="en">The vehicle that issued a request.</skos:definition>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/rdonto/op#requiresElementType -->
+    <!-- https://w3id.org/rovo/op#requiresElementType -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#requiresElementType">
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#requiresElementType">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#SARequirement"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#SARequirement"/>
         <rdfs:comment xml:lang="en">SA-22. The object is a class IRI, e.g. an A.U.T.O. class such as l4:Pedestrian (OWL 2 punning).</rdfs:comment>
         <rdfs:label xml:lang="en">requires element type</rdfs:label>
         <skos:definition xml:lang="en">The type of situation element, stated as a class, that an SA requirement says the operator must have perceived.</skos:definition>
@@ -641,13 +641,13 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#requiresSAType -->
+    <!-- https://w3id.org/rovo/op#requiresSAType -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#requiresSAType">
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#requiresSAType">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#OperationMode"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#SAType"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#OperationMode"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#SAType"/>
         <rdfs:comment xml:lang="en">SA-21: each mode requires one SA type.</rdfs:comment>
         <rdfs:label xml:lang="en">requires SA type</rdfs:label>
         <skos:definition xml:lang="en">The SA type an operator needs in order to work in an operation mode.</skos:definition>
@@ -655,14 +655,14 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#respondsTo -->
+    <!-- https://w3id.org/rovo/op#respondsTo -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#respondsTo">
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#respondsTo">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#used"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#Engagement"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#Request"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#Engagement"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#Request"/>
         <rdfs:comment xml:lang="en">SA-03. The request that started an engagement: a takeover request for event-based remote driving, an assistance request for remote assistance. Continuous remote driving and remote monitoring engagements respond to none; an event-based engagement that the operator started without a request, from remote monitoring or from an on-board driver, responds to none either. For a takeover from an on-board driver, SA-03 is then answered by the takeover reason (takeoverReason).</rdfs:comment>
         <rdfs:label xml:lang="en">responds to</rdfs:label>
         <skos:definition xml:lang="en">The request from the vehicle that an engagement was started to answer.</skos:definition>
@@ -670,39 +670,39 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#rulesOutMode -->
+    <!-- https://w3id.org/rovo/op#rulesOutMode -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#rulesOutMode">
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#Impairment"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#OperationMode"/>
-        <rdfs:comment xml:lang="en">SA-24. Configuration: while the operator&apos;s latest ImpairmentObservation for the impairment is true, the modes named here drop out of the answer to SA-24. A mode stated here also rules out its narrower modes (RDOnto-op:broaderMode). No values are asserted by this module: no source says which impairment rules out which mode, so an impairment without a value rules out none.</rdfs:comment>
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#rulesOutMode">
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#Impairment"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#OperationMode"/>
+        <rdfs:comment xml:lang="en">SA-24. Configuration: while the operator&apos;s latest ImpairmentObservation for the impairment is true, the modes named here drop out of the answer to SA-24. A mode stated here also rules out its narrower modes (ROVO-op:broaderMode). No values are asserted by this module: no source says which impairment rules out which mode, so an impairment without a value rules out none.</rdfs:comment>
         <rdfs:label xml:lang="en">rules out mode</rdfs:label>
         <skos:definition xml:lang="en">A mode that an operator who currently shows signs of this impairment cannot perform.</skos:definition>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/rdonto/op#sensorOfVehicle -->
+    <!-- https://w3id.org/rovo/op#sensorOfVehicle -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#sensorOfVehicle">
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#sensorOfVehicle">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#RemotelyOperatedVehicle"/>
-        <rdfs:comment xml:lang="en">SA-08. Interface (vehicle state). Ties a sensor frame, through its sensor, to a vehicle: the frames of a displayed scene come from the vehicle of an engagement the scene was shown in, where their sensors state a vehicle (RDOnto-op-shapes.ttl).</rdfs:comment>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#RemotelyOperatedVehicle"/>
+        <rdfs:comment xml:lang="en">SA-08. Interface (vehicle state). Ties a sensor frame, through its sensor, to a vehicle: the frames of a displayed scene come from the vehicle of an engagement the scene was shown in, where their sensors state a vehicle (ROVO-op-shapes.ttl).</rdfs:comment>
         <rdfs:label xml:lang="en">sensor of vehicle</rdfs:label>
         <skos:definition xml:lang="en">The vehicle that a sensor is mounted on.</skos:definition>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/rdonto/op#shownIn -->
+    <!-- https://w3id.org/rovo/op#shownIn -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#shownIn">
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#DisplayedScene"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#Engagement"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#shownIn">
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#DisplayedScene"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#Engagement"/>
         <rdfs:comment xml:lang="en">SA-08, SA-09. Ties a scene to the operator, the vehicle and the mode whose information age limit applies to it.</rdfs:comment>
         <rdfs:label xml:lang="en">shown in</rdfs:label>
         <skos:definition xml:lang="en">An engagement during which a displayed scene was shown to the operator.</skos:definition>
@@ -710,13 +710,13 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#supportedBy -->
+    <!-- https://w3id.org/rovo/op#supportedBy -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#supportedBy">
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#supportedBy">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasDerivedFrom"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#PerceptionAssertion"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#SAEvidence"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#PerceptionAssertion"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#SAEvidence"/>
         <rdfs:comment xml:lang="en">SA-25. Every perception assertion has at least one, since perception is never asserted as fact.</rdfs:comment>
         <rdfs:label xml:lang="en">supported by</rdfs:label>
         <skos:definition xml:lang="en">A piece of SA evidence from which a perception assertion was inferred.</skos:definition>
@@ -724,52 +724,52 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#supportsMode -->
+    <!-- https://w3id.org/rovo/op#supportsMode -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#supportsMode">
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#RemotelyOperatedVehicle"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#OperationMode"/>
-        <rdfs:comment xml:lang="en">Interface (RDOnto-concept). The modes the vehicle&apos;s equipment allows (SA-24). A vehicle without an ADS does not support remote assistance; it can support remote monitoring, continuous remote driving, and event-based remote driving where it can be taken over from an on-board driver. Support stated for a broader mode holds for its narrower modes (RDOnto-op:broaderMode): a vehicle that supports RDOnto-op:RemoteDriving supports both remote driving contexts. Support stated for a narrower mode holds for that mode only.</rdfs:comment>
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#supportsMode">
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#RemotelyOperatedVehicle"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#OperationMode"/>
+        <rdfs:comment xml:lang="en">Interface (ROVO-concept). The modes the vehicle&apos;s equipment allows (SA-24). A vehicle without an ADS does not support remote assistance; it can support remote monitoring, continuous remote driving, and event-based remote driving where it can be taken over from an on-board driver. Support stated for a broader mode holds for its narrower modes (ROVO-op:broaderMode): a vehicle that supports ROVO-op:RemoteDriving supports both remote driving contexts. Support stated for a narrower mode holds for that mode only.</rdfs:comment>
         <rdfs:label xml:lang="en">supports mode</rdfs:label>
         <skos:definition xml:lang="en">An operation mode that the vehicle&apos;s equipment allows it to be operated in.</skos:definition>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/rdonto/op#takenOverFrom -->
+    <!-- https://w3id.org/rovo/op#takenOverFrom -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#takenOverFrom">
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#takenOverFrom">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#Engagement"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#OnBoardDriver"/>
-        <rdfs:comment xml:lang="en">SA-01, LK-10. A record of the takeover, which stays when the driver can no longer drive; whether control can go back to the driver (RDOnto-link:HandBackToOnBoardDriver) is stated with ableToTakeOver. Only on event-based remote driving engagements (RDOnto-op-shapes.ttl).</rdfs:comment>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#Engagement"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#OnBoardDriver"/>
+        <rdfs:comment xml:lang="en">SA-01, LK-10. A record of the takeover, which stays when the driver can no longer drive; whether control can go back to the driver (ROVO-link:HandBackToOnBoardDriver) is stated with ableToTakeOver. Only on event-based remote driving engagements (ROVO-op-shapes.ttl).</rdfs:comment>
         <rdfs:label xml:lang="en">taken over from</rdfs:label>
         <skos:definition xml:lang="en">The on-board driver from whom an event-based remote driving engagement took over.</skos:definition>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/rdonto/op#takeoverReason -->
+    <!-- https://w3id.org/rovo/op#takeoverReason -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#takeoverReason">
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#Engagement"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#TakeoverReason"/>
-        <rdfs:comment xml:lang="en">SA-03. Only on an engagement that took over from an on-board driver (takenOverFrom), which responds to no request (RDOnto-op-shapes.ttl). Optional, and an engagement can state several.</rdfs:comment>
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#takeoverReason">
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#Engagement"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#TakeoverReason"/>
+        <rdfs:comment xml:lang="en">SA-03. Only on an engagement that took over from an on-board driver (takenOverFrom), which responds to no request (ROVO-op-shapes.ttl). Optional, and an engagement can state several.</rdfs:comment>
         <rdfs:label xml:lang="en">takeover reason</rdfs:label>
         <skos:definition xml:lang="en">A reason why the operator took over from the on-board driver in an engagement.</skos:definition>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/rdonto/op#viaChannel -->
+    <!-- https://w3id.org/rovo/op#viaChannel -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/rdonto/op#viaChannel">
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#PerceptionAssertion"/>
-        <rdfs:range rdf:resource="https://w3id.org/rdonto/op#InformationChannel"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/rovo/op#viaChannel">
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#PerceptionAssertion"/>
+        <rdfs:range rdf:resource="https://w3id.org/rovo/op#InformationChannel"/>
         <rdfs:comment xml:lang="en">SA-07: the channel the element was perceived through.</rdfs:comment>
         <rdfs:label xml:lang="en">via channel</rdfs:label>
         <skos:definition xml:lang="en">An information channel through which the operator perceived the element.</skos:definition>
@@ -843,35 +843,35 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#ableToTakeOver -->
+    <!-- https://w3id.org/rovo/op#ableToTakeOver -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/op#ableToTakeOver">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rovo/op#ableToTakeOver">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#OnBoardDriver"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#OnBoardDriver"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment xml:lang="en">LK-10. Interface (driver monitoring, vehicle state). True while the driver is on board and fit to drive; false when the driver cannot drive, e.g. after a takeover with the reason RDOnto-op:OnBoardDriverUnableToDrive. Absent means not known, and then handing control back to the driver does not count as available (RDOnto-link:OnBoardDriverCanTakeOver).</rdfs:comment>
+        <rdfs:comment xml:lang="en">LK-10. Interface (driver monitoring, vehicle state). True while the driver is on board and fit to drive; false when the driver cannot drive, e.g. after a takeover with the reason ROVO-op:OnBoardDriverUnableToDrive. Absent means not known, and then handing control back to the driver does not count as available (ROVO-link:OnBoardDriverCanTakeOver).</rdfs:comment>
         <rdfs:label xml:lang="en">able to take over</rdfs:label>
         <skos:definition xml:lang="en">Whether an on-board driver is able to take control of the vehicle back now.</skos:definition>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/rdonto/op#adaptedInformationAge -->
+    <!-- https://w3id.org/rovo/op#adaptedInformationAge -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/op#adaptedInformationAge">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rovo/op#adaptedInformationAge">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/rdonto/op#appliesToFallbackReady -->
+    <!-- https://w3id.org/rovo/op#appliesToFallbackReady -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/op#appliesToFallbackReady">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rovo/op#appliesToFallbackReady">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#ConfiguredLimit"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#ConfiguredLimit"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment xml:lang="en">SA-18. True for a limit that applies while the operator is fallback-ready rather than in a mode.</rdfs:comment>
         <rdfs:label xml:lang="en">applies to fallback-ready</rdfs:label>
@@ -880,12 +880,12 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#buildUpEndedAt -->
+    <!-- https://w3id.org/rovo/op#buildUpEndedAt -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/op#buildUpEndedAt">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rovo/op#buildUpEndedAt">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#Engagement"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#Engagement"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <terms:source>LU17</terms:source>
         <terms:source>MU21</terms:source>
@@ -897,21 +897,21 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#captureDelay -->
+    <!-- https://w3id.org/rovo/op#captureDelay -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/op#captureDelay">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rovo/op#captureDelay">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/rdonto/op#confidence -->
+    <!-- https://w3id.org/rovo/op#confidence -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/op#confidence">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rovo/op#confidence">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#PerceptionAssertion"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#PerceptionAssertion"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:comment xml:lang="en">SA-13, SA-23, SA-25. How the estimator combines evidence is outside the ontology. Whether an assertion counts as perceived is decided against the PerceptionConfidenceThreshold of the mode.</rdfs:comment>
         <rdfs:label xml:lang="en">confidence</rdfs:label>
@@ -920,12 +920,12 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#displayedAt -->
+    <!-- https://w3id.org/rovo/op#displayedAt -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/op#displayedAt">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rovo/op#displayedAt">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#DisplayedScene"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#DisplayedScene"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment xml:lang="en">SA-09. Information age = displayedAt minus the earliest sensed time (capture time minus capture delay) of the frames the scene was derived from.</rdfs:comment>
         <rdfs:label xml:lang="en">displayed at</rdfs:label>
@@ -934,26 +934,26 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#hasADS -->
+    <!-- https://w3id.org/rovo/op#hasADS -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/op#hasADS">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rovo/op#hasADS">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#RemotelyOperatedVehicle"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#RemotelyOperatedVehicle"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment xml:lang="en">Interface (RDOnto-concept). SA-24, LK-10. True for an ADS-equipped vehicle, false for a vehicle without an ADS; absent means not known, never &apos;no ADS&apos;. A vehicle with hasADS false does not support remote assistance, is driven in event-based remote driving only when taken over from an on-board driver (RDOnto-op-shapes.ttl), and has no RDOnto-link:adsWithinODD value. Separates &apos;no ADS&apos; from &apos;ADS outside its ODD&apos;, which RDOnto-link:adsWithinODD alone cannot.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Interface (ROVO-concept). SA-24, LK-10. True for an ADS-equipped vehicle, false for a vehicle without an ADS; absent means not known, never &apos;no ADS&apos;. A vehicle with hasADS false does not support remote assistance, is driven in event-based remote driving only when taken over from an on-board driver (ROVO-op-shapes.ttl), and has no ROVO-link:adsWithinODD value. Separates &apos;no ADS&apos; from &apos;ADS outside its ODD&apos;, which ROVO-link:adsWithinODD alone cannot.</rdfs:comment>
         <rdfs:label xml:lang="en">has ADS</rdfs:label>
         <skos:definition xml:lang="en">Whether the vehicle is equipped with an automated driving system.</skos:definition>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/rdonto/op#horizontalFieldOfView -->
+    <!-- https://w3id.org/rovo/op#horizontalFieldOfView -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/op#horizontalFieldOfView">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rovo/op#horizontalFieldOfView">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#CameraView"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#CameraView"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:comment xml:lang="en">SA-17. The horizontal angle a camera view shows, in degrees. Camera views of one engagement are assumed not to overlap; overlapping cameras are declared as one stitched view with its combined angle.</rdfs:comment>
         <rdfs:label xml:lang="en">horizontal field of view</rdfs:label>
@@ -962,12 +962,12 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#inVehicleFieldOfView -->
+    <!-- https://w3id.org/rovo/op#inVehicleFieldOfView -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/op#inVehicleFieldOfView">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rovo/op#inVehicleFieldOfView">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#RemotelyOperatedVehicle"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#RemotelyOperatedVehicle"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <terms:source>AM22</terms:source>
         <terms:source>HA24</terms:source>
@@ -982,26 +982,26 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#isRemoteDrivingMode -->
+    <!-- https://w3id.org/rovo/op#isRemoteDrivingMode -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/op#isRemoteDrivingMode">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rovo/op#isRemoteDrivingMode">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#OperationMode"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#OperationMode"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment xml:lang="en">SA-12, SA-24, LK-10. Lets SA-24 order modes without RDOnto-concept. It repeats what RDOnto-op:broaderMode RDOnto-op:RemoteDriving already says, so the shapes check that the two agree (RDOnto-op-shapes.ttl, OperationModeShape).</rdfs:comment>
+        <rdfs:comment xml:lang="en">SA-12, SA-24, LK-10. Lets SA-24 order modes without ROVO-concept. It repeats what ROVO-op:broaderMode ROVO-op:RemoteDriving already says, so the shapes check that the two agree (ROVO-op-shapes.ttl, OperationModeShape).</rdfs:comment>
         <rdfs:label xml:lang="en">is remote driving mode</rdfs:label>
         <skos:definition xml:lang="en">Whether an operation mode is remote driving or one of its narrower modes, in which the operator holds vehicle motion control.</skos:definition>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/rdonto/op#lowerBound -->
+    <!-- https://w3id.org/rovo/op#lowerBound -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/op#lowerBound">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rovo/op#lowerBound">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#WorkloadBand"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#WorkloadBand"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:comment xml:lang="en">SA-18. A workload estimate below it is underload. MU21 and ME24 describe underload and decreased vigilance in operators who wait or have little to do.</rdfs:comment>
         <rdfs:label xml:lang="en">lower bound</rdfs:label>
@@ -1010,10 +1010,10 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#onScale -->
+    <!-- https://w3id.org/rovo/op#onScale -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/op#onScale">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rovo/op#onScale">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">SA-18. A band applies only to estimates on the same scale. Used on WorkloadEstimate and WorkloadBand, so no domain is declared (a domain would need a union, which OWL 2 RL does not allow).</rdfs:comment>
@@ -1023,12 +1023,12 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#perceivedAt -->
+    <!-- https://w3id.org/rovo/op#perceivedAt -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/op#perceivedAt">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rovo/op#perceivedAt">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#PerceptionAssertion"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#PerceptionAssertion"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment xml:lang="en">SA-07, SA-13, SA-23. Not the capture or display time.</rdfs:comment>
         <rdfs:label xml:lang="en">perceived at</rdfs:label>
@@ -1037,12 +1037,12 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#reliability -->
+    <!-- https://w3id.org/rovo/op#reliability -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/op#reliability">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rovo/op#reliability">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#SAEvidence"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#SAEvidence"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:comment xml:lang="en">Between 0 and 1 (SA-25).</rdfs:comment>
         <rdfs:label xml:lang="en">reliability</rdfs:label>
@@ -1051,12 +1051,12 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#sensedAt -->
+    <!-- https://w3id.org/rovo/op#sensedAt -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/op#sensedAt">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rovo/op#sensedAt">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#PerceptionAssertion"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#PerceptionAssertion"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment xml:lang="en">SA-07, SA-11, SA-23. For perception through a channel that shows no scene built from sensor frames, such as audio or haptic feedback. The sensed time of a perception assertion is: the earliest sensed time of the frames of its scene (basedOnScene); otherwise this value; otherwise perceivedAt, i.e. no delay is assumed, which the shapes report as a warning. The assertion is stale when its element changed after that time (ElementStateChange). Not used together with basedOnScene.</rdfs:comment>
         <rdfs:label xml:lang="en">sensed at</rdfs:label>
@@ -1065,12 +1065,12 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#upperBound -->
+    <!-- https://w3id.org/rovo/op#upperBound -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/op#upperBound">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rovo/op#upperBound">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#WorkloadBand"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#WorkloadBand"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:comment xml:lang="en">SA-18. A workload estimate above it is overload.</rdfs:comment>
         <rdfs:label xml:lang="en">upper bound</rdfs:label>
@@ -1079,12 +1079,12 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#viewDirection -->
+    <!-- https://w3id.org/rovo/op#viewDirection -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/rdonto/op#viewDirection">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rovo/op#viewDirection">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/rdonto/op#CameraView"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rovo/op#CameraView"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
         <rdfs:comment xml:lang="en">SA-17. With horizontalFieldOfView it gives the angular interval the view shows: from viewDirection minus half the field of view to viewDirection plus half of it. An interval that passes 180 or -180 continues on the other side: a view centred at 170 with a field of view of 60 shows 140 to 180 and -180 to -160. A camera view without a value is taken as centred straight ahead (0).</rdfs:comment>
         <rdfs:label xml:lang="en">view direction</rdfs:label>
@@ -1175,26 +1175,26 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#ActuatorLatencyLimit -->
+    <!-- https://w3id.org/rovo/op#ActuatorLatencyLimit -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#ActuatorLatencyLimit">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/op#ConfiguredLimit"/>
+    <owl:Class rdf:about="https://w3id.org/rovo/op#ActuatorLatencyLimit">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rovo/op#ConfiguredLimit"/>
         <terms:source>GF20</terms:source>
         <terms:source>MA25</terms:source>
         <terms:source>TANG26</terms:source>
-        <rdfs:comment xml:lang="en">SA-24: a mode whose limit the current actuator latency exceeds is one the operator can no longer perform. The operator-side counterpart of InformationAgeLimit for the other latency part. The value compared with it is the latest RDOnto-link:ActuatorLatency observation of the session that carries the engagement, so it needs RDOnto-link. A setup&apos;s reference budgets for the actuator latency (RDOnto-link:LatencyBudget) hold up to a vehicle speed and are checked separately, by LK-04; SA-24 uses this limit only. A configuration parameter; GF20 and MA25 give measured values, not limits.</rdfs:comment>
+        <rdfs:comment xml:lang="en">SA-24: a mode whose limit the current actuator latency exceeds is one the operator can no longer perform. The operator-side counterpart of InformationAgeLimit for the other latency part. The value compared with it is the latest ROVO-link:ActuatorLatency observation of the session that carries the engagement, so it needs ROVO-link. A setup&apos;s reference budgets for the actuator latency (ROVO-link:LatencyBudget) hold up to a vehicle speed and are checked separately, by LK-04; SA-24 uses this limit only. A configuration parameter; GF20 and MA25 give measured values, not limits.</rdfs:comment>
         <rdfs:label xml:lang="en">actuator latency limit</rdfs:label>
         <skos:definition xml:lang="en">The largest actuator latency, from the operator&apos;s input to the actuator response at the vehicle, that the operator can be expected to anticipate in a mode. Value as qudt:numericValue with qudt:unit unit:MilliSEC.</skos:definition>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/rdonto/op#AudioChannel -->
+    <!-- https://w3id.org/rovo/op#AudioChannel -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#AudioChannel">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/op#InformationChannel"/>
+    <owl:Class rdf:about="https://w3id.org/rovo/op#AudioChannel">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rovo/op#InformationChannel"/>
         <terms:source>TL22</terms:source>
         <terms:source>WO25</terms:source>
         <rdfs:comment xml:lang="en">SA-15. WO25: all six operators named missing audio as a major issue for SA.</rdfs:comment>
@@ -1204,11 +1204,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#CameraView -->
+    <!-- https://w3id.org/rovo/op#CameraView -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#CameraView">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/op#InformationChannel"/>
+    <owl:Class rdf:about="https://w3id.org/rovo/op#CameraView">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rovo/op#InformationChannel"/>
         <rdfs:comment xml:lang="en">SA-15, SA-17.</rdfs:comment>
         <rdfs:label xml:lang="en">camera view</rdfs:label>
         <skos:definition xml:lang="en">An information channel that shows the operator the image of one vehicle camera, or one image stitched from several.</skos:definition>
@@ -1216,22 +1216,22 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#ConfiguredLimit -->
+    <!-- https://w3id.org/rovo/op#ConfiguredLimit -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#ConfiguredLimit">
-        <rdfs:comment xml:lang="en">SA-09, SA-12, SA-14, SA-18, SA-22 and SA-24, and the limits of RDOnto-link. Limits are parameters, not facts about the world. Most limit types hold one value in one fixed unit, given in the definition, as qudt:numericValue with qudt:unit; the shapes enforce the unit, and queries read only that unit. Two differ: a WorkloadBand has a lower and an upper bound on a named scale, and a RDOnto-link:TravelTolerance can be given as a dimensionless delay limit. Most limits are scoped by mode (appliesToMode); an SARequirement is scoped by SA type and its value is the recheck interval. Every limit carries dct:source; values used for testing say so in rdfs:comment.</rdfs:comment>
+    <owl:Class rdf:about="https://w3id.org/rovo/op#ConfiguredLimit">
+        <rdfs:comment xml:lang="en">SA-09, SA-12, SA-14, SA-18, SA-22 and SA-24, and the limits of ROVO-link. Limits are parameters, not facts about the world. Most limit types hold one value in one fixed unit, given in the definition, as qudt:numericValue with qudt:unit; the shapes enforce the unit, and queries read only that unit. Two differ: a WorkloadBand has a lower and an upper bound on a named scale, and a ROVO-link:TravelTolerance can be given as a dimensionless delay limit. Most limits are scoped by mode (appliesToMode); an SARequirement is scoped by SA type and its value is the recheck interval. Every limit carries dct:source; values used for testing say so in rdfs:comment.</rdfs:comment>
         <rdfs:label xml:lang="en">configured limit</rdfs:label>
         <skos:definition xml:lang="en">A value set by configuration that a measured or computed quantity is compared with, together with the source it was taken from.</skos:definition>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/rdonto/op#ControlInputEvidence -->
+    <!-- https://w3id.org/rovo/op#ControlInputEvidence -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#ControlInputEvidence">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/op#SAEvidence"/>
+    <owl:Class rdf:about="https://w3id.org/rovo/op#ControlInputEvidence">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rovo/op#SAEvidence"/>
         <terms:source>MZ25</terms:source>
         <rdfs:comment xml:lang="en">SA-25.</rdfs:comment>
         <rdfs:label xml:lang="en">control input evidence</rdfs:label>
@@ -1240,10 +1240,10 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#Cue -->
+    <!-- https://w3id.org/rovo/op#Cue -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#Cue">
+    <owl:Class rdf:about="https://w3id.org/rovo/op#Cue">
         <rdfs:comment xml:lang="en">SA-16.</rdfs:comment>
         <rdfs:label xml:lang="en">cue</rdfs:label>
         <skos:definition xml:lang="en">A kind of sensory information a driver uses, such as vestibular or auditory information.</skos:definition>
@@ -1251,28 +1251,28 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#CueInterpretationTask -->
+    <!-- https://w3id.org/rovo/op#CueInterpretationTask -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#CueInterpretationTask">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/op#OperatorTask"/>
+    <owl:Class rdf:about="https://w3id.org/rovo/op#CueInterpretationTask">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rovo/op#OperatorTask"/>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/rdonto/op#DecisionMakingTask -->
+    <!-- https://w3id.org/rovo/op#DecisionMakingTask -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#DecisionMakingTask">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/op#OperatorTask"/>
+    <owl:Class rdf:about="https://w3id.org/rovo/op#DecisionMakingTask">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rovo/op#OperatorTask"/>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/rdonto/op#DisplayedScene -->
+    <!-- https://w3id.org/rovo/op#DisplayedScene -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#DisplayedScene">
+    <owl:Class rdf:about="https://w3id.org/rovo/op#DisplayedScene">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <rdfs:comment xml:lang="en">SA-08. Separates the scene the operator sees from the current scene at the vehicle.</rdfs:comment>
         <rdfs:label xml:lang="en">displayed scene</rdfs:label>
@@ -1281,23 +1281,23 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#DrivingTask -->
+    <!-- https://w3id.org/rovo/op#DrivingTask -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#DrivingTask">
+    <owl:Class rdf:about="https://w3id.org/rovo/op#DrivingTask">
         <terms:source>HN25b</terms:source>
         <terms:source>WO25</terms:source>
-        <rdfs:comment xml:lang="en">SA-06. Not the DDT (which every driving task needs) but the purpose of the operation; where J3016&apos;s driving task is meant, RDOnto writes DDT. Not an OperatorTask either, which is what the operator does (holdsTask), while engagementTask and RDOnto-link:setupTask name a driving task. It shapes which elements matter (WO25: fork handling). Individuals are configuration.</rdfs:comment>
+        <rdfs:comment xml:lang="en">SA-06. Not the DDT (which every driving task needs) but the purpose of the operation; where J3016&apos;s driving task is meant, R.O.V.O writes DDT. Not an OperatorTask either, which is what the operator does (holdsTask), while engagementTask and ROVO-link:setupTask name a driving task. It shapes which elements matter (WO25: fork handling). Individuals are configuration.</rdfs:comment>
         <rdfs:label xml:lang="en">driving task</rdfs:label>
         <skos:definition xml:lang="en">What the vehicle is operated for, e.g. passenger transport, pallet handling or vehicle relocation.</skos:definition>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/rdonto/op#ElementStateChange -->
+    <!-- https://w3id.org/rovo/op#ElementStateChange -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#ElementStateChange">
+    <owl:Class rdf:about="https://w3id.org/rovo/op#ElementStateChange">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
         <terms:source>MU21</terms:source>
         <rdfs:comment xml:lang="en">SA-11. Interface (stream layer): sosa:hasFeatureOfInterest is the element and sosa:resultTime the time. A perception assertion is stale when its element changed after the sensed time of the scene it rests on. What counts as significant is decided upstream.</rdfs:comment>
@@ -1307,23 +1307,23 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#Engagement -->
+    <!-- https://w3id.org/rovo/op#Engagement -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#Engagement">
+    <owl:Class rdf:about="https://w3id.org/rovo/op#Engagement">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
-        <rdfs:comment xml:lang="en">SA-01, SA-04, SA-05. An engagement is not a session: a session (RDOnto-link:TeleoperationSession) is only the connection between a station and a vehicle, and carries engagements in sequence. An engagement is carried by one session and ends with it, so a reconnection in a new session also starts a new engagement, in the same mode; it can name the one it continues (followsEngagement). What sources such as HA24 call a driving session is an engagement here.</rdfs:comment>
+        <rdfs:comment xml:lang="en">SA-01, SA-04, SA-05. An engagement is not a session: a session (ROVO-link:TeleoperationSession) is only the connection between a station and a vehicle, and carries engagements in sequence. An engagement is carried by one session and ends with it, so a reconnection in a new session also starts a new engagement, in the same mode; it can name the one it continues (followsEngagement). What sources such as HA24 call a driving session is an engagement here.</rdfs:comment>
         <rdfs:label xml:lang="en">engagement</rdfs:label>
         <skos:definition xml:lang="en">The period in which one remote operator is responsible for one vehicle in one operation mode, from prov:startedAtTime to prov:endedAtTime (absent while it lasts). A mode change starts a new engagement.</skos:definition>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/rdonto/op#EyeFixationEvidence -->
+    <!-- https://w3id.org/rovo/op#EyeFixationEvidence -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#EyeFixationEvidence">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/op#SAEvidence"/>
+    <owl:Class rdf:about="https://w3id.org/rovo/op#EyeFixationEvidence">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rovo/op#SAEvidence"/>
         <terms:source>MZ25</terms:source>
         <rdfs:comment xml:lang="en">SA-25.</rdfs:comment>
         <rdfs:label xml:lang="en">eye fixation evidence</rdfs:label>
@@ -1332,26 +1332,26 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#FallbackReadyPeriod -->
+    <!-- https://w3id.org/rovo/op#FallbackReadyPeriod -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#FallbackReadyPeriod">
+    <owl:Class rdf:about="https://w3id.org/rovo/op#FallbackReadyPeriod">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
         <terms:source>EN95a</terms:source>
         <terms:source>ME24</terms:source>
         <terms:source>MU21</terms:source>
-        <rdfs:comment xml:lang="en">SA-20. An operator state, not an operation mode: there is no vehicle and no mode. Waiting can bring underload and decreased vigilance (MU21, ME24, EN95a). Counts as a break for SA-12. Not J3016&apos;s DDT fallback-ready user, who is the user of one vehicle with an engaged Level 3 ADS and is receptive to its requests to intervene: an operator who waits for the requests of one vehicle while watching it is in remote monitoring here, and this state has no vehicle (related match in RDOnto-core).</rdfs:comment>
+        <rdfs:comment xml:lang="en">SA-20. An operator state, not an operation mode: there is no vehicle and no mode. Waiting can bring underload and decreased vigilance (MU21, ME24, EN95a). Counts as a break for SA-12. Not J3016&apos;s DDT fallback-ready user, who is the user of one vehicle with an engaged Level 3 ADS and is receptive to its requests to intervene: an operator who waits for the requests of one vehicle while watching it is in remote monitoring here, and this state has no vehicle (related match in ROVO-core).</rdfs:comment>
         <rdfs:label xml:lang="en">fallback-ready period</rdfs:label>
         <skos:definition xml:lang="en">A period in which an operator waits, ready to take over, without being engaged with a vehicle, from prov:startedAtTime to prov:endedAtTime (absent while it lasts).</skos:definition>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/rdonto/op#HapticFeedback -->
+    <!-- https://w3id.org/rovo/op#HapticFeedback -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#HapticFeedback">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/op#InformationChannel"/>
+    <owl:Class rdf:about="https://w3id.org/rovo/op#HapticFeedback">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rovo/op#InformationChannel"/>
         <terms:source>TL22</terms:source>
         <rdfs:comment xml:lang="en">SA-15, SA-16. TL22 reports the missing haptic channel as a problem for remote operators.</rdfs:comment>
         <rdfs:label xml:lang="en">haptic feedback</rdfs:label>
@@ -1360,10 +1360,10 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#Impairment -->
+    <!-- https://w3id.org/rovo/op#Impairment -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#Impairment">
+    <owl:Class rdf:about="https://w3id.org/rovo/op#Impairment">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
         <terms:source>HA24</terms:source>
         <terms:source>ME24</terms:source>
@@ -1375,10 +1375,10 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#ImpairmentObservation -->
+    <!-- https://w3id.org/rovo/op#ImpairmentObservation -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#ImpairmentObservation">
+    <owl:Class rdf:about="https://w3id.org/rovo/op#ImpairmentObservation">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
         <terms:source>HA24</terms:source>
         <terms:source>ME24</terms:source>
@@ -1390,11 +1390,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#InVehicleCue -->
+    <!-- https://w3id.org/rovo/op#InVehicleCue -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#InVehicleCue">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/op#Cue"/>
+    <owl:Class rdf:about="https://w3id.org/rovo/op#InVehicleCue">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rovo/op#Cue"/>
         <terms:source>LV21</terms:source>
         <terms:source>ME24</terms:source>
         <terms:source>MU21</terms:source>
@@ -1408,26 +1408,26 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#InformationAgeLimit -->
+    <!-- https://w3id.org/rovo/op#InformationAgeLimit -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#InformationAgeLimit">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/op#ConfiguredLimit"/>
+    <owl:Class rdf:about="https://w3id.org/rovo/op#InformationAgeLimit">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rovo/op#ConfiguredLimit"/>
         <terms:source>AM22</terms:source>
         <terms:source>GF20</terms:source>
         <terms:source>MU21</terms:source>
         <terms:source>NE19</terms:source>
-        <rdfs:comment xml:lang="en">SA-09. The limit per mode is the operator-side limit and takes priority. RDOnto-link may scope a further instance to a teleoperation setup (RDOnto-link:appliesToSetup) as the vehicle-to-station part of the setup&apos;s reference budgets (LK-04); it must be no looser than the mode&apos;s limit, which the link shapes check. With RDOnto-link loaded, SA-09 uses the setup&apos;s limit where it is stricter. SA-24: a mode whose limit the current information age exceeds is one the operator can no longer perform; each candidate mode is tested against its own limit. Without a displayed scene, or for a mode without a limit, the information age is not judged and rules out no mode.</rdfs:comment>
+        <rdfs:comment xml:lang="en">SA-09. The limit per mode is the operator-side limit and takes priority. ROVO-link may scope a further instance to a teleoperation setup (ROVO-link:appliesToSetup) as the vehicle-to-station part of the setup&apos;s reference budgets (LK-04); it must be no looser than the mode&apos;s limit, which the link shapes check. With ROVO-link loaded, SA-09 uses the setup&apos;s limit where it is stricter. SA-24: a mode whose limit the current information age exceeds is one the operator can no longer perform; each candidate mode is tested against its own limit. Without a displayed scene, or for a mode without a limit, the information age is not judged and rules out no mode.</rdfs:comment>
         <rdfs:label xml:lang="en">information age limit</rdfs:label>
         <skos:definition xml:lang="en">The largest event-to-display age of displayed information acceptable in a mode. Value as qudt:numericValue with qudt:unit unit:MilliSEC.</skos:definition>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/rdonto/op#InformationChannel -->
+    <!-- https://w3id.org/rovo/op#InformationChannel -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#InformationChannel">
+    <owl:Class rdf:about="https://w3id.org/rovo/op#InformationChannel">
         <terms:source>LV21</terms:source>
         <terms:source>TL22</terms:source>
         <rdfs:comment xml:lang="en">SA-15. Channel individuals belong to a station; what each conveys is asserted per individual (providesCue).</rdfs:comment>
@@ -1437,11 +1437,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#LatencyChangeLimit -->
+    <!-- https://w3id.org/rovo/op#LatencyChangeLimit -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#LatencyChangeLimit">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/op#ConfiguredLimit"/>
+    <owl:Class rdf:about="https://w3id.org/rovo/op#LatencyChangeLimit">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rovo/op#ConfiguredLimit"/>
         <rdfs:comment xml:lang="en">SA-14. A configuration parameter; no published value.</rdfs:comment>
         <rdfs:label xml:lang="en">latency change limit</rdfs:label>
         <skos:definition xml:lang="en">The largest difference between the current and the adapted information age acceptable in a mode before the operator&apos;s adaptation can no longer be assumed. Value as qudt:numericValue with qudt:unit unit:MilliSEC.</skos:definition>
@@ -1449,11 +1449,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#MapView -->
+    <!-- https://w3id.org/rovo/op#MapView -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#MapView">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/op#InformationChannel"/>
+    <owl:Class rdf:about="https://w3id.org/rovo/op#MapView">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rovo/op#InformationChannel"/>
         <rdfs:comment xml:lang="en">SA-15.</rdfs:comment>
         <rdfs:label xml:lang="en">map view</rdfs:label>
         <skos:definition xml:lang="en">An information channel that shows the vehicle&apos;s position and route on a map or in a bird&apos;s-eye view.</skos:definition>
@@ -1461,11 +1461,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#MinimumBreakLength -->
+    <!-- https://w3id.org/rovo/op#MinimumBreakLength -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#MinimumBreakLength">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/op#ConfiguredLimit"/>
+    <owl:Class rdf:about="https://w3id.org/rovo/op#MinimumBreakLength">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rovo/op#ConfiguredLimit"/>
         <terms:source>HA24</terms:source>
         <rdfs:comment xml:lang="en">SA-12. A break itself has no mode; the mode named here (appliesToMode) is the remote driving mode whose time on task the break resets, see TimeOnTaskLimit for the rules. HA24: most drivers reported breaks of 10-15 min once per hour.</rdfs:comment>
         <rdfs:label xml:lang="en">minimum break length</rdfs:label>
@@ -1474,11 +1474,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#MotionFeedback -->
+    <!-- https://w3id.org/rovo/op#MotionFeedback -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#MotionFeedback">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/op#InformationChannel"/>
+    <owl:Class rdf:about="https://w3id.org/rovo/op#MotionFeedback">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rovo/op#InformationChannel"/>
         <terms:source>WO25</terms:source>
         <terms:source>WO26</terms:source>
         <rdfs:comment xml:lang="en">SA-15. Motion platforms were tested in WO26 and WO25.</rdfs:comment>
@@ -1488,73 +1488,73 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#ObservationTask -->
+    <!-- https://w3id.org/rovo/op#ObservationTask -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#ObservationTask">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/op#OperatorTask"/>
+    <owl:Class rdf:about="https://w3id.org/rovo/op#ObservationTask">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rovo/op#OperatorTask"/>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/rdonto/op#OnBoardDriver -->
+    <!-- https://w3id.org/rovo/op#OnBoardDriver -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#OnBoardDriver">
+    <owl:Class rdf:about="https://w3id.org/rovo/op#OnBoardDriver">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Agent"/>
         <terms:source>J3016</terms:source>
-        <rdfs:comment xml:lang="en">SA-01, LK-10. Close to EDMC InVehicleDriver (RDOnto-core); a SKOS mapping, since the on-board driver does not drive while a remote operator has taken over. Whether the driver can take control back is a separate state (ableToTakeOver).</rdfs:comment>
+        <rdfs:comment xml:lang="en">SA-01, LK-10. Close to EDMC InVehicleDriver (ROVO-core); a SKOS mapping, since the on-board driver does not drive while a remote operator has taken over. Whether the driver can take control back is a separate state (ableToTakeOver).</rdfs:comment>
         <rdfs:label xml:lang="en">on-board driver</rdfs:label>
         <skos:definition xml:lang="en">A human in the vehicle&apos;s driver&apos;s seat who drives the vehicle when no remote operator does.</skos:definition>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/rdonto/op#OperatingEnvironment -->
+    <!-- https://w3id.org/rovo/op#OperatingEnvironment -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#OperatingEnvironment">
+    <owl:Class rdf:about="https://w3id.org/rovo/op#OperatingEnvironment">
         <terms:source>BR26</terms:source>
         <terms:source>HN25b</terms:source>
         <terms:source>LV21</terms:source>
         <terms:source>WO25</terms:source>
-        <rdfs:comment xml:lang="en">SA-06. Interface (RDOnto-todd): the teleoperation ODD describes environments by their attributes; these individuals only name the kind. The environment matters for remote driving: performance and training differ per ODD (HN25b), and a monotonous task reduces SA (LV21).</rdfs:comment>
+        <rdfs:comment xml:lang="en">SA-06. Interface (ROVO-todd): the teleoperation ODD describes environments by their attributes; these individuals only name the kind. The environment matters for remote driving: performance and training differ per ODD (HN25b), and a monotonous task reduces SA (LV21).</rdfs:comment>
         <rdfs:label xml:lang="en">operating environment</rdfs:label>
         <skos:definition xml:lang="en">The kind of place a vehicle is operated in, e.g. a public road, a warehouse, a port, or a construction or mining site.</skos:definition>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/rdonto/op#OperationMode -->
+    <!-- https://w3id.org/rovo/op#OperationMode -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#OperationMode">
+    <owl:Class rdf:about="https://w3id.org/rovo/op#OperationMode">
         <terms:source>AM22</terms:source>
         <terms:source>BSI1886</terms:source>
-        <rdfs:comment xml:lang="en">SA-01, SA-21. The modes of AM22 (remote monitoring, remote assistance, remote driving), with remote driving split into its two contexts by RDOnto-op:broaderMode. Fallback-ready is not a mode but an operator state (FallbackReadyPeriod). Interface (RDOnto-concept).</rdfs:comment>
+        <rdfs:comment xml:lang="en">SA-01, SA-21. The modes of AM22 (remote monitoring, remote assistance, remote driving), with remote driving split into its two contexts by ROVO-op:broaderMode. Fallback-ready is not a mode but an operator state (FallbackReadyPeriod). Interface (ROVO-concept).</rdfs:comment>
         <rdfs:label xml:lang="en">operation mode</rdfs:label>
         <skos:definition xml:lang="en">The kind of remote operation an engagement performs.</skos:definition>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/rdonto/op#OperatorTask -->
+    <!-- https://w3id.org/rovo/op#OperatorTask -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#OperatorTask">
+    <owl:Class rdf:about="https://w3id.org/rovo/op#OperatorTask">
         <terms:source>AM22</terms:source>
         <terms:source>J3016</terms:source>
-        <rdfs:comment xml:lang="en">SA-02. In remote driving, DDT subtasks and the DDT fallback: EDMC&apos;s DynamicDrivingSubtask and DynamicDrivingTaskFallback are subclasses (RDOnto-core). In remote assistance, decision-making and cue interpretation, e.g. classifying an object or authorizing a path; the remote assistant &apos;only provides input and authorization&apos; without performing any part of the DDT (AM22). In remote monitoring, observation only.</rdfs:comment>
+        <rdfs:comment xml:lang="en">SA-02. In remote driving, DDT subtasks and the DDT fallback: EDMC&apos;s DynamicDrivingSubtask and DynamicDrivingTaskFallback are subclasses (ROVO-core). In remote assistance, decision-making and cue interpretation, e.g. classifying an object or authorizing a path; the remote assistant &apos;only provides input and authorization&apos; without performing any part of the DDT (AM22). In remote monitoring, observation only.</rdfs:comment>
         <rdfs:label xml:lang="en">operator task</rdfs:label>
         <skos:definition xml:lang="en">A task a remote operator can hold for a vehicle in an engagement.</skos:definition>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/rdonto/op#PerceptionAssertion -->
+    <!-- https://w3id.org/rovo/op#PerceptionAssertion -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#PerceptionAssertion">
+    <owl:Class rdf:about="https://w3id.org/rovo/op#PerceptionAssertion">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <terms:source>EN95a</terms:source>
         <terms:source>MZ25</terms:source>
@@ -1565,11 +1565,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#PerceptionConfidenceThreshold -->
+    <!-- https://w3id.org/rovo/op#PerceptionConfidenceThreshold -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#PerceptionConfidenceThreshold">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/op#ConfiguredLimit"/>
+    <owl:Class rdf:about="https://w3id.org/rovo/op#PerceptionConfidenceThreshold">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rovo/op#ConfiguredLimit"/>
         <rdfs:comment xml:lang="en">SA-13, SA-23. An assertion below the threshold of the mode of the engagement whose SA is judged does not count as perceived or as a recheck. Where no threshold is configured for the mode or a broader mode, every assertion counts. A configuration parameter; no source gives a value.</rdfs:comment>
         <rdfs:label xml:lang="en">perception confidence threshold</rdfs:label>
         <skos:definition xml:lang="en">The lowest confidence at which a perception assertion counts as the operator having perceived the element, in a mode. Value as qudt:numericValue between 0 and 1 with qudt:unit unit:UNITLESS.</skos:definition>
@@ -1577,11 +1577,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#ProbeAnswerEvidence -->
+    <!-- https://w3id.org/rovo/op#ProbeAnswerEvidence -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#ProbeAnswerEvidence">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/op#SAEvidence"/>
+    <owl:Class rdf:about="https://w3id.org/rovo/op#ProbeAnswerEvidence">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rovo/op#SAEvidence"/>
         <terms:source>EN95b</terms:source>
         <terms:source>MZ25</terms:source>
         <rdfs:comment xml:lang="en">SA-25.</rdfs:comment>
@@ -1591,50 +1591,50 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#RemoteOperator -->
+    <!-- https://w3id.org/rovo/op#RemoteOperator -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#RemoteOperator">
+    <owl:Class rdf:about="https://w3id.org/rovo/op#RemoteOperator">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Agent"/>
         <terms:source>J3016</terms:source>
         <terms:source>SHI26</terms:source>
-        <rdfs:comment xml:lang="en">SA-01. EDMC RemoteDriver and RemoteAssistant are subclasses (RDOnto-core). The station is usually outside the vehicle, but J3016 (definition 3.31.1.2) also counts a remote driver inside the vehicle who is not in the driver&apos;s seat; cues such a driver perceives directly, not through the station, are not modelled (SHI26 note this case).</rdfs:comment>
+        <rdfs:comment xml:lang="en">SA-01. EDMC RemoteDriver and RemoteAssistant are subclasses (ROVO-core). The station is usually outside the vehicle, but J3016 (definition 3.31.1.2) also counts a remote driver inside the vehicle who is not in the driver&apos;s seat; cues such a driver perceives directly, not through the station, are not modelled (SHI26 note this case).</rdfs:comment>
         <rdfs:label xml:lang="en">remote operator</rdfs:label>
         <skos:definition xml:lang="en">A human who monitors, assists or drives a vehicle through a remote station, without occupying the vehicle&apos;s driver&apos;s seat.</skos:definition>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/rdonto/op#RemotelyOperatedVehicle -->
+    <!-- https://w3id.org/rovo/op#RemotelyOperatedVehicle -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#RemotelyOperatedVehicle">
-        <rdfs:comment xml:lang="en">SA-01, SA-24. Interface. Related to EDMC MotorVehicle by a SKOS mapping (RDOnto-core), not a subclass: vehicles off public roads, such as forklifts, are included. Whether it has an ADS is stated with hasADS.</rdfs:comment>
+    <owl:Class rdf:about="https://w3id.org/rovo/op#RemotelyOperatedVehicle">
+        <rdfs:comment xml:lang="en">SA-01, SA-24. Interface. Related to EDMC MotorVehicle by a SKOS mapping (ROVO-core), not a subclass: vehicles off public roads, such as forklifts, are included. Whether it has an ADS is stated with hasADS.</rdfs:comment>
         <rdfs:label xml:lang="en">remotely operated vehicle</rdfs:label>
         <skos:definition xml:lang="en">A vehicle that can be monitored, assisted or driven from a remote station. It may or may not have an automated driving system.</skos:definition>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/rdonto/op#Request -->
+    <!-- https://w3id.org/rovo/op#Request -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#Request">
+    <owl:Class rdf:about="https://w3id.org/rovo/op#Request">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <terms:source>AM22</terms:source>
         <terms:source>MU21</terms:source>
         <terms:source>TL22</terms:source>
-        <rdfs:comment xml:lang="en">SA-03. Issued by the vehicle&apos;s ADS. A takeover from an on-board driver responds to no request; why it happened is recorded on the engagement (takeoverReason). A takeover request closely matches J3016&apos;s request to intervene (RDOnto-core). For decision-support SA, the request type and the elements the request concerns select the required elements (SA-22, concernsElement).</rdfs:comment>
+        <rdfs:comment xml:lang="en">SA-03. Issued by the vehicle&apos;s ADS. A takeover from an on-board driver responds to no request; why it happened is recorded on the engagement (takeoverReason). A takeover request closely matches J3016&apos;s request to intervene (ROVO-core). For decision-support SA, the request type and the elements the request concerns select the required elements (SA-22, concernsElement).</rdfs:comment>
         <rdfs:label xml:lang="en">request</rdfs:label>
         <skos:definition xml:lang="en">A request from a vehicle to a remote operator: to take over (event-based remote driving) or to assist (remote assistance), with an issue time (prov:generatedAtTime).</skos:definition>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/rdonto/op#RequestReason -->
+    <!-- https://w3id.org/rovo/op#RequestReason -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#RequestReason">
+    <owl:Class rdf:about="https://w3id.org/rovo/op#RequestReason">
         <terms:source>AM22</terms:source>
         <terms:source>MU21</terms:source>
         <rdfs:comment xml:lang="en">SA-03. Sensor failure and perception error (MU21, citing California DMV 2019), plan failure (MU21, citing Scholtz et al. 2004), an object the vehicle cannot classify (AM22), and no stated cause. Not an exhaustive list.</rdfs:comment>
@@ -1644,10 +1644,10 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#RequestType -->
+    <!-- https://w3id.org/rovo/op#RequestType -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#RequestType">
+    <owl:Class rdf:about="https://w3id.org/rovo/op#RequestType">
         <terms:source>AM22</terms:source>
         <terms:source>MU21</terms:source>
         <rdfs:comment xml:lang="en">SA-03, SA-22. The individuals follow AM22&apos;s examples of remote assistance (a new path around road construction; classifying an object in the lane) and the takeover request of event-based remote driving. Not an exhaustive list.</rdfs:comment>
@@ -1657,10 +1657,10 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#SAEvidence -->
+    <!-- https://w3id.org/rovo/op#SAEvidence -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#SAEvidence">
+    <owl:Class rdf:about="https://w3id.org/rovo/op#SAEvidence">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <terms:source>EN95b</terms:source>
         <terms:source>LV21</terms:source>
@@ -1672,11 +1672,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#SARequirement -->
+    <!-- https://w3id.org/rovo/op#SARequirement -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#SARequirement">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/op#ConfiguredLimit"/>
+    <owl:Class rdf:about="https://w3id.org/rovo/op#SARequirement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rovo/op#ConfiguredLimit"/>
         <terms:source>EN95a</terms:source>
         <terms:source>LV21</terms:source>
         <rdfs:comment xml:lang="en">SA-22 (static), used by SA-13 (lapses) and SA-23 (sufficiency). For decision-support SA, a requirement may be limited to one request type (forRequestType), and it applies only to the elements the request concerns, where the request names any (concernsElement): what O must know depends on what V asks. Design-time knowledge, e.g. from a task analysis. The interval should reflect how fast elements of the type change; no source gives values.</rdfs:comment>
@@ -1686,10 +1686,10 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#SAType -->
+    <!-- https://w3id.org/rovo/op#SAType -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#SAType">
+    <owl:Class rdf:about="https://w3id.org/rovo/op#SAType">
         <terms:source>AM22</terms:source>
         <terms:source>EN95a</terms:source>
         <terms:source>TANG26</terms:source>
@@ -1700,11 +1700,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#SelfReportEvidence -->
+    <!-- https://w3id.org/rovo/op#SelfReportEvidence -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#SelfReportEvidence">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/op#SAEvidence"/>
+    <owl:Class rdf:about="https://w3id.org/rovo/op#SelfReportEvidence">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rovo/op#SAEvidence"/>
         <terms:source>MZ25</terms:source>
         <rdfs:comment xml:lang="en">SA-25. A rating of SA as a whole, such as SART, is not evidence for one element.</rdfs:comment>
         <rdfs:label xml:lang="en">self-report evidence</rdfs:label>
@@ -1713,10 +1713,10 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#SensorFrame -->
+    <!-- https://w3id.org/rovo/op#SensorFrame -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#SensorFrame">
+    <owl:Class rdf:about="https://w3id.org/rovo/op#SensorFrame">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
         <rdfs:comment xml:lang="en">SA-08. sosa:resultTime is the capture time at the vehicle and sosa:madeBySensor the sensor. The sensed time, when the depicted state of the world held, is the capture time minus the sensor&apos;s capture delay.</rdfs:comment>
         <rdfs:label xml:lang="en">sensor frame</rdfs:label>
@@ -1725,11 +1725,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#SensorOverlay -->
+    <!-- https://w3id.org/rovo/op#SensorOverlay -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#SensorOverlay">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/op#InformationChannel"/>
+    <owl:Class rdf:about="https://w3id.org/rovo/op#SensorOverlay">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rovo/op#InformationChannel"/>
         <rdfs:comment xml:lang="en">SA-15.</rdfs:comment>
         <rdfs:label xml:lang="en">sensor overlay</rdfs:label>
         <skos:definition xml:lang="en">An information channel that draws sensor or perception data, such as detected objects or a predicted path, over the camera views.</skos:definition>
@@ -1737,21 +1737,21 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#SituationElement -->
+    <!-- https://w3id.org/rovo/op#SituationElement -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#SituationElement">
-        <rdfs:comment xml:lang="en">SA-07. Interface. A.U.T.O. Traffic_Entity is a subclass (RDOnto-core). This module never describes the element itself, only the operator&apos;s perception of it.</rdfs:comment>
+    <owl:Class rdf:about="https://w3id.org/rovo/op#SituationElement">
+        <rdfs:comment xml:lang="en">SA-07. Interface. A.U.T.O. Traffic_Entity is a subclass (ROVO-core). This module never describes the element itself, only the operator&apos;s perception of it.</rdfs:comment>
         <rdfs:label xml:lang="en">situation element</rdfs:label>
         <skos:definition xml:lang="en">Something in the vehicle&apos;s situation that the operator may perceive: a road user, an object, an event or a state of the vehicle.</skos:definition>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/rdonto/op#TakeoverReason -->
+    <!-- https://w3id.org/rovo/op#TakeoverReason -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#TakeoverReason">
+    <owl:Class rdf:about="https://w3id.org/rovo/op#TakeoverReason">
         <rdfs:comment xml:lang="en">SA-03. Records the event that called for an event-based remote drive when there is no Request. The individuals are the two cases of a takeover from an on-board driver; no source states them, they follow from the context rule of event-based remote driving. Not an exhaustive list.</rdfs:comment>
         <rdfs:label xml:lang="en">takeover reason</rdfs:label>
         <skos:definition xml:lang="en">Why a remote operator took over from an on-board driver, where no request from the vehicle started the engagement.</skos:definition>
@@ -1759,26 +1759,26 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#TimeOnTaskLimit -->
+    <!-- https://w3id.org/rovo/op#TimeOnTaskLimit -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#TimeOnTaskLimit">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/op#ConfiguredLimit"/>
+    <owl:Class rdf:about="https://w3id.org/rovo/op#TimeOnTaskLimit">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rovo/op#ConfiguredLimit"/>
         <terms:source>HA24</terms:source>
         <terms:source>ME24</terms:source>
         <terms:source>TANG26</terms:source>
-        <rdfs:comment xml:lang="en">SA-12. A break is any time without an engagement, including time fallback-ready, so breaks follow from the engagements and need no class of their own. Exact rules: (1) a break is a period of at least the minimum break length in which the operator has no open engagement with any vehicle, in any mode; (2) time on task is the sum of the durations of the operator&apos;s engagements in a remote driving mode (isRemoteDrivingMode true) since the end of the last break; (3) time in remote monitoring or remote assistance is neither: it adds nothing to time on task and is not a break, so it does not reset the count; (4) the limit and the minimum break length that apply are those of the mode of the operator&apos;s current remote driving engagement or, if the operator is not driving now, of the most recent one; a limit stated for the broader mode holds where the mode has none of its own. Both limit types are therefore stated for remote driving modes only (RDOnto-op-shapes.ttl). HA24: most professional remote drivers never drove more than 2 h at a time, 1 h preferred.</rdfs:comment>
+        <rdfs:comment xml:lang="en">SA-12. A break is any time without an engagement, including time fallback-ready, so breaks follow from the engagements and need no class of their own. Exact rules: (1) a break is a period of at least the minimum break length in which the operator has no open engagement with any vehicle, in any mode; (2) time on task is the sum of the durations of the operator&apos;s engagements in a remote driving mode (isRemoteDrivingMode true) since the end of the last break; (3) time in remote monitoring or remote assistance is neither: it adds nothing to time on task and is not a break, so it does not reset the count; (4) the limit and the minimum break length that apply are those of the mode of the operator&apos;s current remote driving engagement or, if the operator is not driving now, of the most recent one; a limit stated for the broader mode holds where the mode has none of its own. Both limit types are therefore stated for remote driving modes only (ROVO-op-shapes.ttl). HA24: most professional remote drivers never drove more than 2 h at a time, 1 h preferred.</rdfs:comment>
         <rdfs:label xml:lang="en">time-on-task limit</rdfs:label>
         <skos:definition xml:lang="en">The longest time an operator may drive remotely in a mode without a break of at least the minimum break length. Value as qudt:numericValue with qudt:unit unit:MIN.</skos:definition>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/rdonto/op#WorkloadBand -->
+    <!-- https://w3id.org/rovo/op#WorkloadBand -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#WorkloadBand">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/rdonto/op#ConfiguredLimit"/>
+    <owl:Class rdf:about="https://w3id.org/rovo/op#WorkloadBand">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rovo/op#ConfiguredLimit"/>
         <terms:source>HS88</terms:source>
         <terms:source>ME24</terms:source>
         <terms:source>MU21</terms:source>
@@ -1789,17 +1789,17 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#WorkloadEstimate -->
+    <!-- https://w3id.org/rovo/op#WorkloadEstimate -->
 
 
-    <owl:Class rdf:about="https://w3id.org/rdonto/op#WorkloadEstimate">
+    <owl:Class rdf:about="https://w3id.org/rovo/op#WorkloadEstimate">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
         <terms:source>HS88</terms:source>
         <terms:source>ME24</terms:source>
         <terms:source>MU21</terms:source>
         <rdfs:comment xml:lang="en">SA-18, SA-20. E.g. a NASA-TLX score (HS88) or a physiological index.</rdfs:comment>
         <rdfs:label xml:lang="en">workload estimate</rdfs:label>
-        <skos:definition xml:lang="en">An observation of the operator&apos;s workload: sosa:hasFeatureOfInterest the operator, sosa:observedProperty RDOnto-op:Workload, sosa:hasSimpleResult the value, sosa:resultTime the time, onScale the scale.</skos:definition>
+        <skos:definition xml:lang="en">An observation of the operator&apos;s workload: sosa:hasFeatureOfInterest the operator, sosa:observedProperty ROVO-op:Workload, sosa:hasSimpleResult the value, sosa:resultTime the time, onScale the scale.</skos:definition>
     </owl:Class>
     
 
@@ -1856,11 +1856,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#AccelerationCue -->
+    <!-- https://w3id.org/rovo/op#AccelerationCue -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#AccelerationCue">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#InVehicleCue"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#AccelerationCue">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#InVehicleCue"/>
         <terms:source>ZH24</terms:source>
         <rdfs:comment xml:lang="en">SA-16. ZH24: remote drivers &apos;may have difficulty perceiving the acceleration and motion states of the vehicle when relying solely on video information&apos;.</rdfs:comment>
         <rdfs:label xml:lang="en">acceleration cue</rdfs:label>
@@ -1869,11 +1869,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#AmbientSound -->
+    <!-- https://w3id.org/rovo/op#AmbientSound -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#AmbientSound">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#InVehicleCue"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#AmbientSound">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#InVehicleCue"/>
         <terms:source>TL22</terms:source>
         <terms:source>WO25</terms:source>
         <rdfs:comment xml:lang="en">SA-16. TL22 and WO25 report the missing audio channel as a problem for remote operators.</rdfs:comment>
@@ -1883,11 +1883,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#ConstructionSite -->
+    <!-- https://w3id.org/rovo/op#ConstructionSite -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#ConstructionSite">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#OperatingEnvironment"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#ConstructionSite">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#OperatingEnvironment"/>
         <rdfs:comment xml:lang="en">SA-06.</rdfs:comment>
         <rdfs:label xml:lang="en">construction site</rdfs:label>
         <skos:definition xml:lang="en">A site where construction work is carried out, closed to public traffic.</skos:definition>
@@ -1895,13 +1895,13 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#ContinuousRemoteDriving -->
+    <!-- https://w3id.org/rovo/op#ContinuousRemoteDriving -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#ContinuousRemoteDriving">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#OperationMode"/>
-        <broaderMode rdf:resource="https://w3id.org/rdonto/op#RemoteDriving"/>
-        <requiresSAType rdf:resource="https://w3id.org/rdonto/op#OperationalSA"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#ContinuousRemoteDriving">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#OperationMode"/>
+        <broaderMode rdf:resource="https://w3id.org/rovo/op#RemoteDriving"/>
+        <requiresSAType rdf:resource="https://w3id.org/rovo/op#OperationalSA"/>
         <isRemoteDrivingMode rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isRemoteDrivingMode>
         <terms:source>AM22</terms:source>
         <terms:source>BR26</terms:source>
@@ -1914,25 +1914,25 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#CueInterpretationTask -->
+    <!-- https://w3id.org/rovo/op#CueInterpretationTask -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#CueInterpretationTask"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#CueInterpretationTask"/>
     
 
 
-    <!-- https://w3id.org/rdonto/op#DecisionMakingTask -->
+    <!-- https://w3id.org/rovo/op#DecisionMakingTask -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#DecisionMakingTask"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#DecisionMakingTask"/>
     
 
 
-    <!-- https://w3id.org/rdonto/op#DecisionSupportSA -->
+    <!-- https://w3id.org/rovo/op#DecisionSupportSA -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#DecisionSupportSA">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#SAType"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#DecisionSupportSA">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#SAType"/>
         <rdfs:comment xml:lang="en">SA-21, SA-22. Required by remote assistance; the elements are those the request concerns, where it names any (concernsElement).</rdfs:comment>
         <rdfs:label xml:lang="en">decision-support SA</rdfs:label>
         <skos:definition xml:lang="en">Selective awareness of the specific elements needed to answer a request from the system; not full SA of the scenario.</skos:definition>
@@ -1940,11 +1940,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#Distraction -->
+    <!-- https://w3id.org/rovo/op#Distraction -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#Distraction">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#Impairment"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#Distraction">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#Impairment"/>
         <terms:source>HA24</terms:source>
         <terms:source>ME24</terms:source>
         <rdfs:comment xml:lang="en">SA-19. ME24; HA24 reports distraction in the remote operation office.</rdfs:comment>
@@ -1954,11 +1954,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#EngineSound -->
+    <!-- https://w3id.org/rovo/op#EngineSound -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#EngineSound">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#InVehicleCue"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#EngineSound">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#InVehicleCue"/>
         <terms:source>ZH24</terms:source>
         <rdfs:comment xml:lang="en">SA-16. ZH24 names the engine sound among the cues through which speed is perceived.</rdfs:comment>
         <rdfs:label xml:lang="en">engine sound</rdfs:label>
@@ -1967,31 +1967,31 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#EventBasedRemoteDriving -->
+    <!-- https://w3id.org/rovo/op#EventBasedRemoteDriving -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#EventBasedRemoteDriving">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#OperationMode"/>
-        <broaderMode rdf:resource="https://w3id.org/rdonto/op#RemoteDriving"/>
-        <requiresSAType rdf:resource="https://w3id.org/rdonto/op#OperationalSA"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#EventBasedRemoteDriving">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#OperationMode"/>
+        <broaderMode rdf:resource="https://w3id.org/rovo/op#RemoteDriving"/>
+        <requiresSAType rdf:resource="https://w3id.org/rovo/op#OperationalSA"/>
         <isRemoteDrivingMode rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isRemoteDrivingMode>
         <terms:source>AM22</terms:source>
         <terms:source>MU21</terms:source>
         <terms:source>SHI26</terms:source>
         <terms:source>TL22</terms:source>
         <terms:source>WF25</terms:source>
-        <rdfs:comment xml:lang="en">SA-01, SA-03. SHI26 introduce the term for automated vehicles that call an operator in; RDOnto-op also applies it to a takeover from remote monitoring and to a vehicle without an ADS taken over from its on-board driver (takenOverFrom). Not called an intervention, since WF25 use remote intervention for acting on the vehicle without driving it, such as starting a safe stop.</rdfs:comment>
+        <rdfs:comment xml:lang="en">SA-01, SA-03. SHI26 introduce the term for automated vehicles that call an operator in; ROVO-op also applies it to a takeover from remote monitoring and to a vehicle without an ADS taken over from its on-board driver (takenOverFrom). Not called an intervention, since WF25 use remote intervention for acting on the vehicle without driving it, such as starting a safe stop.</rdfs:comment>
         <rdfs:label xml:lang="en">event-based remote driving</rdfs:label>
         <skos:definition xml:lang="en">Remote driving that an event calls for while something else drives the vehicle, either its ADS or an on-board driver. The operator takes over on the vehicle&apos;s takeover request, from remote monitoring when the operator sees the need, or from the on-board driver, usually for a limited time, and then hands back or ends the engagement.</skos:definition>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/rdonto/op#Fatigue -->
+    <!-- https://w3id.org/rovo/op#Fatigue -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#Fatigue">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#Impairment"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#Fatigue">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#Impairment"/>
         <terms:source>HA24</terms:source>
         <terms:source>ME24</terms:source>
         <rdfs:comment xml:lang="en">SA-19. HA24: fatigue clearly higher than in-vehicle driving; ME24.</rdfs:comment>
@@ -2001,11 +2001,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#InclinationCue -->
+    <!-- https://w3id.org/rovo/op#InclinationCue -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#InclinationCue">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#InVehicleCue"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#InclinationCue">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#InVehicleCue"/>
         <rdfs:comment xml:lang="en">SA-16.</rdfs:comment>
         <rdfs:label xml:lang="en">inclination cue</rdfs:label>
         <skos:definition xml:lang="en">A driver&apos;s feel for the slope or tilt of the road or ground under the vehicle.</skos:definition>
@@ -2013,11 +2013,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#MiningSite -->
+    <!-- https://w3id.org/rovo/op#MiningSite -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#MiningSite">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#OperatingEnvironment"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#MiningSite">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#OperatingEnvironment"/>
         <rdfs:comment xml:lang="en">SA-06.</rdfs:comment>
         <rdfs:label xml:lang="en">mining site</rdfs:label>
         <skos:definition xml:lang="en">A surface or underground mine.</skos:definition>
@@ -2025,11 +2025,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#MotionSickness -->
+    <!-- https://w3id.org/rovo/op#MotionSickness -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#MotionSickness">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#Impairment"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#MotionSickness">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#Impairment"/>
         <terms:source>HA24</terms:source>
         <terms:source>ME24</terms:source>
         <terms:source>TL22</terms:source>
@@ -2040,11 +2040,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#ObjectClassificationRequest -->
+    <!-- https://w3id.org/rovo/op#ObjectClassificationRequest -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#ObjectClassificationRequest">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#RequestType"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#ObjectClassificationRequest">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#RequestType"/>
         <terms:source>AM22</terms:source>
         <rdfs:comment xml:lang="en">SA-03, SA-22. AM22&apos;s example: an object in the lane is identified as an empty bag that can be driven through.</rdfs:comment>
         <rdfs:label xml:lang="en">object classification request</rdfs:label>
@@ -2053,18 +2053,18 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#ObservationTask -->
+    <!-- https://w3id.org/rovo/op#ObservationTask -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#ObservationTask"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#ObservationTask"/>
     
 
 
-    <!-- https://w3id.org/rdonto/op#OnBoardDriverAsked -->
+    <!-- https://w3id.org/rovo/op#OnBoardDriverAsked -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#OnBoardDriverAsked">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#TakeoverReason"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#OnBoardDriverAsked">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#TakeoverReason"/>
         <rdfs:comment xml:lang="en">SA-03.</rdfs:comment>
         <rdfs:label xml:lang="en">on-board driver asked</rdfs:label>
         <skos:definition xml:lang="en">The on-board driver asked the remote operator to take over.</skos:definition>
@@ -2072,11 +2072,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#OnBoardDriverUnableToDrive -->
+    <!-- https://w3id.org/rovo/op#OnBoardDriverUnableToDrive -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#OnBoardDriverUnableToDrive">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#TakeoverReason"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#OnBoardDriverUnableToDrive">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#TakeoverReason"/>
         <rdfs:comment xml:lang="en">SA-03, LK-10. The driver then has ableToTakeOver false, so control cannot be handed back.</rdfs:comment>
         <rdfs:label xml:lang="en">on-board driver unable to drive</rdfs:label>
         <skos:definition xml:lang="en">The on-board driver can no longer drive, e.g. through illness or fatigue, as the driver reports or a driver monitoring system detects.</skos:definition>
@@ -2084,11 +2084,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#OperationalSA -->
+    <!-- https://w3id.org/rovo/op#OperationalSA -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#OperationalSA">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#SAType"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#OperationalSA">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#SAType"/>
         <rdfs:comment xml:lang="en">SA-21, SA-22. Required by remote driving.</rdfs:comment>
         <rdfs:label xml:lang="en">operational SA</rdfs:label>
         <skos:definition xml:lang="en">Continuous awareness of all relevant elements, to carry out the DDT.</skos:definition>
@@ -2096,11 +2096,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#OtherAssistanceRequest -->
+    <!-- https://w3id.org/rovo/op#OtherAssistanceRequest -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#OtherAssistanceRequest">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#RequestType"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#OtherAssistanceRequest">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#RequestType"/>
         <rdfs:comment xml:lang="en">SA-03. Keeps the list open: the request types are examples, not an exhaustive list.</rdfs:comment>
         <rdfs:label xml:lang="en">other assistance request</rdfs:label>
         <skos:definition xml:lang="en">A request for remote assistance of a kind that no other request type covers.</skos:definition>
@@ -2108,11 +2108,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#PathRequest -->
+    <!-- https://w3id.org/rovo/op#PathRequest -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#PathRequest">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#RequestType"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#PathRequest">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#RequestType"/>
         <terms:source>AM22</terms:source>
         <rdfs:comment xml:lang="en">SA-03, SA-22. AM22&apos;s example: the remote assistant provides a new pathway around road construction, which the ADS executes.</rdfs:comment>
         <rdfs:label xml:lang="en">path request</rdfs:label>
@@ -2121,11 +2121,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#PedalFeel -->
+    <!-- https://w3id.org/rovo/op#PedalFeel -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#PedalFeel">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#InVehicleCue"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#PedalFeel">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#InVehicleCue"/>
         <terms:source>TL22</terms:source>
         <rdfs:comment xml:lang="en">SA-16. TL22 reports the missing haptic channel as a problem for remote operators.</rdfs:comment>
         <rdfs:label xml:lang="en">pedal feel</rdfs:label>
@@ -2134,11 +2134,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#PerceptionError -->
+    <!-- https://w3id.org/rovo/op#PerceptionError -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#PerceptionError">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#RequestReason"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#PerceptionError">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#RequestReason"/>
         <terms:source>MU21</terms:source>
         <rdfs:comment xml:lang="en">SA-03. MU21, citing California DMV 2019.</rdfs:comment>
         <rdfs:label xml:lang="en">perception error</rdfs:label>
@@ -2147,11 +2147,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#PlanFailure -->
+    <!-- https://w3id.org/rovo/op#PlanFailure -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#PlanFailure">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#RequestReason"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#PlanFailure">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#RequestReason"/>
         <terms:source>MU21</terms:source>
         <rdfs:comment xml:lang="en">SA-03. MU21, citing Scholtz et al. 2004.</rdfs:comment>
         <rdfs:label xml:lang="en">plan failure</rdfs:label>
@@ -2160,11 +2160,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#Port -->
+    <!-- https://w3id.org/rovo/op#Port -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#Port">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#OperatingEnvironment"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#Port">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#OperatingEnvironment"/>
         <rdfs:comment xml:lang="en">SA-06.</rdfs:comment>
         <rdfs:label xml:lang="en">port</rdfs:label>
         <skos:definition xml:lang="en">A port terminal, or a logistics yard like one, closed to public traffic.</skos:definition>
@@ -2172,11 +2172,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#PublicRoad -->
+    <!-- https://w3id.org/rovo/op#PublicRoad -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#PublicRoad">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#OperatingEnvironment"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#PublicRoad">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#OperatingEnvironment"/>
         <terms:source>HN25b</terms:source>
         <terms:source>STVF</terms:source>
         <rdfs:comment xml:lang="en">SA-06. The environment of StVFernLV and of HN25b&apos;s remote driving data.</rdfs:comment>
@@ -2186,31 +2186,31 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#RemoteAssistance -->
+    <!-- https://w3id.org/rovo/op#RemoteAssistance -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#RemoteAssistance">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#OperationMode"/>
-        <modeIncludesTask rdf:resource="https://w3id.org/rdonto/op#CueInterpretationTask"/>
-        <modeIncludesTask rdf:resource="https://w3id.org/rdonto/op#DecisionMakingTask"/>
-        <requiresSAType rdf:resource="https://w3id.org/rdonto/op#DecisionSupportSA"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#RemoteAssistance">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#OperationMode"/>
+        <modeIncludesTask rdf:resource="https://w3id.org/rovo/op#CueInterpretationTask"/>
+        <modeIncludesTask rdf:resource="https://w3id.org/rovo/op#DecisionMakingTask"/>
+        <requiresSAType rdf:resource="https://w3id.org/rovo/op#DecisionSupportSA"/>
         <isRemoteDrivingMode rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isRemoteDrivingMode>
         <terms:source>AM22</terms:source>
         <terms:source>BSI1886</terms:source>
         <terms:source>J3016</terms:source>
-        <rdfs:comment xml:lang="en">SA-01, SA-03. The ADS keeps performing the DDT. While it waits for the answer to a request it cannot go on by itself (RDOnto-link:adsAbleToDrive).</rdfs:comment>
+        <rdfs:comment xml:lang="en">SA-01, SA-03. The ADS keeps performing the DDT. While it waits for the answer to a request it cannot go on by itself (ROVO-link:adsAbleToDrive).</rdfs:comment>
         <rdfs:label xml:lang="en">remote assistance</rdfs:label>
         <skos:definition xml:lang="en">Remote operation in which the operator advises an ADS-equipped vehicle that is within its ODD but encounters a situation it cannot manage: the operator interprets cues and answers the vehicle&apos;s requests, without performing any part of the DDT.</skos:definition>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/rdonto/op#RemoteDriving -->
+    <!-- https://w3id.org/rovo/op#RemoteDriving -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#RemoteDriving">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#OperationMode"/>
-        <requiresSAType rdf:resource="https://w3id.org/rdonto/op#OperationalSA"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#RemoteDriving">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#OperationMode"/>
+        <requiresSAType rdf:resource="https://w3id.org/rovo/op#OperationalSA"/>
         <isRemoteDrivingMode rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isRemoteDrivingMode>
         <terms:source>AM22</terms:source>
         <terms:source>BSI1886</terms:source>
@@ -2222,29 +2222,29 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#RemoteMonitoring -->
+    <!-- https://w3id.org/rovo/op#RemoteMonitoring -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#RemoteMonitoring">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#OperationMode"/>
-        <modeIncludesTask rdf:resource="https://w3id.org/rdonto/op#ObservationTask"/>
-        <requiresSAType rdf:resource="https://w3id.org/rdonto/op#SupervisorySA"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#RemoteMonitoring">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#OperationMode"/>
+        <modeIncludesTask rdf:resource="https://w3id.org/rovo/op#ObservationTask"/>
+        <requiresSAType rdf:resource="https://w3id.org/rovo/op#SupervisorySA"/>
         <isRemoteDrivingMode rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isRemoteDrivingMode>
         <terms:source>AM22</terms:source>
         <terms:source>BSI1886</terms:source>
         <terms:source>SHI26</terms:source>
-        <rdfs:comment xml:lang="en">SA-01. SHI26 do not count monitoring as a separate form of remote operation, because it needs a defined objective. RDOnto-op keeps it as a mode and gives it that objective through its SA requirement: keeping supervisory SA, i.e. noticing when the operator must step in (SA-21, SA-22).</rdfs:comment>
+        <rdfs:comment xml:lang="en">SA-01. SHI26 do not count monitoring as a separate form of remote operation, because it needs a defined objective. ROVO-op keeps it as a mode and gives it that objective through its SA requirement: keeping supervisory SA, i.e. noticing when the operator must step in (SA-21, SA-22).</rdfs:comment>
         <rdfs:label xml:lang="en">remote monitoring</rdfs:label>
         <skos:definition xml:lang="en">Remote operation in which the operator only observes the vehicle and its situation, e.g. its task status or system diagnostics, without influencing the DDT. The operator can switch to remote assistance or remote driving.</skos:definition>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/rdonto/op#SensorFailure -->
+    <!-- https://w3id.org/rovo/op#SensorFailure -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#SensorFailure">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#RequestReason"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#SensorFailure">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#RequestReason"/>
         <terms:source>MU21</terms:source>
         <rdfs:comment xml:lang="en">SA-03. MU21, citing California DMV 2019.</rdfs:comment>
         <rdfs:label xml:lang="en">sensor failure</rdfs:label>
@@ -2253,11 +2253,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#SpeedSense -->
+    <!-- https://w3id.org/rovo/op#SpeedSense -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#SpeedSense">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#InVehicleCue"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#SpeedSense">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#InVehicleCue"/>
         <terms:source>ZH24</terms:source>
         <rdfs:comment xml:lang="en">SA-16. ZH24: speed &apos;is perceived through auditory and tactile cues such as the vehicle&apos;s engine sound and vibrations&apos;, and through the changing view of the surroundings.</rdfs:comment>
         <rdfs:label xml:lang="en">speed sense</rdfs:label>
@@ -2266,11 +2266,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#SupervisorySA -->
+    <!-- https://w3id.org/rovo/op#SupervisorySA -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#SupervisorySA">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#SAType"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#SupervisorySA">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#SAType"/>
         <rdfs:comment xml:lang="en">SA-21, SA-22. Required by remote monitoring.</rdfs:comment>
         <rdfs:label xml:lang="en">supervisory SA</rdfs:label>
         <skos:definition xml:lang="en">Awareness of relevant changes in the driving environment relative to the driving system&apos;s capabilities, to judge whether the operator must step in by switching to remote assistance or remote driving.</skos:definition>
@@ -2278,25 +2278,25 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#TakeoverRequest -->
+    <!-- https://w3id.org/rovo/op#TakeoverRequest -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#TakeoverRequest">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#RequestType"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#TakeoverRequest">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#RequestType"/>
         <terms:source>MU21</terms:source>
         <terms:source>TL22</terms:source>
-        <rdfs:comment xml:lang="en">SA-03. Answered by an event-based remote driving engagement. Closely matches J3016&apos;s request to intervene (RDOnto-core).</rdfs:comment>
+        <rdfs:comment xml:lang="en">SA-03. Answered by an event-based remote driving engagement. Closely matches J3016&apos;s request to intervene (ROVO-core).</rdfs:comment>
         <rdfs:label xml:lang="en">takeover request</rdfs:label>
         <skos:definition xml:lang="en">A request that the remote operator take over driving the vehicle.</skos:definition>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/rdonto/op#UnclassifiableObject -->
+    <!-- https://w3id.org/rovo/op#UnclassifiableObject -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#UnclassifiableObject">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#RequestReason"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#UnclassifiableObject">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#RequestReason"/>
         <terms:source>AM22</terms:source>
         <rdfs:comment xml:lang="en">SA-03.</rdfs:comment>
         <rdfs:label xml:lang="en">unclassifiable object</rdfs:label>
@@ -2305,23 +2305,23 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#UnspecifiedReason -->
+    <!-- https://w3id.org/rovo/op#UnspecifiedReason -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#UnspecifiedReason">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#RequestReason"/>
-        <rdfs:comment xml:lang="en">SA-03. Used so that every request has a reason value (RDOnto-op-shapes.ttl).</rdfs:comment>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#UnspecifiedReason">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#RequestReason"/>
+        <rdfs:comment xml:lang="en">SA-03. Used so that every request has a reason value (ROVO-op-shapes.ttl).</rdfs:comment>
         <rdfs:label xml:lang="en">unspecified reason</rdfs:label>
         <skos:definition xml:lang="en">No reason was given for the request.</skos:definition>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/rdonto/op#VestibularCue -->
+    <!-- https://w3id.org/rovo/op#VestibularCue -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#VestibularCue">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#InVehicleCue"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#VestibularCue">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#InVehicleCue"/>
         <terms:source>WO26</terms:source>
         <rdfs:comment xml:lang="en">SA-16. WO26 relates vestibular feedback to presence and spatial awareness in remote driving.</rdfs:comment>
         <rdfs:label xml:lang="en">vestibular cue</rdfs:label>
@@ -2330,11 +2330,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#Warehouse -->
+    <!-- https://w3id.org/rovo/op#Warehouse -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#Warehouse">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#OperatingEnvironment"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#Warehouse">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#OperatingEnvironment"/>
         <terms:source>WO25</terms:source>
         <rdfs:comment xml:lang="en">SA-06. WO25 studied remotely controlled forklifts in a cold storage warehouse.</rdfs:comment>
         <rdfs:label xml:lang="en">warehouse</rdfs:label>
@@ -2343,11 +2343,11 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#WarningSound -->
+    <!-- https://w3id.org/rovo/op#WarningSound -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#WarningSound">
-        <rdf:type rdf:resource="https://w3id.org/rdonto/op#InVehicleCue"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#WarningSound">
+        <rdf:type rdf:resource="https://w3id.org/rovo/op#InVehicleCue"/>
         <terms:source>WO25</terms:source>
         <rdfs:comment xml:lang="en">SA-16. WO25: operators missed audio &apos;particularly to detect hazards, for example through honking or shouting&apos;.</rdfs:comment>
         <rdfs:label xml:lang="en">warning sound</rdfs:label>
@@ -2356,10 +2356,10 @@
     
 
 
-    <!-- https://w3id.org/rdonto/op#Workload -->
+    <!-- https://w3id.org/rovo/op#Workload -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/rdonto/op#Workload">
+    <owl:NamedIndividual rdf:about="https://w3id.org/rovo/op#Workload">
         <rdf:type rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
         <terms:source>HS88</terms:source>
         <terms:source>ME24</terms:source>
@@ -2395,34 +2395,34 @@
     <rdf:Description rdf:about="http://purl.org/dc/terms/modified">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/rdonto/op#CueInterpretationTask">
+    <rdf:Description rdf:about="https://w3id.org/rovo/op#CueInterpretationTask">
         <terms:source>AM22</terms:source>
         <rdfs:comment xml:lang="en">SA-02, remote assistance. AM22&apos;s example of a remote assistant performing an OEDR-like action without performing the DDT.</rdfs:comment>
         <rdfs:label xml:lang="en">cue interpretation task</rdfs:label>
         <skos:definition xml:lang="en">Interpreting what the vehicle cannot, e.g. identifying an object in the lane as an empty bag that can be driven through.</skos:definition>
     </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/rdonto/op#DecisionMakingTask">
+    <rdf:Description rdf:about="https://w3id.org/rovo/op#DecisionMakingTask">
         <terms:source>AM22</terms:source>
         <rdfs:comment xml:lang="en">SA-02, remote assistance. AM22: the remote assistant provides a new pathway around road construction, which the ADS executes.</rdfs:comment>
         <rdfs:label xml:lang="en">decision-making task</rdfs:label>
         <skos:definition xml:lang="en">Deciding on and authorizing an option for the vehicle, e.g. a path, a waypoint or a go-ahead, which the ADS then executes.</skos:definition>
     </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/rdonto/op#ObservationTask">
+    <rdf:Description rdf:about="https://w3id.org/rovo/op#ObservationTask">
         <terms:source>AM22</terms:source>
         <rdfs:comment xml:lang="en">SA-02, remote monitoring.</rdfs:comment>
         <rdfs:label xml:lang="en">observation task</rdfs:label>
         <skos:definition xml:lang="en">Observing the vehicle and its situation without influencing the DDT.</skos:definition>
     </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/rdonto/op#adaptedInformationAge">
+    <rdf:Description rdf:about="https://w3id.org/rovo/op#adaptedInformationAge">
         <terms:source>HA24</terms:source>
         <terms:source>NE19</terms:source>
-        <rdfs:comment xml:lang="en">SA-14. Interface (stream layer, fed by RDOnto-link LK-05). HA24: latency adaptation took from 1-2 drives to months; NE19 varied latency within a drive. Adaptation belongs to the operator and the setup, not to one engagement, so a new engagement need not start it again: an engagement with adaptationCarriedFrom states no value of its own, and the value that applies to it is that of the engagement it is carried from, followed back to the one that measured it (RDOnto-op-shapes.ttl).</rdfs:comment>
+        <rdfs:comment xml:lang="en">SA-14. Interface (stream layer, fed by ROVO-link LK-05). HA24: latency adaptation took from 1-2 drives to months; NE19 varied latency within a drive. Adaptation belongs to the operator and the setup, not to one engagement, so a new engagement need not start it again: an engagement with adaptationCarriedFrom states no value of its own, and the value that applies to it is that of the engagement it is carried from, followed back to the one that measured it (ROVO-op-shapes.ttl).</rdfs:comment>
         <rdfs:label xml:lang="en">adapted information age</rdfs:label>
         <skos:definition xml:lang="en">The information age the operator is adapted to, as measured in this engagement, e.g. as the median over its first minutes.</skos:definition>
     </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/rdonto/op#captureDelay">
+    <rdf:Description rdf:about="https://w3id.org/rovo/op#captureDelay">
         <terms:source>GF20</terms:source>
-        <rdfs:comment xml:lang="en">SA-08, SA-09. Configuration or offline measurement, not a per-frame value; GF20 measured roughly 15-35 ms. With it, information age runs from the event to its display, GF20&apos;s sensor (glass-to-glass) latency. A sensor without a value counts as zero delay. Shared with RDOnto-link.</rdfs:comment>
+        <rdfs:comment xml:lang="en">SA-08, SA-09. Configuration or offline measurement, not a per-frame value; GF20 measured roughly 15-35 ms. With it, information age runs from the event to its display, GF20&apos;s sensor (glass-to-glass) latency. A sensor without a value counts as zero delay. Shared with ROVO-link.</rdfs:comment>
         <rdfs:label xml:lang="en">capture delay</rdfs:label>
         <skos:definition xml:lang="en">The time from an event in front of the sensor to the frame that shows it being captured: exposure, readout and transfer to the vehicle computer.</skos:definition>
     </rdf:Description>
@@ -2441,147 +2441,147 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#ActuatorLatencyLimit"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#InformationAgeLimit"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#LatencyChangeLimit"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#MinimumBreakLength"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#PerceptionConfidenceThreshold"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#SARequirement"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#TimeOnTaskLimit"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#WorkloadBand"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#ActuatorLatencyLimit"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#InformationAgeLimit"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#LatencyChangeLimit"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#MinimumBreakLength"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#PerceptionConfidenceThreshold"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#SARequirement"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#TimeOnTaskLimit"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#WorkloadBand"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#AudioChannel"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#CameraView"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#HapticFeedback"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#MapView"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#MotionFeedback"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#AudioChannel"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#CameraView"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#HapticFeedback"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#MapView"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#MotionFeedback"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#ConfiguredLimit"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#Cue"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#DisplayedScene"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#DrivingTask"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#ElementStateChange"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#Engagement"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#FallbackReadyPeriod"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#Impairment"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#ImpairmentObservation"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#InformationChannel"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#OnBoardDriver"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#OperatingEnvironment"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#OperationMode"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#OperatorTask"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#PerceptionAssertion"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#RemoteOperator"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#RemotelyOperatedVehicle"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#Request"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#RequestReason"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#RequestType"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#SAEvidence"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#SAType"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#SensorFrame"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#TakeoverReason"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#WorkloadEstimate"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#ConfiguredLimit"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#Cue"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#DisplayedScene"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#DrivingTask"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#ElementStateChange"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#Engagement"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#FallbackReadyPeriod"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#Impairment"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#ImpairmentObservation"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#InformationChannel"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#OnBoardDriver"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#OperatingEnvironment"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#OperationMode"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#OperatorTask"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#PerceptionAssertion"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#RemoteOperator"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#RemotelyOperatedVehicle"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#Request"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#RequestReason"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#RequestType"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#SAEvidence"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#SAType"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#SensorFrame"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#TakeoverReason"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#WorkloadEstimate"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#ControlInputEvidence"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#EyeFixationEvidence"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#ProbeAnswerEvidence"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#SelfReportEvidence"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#ControlInputEvidence"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#EyeFixationEvidence"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#ProbeAnswerEvidence"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#SelfReportEvidence"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#CueInterpretationTask"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#DecisionMakingTask"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#ObservationTask"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#CueInterpretationTask"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#DecisionMakingTask"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#ObservationTask"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#AccelerationCue"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#AmbientSound"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#EngineSound"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#InclinationCue"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#PedalFeel"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#SpeedSense"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#VestibularCue"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#WarningSound"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#AccelerationCue"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#AmbientSound"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#EngineSound"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#InclinationCue"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#PedalFeel"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#SpeedSense"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#VestibularCue"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#WarningSound"/>
         </owl:distinctMembers>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#ConstructionSite"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#MiningSite"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#Port"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#PublicRoad"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#Warehouse"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#ConstructionSite"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#MiningSite"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#Port"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#PublicRoad"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#Warehouse"/>
         </owl:distinctMembers>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#ContinuousRemoteDriving"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#EventBasedRemoteDriving"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#RemoteAssistance"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#RemoteDriving"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#RemoteMonitoring"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#ContinuousRemoteDriving"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#EventBasedRemoteDriving"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#RemoteAssistance"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#RemoteDriving"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#RemoteMonitoring"/>
         </owl:distinctMembers>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#DecisionSupportSA"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#OperationalSA"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#SupervisorySA"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#DecisionSupportSA"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#OperationalSA"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#SupervisorySA"/>
         </owl:distinctMembers>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#Distraction"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#Fatigue"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#MotionSickness"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#Workload"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#Distraction"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#Fatigue"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#MotionSickness"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#Workload"/>
         </owl:distinctMembers>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#ObjectClassificationRequest"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#OtherAssistanceRequest"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#PathRequest"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#TakeoverRequest"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#ObjectClassificationRequest"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#OtherAssistanceRequest"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#PathRequest"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#TakeoverRequest"/>
         </owl:distinctMembers>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#OnBoardDriverAsked"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#OnBoardDriverUnableToDrive"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#OnBoardDriverAsked"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#OnBoardDriverUnableToDrive"/>
         </owl:distinctMembers>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#PerceptionError"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#PlanFailure"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#SensorFailure"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#UnclassifiableObject"/>
-            <rdf:Description rdf:about="https://w3id.org/rdonto/op#UnspecifiedReason"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#PerceptionError"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#PlanFailure"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#SensorFailure"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#UnclassifiableObject"/>
+            <rdf:Description rdf:about="https://w3id.org/rovo/op#UnspecifiedReason"/>
         </owl:distinctMembers>
     </rdf:Description>
 </rdf:RDF>

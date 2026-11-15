@@ -1,19 +1,19 @@
-@prefix : <https://w3id.org/rdonto/core#> .
+@prefix : <https://w3id.org/rovo/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://w3id.org/rdonto/core#> .
+@base <https://w3id.org/rovo/core#> .
 
-<https://w3id.org/rdonto/core> rdf:type owl:Ontology ;
-                                owl:imports <https://w3id.org/rdonto/op> ;
-                                <http://purl.org/dc/terms/created> "2026-11-04"^^xsd:date ;
-                                <http://purl.org/dc/terms/creator> "Sanat Mharolkar" ;
-                                <http://purl.org/dc/terms/license> <http://www.apache.org/licenses/LICENSE-2.0> ;
-                                <http://purl.org/dc/terms/modified> "2026-11-14"^^xsd:date ;
-                                rdfs:label "Remote Driving Ontology: upper alignment module"@en ;
-                                owl:versionInfo "1.0" .
+<https://w3id.org/rovo/core> rdf:type owl:Ontology ;
+                              owl:imports <https://w3id.org/rovo/op> ;
+                              <http://purl.org/dc/terms/created> "2026-11-04"^^xsd:date ;
+                              <http://purl.org/dc/terms/creator> "Sanat Mharolkar" ;
+                              <http://purl.org/dc/terms/license> <http://www.apache.org/licenses/LICENSE-2.0> ;
+                              <http://purl.org/dc/terms/modified> "2026-11-14"^^xsd:date ;
+                              rdfs:label "Remote Operation of Vehicles Ontology: upper alignment module"@en ;
+                              owl:versionInfo "1.0" .
 
 #################################################################
 #    Annotation properties
@@ -35,8 +35,8 @@
 <http://purl.org/dc/terms/modified> rdf:type owl:AnnotationProperty .
 
 
-###  https://w3id.org/rdonto/op#modeIncludesTask
-<https://w3id.org/rdonto/op#modeIncludesTask> rdf:type owl:AnnotationProperty .
+###  https://w3id.org/rovo/op#modeIncludesTask
+<https://w3id.org/rovo/op#modeIncludesTask> rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -91,7 +91,7 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/auto/traffic_entity_core#Traffic_Entity
 <http://purl.org/auto/traffic_entity_core#Traffic_Entity> rdf:type owl:Class ;
-                                                          rdfs:subClassOf <https://w3id.org/rdonto/op#SituationElement> ;
+                                                          rdfs:subClassOf <https://w3id.org/rovo/op#SituationElement> ;
                                                           rdfs:isDefinedBy <http://purl.org/auto/traffic_entity_core> ;
                                                           rdfs:label "traffic entity"@en .
 
@@ -105,7 +105,7 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/DynamicDrivingSubtask
 <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/DynamicDrivingSubtask> rdf:type owl:Class ;
-                                                                                             rdfs:subClassOf <https://w3id.org/rdonto/op#OperatorTask> ;
+                                                                                             rdfs:subClassOf <https://w3id.org/rovo/op#OperatorTask> ;
                                                                                              rdfs:isDefinedBy <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/> ;
                                                                                              rdfs:label "dynamic driving subtask"@en .
 
@@ -113,7 +113,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/DynamicDrivingTaskFallback
 <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/DynamicDrivingTaskFallback> rdf:type owl:Class ;
                                                                                                   rdfs:subClassOf <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/Operation> ,
-                                                                                                                  <https://w3id.org/rdonto/op#OperatorTask> ;
+                                                                                                                  <https://w3id.org/rovo/op#OperatorTask> ;
                                                                                                   rdfs:isDefinedBy <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/> ;
                                                                                                   rdfs:label "dynamic driving task fallback"@en .
 
@@ -175,7 +175,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/RemoteAssistant
 <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/RemoteAssistant> rdf:type owl:Class ;
                                                                                        rdfs:subClassOf <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/HumanUser> ,
-                                                                                                       <https://w3id.org/rdonto/op#RemoteOperator> ;
+                                                                                                       <https://w3id.org/rovo/op#RemoteOperator> ;
                                                                                        rdfs:isDefinedBy <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/> ;
                                                                                        rdfs:label "remote assistant"@en .
 
@@ -183,7 +183,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/RemoteDriver
 <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/RemoteDriver> rdf:type owl:Class ;
                                                                                     rdfs:subClassOf <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/HumanDriver> ,
-                                                                                                    <https://w3id.org/rdonto/op#RemoteOperator> ;
+                                                                                                    <https://w3id.org/rovo/op#RemoteOperator> ;
                                                                                     rdfs:isDefinedBy <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/> ;
                                                                                     rdfs:label "remote driver"@en .
 
@@ -203,16 +203,16 @@ xsd:date rdf:type rdfs:Datatype .
                                                                                           rdfs:subClassOf <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/Operation> .
 
 
-###  https://w3id.org/rdonto/op#OperatorTask
-<https://w3id.org/rdonto/op#OperatorTask> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#OperatorTask
+<https://w3id.org/rovo/op#OperatorTask> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#RemoteOperator
-<https://w3id.org/rdonto/op#RemoteOperator> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#RemoteOperator
+<https://w3id.org/rovo/op#RemoteOperator> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#SituationElement
-<https://w3id.org/rdonto/op#SituationElement> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#SituationElement
+<https://w3id.org/rovo/op#SituationElement> rdf:type owl:Class .
 
 
 #################################################################
@@ -243,53 +243,53 @@ xsd:date rdf:type rdfs:Datatype .
 <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/RequestToIntervene> rdf:type owl:NamedIndividual .
 
 
-###  https://w3id.org/rdonto/op#ContinuousRemoteDriving
-<https://w3id.org/rdonto/op#ContinuousRemoteDriving> rdf:type owl:NamedIndividual ;
-                                                     <http://www.w3.org/2004/02/skos/core#broadMatch> <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/RemoteDriving> .
+###  https://w3id.org/rovo/op#ContinuousRemoteDriving
+<https://w3id.org/rovo/op#ContinuousRemoteDriving> rdf:type owl:NamedIndividual ;
+                                                   <http://www.w3.org/2004/02/skos/core#broadMatch> <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/RemoteDriving> .
 
 
-###  https://w3id.org/rdonto/op#EventBasedRemoteDriving
-<https://w3id.org/rdonto/op#EventBasedRemoteDriving> rdf:type owl:NamedIndividual ;
-                                                     <http://www.w3.org/2004/02/skos/core#broadMatch> <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/RemoteDriving> .
+###  https://w3id.org/rovo/op#EventBasedRemoteDriving
+<https://w3id.org/rovo/op#EventBasedRemoteDriving> rdf:type owl:NamedIndividual ;
+                                                   <http://www.w3.org/2004/02/skos/core#broadMatch> <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/RemoteDriving> .
 
 
-###  https://w3id.org/rdonto/op#FallbackReadyPeriod
-<https://w3id.org/rdonto/op#FallbackReadyPeriod> rdf:type owl:NamedIndividual ;
-                                                 <http://www.w3.org/2004/02/skos/core#relatedMatch> <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/RemoteDynamicDriverTaskFallbackReadyUser> .
+###  https://w3id.org/rovo/op#FallbackReadyPeriod
+<https://w3id.org/rovo/op#FallbackReadyPeriod> rdf:type owl:NamedIndividual ;
+                                               <http://www.w3.org/2004/02/skos/core#relatedMatch> <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/RemoteDynamicDriverTaskFallbackReadyUser> .
 
 
-###  https://w3id.org/rdonto/op#OnBoardDriver
-<https://w3id.org/rdonto/op#OnBoardDriver> rdf:type owl:NamedIndividual ;
-                                           <http://www.w3.org/2004/02/skos/core#closeMatch> <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/InVehicleDriver> .
+###  https://w3id.org/rovo/op#OnBoardDriver
+<https://w3id.org/rovo/op#OnBoardDriver> rdf:type owl:NamedIndividual ;
+                                         <http://www.w3.org/2004/02/skos/core#closeMatch> <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/InVehicleDriver> .
 
 
-###  https://w3id.org/rdonto/op#RemoteAssistance
-<https://w3id.org/rdonto/op#RemoteAssistance> rdf:type owl:NamedIndividual ;
-                                              <http://www.w3.org/2004/02/skos/core#closeMatch> <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/RemoteAssistance> .
+###  https://w3id.org/rovo/op#RemoteAssistance
+<https://w3id.org/rovo/op#RemoteAssistance> rdf:type owl:NamedIndividual ;
+                                            <http://www.w3.org/2004/02/skos/core#closeMatch> <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/RemoteAssistance> .
 
 
-###  https://w3id.org/rdonto/op#RemoteDriving
-<https://w3id.org/rdonto/op#RemoteDriving> rdf:type owl:NamedIndividual ;
-                                           <http://www.w3.org/2004/02/skos/core#closeMatch> <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/RemoteDriving> ;
-                                           <https://w3id.org/rdonto/op#modeIncludesTask> <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/DynamicDrivingTaskFallback> ,
-                                                                                         <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/LateralVehicleMotionControl> ,
-                                                                                         <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/LongitudinalVehicleMotionControl> ,
-                                                                                         <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/ObjectAndEventDetectionAndResponse> .
+###  https://w3id.org/rovo/op#RemoteDriving
+<https://w3id.org/rovo/op#RemoteDriving> rdf:type owl:NamedIndividual ;
+                                         <http://www.w3.org/2004/02/skos/core#closeMatch> <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/RemoteDriving> ;
+                                         <https://w3id.org/rovo/op#modeIncludesTask> <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/DynamicDrivingTaskFallback> ,
+                                                                                     <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/LateralVehicleMotionControl> ,
+                                                                                     <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/LongitudinalVehicleMotionControl> ,
+                                                                                     <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/ObjectAndEventDetectionAndResponse> .
 
 
-###  https://w3id.org/rdonto/op#RemotelyOperatedVehicle
-<https://w3id.org/rdonto/op#RemotelyOperatedVehicle> rdf:type owl:NamedIndividual ;
-                                                     <http://www.w3.org/2004/02/skos/core#relatedMatch> <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/MotorVehicle> .
+###  https://w3id.org/rovo/op#RemotelyOperatedVehicle
+<https://w3id.org/rovo/op#RemotelyOperatedVehicle> rdf:type owl:NamedIndividual ;
+                                                   <http://www.w3.org/2004/02/skos/core#relatedMatch> <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/MotorVehicle> .
 
 
-###  https://w3id.org/rdonto/op#Request
-<https://w3id.org/rdonto/op#Request> rdf:type owl:NamedIndividual ;
-                                     <http://www.w3.org/2004/02/skos/core#narrowMatch> <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/RequestToIntervene> .
+###  https://w3id.org/rovo/op#Request
+<https://w3id.org/rovo/op#Request> rdf:type owl:NamedIndividual ;
+                                   <http://www.w3.org/2004/02/skos/core#narrowMatch> <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/RequestToIntervene> .
 
 
-###  https://w3id.org/rdonto/op#TakeoverRequest
-<https://w3id.org/rdonto/op#TakeoverRequest> rdf:type owl:NamedIndividual ;
-                                             <http://www.w3.org/2004/02/skos/core#closeMatch> <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/RequestToIntervene> .
+###  https://w3id.org/rovo/op#TakeoverRequest
+<https://w3id.org/rovo/op#TakeoverRequest> rdf:type owl:NamedIndividual ;
+                                           <http://www.w3.org/2004/02/skos/core#closeMatch> <https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/RequestToIntervene> .
 
 
 #################################################################

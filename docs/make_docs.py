@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the HTML documentation of RDOnto with WIDOCO.
+"""Build the HTML documentation of R.O.V.O with WIDOCO.
 
 Usage (from the repository root):
 
@@ -30,16 +30,16 @@ WIDOCO = shlex.split(os.environ.get("WIDOCO", str(Path.home() / ".local/bin/wido
 
 AUTHOR = "Sanat Mharolkar"
 INSTITUTION = "Nanyang Technological University, Singapore"
-SITE = "https://sanatmharolkar.github.io/RDOnto"
+SITE = "https://sanatmharolkar.github.io/ROVO"
 
 COMMON_INTRO = (
-    "RDOnto, the Remote Driving Ontology, describes the context of remote driving "
+    "R.O.V.O, the Remote Operation of Vehicles Ontology, describes the context of remote driving "
     "(road vehicle teleoperation). It has three modules: the "
-    "[operator awareness module]({site}/docs/op/) (`RDOnto-op`), the "
-    "[communication link module]({site}/docs/link/) (`RDOnto-link`) and the "
-    "[upper alignment module]({site}/docs/core/) (`RDOnto-core`). "
+    "[operator awareness module]({site}/docs/op/) (`ROVO-op`), the "
+    "[communication link module]({site}/docs/link/) (`ROVO-link`) and the "
+    "[upper alignment module]({site}/docs/core/) (`ROVO-core`). "
     "SHACL shapes for incoming data and the Turtle files are in the "
-    "[repository](https://github.com/sanatmharolkar/RDOnto)."
+    "[repository](https://github.com/sanatmharolkar/ROVO)."
 ).format(site=SITE)
 
 DESIGN_RULES = """
@@ -54,10 +54,10 @@ Design rules of the module:
 
 MODULES = {
     "op": {
-        "file": "RDOnto-op.ttl",
-        "title": "RDOnto: Operator Awareness Module",
-        "prefix": "RDOnto-op",
-        "iri": "https://w3id.org/rdonto/op",
+        "file": "ROVO-op.ttl",
+        "title": "R.O.V.O: Operator Awareness Module",
+        "prefix": "ROVO-op",
+        "iri": "https://w3id.org/rovo/op",
         "cq": "remote-operator-sa-cqs.md",
         "imports": [],
         "description": (
@@ -66,7 +66,7 @@ MODULES = {
             "term serves, states the rules that queries and shapes apply to it, and cites its sources."
         ),
         "abstract": (
-            "The operator awareness module of the Remote Driving Ontology (RDOnto) represents a remote "
+            "The operator awareness module of the Remote Operation of Vehicles Ontology (R.O.V.O) represents a remote "
             "operator's awareness state of a remotely operated vehicle and its surroundings: what "
             "information is available to the operator, what the operator has perceived from it, how "
             "delayed and degraded it is, whether it is still valid, and whether it is sufficient for the "
@@ -87,19 +87,19 @@ The module uses PROV-O, SOSA and QUDT terms directly. Links to EDMC AUTO (SAE J3
 """ + DESIGN_RULES,
     },
     "link": {
-        "file": "RDOnto-link.ttl",
-        "title": "RDOnto: Communication Link Module",
-        "prefix": "RDOnto-link",
-        "iri": "https://w3id.org/rdonto/link",
+        "file": "ROVO-link.ttl",
+        "title": "R.O.V.O: Communication Link Module",
+        "prefix": "ROVO-link",
+        "iri": "https://w3id.org/rovo/link",
         "cq": "communication-link-cqs.md",
-        "imports": [("RDOnto-op", "https://w3id.org/rdonto/op")],
+        "imports": [("ROVO-op", "https://w3id.org/rovo/op")],
         "description": (
             "The terms of the module are listed with their definitions in the cross-reference section. "
             "A definition says what a term means; the note below it names the competency questions the "
             "term serves, states the rules that queries and shapes apply to it, and cites its sources."
         ),
         "abstract": (
-            "The communication link module of the Remote Driving Ontology (RDOnto) represents the "
+            "The communication link module of the Remote Operation of Vehicles Ontology (R.O.V.O) represents the "
             "connection between a remotely driven vehicle and the remote station as far as it matters for "
             "remote driving: end-to-end latency and its parts, latency limits per teleoperation setup, mode "
             "and speed, stability, connection loss, predictions, admissible speed and adaptations."
@@ -118,20 +118,20 @@ The module imports the operator awareness module and reuses its terms (operator,
 """ + DESIGN_RULES,
     },
     "core": {
-        "file": "RDOnto-core.ttl",
-        "title": "RDOnto: Upper Alignment Module",
-        "prefix": "RDOnto-core",
-        "iri": "https://w3id.org/rdonto/core",
+        "file": "ROVO-core.ttl",
+        "title": "R.O.V.O: Upper Alignment Module",
+        "prefix": "ROVO-core",
+        "iri": "https://w3id.org/rovo/core",
         "cq": None,
-        "imports": [("RDOnto-op", "https://w3id.org/rdonto/op")],
+        "imports": [("ROVO-op", "https://w3id.org/rovo/op")],
         "abstract": (
-            "The upper alignment module of the Remote Driving Ontology (RDOnto) holds every axiom that "
-            "links RDOnto to other ontologies: the EDMC AUTO Vehicle Automation Levels ontology (SAE J3016) "
+            "The upper alignment module of the Remote Operation of Vehicles Ontology (R.O.V.O) holds every axiom that "
+            "links R.O.V.O to other ontologies: the EDMC AUTO Vehicle Automation Levels ontology (SAE J3016) "
             "and the Automotive Urban Traffic Ontology (A.U.T.O.). Keeping these links in one module lets "
             "each reused source be replaced without changing the other modules."
         ),
         "description": (
-            "Alignments of RDOnto with the EDMC AUTO Vehicle Automation Levels ontology (SAE J3016) and "
+            "Alignments of R.O.V.O with the EDMC AUTO Vehicle Automation Levels ontology (SAE J3016) and "
             "the Automotive Urban Traffic Ontology (A.U.T.O.), with declarations of the reused classes."
         ),
         "intro": COMMON_INTRO + """
@@ -142,7 +142,7 @@ This module imports the operator awareness module and adds the links to other on
 - **SKOS mapping properties** (`skos:closeMatch`, `skos:broadMatch`, `skos:narrowMatch`, `skos:relatedMatch`) where one concept is wider than the other or the two only overlap. They add no class-level entailments.
 - **Tasks of the remote driving mode**, which are EDMC classes: lateral and longitudinal vehicle motion control, object and event detection and response, and the DDT fallback.
 
-The reused classes are declared with their original IRIs and `rdfs:isDefinedBy` their source, so that RDOnto can be used without loading the full sources.
+The reused classes are declared with their original IRIs and `rdfs:isDefinedBy` their source, so that R.O.V.O can be used without loading the full sources.
 """,
     },
 }

@@ -1,20 +1,20 @@
-@prefix : <https://w3id.org/rdonto/link#> .
+@prefix : <https://w3id.org/rovo/link#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://w3id.org/rdonto/link#> .
+@base <https://w3id.org/rovo/link#> .
 
-<https://w3id.org/rdonto/link> rdf:type owl:Ontology ;
-                                owl:imports <https://w3id.org/rdonto/op> ;
-                                <http://purl.org/dc/terms/created> "2026-11-05"^^xsd:date ;
-                                <http://purl.org/dc/terms/creator> "Sanat Mharolkar" ;
-                                <http://purl.org/dc/terms/description> "Represents the connection between a remotely driven vehicle and the remote station as far as it matters for remote driving: end-to-end latency and its parts, budgets per mode and speed, stability, connection loss, predictions, admissible speed and adaptations."@en ;
-                                <http://purl.org/dc/terms/license> <http://www.apache.org/licenses/LICENSE-2.0> ;
-                                <http://purl.org/dc/terms/modified> "2026-11-14"^^xsd:date ;
-                                rdfs:label "Remote Driving Ontology: communication link module"@en ;
-                                owl:versionInfo "1.0" .
+<https://w3id.org/rovo/link> rdf:type owl:Ontology ;
+                              owl:imports <https://w3id.org/rovo/op> ;
+                              <http://purl.org/dc/terms/created> "2026-11-05"^^xsd:date ;
+                              <http://purl.org/dc/terms/creator> "Sanat Mharolkar" ;
+                              <http://purl.org/dc/terms/description> "Represents the connection between a remotely driven vehicle and the remote station as far as it matters for remote driving: end-to-end latency and its parts, budgets per mode and speed, stability, connection loss, predictions, admissible speed and adaptations."@en ;
+                              <http://purl.org/dc/terms/license> <http://www.apache.org/licenses/LICENSE-2.0> ;
+                              <http://purl.org/dc/terms/modified> "2026-11-14"^^xsd:date ;
+                              rdfs:label "Remote Operation of Vehicles Ontology: communication link module"@en ;
+                              owl:versionInfo "1.0" .
 
 #################################################################
 #    Annotation properties
@@ -73,16 +73,16 @@ xsd:date rdf:type rdfs:Datatype .
 <http://www.w3.org/ns/prov#wasInformedBy> rdf:type owl:ObjectProperty .
 
 
-###  https://w3id.org/rdonto/link#addresses
+###  https://w3id.org/rovo/link#addresses
 :addresses rdf:type owl:ObjectProperty ;
            rdfs:domain :Adaptation ;
            rdfs:range :Degradation ;
-           rdfs:comment "LK-10. An adaptation is offered for a degradation only if it addresses it; every adaptation addresses at least one (RDOnto-link-shapes.ttl)."@en ;
+           rdfs:comment "LK-10. An adaptation is offered for a degradation only if it addresses it; every adaptation addresses at least one (ROVO-link-shapes.ttl)."@en ;
            rdfs:label "addresses"@en ;
            <http://www.w3.org/2004/02/skos/core#definition> "A degradation that an adaptation is a suitable reaction to."@en .
 
 
-###  https://w3id.org/rdonto/link#againstDeadline
+###  https://w3id.org/rovo/link#againstDeadline
 :againstDeadline rdf:type owl:ObjectProperty ,
                           owl:FunctionalProperty ;
                  rdfs:domain :LatencyStatistic ;
@@ -92,95 +92,95 @@ xsd:date rdf:type rdfs:Datatype .
                  <http://www.w3.org/2004/02/skos/core#definition> "The delivery deadline against which a deadline miss share was counted."@en .
 
 
-###  https://w3id.org/rdonto/link#appliesToSetup
+###  https://w3id.org/rovo/link#appliesToSetup
 :appliesToSetup rdf:type owl:ObjectProperty ,
                          owl:FunctionalProperty ;
-                rdfs:domain <https://w3id.org/rdonto/op#ConfiguredLimit> ;
+                rdfs:domain <https://w3id.org/rovo/op#ConfiguredLimit> ;
                 rdfs:range :TeleoperationSetup ;
-                rdfs:comment "LK-04, LK-05, LK-12. Scopes a limit (travel tolerance, reference budget, information age limit, latency variation limit, latency agreement tolerance) to one setup. An information age limit scoped to a setup must be no looser than the limit RDOnto-op configures for the same mode, which takes priority; RDOnto-link-shapes.ttl reports a looser one."@en ;
+                rdfs:comment "LK-04, LK-05, LK-12. Scopes a limit (travel tolerance, reference budget, information age limit, latency variation limit, latency agreement tolerance) to one setup. An information age limit scoped to a setup must be no looser than the limit ROVO-op configures for the same mode, which takes priority; ROVO-link-shapes.ttl reports a looser one."@en ;
                 rdfs:label "applies to setup"@en ;
                 <http://www.w3.org/2004/02/skos/core#definition> "The teleoperation setup to which a configured limit is limited."@en .
 
 
-###  https://w3id.org/rdonto/link#baselineStatistic
+###  https://w3id.org/rovo/link#baselineStatistic
 :baselineStatistic rdf:type owl:ObjectProperty ;
                    rdfs:domain :TeleoperationSession ;
                    rdfs:range :LatencyStatistic ;
-                   rdfs:comment "LK-05: 'has the latency changed since the session began' is the difference between the latest statistic and the session's baseline statistic of the same kind and part. At most one baseline per kind and part (RDOnto-link-shapes.ttl). Set by the stream layer."@en ;
+                   rdfs:comment "LK-05: 'has the latency changed since the session began' is the difference between the latest statistic and the session's baseline statistic of the same kind and part. At most one baseline per kind and part (ROVO-link-shapes.ttl). Set by the stream layer."@en ;
                    rdfs:label "baseline statistic"@en ;
                    <http://www.w3.org/2004/02/skos/core#definition> "A statistic over the first window of the session, against which later statistics of the same kind and latency part are compared."@en .
 
 
-###  https://w3id.org/rdonto/link#budgetPart
+###  https://w3id.org/rovo/link#budgetPart
 :budgetPart rdf:type owl:ObjectProperty ,
                      owl:FunctionalProperty ;
-            rdfs:domain <https://w3id.org/rdonto/op#ConfiguredLimit> ;
+            rdfs:domain <https://w3id.org/rovo/op#ConfiguredLimit> ;
             rdfs:range :LatencyPart ;
-            rdfs:comment "LK-04, LK-05, LK-10. For a latency budget: RDOnto-link:ActuatorLatency or RDOnto-link:EndToEndLatency, not RDOnto-link:SensorLatency, whose budget is a RDOnto-op:InformationAgeLimit scoped to the setup (RDOnto-link-shapes.ttl, LatencyBudgetShape). For a latency variation limit: any of the three parts. Its domain is the general limit class, because two limit types use it."@en ;
+            rdfs:comment "LK-04, LK-05, LK-10. For a latency budget: ROVO-link:ActuatorLatency or ROVO-link:EndToEndLatency, not ROVO-link:SensorLatency, whose budget is a ROVO-op:InformationAgeLimit scoped to the setup (ROVO-link-shapes.ttl, LatencyBudgetShape). For a latency variation limit: any of the three parts. Its domain is the general limit class, because two limit types use it."@en ;
             rdfs:label "budget part"@en ;
             <http://www.w3.org/2004/02/skos/core#definition> "The latency part that a latency budget or a latency variation limit is for."@en .
 
 
-###  https://w3id.org/rdonto/link#carriesEngagement
+###  https://w3id.org/rovo/link#carriesEngagement
 :carriesEngagement rdf:type owl:ObjectProperty ;
                    rdfs:domain :TeleoperationSession ;
-                   rdfs:range <https://w3id.org/rdonto/op#Engagement> ;
-                   rdfs:comment "LK-01. The engagements, in sequence, that the session has carried. The current one has no prov:endedAtTime. Its operation mode selects the latency budget (LK-04). Every carried engagement's RDOnto-op:engagedOperator must be the session's sessionOperator; this is a closed-world rule checked by SHACL (RDOnto-link-shapes.ttl, SessionShape), not an OWL axiom."@en ;
+                   rdfs:range <https://w3id.org/rovo/op#Engagement> ;
+                   rdfs:comment "LK-01. The engagements, in sequence, that the session has carried. The current one has no prov:endedAtTime. Its operation mode selects the latency budget (LK-04). Every carried engagement's ROVO-op:engagedOperator must be the session's sessionOperator; this is a closed-world rule checked by SHACL (ROVO-link-shapes.ttl, SessionShape), not an OWL axiom."@en ;
                    rdfs:label "carries engagement"@en ;
                    <http://www.w3.org/2004/02/skos/core#definition> "An engagement that takes place over the connection of a teleoperation session."@en .
 
 
-###  https://w3id.org/rdonto/link#contentDirection
+###  https://w3id.org/rovo/link#contentDirection
 :contentDirection rdf:type owl:ObjectProperty ,
                            owl:FunctionalProperty ;
                   rdfs:domain :StreamContent ;
                   rdfs:range :Direction ;
-                  rdfs:comment "LK-02. What the vehicle produces flows to the station, what the operator produces flows to the vehicle. A stream's streamDirection must agree with the direction of its content (RDOnto-link-shapes.ttl, StreamShape); a content without a value may flow either way."@en ;
+                  rdfs:comment "LK-02. What the vehicle produces flows to the station, what the operator produces flows to the vehicle. A stream's streamDirection must agree with the direction of its content (ROVO-link-shapes.ttl, StreamShape); a content without a value may flow either way."@en ;
                   rdfs:label "content direction"@en ;
                   <http://www.w3.org/2004/02/skos/core#definition> "The direction in which streams with this content flow."@en .
 
 
-###  https://w3id.org/rdonto/link#duringSession
+###  https://w3id.org/rovo/link#duringSession
 :duringSession rdf:type owl:ObjectProperty ,
                         owl:FunctionalProperty ;
                rdfs:domain :MinimalRiskManoeuvre ;
                rdfs:range :TeleoperationSession ;
-               rdfs:comment "LK-07. A time relation, whatever the cause of the manoeuvre: the cause, where it is a link degradation, is given by triggeredBy. The manoeuvre starts within the session, and the session's vehicle is the one that performs it (RDOnto-link-shapes.ttl)."@en ;
+               rdfs:comment "LK-07. A time relation, whatever the cause of the manoeuvre: the cause, where it is a link degradation, is given by triggeredBy. The manoeuvre starts within the session, and the session's vehicle is the one that performs it (ROVO-link-shapes.ttl)."@en ;
                rdfs:label "during session"@en ;
                <http://www.w3.org/2004/02/skos/core#definition> "The teleoperation session that was open for the vehicle when a minimal risk manoeuvre started."@en .
 
 
-###  https://w3id.org/rdonto/link#followsSession
+###  https://w3id.org/rovo/link#followsSession
 :followsSession rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasInformedBy> ;
                 rdf:type owl:FunctionalProperty ;
                 rdfs:domain :TeleoperationSession ;
                 rdfs:range :TeleoperationSession ;
-                rdfs:comment "LK-01. Lets the link history be followed across a handover, also to an operator at another station. Baseline statistics stay per session, so the new session has its own (RDOnto-link-shapes.ttl checks the vehicle and the times)."@en ;
+                rdfs:comment "LK-01. Lets the link history be followed across a handover, also to an operator at another station. Baseline statistics stay per session, so the new session has its own (ROVO-link-shapes.ttl checks the vehicle and the times)."@en ;
                 rdfs:label "follows session"@en ;
                 <http://www.w3.org/2004/02/skos/core#definition> "The earlier, ended session with the same vehicle that a session replaced, at the same or another station, e.g. at an operator handover."@en .
 
 
-###  https://w3id.org/rdonto/link#forContent
+###  https://w3id.org/rovo/link#forContent
 :forContent rdf:type owl:ObjectProperty ,
                      owl:FunctionalProperty ;
-            rdfs:domain <https://w3id.org/rdonto/op#ConfiguredLimit> ;
+            rdfs:domain <https://w3id.org/rovo/op#ConfiguredLimit> ;
             rdfs:range :StreamContent ;
             rdfs:comment "LK-05, LK-07. Its domain is the general limit class, because two limit types use it."@en ;
             rdfs:label "for content"@en ;
             <http://www.w3.org/2004/02/skos/core#definition> "The stream content that a connection timeout or a delivery deadline is for."@en .
 
 
-###  https://w3id.org/rdonto/link#hasChannel
+###  https://w3id.org/rovo/link#hasChannel
 :hasChannel rdf:type owl:ObjectProperty ;
             rdfs:domain :RemoteStation ;
-            rdfs:range <https://w3id.org/rdonto/op#InformationChannel> ;
-            rdfs:comment "LK-06. Static: the station's camera views and other channels. RDOnto-op:availableChannel says which of them an engagement currently has; a view that was switched off is still a channel of the station, so the views a mode needs (viewNeededInMode) can be found when they are not available. Because a station shows one vehicle at a time (RemoteStation), its channels belong to the one open session."@en ;
+            rdfs:range <https://w3id.org/rovo/op#InformationChannel> ;
+            rdfs:comment "LK-06. Static: the station's camera views and other channels. ROVO-op:availableChannel says which of them an engagement currently has; a view that was switched off is still a channel of the station, so the views a mode needs (viewNeededInMode) can be found when they are not available. Because a station shows one vehicle at a time (RemoteStation), its channels belong to the one open session."@en ;
             rdfs:label "has channel"@en ;
             <http://www.w3.org/2004/02/skos/core#definition> "An information channel the station is equipped with, whether or not it is available right now."@en .
 
 
-###  https://w3id.org/rdonto/link#hasStreamContent
+###  https://w3id.org/rovo/link#hasStreamContent
 :hasStreamContent rdf:type owl:ObjectProperty ,
                            owl:FunctionalProperty ;
                   rdfs:domain :Stream ;
@@ -190,7 +190,7 @@ xsd:date rdf:type rdfs:Datatype .
                   <http://www.w3.org/2004/02/skos/core#definition> "The kind of data a stream carries."@en .
 
 
-###  https://w3id.org/rdonto/link#inSession
+###  https://w3id.org/rovo/link#inSession
 :inSession rdf:type owl:ObjectProperty ,
                     owl:FunctionalProperty ;
            rdfs:domain :Stream ;
@@ -200,7 +200,7 @@ xsd:date rdf:type rdfs:Datatype .
            <http://www.w3.org/2004/02/skos/core#definition> "The teleoperation session a stream belongs to."@en .
 
 
-###  https://w3id.org/rdonto/link#manoeuvreKind
+###  https://w3id.org/rovo/link#manoeuvreKind
 :manoeuvreKind rdf:type owl:ObjectProperty ,
                         owl:FunctionalProperty ;
                rdfs:domain :MinimalRiskManoeuvre ;
@@ -210,18 +210,18 @@ xsd:date rdf:type rdfs:Datatype .
                <http://www.w3.org/2004/02/skos/core#definition> "The kind of minimal risk manoeuvre that a vehicle performs."@en .
 
 
-###  https://w3id.org/rdonto/link#neededInMode
+###  https://w3id.org/rovo/link#neededInMode
 :neededInMode rdf:type owl:ObjectProperty ;
               rdfs:domain :StreamContent ;
-              rdfs:range <https://w3id.org/rdonto/op#OperationMode> ;
+              rdfs:range <https://w3id.org/rovo/op#OperationMode> ;
               <http://purl.org/dc/terms/source> "GA21b" ,
                                                 "GA23" ;
-              rdfs:comment "Static knowledge: which content an operation mode depends on (LK-02). A need stated for RDOnto-op:RemoteDriving holds for both of its narrower modes (RDOnto-op:broaderMode). Direct Control ToD sends manoeuvre commands to the vehicle; Indirect Control ToD sends route or pathway information [GA21b, GA23]."@en ;
+              rdfs:comment "Static knowledge: which content an operation mode depends on (LK-02). A need stated for ROVO-op:RemoteDriving holds for both of its narrower modes (ROVO-op:broaderMode). Direct Control ToD sends manoeuvre commands to the vehicle; Indirect Control ToD sends route or pathway information [GA21b, GA23]."@en ;
               rdfs:label "needed in mode"@en ;
               <http://www.w3.org/2004/02/skos/core#definition> "An operation mode that cannot be performed without streams of this content."@en .
 
 
-###  https://w3id.org/rdonto/link#observedSession
+###  https://w3id.org/rovo/link#observedSession
 :observedSession rdf:type owl:ObjectProperty ,
                           owl:FunctionalProperty ;
                  rdfs:domain <http://www.w3.org/ns/sosa/Observation> ;
@@ -231,7 +231,7 @@ xsd:date rdf:type rdfs:Datatype .
                  <http://www.w3.org/2004/02/skos/core#definition> "The teleoperation session whose latency a latency observation, or a mean or standard deviation of a latency part, is about."@en .
 
 
-###  https://w3id.org/rdonto/link#overriddenAdaptation
+###  https://w3id.org/rovo/link#overriddenAdaptation
 :overriddenAdaptation rdf:type owl:ObjectProperty ,
                                owl:FunctionalProperty ;
                       rdfs:domain :AdaptationRankOverride ;
@@ -241,7 +241,7 @@ xsd:date rdf:type rdfs:Datatype .
                       <http://www.w3.org/2004/02/skos/core#definition> "The adaptation whose preference rank a rank override replaces."@en .
 
 
-###  https://w3id.org/rdonto/link#overrideDegradation
+###  https://w3id.org/rovo/link#overrideDegradation
 :overrideDegradation rdf:type owl:ObjectProperty ,
                               owl:FunctionalProperty ;
                      rdfs:domain :AdaptationRankOverride ;
@@ -251,7 +251,7 @@ xsd:date rdf:type rdfs:Datatype .
                      <http://www.w3.org/2004/02/skos/core#definition> "The degradation for which a rank override holds."@en .
 
 
-###  https://w3id.org/rdonto/link#overrideSetup
+###  https://w3id.org/rovo/link#overrideSetup
 :overrideSetup rdf:type owl:ObjectProperty ,
                         owl:FunctionalProperty ;
                rdfs:domain :AdaptationRankOverride ;
@@ -261,17 +261,13 @@ xsd:date rdf:type rdfs:Datatype .
                <http://www.w3.org/2004/02/skos/core#definition> "The teleoperation setup for which a rank override holds."@en .
 
 
-###  https://w3id.org/rdonto/link#performedBy
+###  https://w3id.org/rovo/link#performedBy
 :performedBy rdf:type owl:ObjectProperty ,
                       owl:FunctionalProperty ;
-             rdfs:domain :MinimalRiskManoeuvre ;
-             rdfs:range <https://w3id.org/rdonto/op#RemotelyOperatedVehicle> ;
-             rdfs:comment "LK-07. Where the manoeuvre names a session (duringSession), this is that session's vehicle (RDOnto-link-shapes.ttl)."@en ;
-             rdfs:label "performed by"@en ;
-             <http://www.w3.org/2004/02/skos/core#definition> "The vehicle that performs a minimal risk manoeuvre."@en .
+             rdfs:domain :MinimalRiskManoeuvre .
 
 
-###  https://w3id.org/rdonto/link#predictedFor
+###  https://w3id.org/rovo/link#predictedFor
 :predictedFor rdf:type owl:ObjectProperty ,
                        owl:FunctionalProperty ;
               rdfs:domain :LinkPrediction ;
@@ -281,7 +277,7 @@ xsd:date rdf:type rdfs:Datatype .
               <http://www.w3.org/2004/02/skos/core#definition> "The teleoperation session whose link a prediction is about."@en .
 
 
-###  https://w3id.org/rdonto/link#predictedOnSegment
+###  https://w3id.org/rovo/link#predictedOnSegment
 :predictedOnSegment rdf:type owl:ObjectProperty ,
                              owl:FunctionalProperty ;
                     rdfs:domain :LinkPrediction ;
@@ -291,7 +287,7 @@ xsd:date rdf:type rdfs:Datatype .
                     <http://www.w3.org/2004/02/skos/core#definition> "The segment of the planned route that a link prediction is for."@en .
 
 
-###  https://w3id.org/rdonto/link#predictedPart
+###  https://w3id.org/rovo/link#predictedPart
 :predictedPart rdf:type owl:ObjectProperty ,
                         owl:FunctionalProperty ;
                rdfs:domain :LatencyPrediction ;
@@ -301,14 +297,14 @@ xsd:date rdf:type rdfs:Datatype .
                <http://www.w3.org/2004/02/skos/core#definition> "The latency part whose value a latency prediction gives."@en .
 
 
-###  https://w3id.org/rdonto/link#predictedValue
+###  https://w3id.org/rovo/link#predictedValue
 :predictedValue rdf:type owl:ObjectProperty ,
                          owl:FunctionalProperty ;
                 rdfs:domain :LatencyPrediction ;
                 rdfs:range xsd:dayTimeDuration .
 
 
-###  https://w3id.org/rdonto/link#requiresCondition
+###  https://w3id.org/rovo/link#requiresCondition
 :requiresCondition rdf:type owl:ObjectProperty ;
                    rdfs:domain :Adaptation ;
                    rdfs:range :AvailabilityCondition ;
@@ -317,44 +313,44 @@ xsd:date rdf:type rdfs:Datatype .
                    <http://www.w3.org/2004/02/skos/core#definition> "A condition that must hold for an adaptation to be available."@en .
 
 
-###  https://w3id.org/rdonto/link#sessionOperator
+###  https://w3id.org/rovo/link#sessionOperator
 :sessionOperator rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasAssociatedWith> ;
                  rdf:type owl:FunctionalProperty ;
                  rdfs:domain :TeleoperationSession ;
-                 rdfs:range <https://w3id.org/rdonto/op#RemoteOperator> ;
+                 rdfs:range <https://w3id.org/rovo/op#RemoteOperator> ;
                  rdfs:comment "LK-01. A different operator means a new session (operator handover). Not derived from the engagements by a property chain: with a functional property, two operators would be merged by owl:sameAs instead of being reported."@en ;
                  rdfs:label "session operator"@en ;
                  <http://www.w3.org/2004/02/skos/core#definition> "The one remote operator who is at the station for the whole of a teleoperation session."@en .
 
 
-###  https://w3id.org/rdonto/link#sessionStation
+###  https://w3id.org/rovo/link#sessionStation
 :sessionStation rdf:type owl:ObjectProperty ,
                          owl:FunctionalProperty ;
                 rdfs:domain :TeleoperationSession ;
                 rdfs:range :RemoteStation ;
-                rdfs:comment "LK-01. A session has exactly one; a move to another station starts a new session. A station has at most one open session at a time (RDOnto-link-shapes.ttl)."@en ;
+                rdfs:comment "LK-01. A session has exactly one; a move to another station starts a new session. A station has at most one open session at a time (ROVO-link-shapes.ttl)."@en ;
                 rdfs:label "session station"@en ;
                 <http://www.w3.org/2004/02/skos/core#definition> "The remote station that a teleoperation session connects to the vehicle."@en .
 
 
-###  https://w3id.org/rdonto/link#sessionVehicle
+###  https://w3id.org/rovo/link#sessionVehicle
 :sessionVehicle rdf:type owl:ObjectProperty ,
                          owl:FunctionalProperty ;
                 rdfs:domain :TeleoperationSession .
 
 
-###  https://w3id.org/rdonto/link#setupEnvironment
+###  https://w3id.org/rovo/link#setupEnvironment
 :setupEnvironment rdf:type owl:ObjectProperty ,
                            owl:FunctionalProperty ;
                   rdfs:domain :TeleoperationSetup ;
-                  rdfs:range <https://w3id.org/rdonto/op#OperatingEnvironment> ;
-                  rdfs:comment "The operating environment the setup is for (RDOnto-op SA-06)."@en ;
+                  rdfs:range <https://w3id.org/rovo/op#OperatingEnvironment> ;
+                  rdfs:comment "The operating environment the setup is for (ROVO-op SA-06)."@en ;
                   rdfs:label "setup environment"@en ;
                   <http://www.w3.org/2004/02/skos/core#definition> "The operating environment that a teleoperation setup is for."@en .
 
 
-###  https://w3id.org/rdonto/link#setupStation
+###  https://w3id.org/rovo/link#setupStation
 :setupStation rdf:type owl:ObjectProperty ;
               rdfs:domain :TeleoperationSetup ;
               rdfs:range :RemoteStation ;
@@ -363,76 +359,80 @@ xsd:date rdf:type rdfs:Datatype .
               <http://www.w3.org/2004/02/skos/core#definition> "A remote station that the limits of a teleoperation setup were configured for."@en .
 
 
-###  https://w3id.org/rdonto/link#setupTask
+###  https://w3id.org/rovo/link#setupTask
 :setupTask rdf:type owl:ObjectProperty ,
                     owl:FunctionalProperty ;
            rdfs:domain :TeleoperationSetup ;
-           rdfs:range <https://w3id.org/rdonto/op#DrivingTask> ;
-           rdfs:comment "The driving task the setup is for (RDOnto-op SA-06); with it, a travel tolerance encodes the precision the task needs [GA21b]."@en ;
+           rdfs:range <https://w3id.org/rovo/op#DrivingTask> ;
+           rdfs:comment "The driving task the setup is for (ROVO-op SA-06); with it, a travel tolerance encodes the precision the task needs [GA21b]."@en ;
            rdfs:label "setup task"@en ;
            <http://www.w3.org/2004/02/skos/core#definition> "The driving task that a teleoperation setup is for."@en .
 
 
-###  https://w3id.org/rdonto/link#setupVehicle
+###  https://w3id.org/rovo/link#setupVehicle
 :setupVehicle rdf:type owl:ObjectProperty ;
-              rdfs:domain :TeleoperationSetup .
+              rdfs:domain :TeleoperationSetup ;
+              rdfs:range <https://w3id.org/rovo/op#RemotelyOperatedVehicle> ;
+              rdfs:comment "LK-04. A setup can name several, e.g. a fleet of one model. A session that uses the setup must have one of them as its vehicle, where the setup names any (ROVO-link-shapes.ttl)."@en ;
+              rdfs:label "setup vehicle"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "A vehicle that the limits of a teleoperation setup were configured for."@en .
 
 
-###  https://w3id.org/rdonto/link#showsLinkInformation
+###  https://w3id.org/rovo/link#showsLinkInformation
 :showsLinkInformation rdf:type owl:ObjectProperty ;
                       rdfs:domain :LinkStateDisplay ;
                       rdfs:range :LinkInformation ;
-                      rdfs:comment "LK-11. A display shows at least one kind (RDOnto-link-shapes.ttl)."@en ;
+                      rdfs:comment "LK-11. A display shows at least one kind (ROVO-link-shapes.ttl)."@en ;
                       rdfs:label "shows link information"@en ;
                       <http://www.w3.org/2004/02/skos/core#definition> "A kind of link information that a link state display shows the operator."@en .
 
 
-###  https://w3id.org/rdonto/link#statistic
+###  https://w3id.org/rovo/link#statistic
 :statistic rdf:type owl:ObjectProperty ,
                     owl:FunctionalProperty ;
            rdfs:domain :LatencyStatistic ;
            rdfs:range :StatisticKind ;
-           rdfs:comment "LK-05. The kind decides what the value is: a duration for a mean or standard deviation, a share between 0 and 1 for deadline misses (RDOnto-link-shapes.ttl)."@en ;
+           rdfs:comment "LK-05. The kind decides what the value is: a duration for a mean or standard deviation, a share between 0 and 1 for deadline misses (ROVO-link-shapes.ttl)."@en ;
            rdfs:label "statistic"@en ;
            <http://www.w3.org/2004/02/skos/core#definition> "The kind of statistic that a latency statistic gives: a mean, a standard deviation or a deadline miss share."@en .
 
 
-###  https://w3id.org/rdonto/link#streamDirection
+###  https://w3id.org/rovo/link#streamDirection
 :streamDirection rdf:type owl:ObjectProperty ,
                           owl:FunctionalProperty ;
                  rdfs:domain :Stream ;
                  rdfs:range :Direction ;
-                 rdfs:comment "LK-02. Agrees with the direction of the stream's content, where the content states one (contentDirection; RDOnto-link-shapes.ttl)."@en ;
+                 rdfs:comment "LK-02. Agrees with the direction of the stream's content, where the content states one (contentDirection; ROVO-link-shapes.ttl)."@en ;
                  rdfs:label "stream direction"@en ;
                  <http://www.w3.org/2004/02/skos/core#definition> "The direction in which a stream flows: from the vehicle to the station, or from the station to the vehicle."@en .
 
 
-###  https://w3id.org/rdonto/link#triggeredBy
+###  https://w3id.org/rovo/link#triggeredBy
 :triggeredBy rdf:type owl:ObjectProperty ,
                       owl:FunctionalProperty ;
              rdfs:domain :MinimalRiskManoeuvre ;
              rdfs:range :Degradation ;
-             rdfs:comment "LK-07. The kind of link problem that triggered the manoeuvre, e.g. RDOnto-link:ConnectionLost. Absent for a manoeuvre with another cause."@en ;
+             rdfs:comment "LK-07. The kind of link problem that triggered the manoeuvre, e.g. ROVO-link:ConnectionLost. Absent for a manoeuvre with another cause."@en ;
              rdfs:label "triggered by"@en ;
              <http://www.w3.org/2004/02/skos/core#definition> "The kind of link degradation that triggered a minimal risk manoeuvre."@en .
 
 
-###  https://w3id.org/rdonto/link#usesSetup
+###  https://w3id.org/rovo/link#usesSetup
 :usesSetup rdf:type owl:ObjectProperty ,
                     owl:FunctionalProperty ;
            rdfs:domain :TeleoperationSession ;
            rdfs:range :TeleoperationSetup ;
-           rdfs:comment "LK-04, LK-09. A session uses exactly one setup; it scopes the travel tolerance, the reference budgets and the setup's information age limit. Where the setup names vehicles or stations, the session's are among them (RDOnto-link-shapes.ttl)."@en ;
+           rdfs:comment "LK-04, LK-09. A session uses exactly one setup; it scopes the travel tolerance, the reference budgets and the setup's information age limit. Where the setup names vehicles or stations, the session's are among them (ROVO-link-shapes.ttl)."@en ;
            rdfs:label "uses setup"@en ;
            <http://www.w3.org/2004/02/skos/core#definition> "The teleoperation setup whose limits apply to a session."@en .
 
 
-###  https://w3id.org/rdonto/link#viewNeededInMode
+###  https://w3id.org/rovo/link#viewNeededInMode
 :viewNeededInMode rdf:type owl:ObjectProperty ;
-                  rdfs:domain <https://w3id.org/rdonto/op#CameraView> ;
-                  rdfs:range <https://w3id.org/rdonto/op#OperationMode> ;
+                  rdfs:domain <https://w3id.org/rovo/op#CameraView> ;
+                  rdfs:range <https://w3id.org/rovo/op#OperationMode> ;
                   <http://purl.org/dc/terms/source> "SH21" ;
-                  rdfs:comment "LK-06. Configuration per station: the camera view is needed to operate in this mode. A need stated for a broader mode holds for its narrower modes (RDOnto-op:broaderMode). SH21 weights camera views by their importance for the driving situation."@en ;
+                  rdfs:comment "LK-06. Configuration per station: the camera view is needed to operate in this mode. A need stated for a broader mode holds for its narrower modes (ROVO-op:broaderMode). SH21 weights camera views by their importance for the driving situation."@en ;
                   rdfs:label "view needed in mode"@en ;
                   <http://www.w3.org/2004/02/skos/core#definition> "An operation mode that the operator cannot perform without this camera view."@en .
 
@@ -441,27 +441,27 @@ xsd:date rdf:type rdfs:Datatype .
 #    Data properties
 #################################################################
 
-###  https://w3id.org/rdonto/link#adsAbleToDrive
+###  https://w3id.org/rovo/link#adsAbleToDrive
 :adsAbleToDrive rdf:type owl:DatatypeProperty ,
                          owl:FunctionalProperty ;
-                rdfs:domain <https://w3id.org/rdonto/op#RemotelyOperatedVehicle> ;
+                rdfs:domain <https://w3id.org/rovo/op#RemotelyOperatedVehicle> ;
                 rdfs:range xsd:boolean ;
-                rdfs:comment "LK-10. Interface (RDOnto-todd, vehicle state). False while the cause of a request lasts, e.g. RDOnto-op:SensorFailure, RDOnto-op:PlanFailure or RDOnto-op:PerceptionError, or while the ADS waits for the answer to an assistance request; true again once the ADS reports that it can go on. Kept apart from adsWithinODD, which says only where the vehicle is. Stated only for a vehicle with an ADS, as adsWithinODD is (RDOnto-link-shapes.ttl). Absent means not known, and then the adaptations that need the ADS do not count as available (ADSCanTakeOver)."@en ;
+                rdfs:comment "LK-10. Interface (ROVO-todd, vehicle state). False while the cause of a request lasts, e.g. ROVO-op:SensorFailure, ROVO-op:PlanFailure or ROVO-op:PerceptionError, or while the ADS waits for the answer to an assistance request; true again once the ADS reports that it can go on. Kept apart from adsWithinODD, which says only where the vehicle is. Stated only for a vehicle with an ADS, as adsWithinODD is (ROVO-link-shapes.ttl). Absent means not known, and then the adaptations that need the ADS do not count as available (ADSCanTakeOver)."@en ;
                 rdfs:label "ADS able to drive"@en ;
                 <http://www.w3.org/2004/02/skos/core#definition> "Whether the vehicle's ADS is able to perform the DDT now: it has no failure that stops it, and it is not waiting for the operator's help with a situation it cannot manage."@en .
 
 
-###  https://w3id.org/rdonto/link#adsWithinODD
+###  https://w3id.org/rovo/link#adsWithinODD
 :adsWithinODD rdf:type owl:DatatypeProperty ,
                        owl:FunctionalProperty ;
-              rdfs:domain <https://w3id.org/rdonto/op#RemotelyOperatedVehicle> ;
+              rdfs:domain <https://w3id.org/rovo/op#RemotelyOperatedVehicle> ;
               rdfs:range xsd:boolean ;
-              rdfs:comment "LK-10. Interface (RDOnto-todd). True if the ADS is within its ODD, false if it is outside. Being within the ODD is needed for the ADS to drive but is not enough: an ADS with a failed sensor is within its ODD and cannot drive (adsAbleToDrive). Stated only for a vehicle with an ADS (RDOnto-op:hasADS true); a vehicle without an ADS (hasADS false) has no value, and a value on a vehicle that does not state hasADS true gets a warning (RDOnto-link-shapes.ttl). Absent means not known, and then the adaptations that need the ADS do not count as available (ADSCanTakeOver)."@en ;
+              rdfs:comment "LK-10. Interface (ROVO-todd). True if the ADS is within its ODD, false if it is outside. Being within the ODD is needed for the ADS to drive but is not enough: an ADS with a failed sensor is within its ODD and cannot drive (adsAbleToDrive). Stated only for a vehicle with an ADS (ROVO-op:hasADS true); a vehicle without an ADS (hasADS false) has no value, and a value on a vehicle that does not state hasADS true gets a warning (ROVO-link-shapes.ttl). Absent means not known, and then the adaptations that need the ADS do not count as available (ADSCanTakeOver)."@en ;
               rdfs:label "ADS within ODD"@en ;
               <http://www.w3.org/2004/02/skos/core#definition> "Whether the vehicle's ADS is currently within its operational design domain."@en .
 
 
-###  https://w3id.org/rdonto/link#dimensionlessDelayLimit
+###  https://w3id.org/rovo/link#dimensionlessDelayLimit
 :dimensionlessDelayLimit rdf:type owl:DatatypeProperty ,
                                   owl:FunctionalProperty ;
                          rdfs:domain :TravelTolerance ;
@@ -472,17 +472,17 @@ xsd:date rdf:type rdfs:Datatype .
                          <http://www.w3.org/2004/02/skos/core#definition> "The largest acceptable dimensionless delay in a setup and mode, i.e. vehicle speed times end-to-end latency divided by wheelbase."@en .
 
 
-###  https://w3id.org/rdonto/link#isContinuous
+###  https://w3id.org/rovo/link#isContinuous
 :isContinuous rdf:type owl:DatatypeProperty ,
                        owl:FunctionalProperty ;
               rdfs:domain :StreamContent ;
               rdfs:range xsd:boolean ;
-              rdfs:comment "LK-07. True for the video feed, the sensor feed and control commands, which are sent at a fixed rate; false for trajectory input and proposed trajectories, which are sent only when there is one. Only continuous content is tested for silence, so only it has a connection timeout (RDOnto-link-shapes.ttl)."@en ;
+              rdfs:comment "LK-07. True for the video feed, the sensor feed and control commands, which are sent at a fixed rate; false for trajectory input and proposed trajectories, which are sent only when there is one. Only continuous content is tested for silence, so only it has a connection timeout (ROVO-link-shapes.ttl)."@en ;
               rdfs:label "is continuous"@en ;
               <http://www.w3.org/2004/02/skos/core#definition> "Whether streams with this content carry data all the time while the session is up, so that silence on them means the connection is lost."@en .
 
 
-###  https://w3id.org/rdonto/link#lastReceivedAt
+###  https://w3id.org/rovo/link#lastReceivedAt
 :lastReceivedAt rdf:type owl:DatatypeProperty ,
                          owl:FunctionalProperty ;
                 rdfs:domain :Stream ;
@@ -492,7 +492,7 @@ xsd:date rdf:type rdfs:Datatype .
                 <http://www.w3.org/2004/02/skos/core#definition> "The time at which data last arrived on a stream."@en .
 
 
-###  https://w3id.org/rdonto/link#maximumDrivingSpeed
+###  https://w3id.org/rovo/link#maximumDrivingSpeed
 :maximumDrivingSpeed rdf:type owl:DatatypeProperty ,
                               owl:FunctionalProperty ;
                      rdfs:domain :TeleoperationSetup ;
@@ -503,19 +503,19 @@ xsd:date rdf:type rdfs:Datatype .
                      <http://www.w3.org/2004/02/skos/core#definition> "The highest speed, in km/h, at which the setup is meant to be driven remotely, whatever the latency."@en .
 
 
-###  https://w3id.org/rdonto/link#minimumDataRate
+###  https://w3id.org/rovo/link#minimumDataRate
 :minimumDataRate rdf:type owl:DatatypeProperty ,
                           owl:FunctionalProperty ;
-                 rdfs:domain <https://w3id.org/rdonto/op#CameraView> ;
+                 rdfs:domain <https://w3id.org/rovo/op#CameraView> ;
                  rdfs:range xsd:decimal ;
                  <http://purl.org/dc/terms/source> "NE19b" ,
                                                    "SH21" ;
-                 rdfs:comment "LK-06, LK-10. Configuration: the data rate, in Mbit/s, a camera view needs at the lowest quality still acceptable for driving. Not above requiredDataRate. Between the two sums the data rate is enough only with reduced video quality (RDOnto-link:ReduceVideoQuality); below the sum of the minimum rates it is not enough at any quality. NE19b: at least 3 Mbit/s for video."@en ;
+                 rdfs:comment "LK-06, LK-10. Configuration: the data rate, in Mbit/s, a camera view needs at the lowest quality still acceptable for driving. Not above requiredDataRate. Between the two sums the data rate is enough only with reduced video quality (ROVO-link:ReduceVideoQuality); below the sum of the minimum rates it is not enough at any quality. NE19b: at least 3 Mbit/s for video."@en ;
                  rdfs:label "minimum data rate"@en ;
                  <http://www.w3.org/2004/02/skos/core#definition> "The data rate, in Mbit/s, that a camera view needs at the lowest quality still acceptable for driving."@en .
 
 
-###  https://w3id.org/rdonto/link#minimumDrivingSpeed
+###  https://w3id.org/rovo/link#minimumDrivingSpeed
 :minimumDrivingSpeed rdf:type owl:DatatypeProperty ,
                               owl:FunctionalProperty ;
                      rdfs:domain :TeleoperationSetup ;
@@ -525,7 +525,7 @@ xsd:date rdf:type rdfs:Datatype .
                      <http://www.w3.org/2004/02/skos/core#definition> "The lowest speed, in km/h, at which driving on is still useful for the setup's task."@en .
 
 
-###  https://w3id.org/rdonto/link#overrideRank
+###  https://w3id.org/rovo/link#overrideRank
 :overrideRank rdf:type owl:DatatypeProperty ,
                        owl:FunctionalProperty ;
               rdfs:domain :AdaptationRankOverride ;
@@ -535,7 +535,13 @@ xsd:date rdf:type rdfs:Datatype .
               <http://www.w3.org/2004/02/skos/core#definition> "The preference rank that a rank override puts in place of the adaptation's default."@en .
 
 
-###  https://w3id.org/rdonto/link#predictedDataRate
+###  https://w3id.org/rovo/link#performedBy
+:performedBy rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:range <https://w3id.org/rovo/op#RemotelyOperatedVehicle> .
+
+
+###  https://w3id.org/rovo/link#predictedDataRate
 :predictedDataRate rdf:type owl:DatatypeProperty ,
                             owl:FunctionalProperty ;
                    rdfs:domain :DataRatePrediction ;
@@ -545,12 +551,12 @@ xsd:date rdf:type rdfs:Datatype .
                    <http://www.w3.org/2004/02/skos/core#definition> "The data rate that is expected to be available to the vehicle-to-station video streams of the session, taken together, over the window of a data rate prediction, in Mbit/s."@en .
 
 
-###  https://w3id.org/rdonto/link#predictedValue
+###  https://w3id.org/rovo/link#predictedValue
 :predictedValue rdf:type owl:DatatypeProperty ,
                          owl:FunctionalProperty .
 
 
-###  https://w3id.org/rdonto/link#predictionConfidence
+###  https://w3id.org/rovo/link#predictionConfidence
 :predictionConfidence rdf:type owl:DatatypeProperty ,
                                owl:FunctionalProperty ;
                       rdfs:domain :LinkPrediction ;
@@ -560,41 +566,36 @@ xsd:date rdf:type rdfs:Datatype .
                       <http://www.w3.org/2004/02/skos/core#definition> "How likely its source takes a link prediction to be right, between 0 and 1."@en .
 
 
-###  https://w3id.org/rdonto/link#preferenceRank
+###  https://w3id.org/rovo/link#preferenceRank
 :preferenceRank rdf:type owl:DatatypeProperty ,
                          owl:FunctionalProperty ;
                 rdfs:domain :Adaptation ;
                 rdfs:range xsd:integer ;
-                rdfs:comment "LK-10. Configuration: lower is preferred. The default rank of an adaptation; no two adaptations share one (RDOnto-link-shapes.ttl). The rank used for a degradation in a setup is that of the most specific AdaptationRankOverride (setup and degradation, then setup, then degradation), otherwise this default; where two adaptations then have the same rank, the one with the lower default is preferred. An adaptation is available when every condition it requires holds (requiresCondition). The recommended adaptation is the available one with the lowest rank that addresses the degradation."@en ;
+                rdfs:comment "LK-10. Configuration: lower is preferred. The default rank of an adaptation; no two adaptations share one (ROVO-link-shapes.ttl). The rank used for a degradation in a setup is that of the most specific AdaptationRankOverride (setup and degradation, then setup, then degradation), otherwise this default; where two adaptations then have the same rank, the one with the lower default is preferred. An adaptation is available when every condition it requires holds (requiresCondition). The recommended adaptation is the available one with the lowest rank that addresses the degradation."@en ;
                 rdfs:label "preference rank"@en ;
                 <http://www.w3.org/2004/02/skos/core#definition> "The default position of an adaptation in the order of preference; a lower number is preferred."@en .
 
 
-###  https://w3id.org/rdonto/link#requiredDataRate
+###  https://w3id.org/rovo/link#requiredDataRate
 :requiredDataRate rdf:type owl:DatatypeProperty ,
                            owl:FunctionalProperty ;
-                  rdfs:domain <https://w3id.org/rdonto/op#CameraView> ;
+                  rdfs:domain <https://w3id.org/rovo/op#CameraView> ;
                   rdfs:range xsd:decimal ;
                   <http://purl.org/dc/terms/source> "FE26" ,
                                                     "NE19b" ,
                                                     "SH21" ;
-                  rdfs:comment "LK-06. Configuration: the data rate, in Mbit/s, a camera view needs at its configured quality. The views the operator currently needs are the station's camera views (hasChannel) that are needed in the mode of the current engagement (viewNeededInMode), whether or not they are available right now; LK-06 compares the sum of their required rates with the available rate of the vehicle-to-station video streams. Only if no view of the station states a need for any mode are the available views (RDOnto-op:availableChannel) taken as the needed ones. So switching a needed view off does not make the data rate sufficient. SH21 allocates bitrate across camera views by their importance."@en ;
+                  rdfs:comment "LK-06. Configuration: the data rate, in Mbit/s, a camera view needs at its configured quality. The views the operator currently needs are the station's camera views (hasChannel) that are needed in the mode of the current engagement (viewNeededInMode), whether or not they are available right now; LK-06 compares the sum of their required rates with the available rate of the vehicle-to-station video streams. Only if no view of the station states a need for any mode are the available views (ROVO-op:availableChannel) taken as the needed ones. So switching a needed view off does not make the data rate sufficient. SH21 allocates bitrate across camera views by their importance."@en ;
                   rdfs:label "required data rate"@en ;
                   <http://www.w3.org/2004/02/skos/core#definition> "The data rate, in Mbit/s, that a camera view needs at its configured quality."@en .
 
 
-###  https://w3id.org/rdonto/link#sessionVehicle
+###  https://w3id.org/rovo/link#sessionVehicle
 :sessionVehicle rdf:type owl:DatatypeProperty ,
                          owl:FunctionalProperty ;
-                rdfs:range <https://w3id.org/rdonto/op#RemotelyOperatedVehicle> .
+                rdfs:range <https://w3id.org/rovo/op#RemotelyOperatedVehicle> .
 
 
-###  https://w3id.org/rdonto/link#setupVehicle
-:setupVehicle rdf:type owl:DatatypeProperty ;
-              rdfs:range <https://w3id.org/rdonto/op#RemotelyOperatedVehicle> .
-
-
-###  https://w3id.org/rdonto/link#upToSpeed
+###  https://w3id.org/rovo/link#upToSpeed
 :upToSpeed rdf:type owl:DatatypeProperty ,
                     owl:FunctionalProperty ;
            rdfs:range xsd:decimal ;
@@ -603,29 +604,29 @@ xsd:date rdf:type rdfs:Datatype .
            <http://www.w3.org/2004/02/skos/core#definition> "The highest vehicle speed, in km/h, at which a latency budget or a required lead time applies."@en .
 
 
-###  https://w3id.org/rdonto/link#validFrom
+###  https://w3id.org/rovo/link#validFrom
 :validFrom rdf:type owl:DatatypeProperty ,
                     owl:FunctionalProperty ;
            rdfs:domain :LinkPrediction ;
            rdfs:range xsd:dateTime ;
            <http://purl.org/dc/terms/source> "GA23" ,
                                              "KO21" ;
-           rdfs:comment "LK-08. The lead time of a prediction is validFrom minus its issue time (prov:generatedAtTime), which is compared with the RequiredLeadTime; a prediction is issued no later than its window starts (RDOnto-link-shapes.ttl). GA23 and KO21 call the time ahead the prediction horizon."@en ;
+           rdfs:comment "LK-08. The lead time of a prediction is validFrom minus its issue time (prov:generatedAtTime), which is compared with the RequiredLeadTime; a prediction is issued no later than its window starts (ROVO-link-shapes.ttl). GA23 and KO21 call the time ahead the prediction horizon."@en ;
            rdfs:label "valid from"@en ;
            <http://www.w3.org/2004/02/skos/core#definition> "The start of the future window that a link prediction holds for."@en .
 
 
-###  https://w3id.org/rdonto/link#validUntil
+###  https://w3id.org/rovo/link#validUntil
 :validUntil rdf:type owl:DatatypeProperty ,
                      owl:FunctionalProperty ;
             rdfs:domain :LinkPrediction ;
             rdfs:range xsd:dateTime ;
-            rdfs:comment "LK-08. After validFrom (RDOnto-link-shapes.ttl)."@en ;
+            rdfs:comment "LK-08. After validFrom (ROVO-link-shapes.ttl)."@en ;
             rdfs:label "valid until"@en ;
             <http://www.w3.org/2004/02/skos/core#definition> "The end of the future window that a link prediction holds for."@en .
 
 
-###  https://w3id.org/rdonto/link#wheelbase
+###  https://w3id.org/rovo/link#wheelbase
 :wheelbase rdf:type owl:DatatypeProperty ,
                     owl:FunctionalProperty ;
            rdfs:domain :TeleoperationSetup ;
@@ -636,7 +637,7 @@ xsd:date rdf:type rdfs:Datatype .
            <http://www.w3.org/2004/02/skos/core#definition> "The distance between the front and rear axles of the setup's vehicles, in metres."@en .
 
 
-###  https://w3id.org/rdonto/link#windowEnd
+###  https://w3id.org/rovo/link#windowEnd
 :windowEnd rdf:type owl:DatatypeProperty ,
                     owl:FunctionalProperty ;
            rdfs:domain :LatencyStatistic ;
@@ -646,7 +647,7 @@ xsd:date rdf:type rdfs:Datatype .
            <http://www.w3.org/2004/02/skos/core#definition> "The end of the time window that a latency statistic was computed over."@en .
 
 
-###  https://w3id.org/rdonto/link#windowStart
+###  https://w3id.org/rovo/link#windowStart
 :windowStart rdf:type owl:DatatypeProperty ,
                       owl:FunctionalProperty ;
              rdfs:domain :LatencyStatistic ;
@@ -688,32 +689,32 @@ xsd:dayTimeDuration rdf:type owl:Class .
 <http://www.w3.org/ns/sosa/Observation> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/link#Adaptation
+###  https://w3id.org/rovo/link#Adaptation
 :Adaptation rdf:type owl:Class ;
             <http://purl.org/dc/terms/source> "GA21b" ,
                                               "GA23" ,
                                               "NE19b" ,
                                               "SH21" ;
-            rdfs:comment "LK-10. Individuals follow the reactions in GA23 and the mitigations in NE19b; HandBackToOnBoardDriver follows from the context rule of RDOnto-op. Which are available depends on the vehicle and the engagement."@en ;
+            rdfs:comment "LK-10. Individuals follow the reactions in GA23 and the mitigations in NE19b; HandBackToOnBoardDriver follows from the context rule of ROVO-op. Which are available depends on the vehicle and the engagement."@en ;
             rdfs:label "adaptation"@en ;
             <http://www.w3.org/2004/02/skos/core#definition> "A reaction to a current or predicted link degradation."@en .
 
 
-###  https://w3id.org/rdonto/link#AdaptationRankOverride
+###  https://w3id.org/rovo/link#AdaptationRankOverride
 :AdaptationRankOverride rdf:type owl:Class ;
                         rdfs:comment "LK-10. Configuration: lets the preferred reaction differ per kind of problem and per setup, e.g. stopping first on connection loss, or rerouting first in a setup with alternative routes."@en ;
                         rdfs:label "adaptation rank override"@en ;
                         <http://www.w3.org/2004/02/skos/core#definition> "A preference rank for one adaptation that replaces its default rank for one degradation, one setup, or both."@en .
 
 
-###  https://w3id.org/rdonto/link#AvailabilityCondition
+###  https://w3id.org/rovo/link#AvailabilityCondition
 :AvailabilityCondition rdf:type owl:Class ;
                        rdfs:comment "LK-10. Which conditions an adaptation needs is asserted (requiresCondition), and each condition's definition says exactly what the query tests."@en ;
                        rdfs:label "availability condition"@en ;
                        <http://www.w3.org/2004/02/skos/core#definition> "A condition on the vehicle, the engagement or the link that must hold for an adaptation to be available."@en .
 
 
-###  https://w3id.org/rdonto/link#ConnectionLossPrediction
+###  https://w3id.org/rovo/link#ConnectionLossPrediction
 :ConnectionLossPrediction rdf:type owl:Class ;
                           rdfs:subClassOf :LinkPrediction ;
                           <http://purl.org/dc/terms/source> "BR26" ,
@@ -723,15 +724,15 @@ xsd:dayTimeDuration rdf:type owl:Class .
                           <http://www.w3.org/2004/02/skos/core#definition> "An expectation that the connection of a session will be lost during a future window."@en .
 
 
-###  https://w3id.org/rdonto/link#ConnectionTimeout
+###  https://w3id.org/rovo/link#ConnectionTimeout
 :ConnectionTimeout rdf:type owl:Class ;
-                   rdfs:subClassOf <https://w3id.org/rdonto/op#ConfiguredLimit> ;
-                   rdfs:comment "LK-07. Connection loss is an absence of data, so it is a closed-world check against this timeout in the stream layer. Rule: only content that is sent continuously (isContinuous true) is tested and has a timeout. A stream is silent when the time since its lastReceivedAt, or since the session's prov:startedAtTime if it has never received data, exceeds the timeout for its content; a content without a timeout is never silent. The connection of a session counts as lost (RDOnto-link:ConnectionLost) when at least one stream is silent whose content the mode of the session's open engagement needs (neededInMode, for the mode or a broader mode); if the session has no open engagement but has carried one, when any of its streams is silent. A session that has not yet carried an engagement is not tested: before the first engagement a stream may be silent by design, e.g. no control commands are sent. It is lost since the earliest last data of those silent streams. The loss is detected later, when the timeout of the first of them runs out."@en ;
+                   rdfs:subClassOf <https://w3id.org/rovo/op#ConfiguredLimit> ;
+                   rdfs:comment "LK-07. Connection loss is an absence of data, so it is a closed-world check against this timeout in the stream layer. Rule: only content that is sent continuously (isContinuous true) is tested and has a timeout. A stream is silent when the time since its lastReceivedAt, or since the session's prov:startedAtTime if it has never received data, exceeds the timeout for its content; a content without a timeout is never silent. The connection of a session counts as lost (ROVO-link:ConnectionLost) when at least one stream is silent whose content the mode of the session's open engagement needs (neededInMode, for the mode or a broader mode); if the session has no open engagement but has carried one, when any of its streams is silent. A session that has not yet carried an engagement is not tested: before the first engagement a stream may be silent by design, e.g. no control commands are sent. It is lost since the earliest last data of those silent streams. The loss is detected later, when the timeout of the first of them runs out."@en ;
                    rdfs:label "connection timeout"@en ;
                    <http://www.w3.org/2004/02/skos/core#definition> "How long a stream with a given content may stay without data before the connection counts as lost. Value as qudt:numericValue with qudt:unit unit:MilliSEC."@en .
 
 
-###  https://w3id.org/rdonto/link#DataRatePrediction
+###  https://w3id.org/rovo/link#DataRatePrediction
 :DataRatePrediction rdf:type owl:Class ;
                     rdfs:subClassOf :LinkPrediction ;
                     <http://purl.org/dc/terms/source> "BZ21" ,
@@ -741,56 +742,56 @@ xsd:dayTimeDuration rdf:type owl:Class .
                     <http://www.w3.org/2004/02/skos/core#definition> "The data rate expected to be available to the vehicle-to-station video streams of a session, taken together, over a future window."@en .
 
 
-###  https://w3id.org/rdonto/link#Degradation
+###  https://w3id.org/rovo/link#Degradation
 :Degradation rdf:type owl:Class ;
              rdfs:comment "LK-10."@en ;
              rdfs:label "degradation"@en ;
              <http://www.w3.org/2004/02/skos/core#definition> "A kind of link problem an adaptation can address."@en .
 
 
-###  https://w3id.org/rdonto/link#DeliveryDeadline
+###  https://w3id.org/rovo/link#DeliveryDeadline
 :DeliveryDeadline rdf:type owl:Class ;
-                  rdfs:subClassOf <https://w3id.org/rdonto/op#ConfiguredLimit> ;
+                  rdfs:subClassOf <https://w3id.org/rovo/op#ConfiguredLimit> ;
                   <http://purl.org/dc/terms/source> "FE26" ;
-                  rdfs:comment "LK-05. The deadline behind a deadline miss share. Delivered means: for a video or sensor feed, displayed at the station, counted from capture; for control commands or trajectory input, arrived at the vehicle, counted from the operator's input. RDOnto-link:forContent names the content. FE26 measured per-frame delay against a 100 ms deadline. Configuration linked to its source, like every limit."@en ;
+                  rdfs:comment "LK-05. The deadline behind a deadline miss share. Delivered means: for a video or sensor feed, displayed at the station, counted from capture; for control commands or trajectory input, arrived at the vehicle, counted from the operator's input. ROVO-link:forContent names the content. FE26 measured per-frame delay against a 100 ms deadline. Configuration linked to its source, like every limit."@en ;
                   rdfs:label "delivery deadline"@en ;
                   <http://www.w3.org/2004/02/skos/core#definition> "How long after it was produced a frame or command of a given content may be delivered and still count as on time. Value as qudt:numericValue with qudt:unit unit:MilliSEC."@en .
 
 
-###  https://w3id.org/rdonto/link#Direction
+###  https://w3id.org/rovo/link#Direction
 :Direction rdf:type owl:Class ;
            rdfs:comment "LK-02. Named by endpoint, because sources disagree on what uplink and downlink mean."@en ;
            rdfs:label "direction"@en ;
            <http://www.w3.org/2004/02/skos/core#definition> "The direction in which a stream flows, named by its endpoints: vehicle to station or station to vehicle."@en .
 
 
-###  https://w3id.org/rdonto/link#LatencyAgreementTolerance
+###  https://w3id.org/rovo/link#LatencyAgreementTolerance
 :LatencyAgreementTolerance rdf:type owl:Class ;
-                           rdfs:subClassOf <https://w3id.org/rdonto/op#ConfiguredLimit> ;
-                           rdfs:comment "LK-12. Each displayed scene is compared with the latest RDOnto-link:SensorLatency observation, at or before the scene's display time, of the session that carries the engagement the scene was shown in. A larger difference points to a wrong capture delay or unsynchronized clocks. May be scoped to a setup (appliesToSetup); a tolerance without a setup holds for every setup that has none of its own. A configuration parameter; no source gives a value."@en ;
+                           rdfs:subClassOf <https://w3id.org/rovo/op#ConfiguredLimit> ;
+                           rdfs:comment "LK-12. Each displayed scene is compared with the latest ROVO-link:SensorLatency observation, at or before the scene's display time, of the session that carries the engagement the scene was shown in. A larger difference points to a wrong capture delay or unsynchronized clocks. May be scoped to a setup (appliesToSetup); a tolerance without a setup holds for every setup that has none of its own. A configuration parameter; no source gives a value."@en ;
                            rdfs:label "latency agreement tolerance"@en ;
-                           <http://www.w3.org/2004/02/skos/core#definition> "The largest difference between the sensor latency measured for the link and the information age RDOnto-op computes for a displayed scene at which the two still count as agreeing. Value as qudt:numericValue with qudt:unit unit:MilliSEC."@en .
+                           <http://www.w3.org/2004/02/skos/core#definition> "The largest difference between the sensor latency measured for the link and the information age ROVO-op computes for a displayed scene at which the two still count as agreeing. Value as qudt:numericValue with qudt:unit unit:MilliSEC."@en .
 
 
-###  https://w3id.org/rdonto/link#LatencyBudget
+###  https://w3id.org/rovo/link#LatencyBudget
 :LatencyBudget rdf:type owl:Class ;
-               rdfs:subClassOf <https://w3id.org/rdonto/op#ConfiguredLimit> ;
+               rdfs:subClassOf <https://w3id.org/rovo/op#ConfiguredLimit> ;
                <http://purl.org/dc/terms/source> "GA21b" ,
                                                  "SC22" ;
-               rdfs:comment "LK-04 and LK-09. A reference budget: valid only for the setup it was measured or specified in (RDOnto-link:appliesToSetup), because published budgets are performance characteristics of particular setups [GA21b] and there is no standardization for ToD [SC22]. Which limits apply: take the limits of the session's setup for the mode of the open engagement, or failing that for its broader mode. Per latency part, the applicable budget is the one with the lowest upToSpeed at or above the current speed; a budget without upToSpeed covers every speed. (1) Each part with an applicable budget must be within it, and the sensor part within the setup's information age limit. (2) The budgets replace the travel tolerance only if they bound the end-to-end latency: an end-to-end budget, or an actuator budget together with an information age limit scoped to the setup. Otherwise the travel tolerance is checked as well. (3) If the setup has budgets of a part for the mode but the current speed is above every upToSpeed of them, the setup was not validated at that speed: the latency does not count as acceptable, and the admissible speed (LK-09) is at most the highest upToSpeed whose budget the latency meets. (4) A setup without any budget for the mode is judged by the travel tolerance alone. The vehicle-to-station part is RDOnto-op:InformationAgeLimit, scoped the same way, and is stated only in that form: a LatencyBudget covers the actuator latency or the end-to-end latency, never the sensor latency, so the check that a setup's limit is no looser than the mode's sees every vehicle-to-station budget."@en ;
+               rdfs:comment "LK-04 and LK-09. A reference budget: valid only for the setup it was measured or specified in (ROVO-link:appliesToSetup), because published budgets are performance characteristics of particular setups [GA21b] and there is no standardization for ToD [SC22]. Which limits apply: take the limits of the session's setup for the mode of the open engagement, or failing that for its broader mode. Per latency part, the applicable budget is the one with the lowest upToSpeed at or above the current speed; a budget without upToSpeed covers every speed. (1) Each part with an applicable budget must be within it, and the sensor part within the setup's information age limit. (2) The budgets replace the travel tolerance only if they bound the end-to-end latency: an end-to-end budget, or an actuator budget together with an information age limit scoped to the setup. Otherwise the travel tolerance is checked as well. (3) If the setup has budgets of a part for the mode but the current speed is above every upToSpeed of them, the setup was not validated at that speed: the latency does not count as acceptable, and the admissible speed (LK-09) is at most the highest upToSpeed whose budget the latency meets. (4) A setup without any budget for the mode is judged by the travel tolerance alone. The vehicle-to-station part is ROVO-op:InformationAgeLimit, scoped the same way, and is stated only in that form: a LatencyBudget covers the actuator latency or the end-to-end latency, never the sensor latency, so the check that a setup's limit is no looser than the mode's sees every vehicle-to-station budget."@en ;
                rdfs:label "latency budget"@en ;
                <http://www.w3.org/2004/02/skos/core#definition> "The largest acceptable value of a latency part in an operation mode, valid up to a vehicle speed. Value as qudt:numericValue with qudt:unit unit:MilliSEC."@en .
 
 
-###  https://w3id.org/rdonto/link#LatencyObservation
+###  https://w3id.org/rovo/link#LatencyObservation
 :LatencyObservation rdf:type owl:Class ;
                     rdfs:subClassOf <http://www.w3.org/ns/sosa/Observation> ;
                     rdfs:comment "LK-03. If no end-to-end value is measured directly, it is the sum of the latest sensor and actuator values."@en ;
                     rdfs:label "latency observation"@en ;
-                    <http://www.w3.org/2004/02/skos/core#definition> "A measurement of one latency part for a session: RDOnto-link:observedSession the session, sosa:observedProperty the latency part, sosa:hasSimpleResult the value as xsd:dayTimeDuration, sosa:resultTime when measured."@en .
+                    <http://www.w3.org/2004/02/skos/core#definition> "A measurement of one latency part for a session: ROVO-link:observedSession the session, sosa:observedProperty the latency part, sosa:hasSimpleResult the value as xsd:dayTimeDuration, sosa:resultTime when measured."@en .
 
 
-###  https://w3id.org/rdonto/link#LatencyPart
+###  https://w3id.org/rovo/link#LatencyPart
 :LatencyPart rdf:type owl:Class ;
              rdfs:subClassOf <http://www.w3.org/ns/sosa/ObservableProperty> ;
              <http://purl.org/dc/terms/source> "GF20" ;
@@ -799,7 +800,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
              <http://www.w3.org/2004/02/skos/core#definition> "A part of the end-to-end latency of a session that can be observed."@en .
 
 
-###  https://w3id.org/rdonto/link#LatencyPrediction
+###  https://w3id.org/rovo/link#LatencyPrediction
 :LatencyPrediction rdf:type owl:Class ;
                    rdfs:subClassOf :LinkPrediction ;
                    <http://purl.org/dc/terms/source> "BZ21" ,
@@ -810,34 +811,34 @@ xsd:dayTimeDuration rdf:type owl:Class .
                    <http://www.w3.org/2004/02/skos/core#definition> "An expected value of a latency part for a session over a future window, with an issue time (prov:generatedAtTime), a source (prov:wasAttributedTo) and a confidence."@en .
 
 
-###  https://w3id.org/rdonto/link#LatencyStatistic
+###  https://w3id.org/rovo/link#LatencyStatistic
 :LatencyStatistic rdf:type owl:Class ;
                   rdfs:subClassOf <http://www.w3.org/ns/sosa/Observation> ;
                   <http://purl.org/dc/terms/source> "FE26" ,
                                                     "JI25" ,
                                                     "NE19b" ;
-                  rdfs:comment "LK-05. RDOnto-link:observedSession is the session of a mean or standard deviation, sosa:hasFeatureOfInterest the stream of a deadline miss share; sosa:observedProperty the latency part a mean or standard deviation covers, which is required; RDOnto-link:statistic the kind; RDOnto-link:againstDeadline the deadline a deadline miss share was counted against; sosa:hasSimpleResult the value; windowStart and windowEnd the window. Packet loss appears here only as added delay or missed deadlines [JI25, FE26]."@en ;
+                  rdfs:comment "LK-05. ROVO-link:observedSession is the session of a mean or standard deviation, sosa:hasFeatureOfInterest the stream of a deadline miss share; sosa:observedProperty the latency part a mean or standard deviation covers, which is required; ROVO-link:statistic the kind; ROVO-link:againstDeadline the deadline a deadline miss share was counted against; sosa:hasSimpleResult the value; windowStart and windowEnd the window. Packet loss appears here only as added delay or missed deadlines [JI25, FE26]."@en ;
                   rdfs:label "latency statistic"@en ;
                   <http://www.w3.org/2004/02/skos/core#definition> "A statistic of a latency part or of deadline misses over a time window, computed in the stream layer."@en .
 
 
-###  https://w3id.org/rdonto/link#LatencyVariationLimit
+###  https://w3id.org/rovo/link#LatencyVariationLimit
 :LatencyVariationLimit rdf:type owl:Class ;
-                       rdfs:subClassOf <https://w3id.org/rdonto/op#ConfiguredLimit> ;
+                       rdfs:subClassOf <https://w3id.org/rovo/op#ConfiguredLimit> ;
                        <http://purl.org/dc/terms/source> "NE19b" ;
-                       rdfs:comment "LK-05, LK-10. The latency of a session is unstable (RDOnto-link:LatencyUnstable) when its latest standard deviation statistic of a latency part exceeds the limit for that part (budgetPart) in the mode of the session's open engagement, or in its broader mode. May be scoped to a setup (appliesToSetup); a limit of the session's setup is used before one without a setup. Deadline miss shares are recorded (LK-05) and do not decide this. A configuration parameter: NE19b states a jitter requirement for one setup, and no general limit is published."@en ;
+                       rdfs:comment "LK-05, LK-10. The latency of a session is unstable (ROVO-link:LatencyUnstable) when its latest standard deviation statistic of a latency part exceeds the limit for that part (budgetPart) in the mode of the session's open engagement, or in its broader mode. May be scoped to a setup (appliesToSetup); a limit of the session's setup is used before one without a setup. Deadline miss shares are recorded (LK-05) and do not decide this. A configuration parameter: NE19b states a jitter requirement for one setup, and no general limit is published."@en ;
                        rdfs:label "latency variation limit"@en ;
                        <http://www.w3.org/2004/02/skos/core#definition> "The largest standard deviation of a latency part over a window that is acceptable in an operation mode. Value as qudt:numericValue with qudt:unit unit:MilliSEC."@en .
 
 
-###  https://w3id.org/rdonto/link#LinkInformation
+###  https://w3id.org/rovo/link#LinkInformation
 :LinkInformation rdf:type owl:Class ;
                  rdfs:comment "LK-11."@en ;
                  rdfs:label "link information"@en ;
                  <http://www.w3.org/2004/02/skos/core#definition> "A kind of information about the link that a station can show the operator."@en .
 
 
-###  https://w3id.org/rdonto/link#LinkPrediction
+###  https://w3id.org/rovo/link#LinkPrediction
 :LinkPrediction rdf:type owl:Class ;
                 rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
                 <http://purl.org/dc/terms/source> "BZ21" ,
@@ -848,35 +849,35 @@ xsd:dayTimeDuration rdf:type owl:Class .
                 <http://www.w3.org/2004/02/skos/core#definition> "An expectation about the link of a session over a future window, with an issue time (prov:generatedAtTime), a source (prov:wasAttributedTo) and a confidence."@en .
 
 
-###  https://w3id.org/rdonto/link#LinkStateDisplay
+###  https://w3id.org/rovo/link#LinkStateDisplay
 :LinkStateDisplay rdf:type owl:Class ;
-                  rdfs:subClassOf <https://w3id.org/rdonto/op#InformationChannel> ;
+                  rdfs:subClassOf <https://w3id.org/rovo/op#InformationChannel> ;
                   <http://purl.org/dc/terms/source> "GA23" ,
                                                     "NE19" ;
-                  rdfs:comment "LK-11. O is shown the link state when a LinkStateDisplay is among the engagement's available channels (RDOnto-op:availableChannel); showsLinkInformation says what it shows. NE19 showed operators the latency level, grouped by colour and text; GA23 notifies the remote driver of predicted QoS changes."@en ;
+                  rdfs:comment "LK-11. O is shown the link state when a LinkStateDisplay is among the engagement's available channels (ROVO-op:availableChannel); showsLinkInformation says what it shows. NE19 showed operators the latency level, grouped by colour and text; GA23 notifies the remote driver of predicted QoS changes."@en ;
                   rdfs:label "link state display"@en ;
                   <http://www.w3.org/2004/02/skos/core#definition> "An information channel of the remote station that shows the operator the state of the link."@en .
 
 
-###  https://w3id.org/rdonto/link#MinimalRiskManoeuvre
+###  https://w3id.org/rovo/link#MinimalRiskManoeuvre
 :MinimalRiskManoeuvre rdf:type owl:Class ;
                       rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
                       <http://purl.org/dc/terms/source> "BR26" ,
                                                         "KO21" ;
-                      rdfs:comment "LK-07. Interface (RDOnto-todd). The stop of the adaptation RDOnto-link:SafeStop is such a manoeuvre: with the connection lost the vehicle performs it on its own; while the link still works the operator can start it (a remote intervention, see RDOnto-op:EventBasedRemoteDriving). BR26 argues that plain braking or a Level 2 function is not an acceptable fallback, and proposes a dedicated system designed solely to reach the minimal risk condition."@en ;
+                      rdfs:comment "LK-07. Interface (ROVO-todd). The stop of the adaptation ROVO-link:SafeStop is such a manoeuvre: with the connection lost the vehicle performs it on its own; while the link still works the operator can start it (a remote intervention, see ROVO-op:EventBasedRemoteDriving). BR26 argues that plain braking or a Level 2 function is not an acceptable fallback, and proposes a dedicated system designed solely to reach the minimal risk condition."@en ;
                       rdfs:label "minimal risk manoeuvre"@en ;
                       <http://www.w3.org/2004/02/skos/core#definition> "A manoeuvre that brings the vehicle to a minimal risk condition, performed by the vehicle on its own, e.g. after connection loss, or started by the operator."@en .
 
 
-###  https://w3id.org/rdonto/link#MinimalRiskManoeuvreKind
+###  https://w3id.org/rovo/link#MinimalRiskManoeuvreKind
 :MinimalRiskManoeuvreKind rdf:type owl:Class ;
                           <http://purl.org/dc/terms/source> "BR26" ;
-                          rdfs:comment "LK-07: the answer to 'which minimal risk manoeuvre has V started'. Interface (RDOnto-todd): the kinds a vehicle is capable of, and which one follows a connection loss, are decided there [BR26], so this module asserts no individuals."@en ;
+                          rdfs:comment "LK-07: the answer to 'which minimal risk manoeuvre has V started'. Interface (ROVO-todd): the kinds a vehicle is capable of, and which one follows a connection loss, are decided there [BR26], so this module asserts no individuals."@en ;
                           rdfs:label "minimal risk manoeuvre kind"@en ;
                           <http://www.w3.org/2004/02/skos/core#definition> "A kind of minimal risk manoeuvre a vehicle can perform, e.g. stopping in its lane or pulling over."@en .
 
 
-###  https://w3id.org/rdonto/link#PredictionSource
+###  https://w3id.org/rovo/link#PredictionSource
 :PredictionSource rdf:type owl:Class ;
                   rdfs:subClassOf <http://www.w3.org/ns/prov#Agent> ;
                   rdfs:comment "LK-08. Who or what issued a link prediction, e.g. network QoS analytics or an onboard or edge model [KO21, BZ21]."@en ;
@@ -884,16 +885,16 @@ xsd:dayTimeDuration rdf:type owl:Class .
                   <http://www.w3.org/2004/02/skos/core#definition> "An agent that issues link predictions, e.g. a network analytics function, or a prediction model on board the vehicle or at the network edge."@en .
 
 
-###  https://w3id.org/rdonto/link#RemoteStation
+###  https://w3id.org/rovo/link#RemoteStation
 :RemoteStation rdf:type owl:Class ;
-               rdfs:comment "LK-01, LK-06. A session has one station; moving to another station starts a new session. A station shows one vehicle at a time, so it has at most one open session (RDOnto-link-shapes.ttl): a desk at which an operator handles two vehicles at once, e.g. monitors one and assists another, is two stations. The station's channels (hasChannel) are therefore the channels for the vehicle of its open session."@en ;
+               rdfs:comment "LK-01, LK-06. A session has one station; moving to another station starts a new session. A station shows one vehicle at a time, so it has at most one open session (ROVO-link-shapes.ttl): a desk at which an operator handles two vehicles at once, e.g. monitors one and assists another, is two stations. The station's channels (hasChannel) are therefore the channels for the vehicle of its open session."@en ;
                rdfs:label "remote station"@en ;
                <http://www.w3.org/2004/02/skos/core#definition> "The workstation from which a remote operator monitors, assists or drives one vehicle at a time."@en .
 
 
-###  https://w3id.org/rdonto/link#RequiredLeadTime
+###  https://w3id.org/rovo/link#RequiredLeadTime
 :RequiredLeadTime rdf:type owl:Class ;
-                  rdfs:subClassOf <https://w3id.org/rdonto/op#ConfiguredLimit> ;
+                  rdfs:subClassOf <https://w3id.org/rovo/op#ConfiguredLimit> ;
                   <http://purl.org/dc/terms/source> "GA23" ,
                                                     "KO21" ;
                   rdfs:comment "LK-08. Which one applies: take the lead times for the mode of the session's open engagement, or failing that for its broader mode; among them, the one with the lowest upToSpeed at or above the current speed, where one without upToSpeed covers every speed. If the speed is above every upToSpeed, none applies and LK-08 lists the prediction without a judgement. GA23 defines the QoS prediction time horizon as the application reaction completion interval plus a guard interval; KO21 shows the needed horizon grows with speed."@en ;
@@ -901,21 +902,21 @@ xsd:dayTimeDuration rdf:type owl:Class .
                   <http://www.w3.org/2004/02/skos/core#definition> "The shortest time between a prediction's issue and the start of the predicted window that lets the vehicle react, in a mode and up to a speed. Value as qudt:numericValue with qudt:unit unit:SEC."@en .
 
 
-###  https://w3id.org/rdonto/link#RouteSegment
+###  https://w3id.org/rovo/link#RouteSegment
 :RouteSegment rdf:type owl:Class ;
               rdfs:comment "Interface (scene and criticality; ODD): declared here only so that a prediction can say where it applies (LK-08). The owning module describes the segment itself."@en ;
               rdfs:label "route segment"@en ;
               <http://www.w3.org/2004/02/skos/core#definition> "A part of the route planned for a vehicle."@en .
 
 
-###  https://w3id.org/rdonto/link#StatisticKind
+###  https://w3id.org/rovo/link#StatisticKind
 :StatisticKind rdf:type owl:Class ;
                rdfs:comment "LK-05. The kind of window statistic a LatencyStatistic gives."@en ;
                rdfs:label "statistic kind"@en ;
                <http://www.w3.org/2004/02/skos/core#definition> "A kind of statistic computed over a time window of a session's latency or of a stream's deliveries."@en .
 
 
-###  https://w3id.org/rdonto/link#Stream
+###  https://w3id.org/rovo/link#Stream
 :Stream rdf:type owl:Class ;
         <http://purl.org/dc/terms/source> "GA23" ;
         rdfs:comment "LK-02. Quality is a property of a stream in one direction, not of the link as a whole [GA23]."@en ;
@@ -923,7 +924,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
         <http://www.w3.org/2004/02/skos/core#definition> "One flow of data within a session, in one direction, with one kind of content."@en .
 
 
-###  https://w3id.org/rdonto/link#StreamContent
+###  https://w3id.org/rovo/link#StreamContent
 :StreamContent rdf:type owl:Class ;
                <http://purl.org/dc/terms/source> "GA23" ,
                                                  "NE19b" ;
@@ -932,27 +933,27 @@ xsd:dayTimeDuration rdf:type owl:Class .
                <http://www.w3.org/2004/02/skos/core#definition> "A kind of data that a stream carries between the vehicle and the remote station."@en .
 
 
-###  https://w3id.org/rdonto/link#TeleoperationSession
+###  https://w3id.org/rovo/link#TeleoperationSession
 :TeleoperationSession rdf:type owl:Class ;
                       rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
-                      rdfs:comment "LK-01. A session carries one or more RDOnto-op engagements in sequence, all by its one operator: a mode change starts a new engagement, while the session persists. An operator handover at the same station ends the session, even if the network connection stays up; the next operator's session follows it (RDOnto-link:followsSession). A move to another station also starts a new session, since sessionStation is functional; it can follow the earlier one in the same way. Link observations belong to the session. Connection loss does not end a session by itself: the session stays open while the station and the vehicle try to reconnect, and data arriving again continues it. It ends when prov:endedAtTime is set, by the station or the vehicle giving up or by a handover; a connection set up after that is a new session, which follows the ended one (RDOnto-link:followsSession)."@en ;
+                      rdfs:comment "LK-01. A session carries one or more ROVO-op engagements in sequence, all by its one operator: a mode change starts a new engagement, while the session persists. An operator handover at the same station ends the session, even if the network connection stays up; the next operator's session follows it (ROVO-link:followsSession). A move to another station also starts a new session, since sessionStation is functional; it can follow the earlier one in the same way. Link observations belong to the session. Connection loss does not end a session by itself: the session stays open while the station and the vehicle try to reconnect, and data arriving again continues it. It ends when prov:endedAtTime is set, by the station or the vehicle giving up or by a handover; a connection set up after that is a new session, which follows the ended one (ROVO-link:followsSession)."@en ;
                       rdfs:label "teleoperation session"@en ;
                       <http://www.w3.org/2004/02/skos/core#definition> "The period in which a remote station and a vehicle hold a connection, or try to restore it, with one remote operator at the station, from prov:startedAtTime to prov:endedAtTime."@en .
 
 
-###  https://w3id.org/rdonto/link#TeleoperationSetup
+###  https://w3id.org/rovo/link#TeleoperationSetup
 :TeleoperationSetup rdf:type owl:Class ;
                     <http://purl.org/dc/terms/source> "GA21b" ,
                                                       "JI25" ,
                                                       "SC22" ;
-                    rdfs:comment "LK-04, LK-09. Latency limits depend on the setup: vehicle geometry and dynamics [JI25], the precision the task needs [GA21b], and the station and interface. A setup names its operating environment and driving task with RDOnto-op's terms (setupEnvironment, setupTask); A setup can name the vehicles and stations it is valid for (setupVehicle, setupStation); a session may then use it only with one of them."@en ;
+                    rdfs:comment "LK-04, LK-09. Latency limits depend on the setup: vehicle geometry and dynamics [JI25], the precision the task needs [GA21b], and the station and interface. A setup names its operating environment and driving task with ROVO-op's terms (setupEnvironment, setupTask); A setup can name the vehicles and stations it is valid for (setupVehicle, setupStation); a session may then use it only with one of them."@en ;
                     rdfs:label "teleoperation setup"@en ;
                     <http://www.w3.org/2004/02/skos/core#definition> "A combination of vehicle, remote station and task context for which latency limits are configured, e.g. a passenger car in urban traffic, or a bus manoeuvring at a roadblock."@en .
 
 
-###  https://w3id.org/rdonto/link#TravelTolerance
+###  https://w3id.org/rovo/link#TravelTolerance
 :TravelTolerance rdf:type owl:Class ;
-                 rdfs:subClassOf <https://w3id.org/rdonto/op#ConfiguredLimit> ;
+                 rdfs:subClassOf <https://w3id.org/rovo/op#ConfiguredLimit> ;
                  <http://purl.org/dc/terms/source> "GA21b" ,
                                                    "JI25" ;
                  rdfs:comment "The primary latency criterion (LK-04, LK-09, LK-10). It follows the deviation of GA21b: the maximum distance the vehicle moves until the ToD operator command is executed, which is correlated with the precision of operation; GA21b plots maximum speed against maximum delay for a given deviation. JI25 shows that speed and latency have the same effect on stability through the dimensionless delay (speed x latency / wheelbase). Admissible speed = tolerance / end-to-end latency, and at most the setup's maximumDrivingSpeed; at zero latency it is that maximum."@en ;
@@ -960,136 +961,136 @@ xsd:dayTimeDuration rdf:type owl:Class .
                  <http://www.w3.org/2004/02/skos/core#definition> "The longest distance the vehicle may travel during the end-to-end latency, i.e. before an operator command takes effect, in a setup and mode. Value as qudt:numericValue with qudt:unit unit:M, or derived as dimensionlessDelayLimit times the setup's wheelbase."@en .
 
 
-###  https://w3id.org/rdonto/op#ActuatorLatencyLimit
-<https://w3id.org/rdonto/op#ActuatorLatencyLimit> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#ActuatorLatencyLimit
+<https://w3id.org/rovo/op#ActuatorLatencyLimit> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#CameraView
-<https://w3id.org/rdonto/op#CameraView> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#CameraView
+<https://w3id.org/rovo/op#CameraView> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#ConfiguredLimit
-<https://w3id.org/rdonto/op#ConfiguredLimit> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#ConfiguredLimit
+<https://w3id.org/rovo/op#ConfiguredLimit> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#Cue
-<https://w3id.org/rdonto/op#Cue> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#Cue
+<https://w3id.org/rovo/op#Cue> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#DisplayedScene
-<https://w3id.org/rdonto/op#DisplayedScene> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#DisplayedScene
+<https://w3id.org/rovo/op#DisplayedScene> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#DrivingTask
-<https://w3id.org/rdonto/op#DrivingTask> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#DrivingTask
+<https://w3id.org/rovo/op#DrivingTask> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#ElementStateChange
-<https://w3id.org/rdonto/op#ElementStateChange> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#ElementStateChange
+<https://w3id.org/rovo/op#ElementStateChange> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#Engagement
-<https://w3id.org/rdonto/op#Engagement> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#Engagement
+<https://w3id.org/rovo/op#Engagement> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#FallbackReadyPeriod
-<https://w3id.org/rdonto/op#FallbackReadyPeriod> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#FallbackReadyPeriod
+<https://w3id.org/rovo/op#FallbackReadyPeriod> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#Impairment
-<https://w3id.org/rdonto/op#Impairment> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#Impairment
+<https://w3id.org/rovo/op#Impairment> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#ImpairmentObservation
-<https://w3id.org/rdonto/op#ImpairmentObservation> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#ImpairmentObservation
+<https://w3id.org/rovo/op#ImpairmentObservation> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#InformationAgeLimit
-<https://w3id.org/rdonto/op#InformationAgeLimit> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#InformationAgeLimit
+<https://w3id.org/rovo/op#InformationAgeLimit> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#InformationChannel
-<https://w3id.org/rdonto/op#InformationChannel> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#InformationChannel
+<https://w3id.org/rovo/op#InformationChannel> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#LatencyChangeLimit
-<https://w3id.org/rdonto/op#LatencyChangeLimit> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#LatencyChangeLimit
+<https://w3id.org/rovo/op#LatencyChangeLimit> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#MinimumBreakLength
-<https://w3id.org/rdonto/op#MinimumBreakLength> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#MinimumBreakLength
+<https://w3id.org/rovo/op#MinimumBreakLength> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#OnBoardDriver
-<https://w3id.org/rdonto/op#OnBoardDriver> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#OnBoardDriver
+<https://w3id.org/rovo/op#OnBoardDriver> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#OperatingEnvironment
-<https://w3id.org/rdonto/op#OperatingEnvironment> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#OperatingEnvironment
+<https://w3id.org/rovo/op#OperatingEnvironment> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#OperationMode
-<https://w3id.org/rdonto/op#OperationMode> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#OperationMode
+<https://w3id.org/rovo/op#OperationMode> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#OperatorTask
-<https://w3id.org/rdonto/op#OperatorTask> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#OperatorTask
+<https://w3id.org/rovo/op#OperatorTask> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#PerceptionAssertion
-<https://w3id.org/rdonto/op#PerceptionAssertion> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#PerceptionAssertion
+<https://w3id.org/rovo/op#PerceptionAssertion> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#PerceptionConfidenceThreshold
-<https://w3id.org/rdonto/op#PerceptionConfidenceThreshold> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#PerceptionConfidenceThreshold
+<https://w3id.org/rovo/op#PerceptionConfidenceThreshold> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#RemoteOperator
-<https://w3id.org/rdonto/op#RemoteOperator> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#RemoteOperator
+<https://w3id.org/rovo/op#RemoteOperator> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#Request
-<https://w3id.org/rdonto/op#Request> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#Request
+<https://w3id.org/rovo/op#Request> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#RequestReason
-<https://w3id.org/rdonto/op#RequestReason> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#RequestReason
+<https://w3id.org/rovo/op#RequestReason> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#RequestType
-<https://w3id.org/rdonto/op#RequestType> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#RequestType
+<https://w3id.org/rovo/op#RequestType> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#SAEvidence
-<https://w3id.org/rdonto/op#SAEvidence> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#SAEvidence
+<https://w3id.org/rovo/op#SAEvidence> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#SARequirement
-<https://w3id.org/rdonto/op#SARequirement> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#SARequirement
+<https://w3id.org/rovo/op#SARequirement> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#SAType
-<https://w3id.org/rdonto/op#SAType> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#SAType
+<https://w3id.org/rovo/op#SAType> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#SensorFrame
-<https://w3id.org/rdonto/op#SensorFrame> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#SensorFrame
+<https://w3id.org/rovo/op#SensorFrame> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#TakeoverReason
-<https://w3id.org/rdonto/op#TakeoverReason> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#TakeoverReason
+<https://w3id.org/rovo/op#TakeoverReason> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#TimeOnTaskLimit
-<https://w3id.org/rdonto/op#TimeOnTaskLimit> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#TimeOnTaskLimit
+<https://w3id.org/rovo/op#TimeOnTaskLimit> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#WorkloadBand
-<https://w3id.org/rdonto/op#WorkloadBand> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#WorkloadBand
+<https://w3id.org/rovo/op#WorkloadBand> rdf:type owl:Class .
 
 
-###  https://w3id.org/rdonto/op#WorkloadEstimate
-<https://w3id.org/rdonto/op#WorkloadEstimate> rdf:type owl:Class .
+###  https://w3id.org/rovo/op#WorkloadEstimate
+<https://w3id.org/rovo/op#WorkloadEstimate> rdf:type owl:Class .
 
 
 #################################################################
@@ -1102,15 +1103,15 @@ xsd:dayTimeDuration rdf:type owl:Class .
                                rdfs:isDefinedBy <http://qudt.org/vocab/unit> .
 
 
-###  https://w3id.org/rdonto/link#ADSCanTakeOver
+###  https://w3id.org/rovo/link#ADSCanTakeOver
 :ADSCanTakeOver rdf:type owl:NamedIndividual ,
                          :AvailabilityCondition ;
                 rdfs:comment "LK-10. All three must be stated: a value that is absent is not known and does not meet the condition."@en ;
                 rdfs:label "ADS can take over"@en ;
-                <http://www.w3.org/2004/02/skos/core#definition> "The session's vehicle has an ADS (RDOnto-op:hasADS true) that is within its ODD (RDOnto-link:adsWithinODD true) and able to drive now (RDOnto-link:adsAbleToDrive true)."@en .
+                <http://www.w3.org/2004/02/skos/core#definition> "The session's vehicle has an ADS (ROVO-op:hasADS true) that is within its ODD (ROVO-link:adsWithinODD true) and able to drive now (ROVO-link:adsAbleToDrive true)."@en .
 
 
-###  https://w3id.org/rdonto/link#ActuatorLatency
+###  https://w3id.org/rovo/link#ActuatorLatency
 :ActuatorLatency rdf:type owl:NamedIndividual ,
                           :LatencyPart ;
                  <http://purl.org/dc/terms/source> "GF20" ;
@@ -1119,7 +1120,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                  <http://www.w3.org/2004/02/skos/core#definition> "From the operator's command at the station to the actuator response in the vehicle."@en .
 
 
-###  https://w3id.org/rdonto/link#AvailableDataRate
+###  https://w3id.org/rovo/link#AvailableDataRate
 :AvailableDataRate rdf:type owl:NamedIndividual ,
                             <http://www.w3.org/ns/sosa/ObservableProperty> ;
                    <http://purl.org/dc/terms/source> "FE26" ,
@@ -1130,7 +1131,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                    <http://www.w3.org/2004/02/skos/core#definition> "The data rate currently available to a stream, i.e. its share of what the link carries in its direction, in Mbit/s."@en .
 
 
-###  https://w3id.org/rdonto/link#ConnectionLost
+###  https://w3id.org/rovo/link#ConnectionLost
 :ConnectionLost rdf:type owl:NamedIndividual ,
                          :Degradation ;
                 <http://purl.org/dc/terms/source> "BR26" ,
@@ -1140,7 +1141,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                 <http://www.w3.org/2004/02/skos/core#definition> "A stream that the current mode needs, or any stream of a session whose engagements have all ended, has delivered no data for longer than its connection timeout."@en .
 
 
-###  https://w3id.org/rdonto/link#ConnectionStateShown
+###  https://w3id.org/rovo/link#ConnectionStateShown
 :ConnectionStateShown rdf:type owl:NamedIndividual ,
                                :LinkInformation ;
                       rdfs:comment "LK-11."@en ;
@@ -1148,23 +1149,23 @@ xsd:dayTimeDuration rdf:type owl:Class .
                       <http://www.w3.org/2004/02/skos/core#definition> "Whether the connection to the vehicle is up or lost."@en .
 
 
-###  https://w3id.org/rdonto/link#ContinueWithoutOperator
+###  https://w3id.org/rovo/link#ContinueWithoutOperator
 :ContinueWithoutOperator rdf:type owl:NamedIndividual ,
                                   :Adaptation ;
                          :addresses :ConnectionLost ;
                          :requiresCondition :ADSCanTakeOver ,
                                             :NotInRemoteDrivingMode ;
                          :preferenceRank 7 ;
-                         rdfs:comment "LK-10. For connection loss in remote monitoring or remote assistance, where the ADS and not the operator drives. Available only if the ADS is within its ODD and able to drive (RDOnto-link:ADSCanTakeOver): in remote assistance it is not while it waits for the answer to a request. No source states it; whether a vehicle may go on without its operator is a choice of the deployment and its regulation, and a rank override can put the stop first."@en ;
+                         rdfs:comment "LK-10. For connection loss in remote monitoring or remote assistance, where the ADS and not the operator drives. Available only if the ADS is within its ODD and able to drive (ROVO-link:ADSCanTakeOver): in remote assistance it is not while it waits for the answer to a request. No source states it; whether a vehicle may go on without its operator is a choice of the deployment and its regulation, and a rank override can put the stop first."@en ;
                          rdfs:label "continue without operator"@en ;
                          <http://www.w3.org/2004/02/skos/core#definition> "The vehicle's ADS keeps driving within its ODD although the operator who monitors or assists it can no longer be reached."@en .
 
 
-###  https://w3id.org/rdonto/link#ControlCommands
+###  https://w3id.org/rovo/link#ControlCommands
 :ControlCommands rdf:type owl:NamedIndividual ,
                           :StreamContent ;
                  :contentDirection :StationToVehicle ;
-                 :neededInMode <https://w3id.org/rdonto/op#RemoteDriving> ;
+                 :neededInMode <https://w3id.org/rovo/op#RemoteDriving> ;
                  :isContinuous "true"^^xsd:boolean ;
                  <http://purl.org/dc/terms/source> "GA21b" ,
                                                    "GA23" ,
@@ -1174,7 +1175,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                  <http://www.w3.org/2004/02/skos/core#definition> "The operator's driving commands (steering, throttle, brake), sent to the vehicle to be executed directly."@en .
 
 
-###  https://w3id.org/rdonto/link#DataRateInsufficient
+###  https://w3id.org/rovo/link#DataRateInsufficient
 :DataRateInsufficient rdf:type owl:NamedIndividual ,
                                :Degradation ;
                       rdfs:comment "LK-06, LK-10."@en ;
@@ -1182,7 +1183,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                       <http://www.w3.org/2004/02/skos/core#definition> "The data rate available from the vehicle to the station is, or is predicted to be, below what the needed camera views require."@en .
 
 
-###  https://w3id.org/rdonto/link#DeadlineMissShare
+###  https://w3id.org/rovo/link#DeadlineMissShare
 :DeadlineMissShare rdf:type owl:NamedIndividual ,
                             :StatisticKind ;
                    <http://purl.org/dc/terms/source> "FE26" ;
@@ -1191,7 +1192,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                    <http://www.w3.org/2004/02/skos/core#definition> "The share of the frames or commands of a stream, sent within the window, that arrived after their delivery deadline."@en .
 
 
-###  https://w3id.org/rdonto/link#EndToEndLatency
+###  https://w3id.org/rovo/link#EndToEndLatency
 :EndToEndLatency rdf:type owl:NamedIndividual ,
                           :LatencyPart ;
                  <http://purl.org/dc/terms/source> "GF20" ;
@@ -1200,7 +1201,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                  <http://www.w3.org/2004/02/skos/core#definition> "Sensor latency plus actuator latency, without the operator's reaction time."@en .
 
 
-###  https://w3id.org/rdonto/link#HandBackToADS
+###  https://w3id.org/rovo/link#HandBackToADS
 :HandBackToADS rdf:type owl:NamedIndividual ,
                         :Adaptation ;
                :addresses :ConnectionLost ,
@@ -1212,12 +1213,12 @@ xsd:dayTimeDuration rdf:type owl:Class .
                :preferenceRank 5 ;
                <http://purl.org/dc/terms/source> "BR26" ,
                                                  "GA23" ;
-               rdfs:comment "LK-10. Available only if the vehicle has an ADS that is within its ODD [BR26] and able to drive (RDOnto-link:ADSCanTakeOver): not, e.g., while the failure that made it ask for the takeover lasts."@en ;
+               rdfs:comment "LK-10. Available only if the vehicle has an ADS that is within its ODD [BR26] and able to drive (ROVO-link:ADSCanTakeOver): not, e.g., while the failure that made it ask for the takeover lasts."@en ;
                rdfs:label "hand back to ADS"@en ;
                <http://www.w3.org/2004/02/skos/core#definition> "Returning the DDT to the vehicle's ADS and ending remote driving."@en .
 
 
-###  https://w3id.org/rdonto/link#HandBackToOnBoardDriver
+###  https://w3id.org/rovo/link#HandBackToOnBoardDriver
 :HandBackToOnBoardDriver rdf:type owl:NamedIndividual ,
                                   :Adaptation ;
                          :addresses :ConnectionLost ,
@@ -1226,20 +1227,20 @@ xsd:dayTimeDuration rdf:type owl:Class .
                                     :LatencyUnstable ;
                          :requiresCondition :OnBoardDriverCanTakeOver ;
                          :preferenceRank 6 ;
-                         rdfs:comment "LK-10. Available only if the open engagement of the session took over from an on-board driver (RDOnto-op:takenOverFrom) who is able to take control back (RDOnto-op:ableToTakeOver true): event-based remote driving, with or without an ADS."@en ;
+                         rdfs:comment "LK-10. Available only if the open engagement of the session took over from an on-board driver (ROVO-op:takenOverFrom) who is able to take control back (ROVO-op:ableToTakeOver true): event-based remote driving, with or without an ADS."@en ;
                          rdfs:label "hand back to on-board driver"@en ;
                          <http://www.w3.org/2004/02/skos/core#definition> "Returning the DDT to the on-board driver from whom the operator took over."@en .
 
 
-###  https://w3id.org/rdonto/link#InRemoteDrivingMode
+###  https://w3id.org/rovo/link#InRemoteDrivingMode
 :InRemoteDrivingMode rdf:type owl:NamedIndividual ,
                               :AvailabilityCondition ;
                      rdfs:comment "LK-10. Required by the adaptations the operator carries out as the driver, or that end remote driving."@en ;
                      rdfs:label "in a remote driving mode"@en ;
-                     <http://www.w3.org/2004/02/skos/core#definition> "The open engagement of the session is in a mode with RDOnto-op:isRemoteDrivingMode true."@en .
+                     <http://www.w3.org/2004/02/skos/core#definition> "The open engagement of the session is in a mode with ROVO-op:isRemoteDrivingMode true."@en .
 
 
-###  https://w3id.org/rdonto/link#LatencyLevelShown
+###  https://w3id.org/rovo/link#LatencyLevelShown
 :LatencyLevelShown rdf:type owl:NamedIndividual ,
                             :LinkInformation ;
                    <http://purl.org/dc/terms/source> "NE19" ;
@@ -1248,7 +1249,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                    <http://www.w3.org/2004/02/skos/core#definition> "The current level of the latency, e.g. as a value or as a class such as low, medium or high."@en .
 
 
-###  https://w3id.org/rdonto/link#LatencyOverBudget
+###  https://w3id.org/rovo/link#LatencyOverBudget
 :LatencyOverBudget rdf:type owl:NamedIndividual ,
                             :Degradation ;
                    rdfs:comment "LK-04, LK-08, LK-10. The result of the check described on LatencyBudget and TravelTolerance, for the measured or a predicted latency."@en ;
@@ -1256,7 +1257,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                    <http://www.w3.org/2004/02/skos/core#definition> "The end-to-end latency, or a part of it, is or is predicted to be above what is acceptable for the setup, mode and speed."@en .
 
 
-###  https://w3id.org/rdonto/link#LatencyUnstable
+###  https://w3id.org/rovo/link#LatencyUnstable
 :LatencyUnstable rdf:type owl:NamedIndividual ,
                           :Degradation ;
                  rdfs:comment "LK-05, LK-10. The rule is on LatencyVariationLimit."@en ;
@@ -1264,7 +1265,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                  <http://www.w3.org/2004/02/skos/core#definition> "The standard deviation of a latency part is above the latency variation limit for the mode, even where the mean latency is within budget."@en .
 
 
-###  https://w3id.org/rdonto/link#Mean
+###  https://w3id.org/rovo/link#Mean
 :Mean rdf:type owl:NamedIndividual ,
                :StatisticKind ;
       rdfs:comment "LK-05. A duration; says which latency part it covers (sosa:observedProperty)."@en ;
@@ -1272,7 +1273,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
       <http://www.w3.org/2004/02/skos/core#definition> "The arithmetic mean of the values of a latency part over the window."@en .
 
 
-###  https://w3id.org/rdonto/link#MinimumVideoRateAvailable
+###  https://w3id.org/rovo/link#MinimumVideoRateAvailable
 :MinimumVideoRateAvailable rdf:type owl:NamedIndividual ,
                                     :AvailabilityCondition ;
                            rdfs:comment "LK-06, LK-10."@en ;
@@ -1280,23 +1281,23 @@ xsd:dayTimeDuration rdf:type owl:Class .
                            <http://www.w3.org/2004/02/skos/core#definition> "The available data rate from the vehicle to the station is at least the sum of the minimumDataRate of the camera views needed in the current mode, so lowering the video quality can help; views without that value count with their requiredDataRate."@en .
 
 
-###  https://w3id.org/rdonto/link#NotInRemoteDrivingMode
+###  https://w3id.org/rovo/link#NotInRemoteDrivingMode
 :NotInRemoteDrivingMode rdf:type owl:NamedIndividual ,
                                  :AvailabilityCondition ;
                         rdfs:comment "LK-10. Does not hold for a session without an open engagement."@en ;
                         rdfs:label "not in a remote driving mode"@en ;
-                        <http://www.w3.org/2004/02/skos/core#definition> "The open engagement of the session is in a mode with RDOnto-op:isRemoteDrivingMode false: remote monitoring or remote assistance."@en .
+                        <http://www.w3.org/2004/02/skos/core#definition> "The open engagement of the session is in a mode with ROVO-op:isRemoteDrivingMode false: remote monitoring or remote assistance."@en .
 
 
-###  https://w3id.org/rdonto/link#OnBoardDriverCanTakeOver
+###  https://w3id.org/rovo/link#OnBoardDriverCanTakeOver
 :OnBoardDriverCanTakeOver rdf:type owl:NamedIndividual ,
                                    :AvailabilityCondition ;
                           rdfs:comment "LK-10. A driver who does not state ableToTakeOver does not meet the condition."@en ;
                           rdfs:label "on-board driver can take over"@en ;
-                          <http://www.w3.org/2004/02/skos/core#definition> "The open engagement of the session took over from an on-board driver (RDOnto-op:takenOverFrom) who is able to take control back now (RDOnto-op:ableToTakeOver true)."@en .
+                          <http://www.w3.org/2004/02/skos/core#definition> "The open engagement of the session took over from an on-board driver (ROVO-op:takenOverFrom) who is able to take control back now (ROVO-op:ableToTakeOver true)."@en .
 
 
-###  https://w3id.org/rdonto/link#PredictedDegradationShown
+###  https://w3id.org/rovo/link#PredictedDegradationShown
 :PredictedDegradationShown rdf:type owl:NamedIndividual ,
                                     :LinkInformation ;
                            <http://purl.org/dc/terms/source> "GA23" ;
@@ -1305,11 +1306,11 @@ xsd:dayTimeDuration rdf:type owl:Class .
                            <http://www.w3.org/2004/02/skos/core#definition> "A warning that the link is predicted to degrade, shown before it does."@en .
 
 
-###  https://w3id.org/rdonto/link#ProposedTrajectory
+###  https://w3id.org/rovo/link#ProposedTrajectory
 :ProposedTrajectory rdf:type owl:NamedIndividual ,
                              :StreamContent ;
                     :contentDirection :VehicleToStation ;
-                    :neededInMode <https://w3id.org/rdonto/op#RemoteAssistance> ;
+                    :neededInMode <https://w3id.org/rovo/op#RemoteAssistance> ;
                     :isContinuous "false"^^xsd:boolean ;
                     <http://purl.org/dc/terms/source> "BR26" ;
                     rdfs:comment "LK-02. The direction opposite to Trajectory. BR26: in remote assistance the ADS can give 'maneuver options to the technical supervisor', and 'the main reason for providing these trajectories to the operator is to enable supervision and stopping of the vehicle'. Kept apart from Trajectory so that a stream's content fixes its direction (contentDirection)."@en ;
@@ -1317,7 +1318,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                     <http://www.w3.org/2004/02/skos/core#definition> "A route, path or trajectory that the vehicle's automation proposes, sent to the station for the operator to approve, reject or change."@en .
 
 
-###  https://w3id.org/rdonto/link#ReduceSpeed
+###  https://w3id.org/rovo/link#ReduceSpeed
 :ReduceSpeed rdf:type owl:NamedIndividual ,
                       :Adaptation ;
              :addresses :DataRateInsufficient ,
@@ -1336,7 +1337,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
              <http://www.w3.org/2004/02/skos/core#definition> "The operator driving more slowly, so that the vehicle travels less far during the latency."@en .
 
 
-###  https://w3id.org/rdonto/link#ReduceVideoQuality
+###  https://w3id.org/rovo/link#ReduceVideoQuality
 :ReduceVideoQuality rdf:type owl:NamedIndividual ,
                              :Adaptation ;
                     :addresses :DataRateInsufficient ,
@@ -1351,7 +1352,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                     <http://www.w3.org/2004/02/skos/core#definition> "Lowering the resolution, frame rate or bitrate of the video, or switching off camera views, so that the video needs less data rate."@en .
 
 
-###  https://w3id.org/rdonto/link#Reroute
+###  https://w3id.org/rovo/link#Reroute
 :Reroute rdf:type owl:NamedIndividual ,
                   :Adaptation ;
          :addresses :DataRateInsufficient ,
@@ -1365,7 +1366,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
          <http://www.w3.org/2004/02/skos/core#definition> "Changing the planned route to one with better expected link quality."@en .
 
 
-###  https://w3id.org/rdonto/link#SafeStop
+###  https://w3id.org/rovo/link#SafeStop
 :SafeStop rdf:type owl:NamedIndividual ,
                    :Adaptation ;
           :addresses :ConnectionLost ,
@@ -1381,7 +1382,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
           <http://www.w3.org/2004/02/skos/core#definition> "Bringing the vehicle to a stop in a minimal risk condition, by a minimal risk manoeuvre."@en .
 
 
-###  https://w3id.org/rdonto/link#SensorFeed
+###  https://w3id.org/rovo/link#SensorFeed
 :SensorFeed rdf:type owl:NamedIndividual ,
                      :StreamContent ;
             :contentDirection :VehicleToStation ;
@@ -1392,16 +1393,16 @@ xsd:dayTimeDuration rdf:type owl:Class .
             <http://www.w3.org/2004/02/skos/core#definition> "Data from the vehicle's other sensors or from its perception, such as lidar points or detected objects, sent to the station."@en .
 
 
-###  https://w3id.org/rdonto/link#SensorLatency
+###  https://w3id.org/rovo/link#SensorLatency
 :SensorLatency rdf:type owl:NamedIndividual ,
                         :LatencyPart ;
                <http://purl.org/dc/terms/source> "GF20" ;
                rdfs:comment "LK-03, LK-12."@en ;
                rdfs:label "sensor latency"@en ;
-               <http://www.w3.org/2004/02/skos/core#definition> "From an event in front of the vehicle's sensors to its display at the station (glass-to-glass). The same quantity as RDOnto-op information age."@en .
+               <http://www.w3.org/2004/02/skos/core#definition> "From an event in front of the vehicle's sensors to its display at the station (glass-to-glass). The same quantity as ROVO-op information age."@en .
 
 
-###  https://w3id.org/rdonto/link#SpeedAboveMinimum
+###  https://w3id.org/rovo/link#SpeedAboveMinimum
 :SpeedAboveMinimum rdf:type owl:NamedIndividual ,
                             :AvailabilityCondition ;
                    rdfs:comment "LK-10."@en ;
@@ -1409,7 +1410,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                    <http://www.w3.org/2004/02/skos/core#definition> "The vehicle's current speed is above the minimumDrivingSpeed of the session's setup; a setup without that value always meets the condition."@en .
 
 
-###  https://w3id.org/rdonto/link#StandardDeviation
+###  https://w3id.org/rovo/link#StandardDeviation
 :StandardDeviation rdf:type owl:NamedIndividual ,
                             :StatisticKind ;
                    <http://purl.org/dc/terms/source> "NE19b" ;
@@ -1418,7 +1419,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                    <http://www.w3.org/2004/02/skos/core#definition> "The standard deviation of the values of a latency part over the window, as a measure of how much the latency varies."@en .
 
 
-###  https://w3id.org/rdonto/link#StationToVehicle
+###  https://w3id.org/rovo/link#StationToVehicle
 :StationToVehicle rdf:type owl:NamedIndividual ,
                            :Direction ;
                   <http://purl.org/dc/terms/source> "FE26" ,
@@ -1429,7 +1430,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
                   <http://www.w3.org/2004/02/skos/core#definition> "From the remote station to the vehicle: the direction of what the operator commands or provides."@en .
 
 
-###  https://w3id.org/rdonto/link#SwitchToRemoteAssistance
+###  https://w3id.org/rovo/link#SwitchToRemoteAssistance
 :SwitchToRemoteAssistance rdf:type owl:NamedIndividual ,
                                    :Adaptation ;
                           :addresses :DataRateInsufficient ,
@@ -1440,16 +1441,16 @@ xsd:dayTimeDuration rdf:type owl:Class .
                                              :VehicleSupportsRemoteAssistance ;
                           :preferenceRank 4 ;
                           <http://purl.org/dc/terms/source> "BR26" ;
-                          rdfs:comment "LK-10. Available only if the vehicle supports RDOnto-op:RemoteAssistance and its ADS is within its ODD and able to drive (RDOnto-link:ADSCanTakeOver): remote assistance is advice to an ADS-equipped vehicle that is within its ODD (RDOnto-op:RemoteAssistance), and in event-based remote driving the ADS has often left its ODD [BR26]."@en ;
+                          rdfs:comment "LK-10. Available only if the vehicle supports ROVO-op:RemoteAssistance and its ADS is within its ODD and able to drive (ROVO-link:ADSCanTakeOver): remote assistance is advice to an ADS-equipped vehicle that is within its ODD (ROVO-op:RemoteAssistance), and in event-based remote driving the ADS has often left its ODD [BR26]."@en ;
                           rdfs:label "switch to remote assistance"@en ;
                           <http://www.w3.org/2004/02/skos/core#definition> "Ending remote driving and continuing in remote assistance, in which the ADS drives and the operator only advises."@en .
 
 
-###  https://w3id.org/rdonto/link#Trajectory
+###  https://w3id.org/rovo/link#Trajectory
 :Trajectory rdf:type owl:NamedIndividual ,
                      :StreamContent ;
             :contentDirection :StationToVehicle ;
-            :neededInMode <https://w3id.org/rdonto/op#RemoteAssistance> ;
+            :neededInMode <https://w3id.org/rovo/op#RemoteAssistance> ;
             :isContinuous "false"^^xsd:boolean ;
             <http://purl.org/dc/terms/source> "GA21b" ;
             rdfs:comment "LK-02. Indirect Control ToD: the vehicle performs the DDT 'following the route and/or pathway information provided by the ToD operator' [GA21b]."@en ;
@@ -1457,7 +1458,7 @@ xsd:dayTimeDuration rdf:type owl:Class .
             <http://www.w3.org/2004/02/skos/core#definition> "A route, path or trajectory that the operator provides or authorizes, sent to the vehicle for its automation to follow."@en .
 
 
-###  https://w3id.org/rdonto/link#VehicleSpeed
+###  https://w3id.org/rovo/link#VehicleSpeed
 :VehicleSpeed rdf:type owl:NamedIndividual ,
                        <http://www.w3.org/ns/sosa/ObservableProperty> ;
               rdfs:comment "LK-04, LK-08, LK-09, LK-10. Interface (vehicle state, VSS Vehicle.Speed). Observed with sosa:hasFeatureOfInterest the vehicle and sosa:hasSimpleResult in km/h."@en ;
@@ -1465,15 +1466,15 @@ xsd:dayTimeDuration rdf:type owl:Class .
               <http://www.w3.org/2004/02/skos/core#definition> "The speed at which a vehicle is currently moving, in km/h."@en .
 
 
-###  https://w3id.org/rdonto/link#VehicleSupportsRemoteAssistance
+###  https://w3id.org/rovo/link#VehicleSupportsRemoteAssistance
 :VehicleSupportsRemoteAssistance rdf:type owl:NamedIndividual ,
                                           :AvailabilityCondition ;
                                  rdfs:comment "LK-10."@en ;
                                  rdfs:label "vehicle supports remote assistance"@en ;
-                                 <http://www.w3.org/2004/02/skos/core#definition> "The session's vehicle has RDOnto-op:supportsMode RDOnto-op:RemoteAssistance."@en .
+                                 <http://www.w3.org/2004/02/skos/core#definition> "The session's vehicle has ROVO-op:supportsMode ROVO-op:RemoteAssistance."@en .
 
 
-###  https://w3id.org/rdonto/link#VehicleToStation
+###  https://w3id.org/rovo/link#VehicleToStation
 :VehicleToStation rdf:type owl:NamedIndividual ,
                            :Direction ;
                   <http://purl.org/dc/terms/source> "FE26" ,
@@ -1484,13 +1485,13 @@ xsd:dayTimeDuration rdf:type owl:Class .
                   <http://www.w3.org/2004/02/skos/core#definition> "From the vehicle to the remote station: the direction of what the vehicle senses and reports."@en .
 
 
-###  https://w3id.org/rdonto/link#VideoFeed
+###  https://w3id.org/rovo/link#VideoFeed
 :VideoFeed rdf:type owl:NamedIndividual ,
                     :StreamContent ;
            :contentDirection :VehicleToStation ;
-           :neededInMode <https://w3id.org/rdonto/op#RemoteAssistance> ,
-                         <https://w3id.org/rdonto/op#RemoteDriving> ,
-                         <https://w3id.org/rdonto/op#RemoteMonitoring> ;
+           :neededInMode <https://w3id.org/rovo/op#RemoteAssistance> ,
+                         <https://w3id.org/rovo/op#RemoteDriving> ,
+                         <https://w3id.org/rovo/op#RemoteMonitoring> ;
            :isContinuous "true"^^xsd:boolean ;
            <http://purl.org/dc/terms/source> "GA23" ,
                                              "NE19b" ;
@@ -1499,35 +1500,35 @@ xsd:dayTimeDuration rdf:type owl:Class .
            <http://www.w3.org/2004/02/skos/core#definition> "Camera images from the vehicle, sent to the station to be displayed to the operator."@en .
 
 
-###  https://w3id.org/rdonto/op#RemoteAssistance
-<https://w3id.org/rdonto/op#RemoteAssistance> rdf:type owl:NamedIndividual .
+###  https://w3id.org/rovo/op#RemoteAssistance
+<https://w3id.org/rovo/op#RemoteAssistance> rdf:type owl:NamedIndividual .
 
 
-###  https://w3id.org/rdonto/op#RemoteDriving
-<https://w3id.org/rdonto/op#RemoteDriving> rdf:type owl:NamedIndividual .
+###  https://w3id.org/rovo/op#RemoteDriving
+<https://w3id.org/rovo/op#RemoteDriving> rdf:type owl:NamedIndividual .
 
 
-###  https://w3id.org/rdonto/op#RemoteMonitoring
-<https://w3id.org/rdonto/op#RemoteMonitoring> rdf:type owl:NamedIndividual .
+###  https://w3id.org/rovo/op#RemoteMonitoring
+<https://w3id.org/rovo/op#RemoteMonitoring> rdf:type owl:NamedIndividual .
 
 
 #################################################################
 #    Annotations
 #################################################################
 
+:performedBy rdfs:comment "LK-07. Where the manoeuvre names a session (duringSession), this is that session's vehicle (ROVO-link-shapes.ttl)."@en ;
+             rdfs:label "performed by"@en ;
+             <http://www.w3.org/2004/02/skos/core#definition> "The vehicle that performs a minimal risk manoeuvre."@en .
+
+
 :predictedValue rdfs:comment "LK-08, LK-09. Compared with the limits as a measured latency is; with it, LK-09 gives the admissible speed for the predicted latency."@en ;
                 rdfs:label "predicted value"@en ;
                 <http://www.w3.org/2004/02/skos/core#definition> "The latency expected over the window of a latency prediction, as a duration."@en .
 
 
-:sessionVehicle rdfs:comment "LK-01. A session has exactly one, and a vehicle has at most one open session at a time (RDOnto-link-shapes.ttl)."@en ;
+:sessionVehicle rdfs:comment "LK-01. A session has exactly one, and a vehicle has at most one open session at a time (ROVO-link-shapes.ttl)."@en ;
                 rdfs:label "session vehicle"@en ;
                 <http://www.w3.org/2004/02/skos/core#definition> "The vehicle that a teleoperation session connects to the remote station."@en .
-
-
-:setupVehicle rdfs:comment "LK-04. A setup can name several, e.g. a fleet of one model. A session that uses the setup must have one of them as its vehicle, where the setup names any (RDOnto-link-shapes.ttl)."@en ;
-              rdfs:label "setup vehicle"@en ;
-              <http://www.w3.org/2004/02/skos/core#definition> "A vehicle that the limits of a teleoperation setup were configured for."@en .
 
 
 #################################################################
@@ -1553,31 +1554,31 @@ xsd:dayTimeDuration rdf:type owl:Class .
                 :StreamContent
                 :TeleoperationSession
                 :TeleoperationSetup
-                <https://w3id.org/rdonto/op#ConfiguredLimit>
-                <https://w3id.org/rdonto/op#Cue>
-                <https://w3id.org/rdonto/op#DisplayedScene>
-                <https://w3id.org/rdonto/op#DrivingTask>
-                <https://w3id.org/rdonto/op#ElementStateChange>
-                <https://w3id.org/rdonto/op#Engagement>
-                <https://w3id.org/rdonto/op#FallbackReadyPeriod>
-                <https://w3id.org/rdonto/op#Impairment>
-                <https://w3id.org/rdonto/op#ImpairmentObservation>
-                <https://w3id.org/rdonto/op#InformationChannel>
-                <https://w3id.org/rdonto/op#OnBoardDriver>
-                <https://w3id.org/rdonto/op#OperatingEnvironment>
-                <https://w3id.org/rdonto/op#OperationMode>
-                <https://w3id.org/rdonto/op#OperatorTask>
-                <https://w3id.org/rdonto/op#PerceptionAssertion>
-                <https://w3id.org/rdonto/op#RemoteOperator>
-                <https://w3id.org/rdonto/op#RemotelyOperatedVehicle>
-                <https://w3id.org/rdonto/op#Request>
-                <https://w3id.org/rdonto/op#RequestReason>
-                <https://w3id.org/rdonto/op#RequestType>
-                <https://w3id.org/rdonto/op#SAEvidence>
-                <https://w3id.org/rdonto/op#SAType>
-                <https://w3id.org/rdonto/op#SensorFrame>
-                <https://w3id.org/rdonto/op#TakeoverReason>
-                <https://w3id.org/rdonto/op#WorkloadEstimate>
+                <https://w3id.org/rovo/op#ConfiguredLimit>
+                <https://w3id.org/rovo/op#Cue>
+                <https://w3id.org/rovo/op#DisplayedScene>
+                <https://w3id.org/rovo/op#DrivingTask>
+                <https://w3id.org/rovo/op#ElementStateChange>
+                <https://w3id.org/rovo/op#Engagement>
+                <https://w3id.org/rovo/op#FallbackReadyPeriod>
+                <https://w3id.org/rovo/op#Impairment>
+                <https://w3id.org/rovo/op#ImpairmentObservation>
+                <https://w3id.org/rovo/op#InformationChannel>
+                <https://w3id.org/rovo/op#OnBoardDriver>
+                <https://w3id.org/rovo/op#OperatingEnvironment>
+                <https://w3id.org/rovo/op#OperationMode>
+                <https://w3id.org/rovo/op#OperatorTask>
+                <https://w3id.org/rovo/op#PerceptionAssertion>
+                <https://w3id.org/rovo/op#RemoteOperator>
+                <https://w3id.org/rovo/op#RemotelyOperatedVehicle>
+                <https://w3id.org/rovo/op#Request>
+                <https://w3id.org/rovo/op#RequestReason>
+                <https://w3id.org/rovo/op#RequestType>
+                <https://w3id.org/rovo/op#SAEvidence>
+                <https://w3id.org/rovo/op#SAType>
+                <https://w3id.org/rovo/op#SensorFrame>
+                <https://w3id.org/rovo/op#TakeoverReason>
+                <https://w3id.org/rovo/op#WorkloadEstimate>
               )
 ] .
 
@@ -1598,14 +1599,14 @@ xsd:dayTimeDuration rdf:type owl:Class .
                 :LatencyVariationLimit
                 :RequiredLeadTime
                 :TravelTolerance
-                <https://w3id.org/rdonto/op#ActuatorLatencyLimit>
-                <https://w3id.org/rdonto/op#InformationAgeLimit>
-                <https://w3id.org/rdonto/op#LatencyChangeLimit>
-                <https://w3id.org/rdonto/op#MinimumBreakLength>
-                <https://w3id.org/rdonto/op#PerceptionConfidenceThreshold>
-                <https://w3id.org/rdonto/op#SARequirement>
-                <https://w3id.org/rdonto/op#TimeOnTaskLimit>
-                <https://w3id.org/rdonto/op#WorkloadBand>
+                <https://w3id.org/rovo/op#ActuatorLatencyLimit>
+                <https://w3id.org/rovo/op#InformationAgeLimit>
+                <https://w3id.org/rovo/op#LatencyChangeLimit>
+                <https://w3id.org/rovo/op#MinimumBreakLength>
+                <https://w3id.org/rovo/op#PerceptionConfidenceThreshold>
+                <https://w3id.org/rovo/op#SARequirement>
+                <https://w3id.org/rovo/op#TimeOnTaskLimit>
+                <https://w3id.org/rovo/op#WorkloadBand>
               )
 ] .
 

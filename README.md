@@ -1,18 +1,18 @@
-# RDOnto: Remote Driving Ontology
+# R.O.V.O: Remote Operation of Vehicles Ontology
 
-RDOnto is an ontology of the remote driving (road vehicle teleoperation) context. It describes the remote operator's situation awareness and the communication link between the vehicle and the remote station. Version 1.0.
+R.O.V.O is an ontology of the remote driving (road vehicle teleoperation) context. It describes the remote operator's situation awareness and the communication link between the vehicle and the remote station. Version 1.0.
 
 ## Modules
 
 | Module | IRI | File | Content |
 |---|---|---|---|
-| <a id="op"></a>Operator awareness | `https://w3id.org/rdonto/op` | [RDOnto-op.ttl](RDOnto-op.ttl) | What information is available to the remote operator, what the operator has perceived from it, how delayed it is, and whether it is sufficient for the operator's mode |
-| <a id="link"></a>Communication link | `https://w3id.org/rdonto/link` | [RDOnto-link.ttl](RDOnto-link.ttl) | Sessions, end-to-end latency and its parts, latency limits per setup, connection loss, predictions, admissible speed and adaptations |
-| <a id="core"></a>Upper alignment | `https://w3id.org/rdonto/core` | [RDOnto-core.ttl](RDOnto-core.ttl) | Alignments with EDMC AUTO (SAE J3016) and A.U.T.O. |
-| <a id="op-shapes"></a>Operator awareness shapes | `https://w3id.org/rdonto/op-shapes` | [RDOnto-op-shapes.ttl](RDOnto-op-shapes.ttl) | SHACL shapes for `RDOnto-op` data |
-| <a id="link-shapes"></a>Communication link shapes | `https://w3id.org/rdonto/link-shapes` | [RDOnto-link-shapes.ttl](RDOnto-link-shapes.ttl) | SHACL shapes for `RDOnto-link` data |
+| <a id="op"></a>Operator awareness | `https://w3id.org/rovo/op` | [ROVO-op.ttl](ROVO-op.ttl) | What information is available to the remote operator, what the operator has perceived from it, how delayed it is, and whether it is sufficient for the operator's mode |
+| <a id="link"></a>Communication link | `https://w3id.org/rovo/link` | [ROVO-link.ttl](ROVO-link.ttl) | Sessions, end-to-end latency and its parts, latency limits per setup, connection loss, predictions, admissible speed and adaptations |
+| <a id="core"></a>Upper alignment | `https://w3id.org/rovo/core` | [ROVO-core.ttl](ROVO-core.ttl) | Alignments with EDMC AUTO (SAE J3016) and A.U.T.O. |
+| <a id="op-shapes"></a>Operator awareness shapes | `https://w3id.org/rovo/op-shapes` | [ROVO-op-shapes.ttl](ROVO-op-shapes.ttl) | SHACL shapes for `ROVO-op` data |
+| <a id="link-shapes"></a>Communication link shapes | `https://w3id.org/rovo/link-shapes` | [ROVO-link-shapes.ttl](ROVO-link-shapes.ttl) | SHACL shapes for `ROVO-link` data |
 
-`RDOnto-link` and `RDOnto-core` import `RDOnto-op`. All modules stay within the OWL 2 RL profile.
+`ROVO-link` and `ROVO-core` import `ROVO-op`. All modules stay within the OWL 2 RL profile.
 
 ## Documentation
 
@@ -33,7 +33,7 @@ Each module answers a list of competency questions, which also resolve the sourc
 
 ## Use
 
-Each IRI above returns the Turtle file to RDF clients. `https://w3id.org/rdonto/{core,op,link,op-shapes,link-shapes}.ttl` always returns the Turtle file.
+Each IRI above returns the Turtle file to RDF clients. `https://w3id.org/rovo/{core,op,link,op-shapes,link-shapes}.ttl` always returns the Turtle file.
 
 To work on a local copy without fetching the imports, open the files with [catalog-v001.xml](catalog-v001.xml) in the same folder (read by Protégé and other tools that support OASIS XML catalogs).
 

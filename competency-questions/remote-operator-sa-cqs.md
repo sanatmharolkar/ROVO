@@ -1,4 +1,4 @@
-# Competency Questions: Remote Operator Situation Awareness Module (RDOnto-op)
+# Competency Questions: Remote Operator Situation Awareness Module (ROVO-op)
 
 Layer: S = static knowledge, R = runtime data, S+R = static definitions evaluated against runtime data.
 
@@ -69,7 +69,7 @@ Layer: S = static knowledge, R = runtime data, S+R = static definitions evaluate
 
 ## References
 
-Full citations for the source keys used above and in the `dct:source` annotations of `RDOnto-op.ttl`, in IEEE format.
+Full citations for the source keys used above and in the `dct:source` annotations of `ROVO-op.ttl`, in IEEE format.
 
 | Key | Reference |
 |---|---|

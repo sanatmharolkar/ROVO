@@ -13,11 +13,11 @@
 <script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
 	<dark-mode-toggle class="slider"></dark-mode-toggle>
 </div>
- <title>RDOnto: Upper Alignment Module</title>
+ <title>R.O.V.O: Upper Alignment Module</title>
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/rdonto/core#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/rdonto/core#","name":"RDOnto: Upper Alignment Module", "headline":"Document describing the ontology https://w3id.org/rdonto/core#", "dateModified":"2026-11-14", "version":"1.0", "license":"http://www.apache.org/licenses/LICENSE-2.0", "author":[{"@type":"Person","name":"Sanat Mharolkar"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/rovo/core#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/rovo/core#","name":"R.O.V.O: Upper Alignment Module", "headline":"Document describing the ontology https://w3id.org/rovo/core#", "dateModified":"2026-11-14", "version":"1.0", "license":"http://www.apache.org/licenses/LICENSE-2.0", "author":[{"@type":"Person","name":"Sanat Mharolkar"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="https://cdn.jsdelivr.net/npm/marked@18.0.1/lib/marked.umd.min.js"></script> 
@@ -79,26 +79,26 @@ table.cq td:first-child { white-space: nowrap; }
 <div class="container">
 <div class="head">
 <div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
-<h1>RDOnto: Upper Alignment Module</h1>
+<h1>R.O.V.O: Upper Alignment Module</h1>
 <h2>Release: 2026-11-14</h2>
 
 
 <dl>
 <dt>Modified on: 2026-11-14</dt>
 <dt>Latest version:</dt>
-<dd><a href="https://w3id.org/rdonto/core">https://w3id.org/rdonto/core</a></dd>
+<dd><a href="https://w3id.org/rovo/core">https://w3id.org/rovo/core</a></dd>
 <dt>Revision:</dt>
 <dd>1.0</dd>
 <dt>Authors:</dt>
 <dd>Sanat Mharolkar, Nanyang Technological University, Singapore</dd>
 
 <dt>Imported Ontologies:</dt>
-<dd><a href="https://w3id.org/rdonto/op">RDOnto-op</a></dd>
+<dd><a href="https://w3id.org/rovo/op">ROVO-op</a></dd>
 
 <dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank"><img src="https://img.shields.io/badge/License-Apache%20License%202.0-blue.svg" alt="http://www.apache.org/licenses/LICENSE-2.0" /></a>
 </dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
 <!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
-<dd>Sanat Mharolkar. RDOnto: Upper Alignment Module. Version 1.0, 2026. https://w3id.org/rdonto/core</dd>
+<dd>Sanat Mharolkar. R.O.V.O: Upper Alignment Module. Version 1.0, 2026. https://w3id.org/rovo/core</dd>
 </dl>
 
 <a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
@@ -108,14 +108,14 @@ table.cq td:first-child { white-space: nowrap; }
 <span>Version 1.0</span>
 </div>
 </div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
-The upper alignment module of the Remote Driving Ontology (RDOnto) holds every axiom that links RDOnto to other ontologies: the EDMC AUTO Vehicle Automation Levels ontology (SAE J3016) and the Automotive Urban Traffic Ontology (A.U.T.O.). Keeping these links in one module lets each reused source be replaced without changing the other modules.</span>
+The upper alignment module of the Remote Operation of Vehicles Ontology (R.O.V.O) holds every axiom that links R.O.V.O to other ontologies: the EDMC AUTO Vehicle Automation Levels ontology (SAE J3016) and the Automotive Urban Traffic Ontology (A.U.T.O.). Keeping these links in one module lets each reused source be replaced without changing the other modules.</span>
 </div>
 <div id="toc"></div> 
 
 <!--INTRODUCTION SECTION-->
     <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
-RDOnto, the Remote Driving Ontology, describes the context of remote driving (road vehicle teleoperation). It has three modules: the [operator awareness module](https://sanatmharolkar.github.io/RDOnto/docs/op/) (`RDOnto-op`), the [communication link module](https://sanatmharolkar.github.io/RDOnto/docs/link/) (`RDOnto-link`) and the [upper alignment module](https://sanatmharolkar.github.io/RDOnto/docs/core/) (`RDOnto-core`). SHACL shapes for incoming data and the Turtle files are in the [repository](https://github.com/sanatmharolkar/RDOnto).
+R.O.V.O, the Remote Operation of Vehicles Ontology, describes the context of remote driving (road vehicle teleoperation). It has three modules: the [operator awareness module](https://sanatmharolkar.github.io/ROVO/docs/op/) (`ROVO-op`), the [communication link module](https://sanatmharolkar.github.io/ROVO/docs/link/) (`ROVO-link`) and the [upper alignment module](https://sanatmharolkar.github.io/ROVO/docs/core/) (`ROVO-core`). SHACL shapes for incoming data and the Turtle files are in the [repository](https://github.com/sanatmharolkar/ROVO).
 
 This module imports the operator awareness module and adds the links to other ontologies:
 
@@ -123,15 +123,15 @@ This module imports the operator awareness module and adds the links to other on
 - **SKOS mapping properties** (`skos:closeMatch`, `skos:broadMatch`, `skos:narrowMatch`, `skos:relatedMatch`) where one concept is wider than the other or the two only overlap. They add no class-level entailments.
 - **Tasks of the remote driving mode**, which are EDMC classes: lateral and longitudinal vehicle motion control, object and event detection and response, and the DDT fallback.
 
-The reused classes are declared with their original IRIs and `rdfs:isDefinedBy` their source, so that RDOnto can be used without loading the full sources.</span>
+The reused classes are declared with their original IRIs and `rdfs:isDefinedBy` their source, so that R.O.V.O can be used without loading the full sources.</span>
 <div id="namespacedeclarations">
 <h3 id="ns" class="list">Namespace declarations</h3>
 <div id="ns" align="center">
 <table>
 <caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
 <tbody>
-<tr><td><b>RDOnto-core</b></td><td>&lt;https://w3id.org/rdonto/core#&gt;</td></tr>
-<tr><td><b>RDOnto-op</b></td><td>&lt;https://w3id.org/rdonto/op#&gt;</td></tr>
+<tr><td><b>ROVO-core</b></td><td>&lt;https://w3id.org/rovo/core#&gt;</td></tr>
+<tr><td><b>ROVO-op</b></td><td>&lt;https://w3id.org/rovo/op#&gt;</td></tr>
 <tr><td><b>dct</b></td><td>&lt;http://purl.org/dc/terms/&gt;</td></tr>
 <tr><td><b>l4</b></td><td>&lt;http://purl.org/auto/l4_core#&gt;</td></tr>
 <tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl#&gt;</td></tr>
@@ -150,7 +150,7 @@ The reused classes are declared with their original IRIs and `rdfs:isDefinedBy` 
   
 
 <!--OVERVIEW SECTION-->
-    <div id="overview"><h2 id="overv" class="list">RDOnto: Upper Alignment Module: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+    <div id="overview"><h2 id="overv" class="list">R.O.V.O: Upper Alignment Module: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
 This ontology has the following classes and properties.</span>
 <h4>Classes</h4>
@@ -273,50 +273,47 @@ This ontology has the following classes and properties.</span>
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     class="hlist">
    <li>
-      <a href="#https://w3id.org/rdonto/op#ContinuousRemoteDriving"
-         title="https://w3id.org/rdonto/op#ContinuousRemoteDriving">
+      <a href="#https://w3id.org/rovo/op#ContinuousRemoteDriving" title="https://w3id.org/rovo/op#ContinuousRemoteDriving">
          <span>Continuous Remote Driving</span>
       </a>
    </li>
    <li>
-      <a href="#https://w3id.org/rdonto/op#EventBasedRemoteDriving"
-         title="https://w3id.org/rdonto/op#EventBasedRemoteDriving">
+      <a href="#https://w3id.org/rovo/op#EventBasedRemoteDriving" title="https://w3id.org/rovo/op#EventBasedRemoteDriving">
          <span>Event Based Remote Driving</span>
       </a>
    </li>
    <li>
-      <a href="#https://w3id.org/rdonto/op#FallbackReadyPeriod" title="https://w3id.org/rdonto/op#FallbackReadyPeriod">
+      <a href="#https://w3id.org/rovo/op#FallbackReadyPeriod" title="https://w3id.org/rovo/op#FallbackReadyPeriod">
          <span>Fallback Ready Period</span>
       </a>
    </li>
    <li>
-      <a href="#https://w3id.org/rdonto/op#OnBoardDriver" title="https://w3id.org/rdonto/op#OnBoardDriver">
+      <a href="#https://w3id.org/rovo/op#OnBoardDriver" title="https://w3id.org/rovo/op#OnBoardDriver">
          <span>On Board Driver</span>
       </a>
    </li>
    <li>
-      <a href="#https://w3id.org/rdonto/op#RemoteAssistance" title="https://w3id.org/rdonto/op#RemoteAssistance">
+      <a href="#https://w3id.org/rovo/op#RemoteAssistance" title="https://w3id.org/rovo/op#RemoteAssistance">
          <span>Remote Assistance</span>
       </a>
    </li>
    <li>
-      <a href="#https://w3id.org/rdonto/op#RemoteDriving" title="https://w3id.org/rdonto/op#RemoteDriving">
+      <a href="#https://w3id.org/rovo/op#RemoteDriving" title="https://w3id.org/rovo/op#RemoteDriving">
          <span>Remote Driving</span>
       </a>
    </li>
    <li>
-      <a href="#https://w3id.org/rdonto/op#RemotelyOperatedVehicle"
-         title="https://w3id.org/rdonto/op#RemotelyOperatedVehicle">
+      <a href="#https://w3id.org/rovo/op#RemotelyOperatedVehicle" title="https://w3id.org/rovo/op#RemotelyOperatedVehicle">
          <span>Remotely Operated Vehicle</span>
       </a>
    </li>
    <li>
-      <a href="#https://w3id.org/rdonto/op#Request" title="https://w3id.org/rdonto/op#Request">
+      <a href="#https://w3id.org/rovo/op#Request" title="https://w3id.org/rovo/op#Request">
          <span>Request</span>
       </a>
    </li>
    <li>
-      <a href="#https://w3id.org/rdonto/op#TakeoverRequest" title="https://w3id.org/rdonto/op#TakeoverRequest">
+      <a href="#https://w3id.org/rovo/op#TakeoverRequest" title="https://w3id.org/rovo/op#TakeoverRequest">
          <span>Takeover Request</span>
       </a>
    </li>
@@ -326,15 +323,15 @@ This ontology has the following classes and properties.</span>
   
 
 <!--DESCRIPTION SECTION-->
-    <div id="description"><h2 id="desc" class="list">RDOnto: Upper Alignment Module: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+    <div id="description"><h2 id="desc" class="list">R.O.V.O: Upper Alignment Module: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 
 <span class="markdown">
-Alignments of RDOnto with the EDMC AUTO Vehicle Automation Levels ontology (SAE J3016) and the Automotive Urban Traffic Ontology (A.U.T.O.), with declarations of the reused classes.</span></div>
+Alignments of R.O.V.O with the EDMC AUTO Vehicle Automation Levels ontology (SAE J3016) and the Automotive Urban Traffic Ontology (A.U.T.O.), with declarations of the reused classes.</span></div>
    
 
 <!--CROSSREF SECTION-->
-   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for RDOnto: Upper Alignment Module classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-This section provides details for each class and property defined by RDOnto: Upper Alignment Module.
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for R.O.V.O: Upper Alignment Module classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by R.O.V.O: Upper Alignment Module.
 <div xmlns="" xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
  <h3 id="classes-headline" class="list">Classes</h3>
  <ul class="hlist">
@@ -390,7 +387,7 @@ This section provides details for each class and property defined by RDOnto: Upp
   <dl class="description">
    <dt>has super-classes</dt>
    <dd>
-    <a href="https://w3id.org/rdonto/op#OperatorTask" target="_blank" title="https://w3id.org/rdonto/op#OperatorTask">Operator Task</a> <sup class="type-c" title="class">c</sup>
+    <a href="https://w3id.org/rovo/op#OperatorTask" target="_blank" title="https://w3id.org/rovo/op#OperatorTask">Operator Task</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>has sub-classes</dt>
    <dd>
@@ -410,7 +407,7 @@ This section provides details for each class and property defined by RDOnto: Upp
   <dl class="description">
    <dt>has super-classes</dt>
    <dd>
-    <a href="https://w3id.org/rdonto/op#OperatorTask" target="_blank" title="https://w3id.org/rdonto/op#OperatorTask">Operator Task</a> <sup class="type-c" title="class">c</sup>, <a href="#https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/Operation" title="https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/Operation">operation</a> <sup class="type-c" title="class">c</sup>
+    <a href="https://w3id.org/rovo/op#OperatorTask" target="_blank" title="https://w3id.org/rovo/op#OperatorTask">Operator Task</a> <sup class="type-c" title="class">c</sup>, <a href="#https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/Operation" title="https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/Operation">operation</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -582,7 +579,7 @@ This section provides details for each class and property defined by RDOnto: Upp
   <dl class="description">
    <dt>has super-classes</dt>
    <dd>
-    <a href="https://w3id.org/rdonto/op#RemoteOperator" target="_blank" title="https://w3id.org/rdonto/op#RemoteOperator">Remote Operator</a> <sup class="type-c" title="class">c</sup>, <a href="#https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/HumanUser" title="https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/HumanUser">human user</a> <sup class="type-c" title="class">c</sup>
+    <a href="https://w3id.org/rovo/op#RemoteOperator" target="_blank" title="https://w3id.org/rovo/op#RemoteOperator">Remote Operator</a> <sup class="type-c" title="class">c</sup>, <a href="#https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/HumanUser" title="https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/HumanUser">human user</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -610,7 +607,7 @@ This section provides details for each class and property defined by RDOnto: Upp
   <dl class="description">
    <dt>has super-classes</dt>
    <dd>
-    <a href="https://w3id.org/rdonto/op#RemoteOperator" target="_blank" title="https://w3id.org/rdonto/op#RemoteOperator">Remote Operator</a> <sup class="type-c" title="class">c</sup>, <a href="#https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/HumanDriver" title="https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/HumanDriver">human driver</a> <sup class="type-c" title="class">c</sup>
+    <a href="https://w3id.org/rovo/op#RemoteOperator" target="_blank" title="https://w3id.org/rovo/op#RemoteOperator">Remote Operator</a> <sup class="type-c" title="class">c</sup>, <a href="#https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/HumanDriver" title="https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/HumanDriver">human driver</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
@@ -650,7 +647,7 @@ This section provides details for each class and property defined by RDOnto: Upp
   <dl class="description">
    <dt>has super-classes</dt>
    <dd>
-    <a href="https://w3id.org/rdonto/op#SituationElement" target="_blank" title="https://w3id.org/rdonto/op#SituationElement">Situation Element</a> <sup class="type-c" title="class">c</sup>
+    <a href="https://w3id.org/rovo/op#SituationElement" target="_blank" title="https://w3id.org/rovo/op#SituationElement">Situation Element</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dt>has sub-classes</dt>
    <dd>
@@ -709,19 +706,19 @@ This section provides details for each class and property defined by RDOnto: Upp
 </div><div xmlns="" xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
  <h3 id="namedindividuals" class="list">Named Individuals</h3>
  <ul class="hlist">
-  <li><a href="#https://w3id.org/rdonto/op#ContinuousRemoteDriving" title="https://w3id.org/rdonto/op#ContinuousRemoteDriving"> <span>Continuous Remote Driving</span> </a></li>
-  <li><a href="#https://w3id.org/rdonto/op#EventBasedRemoteDriving" title="https://w3id.org/rdonto/op#EventBasedRemoteDriving"> <span>Event Based Remote Driving</span> </a></li>
-  <li><a href="#https://w3id.org/rdonto/op#FallbackReadyPeriod" title="https://w3id.org/rdonto/op#FallbackReadyPeriod"> <span>Fallback Ready Period</span> </a></li>
-  <li><a href="#https://w3id.org/rdonto/op#OnBoardDriver" title="https://w3id.org/rdonto/op#OnBoardDriver"> <span>On Board Driver</span> </a></li>
-  <li><a href="#https://w3id.org/rdonto/op#RemoteAssistance" title="https://w3id.org/rdonto/op#RemoteAssistance"> <span>Remote Assistance</span> </a></li>
-  <li><a href="#https://w3id.org/rdonto/op#RemoteDriving" title="https://w3id.org/rdonto/op#RemoteDriving"> <span>Remote Driving</span> </a></li>
-  <li><a href="#https://w3id.org/rdonto/op#RemotelyOperatedVehicle" title="https://w3id.org/rdonto/op#RemotelyOperatedVehicle"> <span>Remotely Operated Vehicle</span> </a></li>
-  <li><a href="#https://w3id.org/rdonto/op#Request" title="https://w3id.org/rdonto/op#Request"> <span>Request</span> </a></li>
-  <li><a href="#https://w3id.org/rdonto/op#TakeoverRequest" title="https://w3id.org/rdonto/op#TakeoverRequest"> <span>Takeover Request</span> </a></li>
+  <li><a href="#https://w3id.org/rovo/op#ContinuousRemoteDriving" title="https://w3id.org/rovo/op#ContinuousRemoteDriving"> <span>Continuous Remote Driving</span> </a></li>
+  <li><a href="#https://w3id.org/rovo/op#EventBasedRemoteDriving" title="https://w3id.org/rovo/op#EventBasedRemoteDriving"> <span>Event Based Remote Driving</span> </a></li>
+  <li><a href="#https://w3id.org/rovo/op#FallbackReadyPeriod" title="https://w3id.org/rovo/op#FallbackReadyPeriod"> <span>Fallback Ready Period</span> </a></li>
+  <li><a href="#https://w3id.org/rovo/op#OnBoardDriver" title="https://w3id.org/rovo/op#OnBoardDriver"> <span>On Board Driver</span> </a></li>
+  <li><a href="#https://w3id.org/rovo/op#RemoteAssistance" title="https://w3id.org/rovo/op#RemoteAssistance"> <span>Remote Assistance</span> </a></li>
+  <li><a href="#https://w3id.org/rovo/op#RemoteDriving" title="https://w3id.org/rovo/op#RemoteDriving"> <span>Remote Driving</span> </a></li>
+  <li><a href="#https://w3id.org/rovo/op#RemotelyOperatedVehicle" title="https://w3id.org/rovo/op#RemotelyOperatedVehicle"> <span>Remotely Operated Vehicle</span> </a></li>
+  <li><a href="#https://w3id.org/rovo/op#Request" title="https://w3id.org/rovo/op#Request"> <span>Request</span> </a></li>
+  <li><a href="#https://w3id.org/rovo/op#TakeoverRequest" title="https://w3id.org/rovo/op#TakeoverRequest"> <span>Takeover Request</span> </a></li>
  </ul>
- <div class="entity" id="https://w3id.org/rdonto/op#ContinuousRemoteDriving">
+ <div class="entity" id="https://w3id.org/rovo/op#ContinuousRemoteDriving">
   <h3>Continuous Remote Driving<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/rdonto/op#ContinuousRemoteDriving</p>
+  <p><strong>IRI:</strong> https://w3id.org/rovo/op#ContinuousRemoteDriving</p>
   <dl class="description">
    <dt>has facts</dt>
    <dd>
@@ -729,9 +726,9 @@ This section provides details for each class and property defined by RDOnto: Upp
    </dd>
   </dl>
  </div>
- <div class="entity" id="https://w3id.org/rdonto/op#EventBasedRemoteDriving">
+ <div class="entity" id="https://w3id.org/rovo/op#EventBasedRemoteDriving">
   <h3>Event Based Remote Driving<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/rdonto/op#EventBasedRemoteDriving</p>
+  <p><strong>IRI:</strong> https://w3id.org/rovo/op#EventBasedRemoteDriving</p>
   <dl class="description">
    <dt>has facts</dt>
    <dd>
@@ -739,9 +736,9 @@ This section provides details for each class and property defined by RDOnto: Upp
    </dd>
   </dl>
  </div>
- <div class="entity" id="https://w3id.org/rdonto/op#FallbackReadyPeriod">
+ <div class="entity" id="https://w3id.org/rovo/op#FallbackReadyPeriod">
   <h3>Fallback Ready Period<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/rdonto/op#FallbackReadyPeriod</p>
+  <p><strong>IRI:</strong> https://w3id.org/rovo/op#FallbackReadyPeriod</p>
   <dl class="description">
    <dt>has facts</dt>
    <dd>
@@ -749,9 +746,9 @@ This section provides details for each class and property defined by RDOnto: Upp
    </dd>
   </dl>
  </div>
- <div class="entity" id="https://w3id.org/rdonto/op#OnBoardDriver">
+ <div class="entity" id="https://w3id.org/rovo/op#OnBoardDriver">
   <h3>On Board Driver<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/rdonto/op#OnBoardDriver</p>
+  <p><strong>IRI:</strong> https://w3id.org/rovo/op#OnBoardDriver</p>
   <dl class="description">
    <dt>has facts</dt>
    <dd>
@@ -759,9 +756,9 @@ This section provides details for each class and property defined by RDOnto: Upp
    </dd>
   </dl>
  </div>
- <div class="entity" id="https://w3id.org/rdonto/op#RemoteAssistance">
+ <div class="entity" id="https://w3id.org/rovo/op#RemoteAssistance">
   <h3>Remote Assistance<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/rdonto/op#RemoteAssistance</p>
+  <p><strong>IRI:</strong> https://w3id.org/rovo/op#RemoteAssistance</p>
   <dl class="description">
    <dt>has facts</dt>
    <dd>
@@ -769,31 +766,31 @@ This section provides details for each class and property defined by RDOnto: Upp
    </dd>
   </dl>
  </div>
- <div class="entity" id="https://w3id.org/rdonto/op#RemoteDriving">
+ <div class="entity" id="https://w3id.org/rovo/op#RemoteDriving">
   <h3>Remote Driving<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/rdonto/op#RemoteDriving</p>
+  <p><strong>IRI:</strong> https://w3id.org/rovo/op#RemoteDriving</p>
   <dl class="description">
    <dt>has facts</dt>
    <dd>
     <a href="#http://www.w3.org/2004/02/skos/core#closeMatch" title="http://www.w3.org/2004/02/skos/core#closeMatch">close Match</a> <sup class="type-op" title="object property">op</sup> <a href="#https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/RemoteDriving" title="https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/RemoteDriving">remote driving</a> <sup class="type-ni" title="named individual">ni</sup>
    </dd>
    <dd>
-    <a href="https://w3id.org/rdonto/op#modeIncludesTask" target="_blank" title="https://w3id.org/rdonto/op#modeIncludesTask">mode Includes Task</a> <sup class="type-ap" title="annotation property">ap</sup> <a href="#https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/DynamicDrivingTaskFallback" title="https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/DynamicDrivingTaskFallback">dynamic driving task fallback</a> <sup class="type-c" title="class">c</sup>
+    <a href="https://w3id.org/rovo/op#modeIncludesTask" target="_blank" title="https://w3id.org/rovo/op#modeIncludesTask">mode Includes Task</a> <sup class="type-ap" title="annotation property">ap</sup> <a href="#https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/DynamicDrivingTaskFallback" title="https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/DynamicDrivingTaskFallback">dynamic driving task fallback</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dd>
-    <a href="https://w3id.org/rdonto/op#modeIncludesTask" target="_blank" title="https://w3id.org/rdonto/op#modeIncludesTask">mode Includes Task</a> <sup class="type-ap" title="annotation property">ap</sup> <a href="#https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/LateralVehicleMotionControl" title="https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/LateralVehicleMotionControl">lateral vehicle motion control</a> <sup class="type-c" title="class">c</sup>
+    <a href="https://w3id.org/rovo/op#modeIncludesTask" target="_blank" title="https://w3id.org/rovo/op#modeIncludesTask">mode Includes Task</a> <sup class="type-ap" title="annotation property">ap</sup> <a href="#https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/LateralVehicleMotionControl" title="https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/LateralVehicleMotionControl">lateral vehicle motion control</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dd>
-    <a href="https://w3id.org/rdonto/op#modeIncludesTask" target="_blank" title="https://w3id.org/rdonto/op#modeIncludesTask">mode Includes Task</a> <sup class="type-ap" title="annotation property">ap</sup> <a href="#https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/LongitudinalVehicleMotionControl" title="https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/LongitudinalVehicleMotionControl">longitudinal vehicle motion control</a> <sup class="type-c" title="class">c</sup>
+    <a href="https://w3id.org/rovo/op#modeIncludesTask" target="_blank" title="https://w3id.org/rovo/op#modeIncludesTask">mode Includes Task</a> <sup class="type-ap" title="annotation property">ap</sup> <a href="#https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/LongitudinalVehicleMotionControl" title="https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/LongitudinalVehicleMotionControl">longitudinal vehicle motion control</a> <sup class="type-c" title="class">c</sup>
    </dd>
    <dd>
-    <a href="https://w3id.org/rdonto/op#modeIncludesTask" target="_blank" title="https://w3id.org/rdonto/op#modeIncludesTask">mode Includes Task</a> <sup class="type-ap" title="annotation property">ap</sup> <a href="#https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/ObjectAndEventDetectionAndResponse" title="https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/ObjectAndEventDetectionAndResponse">object and event detection and response</a> <sup class="type-c" title="class">c</sup>
+    <a href="https://w3id.org/rovo/op#modeIncludesTask" target="_blank" title="https://w3id.org/rovo/op#modeIncludesTask">mode Includes Task</a> <sup class="type-ap" title="annotation property">ap</sup> <a href="#https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/ObjectAndEventDetectionAndResponse" title="https://spec.edmcouncil.org/auto/ontology/AV/VehicleAutomationLevels/ObjectAndEventDetectionAndResponse">object and event detection and response</a> <sup class="type-c" title="class">c</sup>
    </dd>
   </dl>
  </div>
- <div class="entity" id="https://w3id.org/rdonto/op#RemotelyOperatedVehicle">
+ <div class="entity" id="https://w3id.org/rovo/op#RemotelyOperatedVehicle">
   <h3>Remotely Operated Vehicle<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/rdonto/op#RemotelyOperatedVehicle</p>
+  <p><strong>IRI:</strong> https://w3id.org/rovo/op#RemotelyOperatedVehicle</p>
   <dl class="description">
    <dt>has facts</dt>
    <dd>
@@ -801,9 +798,9 @@ This section provides details for each class and property defined by RDOnto: Upp
    </dd>
   </dl>
  </div>
- <div class="entity" id="https://w3id.org/rdonto/op#Request">
+ <div class="entity" id="https://w3id.org/rovo/op#Request">
   <h3>Request<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/rdonto/op#Request</p>
+  <p><strong>IRI:</strong> https://w3id.org/rovo/op#Request</p>
   <dl class="description">
    <dt>has facts</dt>
    <dd>
@@ -811,9 +808,9 @@ This section provides details for each class and property defined by RDOnto: Upp
    </dd>
   </dl>
  </div>
- <div class="entity" id="https://w3id.org/rdonto/op#TakeoverRequest">
+ <div class="entity" id="https://w3id.org/rovo/op#TakeoverRequest">
   <h3>Takeover Request<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/rdonto/op#TakeoverRequest</p>
+  <p><strong>IRI:</strong> https://w3id.org/rovo/op#TakeoverRequest</p>
   <dl class="description">
    <dt>has facts</dt>
    <dd>

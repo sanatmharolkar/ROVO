@@ -139,25 +139,19 @@
     "id" : "30",
     "type" : "owl:Class"
   }, {
-    "id" : "212",
+    "id" : "211",
     "type" : "owl:Class"
   }, {
     "id" : "249",
-    "type" : "owl:Thing"
+    "type" : "rdfs:Literal"
   }, {
     "id" : "251",
-    "type" : "rdfs:Literal"
+    "type" : "owl:Thing"
   }, {
     "id" : "254",
-    "type" : "rdfs:Literal"
+    "type" : "owl:Thing"
   }, {
     "id" : "257",
-    "type" : "owl:Thing"
-  }, {
-    "id" : "261",
-    "type" : "owl:Thing"
-  }, {
-    "id" : "264",
     "type" : "rdfs:Literal"
   }, {
     "id" : "267",
@@ -170,7 +164,7 @@
     "type" : "rdfs:Literal"
   }, {
     "id" : "276",
-    "type" : "owl:Thing"
+    "type" : "rdfs:Literal"
   }, {
     "id" : "279",
     "type" : "rdfs:Literal"
@@ -190,7 +184,7 @@
     "id" : "96",
     "type" : "rdfs:Literal"
   }, {
-    "id" : "199",
+    "id" : "224",
     "type" : "owl:Class"
   }, {
     "id" : "15",
@@ -214,7 +208,7 @@
     "id" : "98",
     "type" : "owl:Class"
   }, {
-    "id" : "164",
+    "id" : "195",
     "type" : "owl:Class"
   }, {
     "id" : "8",
@@ -238,13 +232,13 @@
     "id" : "82",
     "type" : "owl:Class"
   }, {
-    "id" : "177",
+    "id" : "169",
     "type" : "owl:Class"
   }, {
     "id" : "91",
     "type" : "owl:Class"
   }, {
-    "id" : "436",
+    "id" : "433",
     "type" : "owl:Class"
   }, {
     "id" : "22",
@@ -253,7 +247,7 @@
     "id" : "87",
     "type" : "owl:Class"
   }, {
-    "id" : "160",
+    "id" : "187",
     "type" : "owl:Class"
   }, {
     "id" : "4",
@@ -262,7 +256,7 @@
     "id" : "90",
     "type" : "owl:Class"
   }, {
-    "id" : "399",
+    "id" : "446",
     "type" : "owl:Class"
   }, {
     "id" : "41",
@@ -280,13 +274,13 @@
     "id" : "135",
     "type" : "owl:Class"
   }, {
-    "id" : "404",
+    "id" : "416",
     "type" : "owl:Class"
   }, {
-    "id" : "176",
+    "id" : "168",
     "type" : "owl:Class"
   }, {
-    "id" : "170",
+    "id" : "180",
     "type" : "owl:Class"
   }, {
     "id" : "66",
@@ -516,12 +510,12 @@
       "source" : [ {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "EN95a",
+        "value" : "LV21",
         "type" : "label"
       }, {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "LV21",
+        "value" : "EN95a",
         "type" : "label"
       } ]
     },
@@ -548,17 +542,17 @@
       "source" : [ {
         "identifier" : "source",
         "language" : "undefined",
+        "value" : "MZ25",
+        "type" : "label"
+      }, {
+        "identifier" : "source",
+        "language" : "undefined",
         "value" : "LV21",
         "type" : "label"
       }, {
         "identifier" : "source",
         "language" : "undefined",
         "value" : "EN95b",
-        "type" : "label"
-      }, {
-        "identifier" : "source",
-        "language" : "undefined",
-        "value" : "MZ25",
         "type" : "label"
       } ]
     },
@@ -655,7 +649,7 @@
       "en" : "SA-01, LK-10. Close to EDMC InVehicleDriver (ROVO-core); a SKOS mapping, since the on-board driver does not drive while a remote operator has taken over. Whether the driver can take control back is a separate state (ableToTakeOver)."
     },
     "id" : "72",
-    "superClasses" : [ "160" ]
+    "superClasses" : [ "187" ]
   }, {
     "iri" : "https://w3id.org/rovo/op#SelfReportEvidence",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -754,12 +748,12 @@
       "source" : [ {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "HN25b",
+        "value" : "WO25",
         "type" : "label"
       }, {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "WO25",
+        "value" : "HN25b",
         "type" : "label"
       } ]
     },
@@ -770,45 +764,31 @@
     "comment" : {
       "en" : "SA-06. Not the DDT (which every driving task needs) but the purpose of the operation; where J3016's driving task is meant, R.O.V.O writes DDT. Not an OperatorTask either, which is what the operator does (holdsTask), while engagementTask and ROVO-link:setupTask name a driving task. It shapes which elements matter (WO25: fork handling). Individuals are configuration."
     },
-    "id" : "212"
+    "id" : "211"
   }, {
-    "iri" : "http://www.w3.org/2002/07/owl#Thing",
-    "baseIri" : "http://owl2vowl.de",
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "id" : "249",
     "label" : {
-      "undefined" : "Thing"
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
     }
   }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
     "id" : "251",
     "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
+      "undefined" : "Thing"
     }
   }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
     "id" : "254",
     "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2002/07/owl#Thing",
-    "baseIri" : "http://owl2vowl.de",
-    "id" : "257",
-    "label" : {
-      "undefined" : "Thing"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2002/07/owl#Thing",
-    "baseIri" : "http://owl2vowl.de",
-    "id" : "261",
-    "label" : {
       "undefined" : "Thing"
     }
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "264",
+    "id" : "257",
     "label" : {
       "IRI-based" : "Literal",
       "undefined" : "Literal"
@@ -835,11 +815,11 @@
       "undefined" : "Literal"
     }
   }, {
-    "iri" : "http://www.w3.org/2002/07/owl#Thing",
-    "baseIri" : "http://owl2vowl.de",
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "id" : "276",
     "label" : {
-      "undefined" : "Thing"
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
     }
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
@@ -900,7 +880,7 @@
     },
     "subClasses" : [ "51", "33" ],
     "attributes" : [ "external" ],
-    "id" : "199"
+    "id" : "224"
   }, {
     "iri" : "https://w3id.org/rovo/op#RemotelyOperatedVehicle",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -935,12 +915,12 @@
       "source" : [ {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "AM22",
+        "value" : "MU21",
         "type" : "label"
       }, {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "MU21",
+        "value" : "AM22",
         "type" : "label"
       } ]
     },
@@ -985,12 +965,12 @@
         "source" : [ {
           "identifier" : "source",
           "language" : "undefined",
-          "value" : "TL22",
+          "value" : "MU21",
           "type" : "label"
         }, {
           "identifier" : "source",
           "language" : "undefined",
-          "value" : "MU21",
+          "value" : "TL22",
           "type" : "label"
         } ]
       },
@@ -1079,7 +1059,7 @@
       "en" : "SA-01. EDMC RemoteDriver and RemoteAssistant are subclasses (ROVO-core). The station is usually outside the vehicle, but J3016 (definition 3.31.1.2) also counts a remote driver inside the vehicle who is not in the driver's seat; cues such a driver perceives directly, not through the station, are not modelled (SHI26 note this case)."
     },
     "id" : "10",
-    "superClasses" : [ "160" ]
+    "superClasses" : [ "187" ]
   }, {
     "iri" : "http://www.w3.org/ns/prov#Entity",
     "baseIri" : "http://www.w3.org/ns/prov",
@@ -1095,7 +1075,7 @@
     "label" : {
       "IRI-based" : "Entity"
     },
-    "subClasses" : [ "18", "1", "170", "4" ],
+    "subClasses" : [ "18", "1", "180", "4" ],
     "attributes" : [ "external" ],
     "id" : "155"
   }, {
@@ -1192,12 +1172,12 @@
       }, {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "MA25",
+        "value" : "TANG26",
         "type" : "label"
       }, {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "TANG26",
+        "value" : "MA25",
         "type" : "label"
       } ]
     },
@@ -1208,7 +1188,7 @@
     "comment" : {
       "en" : "SA-24: a mode whose limit the current actuator latency exceeds is one the operator can no longer perform. The operator-side counterpart of InformationAgeLimit for the other latency part. The value compared with it is the latest ROVO-link:ActuatorLatency observation of the session that carries the engagement, so it needs ROVO-link. A setup's reference budgets for the actuator latency (ROVO-link:LatencyBudget) hold up to a vehicle speed and are checked separately, by LK-04; SA-24 uses this limit only. A configuration parameter; GF20 and MA25 give measured values, not limits."
     },
-    "id" : "164",
+    "id" : "195",
     "superClasses" : [ "154" ]
   }, {
     "iri" : "https://w3id.org/rovo/op#RequestReason",
@@ -1224,12 +1204,12 @@
       "source" : [ {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "AM22",
+        "value" : "MU21",
         "type" : "label"
       }, {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "MU21",
+        "value" : "AM22",
         "type" : "label"
       } ]
     },
@@ -1310,24 +1290,6 @@
         "en" : "perception error"
       }
     }, {
-      "iri" : "https://w3id.org/rovo/op#UnspecifiedReason",
-      "baseIri" : "https://w3id.org/rovo/op",
-      "annotations" : {
-        "definition" : [ {
-          "identifier" : "definition",
-          "language" : "en",
-          "value" : "No reason was given for the request.",
-          "type" : "label"
-        } ]
-      },
-      "comment" : {
-        "en" : "SA-03. Used so that every request has a reason value (ROVO-op-shapes.ttl)."
-      },
-      "labels" : {
-        "IRI-based" : "UnspecifiedReason",
-        "en" : "unspecified reason"
-      }
-    }, {
       "iri" : "https://w3id.org/rovo/op#SensorFailure",
       "baseIri" : "https://w3id.org/rovo/op",
       "annotations" : {
@@ -1351,6 +1313,24 @@
         "IRI-based" : "SensorFailure",
         "en" : "sensor failure"
       }
+    }, {
+      "iri" : "https://w3id.org/rovo/op#UnspecifiedReason",
+      "baseIri" : "https://w3id.org/rovo/op",
+      "annotations" : {
+        "definition" : [ {
+          "identifier" : "definition",
+          "language" : "en",
+          "value" : "No reason was given for the request.",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "SA-03. Used so that every request has a reason value (ROVO-op-shapes.ttl)."
+      },
+      "labels" : {
+        "IRI-based" : "UnspecifiedReason",
+        "en" : "unspecified reason"
+      }
     } ],
     "comment" : {
       "en" : "SA-03. Sensor failure and perception error (MU21, citing California DMV 2019), plan failure (MU21, citing Scholtz et al. 2004), an object the vehicle cannot classify (AM22), and no stated cause. Not an exhaustive list."
@@ -1370,12 +1350,12 @@
       "source" : [ {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "MU21",
+        "value" : "ME24",
         "type" : "label"
       }, {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "ME24",
+        "value" : "MU21",
         "type" : "label"
       }, {
         "identifier" : "source",
@@ -1407,17 +1387,17 @@
       "source" : [ {
         "identifier" : "source",
         "language" : "undefined",
+        "value" : "ME24",
+        "type" : "label"
+      }, {
+        "identifier" : "source",
+        "language" : "undefined",
         "value" : "HA24",
         "type" : "label"
       }, {
         "identifier" : "source",
         "language" : "undefined",
         "value" : "TL22",
-        "type" : "label"
-      }, {
-        "identifier" : "source",
-        "language" : "undefined",
-        "value" : "ME24",
         "type" : "label"
       } ]
     },
@@ -1467,12 +1447,12 @@
         "source" : [ {
           "identifier" : "source",
           "language" : "undefined",
-          "value" : "HA24",
+          "value" : "ME24",
           "type" : "label"
         }, {
           "identifier" : "source",
           "language" : "undefined",
-          "value" : "ME24",
+          "value" : "HA24",
           "type" : "label"
         }, {
           "identifier" : "source",
@@ -1537,12 +1517,12 @@
       "source" : [ {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "TL22",
+        "value" : "ME24",
         "type" : "label"
       }, {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "ME24",
+        "value" : "TL22",
         "type" : "label"
       }, {
         "identifier" : "source",
@@ -1601,7 +1581,7 @@
       "en" : "SA-01, SA-04, SA-05. An engagement is not a session: a session (ROVO-link:TeleoperationSession) is only the connection between a station and a vehicle, and carries engagements in sequence. An engagement is carried by one session and ends with it, so a reconnection in a new session also starts a new engagement, in the same mode; it can name the one it continues (followsEngagement). What sources such as HA24 call a driving session is an engagement here."
     },
     "id" : "33",
-    "superClasses" : [ "199" ]
+    "superClasses" : [ "224" ]
   }, {
     "iri" : "https://w3id.org/rovo/op#WorkloadBand",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -1616,17 +1596,17 @@
       "source" : [ {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "HS88",
-        "type" : "label"
-      }, {
-        "identifier" : "source",
-        "language" : "undefined",
         "value" : "MU21",
         "type" : "label"
       }, {
         "identifier" : "source",
         "language" : "undefined",
         "value" : "ME24",
+        "type" : "label"
+      }, {
+        "identifier" : "source",
+        "language" : "undefined",
+        "value" : "HS88",
         "type" : "label"
       } ]
     },
@@ -1655,11 +1635,11 @@
       "IRI-based" : "Cue",
       "en" : "cue"
     },
-    "subClasses" : [ "176" ],
+    "subClasses" : [ "168" ],
     "comment" : {
       "en" : "SA-16."
     },
-    "id" : "177"
+    "id" : "169"
   }, {
     "iri" : "https://w3id.org/rovo/op#SensorOverlay",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -1725,20 +1705,6 @@
         "IRI-based" : "UNITLESS"
       }
     }, {
-      "iri" : "http://qudt.org/vocab/unit/MIN",
-      "baseIri" : "http://qudt.org/vocab/unit",
-      "annotations" : {
-        "isDefinedBy" : [ {
-          "identifier" : "isDefinedBy",
-          "language" : "undefined",
-          "value" : "http://qudt.org/vocab/unit",
-          "type" : "iri"
-        } ]
-      },
-      "labels" : {
-        "IRI-based" : "MIN"
-      }
-    }, {
       "iri" : "http://qudt.org/vocab/unit/MilliSEC",
       "baseIri" : "http://qudt.org/vocab/unit",
       "annotations" : {
@@ -1752,9 +1718,23 @@
       "labels" : {
         "IRI-based" : "MilliSEC"
       }
+    }, {
+      "iri" : "http://qudt.org/vocab/unit/MIN",
+      "baseIri" : "http://qudt.org/vocab/unit",
+      "annotations" : {
+        "isDefinedBy" : [ {
+          "identifier" : "isDefinedBy",
+          "language" : "undefined",
+          "value" : "http://qudt.org/vocab/unit",
+          "type" : "iri"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "MIN"
+      }
     } ],
     "attributes" : [ "external" ],
-    "id" : "436"
+    "id" : "433"
   }, {
     "iri" : "https://w3id.org/rovo/op#SAType",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -1769,17 +1749,17 @@
       "source" : [ {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "AM22",
-        "type" : "label"
-      }, {
-        "identifier" : "source",
-        "language" : "undefined",
         "value" : "EN95a",
         "type" : "label"
       }, {
         "identifier" : "source",
         "language" : "undefined",
         "value" : "TANG26",
+        "type" : "label"
+      }, {
+        "identifier" : "source",
+        "language" : "undefined",
+        "value" : "AM22",
         "type" : "label"
       } ]
     },
@@ -1881,7 +1861,7 @@
     },
     "subClasses" : [ "72", "10" ],
     "attributes" : [ "external" ],
-    "id" : "160"
+    "id" : "187"
   }, {
     "iri" : "https://w3id.org/rovo/op#PerceptionAssertion",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -1928,12 +1908,12 @@
       "source" : [ {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "WO25",
+        "value" : "TL22",
         "type" : "label"
       }, {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "TL22",
+        "value" : "WO25",
         "type" : "label"
       } ]
     },
@@ -1954,7 +1934,7 @@
       "IRI-based" : "dayTimeDuration"
     },
     "attributes" : [ "external" ],
-    "id" : "399"
+    "id" : "446"
   }, {
     "iri" : "https://w3id.org/rovo/op#OperatingEnvironment",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -1969,7 +1949,12 @@
       "source" : [ {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "HN25b",
+        "value" : "LV21",
+        "type" : "label"
+      }, {
+        "identifier" : "source",
+        "language" : "undefined",
+        "value" : "WO25",
         "type" : "label"
       }, {
         "identifier" : "source",
@@ -1979,12 +1964,7 @@
       }, {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "LV21",
-        "type" : "label"
-      }, {
-        "identifier" : "source",
-        "language" : "undefined",
-        "value" : "WO25",
+        "value" : "HN25b",
         "type" : "label"
       } ]
     },
@@ -2083,12 +2063,12 @@
         "source" : [ {
           "identifier" : "source",
           "language" : "undefined",
-          "value" : "STVF",
+          "value" : "HN25b",
           "type" : "label"
         }, {
           "identifier" : "source",
           "language" : "undefined",
-          "value" : "HN25b",
+          "value" : "STVF",
           "type" : "label"
         } ]
       },
@@ -2166,12 +2146,12 @@
       "source" : [ {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "TL22",
+        "value" : "AM22",
         "type" : "label"
       }, {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "AM22",
+        "value" : "TL22",
         "type" : "label"
       }, {
         "identifier" : "source",
@@ -2203,22 +2183,22 @@
       "source" : [ {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "NE19",
-        "type" : "label"
-      }, {
-        "identifier" : "source",
-        "language" : "undefined",
-        "value" : "AM22",
-        "type" : "label"
-      }, {
-        "identifier" : "source",
-        "language" : "undefined",
         "value" : "GF20",
         "type" : "label"
       }, {
         "identifier" : "source",
         "language" : "undefined",
+        "value" : "NE19",
+        "type" : "label"
+      }, {
+        "identifier" : "source",
+        "language" : "undefined",
         "value" : "MU21",
+        "type" : "label"
+      }, {
+        "identifier" : "source",
+        "language" : "undefined",
+        "value" : "AM22",
         "type" : "label"
       } ]
     },
@@ -2247,7 +2227,7 @@
       "IRI-based" : "Sensor"
     },
     "attributes" : [ "external" ],
-    "id" : "404"
+    "id" : "416"
   }, {
     "iri" : "https://w3id.org/rovo/op#InVehicleCue",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -2262,21 +2242,6 @@
       "source" : [ {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "MU21",
-        "type" : "label"
-      }, {
-        "identifier" : "source",
-        "language" : "undefined",
-        "value" : "ME24",
-        "type" : "label"
-      }, {
-        "identifier" : "source",
-        "language" : "undefined",
-        "value" : "TL22",
-        "type" : "label"
-      }, {
-        "identifier" : "source",
-        "language" : "undefined",
         "value" : "WO26",
         "type" : "label"
       }, {
@@ -2287,7 +2252,22 @@
       }, {
         "identifier" : "source",
         "language" : "undefined",
+        "value" : "ME24",
+        "type" : "label"
+      }, {
+        "identifier" : "source",
+        "language" : "undefined",
+        "value" : "MU21",
+        "type" : "label"
+      }, {
+        "identifier" : "source",
+        "language" : "undefined",
         "value" : "WO25",
+        "type" : "label"
+      }, {
+        "identifier" : "source",
+        "language" : "undefined",
+        "value" : "TL22",
         "type" : "label"
       } ]
     },
@@ -2320,30 +2300,6 @@
         "en" : "engine sound"
       }
     }, {
-      "iri" : "https://w3id.org/rovo/op#WarningSound",
-      "baseIri" : "https://w3id.org/rovo/op",
-      "annotations" : {
-        "definition" : [ {
-          "identifier" : "definition",
-          "language" : "en",
-          "value" : "A sound meant to warn, such as a horn, a siren or a shout.",
-          "type" : "label"
-        } ],
-        "source" : [ {
-          "identifier" : "source",
-          "language" : "undefined",
-          "value" : "WO25",
-          "type" : "label"
-        } ]
-      },
-      "comment" : {
-        "en" : "SA-16. WO25: operators missed audio 'particularly to detect hazards, for example through honking or shouting'."
-      },
-      "labels" : {
-        "IRI-based" : "WarningSound",
-        "en" : "warning sound"
-      }
-    }, {
       "iri" : "https://w3id.org/rovo/op#PedalFeel",
       "baseIri" : "https://w3id.org/rovo/op",
       "annotations" : {
@@ -2366,6 +2322,30 @@
       "labels" : {
         "IRI-based" : "PedalFeel",
         "en" : "pedal feel"
+      }
+    }, {
+      "iri" : "https://w3id.org/rovo/op#WarningSound",
+      "baseIri" : "https://w3id.org/rovo/op",
+      "annotations" : {
+        "definition" : [ {
+          "identifier" : "definition",
+          "language" : "en",
+          "value" : "A sound meant to warn, such as a horn, a siren or a shout.",
+          "type" : "label"
+        } ],
+        "source" : [ {
+          "identifier" : "source",
+          "language" : "undefined",
+          "value" : "WO25",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "SA-16. WO25: operators missed audio 'particularly to detect hazards, for example through honking or shouting'."
+      },
+      "labels" : {
+        "IRI-based" : "WarningSound",
+        "en" : "warning sound"
       }
     }, {
       "iri" : "https://w3id.org/rovo/op#VestibularCue",
@@ -2470,12 +2450,12 @@
         "source" : [ {
           "identifier" : "source",
           "language" : "undefined",
-          "value" : "WO25",
+          "value" : "TL22",
           "type" : "label"
         }, {
           "identifier" : "source",
           "language" : "undefined",
-          "value" : "TL22",
+          "value" : "WO25",
           "type" : "label"
         } ]
       },
@@ -2490,8 +2470,8 @@
     "comment" : {
       "en" : "SA-16: missing cues are the in-vehicle cues that no available channel provides. The individuals are the examples SA-16 lists; not an exhaustive list."
     },
-    "id" : "176",
-    "superClasses" : [ "177" ]
+    "id" : "168",
+    "superClasses" : [ "169" ]
   }, {
     "iri" : "https://w3id.org/rovo/op#DisplayedScene",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -2511,7 +2491,7 @@
     "comment" : {
       "en" : "SA-08. Separates the scene the operator sees from the current scene at the vehicle."
     },
-    "id" : "170",
+    "id" : "180",
     "superClasses" : [ "155" ]
   }, {
     "iri" : "https://w3id.org/rovo/op#ObservationTask",
@@ -2556,7 +2536,7 @@
       "IRI-based" : "ConfiguredLimit",
       "en" : "configured limit"
     },
-    "subClasses" : [ "164", "135", "107", "130", "140", "111", "108", "82" ],
+    "subClasses" : [ "195", "135", "107", "130", "140", "111", "108", "82" ],
     "comment" : {
       "en" : "SA-09, SA-12, SA-14, SA-18, SA-22 and SA-24, and the limits of ROVO-link. Limits are parameters, not facts about the world. Most limit types hold one value in one fixed unit, given in the definition, as qudt:numericValue with qudt:unit; the shapes enforce the unit, and queries read only that unit. Two differ: a WorkloadBand has a lower and an upper bound on a named scale, and a ROVO-link:TravelTolerance can be given as a dimensionless delay limit. Most limits are scoped by mode (appliesToMode); an SARequirement is scoped by SA type and its value is the recheck interval. Every limit carries dct:source; values used for testing say so in rdfs:comment."
     },
@@ -2649,12 +2629,12 @@
         "source" : [ {
           "identifier" : "source",
           "language" : "undefined",
-          "value" : "BSI1886",
+          "value" : "SHI26",
           "type" : "label"
         }, {
           "identifier" : "source",
           "language" : "undefined",
-          "value" : "SHI26",
+          "value" : "BSI1886",
           "type" : "label"
         }, {
           "identifier" : "source",
@@ -2717,12 +2697,12 @@
         "source" : [ {
           "identifier" : "source",
           "language" : "undefined",
-          "value" : "TL22",
+          "value" : "AM22",
           "type" : "label"
         }, {
           "identifier" : "source",
           "language" : "undefined",
-          "value" : "WF25",
+          "value" : "SHI26",
           "type" : "label"
         }, {
           "identifier" : "source",
@@ -2732,12 +2712,12 @@
         }, {
           "identifier" : "source",
           "language" : "undefined",
-          "value" : "AM22",
+          "value" : "TL22",
           "type" : "label"
         }, {
           "identifier" : "source",
           "language" : "undefined",
-          "value" : "SHI26",
+          "value" : "WF25",
           "type" : "label"
         } ]
       },
@@ -2761,22 +2741,22 @@
         "source" : [ {
           "identifier" : "source",
           "language" : "undefined",
-          "value" : "BR26",
-          "type" : "label"
-        }, {
-          "identifier" : "source",
-          "language" : "undefined",
-          "value" : "SHI26",
-          "type" : "label"
-        }, {
-          "identifier" : "source",
-          "language" : "undefined",
           "value" : "STVF",
           "type" : "label"
         }, {
           "identifier" : "source",
           "language" : "undefined",
+          "value" : "BR26",
+          "type" : "label"
+        }, {
+          "identifier" : "source",
+          "language" : "undefined",
           "value" : "AM22",
+          "type" : "label"
+        }, {
+          "identifier" : "source",
+          "language" : "undefined",
+          "value" : "SHI26",
           "type" : "label"
         } ]
       },
@@ -2800,17 +2780,17 @@
         "source" : [ {
           "identifier" : "source",
           "language" : "undefined",
-          "value" : "AM22",
-          "type" : "label"
-        }, {
-          "identifier" : "source",
-          "language" : "undefined",
           "value" : "BSI1886",
           "type" : "label"
         }, {
           "identifier" : "source",
           "language" : "undefined",
           "value" : "J3016",
+          "type" : "label"
+        }, {
+          "identifier" : "source",
+          "language" : "undefined",
+          "value" : "AM22",
           "type" : "label"
         } ]
       },
@@ -2918,7 +2898,7 @@
         "source" : [ {
           "identifier" : "source",
           "language" : "undefined",
-          "value" : "MU21",
+          "value" : "ME24",
           "type" : "label"
         }, {
           "identifier" : "source",
@@ -2928,7 +2908,7 @@
         }, {
           "identifier" : "source",
           "language" : "undefined",
-          "value" : "ME24",
+          "value" : "MU21",
           "type" : "label"
         } ]
       },
@@ -2957,12 +2937,12 @@
       "source" : [ {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "J3016",
+        "value" : "AM22",
         "type" : "label"
       }, {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "AM22",
+        "value" : "J3016",
         "type" : "label"
       } ]
     },
@@ -2989,7 +2969,7 @@
       "source" : [ {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "MU21",
+        "value" : "EN95a",
         "type" : "label"
       }, {
         "identifier" : "source",
@@ -2999,7 +2979,7 @@
       }, {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "EN95a",
+        "value" : "MU21",
         "type" : "label"
       } ]
     },
@@ -3011,7 +2991,7 @@
       "en" : "SA-20. An operator state, not an operation mode: there is no vehicle and no mode. Waiting can bring underload and decreased vigilance (MU21, ME24, EN95a). Counts as a break for SA-12. Not J3016's DDT fallback-ready user, who is the user of one vehicle with an engaged Level 3 ADS and is receptive to its requests to intervene: an operator who waits for the requests of one vehicle while watching it is in remote monitoring here, and this state has no vehicle (related match in ROVO-core)."
     },
     "id" : "51",
-    "superClasses" : [ "199" ]
+    "superClasses" : [ "224" ]
   }, {
     "iri" : "https://w3id.org/rovo/op#EyeFixationEvidence",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -3353,97 +3333,97 @@
     "id" : "159",
     "type" : "rdfs:SubClassOf"
   }, {
+    "id" : "160",
+    "type" : "owl:disjointWith"
+  }, {
     "id" : "161",
     "type" : "owl:disjointWith"
   }, {
     "id" : "162",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "163",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "164",
+    "type" : "owl:disjointWith"
   }, {
     "id" : "165",
     "type" : "owl:disjointWith"
   }, {
     "id" : "166",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "167",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "168",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "169",
+    "id" : "167",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "171",
+    "id" : "170",
     "type" : "owl:disjointWith"
   }, {
-    "id" : "172",
+    "id" : "171",
     "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "172",
+    "type" : "owl:disjointWith"
   }, {
     "id" : "173",
     "type" : "owl:disjointWith"
   }, {
     "id" : "174",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "175",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "176",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "177",
+    "type" : "owl:disjointWith"
   }, {
     "id" : "178",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "179",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "180",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "181",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "182",
+    "id" : "179",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "183",
+    "id" : "181",
     "type" : "owl:disjointWith"
+  }, {
+    "id" : "182",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "183",
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "184",
     "type" : "owl:disjointWith"
   }, {
     "id" : "185",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "186",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "187",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "188",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "189",
     "type" : "owl:disjointWith"
   }, {
     "id" : "190",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "191",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "192",
+    "id" : "191",
     "type" : "owl:objectProperty"
+  }, {
+    "id" : "192",
+    "type" : "owl:disjointWith"
   }, {
     "id" : "193",
     "type" : "owl:disjointWith"
   }, {
     "id" : "194",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "195",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "196",
@@ -3455,73 +3435,73 @@
     "id" : "198",
     "type" : "rdfs:SubClassOf"
   }, {
+    "id" : "199",
+    "type" : "owl:disjointWith"
+  }, {
     "id" : "200",
     "type" : "owl:disjointWith"
   }, {
     "id" : "201",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "202",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "203",
     "type" : "owl:disjointWith"
   }, {
     "id" : "204",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "205",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "206",
     "type" : "owl:disjointWith"
   }, {
     "id" : "207",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "208",
     "type" : "owl:objectProperty"
+  }, {
+    "id" : "209",
+    "type" : "owl:disjointWith"
   }, {
     "id" : "210",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "211",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "213",
+    "id" : "212",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "214",
+    "id" : "213",
     "type" : "owl:disjointWith"
   }, {
-    "id" : "215",
+    "id" : "214",
     "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "215",
+    "type" : "owl:disjointWith"
   }, {
     "id" : "216",
     "type" : "owl:disjointWith"
   }, {
     "id" : "217",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "218",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "219",
     "type" : "owl:disjointWith"
   }, {
     "id" : "220",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "221",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "222",
     "type" : "owl:disjointWith"
   }, {
     "id" : "223",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "224",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "225",
@@ -3617,11 +3597,17 @@
     "id" : "260",
     "type" : "owl:disjointWith"
   }, {
+    "id" : "261",
+    "type" : "rdfs:SubClassOf"
+  }, {
     "id" : "262",
     "type" : "owl:disjointWith"
   }, {
     "id" : "263",
     "type" : "owl:disjointWith"
+  }, {
+    "id" : "264",
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "265",
     "type" : "owl:disjointWith"
@@ -3996,34 +3982,40 @@
     "type" : "owl:disjointWith"
   }, {
     "id" : "395",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "396",
     "type" : "owl:disjointWith"
   }, {
     "id" : "397",
-    "type" : "owl:disjointWith"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "398",
-    "type" : "owl:objectProperty"
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "399",
+    "type" : "owl:disjointWith"
   }, {
     "id" : "400",
     "type" : "owl:disjointWith"
   }, {
     "id" : "401",
-    "type" : "owl:disjointWith"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "402",
     "type" : "owl:disjointWith"
   }, {
     "id" : "403",
-    "type" : "owl:objectProperty"
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "404",
+    "type" : "owl:disjointWith"
   }, {
     "id" : "405",
     "type" : "owl:disjointWith"
   }, {
     "id" : "406",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "407",
     "type" : "owl:disjointWith"
@@ -4035,31 +4027,28 @@
     "type" : "owl:disjointWith"
   }, {
     "id" : "410",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "411",
     "type" : "owl:disjointWith"
   }, {
     "id" : "412",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "413",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "414",
-    "type" : "owl:disjointWith"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "415",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "416",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "417",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "418",
-    "type" : "owl:objectProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "419",
     "type" : "owl:disjointWith"
@@ -4068,28 +4057,28 @@
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "421",
-    "type" : "owl:disjointWith"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "422",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "423",
-    "type" : "owl:datatypeProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "424",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "425",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "426",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "427",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "428",
-    "type" : "owl:objectProperty"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "429",
     "type" : "owl:disjointWith"
@@ -4098,13 +4087,10 @@
     "type" : "owl:disjointWith"
   }, {
     "id" : "431",
-    "type" : "owl:disjointWith"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "432",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "433",
-    "type" : "owl:disjointWith"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "434",
     "type" : "owl:objectProperty"
@@ -4112,68 +4098,68 @@
     "id" : "435",
     "type" : "owl:objectProperty"
   }, {
+    "id" : "436",
+    "type" : "owl:datatypeProperty"
+  }, {
     "id" : "437",
     "type" : "owl:objectProperty"
   }, {
     "id" : "438",
-    "type" : "owl:objectProperty"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "439",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "440",
-    "type" : "owl:objectProperty"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "441",
-    "type" : "owl:disjointWith"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "442",
-    "type" : "owl:disjointWith"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "443",
-    "type" : "owl:disjointWith"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "444",
     "type" : "owl:objectProperty"
   }, {
     "id" : "445",
-    "type" : "owl:objectProperty"
+    "type" : "owl:datatypeProperty"
   }, {
-    "id" : "446",
+    "id" : "208",
     "type" : "owl:objectProperty"
   }, {
     "id" : "447",
     "type" : "owl:objectProperty"
   }, {
     "id" : "448",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "209",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "449",
     "type" : "owl:objectProperty"
   }, {
     "id" : "450",
     "type" : "owl:objectProperty"
   }, {
+    "id" : "451",
+    "type" : "owl:datatypeProperty"
+  }, {
     "id" : "452",
-    "type" : "owl:objectProperty"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "453",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "454",
     "type" : "owl:disjointWith"
+  }, {
+    "id" : "299",
+    "type" : "owl:objectProperty"
   }, {
     "id" : "455",
     "type" : "owl:disjointWith"
   }, {
     "id" : "456",
     "type" : "owl:disjointWith"
-  }, {
-    "id" : "299",
-    "type" : "owl:objectProperty"
   }, {
     "id" : "457",
     "type" : "owl:disjointWith"
@@ -4194,16 +4180,16 @@
     "type" : "owl:disjointWith"
   }, {
     "id" : "463",
-    "type" : "owl:disjointWith"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "464",
-    "type" : "owl:disjointWith"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "465",
-    "type" : "owl:objectProperty"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "466",
-    "type" : "owl:objectProperty"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "467",
     "type" : "owl:disjointWith"
@@ -4236,16 +4222,16 @@
     "type" : "owl:disjointWith"
   }, {
     "id" : "477",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "478",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "479",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "480",
+    "id" : "478",
     "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "479",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "480",
+    "type" : "owl:disjointWith"
   }, {
     "id" : "481",
     "type" : "owl:disjointWith"
@@ -4308,19 +4294,19 @@
     "type" : "owl:disjointWith"
   }, {
     "id" : "501",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "502",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "503",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "504",
+    "id" : "502",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "505",
+    "id" : "503",
     "type" : "owl:objectProperty"
+  }, {
+    "id" : "504",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "505",
+    "type" : "owl:disjointWith"
   }, {
     "id" : "506",
     "type" : "owl:disjointWith"
@@ -4332,13 +4318,13 @@
     "type" : "owl:disjointWith"
   }, {
     "id" : "509",
-    "type" : "owl:disjointWith"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "510",
     "type" : "owl:disjointWith"
   }, {
     "id" : "511",
-    "type" : "owl:objectProperty"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "512",
     "type" : "owl:disjointWith"
@@ -4365,34 +4351,34 @@
     "type" : "owl:disjointWith"
   }, {
     "id" : "520",
-    "type" : "owl:disjointWith"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "521",
-    "type" : "owl:disjointWith"
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "449",
+    "type" : "owl:objectProperty"
   }, {
     "id" : "522",
     "type" : "owl:objectProperty"
   }, {
     "id" : "523",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "451",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "524",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "525",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "526",
+    "id" : "524",
     "type" : "owl:disjointWith"
+  }, {
+    "id" : "525",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "526",
+    "type" : "owl:objectProperty"
   }, {
     "id" : "527",
     "type" : "owl:disjointWith"
   }, {
     "id" : "528",
-    "type" : "owl:objectProperty"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "529",
     "type" : "owl:disjointWith"
@@ -4413,18 +4399,12 @@
     "type" : "owl:disjointWith"
   }, {
     "id" : "535",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "536",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "537",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "538",
+    "id" : "536",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "539",
+    "id" : "537",
     "type" : "owl:datatypeProperty"
   } ],
   "propertyAttribute" : [ {
@@ -5025,40 +5005,40 @@
     "attributes" : [ "anonymous", "object" ],
     "id" : "158"
   }, {
-    "range" : "160",
-    "domain" : "10",
+    "range" : "154",
+    "domain" : "135",
     "attributes" : [ "anonymous", "object" ],
     "id" : "159"
   }, {
     "range" : "57",
     "domain" : "63",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "161"
+    "id" : "160"
   }, {
     "range" : "15",
     "domain" : "22",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "162"
+    "id" : "161"
   }, {
     "range" : "154",
-    "domain" : "164",
+    "domain" : "107",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "163"
+    "id" : "162"
   }, {
     "range" : "68",
     "domain" : "57",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "165"
+    "id" : "163"
   }, {
     "range" : "15",
     "domain" : "26",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "166"
+    "id" : "164"
   }, {
     "range" : "57",
     "domain" : "72",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "167"
+    "id" : "165"
   }, {
     "iri" : "https://w3id.org/rovo/op#requestedBy",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -5080,37 +5060,37 @@
       "en" : "SA-03. The engagement that responds to the request is with this vehicle (ROVO-op-shapes.ttl)."
     },
     "attributes" : [ "object", "functional" ],
-    "id" : "168"
+    "id" : "166"
   }, {
-    "range" : "155",
-    "domain" : "170",
+    "range" : "169",
+    "domain" : "168",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "169"
+    "id" : "167"
   }, {
     "range" : "10",
     "domain" : "22",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "171"
+    "id" : "170"
   }, {
-    "range" : "155",
-    "domain" : "4",
+    "range" : "87",
+    "domain" : "36",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "172"
+    "id" : "171"
   }, {
     "range" : "8",
     "domain" : "51",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "173"
+    "id" : "172"
   }, {
     "range" : "10",
     "domain" : "26",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "174"
+    "id" : "173"
   }, {
-    "range" : "177",
-    "domain" : "176",
+    "range" : "87",
+    "domain" : "63",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "175"
+    "id" : "174"
   }, {
     "iri" : "https://w3id.org/rovo/op#takeoverReason",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -5132,22 +5112,22 @@
       "en" : "SA-03. Only on an engagement that took over from an on-board driver (takenOverFrom), which responds to no request (ROVO-op-shapes.ttl). Optional, and an engagement can state several."
     },
     "attributes" : [ "object" ],
-    "id" : "178"
+    "id" : "175"
   }, {
     "range" : "51",
     "domain" : "13",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "179"
+    "id" : "176"
   }, {
     "range" : "10",
     "domain" : "30",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "180"
+    "id" : "177"
   }, {
     "range" : "87",
-    "domain" : "36",
+    "domain" : "2",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "181"
+    "id" : "178"
   }, {
     "iri" : "https://w3id.org/rovo/op#shownIn",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -5164,57 +5144,57 @@
       "IRI-based" : "shownIn",
       "en" : "shown in"
     },
-    "domain" : "170",
+    "domain" : "180",
     "comment" : {
       "en" : "SA-08, SA-09. Ties a scene to the operator, the vehicle and the mode whose information age limit applies to it."
     },
     "attributes" : [ "object" ],
-    "id" : "182"
+    "id" : "179"
   }, {
     "range" : "51",
     "domain" : "18",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "183"
+    "id" : "181"
   }, {
     "range" : "10",
     "domain" : "36",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "184"
+    "id" : "182"
   }, {
     "range" : "87",
-    "domain" : "63",
+    "domain" : "26",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "185"
+    "id" : "183"
   }, {
     "range" : "51",
     "domain" : "22",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "186"
+    "id" : "184"
   }, {
     "range" : "15",
     "domain" : "1",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "187"
+    "id" : "185"
   }, {
-    "range" : "87",
-    "domain" : "2",
+    "range" : "187",
+    "domain" : "72",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "188"
+    "id" : "186"
   }, {
     "range" : "51",
     "domain" : "26",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "189"
+    "id" : "188"
   }, {
     "range" : "8",
     "domain" : "15",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "190"
+    "id" : "189"
   }, {
-    "range" : "87",
-    "domain" : "26",
+    "range" : "187",
+    "domain" : "10",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "191"
+    "id" : "190"
   }, {
     "iri" : "http://www.w3.org/ns/sosa/hasFeatureOfInterest",
     "baseIri" : "http://www.w3.org/ns/sosa",
@@ -5231,23 +5211,23 @@
       "IRI-based" : "hasFeatureOfInterest"
     },
     "domain" : "95",
-    "attributes" : [ "external", "object" ],
-    "id" : "192"
+    "attributes" : [ "object", "external" ],
+    "id" : "191"
   }, {
     "range" : "51",
     "domain" : "30",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "193"
+    "id" : "192"
   }, {
     "range" : "13",
     "domain" : "15",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "194"
+    "id" : "193"
   }, {
-    "range" : "160",
-    "domain" : "72",
+    "range" : "154",
+    "domain" : "195",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "195"
+    "id" : "194"
   }, {
     "range" : "51",
     "domain" : "48",
@@ -5259,50 +5239,50 @@
     "attributes" : [ "anonymous", "object" ],
     "id" : "197"
   }, {
-    "range" : "199",
-    "domain" : "33",
+    "range" : "155",
+    "domain" : "1",
     "attributes" : [ "anonymous", "object" ],
     "id" : "198"
   }, {
     "range" : "51",
     "domain" : "4",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "200"
+    "id" : "199"
   }, {
     "range" : "8",
     "domain" : "10",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "201"
+    "id" : "200"
   }, {
     "range" : "155",
-    "domain" : "18",
+    "domain" : "180",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "202"
+    "id" : "201"
   }, {
     "range" : "10",
     "domain" : "51",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "203"
+    "id" : "202"
   }, {
     "range" : "10",
     "domain" : "13",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "204"
+    "id" : "203"
   }, {
     "range" : "155",
-    "domain" : "1",
+    "domain" : "4",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "205"
+    "id" : "204"
   }, {
     "range" : "51",
     "domain" : "15",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "206"
+    "id" : "205"
   }, {
     "range" : "10",
     "domain" : "18",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "207"
+    "id" : "206"
   }, {
     "iri" : "https://w3id.org/rovo/op#supportedBy",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -5319,22 +5299,22 @@
       "IRI-based" : "supportedBy",
       "en" : "supported by"
     },
-    "superproperty" : [ "209" ],
+    "superproperty" : [ "208" ],
     "domain" : "4",
     "comment" : {
       "en" : "SA-25. Every perception assertion has at least one, since perception is never asserted as fact."
     },
     "attributes" : [ "object" ],
-    "id" : "208"
+    "id" : "207"
   }, {
     "range" : "51",
     "domain" : "1",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "210"
+    "id" : "209"
   }, {
     "iri" : "https://w3id.org/rovo/op#forDrivingTask",
     "baseIri" : "https://w3id.org/rovo/op",
-    "range" : "212",
+    "range" : "211",
     "annotations" : {
       "definition" : [ {
         "identifier" : "definition",
@@ -5358,67 +5338,67 @@
       "en" : "SA-22. Optional: the requirement applies only to engagements with this driving task (engagementTask, or the vehicle's only driving task), e.g. the fork and the load in pallet handling (WO25). Without it, the requirement applies to every driving task."
     },
     "attributes" : [ "object", "functional" ],
-    "id" : "211"
-  }, {
-    "range" : "68",
-    "domain" : "92",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "213"
-  }, {
-    "range" : "18",
-    "domain" : "4",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "214"
-  }, {
-    "range" : "68",
-    "domain" : "93",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "215"
-  }, {
-    "range" : "51",
-    "domain" : "63",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "216"
-  }, {
-    "range" : "4",
-    "domain" : "22",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "217"
+    "id" : "210"
   }, {
     "range" : "18",
     "domain" : "98",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "218"
+    "id" : "212"
   }, {
-    "range" : "51",
-    "domain" : "68",
+    "range" : "18",
+    "domain" : "4",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "219"
-  }, {
-    "range" : "4",
-    "domain" : "26",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "220"
+    "id" : "213"
   }, {
     "range" : "18",
     "domain" : "54",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "221"
+    "id" : "214"
   }, {
     "range" : "51",
-    "domain" : "72",
+    "domain" : "63",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "222"
+    "id" : "215"
   }, {
-    "range" : "30",
-    "domain" : "4",
+    "range" : "4",
+    "domain" : "22",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "223"
+    "id" : "216"
   }, {
     "range" : "18",
     "domain" : "101",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "224"
+    "id" : "217"
+  }, {
+    "range" : "51",
+    "domain" : "68",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "218"
+  }, {
+    "range" : "4",
+    "domain" : "26",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "219"
+  }, {
+    "range" : "18",
+    "domain" : "55",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "220"
+  }, {
+    "range" : "51",
+    "domain" : "72",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "221"
+  }, {
+    "range" : "30",
+    "domain" : "4",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "222"
+  }, {
+    "range" : "224",
+    "domain" : "51",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "223"
   }, {
     "range" : "51",
     "domain" : "41",
@@ -5430,8 +5410,8 @@
     "attributes" : [ "anonymous", "object" ],
     "id" : "226"
   }, {
-    "range" : "18",
-    "domain" : "55",
+    "range" : "224",
+    "domain" : "33",
     "attributes" : [ "anonymous", "object" ],
     "id" : "227"
   }, {
@@ -5445,8 +5425,8 @@
     "attributes" : [ "anonymous", "object" ],
     "id" : "229"
   }, {
-    "range" : "199",
-    "domain" : "51",
+    "range" : "155",
+    "domain" : "18",
     "attributes" : [ "anonymous", "object" ],
     "id" : "230"
   }, {
@@ -5461,7 +5441,7 @@
     "id" : "232"
   }, {
     "range" : "68",
-    "domain" : "88",
+    "domain" : "90",
     "attributes" : [ "anonymous", "object" ],
     "id" : "233"
   }, {
@@ -5476,7 +5456,7 @@
     "id" : "235"
   }, {
     "range" : "68",
-    "domain" : "89",
+    "domain" : "91",
     "attributes" : [ "anonymous", "object" ],
     "id" : "236"
   }, {
@@ -5491,7 +5471,7 @@
     "id" : "238"
   }, {
     "range" : "68",
-    "domain" : "90",
+    "domain" : "92",
     "attributes" : [ "anonymous", "object" ],
     "id" : "239"
   }, {
@@ -5506,7 +5486,7 @@
     "id" : "241"
   }, {
     "range" : "68",
-    "domain" : "91",
+    "domain" : "93",
     "attributes" : [ "anonymous", "object" ],
     "id" : "242"
   }, {
@@ -5562,7 +5542,7 @@
       "IRI-based" : "derivedFromFrame",
       "en" : "derived from frame"
     },
-    "domain" : "170",
+    "domain" : "180",
     "comment" : {
       "en" : "SA-08: a sensor frame the displayed scene was produced from. Not a subproperty of prov:wasDerivedFrom: that would type a SensorFrame as a prov:Entity, while a sosa:Observation is a prov:Activity in the SSN-PROV alignment, and the two are disjoint."
     },
@@ -5626,6 +5606,11 @@
     "attributes" : [ "anonymous", "object" ],
     "id" : "260"
   }, {
+    "range" : "68",
+    "domain" : "88",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "261"
+  }, {
     "range" : "13",
     "domain" : "33",
     "attributes" : [ "anonymous", "object" ],
@@ -5635,6 +5620,11 @@
     "domain" : "48",
     "attributes" : [ "anonymous", "object" ],
     "id" : "263"
+  }, {
+    "range" : "68",
+    "domain" : "89",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "264"
   }, {
     "range" : "68",
     "domain" : "33",
@@ -5758,12 +5748,12 @@
       "source" : [ {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "MU21",
+        "value" : "LU17",
         "type" : "label"
       }, {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "LU17",
+        "value" : "MU21",
         "type" : "label"
       }, {
         "identifier" : "source",
@@ -5798,7 +5788,7 @@
       "IRI-based" : "displayedAt",
       "en" : "displayed at"
     },
-    "domain" : "170",
+    "domain" : "180",
     "comment" : {
       "en" : "SA-09. Information age = displayedAt minus the earliest sensed time (capture time minus capture delay) of the frames the scene was derived from."
     },
@@ -5876,7 +5866,7 @@
     },
     "domain" : "95",
     "subproperty" : [ "299", "37" ],
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "38"
   }, {
     "range" : "10",
@@ -5973,7 +5963,7 @@
       "IRI-based" : "onChannel",
       "en" : "on channel"
     },
-    "domain" : "170",
+    "domain" : "180",
     "comment" : {
       "en" : "SA-08. E.g. the camera view a scene appeared in. Recorded with the scene."
     },
@@ -6038,38 +6028,38 @@
     "id" : "317"
   }, {
     "range" : "154",
-    "domain" : "177",
+    "domain" : "169",
     "attributes" : [ "anonymous", "object" ],
     "id" : "318"
   }, {
     "range" : "154",
-    "domain" : "212",
+    "domain" : "211",
     "attributes" : [ "anonymous", "object" ],
     "id" : "319"
   }, {
     "range" : "154",
-    "domain" : "170",
+    "domain" : "180",
     "attributes" : [ "anonymous", "object" ],
     "id" : "320"
   }, {
     "range" : "8",
-    "domain" : "177",
+    "domain" : "169",
     "attributes" : [ "anonymous", "object" ],
     "id" : "321"
   }, {
-    "range" : "177",
+    "range" : "169",
     "domain" : "18",
     "attributes" : [ "anonymous", "object" ],
     "id" : "322"
   }, {
     "range" : "13",
-    "domain" : "177",
+    "domain" : "169",
     "attributes" : [ "anonymous", "object" ],
     "id" : "323"
   }, {
     "iri" : "https://w3id.org/rovo/op#basedOnScene",
     "baseIri" : "https://w3id.org/rovo/op",
-    "range" : "170",
+    "range" : "180",
     "annotations" : {
       "definition" : [ {
         "identifier" : "definition",
@@ -6082,7 +6072,7 @@
       "IRI-based" : "basedOnScene",
       "en" : "based on scene"
     },
-    "superproperty" : [ "209" ],
+    "superproperty" : [ "208" ],
     "domain" : "4",
     "comment" : {
       "en" : "The displayed scene the operator perceived the element in; through it, when the information was sensed at the vehicle (SA-11)."
@@ -6109,51 +6099,51 @@
     "id" : "325"
   }, {
     "range" : "10",
-    "domain" : "177",
+    "domain" : "169",
     "attributes" : [ "anonymous", "object" ],
     "id" : "326"
   }, {
-    "range" : "177",
+    "range" : "169",
     "domain" : "4",
     "attributes" : [ "anonymous", "object" ],
     "id" : "327"
   }, {
-    "range" : "177",
+    "range" : "169",
     "domain" : "1",
     "attributes" : [ "anonymous", "object" ],
     "id" : "328"
   }, {
-    "range" : "177",
+    "range" : "169",
     "domain" : "15",
     "attributes" : [ "anonymous", "object" ],
     "id" : "329"
   }, {
-    "range" : "177",
+    "range" : "169",
     "domain" : "41",
     "attributes" : [ "anonymous", "object" ],
     "id" : "330"
   }, {
-    "range" : "177",
+    "range" : "169",
     "domain" : "72",
     "attributes" : [ "anonymous", "object" ],
     "id" : "331"
   }, {
-    "range" : "177",
+    "range" : "169",
     "domain" : "48",
     "attributes" : [ "anonymous", "object" ],
     "id" : "332"
   }, {
     "range" : "5",
-    "domain" : "177",
+    "domain" : "169",
     "attributes" : [ "anonymous", "object" ],
     "id" : "333"
   }, {
     "range" : "68",
-    "domain" : "177",
+    "domain" : "169",
     "attributes" : [ "anonymous", "object" ],
     "id" : "334"
   }, {
-    "range" : "177",
+    "range" : "169",
     "domain" : "63",
     "attributes" : [ "anonymous", "object" ],
     "id" : "335"
@@ -6181,27 +6171,27 @@
     "id" : "336"
   }, {
     "range" : "57",
-    "domain" : "177",
+    "domain" : "169",
     "attributes" : [ "anonymous", "object" ],
     "id" : "337"
   }, {
     "range" : "2",
-    "domain" : "177",
+    "domain" : "169",
     "attributes" : [ "anonymous", "object" ],
     "id" : "338"
   }, {
-    "range" : "177",
-    "domain" : "212",
+    "range" : "169",
+    "domain" : "211",
     "attributes" : [ "anonymous", "object" ],
     "id" : "339"
   }, {
     "range" : "51",
-    "domain" : "177",
+    "domain" : "169",
     "attributes" : [ "anonymous", "object" ],
     "id" : "340"
   }, {
     "range" : "33",
-    "domain" : "177",
+    "domain" : "169",
     "attributes" : [ "anonymous", "object" ],
     "id" : "341"
   }, {
@@ -6215,8 +6205,8 @@
     "attributes" : [ "anonymous", "object" ],
     "id" : "343"
   }, {
-    "range" : "177",
-    "domain" : "170",
+    "range" : "169",
+    "domain" : "180",
     "attributes" : [ "anonymous", "object" ],
     "id" : "344"
   }, {
@@ -6244,62 +6234,62 @@
     "id" : "346"
   }, {
     "range" : "8",
-    "domain" : "170",
+    "domain" : "180",
     "attributes" : [ "anonymous", "object" ],
     "id" : "347"
   }, {
     "range" : "135",
-    "domain" : "164",
+    "domain" : "195",
     "attributes" : [ "anonymous", "object" ],
     "id" : "348"
   }, {
-    "range" : "170",
+    "range" : "180",
     "domain" : "1",
     "attributes" : [ "anonymous", "object" ],
     "id" : "349"
   }, {
     "range" : "140",
-    "domain" : "164",
+    "domain" : "195",
     "attributes" : [ "anonymous", "object" ],
     "id" : "350"
   }, {
     "range" : "18",
-    "domain" : "170",
+    "domain" : "180",
     "attributes" : [ "anonymous", "object" ],
     "id" : "351"
   }, {
     "range" : "130",
-    "domain" : "164",
+    "domain" : "195",
     "attributes" : [ "anonymous", "object" ],
     "id" : "352"
   }, {
     "range" : "13",
-    "domain" : "170",
+    "domain" : "180",
     "attributes" : [ "anonymous", "object" ],
     "id" : "353"
   }, {
     "range" : "107",
-    "domain" : "164",
+    "domain" : "195",
     "attributes" : [ "anonymous", "object" ],
     "id" : "354"
   }, {
     "range" : "108",
-    "domain" : "164",
+    "domain" : "195",
     "attributes" : [ "anonymous", "object" ],
     "id" : "355"
   }, {
     "range" : "111",
-    "domain" : "164",
+    "domain" : "195",
     "attributes" : [ "anonymous", "object" ],
     "id" : "356"
   }, {
     "range" : "15",
-    "domain" : "170",
+    "domain" : "180",
     "attributes" : [ "anonymous", "object" ],
     "id" : "357"
   }, {
     "range" : "82",
-    "domain" : "164",
+    "domain" : "195",
     "attributes" : [ "anonymous", "object" ],
     "id" : "358"
   }, {
@@ -6329,7 +6319,7 @@
     },
     "domain" : "95",
     "subproperty" : [ "32" ],
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "34"
   }, {
     "range" : "107",
@@ -6360,42 +6350,42 @@
     "id" : "362"
   }, {
     "range" : "10",
-    "domain" : "170",
+    "domain" : "180",
     "attributes" : [ "anonymous", "object" ],
     "id" : "363"
   }, {
-    "range" : "170",
+    "range" : "180",
     "domain" : "4",
     "attributes" : [ "anonymous", "object" ],
     "id" : "364"
   }, {
-    "range" : "170",
+    "range" : "180",
     "domain" : "41",
     "attributes" : [ "anonymous", "object" ],
     "id" : "365"
   }, {
-    "range" : "170",
+    "range" : "180",
     "domain" : "72",
     "attributes" : [ "anonymous", "object" ],
     "id" : "366"
   }, {
-    "range" : "170",
+    "range" : "180",
     "domain" : "48",
     "attributes" : [ "anonymous", "object" ],
     "id" : "367"
   }, {
     "range" : "5",
-    "domain" : "170",
+    "domain" : "180",
     "attributes" : [ "anonymous", "object" ],
     "id" : "368"
   }, {
     "range" : "57",
-    "domain" : "170",
+    "domain" : "180",
     "attributes" : [ "anonymous", "object" ],
     "id" : "369"
   }, {
     "range" : "51",
-    "domain" : "170",
+    "domain" : "180",
     "attributes" : [ "anonymous", "object" ],
     "id" : "370"
   }, {
@@ -6405,7 +6395,7 @@
     "id" : "371"
   }, {
     "range" : "68",
-    "domain" : "170",
+    "domain" : "180",
     "attributes" : [ "anonymous", "object" ],
     "id" : "372"
   }, {
@@ -6415,7 +6405,7 @@
     "id" : "373"
   }, {
     "range" : "63",
-    "domain" : "170",
+    "domain" : "180",
     "attributes" : [ "anonymous", "object" ],
     "id" : "374"
   }, {
@@ -6482,18 +6472,18 @@
     "id" : "384"
   }, {
     "range" : "2",
-    "domain" : "170",
+    "domain" : "180",
     "attributes" : [ "anonymous", "object" ],
     "id" : "385"
   }, {
-    "range" : "212",
-    "domain" : "170",
+    "range" : "211",
+    "domain" : "180",
     "attributes" : [ "anonymous", "object" ],
     "id" : "386"
   }, {
     "iri" : "https://w3id.org/rovo/op#providesCue",
     "baseIri" : "https://w3id.org/rovo/op",
-    "range" : "177",
+    "range" : "169",
     "annotations" : {
       "definition" : [ {
         "identifier" : "definition",
@@ -6514,58 +6504,53 @@
     "id" : "387"
   }, {
     "range" : "33",
-    "domain" : "170",
+    "domain" : "180",
     "attributes" : [ "anonymous", "object" ],
     "id" : "388"
   }, {
-    "range" : "177",
+    "range" : "169",
     "domain" : "26",
     "attributes" : [ "anonymous", "object" ],
     "id" : "389"
   }, {
-    "range" : "177",
+    "range" : "169",
     "domain" : "22",
     "attributes" : [ "anonymous", "object" ],
     "id" : "390"
   }, {
-    "range" : "177",
+    "range" : "169",
     "domain" : "36",
     "attributes" : [ "anonymous", "object" ],
     "id" : "391"
   }, {
     "range" : "30",
-    "domain" : "177",
+    "domain" : "169",
     "attributes" : [ "anonymous", "object" ],
     "id" : "392"
   }, {
     "range" : "13",
-    "domain" : "212",
+    "domain" : "211",
     "attributes" : [ "anonymous", "object" ],
     "id" : "393"
   }, {
     "range" : "8",
-    "domain" : "212",
+    "domain" : "211",
     "attributes" : [ "anonymous", "object" ],
     "id" : "394"
   }, {
-    "range" : "48",
-    "domain" : "61",
+    "range" : "211",
+    "domain" : "22",
     "attributes" : [ "anonymous", "object" ],
     "id" : "395"
   }, {
-    "range" : "212",
-    "domain" : "22",
+    "range" : "18",
+    "domain" : "211",
     "attributes" : [ "anonymous", "object" ],
     "id" : "396"
   }, {
-    "range" : "18",
-    "domain" : "212",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "397"
-  }, {
     "iri" : "https://w3id.org/rovo/op#adaptedInformationAge",
     "baseIri" : "https://w3id.org/rovo/op",
-    "range" : "399",
+    "range" : "273",
     "annotations" : {
       "definition" : [ {
         "identifier" : "definition",
@@ -6576,12 +6561,12 @@
       "source" : [ {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "HA24",
+        "value" : "NE19",
         "type" : "label"
       }, {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "NE19",
+        "value" : "HA24",
         "type" : "label"
       } ]
     },
@@ -6589,31 +6574,31 @@
       "IRI-based" : "adaptedInformationAge",
       "en" : "adapted information age"
     },
-    "domain" : "33",
+    "domain" : "95",
     "comment" : {
       "en" : "SA-14. Interface (stream layer, fed by ROVO-link LK-05). HA24: latency adaptation took from 1-2 drives to months; NE19 varied latency within a drive. Adaptation belongs to the operator and the setup, not to one engagement, so a new engagement need not start it again: an engagement with adaptationCarriedFrom states no value of its own, and the value that applies to it is that of the engagement it is carried from, followed back to the one that measured it (ROVO-op-shapes.ttl)."
     },
-    "attributes" : [ "object", "functional" ],
-    "id" : "398"
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "397"
   }, {
     "range" : "10",
-    "domain" : "212",
+    "domain" : "211",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "398"
+  }, {
+    "range" : "211",
+    "domain" : "1",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "399"
+  }, {
+    "range" : "211",
+    "domain" : "15",
     "attributes" : [ "anonymous", "object" ],
     "id" : "400"
   }, {
-    "range" : "212",
-    "domain" : "1",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "401"
-  }, {
-    "range" : "212",
-    "domain" : "15",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "402"
-  }, {
     "iri" : "https://w3id.org/rovo/op#captureDelay",
     "baseIri" : "https://w3id.org/rovo/op",
-    "range" : "399",
+    "range" : "276",
     "annotations" : {
       "definition" : [ {
         "identifier" : "definition",
@@ -6632,21 +6617,21 @@
       "IRI-based" : "captureDelay",
       "en" : "capture delay"
     },
-    "domain" : "404",
+    "domain" : "95",
     "comment" : {
       "en" : "SA-08, SA-09. Configuration or offline measurement, not a per-frame value; GF20 measured roughly 15-35 ms. With it, information age runs from the event to its display, GF20's sensor (glass-to-glass) latency. A sensor without a value counts as zero delay. Shared with ROVO-link."
     },
-    "attributes" : [ "object", "functional" ],
-    "id" : "403"
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "401"
   }, {
     "range" : "5",
-    "domain" : "212",
+    "domain" : "211",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "405"
+    "id" : "402"
   }, {
     "iri" : "http://www.w3.org/ns/sosa/resultTime",
     "baseIri" : "http://www.w3.org/ns/sosa",
-    "range" : "251",
+    "range" : "279",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -6658,64 +6643,64 @@
     "label" : {
       "IRI-based" : "resultTime"
     },
-    "domain" : "249",
+    "domain" : "95",
     "attributes" : [ "external", "datatype" ],
+    "id" : "403"
+  }, {
+    "range" : "211",
+    "domain" : "41",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "404"
+  }, {
+    "range" : "211",
+    "domain" : "4",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "405"
+  }, {
+    "range" : "211",
+    "domain" : "48",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "406"
   }, {
-    "range" : "212",
-    "domain" : "41",
+    "range" : "63",
+    "domain" : "211",
     "attributes" : [ "anonymous", "object" ],
     "id" : "407"
   }, {
-    "range" : "212",
-    "domain" : "4",
+    "range" : "57",
+    "domain" : "211",
     "attributes" : [ "anonymous", "object" ],
     "id" : "408"
   }, {
-    "range" : "212",
-    "domain" : "48",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "409"
-  }, {
-    "range" : "63",
-    "domain" : "212",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "410"
-  }, {
-    "range" : "57",
-    "domain" : "212",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "411"
-  }, {
-    "range" : "212",
+    "range" : "211",
     "domain" : "72",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "412"
-  }, {
-    "range" : "154",
-    "domain" : "135",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "413"
-  }, {
-    "range" : "68",
-    "domain" : "212",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "414"
-  }, {
-    "range" : "154",
-    "domain" : "107",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "415"
+    "id" : "409"
   }, {
     "range" : "154",
     "domain" : "130",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "416"
+    "id" : "410"
+  }, {
+    "range" : "68",
+    "domain" : "211",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "411"
   }, {
     "range" : "154",
     "domain" : "140",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "417"
+    "id" : "412"
+  }, {
+    "range" : "154",
+    "domain" : "111",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "413"
+  }, {
+    "range" : "154",
+    "domain" : "108",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "414"
   }, {
     "iri" : "https://w3id.org/rovo/op#sensorOfVehicle",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -6732,32 +6717,32 @@
       "IRI-based" : "sensorOfVehicle",
       "en" : "sensor of vehicle"
     },
-    "domain" : "404",
+    "domain" : "416",
     "comment" : {
       "en" : "SA-08. Interface (vehicle state). Ties a sensor frame, through its sensor, to a vehicle: the frames of a displayed scene come from the vehicle of an engagement the scene was shown in, where their sensors state a vehicle (ROVO-op-shapes.ttl)."
     },
     "attributes" : [ "object", "functional" ],
-    "id" : "418"
+    "id" : "415"
   }, {
     "range" : "51",
-    "domain" : "212",
+    "domain" : "211",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "417"
+  }, {
+    "range" : "154",
+    "domain" : "82",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "418"
+  }, {
+    "range" : "33",
+    "domain" : "211",
     "attributes" : [ "anonymous", "object" ],
     "id" : "419"
   }, {
-    "range" : "154",
-    "domain" : "111",
+    "range" : "381",
+    "domain" : "57",
     "attributes" : [ "anonymous", "object" ],
     "id" : "420"
-  }, {
-    "range" : "33",
-    "domain" : "212",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "421"
-  }, {
-    "range" : "154",
-    "domain" : "108",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "422"
   }, {
     "iri" : "https://w3id.org/rovo/op#ableToTakeOver",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -6779,27 +6764,22 @@
       "en" : "LK-10. Interface (driver monitoring, vehicle state). True while the driver is on board and fit to drive; false when the driver cannot drive, e.g. after a takeover with the reason ROVO-op:OnBoardDriverUnableToDrive. Absent means not known, and then handing control back to the driver does not count as available (ROVO-link:OnBoardDriverCanTakeOver)."
     },
     "attributes" : [ "datatype", "functional" ],
-    "id" : "423"
-  }, {
-    "range" : "154",
-    "domain" : "82",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "424"
-  }, {
-    "range" : "381",
-    "domain" : "57",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "425"
+    "id" : "421"
   }, {
     "range" : "48",
     "domain" : "66",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "426"
+    "id" : "422"
   }, {
     "range" : "48",
     "domain" : "60",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "427"
+    "id" : "423"
+  }, {
+    "range" : "48",
+    "domain" : "61",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "424"
   }, {
     "iri" : "https://w3id.org/rovo/op#forEnvironment",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -6832,36 +6812,36 @@
       "en" : "SA-22. Optional: the requirement applies only to engagements in this operating environment (engagementEnvironment, or the vehicle's only environment). Without it, the requirement applies in every environment. Which elements matter depends on where and for what the vehicle is operated (WO25, HN25b)."
     },
     "attributes" : [ "object", "functional" ],
-    "id" : "428"
+    "id" : "425"
   }, {
     "range" : "2",
-    "domain" : "212",
+    "domain" : "211",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "426"
+  }, {
+    "range" : "180",
+    "domain" : "26",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "427"
+  }, {
+    "range" : "180",
+    "domain" : "22",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "428"
+  }, {
+    "range" : "36",
+    "domain" : "180",
     "attributes" : [ "anonymous", "object" ],
     "id" : "429"
   }, {
-    "range" : "170",
-    "domain" : "26",
+    "range" : "30",
+    "domain" : "180",
     "attributes" : [ "anonymous", "object" ],
     "id" : "430"
   }, {
-    "range" : "170",
-    "domain" : "22",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "431"
-  }, {
-    "range" : "36",
-    "domain" : "170",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "432"
-  }, {
-    "range" : "30",
-    "domain" : "170",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "433"
-  }, {
     "iri" : "http://www.w3.org/ns/sosa/observedProperty",
     "baseIri" : "http://www.w3.org/ns/sosa",
-    "range" : "249",
+    "range" : "95",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -6873,9 +6853,9 @@
     "label" : {
       "IRI-based" : "observedProperty"
     },
-    "domain" : "249",
-    "attributes" : [ "external", "object" ],
-    "id" : "434"
+    "domain" : "95",
+    "attributes" : [ "object", "external" ],
+    "id" : "431"
   }, {
     "iri" : "https://w3id.org/rovo/op#supportsMode",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -6897,7 +6877,7 @@
       "en" : "Interface (ROVO-concept). The modes the vehicle's equipment allows (SA-24). A vehicle without an ADS does not support remote assistance; it can support remote monitoring, continuous remote driving, and event-based remote driving where it can be taken over from an on-board driver. Support stated for a broader mode holds for its narrower modes (ROVO-op:broaderMode): a vehicle that supports ROVO-op:RemoteDriving supports both remote driving contexts. Support stated for a narrower mode holds for that mode only."
     },
     "attributes" : [ "object" ],
-    "id" : "435"
+    "id" : "432"
   }, {
     "iri" : "https://w3id.org/rovo/op#adaptationCarriedFrom",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -6925,11 +6905,11 @@
       "en" : "SA-14. Used when a mode change starts a new engagement over the same link, or when the operator drives the same setup again, so that the adaptation built up over earlier drives (HA24) is not lost. The earlier engagement has the same operator and started before this one (ROVO-op-shapes.ttl); with ROVO-link loaded, both must use the same teleoperation setup (ROVO-link-shapes.ttl). Whether an adaptation is still valid after a long pause is decided by the stream layer, which then gives no value."
     },
     "attributes" : [ "object", "functional" ],
-    "id" : "437"
+    "id" : "434"
   }, {
     "iri" : "http://qudt.org/schema/qudt/unit",
     "baseIri" : "http://qudt.org/schema/qudt",
-    "range" : "249",
+    "range" : "95",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -6941,13 +6921,13 @@
     "label" : {
       "IRI-based" : "unit"
     },
-    "domain" : "249",
-    "attributes" : [ "external", "object" ],
-    "id" : "438"
+    "domain" : "95",
+    "attributes" : [ "object", "external" ],
+    "id" : "435"
   }, {
     "iri" : "http://www.w3.org/ns/prov#generatedAtTime",
     "baseIri" : "http://www.w3.org/ns/prov",
-    "range" : "254",
+    "range" : "249",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -6959,9 +6939,9 @@
     "label" : {
       "IRI-based" : "generatedAtTime"
     },
-    "domain" : "249",
+    "domain" : "95",
     "attributes" : [ "external", "datatype" ],
-    "id" : "439"
+    "id" : "436"
   }, {
     "iri" : "https://w3id.org/rovo/op#inOperationMode",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -6983,26 +6963,26 @@
       "en" : "SA-01. An engagement uses one specific mode: not the broad remote driving mode."
     },
     "attributes" : [ "object", "functional" ],
-    "id" : "440"
+    "id" : "437"
   }, {
     "range" : "30",
-    "domain" : "212",
+    "domain" : "211",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "441"
+    "id" : "438"
   }, {
-    "range" : "212",
+    "range" : "211",
     "domain" : "26",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "442"
+    "id" : "439"
   }, {
-    "range" : "212",
+    "range" : "211",
     "domain" : "36",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "443"
+    "id" : "440"
   }, {
     "iri" : "https://w3id.org/rovo/op#hasDrivingTask",
     "baseIri" : "https://w3id.org/rovo/op",
-    "range" : "212",
+    "range" : "211",
     "annotations" : {
       "definition" : [ {
         "identifier" : "definition",
@@ -7020,7 +7000,7 @@
       "en" : "SA-06, static: the driving tasks the vehicle is deployed for."
     },
     "attributes" : [ "object" ],
-    "id" : "444"
+    "id" : "441"
   }, {
     "iri" : "https://w3id.org/rovo/op#appliesToMode",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -7042,7 +7022,7 @@
       "en" : "SA-09, SA-12, SA-14, SA-18, SA-24. A limit stated for a broader mode (ROVO-op:broaderMode) holds for its narrower modes unless they have their own. Not used on an SARequirement, which is scoped by SA type (forSAType)."
     },
     "attributes" : [ "object" ],
-    "id" : "445"
+    "id" : "442"
   }, {
     "iri" : "https://w3id.org/rovo/op#assertedOperator",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -7064,7 +7044,7 @@
       "en" : "SA-07. Where the assertion rests on a displayed scene, this is the operator of an engagement the scene was shown in (ROVO-op-shapes.ttl)."
     },
     "attributes" : [ "object", "functional" ],
-    "id" : "446"
+    "id" : "443"
   }, {
     "iri" : "https://w3id.org/rovo/op#takenOverFrom",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -7086,7 +7066,7 @@
       "en" : "SA-01, LK-10. A record of the takeover, which stays when the driver can no longer drive; whether control can go back to the driver (ROVO-link:HandBackToOnBoardDriver) is stated with ableToTakeOver. Only on event-based remote driving engagements (ROVO-op-shapes.ttl)."
     },
     "attributes" : [ "object", "functional" ],
-    "id" : "447"
+    "id" : "444"
   }, {
     "iri" : "https://w3id.org/rovo/op#horizontalFieldOfView",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -7108,11 +7088,11 @@
       "en" : "SA-17. The horizontal angle a camera view shows, in degrees. Camera views of one engagement are assumed not to overlap; overlapping cameras are declared as one stitched view with its combined angle."
     },
     "attributes" : [ "datatype", "functional" ],
-    "id" : "448"
+    "id" : "445"
   }, {
     "iri" : "http://www.w3.org/ns/prov#wasDerivedFrom",
     "baseIri" : "http://www.w3.org/ns/prov",
-    "range" : "249",
+    "range" : "95",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -7124,14 +7104,14 @@
     "label" : {
       "IRI-based" : "wasDerivedFrom"
     },
-    "domain" : "249",
-    "subproperty" : [ "208", "324" ],
-    "attributes" : [ "external", "object" ],
-    "id" : "209"
+    "domain" : "95",
+    "subproperty" : [ "207", "324" ],
+    "attributes" : [ "object", "external" ],
+    "id" : "208"
   }, {
     "iri" : "https://w3id.org/rovo/op#engagementTask",
     "baseIri" : "https://w3id.org/rovo/op",
-    "range" : "212",
+    "range" : "211",
     "annotations" : {
       "definition" : [ {
         "identifier" : "definition",
@@ -7149,7 +7129,7 @@
       "en" : "SA-06, runtime. As engagementEnvironment: one of the vehicle's driving tasks where the vehicle states any. Without a value, SA-06 has an answer only if the vehicle states exactly one driving task."
     },
     "attributes" : [ "object", "functional" ],
-    "id" : "449"
+    "id" : "447"
   }, {
     "iri" : "https://w3id.org/rovo/op#followsEngagement",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -7166,13 +7146,13 @@
       "IRI-based" : "followsEngagement",
       "en" : "follows engagement"
     },
-    "superproperty" : [ "451" ],
+    "superproperty" : [ "449" ],
     "domain" : "33",
     "comment" : {
       "en" : "SA-04. The operator moves on from an engagement already held: usually into another mode, e.g. from remote monitoring into event-based remote driving, on the operator's own initiative or on a request from the vehicle (the engagement then also has respondsTo); or in the same mode, when a reconnection in a new session starts a new engagement. The build-up then starts from the SA already held, not from zero: a perception assertion belongs to the operator, not to one engagement, so what the operator perceived in the earlier engagement still counts while it is within its recheck interval (SA-23). SA-04 names the engagement followed. The earlier engagement has ended and has the same operator and vehicle (ROVO-op-shapes.ttl)."
     },
     "attributes" : [ "object", "functional" ],
-    "id" : "450"
+    "id" : "448"
   }, {
     "iri" : "https://w3id.org/rovo/op#concernsElement",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -7194,7 +7174,7 @@
       "en" : "SA-03, SA-13, SA-22, SA-23. Optional, and a request can name several. For decision-support SA, the requirements then apply only to these elements, not to every element of the required type in the vehicle's scene; a request that names none is judged on every element of the type."
     },
     "attributes" : [ "object" ],
-    "id" : "452"
+    "id" : "450"
   }, {
     "iri" : "https://w3id.org/rovo/op#inVehicleFieldOfView",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -7209,17 +7189,12 @@
       "source" : [ {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "WO26",
-        "type" : "label"
-      }, {
-        "identifier" : "source",
-        "language" : "undefined",
         "value" : "HA24",
         "type" : "label"
       }, {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "ME24",
+        "value" : "WO25",
         "type" : "label"
       }, {
         "identifier" : "source",
@@ -7229,12 +7204,17 @@
       }, {
         "identifier" : "source",
         "language" : "undefined",
+        "value" : "WO26",
+        "type" : "label"
+      }, {
+        "identifier" : "source",
+        "language" : "undefined",
         "value" : "AM22",
         "type" : "label"
       }, {
         "identifier" : "source",
         "language" : "undefined",
-        "value" : "WO25",
+        "value" : "ME24",
         "type" : "label"
       } ]
     },
@@ -7247,22 +7227,22 @@
       "en" : "SA-17. Configuration: the required field, e.g. a licence minimum, not the wider field a driver may actually have. AM22 gives driving-licence minimums of 120 degrees for cars and 160 degrees for trucks and buses, so camera arrays should cover at least that. The in-vehicle field is centred on the vehicle's forward axis: from minus half this value to plus half of it. Coverage = the part of that field, in degrees, that the available camera views show (each view's interval from viewDirection and horizontalFieldOfView, clipped to the in-vehicle field, summed), divided by this value. It is a share between 0 and 1: views outside the in-vehicle field, such as a rear camera, add nothing to it."
     },
     "attributes" : [ "datatype", "functional" ],
-    "id" : "453"
+    "id" : "451"
   }, {
     "range" : "68",
     "domain" : "72",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "454"
+    "id" : "452"
   }, {
     "range" : "68",
     "domain" : "41",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "455"
+    "id" : "453"
   }, {
     "range" : "5",
     "domain" : "68",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "456"
+    "id" : "454"
   }, {
     "iri" : "https://w3id.org/rovo/op#readyOperator",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -7290,42 +7270,42 @@
     "range" : "68",
     "domain" : "48",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "457"
+    "id" : "455"
   }, {
     "range" : "68",
     "domain" : "4",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "458"
+    "id" : "456"
   }, {
     "range" : "10",
     "domain" : "68",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "459"
+    "id" : "457"
   }, {
     "range" : "68",
     "domain" : "15",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "460"
+    "id" : "458"
   }, {
     "range" : "68",
     "domain" : "1",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "461"
+    "id" : "459"
   }, {
     "range" : "8",
     "domain" : "68",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "462"
+    "id" : "460"
   }, {
     "range" : "13",
     "domain" : "68",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "463"
+    "id" : "461"
   }, {
     "range" : "63",
     "domain" : "36",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "464"
+    "id" : "462"
   }, {
     "iri" : "https://w3id.org/rovo/op#hasRequestReason",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -7347,7 +7327,7 @@
       "en" : "SA-03. A request can have several reasons; one without a stated cause has ROVO-op:UnspecifiedReason."
     },
     "attributes" : [ "object" ],
-    "id" : "465"
+    "id" : "463"
   }, {
     "iri" : "https://w3id.org/rovo/op#holdsTask",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -7369,67 +7349,67 @@
       "en" : "SA-02, runtime: the tasks the operator holds in this engagement. Objects are task individuals typed with a task class (an EDMC DDT subtask class or one of the classes above)."
     },
     "attributes" : [ "object" ],
-    "id" : "466"
+    "id" : "464"
   }, {
     "range" : "10",
     "domain" : "63",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "467"
+    "id" : "465"
   }, {
     "range" : "63",
     "domain" : "15",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "468"
+    "id" : "466"
   }, {
     "range" : "63",
     "domain" : "1",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "469"
+    "id" : "467"
   }, {
     "range" : "8",
     "domain" : "63",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "470"
+    "id" : "468"
   }, {
     "range" : "13",
     "domain" : "63",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "471"
+    "id" : "469"
   }, {
     "range" : "18",
     "domain" : "63",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "472"
+    "id" : "470"
   }, {
     "range" : "63",
     "domain" : "22",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "473"
+    "id" : "471"
   }, {
     "range" : "63",
     "domain" : "26",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "474"
+    "id" : "472"
   }, {
     "range" : "30",
     "domain" : "63",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "475"
+    "id" : "473"
   }, {
     "range" : "63",
     "domain" : "48",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "476"
+    "id" : "474"
   }, {
     "range" : "13",
     "domain" : "36",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "477"
+    "id" : "475"
   }, {
     "range" : "63",
     "domain" : "4",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "478"
+    "id" : "476"
   }, {
     "iri" : "https://w3id.org/rovo/op#availableChannel",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -7451,7 +7431,7 @@
       "en" : "SA-15, SA-16, SA-17: the channels the station currently provides to the operator for the engaged vehicle."
     },
     "attributes" : [ "object" ],
-    "id" : "479"
+    "id" : "477"
   }, {
     "iri" : "https://w3id.org/rovo/op#sensedAt",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -7473,117 +7453,117 @@
       "en" : "SA-07, SA-11, SA-23. For perception through a channel that shows no scene built from sensor frames, such as audio or haptic feedback. The sensed time of a perception assertion is: the earliest sensed time of the frames of its scene (basedOnScene); otherwise this value; otherwise perceivedAt, i.e. no delay is assumed, which the shapes report as a warning. The assertion is stale when its element changed after that time (ElementStateChange). Not used together with basedOnScene."
     },
     "attributes" : [ "datatype", "functional" ],
-    "id" : "480"
+    "id" : "478"
   }, {
     "range" : "8",
     "domain" : "18",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "479"
+  }, {
+    "range" : "57",
+    "domain" : "22",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "480"
+  }, {
+    "range" : "8",
+    "domain" : "22",
     "attributes" : [ "anonymous", "object" ],
     "id" : "481"
   }, {
     "range" : "57",
-    "domain" : "22",
+    "domain" : "26",
     "attributes" : [ "anonymous", "object" ],
     "id" : "482"
   }, {
     "range" : "8",
-    "domain" : "22",
+    "domain" : "26",
     "attributes" : [ "anonymous", "object" ],
     "id" : "483"
   }, {
-    "range" : "57",
-    "domain" : "26",
+    "range" : "30",
+    "domain" : "57",
     "attributes" : [ "anonymous", "object" ],
     "id" : "484"
   }, {
     "range" : "8",
-    "domain" : "26",
+    "domain" : "30",
     "attributes" : [ "anonymous", "object" ],
     "id" : "485"
   }, {
-    "range" : "30",
-    "domain" : "57",
+    "range" : "57",
+    "domain" : "36",
     "attributes" : [ "anonymous", "object" ],
     "id" : "486"
   }, {
     "range" : "8",
-    "domain" : "30",
+    "domain" : "36",
     "attributes" : [ "anonymous", "object" ],
     "id" : "487"
-  }, {
-    "range" : "57",
-    "domain" : "36",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "488"
-  }, {
-    "range" : "8",
-    "domain" : "36",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "489"
   }, {
     "range" : "68",
     "domain" : "63",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "490"
+    "id" : "488"
   }, {
     "range" : "13",
     "domain" : "18",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "491"
+    "id" : "489"
   }, {
     "range" : "63",
     "domain" : "72",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "492"
+    "id" : "490"
   }, {
     "range" : "13",
     "domain" : "22",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "493"
+    "id" : "491"
   }, {
     "range" : "63",
     "domain" : "41",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "494"
+    "id" : "492"
   }, {
     "range" : "13",
     "domain" : "26",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "495"
+    "id" : "493"
   }, {
     "range" : "5",
     "domain" : "63",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "496"
+    "id" : "494"
   }, {
     "range" : "30",
     "domain" : "13",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "497"
+    "id" : "495"
   }, {
     "range" : "8",
     "domain" : "57",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "498"
+    "id" : "496"
   }, {
     "range" : "36",
     "domain" : "1",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "499"
+    "id" : "497"
   }, {
     "range" : "13",
     "domain" : "57",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "500"
+    "id" : "498"
   }, {
     "range" : "8",
     "domain" : "13",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "501"
+    "id" : "499"
   }, {
     "range" : "57",
     "domain" : "18",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "502"
+    "id" : "500"
   }, {
     "iri" : "https://w3id.org/rovo/op#reliability",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -7605,11 +7585,11 @@
       "en" : "Between 0 and 1 (SA-25)."
     },
     "attributes" : [ "datatype", "functional" ],
-    "id" : "503"
+    "id" : "501"
   }, {
     "iri" : "https://w3id.org/rovo/op#modeIncludesTask",
     "baseIri" : "https://w3id.org/rovo/op",
-    "range" : "257",
+    "range" : "251",
     "annotations" : {
       "definition" : [ {
         "identifier" : "definition",
@@ -7627,7 +7607,7 @@
       "en" : "SA-02, static: which kinds of task a mode gives the operator. The object is a task class IRI (OWL 2 punning), e.g. vla:LateralVehicleMotionControl or ROVO-op:DecisionMakingTask. It lists the kinds a mode may give the operator, not the tasks every engagement in the mode holds. A task stated for a broader mode holds for its narrower modes (broaderMode). The tasks of remote monitoring and remote assistance are asserted below; those of remote driving are EDMC classes and are asserted in ROVO-core.ttl."
     },
     "attributes" : [ "object" ],
-    "id" : "504"
+    "id" : "502"
   }, {
     "iri" : "https://w3id.org/rovo/op#engagedVehicle",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -7649,36 +7629,36 @@
       "en" : "SA-01. An engagement has exactly one, and a vehicle has at most one open engagement at a time (ROVO-op-shapes.ttl)."
     },
     "attributes" : [ "object", "functional" ],
-    "id" : "505"
+    "id" : "503"
   }, {
     "range" : "30",
     "domain" : "15",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "506"
+    "id" : "504"
   }, {
     "range" : "57",
     "domain" : "41",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "507"
+    "id" : "505"
   }, {
     "range" : "36",
     "domain" : "15",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "508"
+    "id" : "506"
   }, {
     "range" : "5",
     "domain" : "57",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "509"
+    "id" : "507"
   }, {
     "range" : "8",
     "domain" : "1",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "510"
+    "id" : "508"
   }, {
     "iri" : "https://w3id.org/rovo/op#requiresElementType",
     "baseIri" : "https://w3id.org/rovo/op",
-    "range" : "261",
+    "range" : "254",
     "annotations" : {
       "definition" : [ {
         "identifier" : "definition",
@@ -7696,57 +7676,57 @@
       "en" : "SA-22. The object is a class IRI, e.g. an A.U.T.O. class such as l4:Pedestrian (OWL 2 punning)."
     },
     "attributes" : [ "object", "functional" ],
-    "id" : "511"
+    "id" : "509"
   }, {
     "range" : "57",
     "domain" : "48",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "512"
+    "id" : "510"
   }, {
     "range" : "13",
     "domain" : "1",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "513"
+    "id" : "511"
   }, {
     "range" : "57",
     "domain" : "4",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "514"
+    "id" : "512"
   }, {
     "range" : "18",
     "domain" : "1",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "515"
+    "id" : "513"
   }, {
     "range" : "10",
     "domain" : "57",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "516"
+    "id" : "514"
   }, {
     "range" : "22",
     "domain" : "1",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "517"
+    "id" : "515"
   }, {
     "range" : "57",
     "domain" : "15",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "518"
+    "id" : "516"
   }, {
     "range" : "1",
     "domain" : "26",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "519"
+    "id" : "517"
   }, {
     "range" : "57",
     "domain" : "1",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "520"
+    "id" : "518"
   }, {
     "range" : "30",
     "domain" : "1",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "521"
+    "id" : "519"
   }, {
     "iri" : "https://w3id.org/rovo/op#engagementEnvironment",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -7768,7 +7748,7 @@
       "en" : "SA-06, runtime. A vehicle can be deployed in several environments (deployedIn), so the answer for one engagement is stated here. It must be one of the vehicle's environments where the vehicle states any (ROVO-op-shapes.ttl). Without a value, SA-06 has an answer only if the vehicle states exactly one environment."
     },
     "attributes" : [ "object", "functional" ],
-    "id" : "522"
+    "id" : "520"
   }, {
     "iri" : "https://w3id.org/rovo/op#broaderMode",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -7790,11 +7770,11 @@
       "en" : "SA-01 and every question that reads a limit per mode. Continuous and event-based remote driving have ROVO-op:RemoteDriving as their broader mode. Limits, supported modes, task kinds and needs stated for a broader mode hold for its narrower modes. A property of this module, not skos:broader, so that the SKOS mappings of ROVO-core add nothing to the mode hierarchy."
     },
     "attributes" : [ "object", "functional" ],
-    "id" : "523"
+    "id" : "521"
   }, {
     "iri" : "http://www.w3.org/ns/prov#wasInformedBy",
     "baseIri" : "http://www.w3.org/ns/prov",
-    "range" : "249",
+    "range" : "95",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -7806,10 +7786,10 @@
     "label" : {
       "IRI-based" : "wasInformedBy"
     },
-    "domain" : "249",
-    "subproperty" : [ "450" ],
-    "attributes" : [ "external", "object" ],
-    "id" : "451"
+    "domain" : "95",
+    "subproperty" : [ "448" ],
+    "attributes" : [ "object", "external" ],
+    "id" : "449"
   }, {
     "iri" : "https://w3id.org/rovo/op#rulesOutMode",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -7831,7 +7811,7 @@
       "en" : "SA-24. Configuration: while the operator's latest ImpairmentObservation for the impairment is true, the modes named here drop out of the answer to SA-24. A mode stated here also rules out its narrower modes (ROVO-op:broaderMode). No values are asserted by this module: no source says which impairment rules out which mode, so an impairment without a value rules out none."
     },
     "attributes" : [ "object" ],
-    "id" : "524"
+    "id" : "522"
   }, {
     "iri" : "https://w3id.org/rovo/op#confidence",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -7853,17 +7833,17 @@
       "en" : "SA-13, SA-23, SA-25. How the estimator combines evidence is outside the ontology. Whether an assertion counts as perceived is decided against the PerceptionConfidenceThreshold of the mode."
     },
     "attributes" : [ "datatype", "functional" ],
-    "id" : "525"
+    "id" : "523"
   }, {
     "range" : "90",
     "domain" : "88",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "526"
+    "id" : "524"
   }, {
     "range" : "90",
     "domain" : "93",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "527"
+    "id" : "525"
   }, {
     "iri" : "https://w3id.org/rovo/op#forRequestType",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -7885,47 +7865,47 @@
       "en" : "SA-22. Optional, for decision-support SA: the requirement applies only while the operator answers a request of this type. Without it, the requirement applies to every request."
     },
     "attributes" : [ "object", "functional" ],
-    "id" : "528"
+    "id" : "526"
   }, {
     "range" : "92",
     "domain" : "89",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "529"
+    "id" : "527"
   }, {
     "range" : "92",
+    "domain" : "88",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "528"
+  }, {
+    "range" : "92",
+    "domain" : "93",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "529"
+  }, {
+    "range" : "89",
     "domain" : "88",
     "attributes" : [ "anonymous", "object" ],
     "id" : "530"
   }, {
-    "range" : "92",
+    "range" : "89",
     "domain" : "93",
     "attributes" : [ "anonymous", "object" ],
     "id" : "531"
   }, {
-    "range" : "89",
-    "domain" : "88",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "532"
-  }, {
-    "range" : "89",
-    "domain" : "93",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "533"
-  }, {
     "range" : "88",
     "domain" : "93",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "534"
+    "id" : "532"
   }, {
     "range" : "92",
     "domain" : "90",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "535"
+    "id" : "533"
   }, {
     "range" : "89",
     "domain" : "90",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "536"
+    "id" : "534"
   }, {
     "iri" : "https://w3id.org/rovo/op#appliesToFallbackReady",
     "baseIri" : "https://w3id.org/rovo/op",
@@ -7947,11 +7927,11 @@
       "en" : "SA-18. True for a limit that applies while the operator is fallback-ready rather than in a mode."
     },
     "attributes" : [ "datatype", "functional" ],
-    "id" : "537"
+    "id" : "535"
   }, {
     "iri" : "http://www.w3.org/ns/sosa/madeBySensor",
     "baseIri" : "http://www.w3.org/ns/sosa",
-    "range" : "249",
+    "range" : "95",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -7963,13 +7943,13 @@
     "label" : {
       "IRI-based" : "madeBySensor"
     },
-    "domain" : "249",
-    "attributes" : [ "external", "object" ],
-    "id" : "538"
+    "domain" : "95",
+    "attributes" : [ "object", "external" ],
+    "id" : "536"
   }, {
     "iri" : "http://www.w3.org/ns/sosa/hasSimpleResult",
     "baseIri" : "http://www.w3.org/ns/sosa",
-    "range" : "264",
+    "range" : "257",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -7981,8 +7961,8 @@
     "label" : {
       "IRI-based" : "hasSimpleResult"
     },
-    "domain" : "249",
+    "domain" : "95",
     "attributes" : [ "external", "datatype" ],
-    "id" : "539"
+    "id" : "537"
   } ]
 }

@@ -365,11 +365,6 @@ This ontology has the following classes and properties.</span>
       <a href="#adaptationCarriedFrom" title="https://w3id.org/rovo/op#adaptationCarriedFrom">adaptation carried from</a>
    </li>
    <li>
-      <a href="#adaptedInformationAge" title="https://w3id.org/rovo/op#adaptedInformationAge">
-         <span>adapted information age</span>
-      </a>
-   </li>
-   <li>
       <a href="#appliesToMode" title="https://w3id.org/rovo/op#appliesToMode">applies to mode</a>
    </li>
    <li>
@@ -383,11 +378,6 @@ This ontology has the following classes and properties.</span>
    </li>
    <li>
       <a href="#broaderMode" title="https://w3id.org/rovo/op#broaderMode">broader mode</a>
-   </li>
-   <li>
-      <a href="#captureDelay" title="https://w3id.org/rovo/op#captureDelay">
-         <span>capture delay</span>
-      </a>
    </li>
    <li>
       <a href="#concernsElement" title="https://w3id.org/rovo/op#concernsElement">concerns element</a>
@@ -540,9 +530,7 @@ This ontology has the following classes and properties.</span>
       <a href="#ableToTakeOver" title="https://w3id.org/rovo/op#ableToTakeOver">able to take over</a>
    </li>
    <li>
-      <a href="#adaptedInformationAge" title="https://w3id.org/rovo/op#adaptedInformationAge">
-         <span>adapted information age</span>
-      </a>
+      <a href="#adaptedInformationAge" title="https://w3id.org/rovo/op#adaptedInformationAge">adapted information age</a>
    </li>
    <li>
       <a href="#appliesToFallbackReady" title="https://w3id.org/rovo/op#appliesToFallbackReady">applies to fallback-ready</a>
@@ -551,9 +539,7 @@ This ontology has the following classes and properties.</span>
       <a href="#buildUpEndedAt" title="https://w3id.org/rovo/op#buildUpEndedAt">build-up ended at</a>
    </li>
    <li>
-      <a href="#captureDelay" title="https://w3id.org/rovo/op#captureDelay">
-         <span>capture delay</span>
-      </a>
+      <a href="#captureDelay" title="https://w3id.org/rovo/op#captureDelay">capture delay</a>
    </li>
    <li>
       <a href="#confidence" title="https://w3id.org/rovo/op#confidence">confidence</a>
@@ -1088,6 +1074,16 @@ This section provides details for each class and property defined by R.O.V.O: Op
  <div class="entity" id="CueInterpretationTask">
   <h3>cue interpretation task<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/rovo/op#CueInterpretationTask</p>
+  <div class="comment"><p><strong>Definition:</strong></p>
+<span class="markdown">Interpreting what the vehicle cannot, e.g. identifying an object in the lane as an empty bag that can be driven through.</span>
+</div>
+  <div class="comment"><p><strong>Note:</strong></p>
+<span class="markdown">SA-02, remote assistance. AM22's example of a remote assistant performing an OEDR-like action without performing the DDT.</span>
+</div>
+  <dl class="definedBy">
+   <dt>Source</dt>
+   <dd>AM22</dd>
+  </dl>
   <dl class="description">
    <dt>has super-classes</dt>
    <dd>
@@ -1104,6 +1100,16 @@ This section provides details for each class and property defined by R.O.V.O: Op
  <div class="entity" id="DecisionMakingTask">
   <h3>decision-making task<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/rovo/op#DecisionMakingTask</p>
+  <div class="comment"><p><strong>Definition:</strong></p>
+<span class="markdown">Deciding on and authorizing an option for the vehicle, e.g. a path, a waypoint or a go-ahead, which the ADS then executes.</span>
+</div>
+  <div class="comment"><p><strong>Note:</strong></p>
+<span class="markdown">SA-02, remote assistance. AM22: the remote assistant provides a new pathway around road construction, which the ADS executes.</span>
+</div>
+  <dl class="definedBy">
+   <dt>Source</dt>
+   <dd>AM22</dd>
+  </dl>
   <dl class="description">
    <dt>has super-classes</dt>
    <dd>
@@ -1206,7 +1212,7 @@ This section provides details for each class and property defined by R.O.V.O: Op
    </dd>
    <dt>is in domain of</dt>
    <dd>
-    <a href="#adaptationCarriedFrom" title="https://w3id.org/rovo/op#adaptationCarriedFrom">adaptation carried from</a> <sup class="type-op" title="object property">op</sup>, <a href="#adaptedInformationAge" title="https://w3id.org/rovo/op#adaptedInformationAge">adapted information age</a> <sup class="type-op" title="object property">op</sup>, <a href="#availableChannel" title="https://w3id.org/rovo/op#availableChannel">available channel</a> <sup class="type-op" title="object property">op</sup>, <a href="#buildUpEndedAt" title="https://w3id.org/rovo/op#buildUpEndedAt">build-up ended at</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#engagedOperator" title="https://w3id.org/rovo/op#engagedOperator">engaged operator</a> <sup class="type-op" title="object property">op</sup>, <a href="#engagedVehicle" title="https://w3id.org/rovo/op#engagedVehicle">engaged vehicle</a> <sup class="type-op" title="object property">op</sup>, <a href="#engagementEnvironment" title="https://w3id.org/rovo/op#engagementEnvironment">engagement environment</a> <sup class="type-op" title="object property">op</sup>, <a href="#engagementTask" title="https://w3id.org/rovo/op#engagementTask">engagement task</a> <sup class="type-op" title="object property">op</sup>, <a href="#followsEngagement" title="https://w3id.org/rovo/op#followsEngagement">follows engagement</a> <sup class="type-op" title="object property">op</sup>, <a href="#holdsTask" title="https://w3id.org/rovo/op#holdsTask">holds task</a> <sup class="type-op" title="object property">op</sup>, <a href="#inOperationMode" title="https://w3id.org/rovo/op#inOperationMode">in operation mode</a> <sup class="type-op" title="object property">op</sup>, <a href="#respondsTo" title="https://w3id.org/rovo/op#respondsTo">responds to</a> <sup class="type-op" title="object property">op</sup>, <a href="#takenOverFrom" title="https://w3id.org/rovo/op#takenOverFrom">taken over from</a> <sup class="type-op" title="object property">op</sup>, <a href="#takeoverReason" title="https://w3id.org/rovo/op#takeoverReason">takeover reason</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#adaptationCarriedFrom" title="https://w3id.org/rovo/op#adaptationCarriedFrom">adaptation carried from</a> <sup class="type-op" title="object property">op</sup>, <a href="#adaptedInformationAge" title="https://w3id.org/rovo/op#adaptedInformationAge">adapted information age</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#availableChannel" title="https://w3id.org/rovo/op#availableChannel">available channel</a> <sup class="type-op" title="object property">op</sup>, <a href="#buildUpEndedAt" title="https://w3id.org/rovo/op#buildUpEndedAt">build-up ended at</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#engagedOperator" title="https://w3id.org/rovo/op#engagedOperator">engaged operator</a> <sup class="type-op" title="object property">op</sup>, <a href="#engagedVehicle" title="https://w3id.org/rovo/op#engagedVehicle">engaged vehicle</a> <sup class="type-op" title="object property">op</sup>, <a href="#engagementEnvironment" title="https://w3id.org/rovo/op#engagementEnvironment">engagement environment</a> <sup class="type-op" title="object property">op</sup>, <a href="#engagementTask" title="https://w3id.org/rovo/op#engagementTask">engagement task</a> <sup class="type-op" title="object property">op</sup>, <a href="#followsEngagement" title="https://w3id.org/rovo/op#followsEngagement">follows engagement</a> <sup class="type-op" title="object property">op</sup>, <a href="#holdsTask" title="https://w3id.org/rovo/op#holdsTask">holds task</a> <sup class="type-op" title="object property">op</sup>, <a href="#inOperationMode" title="https://w3id.org/rovo/op#inOperationMode">in operation mode</a> <sup class="type-op" title="object property">op</sup>, <a href="#respondsTo" title="https://w3id.org/rovo/op#respondsTo">responds to</a> <sup class="type-op" title="object property">op</sup>, <a href="#takenOverFrom" title="https://w3id.org/rovo/op#takenOverFrom">taken over from</a> <sup class="type-op" title="object property">op</sup>, <a href="#takeoverReason" title="https://w3id.org/rovo/op#takeoverReason">takeover reason</a> <sup class="type-op" title="object property">op</sup>
    </dd>
    <dt>is in range of</dt>
    <dd>
@@ -1577,6 +1583,16 @@ This section provides details for each class and property defined by R.O.V.O: Op
  <div class="entity" id="ObservationTask">
   <h3>observation task<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/rovo/op#ObservationTask</p>
+  <div class="comment"><p><strong>Definition:</strong></p>
+<span class="markdown">Observing the vehicle and its situation without influencing the DDT.</span>
+</div>
+  <div class="comment"><p><strong>Note:</strong></p>
+<span class="markdown">SA-02, remote monitoring.</span>
+</div>
+  <dl class="definedBy">
+   <dt>Source</dt>
+   <dd>AM22</dd>
+  </dl>
   <dl class="description">
    <dt>has super-classes</dt>
    <dd>
@@ -2051,7 +2067,7 @@ This section provides details for each class and property defined by R.O.V.O: Op
   <dl class="description">
    <dt>is in domain of</dt>
    <dd>
-    <a href="#captureDelay" title="https://w3id.org/rovo/op#captureDelay">capture delay</a> <sup class="type-op" title="object property">op</sup>, <a href="#sensorOfVehicle" title="https://w3id.org/rovo/op#sensorOfVehicle">sensor of vehicle</a> <sup class="type-op" title="object property">op</sup>
+    <a href="#captureDelay" title="https://w3id.org/rovo/op#captureDelay">capture delay</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#sensorOfVehicle" title="https://w3id.org/rovo/op#sensorOfVehicle">sensor of vehicle</a> <sup class="type-op" title="object property">op</sup>
    </dd>
   </dl>
  </div>
@@ -2235,13 +2251,11 @@ This section provides details for each class and property defined by R.O.V.O: Op
  <ul class="hlist">
   <li><a href="#aboutElement" title="https://w3id.org/rovo/op#aboutElement">about element</a></li>
   <li><a href="#adaptationCarriedFrom" title="https://w3id.org/rovo/op#adaptationCarriedFrom">adaptation carried from</a></li>
-  <li><a href="#adaptedInformationAge" title="https://w3id.org/rovo/op#adaptedInformationAge"> <span>adapted information age</span> </a></li>
   <li><a href="#appliesToMode" title="https://w3id.org/rovo/op#appliesToMode">applies to mode</a></li>
   <li><a href="#assertedOperator" title="https://w3id.org/rovo/op#assertedOperator">asserted operator</a></li>
   <li><a href="#availableChannel" title="https://w3id.org/rovo/op#availableChannel">available channel</a></li>
   <li><a href="#basedOnScene" title="https://w3id.org/rovo/op#basedOnScene">based on scene</a></li>
   <li><a href="#broaderMode" title="https://w3id.org/rovo/op#broaderMode">broader mode</a></li>
-  <li><a href="#captureDelay" title="https://w3id.org/rovo/op#captureDelay"> <span>capture delay</span> </a></li>
   <li><a href="#concernsElement" title="https://w3id.org/rovo/op#concernsElement">concerns element</a></li>
   <li><a href="#deployedIn" title="https://w3id.org/rovo/op#deployedIn">deployed in</a></li>
   <li><a href="#derivedFromFrame" title="https://w3id.org/rovo/op#derivedFromFrame">derived from frame</a></li>
@@ -2333,27 +2347,7 @@ This section provides details for each class and property defined by R.O.V.O: Op
    </dl>
   </div>
  </div>
- <div class="entity" id="adaptedInformationAge">
-  <h3>adapted information age<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/rovo/op#adaptedInformationAge</p>
-  <div class="description">
-   <p><strong>has characteristics: </strong> functional</p>
-   <dl>
-    <dt>has domain</dt>
-    <dd>
-     <a href="#Engagement" title="https://w3id.org/rovo/op#Engagement">engagement</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>has range</dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#dayTimeDuration" target="_blank" title="http://www.w3.org/2001/XMLSchema#dayTimeDuration">day Time Duration</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>is also defined as</dt>
-    <dd>
-     <a href="#adaptedInformationAge">data property</a>
-    </dd>
-   </dl>
-  </div>
- </div>
+ 
  <div class="entity" id="appliesToMode">
   <h3>applies to mode<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/rovo/op#appliesToMode</p>
@@ -2466,27 +2460,7 @@ This section provides details for each class and property defined by R.O.V.O: Op
    </dl>
   </div>
  </div>
- <div class="entity" id="captureDelay">
-  <h3>capture delay<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
-  <p><strong>IRI:</strong> https://w3id.org/rovo/op#captureDelay</p>
-  <div class="description">
-   <p><strong>has characteristics: </strong> functional</p>
-   <dl>
-    <dt>has domain</dt>
-    <dd>
-     <a href="#http://www.w3.org/ns/sosa/Sensor" title="http://www.w3.org/ns/sosa/Sensor">Sensor</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>has range</dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#dayTimeDuration" target="_blank" title="http://www.w3.org/2001/XMLSchema#dayTimeDuration">day Time Duration</a> <sup class="type-c" title="class">c</sup>
-    </dd>
-    <dt>is also defined as</dt>
-    <dd>
-     <a href="#captureDelay">data property</a>
-    </dd>
-   </dl>
-  </div>
- </div>
+ 
  <div class="entity" id="concernsElement">
   <h3>concerns element<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/rovo/op#concernsElement</p>
@@ -3356,10 +3330,10 @@ This section provides details for each class and property defined by R.O.V.O: Op
  <h3 id="dataproperties-headline" class="list">Data Properties</h3>
  <ul class="hlist">
   <li><a href="#ableToTakeOver" title="https://w3id.org/rovo/op#ableToTakeOver">able to take over</a></li>
-  <li><a href="#adaptedInformationAge" title="https://w3id.org/rovo/op#adaptedInformationAge"> <span>adapted information age</span> </a></li>
+  <li><a href="#adaptedInformationAge" title="https://w3id.org/rovo/op#adaptedInformationAge">adapted information age</a></li>
   <li><a href="#appliesToFallbackReady" title="https://w3id.org/rovo/op#appliesToFallbackReady">applies to fallback-ready</a></li>
   <li><a href="#buildUpEndedAt" title="https://w3id.org/rovo/op#buildUpEndedAt">build-up ended at</a></li>
-  <li><a href="#captureDelay" title="https://w3id.org/rovo/op#captureDelay"> <span>capture delay</span> </a></li>
+  <li><a href="#captureDelay" title="https://w3id.org/rovo/op#captureDelay">capture delay</a></li>
   <li><a href="#confidence" title="https://w3id.org/rovo/op#confidence">confidence</a></li>
   <li><a href="#displayedAt" title="https://w3id.org/rovo/op#displayedAt">displayed at</a></li>
   <li><a href="#http://www.w3.org/ns/prov#endedAtTime" title="http://www.w3.org/ns/prov#endedAtTime"> <span>ended At Time</span> </a></li>
@@ -3403,14 +3377,29 @@ This section provides details for each class and property defined by R.O.V.O: Op
   </div>
  </div>
  <div class="entity" id="adaptedInformationAge">
-  <h3>adapted information age<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <h3>adapted information age<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/rovo/op#adaptedInformationAge</p>
+  <div class="comment"><p><strong>Definition:</strong></p>
+<span class="markdown">The information age the operator is adapted to, as measured in this engagement, e.g. as the median over its first minutes.</span>
+</div>
+  <div class="comment"><p><strong>Note:</strong></p>
+<span class="markdown">SA-14. Interface (stream layer, fed by ROVO-link LK-05). HA24: latency adaptation took from 1-2 drives to months; NE19 varied latency within a drive. Adaptation belongs to the operator and the setup, not to one engagement, so a new engagement need not start it again: an engagement with adaptationCarriedFrom states no value of its own, and the value that applies to it is that of the engagement it is carried from, followed back to the one that measured it (ROVO-op-shapes.ttl).</span>
+</div>
+  <dl class="definedBy">
+   <dt>Source</dt>
+   <dd>HA24</dd>
+   <dd>NE19</dd>
+  </dl>
   <div class="description">
    <p><strong>has characteristics: </strong> functional</p>
    <dl>
-    <dt>is also defined as</dt>
+    <dt>has domain</dt>
     <dd>
-     <a href="#adaptedInformationAge">object property</a>
+     <a href="#Engagement" title="https://w3id.org/rovo/op#Engagement">engagement</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>has range</dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#dayTimeDuration" target="_blank" title="http://www.w3.org/2001/XMLSchema#dayTimeDuration">day Time Duration</a>
     </dd>
    </dl>
   </div>
@@ -3466,14 +3455,28 @@ This section provides details for each class and property defined by R.O.V.O: Op
   </div>
  </div>
  <div class="entity" id="captureDelay">
-  <h3>capture delay<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <h3>capture delay<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
   <p><strong>IRI:</strong> https://w3id.org/rovo/op#captureDelay</p>
+  <div class="comment"><p><strong>Definition:</strong></p>
+<span class="markdown">The time from an event in front of the sensor to the frame that shows it being captured: exposure, readout and transfer to the vehicle computer.</span>
+</div>
+  <div class="comment"><p><strong>Note:</strong></p>
+<span class="markdown">SA-08, SA-09. Configuration or offline measurement, not a per-frame value; GF20 measured roughly 15-35 ms. With it, information age runs from the event to its display, GF20's sensor (glass-to-glass) latency. A sensor without a value counts as zero delay. Shared with ROVO-link.</span>
+</div>
+  <dl class="definedBy">
+   <dt>Source</dt>
+   <dd>GF20</dd>
+  </dl>
   <div class="description">
    <p><strong>has characteristics: </strong> functional</p>
    <dl>
-    <dt>is also defined as</dt>
+    <dt>has domain</dt>
     <dd>
-     <a href="#captureDelay">object property</a>
+     <a href="#http://www.w3.org/ns/sosa/Sensor" title="http://www.w3.org/ns/sosa/Sensor">Sensor</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>has range</dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#dayTimeDuration" target="_blank" title="http://www.w3.org/2001/XMLSchema#dayTimeDuration">day Time Duration</a>
     </dd>
    </dl>
   </div>
